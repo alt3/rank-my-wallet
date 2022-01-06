@@ -1,7 +1,10 @@
 import { forwardRef, ComponentPropsWithoutRef, PropsWithoutRef } from "react"
 import { useField, UseFieldConfig } from "react-final-form"
 
-export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
+import { Input } from "@chakra-ui/input"
+import { FormControl, FormLabel } from "@chakra-ui/form-control"
+
+export interface LabeledTextFieldProps extends ComponentPropsWithoutRef<typeof Input> {
   /** Field name. */
   name: string
   /** Field label. */
@@ -30,35 +33,17 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
     const normalizedError = Array.isArray(error) ? error.join(", ") : error || submitError
 
     return (
-      <div {...outerProps}>
-        <label {...labelProps}>
+      <FormControl {...outerProps}>
+        <FormLabel {...labelProps}>
           {label}
-          <input {...input} disabled={submitting} {...props} ref={ref} />
-        </label>
-
+          <Input {...input} disabled={submitting} {...props} ref={ref} />
+        </FormLabel>
         {touched && normalizedError && (
           <div role="alert" style={{ color: "red" }}>
             {normalizedError}
           </div>
         )}
-
-        <style jsx>{`
-          label {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            font-size: 1rem;
-          }
-          input {
-            font-size: 1rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            border: 1px solid purple;
-            appearance: none;
-            margin-top: 0.5rem;
-          }
-        `}</style>
-      </div>
+      </FormControl>
     )
   }
 )
