@@ -21,13 +21,13 @@ import logoCardano from "public/images/blockchains/cardano.svg"
 
 export function BlockChains() {
   return (
-    <Container maxW="xl">
+    <Container maxW="xl" marginBottom="2.5rem">
       <Box>
         <Center>
           <chakra.h2
-            fontSize={{ base: "4xl", lg: "4xl", sm: "4xl" }}
+            fontSize={{ base: "4xl", lg: "3xl", sm: "4xl" }}
             marginBottom="2rem"
-            color={useColorModeValue("brand.600", "gray.500")}
+            color={useColorModeValue("gray.700", "gray.400")}
           >
             Supported blockchains:
           </chakra.h2>

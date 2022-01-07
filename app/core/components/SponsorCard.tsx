@@ -3,14 +3,14 @@ import {
   useColorModeValue,
   Center,
   Flex,
-  Stack,
+  VStack,
   Input,
   InputGroup,
   InputRightAddon,
 } from "@chakra-ui/react"
 import Img from "next/image"
 
-export function BlockChainCard({ name, logo, id, description, ...rest }) {
+export function SponsorCard({ name, logo, id, description, ...rest }) {
   return (
     <Flex
       alignContent="center"
@@ -28,4 +28,4 @@ export function BlockChainCard({ name, logo, id, description, ...rest }) {
   )
 }
 
-export default BlockChainCard
+export default SponsorCard

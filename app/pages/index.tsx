@@ -1,9 +1,9 @@
 import { Suspense } from "react"
 import { Image, Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
-import { Navbar } from "app/core/components/navbar"
 import { Hero } from "@/components/Hero"
 import { BlockChains } from "@/components/BlockChains"
+import { Sponsors } from "@/components/Sponsors"
 import { Footer } from "@/components/Footer"
 
 /*
@@ -15,9 +15,9 @@ const Home: BlitzPage = () => {
   return (
     <div className="container">
       <main>
-        <Navbar />
         <Hero />
         <BlockChains />
+        <Sponsors />
       </main>
       <Footer />
     </div>
