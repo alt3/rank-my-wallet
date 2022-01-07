@@ -1,8 +1,12 @@
 import { Routes } from "blitz"
-import { Button, Container, Divider, HStack, Spacer, Stack } from "@chakra-ui/react"
+import { Switch, useColorMode, Container, Divider, HStack, Spacer, Stack } from "@chakra-ui/react"
+import { MoonIcon, SunIcon } from "@chakra-ui/icons"
+
 import { Link } from "@/components/Link"
 
 export const NavbarDesktop: React.FC = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <Container as={Stack} d={{ base: "none", md: "flex" }} maxW="5xl" py={4} spacing={4}>
       <HStack>
@@ -12,6 +16,9 @@ export const NavbarDesktop: React.FC = () => {
         <Link href="/" color="teal.500">
           Species
         </Link>
+        <SunIcon />
+        <Switch isChecked={colorMode === "dark"} onChange={(e) => toggleColorMode()} />
+        <MoonIcon />
       </HStack>
       <Divider />
     </Container>
