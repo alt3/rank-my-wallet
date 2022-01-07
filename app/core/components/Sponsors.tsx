@@ -17,7 +17,7 @@ import placeholder from "public/images/pixel.png"
 
 export function Sponsors() {
   return (
-    <Container maxW="xl" marginBottom="3rem">
+    <Container maxW="xl" marginBottom="5rem">
       <Box>
         <Center>
           <chakra.h2

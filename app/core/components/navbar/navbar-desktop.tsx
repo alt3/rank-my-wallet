@@ -24,7 +24,7 @@ export const NavbarDesktop: React.FC = () => {
       <Container as={Stack} d={{ base: "none", md: "flex" }} maxW="5xl" py={4} spacing={4}>
         <HStack>
           <Link href="/">Home</Link>
-          <Link href="/">Species</Link>
+          {/* <Link href="/">Species</Link> */}
 
           <Spacer />
 

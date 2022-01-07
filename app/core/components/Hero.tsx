@@ -21,7 +21,7 @@ export function Hero() {
         alignItems="center"
         justifyContent="center"
         paddingBottom="5rem"
-        marginBottom="2rem"
+        marginBottom="2.5rem"
       >
         <Box>
           <Stack
