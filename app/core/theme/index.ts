@@ -3,8 +3,8 @@ import { fonts } from "./foundations/fonts"
 
 const extendThemeObj: ThemeOverride = {
   config: {
-    initialColorMode: "light",
-    useSystemColorMode: true,
+    initialColorMode: "dark",
+    useSystemColorMode: false,
   },
   fonts,
   components: {},
