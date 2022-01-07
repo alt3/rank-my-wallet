@@ -4,6 +4,7 @@ import Layout from "app/core/layouts/Layout"
 import { Navbar } from "app/core/components/navbar"
 import { Hero } from "@/components/Hero"
 import { BlockChains } from "@/components/BlockChains"
+import { Footer } from "@/components/Footer"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -18,16 +19,7 @@ const Home: BlitzPage = () => {
         <Hero />
         <BlockChains />
       </main>
-
-      <footer>
-        <a
-          href="https://blitzjs.com?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Blitz.js
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
