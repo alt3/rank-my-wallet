@@ -2,7 +2,7 @@ import React from "react"
 import { chakra, Box, Stack, Flex, Input, InputGroup, InputRightAddon } from "@chakra-ui/react"
 import { Link } from "@/components/Link"
 
-export default function Hero() {
+export function Hero() {
   return (
     <Flex
       // bg={useColorModeValue("#F9FAFB", "gray.600")}
@@ -31,3 +31,5 @@ export default function Hero() {
     </Flex>
   )
 }
+
+export default Hero

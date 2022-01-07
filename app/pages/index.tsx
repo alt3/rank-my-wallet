@@ -2,7 +2,7 @@ import { Suspense } from "react"
 import { Image, Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { Navbar } from "app/core/components/navbar"
-import Hero from "@/components/hero"
+import { Hero } from "@/components/Hero"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
