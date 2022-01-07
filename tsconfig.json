@@ -17,7 +17,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "paths": {
+      "@/components/*": ["app/core/components/*"]
+    }
   },
   "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],
   "include": ["blitz-env.d.ts", "**/*.ts", "**/*.tsx"]
