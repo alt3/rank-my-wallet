@@ -10,12 +10,8 @@ export const NavbarDesktop: React.FC = () => {
   return (
     <Container as={Stack} d={{ base: "none", md: "flex" }} maxW="5xl" py={4} spacing={4}>
       <HStack>
-        <Link href="/" color="teal.500">
-          Home
-        </Link>
-        <Link href="/" color="teal.500">
-          Species
-        </Link>
+        <Link href="/">Home</Link>
+        <Link href="/">Species</Link>
         <SunIcon />
         <Switch isChecked={colorMode === "dark"} onChange={(e) => toggleColorMode()} />
         <MoonIcon />
