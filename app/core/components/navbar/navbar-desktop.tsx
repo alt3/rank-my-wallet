@@ -5,7 +5,6 @@ import {
   Box,
   Switch,
   Container,
-  Divider,
   HStack,
   Spacer,
   Stack,

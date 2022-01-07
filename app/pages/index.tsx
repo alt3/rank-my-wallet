@@ -1,5 +1,4 @@
-import { Suspense } from "react"
-import { Image, Link, BlitzPage, useMutation, Routes } from "blitz"
+import { BlitzPage } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { Hero } from "@/components/Hero"
 import { BlockChains } from "@/components/BlockChains"

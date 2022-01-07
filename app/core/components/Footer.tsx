@@ -1,17 +1,5 @@
 import React from "react"
-import {
-  Container,
-  chakra,
-  Box,
-  Icon,
-  Stack,
-  Flex,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Container, Flex, Text, useColorModeValue } from "@chakra-ui/react"
 import { Link } from "@/components/Link"
 
 export function Footer() {

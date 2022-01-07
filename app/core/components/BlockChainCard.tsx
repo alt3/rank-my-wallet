@@ -1,13 +1,5 @@
 import React from "react"
-import {
-  useColorModeValue,
-  Center,
-  Flex,
-  Stack,
-  Input,
-  InputGroup,
-  InputRightAddon,
-} from "@chakra-ui/react"
+import { useColorModeValue, Flex } from "@chakra-ui/react"
 import Img from "next/image"
 
 export function BlockChainCard({ name, logo, id, description, ...rest }) {

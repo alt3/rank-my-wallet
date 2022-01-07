@@ -1,19 +1,5 @@
 import React from "react"
-import {
-  chakra,
-  Box,
-  Center,
-  Grid,
-  GridItem,
-  Stack,
-  Container,
-  Flex,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  useColorModeValue,
-} from "@chakra-ui/react"
-import { Link } from "@/components/Link"
+import { chakra, Box, Center, Stack, Container, useColorModeValue } from "@chakra-ui/react"
 import { BlockChainCard } from "@/components/BlockChainCard"
 
 import logoErgo from "public/images/blockchains/ergo.svg"
