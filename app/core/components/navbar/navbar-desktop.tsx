@@ -12,10 +12,14 @@ export const NavbarDesktop: React.FC = () => {
       <HStack>
         <Link href="/">Home</Link>
         <Link href="/">Species</Link>
+
+        <Spacer />
+
         <SunIcon />
         <Switch isChecked={colorMode === "dark"} onChange={(e) => toggleColorMode()} />
         <MoonIcon />
       </HStack>
+
       <Divider />
     </Container>
   )
