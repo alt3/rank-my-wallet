@@ -10,6 +10,7 @@ export function Hero() {
       w="full"
       alignItems="center"
       justifyContent="center"
+      marginBottom="2.5rem"
     >
       <Box>
         <Stack

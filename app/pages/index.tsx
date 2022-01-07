@@ -3,6 +3,7 @@ import { Image, Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { Navbar } from "app/core/components/navbar"
 import { Hero } from "@/components/Hero"
+import { BlockChains } from "@/components/BlockChains"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -15,12 +16,7 @@ const Home: BlitzPage = () => {
       <main>
         <Navbar />
         <Hero />
-
-        <div className="buttons">
-          <Suspense fallback="Loading...">
-            <p>useCurrentUser was here</p>
-          </Suspense>
-        </div>
+        <BlockChains />
       </main>
 
       <footer>
