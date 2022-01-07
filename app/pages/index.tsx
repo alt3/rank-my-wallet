@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import { Image, Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { Navbar } from "app/core/components/navbar"
+import Hero from "@/components/hero"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -13,9 +14,8 @@ const Home: BlitzPage = () => {
     <div className="container">
       <main>
         <Navbar />
-        <p>
-          <strong>Congrats!</strong> Your app is ready, including user sign-up and log-in.
-        </p>
+        <Hero />
+
         <div className="buttons">
           <Suspense fallback="Loading...">
             <p>useCurrentUser was here</p>
