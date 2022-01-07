@@ -1,14 +1,23 @@
 import React from "react"
-import { chakra, Box, Center, Stack, Container, useColorModeValue } from "@chakra-ui/react"
+import {
+  chakra,
+  Box,
+  Center,
+  SimpleGrid,
+  Stack,
+  Container,
+  useColorModeValue,
+} from "@chakra-ui/react"
 import { SponsorCard } from "@/components/SponsorCard"
 
-import logoSamsung from "public/images/sponsors/samsung.svg"
 import logoDish from "public/images/sponsors/dish.svg"
 import logoDisney from "public/images/sponsors/disney.svg"
+import logoSamsung from "public/images/sponsors/samsung.svg"
+import placeholder from "public/images/pixel.png"
 
 export function Sponsors() {
   return (
-    <Container maxW="xl">
+    <Container maxW="xl" marginBottom="3rem">
       <Box>
         <Center>
           <chakra.h2
@@ -19,23 +28,38 @@ export function Sponsors() {
             Our sponsors:
           </chakra.h2>
         </Center>
-        <Stack direction={["column", "row"]} spacing="24px">
+
+        <SimpleGrid columns={[2, null, 3]} spacing="40px">
           <SponsorCard id="3" name="Dish" logo={logoDish} description="Dish" valign="middle" />
           <SponsorCard
-            id="2"
+            id="1"
             name="Disney"
             logo={logoDisney}
             description="Disney"
             valign="middle"
           />
           <SponsorCard
-            id="1"
+            id="2"
             name="Samsung"
             logo={logoSamsung}
             description="Samsung"
             valign="middle"
           />
-        </Stack>
+          <SponsorCard
+            id="3"
+            name="Placeholder"
+            logo={placeholder}
+            description="Placeholder"
+            height="80px"
+          ></SponsorCard>
+          <SponsorCard
+            id="4"
+            name="Placeholder"
+            logo={placeholder}
+            description="Placeholder"
+            height="80px"
+          ></SponsorCard>
+        </SimpleGrid>
       </Box>
     </Container>
   )

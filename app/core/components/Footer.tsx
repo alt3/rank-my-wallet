@@ -6,7 +6,6 @@ export function Footer() {
   return (
     <Container
       as="footer"
-      position="fixed"
       bottom="0"
       maxW="100%"
       p={5}
