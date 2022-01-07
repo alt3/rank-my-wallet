@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import { Image, Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import logo from "public/logo.png"
+import { Navbar } from "app/core/components/navbar"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -12,6 +13,8 @@ const Home: BlitzPage = () => {
   return (
     <div className="container">
       <main>
+        <Navbar />
+
         <div className="logo">
           <Image src={logo} alt="blitzjs" />
         </div>
