@@ -15,7 +15,7 @@ export function BlockChains() {
           fontWeight="normal"
           color={useColorModeValue("gray.700", "gray.400")}
         >
-          Supported blockchains:
+          Supported blockchains
         </Heading>
       </Center>
 
