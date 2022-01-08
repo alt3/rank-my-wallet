@@ -17,7 +17,7 @@ export function Sponsors() {
           fontWeight="normal"
           color={useColorModeValue("gray.700", "gray.400")}
         >
-          Our sponsors:
+          Brought to you by:
         </Heading>
       </Center>
 
