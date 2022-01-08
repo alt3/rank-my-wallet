@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import React from "react"
 import { FormErrorMessage, HStack, FormControl, Input, Button } from "@chakra-ui/react"
+import { isValidAddress } from "app/lib/addressValidator"
 
 export function AddressForm() {
   const {
@@ -33,7 +34,9 @@ export function AddressForm() {
             size="lg"
             {...register("address", {
               required: "Please provide a valid wallet address",
-              minLength: { value: 4, message: "This is not a valid wallet address" },
+              validate: {
+                checkAddress: (v) => isValidAddress(v) || "This is not a valid wallet address",
+              },
             })}
           ></Input>
           <Button size="lg" isLoading={isSubmitting} type="submit">
