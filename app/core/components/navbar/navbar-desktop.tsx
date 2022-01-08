@@ -21,7 +21,7 @@ export const NavbarDesktop: React.FC = () => {
       bg={useColorModeValue("gray.200", "gray.900")}
       color={useColorModeValue("gray.700", "white")}
     >
-      <Container as={Stack} d={{ base: "none", md: "flex" }} maxW="5xl" py={4} spacing={4}>
+      <Container as={Stack} d={{ base: "flex", md: "flex" }} maxW="5xl" py={4} spacing={4}>
         <HStack>
           <Link href="/">Home</Link>
           {/* <Link href="/">Species</Link> */}
