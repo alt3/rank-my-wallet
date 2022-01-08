@@ -1,9 +1,9 @@
 import { BlitzPage } from "blitz"
 import Layout from "app/core/layouts/Layout"
+import { Container } from "@chakra-ui/react"
 import { Hero } from "@/components/Hero"
 import { BlockChains } from "@/components/BlockChains"
 import { Sponsors } from "@/components/Sponsors"
-import { Footer } from "@/components/Footer"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -12,14 +12,14 @@ import { Footer } from "@/components/Footer"
 
 const Home: BlitzPage = () => {
   return (
-    <div className="container">
-      <main>
-        <Hero />
+    <>
+      <Hero />
+
+      <Container maxW="container.md" marginBottom="2.5rem">
         <BlockChains />
         <Sponsors />
-      </main>
-      <Footer />
-    </div>
+      </Container>
+    </>
   )
 }
 

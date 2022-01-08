@@ -3,8 +3,9 @@ import {
   chakra,
   useColorModeValue,
   Box,
+  Center,
+  Container,
   Stack,
-  Flex,
   Input,
   InputGroup,
   InputRightAddon,
@@ -13,34 +14,30 @@ import { Link } from "@/components/Link"
 
 export function Hero() {
   return (
-    <Box bg={useColorModeValue("white", "gray.900")} color={useColorModeValue("gray.700", "white")}>
-      <Flex
-        // bg={useColorModeValue("#F9FAFB", "gray.600")}
-        p={10}
-        w="full"
-        alignItems="center"
-        justifyContent="center"
-        paddingBottom="5rem"
-        marginBottom="2.5rem"
-      >
-        <Box>
+    <Box
+      bg={useColorModeValue("white", "gray.900")}
+      color={useColorModeValue("gray.700", "white")}
+      marginBottom="1.5rem"
+    >
+      <Container maxW="container.md" paddingBottom="5rem">
+        <Center>
           <Stack
-            width={{ base: "4xl", lg: "2xl", sm: "4xl" }}
+            width="100%"
             spacing={8}
             fontSize={{ base: "4xl", lg: "6xl", sm: "4xl" }}
             fontWeight="bold"
             align="center"
           >
-            <chakra.h2>Rank my wallet:</chakra.h2>
-            <InputGroup size="lg" paddingLeft="1rem" paddingRight="1rem">
+            <chakra.h2>Rank my wallet</chakra.h2>
+            <InputGroup size="lg" paddingLeft="1rem" paddingRight="1rem" width="100%">
               <Input placeholder="Wallet address" />
               <Link href="/" textDecoration="none">
                 <InputRightAddon paddingRight="1rem">Go</InputRightAddon>
               </Link>
             </InputGroup>
           </Stack>
-        </Box>
-      </Flex>
+        </Center>
+      </Container>
     </Box>
   )
 }

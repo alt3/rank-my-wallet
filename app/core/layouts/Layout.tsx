@@ -1,10 +1,11 @@
 import { Head, BlitzLayout } from "blitz"
-import { Navbar } from "@/components/navbar"
 import { Box } from "@chakra-ui/react"
+import { Footer } from "@/components/Footer"
+import { Navbar } from "@/components/navbar"
 
 const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   return (
-    <Box>
+    <>
       <Head>
         <title>{title || "wallet-rankings"}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -12,8 +13,12 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
 
       <Navbar />
 
-      {children}
-    </Box>
+      <Box>
+        <main>{children}</main>
+      </Box>
+
+      <Footer />
+    </>
   )
 }
 
