@@ -1,6 +1,9 @@
 import { BlitzConfig, sessionMiddleware, simpleRolesIsAuthorized } from "blitz"
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+})
 
-const config: BlitzConfig = {
+const config: BlitzConfig = withBundleAnalyzer({
   middleware: [],
   /* Uncomment this to customize the webpack config
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
@@ -10,5 +13,5 @@ const config: BlitzConfig = {
     return config
   },
   */
-}
+})
 module.exports = config
