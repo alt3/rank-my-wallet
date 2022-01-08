@@ -8,12 +8,9 @@ import {
   Stack,
   HStack,
   Input,
-  InputGroup,
-  InputRightAddon,
-  InputRightElement,
   Button,
 } from "@chakra-ui/react"
-import { Link } from "@/components/Link"
+import { AddressForm } from "@/components/AddressForm"
 
 export function Hero() {
   return (
@@ -32,10 +29,7 @@ export function Hero() {
             align="center"
           >
             <chakra.h2>Rank my wallet:</chakra.h2>
-            <HStack width="100%">
-              <Input placeholder="Wallet address" size="lg"></Input>
-              <Button size="lg">Go</Button>
-            </HStack>
+            <AddressForm />
           </Stack>
         </Center>
       </Container>
