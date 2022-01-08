@@ -28,7 +28,7 @@ export function Hero() {
             fontWeight="bold"
             align="center"
           >
-            <chakra.h2>Rank my wallet</chakra.h2>
+            <chakra.h2>Rank my wallet:</chakra.h2>
             <InputGroup size="lg" paddingLeft="1rem" paddingRight="1rem" width="100%">
               <Input placeholder="Wallet address" />
               <Link href="/" textDecoration="none">

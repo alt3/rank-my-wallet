@@ -21,7 +21,7 @@ export function Sponsors() {
         </Heading>
       </Center>
 
-      <SimpleGrid columns={[2, null, 3]} spacing="40px">
+      <SimpleGrid columns={[2, null, 3]} spacing={{ base: "15px", sm: "40px" }}>
         <SponsorCard id="3" name="Dish" logo={logoDish} description="Dish" valign="middle" />
         <SponsorCard id="1" name="Disney" logo={logoDisney} description="Disney" valign="middle" />
         <SponsorCard
