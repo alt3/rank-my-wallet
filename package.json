@@ -31,6 +31,7 @@
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
     "@prisma/client": "3.7.0",
+    "base58-js": "1.0.0",
     "blitz": "0.45.0",
     "framer-motion": "5.x",
     "react": "18.0.0-beta-149b420f6-20211119",
