@@ -6,7 +6,7 @@ export function SponsorCard({ name, logo, id, description, ...rest }) {
   return (
     <Flex
       alignContent="center"
-      p={5}
+      padding={{ base: 5, sm: 10 }}
       shadow="md"
       borderWidth="1px"
       flex="1"

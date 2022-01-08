@@ -6,7 +6,7 @@ export function BlockChainCard({ name, logo, id, description, ...rest }) {
   return (
     <Flex
       alignContent="center"
-      p={5}
+      padding={{ base: 5, md: 10 }}
       shadow="md"
       borderWidth="1px"
       flex="1"
