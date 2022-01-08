@@ -22,7 +22,7 @@ export function Hero() {
       color={useColorModeValue("gray.700", "white")}
       marginBottom="1.5rem"
     >
-      <Container maxW="container.md" paddingBottom="5rem">
+      <Container maxW="container.md" paddingBottom={{ base: "3.5rem", md: "5rem" }}>
         <Center>
           <Stack
             width="100%"
