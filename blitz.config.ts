@@ -1,11 +1,11 @@
 import { BlitzConfig } from "blitz"
 import withBundleAnalyzer from "@next/bundle-analyzer"
 
-export default withBundleAnalyzer({
+const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
-})({})
+})
 
-const config: BlitzConfig = withBundleAnalyzer({
+const config: BlitzConfig = {
   middleware: [],
   /* Uncomment this to customize the webpack config
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
@@ -15,5 +15,8 @@ const config: BlitzConfig = withBundleAnalyzer({
     return config
   },
   */
-})
-module.exports = config
+}
+
+export default bundleAnalyzer(config)
+
+// module.exports = config
