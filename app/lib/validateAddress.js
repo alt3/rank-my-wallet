@@ -1,5 +1,6 @@
 import { isShelleyBaseAddress, isShelleyMainnet } from "./cardano"
 import { isErgoP2PKAddress, isErgoMainnet } from "./ergo"
+import { isEthereumAddress } from "./ethereum"
 
 /**
  * Checks if given string matches any of the supported (Cardano, Ergo and Ethereum) wallet address formats.
@@ -24,26 +25,12 @@ export function validateAddress(address) {
   }
 
   if (isEthereumAddress(address)) {
+    console.log("Ethereum address")
     return true
   }
   console.log("no matches")
 
   return false
-}
-
-/**
- * Simply regex to detect Ethereum addresses. Just for fun so no checksums etc.
- *
- * @method isEthereumAddress
- * @param {string} address the given wallet address
- * @return {boolean}
- */
-const isEthereumAddress = function (address) {
-  if (!address.match(/^(0x)?[0-9a-f]{40}$/i)) {
-    return false
-  }
-
-  return true
 }
 
 module.exports = {
