@@ -3,9 +3,7 @@ import { bech32 } from "bech32"
 /**
  * Checks if given string is a Shelley base address.
  *
- * @method isShelleyBaseAddress
- * @param {string} address the given wallet address
- * @return {boolean} if address is supported
+ * @param address - The given wallet address
  * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#network-tag}
  */
 export const isShelleyBaseAddress = function (address: string): boolean {
@@ -23,9 +21,7 @@ export const isShelleyBaseAddress = function (address: string): boolean {
 /**
  * Checks if given Shelley address is on the Cardano mainnet.
  *
- * @method isShelleyMainnet
- * @param {string} address the given wallet address
- * @return {boolean}
+ * @param address - The given wallet address
  * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#network-tag}
  */
 export const isShelleyMainnet = function (address: string): boolean {

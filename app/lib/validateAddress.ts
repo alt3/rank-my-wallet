@@ -5,9 +5,7 @@ import { isEthereumAddress } from "./ethereum"
 /**
  * Checks if given string matches any of the supported (Cardano, Ergo and Ethereum) wallet address formats.
  *
- * @method isAddress
- * @param {string} address the given wallet address
- * @return {boolean} true if address is supported
+ * @param address - The given wallet address
  */
 export const validateAddress = function (address: string): boolean {
   if (isShelleyBaseAddress(address)) {

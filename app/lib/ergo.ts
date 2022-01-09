@@ -1,15 +1,10 @@
 import blake from "blakejs"
 import bs58 from "bs58"
 
-// function Buffer.from(name: string, callback: (arg: string) => void): void;
-//  function Buffer.from(arrayBuffer: WithImplicitCoercion<ArrayBuffer | SharedArrayBuffer>, byteOffset?: number, length?: number): Buffer;
-
 /**
  * Checks if given string is an Ergo P2PK address.
  *
- * @method isErgoP2PKAddress
- * @param {string} address the given wallet address
- * @return {boolean}
+ * @param address - The given wallet address
  * @see {@link https://ergoplatform.org/en/blog/2019_07_24_ergo_address/}
  */
 export const isErgoP2PKAddress = function (address: string): boolean {
@@ -29,9 +24,7 @@ export const isErgoP2PKAddress = function (address: string): boolean {
 /**
  * Checks if given address is on the Ergo mainnet.
  *
- * @method isErgoMainnet
- * @param {string} address the given wallet address
- * @return {boolean}
+ * @param address - The given wallet address
  * @see {@link https://ergoplatform.org/en/blog/2019_07_24_ergo_address/}
  */
 export const isErgoMainnet = function (address: string): boolean {
