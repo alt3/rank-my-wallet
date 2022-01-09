@@ -1,7 +1,7 @@
 import { bech32 } from "bech32"
 
 /**
- * Checks if given string is a Cardano base address.
+ * Checks if given string is a Shelley base address.
  *
  * @method isShelleyBaseAddress
  * @param {string} address the given wallet address
