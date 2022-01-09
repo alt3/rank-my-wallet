@@ -25,7 +25,7 @@ export const isErgoP2PKAddress = function (address) {
 /**
  * Checks if given address is on the Ergo mainnet.
  *
- * @method isErgoMainnetAddress
+ * @method isErgoMainnet
  * @param {string} address the given wallet address
  * @return {boolean}
  * @see {@link https://ergoplatform.org/en/blog/2019_07_24_ergo_address/}
