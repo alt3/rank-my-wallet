@@ -90,8 +90,6 @@ wallet-rankings
 │   ├── schema.prisma
 │   └── seeds.ts
 ├── integrations/
-├── mailers/
-│   └── forgotPasswordMailer.ts
 ├── public/
 │   ├── favicon.ico
 │   └── logo.png
