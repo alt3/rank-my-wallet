@@ -1,25 +1,30 @@
 import { bech32 } from "bech32"
-import { base58_to_binary } from "base58-js" // as required for decoding Ergo wallet addresses
+import { isErgoP2PKAddress, isErgoMainnet } from "./ergo"
 
 /**
- * Checks given string against any of the supported (Cardano, Ergo and Ethereum) wallet address formats.
+ * Checks if given string matches any of the supported (Cardano, Ergo and Ethereum) wallet address formats.
  *
  * @method isAddress
  * @param {string} address the given wallet address
  * @return {boolean} if address is supported
  */
-export function isValidAddress(address) {
+export function validateAddress(address) {
   if (isShelleyAddress(address)) {
+    console.log("Shelley base address on mainnet") // todo: mainnet check
     return true
   }
 
-  if (isErgoAddress(address)) {
-    return true
+  if (isErgoP2PKAddress(address)) {
+    if (isErgoMainnet(address)) {
+      console.log("Ergo P2PK address on mainnet")
+      return true
+    }
   }
 
   if (isEthereumAddress(address)) {
     return true
   }
+  console.log("no matches")
 
   return false
 }
@@ -53,28 +58,6 @@ var isShelleyAddress = function (address) {
 }
 
 /**
- * Simply regex to detect Ergo P2PK addresses on mainnet.
- *
- * @method isErgoAddress
- * @param {string} address the given wallet address
- * @return {boolean}
- * @see {@link https://ergoplatform.org/en/blog/2019_07_24_ergo_address/}
- */
-var isErgoAddress = function (address) {
-  if (address.length !== 51) {
-    return false
-  }
-
-  const binary = base58_to_binary(address)
-
-  if (binary[0] !== 1) {
-    return false // mainnet if first byte is 1
-  }
-
-  return true
-}
-
-/**
  * Simply regex to detect Ethereum addresses. Just for fun so no checksums etc.
  *
  * @method isEthereumAddress
@@ -87,4 +70,8 @@ const isEthereumAddress = function (address) {
   }
 
   return true
+}
+
+module.exports = {
+  validateAddress,
 }
