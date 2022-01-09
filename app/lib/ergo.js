@@ -33,9 +33,5 @@ export const isErgoP2PKAddress = function (address) {
 export const isErgoMainnet = function (address) {
   const bytes = bs58.decode(address)
 
-  if (bytes[0] !== 1) {
-    return false
-  }
-
-  return true
+  return bytes[0] === 1
 }

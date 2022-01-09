@@ -12,23 +12,20 @@ import { isEthereumAddress } from "./ethereum"
 export function validateAddress(address) {
   if (isShelleyBaseAddress(address)) {
     if (isShelleyMainnet(address)) {
-      console.log("Shelley base address on mainnet")
       return true
     }
   }
 
   if (isErgoP2PKAddress(address)) {
     if (isErgoMainnet(address)) {
-      console.log("Ergo P2PK address on mainnet")
       return true
     }
   }
 
   if (isEthereumAddress(address)) {
-    console.log("Ethereum address")
     return true
   }
-  console.log("no matches")
+  console.log("given address not supported")
 
   return false
 }

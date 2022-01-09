@@ -6,9 +6,5 @@
  * @return {boolean}
  */
 export const isEthereumAddress = function (address) {
-  if (!address.match(/^(0x)?[0-9a-f]{40}$/i)) {
-    return false
-  }
-
-  return true
+  return address.match(/^(0x)?[0-9a-f]{40}$/i)
 }

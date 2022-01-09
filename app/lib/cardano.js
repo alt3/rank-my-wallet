@@ -17,11 +17,7 @@ export const isShelleyBaseAddress = function (address) {
 
   const bytes = bech32.fromWords(binary.words)
 
-  if (bytes[0] !== 0 && bytes[0] !== 1) {
-    return false // not a base address
-  }
-
-  return true
+  return bytes[0] === 0 || bytes[0] === 1
 }
 
 /**
@@ -36,9 +32,5 @@ export const isShelleyMainnet = function (address) {
   const binary = bech32.decodeUnsafe(address, 200)
   const bytes = bech32.fromWords(binary.words)
 
-  if (bytes[0] !== 1) {
-    return false
-  }
-
-  return true
+  return bytes[0] === 1
 }
