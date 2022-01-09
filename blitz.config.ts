@@ -1,7 +1,8 @@
-import { BlitzConfig, sessionMiddleware, simpleRolesIsAuthorized } from "blitz"
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+import { BlitzConfig } from "blitz"
+import withBundleAnalyzer from "@next/bundle-analyzer"
+export default withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
-})
+})({})
 
 const config: BlitzConfig = withBundleAnalyzer({
   middleware: [],

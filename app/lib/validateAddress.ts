@@ -3,7 +3,7 @@ import { isErgoP2PKAddress, isErgoMainnet } from "./ergo"
 import { isEthereumAddress } from "./ethereum"
 
 /**
- * Checks if given string matches any of the supported (Cardano, Ergo and Ethereum) wallet address formats.
+ * Checks if given string matches any of the supported wallet address formats (Cardano, Ergo, Ethereum).
  *
  * @param address - The given wallet address
  */
