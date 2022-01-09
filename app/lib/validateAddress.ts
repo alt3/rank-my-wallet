@@ -7,9 +7,9 @@ import { isEthereumAddress } from "./ethereum"
  *
  * @method isAddress
  * @param {string} address the given wallet address
- * @return {boolean} if address is supported
+ * @return {boolean} true if address is supported
  */
-export function validateAddress(address) {
+export const validateAddress = function (address: string): boolean {
   if (isShelleyBaseAddress(address)) {
     if (isShelleyMainnet(address)) {
       return true
@@ -28,8 +28,4 @@ export function validateAddress(address) {
   console.log("given address not supported")
 
   return false
-}
-
-module.exports = {
-  validateAddress,
 }

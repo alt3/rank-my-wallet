@@ -8,7 +8,7 @@ import { bech32 } from "bech32"
  * @return {boolean} if address is supported
  * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#network-tag}
  */
-export const isShelleyBaseAddress = function (address) {
+export const isShelleyBaseAddress = function (address: string): boolean {
   const binary = bech32.decodeUnsafe(address, 200)
 
   if (binary === undefined) {
@@ -28,8 +28,13 @@ export const isShelleyBaseAddress = function (address) {
  * @return {boolean}
  * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#network-tag}
  */
-export const isShelleyMainnet = function (address) {
+export const isShelleyMainnet = function (address: string): boolean {
   const binary = bech32.decodeUnsafe(address, 200)
+
+  if (binary?.words === undefined) {
+    return false
+  }
+
   const bytes = bech32.fromWords(binary.words)
 
   return bytes[0] === 1

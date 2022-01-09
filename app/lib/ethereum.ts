@@ -5,6 +5,9 @@
  * @param {string} address the given wallet address
  * @return {boolean}
  */
-export const isEthereumAddress = function (address) {
-  return address.match(/^(0x)?[0-9a-f]{40}$/i)
+export const isEthereumAddress = function (address: string): boolean {
+  if (!address.match(/^(0x)?[0-9a-f]{40}$/i)) {
+    return false
+  }
+  return true
 }
