@@ -1,3 +1,4 @@
+import { bech32 } from "bech32"
 import { base58_to_binary } from "base58-js" // as required for decoding Ergo wallet addresses
 
 /**
@@ -8,6 +9,10 @@ import { base58_to_binary } from "base58-js" // as required for decoding Ergo wa
  * @return {boolean} if address is supported
  */
 export function isValidAddress(address) {
+  if (isShelleyAddress(address)) {
+    return true
+  }
+
   if (isErgoAddress(address)) {
     return true
   }
@@ -19,7 +24,33 @@ export function isValidAddress(address) {
   return false
 }
 
-var isCardanoAddress = function (address) {}
+/**
+ * Checks if given string is a Cardano PaymentKeyHash/StakeKeyHash address on mainnet.
+ *
+ * @method isAddress
+ * @param {string} address the given wallet address
+ * @return {boolean} if address is supported
+ * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#network-tag}
+ */
+var isShelleyAddress = function (address) {
+  if (!address.match(/addr1[a-z0-9]{98}/)) {
+    return false
+  }
+
+  const binary = bech32.decodeUnsafe(address, 103)
+
+  if (binary === undefined) {
+    return false
+  }
+
+  const bytes = bech32.fromWords(binary.words)
+
+  if (bytes[0] !== 1) {
+    return false
+  }
+
+  return true
+}
 
 /**
  * Simply regex to detect Ergo P2PK addresses on mainnet.
@@ -30,7 +61,6 @@ var isCardanoAddress = function (address) {}
  * @see {@link https://ergoplatform.org/en/blog/2019_07_24_ergo_address/}
  */
 var isErgoAddress = function (address) {
-  // P2PK addresses on mainnet have 51 chars
   if (address.length !== 51) {
     return false
   }

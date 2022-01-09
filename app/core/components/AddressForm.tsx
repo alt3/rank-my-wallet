@@ -33,7 +33,7 @@ export function AddressForm() {
             placeholder="Wallet address"
             size="lg"
             {...register("address", {
-              required: "Please provide a valid wallet address",
+              required: "Please provide a wallet address",
               validate: {
                 checkAddress: (v) => isValidAddress(v) || "This is not a valid mainnet address",
               },
