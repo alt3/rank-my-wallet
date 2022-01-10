@@ -35,7 +35,7 @@ export function AddressForm() {
             {...register("address", {
               required: "Please provide a wallet address",
               validate: {
-                checkAddress: (v) => validateAddress(v) || validateAddress(v),
+                checkAddress: (v) => validateAddress(v),
               },
             })}
           ></Input>
