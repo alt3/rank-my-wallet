@@ -2,10 +2,10 @@ import React from "react"
 import { useColorModeValue, Flex } from "@chakra-ui/react"
 import Img from "next/image"
 
-export function SponsorCard({ name, logo, id, description, ...rest }) {
+export function SponsorCard({ name, logo, id, ...rest }) {
   return (
     <Flex
-      alignContent="center"
+      justifyContent="center"
       padding={{ base: 5, sm: 10 }}
       shadow="md"
       borderWidth="1px"
@@ -15,7 +15,7 @@ export function SponsorCard({ name, logo, id, description, ...rest }) {
       color={useColorModeValue("gray.700", "white")}
       {...rest}
     >
-      <Img id="static-svg" src={logo} alt="Logo for the Ergo blockchain" />
+      <Img id={id} src={logo} alt={`Company logo for sponsor ${name}`} />
     </Flex>
   )
 }

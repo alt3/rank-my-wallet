@@ -22,29 +22,11 @@ export function Sponsors() {
       </Center>
 
       <SimpleGrid columns={[2, null, 3]} spacing={{ base: "15px", sm: "40px" }}>
-        <SponsorCard id="3" name="Dish" logo={logoDish} description="Dish" valign="middle" />
-        <SponsorCard id="1" name="Disney" logo={logoDisney} description="Disney" valign="middle" />
-        <SponsorCard
-          id="2"
-          name="Samsung"
-          logo={logoSamsung}
-          description="Samsung"
-          valign="middle"
-        />
-        <SponsorCard
-          id="3"
-          name="Placeholder"
-          logo={placeholder}
-          description="Placeholder"
-          height="80px"
-        ></SponsorCard>
-        <SponsorCard
-          id="4"
-          name="Placeholder"
-          logo={placeholder}
-          description="Placeholder"
-          height="80px"
-        ></SponsorCard>
+        <SponsorCard id="1" name="Dish" logo={logoDish} />
+        <SponsorCard id="2" name="Disney" logo={logoDisney} />
+        <SponsorCard id="3" name="Samsung" logo={logoSamsung} />
+        <SponsorCard id="4" name="Placeholder" logo={placeholder} height="140px"></SponsorCard>
+        <SponsorCard id="5" name="Placeholder" logo={placeholder} height="140px"></SponsorCard>
       </SimpleGrid>
     </Box>
   )
