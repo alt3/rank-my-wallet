@@ -9,7 +9,6 @@ export function BlockChainCard({ name, logo, id, ...rest }) {
       padding={{ base: 5, md: 10 }}
       shadow="md"
       borderWidth="1px"
-      flex="1"
       borderRadius="md"
       bg={useColorModeValue("gray.200", "gray.900")}
       {...rest}

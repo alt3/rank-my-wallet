@@ -9,13 +9,12 @@ export function SponsorCard({ name, logo, id, ...rest }) {
       padding={{ base: 5, sm: 10 }}
       shadow="md"
       borderWidth="1px"
-      flex="1"
       borderRadius="md"
       bg={useColorModeValue("gray.200", "gray.900")}
       color={useColorModeValue("gray.700", "white")}
       {...rest}
     >
-      <Img id={id} src={logo} alt={`Company logo for sponsor ${name}`} />
+      <Img id={id} src={logo} alt={`Company Logo for sponsor ${name}`} />
     </Flex>
   )
 }

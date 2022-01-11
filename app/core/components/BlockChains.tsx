@@ -19,7 +19,7 @@ export function BlockChains() {
         </Heading>
       </Center>
 
-      <SimpleGrid columns={2} spacing={{ base: "15px", sm: "40px" }}>
+      <SimpleGrid columns={2} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
         <BlockChainCard id="1" name="Cardano" logo={logoCardano} />
         <BlockChainCard id="2" name="Ergo" logo={logoErgo} />
       </SimpleGrid>
