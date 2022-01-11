@@ -1,12 +1,15 @@
 import React from "react"
-import { useColorModeValue, Flex } from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/react"
 import Img from "next/image"
+import { MotionBoxFlex } from "@/components/MotionBoxFlex"
 
 export function SponsorCard({ name, logo, id, ...rest }) {
   return (
-    <Flex
+    <MotionBoxFlex
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       justifyContent="center"
-      padding={{ base: 5, sm: 10 }}
+      padding={{ base: 8, sm: 12 }}
       shadow="md"
       borderWidth="1px"
       borderRadius="md"
@@ -15,7 +18,7 @@ export function SponsorCard({ name, logo, id, ...rest }) {
       {...rest}
     >
       <Img id={id} src={logo} alt={`Company Logo for sponsor ${name}`} />
-    </Flex>
+    </MotionBoxFlex>
   )
 }
 

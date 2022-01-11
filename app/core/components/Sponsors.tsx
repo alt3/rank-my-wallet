@@ -25,8 +25,8 @@ export function Sponsors() {
         <SponsorCard id="1" name="Dish" logo={logoDish} />
         <SponsorCard id="2" name="Disney" logo={logoDisney} />
         <SponsorCard id="3" name="Samsung" logo={logoSamsung} />
-        <SponsorCard id="4" name="Placeholder" logo={placeholder} height="140px"></SponsorCard>
-        <SponsorCard id="5" name="Placeholder" logo={placeholder} height="140px"></SponsorCard>
+        <SponsorCard id="4" name="Placeholder" logo={placeholder}></SponsorCard>
+        <SponsorCard id="5" name="Placeholder" logo={placeholder}></SponsorCard>
       </SimpleGrid>
     </Box>
   )
