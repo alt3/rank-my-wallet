@@ -11,6 +11,7 @@ export function SponsorCard({ id, name, logo, url, ...rest }) {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         justifyContent="center"
+        height="100%"
         padding={{ base: 8, sm: 12 }}
         shadow="md"
         borderWidth="1px"
