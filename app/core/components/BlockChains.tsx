@@ -2,6 +2,7 @@ import React from "react"
 import { Box, Center, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
 import { BlockChainCard } from "@/components/BlockChainCard"
 
+// svg logos
 import logoErgo from "public/images/blockchains/ergo.svg"
 import logoCardano from "public/images/blockchains/cardano.svg"
 
@@ -20,8 +21,8 @@ export function BlockChains() {
       </Center>
 
       <SimpleGrid columns={2} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
-        <BlockChainCard id="1" name="Cardano" logo={logoCardano} />
-        <BlockChainCard id="2" name="Ergo" logo={logoErgo} />
+        <BlockChainCard id="1" name="Cardano" logo={logoCardano} url="https://cardano.org/" />
+        <BlockChainCard id="2" name="Ergo" logo={logoErgo} url="https://ergoplatform.org/" />
       </SimpleGrid>
     </Box>
   )

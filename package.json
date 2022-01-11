@@ -35,6 +35,7 @@
     "blakejs": "1.1.1",
     "blitz": "0.45.0",
     "bs58": "^4.0.1",
+    "focus-visible": "5.2.0",
     "framer-motion": "5.x",
     "react": "18.0.0-beta-149b420f6-20211119",
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020",
