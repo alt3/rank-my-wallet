@@ -8,6 +8,10 @@ import { isEthereumAddress } from "./ethereum"
  * @param address - True if the given wallet address is valid, react-hook-form error message otherwise
  */
 export const validateAddress = function (address: string): boolean | string {
+  if (address.match(/^\$.+/)) {
+    return "We will support Adahandle addresses once their API becomes available"
+  }
+
   if (isShelleyBaseAddress(address)) {
     if (isShelleyMainnet(address)) {
       return true
