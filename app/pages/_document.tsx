@@ -1,5 +1,4 @@
 import { Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/ } from "blitz"
-import { useColorModeValue } from "@chakra-ui/react"
 class MyDocument extends Document {
   // Only uncomment if you need to customize this behaviour
   // static async getInitialProps(ctx: DocumentContext) {
