@@ -1,4 +1,3 @@
-import { Routes } from "blitz"
 import {
   useColorMode,
   useColorModeValue,
@@ -24,10 +23,10 @@ export const NavbarDesktop: React.FC = () => {
       <Container as={Stack} d={{ base: "flex", md: "flex" }} maxW="5xl" py={4} spacing={4}>
         <HStack>
           <Link href="/">Home</Link>
-          {/* <Link href="/">Species</Link> */}
 
           <Spacer />
 
+          <Link href="/faq">FAQ</Link>
           <SunIcon />
           <Switch isChecked={colorMode === "dark"} onChange={(e) => toggleColorMode()} />
           <MoonIcon />
