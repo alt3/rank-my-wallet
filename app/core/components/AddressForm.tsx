@@ -1,9 +1,12 @@
 import { useForm } from "react-hook-form"
 import React from "react"
+import { useRouter } from "blitz"
 import { FormErrorMessage, HStack, FormControl, Input, Button } from "@chakra-ui/react"
 import { validateAddress } from "app/lib/validateAddress"
 
 export function AddressForm() {
+  const router = useRouter()
+
   const {
     handleSubmit,
     register,
@@ -16,12 +19,7 @@ export function AddressForm() {
   }, [setFocus])
 
   function onSubmit(values) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2))
-        resolve(values)
-      }, 3000)
-    })
+    router.push("/" + values.address)
   }
 
   return (
