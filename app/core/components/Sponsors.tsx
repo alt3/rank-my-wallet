@@ -31,9 +31,9 @@ export function Sponsors() {
         />
         <SponsorCard id="2" name="Dish" logo={logoDish} url="https://www.dish.com/" />
         <SponsorCard id="3" name="Disney" logo={logoDisney} url="https://www.disney.com/" />
-        <SponsorCard id="4" name="Placeholder" logo={placeholder} url="" />
-        <SponsorCard id="5" name="Placeholder" logo={placeholder} url="" />
-        <SponsorCard id="6" name="Placeholder" logo={placeholder} url="" />
+        <SponsorCard id="4" name="Placeholder" logo={placeholder} url="https://www.google.com" />
+        <SponsorCard id="5" name="Placeholder" logo={placeholder} url="https://www.google.com" />
+        <SponsorCard id="6" name="Placeholder" logo={placeholder} url="https://www.google.com" />
       </SimpleGrid>
     </Box>
   )
