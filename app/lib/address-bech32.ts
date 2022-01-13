@@ -173,7 +173,7 @@ function wordsToBytes(words: number[]): Array<number> | undefined {
 }
 
 /**
- * Returns the Shelely network by calculating the sum of network header bits.
+ * Returns the Shelley network by calculating the sum of network header bits.
  *
  * @param networkBits - Array with 4 network bits
  */
