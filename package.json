@@ -35,12 +35,15 @@
     "blakejs": "1.1.1",
     "blitz": "0.45.0",
     "bs58": "^4.0.1",
+    "ethereum-regex": "1.1.13",
     "focus-visible": "5.2.0",
     "framer-motion": "5.x",
     "lodash.isequal": "4.5.0",
+    "monero-regex": "1.0.9",
     "react": "18.0.0-beta-149b420f6-20211119",
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020",
-    "react-hook-form": "7.22.5"
+    "react-hook-form": "7.22.5",
+    "ripple-regex": "1.1.8"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "12.0.7",
