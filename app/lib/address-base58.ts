@@ -39,11 +39,11 @@ export class Base58Address extends BlockchainAddress {
   header: {
     byte: number
     bits: Array<number>
-    leading: {
+    leading?: {
       bits: Array<number>
       type: string
     }
-    trailing: {
+    trailing?: {
       bits: Array<number>
       type: string
     }
@@ -54,10 +54,10 @@ export class Base58Address extends BlockchainAddress {
     this.encoding = "base58"
     this.bytes = Array.from(decoded)
     const headerByte = getFirstByte(this.bytes)
+    const headerBits = byteToBits(headerByte, 8)
 
     if (isErgoAddress(decoded)) {
       this.blockchain = "ergo"
-      const headerBits = byteToBits(headerByte, 8)
 
       this.header = {
         byte: headerByte,
@@ -71,15 +71,23 @@ export class Base58Address extends BlockchainAddress {
           type: "type",
         },
       }
+      if (this.header.leading !== undefined) {
+        this.network = getErgoNetwork(this.header.leading.bits)
+      }
 
-      this.network = getErgoNetwork(this.header.leading.bits)
-      this.type = getErgoType(this.header.trailing.bits)
+      if (this.header.trailing !== undefined) {
+        this.type = getErgoType(this.header.trailing.bits)
+      }
 
       return
     }
 
     // unsupported format
     this.blockchain = "unknown"
+    this.header = {
+      byte: headerByte,
+      bits: headerBits,
+    }
   }
 }
 
