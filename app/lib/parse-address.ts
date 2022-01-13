@@ -1,4 +1,5 @@
 import { Bech32Address } from "./address-bech32"
+import { UnknownAddress } from "./address-unknown"
 
 import { bech32 } from "bech32"
 
@@ -7,7 +8,7 @@ import { bech32 } from "bech32"
  *
  * @param address - The given blockchain address
  */
-export const parseAddress = function (address: string): Bech32Address | boolean {
+export const parseAddress = function (address: string): Bech32Address | UnknownAddress {
   const decoded = bech32.decodeUnsafe(address.toLocaleLowerCase(), 250)
 
   if (decoded !== undefined) {
@@ -16,5 +17,6 @@ export const parseAddress = function (address: string): Bech32Address | boolean 
     return parsedBech32
   }
 
-  return true
+  // unknown address type
+  return new UnknownAddress(address)
 }

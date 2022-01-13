@@ -84,6 +84,7 @@ export class Bech32Address extends BlockchainAddress {
 
   constructor(address: string, decoded: Decoded) {
     super(address) // sets address property in the base class (lowercased there)
+
     this.decoded = decoded
     this.encoding = "bech32"
     this.blockchain = prefixToBlockchain(decoded.prefix)
