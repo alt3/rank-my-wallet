@@ -109,7 +109,7 @@ export class Bech32Address extends BlockchainAddress {
     this.bytes = wordsToBytes(decoded.words)
 
     if (this.bytes !== undefined) {
-      this.blockchainVersion = "Shelley"
+      this.blockchainVersion = "shelley"
       const headerByte = getFirstByte(this.bytes)
 
       const headerBits = byteToBits(headerByte, 8)
@@ -141,10 +141,10 @@ export class Bech32Address extends BlockchainAddress {
  */
 function prefixToBlockchain(prefix: string): string {
   if (["addr", "stake", "addr_test", "stake_test"].includes(prefix)) {
-    return "Cardano"
+    return "cardano"
   }
   if (["bc", "tb"].includes(prefix)) {
-    return "Bitcoin"
+    return "bitcoin"
   }
   return "Unknown"
 }

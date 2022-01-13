@@ -56,7 +56,7 @@ export class Base58Address extends BlockchainAddress {
     const headerByte = <number>this.bytes[0]
 
     if (isErgoAddress(decoded)) {
-      this.blockchain = "Ergo"
+      this.blockchain = "ergo"
       const headerBits = byteToBits(headerByte, 8)
 
       this.header = {
@@ -121,18 +121,4 @@ function getErgoNetwork(networkBits: Array<number>) {
  */
 function getErgoType(typeBits: Array<number>): object | undefined {
   return ergoAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
-}
-
-/**
- * Returns true if this is an Ergo address.
- *
- * @param headerBits - Array with 8 bits
- */
-function isBitcoinAddress(decoded: Buffer): boolean {
-  const size = decoded.length
-  const script = decoded.slice(0, size - 4)
-  const checksum = decoded.slice(size - 4, size)
-  const calculatedChecksum = Buffer.from(blake.blake2b(script, undefined, 32)).slice(0, 4)
-
-  return calculatedChecksum.toString("hex") === checksum.toString("hex")
 }
