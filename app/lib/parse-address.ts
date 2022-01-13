@@ -1,4 +1,4 @@
-import { Bech32Address } from "./bech32-address"
+import { Bech32Address } from "./address-bech32"
 
 import { bech32 } from "bech32"
 
