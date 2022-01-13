@@ -3,18 +3,21 @@ import { Head, BlitzPage, GetServerSideProps, InferGetServerSidePropsType } from
 import Layout from "app/core/layouts/Layout"
 import { Heading } from "@chakra-ui/react"
 import { parseAddress } from "app/lib/parse-address"
+import { getRandomInt } from "app/lib/utils"
 
-export const Ranking = ({ parsedAddress }) => {
-  console.log(parsedAddress)
+export const Ranking = ({ data }) => {
+  console.log(data)
 
   return (
     <>
       <Head>
-        <title>Address page {parsedAddress.address}</title>
+        <title>Address page {data.parsedAddress.address}</title>
       </Head>
 
       <Heading>Placeholder address page</Heading>
-      <p>Address = {parsedAddress.address}</p>
+      <p>Address = {data.parsedAddress.address}</p>
+      <p>Blockchain = {data.parsedAddress.blockchain}</p>
+      <p>Encoding = {data.rank}</p>
     </>
   )
 }
@@ -25,7 +28,7 @@ const ShowRankingPage: BlitzPage<InferGetServerSidePropsType<typeof getServerSid
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Ranking parsedAddress={data.parsedAddress} />
+        <Ranking data={data} />
       </Suspense>
     </div>
   )
@@ -40,6 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       data: {
         parsedAddress: parseAddress(context.params.address.toString()),
+        rank: getRandomInt(1, 87000),
       },
     },
   }
