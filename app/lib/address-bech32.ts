@@ -1,69 +1,79 @@
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
 import { BlockchainAddress } from "./blockhain-address"
-import { byteToBits } from "./utils"
+import { byteToBits, getLeadingBits, getTrailingBits } from "./utils"
 
 /**
  * Shelley address types.
  *
  * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#shelley-addresses}
  */
-const shelleyHeaderTypes = [
+const shelleyAddressTypes = [
   {
     type: 0,
+    name: "type-00",
     bits: [0, 0, 0, 0],
     paymentPart: "PaymentKeyHash",
     delegationPart: "StakeKeyHash",
   },
   {
     type: 1,
+    name: "type-01",
     bits: [1, 0, 0, 0],
     paymentPart: "ScriptHash",
     delegationPart: "StakeKeyHash",
   },
   {
     type: 2,
+    name: "type-02",
     bits: [0, 1, 0, 0],
     paymentPart: "PaymentKeyHash",
     delegationPart: "ScriptHash",
   },
   {
     type: 3,
+    name: "type-03",
     bits: [1, 1, 0, 0],
     paymentPart: "ScriptHash",
     delegationPart: "ScriptHash",
   },
   {
     type: 4,
+    name: "type-04",
     bits: [0, 0, 1, 0],
     paymentPart: "PaymentKeyHash",
     delegationPart: "Pointer",
   },
   {
     type: 5,
+    name: "type-05",
     bits: [1, 0, 1, 0],
     paymentPart: "ScriptHash",
     delegationPart: "Pointer",
   },
   {
     type: 6,
+    name: "type-06",
     bits: [0, 1, 1, 0],
     paymentPart: "PaymentKeyHash",
     delegationPart: null,
   },
   {
     type: 7,
+    name: "type-07",
     bits: [1, 1, 1, 0],
     paymentPart: "ScriptHash",
     delegationPart: null,
   },
   {
     type: 14,
+    name: "type-14",
     bits: [0, 1, 1, 1],
     stakeReference: "StakeKeyHash",
   },
   {
     type: 15,
+    name: "type-15",
     bits: [1, 1, 1, 1],
     stakeReference: "ScriptHash",
   },
@@ -76,11 +86,19 @@ export class Bech32Address extends BlockchainAddress {
   decoded: Decoded
   bytes: Array<number> | undefined
   blockchainVersion: string
-  firstByte: number
-  headerBits: Array<number>
-  headerBitsNetwork: Array<number>
-  headerBitsType: Array<number>
   type: object | undefined
+  header: {
+    byte: number
+    bits: Array<number>
+    leading: {
+      bits: Array<number>
+      type: string
+    }
+    trailing: {
+      bits: Array<number>
+      type: string
+    }
+  }
 
   constructor(address: string, decoded: Decoded) {
     super(address) // sets address property in the base class (lowercased there)
@@ -92,14 +110,27 @@ export class Bech32Address extends BlockchainAddress {
 
     if (this.bytes !== undefined) {
       this.blockchainVersion = "Shelley"
-      this.firstByte = getFirstByte(this.bytes)
-      this.headerBits = byteToBits(this.firstByte, 8)
-      this.headerBitsNetwork = getHeaderBitsNetwork(this.headerBits)
-      this.headerBitsType = getHeaderBitsType(this.headerBits)
-      this.type = getType(this.headerBitsType)
+      const headerByte = getFirstByte(this.bytes)
+
+      const headerBits = byteToBits(headerByte, 8)
+
+      this.header = {
+        byte: headerByte,
+        bits: headerBits,
+        leading: {
+          bits: getLeadingBits(headerBits),
+          type: "type",
+        },
+        trailing: {
+          bits: getTrailingBits(headerBits),
+          type: "network",
+        },
+      }
+
+      this.type = getType(this.header.leading.bits)
     }
 
-    this.network = getNetwork(this.headerBitsNetwork, decoded.prefix)
+    this.network = getNetwork(this.header.trailing.bits, decoded.prefix)
   }
 }
 
@@ -145,40 +176,22 @@ function getFirstByte(bytes: Array<number>): number {
 }
 
 /**
- * Returns an array with the 4 leading header bits (yielding the Shelley network).
- *
- * @param headerBits - Array with 8 bits
- */
-function getHeaderBitsNetwork(headerBits: Array<number>): Array<number> {
-  return headerBits.slice(0, 4)
-}
-
-/**
- * Returns an array with the 4 trailing header bits (yielding the Shelley address type).
- *
- * @param headerBits - Array with 8 bits
- */
-function getHeaderBitsType(headerBits: Array<number>): Array<number> {
-  return headerBits.slice(-4)
-}
-
-/**
  * Returns the blockchain network by parsing Shelly header bits or the Bech32 prefix.
  *
  * @param headerBits - Array with 8 bits
  */
-function getNetwork(headerBitsNetwork: Array<number> | undefined, prefix: string): string {
+function getNetwork(networkBits: Array<number> | undefined, prefix: string): string {
   // try Shelley network header bits
-  if (headerBitsNetwork !== undefined) {
-    if (headerBitsNetwork.reduce((a, b) => a + b) === 0) {
-      return "Testnet" // Sum of network header bits is 0
+  if (networkBits !== undefined) {
+    if (networkBits.reduce((a, b) => a + b) === 0) {
+      return "testnet" // Sum of network header bits is 0
     }
 
-    if (headerBitsNetwork.reduce((a, b) => a + b) === 1) {
-      return "Mainnet" // Sum of network header bits is 1
+    if (networkBits.reduce((a, b) => a + b) === 1) {
+      return "mainnet" // Sum of network header bits is 1
     }
 
-    return "Unknown"
+    return "unknown"
   }
 
   // use decoded bech32 prefix otherwise
@@ -197,6 +210,6 @@ function getNetwork(headerBitsNetwork: Array<number> | undefined, prefix: string
  *
  * @param headerBits - Array with 8 bits
  */
-function getType(headerBitsType: Array<number>): object | undefined {
-  return shelleyHeaderTypes.find(({ bits }) => isEqual(bits, headerBitsType))
+function getType(typeBits: Array<number>): object | undefined {
+  return shelleyAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
 }

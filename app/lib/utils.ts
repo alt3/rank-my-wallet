@@ -9,6 +9,24 @@ export const byteToBits = function (number: number, bits: number): Array<number>
 }
 
 /**
+ * Returns an array with the 4 trailing bits.
+ *
+ * @param bits - Array with 8 bits
+ */
+export const getLeadingBits = function (bits: Array<number>): Array<number> {
+  return bits.slice(-4)
+}
+
+/**
+ * Returns an array with the 4 leading bits.
+ *
+ * @param bits - Array with 8 bits
+ */
+export const getTrailingBits = function (bits: Array<number>): Array<number> {
+  return bits.slice(0, 4)
+}
+
+/**
  * Return an pseudo random number.
  *
  * @param min - Lowest possible number, must be be higher or equal

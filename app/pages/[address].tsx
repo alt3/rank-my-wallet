@@ -16,8 +16,11 @@ export const Ranking = ({ data }) => {
 
       <Heading>Placeholder address page</Heading>
       <p>Address = {data.parsedAddress.address}</p>
+      <p>Encoding = {data.parsedAddress.encoding}</p>
       <p>Blockchain = {data.parsedAddress.blockchain}</p>
-      <p>Encoding = {data.rank}</p>
+      <p>Network = {data.parsedAddress.network}</p>
+      <p>Type = {JSON.stringify(data.parsedAddress.type)}</p>
+      <p>Rank = {data.rank}</p>
     </>
   )
 }

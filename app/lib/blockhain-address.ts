@@ -8,6 +8,6 @@ export class BlockchainAddress {
   network: string
 
   constructor(address: string) {
-    this.address = address.toLowerCase()
+    this.address = address
   }
 }

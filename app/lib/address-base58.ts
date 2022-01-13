@@ -1,0 +1,138 @@
+import { BlockchainAddress } from "./blockhain-address"
+import blake from "blakejs"
+import isEqual from "lodash.isequal"
+import { byteToBits, getLeadingBits, getTrailingBits } from "./utils"
+
+/**
+ * Shelley address types.
+ *
+ * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#shelley-addresses}
+ */
+const ergoAddressTypes = [
+  {
+    type: 1,
+    bits: [1, 0, 0, 0],
+    name: "Pay-to-PublicKey",
+    abbreviation: "P2PK",
+  },
+  {
+    type: 2,
+    bits: [0, 1, 0, 0],
+    name: "Pay-to-Script-Hash",
+    abbreviation: "P2SH",
+  },
+  {
+    type: 3,
+    bits: [1, 1, 0, 0],
+    name: "Pay-to-Script",
+    abbreviation: "P2S",
+  },
+]
+
+/**
+ * Extended class that parses Bech32 address during initialization.
+ */
+export class Base58Address extends BlockchainAddress {
+  bytes: Array<number>
+  blockchainVersion: string
+  type: object | undefined
+  header: {
+    byte: number
+    bits: Array<number>
+    leading: {
+      bits: Array<number>
+      type: string
+    }
+    trailing: {
+      bits: Array<number>
+      type: string
+    }
+  }
+
+  constructor(address: string, decoded: Buffer) {
+    super(address) // sets address property in the base class (lowercased there)
+    this.encoding = "base58"
+    this.bytes = Array.from(decoded)
+    const headerByte = <number>this.bytes[0]
+
+    if (isErgoAddress(decoded)) {
+      this.blockchain = "Ergo"
+      const headerBits = byteToBits(headerByte, 8)
+
+      this.header = {
+        byte: headerByte,
+        bits: headerBits,
+        leading: {
+          bits: getLeadingBits(headerBits),
+          type: "network",
+        },
+        trailing: {
+          bits: getTrailingBits(headerBits),
+          type: "type",
+        },
+      }
+
+      this.network = getErgoNetwork(this.header.leading.bits)
+      this.type = getErgoType(this.header.trailing.bits)
+
+      return
+    }
+
+    // unsupported format
+    this.blockchain = "unknown"
+  }
+}
+
+/**
+ * Returns true if this is an Ergo address.
+ *
+ * @param headerBits - Array with 8 bits
+ */
+function isErgoAddress(decoded: Buffer): boolean {
+  const size = decoded.length
+  const script = decoded.slice(0, size - 4)
+  const checksum = decoded.slice(size - 4, size)
+  const calculatedChecksum = Buffer.from(blake.blake2b(script, undefined, 32)).slice(0, 4)
+
+  return calculatedChecksum.toString("hex") === checksum.toString("hex")
+}
+
+/**
+ * Returns the blockchain network by parsing network header bits.
+ *
+ * @param headerBits - Array with 8 bits
+ */
+function getErgoNetwork(networkBits: Array<number>) {
+  if (networkBits.reduce((a, b) => a + b) === 0) {
+    return "mainnet" // Sum of network header bits is 0
+  }
+
+  if (networkBits.reduce((a, b) => a + b) === 1) {
+    return "testnet" // Sum of network header bits is 1
+  }
+
+  return "unknown"
+}
+
+/**
+ * Returns the Ergo address 'type' object matching the type header bits.
+ *
+ * @param headerBits - Array with 8 bits
+ */
+function getErgoType(typeBits: Array<number>): object | undefined {
+  return ergoAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
+}
+
+/**
+ * Returns true if this is an Ergo address.
+ *
+ * @param headerBits - Array with 8 bits
+ */
+function isBitcoinAddress(decoded: Buffer): boolean {
+  const size = decoded.length
+  const script = decoded.slice(0, size - 4)
+  const checksum = decoded.slice(size - 4, size)
+  const calculatedChecksum = Buffer.from(blake.blake2b(script, undefined, 32)).slice(0, 4)
+
+  return calculatedChecksum.toString("hex") === checksum.toString("hex")
+}
