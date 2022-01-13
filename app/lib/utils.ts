@@ -1,4 +1,13 @@
 /**
+ * Returns the first byte from an array of bytes.
+ *
+ * @param bits - Array with bytes
+ */
+export const getFirstByte = function (bytes: Array<number>): number {
+  return <number>bytes[0]
+}
+
+/**
  * Converts given number into an 'n' bits array.
  *
  * @param number - Number to convert into bits array

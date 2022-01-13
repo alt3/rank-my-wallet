@@ -1,7 +1,7 @@
 import { BlockchainAddress } from "./blockhain-address"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
-import { byteToBits, getLeadingBits, getTrailingBits } from "./utils"
+import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "./utils"
 
 /**
  * Shelley address types.
@@ -53,7 +53,7 @@ export class Base58Address extends BlockchainAddress {
     super(address) // sets address property in the base class (lowercased there)
     this.encoding = "base58"
     this.bytes = Array.from(decoded)
-    const headerByte = <number>this.bytes[0]
+    const headerByte = getFirstByte(this.bytes)
 
     if (isErgoAddress(decoded)) {
       this.blockchain = "ergo"
@@ -86,7 +86,7 @@ export class Base58Address extends BlockchainAddress {
 /**
  * Returns true if this is an Ergo address.
  *
- * @param headerBits - Array with 8 bits
+ * @param decoded - Array with 8 bits
  */
 function isErgoAddress(decoded: Buffer): boolean {
   const size = decoded.length
@@ -98,27 +98,35 @@ function isErgoAddress(decoded: Buffer): boolean {
 }
 
 /**
- * Returns the blockchain network by parsing network header bits.
+ * Returns the blockchain network by calculating the sum of network header bits.
  *
- * @param headerBits - Array with 8 bits
+ * @param networkBits - Array with 4 network bits
  */
 function getErgoNetwork(networkBits: Array<number>) {
-  if (networkBits.reduce((a, b) => a + b) === 0) {
-    return "mainnet" // Sum of network header bits is 0
+  const sum = networkBits.reduce((a, b) => a + b)
+
+  if (sum === 0) {
+    return "mainnet"
   }
 
-  if (networkBits.reduce((a, b) => a + b) === 1) {
-    return "testnet" // Sum of network header bits is 1
+  if (sum === 1) {
+    return "testnet"
   }
 
-  return "unknown"
+  throw `Unable to determine Ergo network using network header bits ${networkBits.join()}`
 }
 
 /**
  * Returns the Ergo address 'type' object matching the type header bits.
  *
- * @param headerBits - Array with 8 bits
+ * @param typeBits - Array with 4 type bits
  */
-function getErgoType(typeBits: Array<number>): object | undefined {
-  return ergoAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
+function getErgoType(typeBits: Array<number>): object {
+  const type = ergoAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
+
+  if (type === undefined) {
+    throw `Unable to determine Ergo address type using header bits ${typeBits.join()}`
+  }
+
+  return type
 }

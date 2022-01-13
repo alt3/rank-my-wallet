@@ -1,7 +1,7 @@
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
 import { BlockchainAddress } from "./blockhain-address"
-import { byteToBits, getLeadingBits, getTrailingBits } from "./utils"
+import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "./utils"
 
 /**
  * Shelley address types.
@@ -127,10 +127,19 @@ export class Bech32Address extends BlockchainAddress {
         },
       }
 
+      this.network = getShelleyNetwork(this.header.trailing.bits)
       this.type = getType(this.header.leading.bits)
+
+      return
     }
 
-    this.network = getNetwork(this.header.trailing.bits, decoded.prefix)
+    // still here, simply network detection. Should be refactored
+    if (["bc"].includes(decoded.prefix)) {
+      this.network = "mainnet"
+    }
+    if (["tb"].includes(decoded.prefix)) {
+      this.network = "testnet"
+    }
   }
 }
 
@@ -164,52 +173,35 @@ function wordsToBytes(words: number[]): Array<number> | undefined {
 }
 
 /**
- * Returns the first byte found in the byte array.
+ * Returns the Shelely network by calculating the sum of network header bits.
  *
- * @param bytes - Array with bytes
+ * @param networkBits - Array with 4 network bits
  */
-function getFirstByte(bytes: Array<number>): number {
-  if (bytes[0] === undefined) {
-    return 0
-  }
-  return bytes[0]
-}
+function getShelleyNetwork(networkBits: Array<number>) {
+  const sum = networkBits.reduce((a, b) => a + b)
 
-/**
- * Returns the blockchain network by parsing Shelly header bits or the Bech32 prefix.
- *
- * @param headerBits - Array with 8 bits
- */
-function getNetwork(networkBits: Array<number> | undefined, prefix: string): string {
-  // try Shelley network header bits
-  if (networkBits !== undefined) {
-    if (networkBits.reduce((a, b) => a + b) === 0) {
-      return "testnet" // Sum of network header bits is 0
-    }
-
-    if (networkBits.reduce((a, b) => a + b) === 1) {
-      return "mainnet" // Sum of network header bits is 1
-    }
-
-    return "unknown"
-  }
-
-  // use decoded bech32 prefix otherwise
-  if (["bc", "tb"].includes(prefix)) {
-    return "mainnet"
-  }
-  if (["tb"].includes(prefix)) {
+  if (sum === 0) {
     return "testnet"
   }
 
-  return "Unknown"
+  if (sum === 1) {
+    return "mainnet"
+  }
+
+  throw `Unable to determine Shelley network using network header bits ${networkBits.join()}`
 }
 
 /**
  * Returns the Shelley address 'type' object matching the Shelley type header bits.
  *
- * @param headerBits - Array with 8 bits
+ * @param typeBits - Array with 4 bits
  */
-function getType(typeBits: Array<number>): object | undefined {
-  return shelleyAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
+function getType(typeBits: Array<number>): object {
+  const type = shelleyAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
+
+  if (type === undefined) {
+    throw `Unable to determine Shelley address type using header bits ${typeBits.join()}`
+  }
+
+  return type
 }

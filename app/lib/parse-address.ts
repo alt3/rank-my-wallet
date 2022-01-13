@@ -34,6 +34,7 @@ export const parseAddress = function (
   if (address.match(/^(0x)?[0-9a-f]{40}$/i)) {
     return {
       address: address,
+      encoding: "hexadecimal",
       blockchain: "ethereum",
     }
   }
