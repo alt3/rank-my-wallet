@@ -8,6 +8,6 @@ export class UnknownAddress extends BlockchainAddress {
   constructor(address: string) {
     super(address) // sets address property in the base class (lowercased there)
 
-    this.blockchain = "Unknown"
+    this.encoding = "unknown"
   }
 }

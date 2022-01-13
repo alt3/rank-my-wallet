@@ -6,6 +6,7 @@ import { parseAddress } from "app/lib/parse-address"
 
 export const Ranking = ({ parsedAddress }) => {
   console.log(parsedAddress)
+
   return (
     <>
       <Head>
