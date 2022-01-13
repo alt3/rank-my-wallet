@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form"
 import React from "react"
 import { useRouter } from "blitz"
 import { FormErrorMessage, HStack, FormControl, Input, Button } from "@chakra-ui/react"
-import { validateAddress } from "app/lib/validateAddress"
 
 export function AddressForm() {
   const router = useRouter()
@@ -32,9 +31,6 @@ export function AddressForm() {
             size="lg"
             {...register("address", {
               required: "Please provide a wallet address",
-              validate: {
-                checkAddress: (v) => validateAddress(v),
-              },
             })}
           ></Input>
           <Button size="lg" isLoading={isSubmitting} type="submit">

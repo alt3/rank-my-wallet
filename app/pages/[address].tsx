@@ -1,31 +1,46 @@
 import { Suspense } from "react"
-import { Head, BlitzPage, useParam } from "blitz"
+import { Head, BlitzPage, GetServerSideProps, InferGetServerSidePropsType } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { Heading } from "@chakra-ui/react"
+import { parseAddress } from "app/lib/parse-address"
 
-export const Ranking = () => {
-  const address = useParam("address", "string")
-
+export const Ranking = ({ parsedAddress }) => {
   return (
     <>
       <Head>
-        <title>Ranking {address}</title>
+        <title>Address page {parsedAddress.address}</title>
       </Head>
 
-      <Heading>Placeholder page for ranking</Heading>
-      <p>Blockchain address = {address}</p>
+      <Heading>Placeholder address page</Heading>
+      <p>Address = {parsedAddress.address}</p>
     </>
   )
 }
 
-const ShowRankingPage: BlitzPage = () => {
+const ShowRankingPage: BlitzPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
+  data,
+}) => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Ranking />
+        <Ranking parsedAddress={data.parsedAddress} />
       </Suspense>
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  if (context.params === undefined || context.params.address === undefined) {
+    throw "It should not be possible to enter the rankings page without the 'address' parameter"
+  }
+
+  return {
+    props: {
+      data: {
+        parsedAddress: parseAddress(context.params.address.toString()),
+      },
+    },
+  }
 }
 
 ShowRankingPage.authenticate = false
