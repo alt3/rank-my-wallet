@@ -24,5 +24,10 @@ export class RegexAddress extends BlockchainAddress {
       this.blockchain = "monero"
       return
     }
+
+    if (address.match(/[1-9A-HJ-NP-Za-km-z]{32,44}/)) {
+      this.blockchain = "solana"
+      return
+    }
   }
 }
