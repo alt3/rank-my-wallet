@@ -6,7 +6,5 @@ import { BlockchainAddress } from "./blockhain-address"
 export class UnknownAddress extends BlockchainAddress {
   constructor(address: string) {
     super(address) // sets address property in the base class (lowercased there)
-
-    this.encoding = "unknown"
   }
 }

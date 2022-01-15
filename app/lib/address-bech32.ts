@@ -105,10 +105,10 @@ export class Bech32Address extends BlockchainAddress {
 
     this.decoded = decoded
     this.encoding = "bech32"
-    this.blockchain = prefixToBlockchain(decoded.prefix)
     this.bytes = wordsToBytes(decoded.words)
 
     if (this.bytes !== undefined) {
+      this.blockchain = "cardano"
       this.version = "shelley"
       const headerByte = getFirstByte(this.bytes)
 
@@ -132,30 +132,7 @@ export class Bech32Address extends BlockchainAddress {
 
       return
     }
-
-    // still here, simply network detection. Should be refactored
-    if (["bc"].includes(decoded.prefix)) {
-      this.network = "mainnet"
-    }
-    if (["tb"].includes(decoded.prefix)) {
-      this.network = "testnet"
-    }
   }
-}
-
-/**
- * Returns the blockchain name by looking at the Bech32 prefix.
- *
- * @param bytes - Bech32 prefix
- */
-function prefixToBlockchain(prefix: string): string {
-  if (["addr", "stake", "addr_test", "stake_test"].includes(prefix)) {
-    return "cardano"
-  }
-  if (["bc", "tb"].includes(prefix)) {
-    return "bitcoin"
-  }
-  return "Unknown"
 }
 
 /**

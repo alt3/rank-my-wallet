@@ -3,6 +3,7 @@ import { RegexAddress } from "./address-regex"
 import { Bech32Address } from "./address-bech32"
 import { Base58Address } from "./address-base58"
 import { UnknownAddress } from "./address-unknown"
+
 import bs58 from "bs58"
 
 /**
@@ -26,7 +27,9 @@ export const parseAddress = function (
   if (bech32decoded !== undefined) {
     const parsedBech32 = new Bech32Address(address.toLowerCase(), bech32decoded)
 
-    return parsedBech32
+    if (parsedBech32.blockchain !== undefined) {
+      return parsedBech32
+    }
   }
 
   // Base58
@@ -34,9 +37,13 @@ export const parseAddress = function (
     const base58decoded = bs58.decode(address)
     const parsedBase58 = new Base58Address(address, base58decoded)
 
+    if (parsedBase58.blockchain !== undefined) {
+      return parsedBase58
+    }
+
     return parsedBase58
   } catch (e) {}
 
-  // unknown encoding
+  // unknown format
   return new UnknownAddress(address)
 }

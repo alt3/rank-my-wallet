@@ -81,13 +81,6 @@ export class Base58Address extends BlockchainAddress {
 
       return
     }
-
-    // unsupported format
-    this.blockchain = "unknown"
-    this.header = {
-      byte: headerByte,
-      bits: headerBits,
-    }
   }
 }
 
