@@ -41,6 +41,7 @@
     "lodash.isequal": "4.5.0",
     "monero-regex": "1.0.9",
     "react": "18.0.0-beta-149b420f6-20211119",
+    "react-countup": "6.1.0",
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020",
     "react-hook-form": "7.22.5",
     "ripple-regex": "1.1.8"

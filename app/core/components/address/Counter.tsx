@@ -1,5 +1,6 @@
 import { Box, Center, Heading, Stack, useColorModeValue } from "@chakra-ui/react"
 import React from "react"
+import Countup from "react-countup"
 
 export function AddressCounter({ rank }) {
   return (
@@ -13,7 +14,7 @@ export function AddressCounter({ rank }) {
       <Center>
         <Stack direction="column">
           <Heading fontSize={{ base: "4xl", lg: "6xl", sm: "4xl" }} fontWeight="bold">
-            Rank # {rank}
+            # <Countup end={rank} duration={2} separator="." />
           </Heading>
         </Stack>
       </Center>
