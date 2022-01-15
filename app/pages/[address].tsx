@@ -1,26 +1,24 @@
 import { Suspense } from "react"
 import { Head, BlitzPage, GetServerSideProps, InferGetServerSidePropsType } from "blitz"
 import Layout from "app/core/layouts/Layout"
-import { Heading } from "@chakra-ui/react"
+import { Box, Container, Center, Stack, Text } from "@chakra-ui/react"
 import { parseAddress } from "app/lib/parse-address"
 import { getRandomInt } from "app/lib/utils"
+import { AddressCounter, AddressDetails } from "@/components/address"
 
 export const Ranking = ({ data }) => {
   console.log(data)
-
   return (
     <>
       <Head>
         <title>Address page {data.parsedAddress.address}</title>
       </Head>
 
-      <Heading>Placeholder address page</Heading>
-      <p>Address = {data.parsedAddress.address}</p>
-      <p>Blockchain = {data.parsedAddress.blockchain}</p>
-      <p>Encoding = {data.parsedAddress.encoding}</p>
-      <p>Network = {data.parsedAddress.network}</p>
-      <p>Type = {JSON.stringify(data.parsedAddress.type)}</p>
-      <p>Rank = {data.rank}</p>
+      <AddressCounter rank={data.rank}></AddressCounter>
+
+      <Container maxW="container.md" marginBottom="2.5rem">
+        <AddressDetails parsedAddress={data.parsedAddress}></AddressDetails>
+      </Container>
     </>
   )
 }
