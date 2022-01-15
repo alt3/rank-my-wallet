@@ -46,3 +46,12 @@ export const getRandomInt = function (min: number, max: number): number {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+/**
+ * Capitalizes a word by uppercasing the fisrst character.
+ *
+ * @param word - The given word as string
+ */
+export const capitalize = function (word: string) {
+  return word.charAt(0).toUpperCase() + word.slice(1)
+}
