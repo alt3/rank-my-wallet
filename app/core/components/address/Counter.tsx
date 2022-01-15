@@ -1,5 +1,5 @@
+import { Box, Center, Heading, Stack, useColorModeValue } from "@chakra-ui/react"
 import React from "react"
-import { Box, Center, Heading, useColorModeValue } from "@chakra-ui/react"
 
 export function AddressCounter({ rank }) {
   return (
@@ -7,13 +7,15 @@ export function AddressCounter({ rank }) {
       bg={useColorModeValue("white", "gray.900")}
       color={useColorModeValue("gray.700", "white")}
       paddingTop="2rem"
-      paddingBottom="4rem"
+      paddingBottom="5rem"
       marginBottom="1.5rem"
     >
       <Center>
-        <Heading fontSize={{ base: "4xl", lg: "6xl", sm: "4xl" }} fontWeight="bold">
-          # {rank}{" "}
-        </Heading>
+        <Stack direction="column">
+          <Heading fontSize={{ base: "4xl", lg: "6xl", sm: "4xl" }} fontWeight="bold">
+            Rank # {rank}
+          </Heading>
+        </Stack>
       </Center>
     </Box>
   )

@@ -1,10 +1,10 @@
-import { Suspense } from "react"
-import { Head, BlitzPage, GetServerSideProps, InferGetServerSidePropsType } from "blitz"
+import { AddressAnalysis, AddressCounter, AddressDetails } from "@/components/address"
+import { Container } from "@chakra-ui/react"
 import Layout from "app/core/layouts/Layout"
-import { Box, Container, Center, Stack, Text } from "@chakra-ui/react"
 import { parseAddress } from "app/lib/parse-address"
-import { getRandomInt } from "app/lib/utils"
-import { AddressCounter, AddressDetails } from "@/components/address"
+import { capitalize, getRandomInt } from "app/lib/utils"
+import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
+import { Suspense } from "react"
 
 export const Ranking = ({ data }) => {
   console.log(data)
@@ -17,7 +17,14 @@ export const Ranking = ({ data }) => {
       <AddressCounter rank={data.rank}></AddressCounter>
 
       <Container maxW="container.md" marginBottom="2.5rem">
-        <AddressDetails parsedAddress={data.parsedAddress}></AddressDetails>
+        {data.parsedAddress.blockchain && (
+          <>
+            <Container maxW="container.md" marginBottom="2.5rem">
+              <AddressDetails parsedAddress={data.parsedAddress}></AddressDetails>
+              <AddressAnalysis parsedAddress={data.parsedAddress}></AddressAnalysis>
+            </Container>
+          </>
+        )}
       </Container>
     </>
   )
@@ -38,6 +45,16 @@ const ShowRankingPage: BlitzPage<InferGetServerSidePropsType<typeof getServerSid
 export const getServerSideProps: GetServerSideProps = async (context) => {
   if (context.params === undefined || context.params.address === undefined) {
     throw "It should not be possible to enter the rankings page without the 'address' parameter"
+  }
+
+  const parsedAddress = parseAddress(context.params.address.toString())
+
+  if (parsedAddress.blockchain === undefined) {
+    throw new Error("Unknown address")
+  }
+
+  if (!["cardano", "ergo"].includes(parsedAddress.blockchain)) {
+    throw new Error(`We do not support ${capitalize(parsedAddress.blockchain)} addresses`)
   }
 
   return {

@@ -6,7 +6,7 @@ const styles = {
   grid: {
     templateColumns: "repeat(8, 1fr)",
     gap: 4,
-    marginBottom: "10rem",
+    marginBottom: "2.5rem",
   },
   // GridItem for key part of key/value pair
   key: {
