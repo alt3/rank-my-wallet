@@ -4,8 +4,6 @@ import { SponsorCard } from "@/components/SponsorCard"
 
 // svg logos
 import logoLiqwid from "public/images/sponsors/liqwid.svg"
-import logoDish from "public/images/sponsors/dish.svg"
-import logoDisney from "public/images/sponsors/disney.svg"
 import placeholder from "public/images/pixel.png"
 
 export function Sponsors() {
@@ -29,8 +27,8 @@ export function Sponsors() {
           logo={logoLiqwid}
           url="https://www.liqwid.finance/"
         />
-        <SponsorCard id="2" name="Dish" logo={logoDish} url="https://www.dish.com/" />
-        <SponsorCard id="3" name="Disney" logo={logoDisney} url="https://www.disney.com/" />
+        <SponsorCard id="2" name="Placeholder" logo={placeholder} url="https://www.google.com" />
+        <SponsorCard id="3" name="Placeholder" logo={placeholder} url="https://www.google.com" />
         <SponsorCard id="4" name="Placeholder" logo={placeholder} url="https://www.google.com" />
         <SponsorCard id="5" name="Placeholder" logo={placeholder} url="https://www.google.com" />
         <SponsorCard id="6" name="Placeholder" logo={placeholder} url="https://www.google.com" />
