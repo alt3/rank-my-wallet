@@ -2,7 +2,7 @@ import { bech32 } from "bech32"
 import { RegexAddress } from "./address-regex"
 import { Bech32Address } from "./address-bech32"
 import { Base58Address } from "./address-base58"
-import { UnknownAddress } from "./address-unsupported"
+import { UnknownAddress } from "./address-unknown"
 import bs58 from "bs58"
 
 /**
