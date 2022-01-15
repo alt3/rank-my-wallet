@@ -1,6 +1,28 @@
-import React from "react"
-import { Box, Center, Heading, useColorModeValue, Table, Tbody, Tr, Td } from "@chakra-ui/react"
+import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra-ui/react"
 import { capitalize } from "app/lib/utils"
+import React from "react"
+
+const styles = {
+  grid: {
+    templateColumns: "repeat(8, 1fr)",
+    gap: 4,
+    marginBottom: "10rem",
+  },
+  // GridItem for key part of key/value pair
+  key: {
+    colSpan: {
+      base: 3,
+      sm: 2,
+    },
+  },
+  // GridItem for value part of key/value pair
+  value: {
+    colSpan: {
+      base: 5,
+      sm: 6,
+    },
+  },
+}
 
 export function AddressDetails({ parsedAddress }) {
   return (
@@ -16,39 +38,32 @@ export function AddressDetails({ parsedAddress }) {
         </Heading>
       </Center>
 
-      <Table>
-        <Tbody>
-          <Tr>
-            <Td>Address</Td>
-            <Td>{parsedAddress.address}</Td>
-          </Tr>
-          <Tr>
-            <Td>Blockchain</Td>
-            <Td>{capitalize(parsedAddress.blockchain)}</Td>
-          </Tr>
+      <Grid {...styles.grid}>
+        <GridItem {...styles.key}>Address</GridItem>
+        <GridItem {...styles.value}>{parsedAddress.address}</GridItem>
 
-          {parsedAddress.blockchainVersion && (
-            <Tr>
-              <Td>Blockchain version</Td>
-              <Td>{capitalize(parsedAddress.blockchainVersion)}</Td>
-            </Tr>
-          )}
+        <GridItem {...styles.key}>Blockchain</GridItem>
+        <GridItem {...styles.value}>{capitalize(parsedAddress.blockchain)}</GridItem>
 
-          {parsedAddress.network && (
-            <Tr>
-              <Td>Network</Td>
-              <Td>{capitalize(parsedAddress.network)}</Td>
-            </Tr>
-          )}
+        {parsedAddress.blockchainVersion && (
+          <>
+            <GridItem {...styles.key}>Blockchain Version</GridItem>
+            <GridItem {...styles.value}>{capitalize(parsedAddress.blockchainVersion)}</GridItem>
+          </>
+        )}
 
-          {parsedAddress.type && (
-            <Tr>
-              <Td>Type</Td>
-              <Td>{capitalize(parsedAddress.type.name)}</Td>
-            </Tr>
-          )}
-        </Tbody>
-      </Table>
+        {parsedAddress.type && (
+          <>
+            <GridItem {...styles.key}>Address Type</GridItem>
+            <GridItem {...styles.value}>
+              {capitalize(parsedAddress.type.name)}
+              {parsedAddress.type.abbreviation && (
+                <Box as="span"> ({parsedAddress.type.abbreviation})</Box>
+              )}
+            </GridItem>
+          </>
+        )}
+      </Grid>
     </Box>
   )
 }
