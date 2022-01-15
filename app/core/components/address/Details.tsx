@@ -45,10 +45,10 @@ export function AddressDetails({ parsedAddress }) {
         <GridItem {...styles.key}>Blockchain</GridItem>
         <GridItem {...styles.value}>{capitalize(parsedAddress.blockchain)}</GridItem>
 
-        {parsedAddress.blockchainVersion && (
+        {parsedAddress.version && (
           <>
-            <GridItem {...styles.key}>Blockchain Version</GridItem>
-            <GridItem {...styles.value}>{capitalize(parsedAddress.blockchainVersion)}</GridItem>
+            <GridItem {...styles.key}>Address Version</GridItem>
+            <GridItem {...styles.value}>{capitalize(parsedAddress.version)}</GridItem>
           </>
         )}
 

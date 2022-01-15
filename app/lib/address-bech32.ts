@@ -11,7 +11,7 @@ import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "./uti
 const shelleyAddressTypes = [
   {
     type: 0,
-    name: "type-00",
+    name: "type-00 (Base Address)",
     bits: [0, 0, 0, 0],
     paymentPart: "PaymentKeyHash",
     delegationPart: "StakeKeyHash",
@@ -85,7 +85,7 @@ const shelleyAddressTypes = [
 export class Bech32Address extends BlockchainAddress {
   decoded: Decoded
   bytes: Array<number> | undefined
-  blockchainVersion: string
+  version: string
   type: object | undefined
   header: {
     byte: number
@@ -109,7 +109,7 @@ export class Bech32Address extends BlockchainAddress {
     this.bytes = wordsToBytes(decoded.words)
 
     if (this.bytes !== undefined) {
-      this.blockchainVersion = "shelley"
+      this.version = "shelley"
       const headerByte = getFirstByte(this.bytes)
 
       const headerBits = byteToBits(headerByte, 8)
