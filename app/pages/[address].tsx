@@ -50,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   // trigger our custom _error.tsx for address errors
   if (parsedAddress.blockchain === undefined) {
-    parsedAddress.error = "UnknownAddress"
+    parsedAddress.error = "UnrecognizedAddress"
 
     return {
       props: {
