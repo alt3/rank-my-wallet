@@ -54,56 +54,25 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const parsedAddress = parseAddress(context.params.address.toString())
 
-  // trigger our custom _error.tsx for address errors
   if (parsedAddress.blockchain === undefined) {
-    parsedAddress.error = "UnrecognizedAddress"
-
-    return {
-      props: {
-        parsedAddress,
-      },
-    }
+    return getAddressErrorProps("UnrecognizedAddress", parsedAddress)
   }
 
   if (!["cardano", "ergo"].includes(parsedAddress.blockchain)) {
-    parsedAddress.error = "UnsupportedBlockchain"
-
-    return {
-      props: {
-        parsedAddress,
-      },
-    }
+    return getAddressErrorProps("UnsupportedBlockchain", parsedAddress)
   }
 
   if (parsedAddress.network !== "mainnet") {
-    parsedAddress.error = "UnsupportedNetwork"
-
-    return {
-      props: {
-        parsedAddress,
-      },
-    }
+    return getAddressErrorProps("UnsupportedNetwork", parsedAddress)
   }
 
   // still here so we must be Cardano or Ergo, check address type
   if (parsedAddress.blockchain === "cardano" && parsedAddress.type.type !== 0) {
-    parsedAddress.error = "UnsupportedType"
-
-    return {
-      props: {
-        parsedAddress,
-      },
-    }
+    return getAddressErrorProps("UnsupportedType", parsedAddress)
   }
 
   if (parsedAddress.blockchain === "ergo" && parsedAddress.type.type !== 1) {
-    parsedAddress.error = "UnsupportedType"
-
-    return {
-      props: {
-        parsedAddress,
-      },
-    }
+    return getAddressErrorProps("UnsupportedType", parsedAddress)
   }
 
   // still here so the address is valid
@@ -113,6 +82,24 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         parsedAddress: parseAddress(context.params.address.toString()),
         rank: getRandomInt(1, 87000),
       },
+    },
+  }
+}
+
+// helper function to prevent duplication when throwing address errors
+const getAddressErrorProps = function (
+  errorType:
+    | "UnrecognizedAddress"
+    | "UnsupportedBlockchain"
+    | "UnsupportedNetwork"
+    | "UnsupportedType",
+  parsedAddress: Bech32Address | Base58Address | RegexAddress | UnrecognizedAddress
+) {
+  parsedAddress.error = errorType
+
+  return {
+    props: {
+      parsedAddress,
     },
   }
 }
