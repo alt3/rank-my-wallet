@@ -14,7 +14,7 @@ export function AddressCounter({ rank }) {
       <Center>
         <Stack direction="column">
           <Heading fontSize={{ base: "4xl", lg: "6xl", sm: "4xl" }} fontWeight="bold">
-            # <Countup end={rank} duration={2} separator="." />
+            # <Countup start={rank} end={1} duration={2.75} separator="." />
           </Heading>
         </Stack>
       </Center>
