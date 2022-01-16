@@ -52,6 +52,13 @@ export function AddressDetails({ parsedAddress }) {
           </>
         )}
 
+        {parsedAddress.network && (
+          <>
+            <GridItem {...styles.key}>Network</GridItem>
+            <GridItem {...styles.value}>{capitalize(parsedAddress.network)}</GridItem>
+          </>
+        )}
+
         {parsedAddress.type && (
           <>
             <GridItem {...styles.key}>Address Type</GridItem>

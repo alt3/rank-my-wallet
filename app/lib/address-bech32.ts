@@ -11,71 +11,53 @@ import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "./uti
 const shelleyAddressTypes = [
   {
     type: 0,
-    name: "type-00 (Base Address)",
     bits: [0, 0, 0, 0],
-    paymentPart: "PaymentKeyHash",
-    delegationPart: "StakeKeyHash",
+    name: "type-00 (Base Address)",
   },
   {
     type: 1,
     name: "type-01",
     bits: [1, 0, 0, 0],
-    paymentPart: "ScriptHash",
-    delegationPart: "StakeKeyHash",
   },
   {
     type: 2,
     name: "type-02",
     bits: [0, 1, 0, 0],
-    paymentPart: "PaymentKeyHash",
-    delegationPart: "ScriptHash",
   },
   {
     type: 3,
     name: "type-03",
     bits: [1, 1, 0, 0],
-    paymentPart: "ScriptHash",
-    delegationPart: "ScriptHash",
   },
   {
     type: 4,
     name: "type-04",
     bits: [0, 0, 1, 0],
-    paymentPart: "PaymentKeyHash",
-    delegationPart: "Pointer",
   },
   {
     type: 5,
     name: "type-05",
     bits: [1, 0, 1, 0],
-    paymentPart: "ScriptHash",
-    delegationPart: "Pointer",
   },
   {
     type: 6,
     name: "type-06",
     bits: [0, 1, 1, 0],
-    paymentPart: "PaymentKeyHash",
-    delegationPart: null,
   },
   {
     type: 7,
     name: "type-07",
     bits: [1, 1, 1, 0],
-    paymentPart: "ScriptHash",
-    delegationPart: null,
   },
   {
     type: 14,
     name: "type-14",
     bits: [0, 1, 1, 1],
-    stakeReference: "StakeKeyHash",
   },
   {
     type: 15,
     name: "type-15",
     bits: [1, 1, 1, 1],
-    stakeReference: "ScriptHash",
   },
 ]
 
@@ -86,7 +68,6 @@ export class Bech32Address extends BlockchainAddress {
   decoded: Decoded
   bytes: Array<number> | undefined
   version: string
-  type: object | undefined
   header: {
     byte: number
     bits: Array<number>
@@ -102,9 +83,10 @@ export class Bech32Address extends BlockchainAddress {
 
   constructor(address: string, decoded: Decoded) {
     super(address) // sets address property in the base class (lowercased there)
+    this.class = this.constructor.name
 
-    this.decoded = decoded
     this.encoding = "bech32"
+    this.decoded = decoded
     this.bytes = wordsToBytes(decoded.words)
 
     if (this.bytes !== undefined) {
@@ -128,7 +110,10 @@ export class Bech32Address extends BlockchainAddress {
       }
 
       this.network = getShelleyNetwork(this.header.trailing.bits)
-      this.type = getType(this.header.leading.bits)
+
+      const typeObject = getType(this.header.leading.bits)
+
+      Object.assign(this, { type: typeObject })
 
       return
     }

@@ -14,13 +14,6 @@ import bs58 from "bs58"
 export const parseAddress = function (
   address: string
 ): RegexAddress | Bech32Address | Base58Address | UnknownAddress {
-  // Regexes first, just for fun
-  const parsedRegex = new RegexAddress(address)
-
-  if (parsedRegex.blockchain !== undefined) {
-    return parsedRegex
-  }
-
   // Bech32
   const bech32decoded = bech32.decodeUnsafe(address.toLowerCase(), 250) // bech32 requires all lowercase
 
@@ -40,10 +33,15 @@ export const parseAddress = function (
     if (parsedBase58.blockchain !== undefined) {
       return parsedBase58
     }
-
-    return parsedBase58
   } catch (e) {}
 
-  // unknown format
+  // Regexes first, just for fun
+  const parsedRegex = new RegexAddress(address)
+
+  if (parsedRegex.blockchain !== undefined) {
+    return parsedRegex
+  }
+
+  // still here so return unknown format
   return new UnknownAddress(address)
 }

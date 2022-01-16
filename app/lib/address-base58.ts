@@ -35,7 +35,6 @@ const ergoAddressTypes = [
 export class Base58Address extends BlockchainAddress {
   bytes: Array<number>
   blockchainVersion: string
-  type: object | undefined
   header: {
     byte: number
     bits: Array<number>
@@ -51,7 +50,9 @@ export class Base58Address extends BlockchainAddress {
 
   constructor(address: string, decoded: Buffer) {
     super(address) // sets address property in the base class (lowercased there)
+    this.class = this.constructor.name
     this.encoding = "base58"
+
     this.bytes = Array.from(decoded)
     const headerByte = getFirstByte(this.bytes)
     const headerBits = byteToBits(headerByte, 8)
@@ -76,7 +77,9 @@ export class Base58Address extends BlockchainAddress {
       }
 
       if (this.header.trailing !== undefined) {
-        this.type = getErgoType(this.header.trailing.bits)
+        const typeObject = getErgoType(this.header.trailing.bits)
+
+        Object.assign(this, { type: typeObject })
       }
 
       return

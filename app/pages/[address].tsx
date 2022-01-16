@@ -2,12 +2,11 @@ import { AddressAnalysis, AddressCounter, AddressDetails } from "@/components/ad
 import { Container } from "@chakra-ui/react"
 import Layout from "app/core/layouts/Layout"
 import { parseAddress } from "app/lib/parse-address"
-import { capitalize, getRandomInt } from "app/lib/utils"
+import { capitalize, getRandomInt, hasOwnProperty } from "app/lib/utils"
 import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
 import { Suspense } from "react"
 
 export const Ranking = ({ data }) => {
-  console.log(data)
   return (
     <>
       <Head>
@@ -49,14 +48,59 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const parsedAddress = parseAddress(context.params.address.toString())
 
+  // trigger our custom _error.tsx for address errors
   if (parsedAddress.blockchain === undefined) {
-    throw new Error("Unknown address")
+    parsedAddress.error = "UnknownAddress"
+
+    return {
+      props: {
+        parsedAddress,
+      },
+    }
   }
 
   if (!["cardano", "ergo"].includes(parsedAddress.blockchain)) {
-    throw new Error(`We do not support ${capitalize(parsedAddress.blockchain)} addresses`)
+    parsedAddress.error = "UnsupportedBlockchain"
+
+    return {
+      props: {
+        parsedAddress,
+      },
+    }
   }
 
+  if (parsedAddress.network !== "mainnet") {
+    parsedAddress.error = "UnsupportedNetwork"
+
+    return {
+      props: {
+        parsedAddress,
+      },
+    }
+  }
+
+  // still here so we must be Cardano or Ergo, check address type
+  if (parsedAddress.blockchain === "cardano" && parsedAddress.type.type !== 0) {
+    parsedAddress.error = "UnsupportedType"
+
+    return {
+      props: {
+        parsedAddress,
+      },
+    }
+  }
+
+  if (parsedAddress.blockchain === "ergo" && parsedAddress.type.type !== 1) {
+    parsedAddress.error = "UnsupportedType"
+
+    return {
+      props: {
+        parsedAddress,
+      },
+    }
+  }
+
+  // still here so the address is valid
   return {
     props: {
       data: {

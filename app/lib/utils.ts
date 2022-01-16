@@ -55,3 +55,16 @@ export const getRandomInt = function (min: number, max: number): number {
 export const capitalize = function (word: string) {
   return word.charAt(0).toUpperCase() + word.slice(1)
 }
+
+/**
+ * Helper function to make Typescript recognize hasOwnProperty logic.
+ *
+ * @see {@link https://fettblog.eu/typescript-hasownproperty/}
+ */
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
+  obj: X,
+  prop: Y
+): obj is X & Record<Y, unknown> {
+  return obj.hasOwnProperty(prop)
+}

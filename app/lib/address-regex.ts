@@ -9,6 +9,7 @@ import rippleRegex from "ripple-regex"
 export class RegexAddress extends BlockchainAddress {
   constructor(address: string) {
     super(address) // sets address property in the base class (lowercased there)
+    this.class = this.constructor.name
 
     if (ethereumRegex({ exact: true }).test(address)) {
       this.blockchain = "ethereum"
