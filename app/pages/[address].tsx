@@ -2,9 +2,15 @@ import { AddressAnalysis, AddressCounter, AddressDetails } from "@/components/ad
 import { Container } from "@chakra-ui/react"
 import Layout from "app/core/layouts/Layout"
 import { parseAddress } from "app/lib/parse-address"
-import { capitalize, getRandomInt, hasOwnProperty } from "app/lib/utils"
+import { getRandomInt } from "app/lib/utils"
 import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
 import { Suspense } from "react"
+import {
+  Bech32Address,
+  Base58Address,
+  RegexAddress,
+  UnrecognizedAddress,
+} from "app/lib/address-types"
 
 export const Ranking = ({ data }) => {
   return (

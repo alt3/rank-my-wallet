@@ -1,7 +1,7 @@
 import { BlockchainAddress } from "./blockhain-address"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
-import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "./utils"
+import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "../utils"
 
 /**
  * Shelley address types.

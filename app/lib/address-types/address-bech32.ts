@@ -1,7 +1,7 @@
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
 import { BlockchainAddress } from "./blockhain-address"
-import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "./utils"
+import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "../utils"
 
 /**
  * Shelley address types.
