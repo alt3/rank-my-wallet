@@ -5,6 +5,7 @@ import { parseAddress } from "app/lib/parse-address"
 import { getRandomInt } from "app/lib/utils"
 import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
 import { Suspense } from "react"
+import { Species } from "@/components/species"
 import {
   Bech32Address,
   Base58Address,
@@ -26,6 +27,7 @@ export const Ranking = ({ data }) => {
           <>
             <Container maxW="container.md" marginBottom="2.5rem">
               <AddressDetails parsedAddress={data.parsedAddress}></AddressDetails>
+              <Species balance={data.balance}></Species>
               <AddressAnalysis parsedAddress={data.parsedAddress}></AddressAnalysis>
             </Container>
           </>
@@ -81,6 +83,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       data: {
         parsedAddress: parseAddress(context.params.address.toString()),
         rank: getRandomInt(1, 87000),
+        balance: getRandomInt(0, 110000000),
       },
     },
   }
