@@ -5,7 +5,7 @@ import { parseAddress } from "app/lib/parse-address"
 import { getRandomInt } from "app/lib/utils"
 import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
 import { Suspense } from "react"
-import { Species } from "@/components/species"
+import { Species } from "@/components/Species"
 import {
   Bech32Address,
   Base58Address,
@@ -78,12 +78,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   // still here so the address is valid
+  const walletCount = parsedAddress.blockchain === "cardano" ? 250000000 : 87000
+  const maxBalance = parsedAddress.blockchain === "cardano" ? 110000000 : 1100000
+
   return {
     props: {
       data: {
         parsedAddress: parseAddress(context.params.address.toString()),
-        rank: getRandomInt(1, 87000),
-        balance: getRandomInt(0, 110000000),
+        rank: getRandomInt(1, walletCount),
+        balance: getRandomInt(0, maxBalance),
       },
     },
   }
