@@ -77,7 +77,10 @@ export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
  * @param blockchain - Name of the blockchain
  * @param balance - Wallet balance with or without decimals
  */
-export const getSpecies = function (blockchain: "cardano" | "ergo", balance: number): object {
+export const getSpecies = function (
+  blockchain: "cardano" | "ergo",
+  balance: number
+): { startsAt: number; name: string } {
   const match = species[blockchain]
     .slice()
     .reverse()
