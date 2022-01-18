@@ -25,11 +25,12 @@ const styles = {
 }
 
 interface SpeciesProps {
+  blockchain: "cardano" | "ergo"
   balance: number
 }
 
-export function Species({ balance }: SpeciesProps) {
-  const species = getSpecies("cardano", balance)
+export function Species({ blockchain, balance }: SpeciesProps) {
+  const species = getSpecies(blockchain, balance)
 
   return (
     <Box>

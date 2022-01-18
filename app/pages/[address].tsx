@@ -27,7 +27,7 @@ export const Ranking = ({ data }) => {
           <>
             <Container maxW="container.md" marginBottom="2.5rem">
               <AddressDetails parsedAddress={data.parsedAddress}></AddressDetails>
-              <Species balance={data.balance}></Species>
+              <Species blockchain={data.parsedAddress.blockchain} balance={data.balance}></Species>
               <AddressAnalysis parsedAddress={data.parsedAddress}></AddressAnalysis>
             </Container>
           </>
