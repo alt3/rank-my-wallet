@@ -14,7 +14,7 @@ export function Sponsors() {
           align="center"
           letterSpacing="widest"
           textTransform="uppercase"
-          color={useColorModeValue("teal.600", "teal.300")}
+          color={useColorModeValue("teal.500", "teal.300")}
         >
           Sponsored and Backed by
         </Text>
