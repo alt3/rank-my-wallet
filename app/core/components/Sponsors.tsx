@@ -1,10 +1,6 @@
-import { SponsorCard } from "@/components/SponsorCard"
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
-import placeholder from "public/images/pixel.png"
-
-// svg logos
-import logoLiqwid from "public/images/sponsors/liqwid.svg"
-import React from "react"
+import { FrontpageCard } from "./cards"
+import { LiqwidLogo } from "./logos"
 
 export function Sponsors() {
   return (
@@ -25,17 +21,14 @@ export function Sponsors() {
       </Center>
 
       <SimpleGrid columns={[2, null, 3]} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
-        <SponsorCard
-          id="1"
-          name="Liqwid Finance"
-          logo={logoLiqwid}
-          url="https://www.liqwid.finance/"
-        />
-        <SponsorCard id="2" name="Placeholder" logo={placeholder} url="https://www.google.com" />
-        <SponsorCard id="3" name="Placeholder" logo={placeholder} url="https://www.google.com" />
-        <SponsorCard id="4" name="Placeholder" logo={placeholder} url="https://www.google.com" />
-        <SponsorCard id="5" name="Placeholder" logo={placeholder} url="https://www.google.com" />
-        <SponsorCard id="6" name="Placeholder" logo={placeholder} url="https://www.google.com" />
+        <FrontpageCard url="https://liqwid.finance/">
+          <LiqwidLogo
+            width="150px"
+            height="59px"
+            padding="12px"
+            fill={useColorModeValue("gray.600", "whiteAlpha.900")}
+          />
+        </FrontpageCard>
       </SimpleGrid>
     </Box>
   )

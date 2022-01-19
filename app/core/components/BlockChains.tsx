@@ -1,6 +1,6 @@
-import { BlockChainCard } from "@/components/BlockChainCard"
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
 import React from "react"
+import { FrontpageCard } from "./cards"
 import { CardanoLogo, ErgoLogo } from "./logos"
 
 export function BlockChains() {
@@ -22,16 +22,16 @@ export function BlockChains() {
       </Center>
 
       <SimpleGrid columns={2} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
-        <BlockChainCard url="https://cardano.org/">
+        <FrontpageCard url="https://cardano.org/">
           <CardanoLogo width="230px" fill={useColorModeValue("gray.600", "whiteAlpha.900")} />
-        </BlockChainCard>
-        <BlockChainCard url="https://ergoplatform.org/">
+        </FrontpageCard>
+        <FrontpageCard url="https://ergoplatform.org/">
           <ErgoLogo
             width="150px"
             height="59px"
             fill={useColorModeValue("gray.600", "whiteAlpha.900")}
           />
-        </BlockChainCard>
+        </FrontpageCard>
       </SimpleGrid>
     </Box>
   )
