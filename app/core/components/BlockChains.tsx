@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Center, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
+import { Box, Center, Text, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
 import { BlockChainCard } from "@/components/BlockChainCard"
 
 // svg logos
@@ -8,16 +8,20 @@ import logoCardano from "public/images/blockchains/cardano.svg"
 
 export function BlockChains() {
   return (
-    <Box marginBottom="2.5rem">
+    <Box marginBottom="5rem">
       <Center>
-        <Heading
-          fontSize={{ base: "2xl", sm: "3xl" }}
-          marginBottom="1.25rem"
-          fontWeight="normal"
-          color={useColorModeValue("gray.700", "gray.400")}
+        <Text
+          as="h2"
+          fontSize="sm"
+          marginBottom="2.5rem"
+          fontWeight={useColorModeValue(600, 500)}
+          align="center"
+          letterSpacing="widest"
+          textTransform="uppercase"
+          color={useColorModeValue("teal.600", "teal.300")}
         >
-          Supported blockchains
-        </Heading>
+          Supported Blockchains
+        </Text>
       </Center>
 
       <SimpleGrid columns={2} spacing={{ base: "15px", sm: "30px", md: "40px" }}>

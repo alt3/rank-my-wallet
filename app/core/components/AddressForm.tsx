@@ -1,7 +1,14 @@
-import { useForm } from "react-hook-form"
-import React from "react"
+import {
+  Button,
+  FormControl,
+  FormErrorMessage,
+  HStack,
+  Input,
+  useColorModeValue,
+} from "@chakra-ui/react"
 import { useRouter } from "blitz"
-import { FormErrorMessage, HStack, FormControl, Input, Button } from "@chakra-ui/react"
+import React from "react"
+import { useForm } from "react-hook-form"
 
 export function AddressForm() {
   const router = useRouter()
@@ -29,11 +36,15 @@ export function AddressForm() {
             id="address"
             placeholder="Wallet address"
             size="lg"
+            marginRight="0.25rem"
+            bg={useColorModeValue("white", "gray.700")}
+            borderColor={useColorModeValue("gray.200", "gray.700")}
+            _placeholder={{ color: useColorModeValue("gray.400", "gray.400") }}
             {...register("address", {
               required: "Please provide a wallet address",
             })}
           ></Input>
-          <Button size="lg" isLoading={isSubmitting} type="submit">
+          <Button size="lg" isLoading={isSubmitting} type="submit" colorScheme="teal">
             Go
           </Button>
         </HStack>

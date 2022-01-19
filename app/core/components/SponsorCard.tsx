@@ -1,8 +1,8 @@
-import React from "react"
+import { Link } from "@/components/Link"
+import { MotionBoxFlex } from "@/components/MotionBoxFlex"
 import { useColorModeValue } from "@chakra-ui/react"
 import Img from "next/image"
-import { MotionBoxFlex } from "@/components/MotionBoxFlex"
-import { Link } from "@/components/Link"
+import React from "react"
 
 export function SponsorCard({ id, name, logo, url, ...rest }) {
   return (
@@ -14,9 +14,9 @@ export function SponsorCard({ id, name, logo, url, ...rest }) {
         height="100%"
         padding={{ base: 8, sm: 12 }}
         shadow="md"
-        borderWidth="1px"
+        borderWidth={useColorModeValue(1, 0)}
         borderRadius="md"
-        bg={useColorModeValue("gray.200", "gray.900")}
+        bg={useColorModeValue("white", "gray.900")}
         {...rest}
       >
         <Img id={id} src={logo} alt={`Company Logo for sponsor ${name}`} />

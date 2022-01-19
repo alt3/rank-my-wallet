@@ -1,23 +1,27 @@
-import React from "react"
-import { Box, Center, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
 import { SponsorCard } from "@/components/SponsorCard"
+import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
+import placeholder from "public/images/pixel.png"
 
 // svg logos
 import logoLiqwid from "public/images/sponsors/liqwid.svg"
-import placeholder from "public/images/pixel.png"
+import React from "react"
 
 export function Sponsors() {
   return (
-    <Box>
+    <Box marginBottom="6rem">
       <Center>
-        <Heading
-          fontSize={{ base: "2xl", sm: "3xl" }}
-          marginBottom="1.25rem"
-          fontWeight="normal"
-          color={useColorModeValue("gray.700", "gray.400")}
+        <Text
+          as="h2"
+          fontSize="sm"
+          marginBottom="2.5rem"
+          fontWeight={useColorModeValue(600, 500)}
+          align="center"
+          letterSpacing="widest"
+          textTransform="uppercase"
+          color={useColorModeValue("teal.600", "teal.300")}
         >
-          Sponsored by
-        </Heading>
+          Sponsored and Backed by
+        </Text>
       </Center>
 
       <SimpleGrid columns={[2, null, 3]} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
