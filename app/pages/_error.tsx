@@ -14,7 +14,9 @@ function Error({ statusCode, address = undefined }) {
 Error.getInitialProps = ({ res, err }) => {
   // handle server side address errors (only those will have the `parsedAddress` prop)
   if (err.parsedAddress) {
-    res.statusCode = 501 // set response header
+    if (res) {
+      res.statusCode = 501 // set response header if possible (only via direct address URL, not via the form)
+    }
 
     return {
       statusCode: 501,
