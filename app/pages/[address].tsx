@@ -37,7 +37,7 @@ export const Ranking = ({ data }) => {
         <meta property="og:type" content="website" />
         <meta property="og:description" content={meta.description} />
       </Head>
-      <AddressCounter rank={data.rank}></AddressCounter>
+      <AddressCounter blockchain={data.parsedAddress.blockchain} rank={data.rank}></AddressCounter>
 
       <Container maxW="container.md" marginBottom="2.5rem">
         {data.parsedAddress.blockchain && (
