@@ -11,7 +11,7 @@ export const NavbarDesktop: React.FC = () => {
     <Box
       color={useColorModeValue("gray.700", "whiteAlpha.600")}
       fontWeight={useColorModeValue(600, 500)}
-      maxW="5xl"
+      maxW="4xl"
       mx="auto"
       paddingTop={2}
     >
