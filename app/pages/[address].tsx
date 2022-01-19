@@ -36,6 +36,8 @@ export const Ranking = ({ data }) => {
         <meta property="og:url" content={meta.url} />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={meta.description} />
+        <meta name="twitter:content" content="summary" />
+        <meta name="twitter:site" content="@RankMyWallet" />
       </Head>
       <AddressCounter blockchain={data.parsedAddress.blockchain} rank={data.rank}></AddressCounter>
 

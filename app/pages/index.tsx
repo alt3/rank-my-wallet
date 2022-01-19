@@ -23,6 +23,9 @@ const Home: BlitzPage = () => {
         <meta property="og:url" content={meta.url} />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={meta.description} />
+        <meta property="og:description" content={meta.description} />
+        <meta name="twitter:content" content="summary" />
+        <meta name="twitter:site" content="@RankMyWallet" />
       </Head>
 
       <Hero />
