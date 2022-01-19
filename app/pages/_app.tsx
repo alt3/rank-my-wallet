@@ -2,7 +2,6 @@ import { ChakraProvider } from "@chakra-ui/react"
 import theme from "app/core/theme"
 import { AppProps, ErrorBoundary, ErrorComponent, ErrorFallbackProps } from "blitz"
 import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users
-// import Error from "../pages/_error"
 import { AddressError } from "app/errors/AddressError"
 
 export default function App({ Component, pageProps }: AppProps) {
