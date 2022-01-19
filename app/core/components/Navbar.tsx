@@ -1,5 +1,13 @@
 import { Link } from "@/components/Link"
-import { Box, Flex, Icon, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
+import {
+  Box,
+  Center,
+  Flex,
+  Icon,
+  IconButton,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react"
 import { BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
 
 export const Navbar: React.FC = () => {
@@ -32,15 +40,15 @@ export const Navbar: React.FC = () => {
             aria-label="Visit RankMyWallet on Twitter"
             isExternal
             passHref
+            h="48px"
+            w="48px"
+            fontSize="lg"
+            marginRight="0.25rem"
+            marginTop="0.35rem"
           >
-            <Icon
-              as={BsTwitter}
-              w={5}
-              h={5}
-              marginRight="0.25rem"
-              marginTop="0.35rem"
-              _hover={{ color: "#1D9AEF" }}
-            />
+            <Center>
+              <Icon as={BsTwitter} w={5} h={5} _hover={{ color: "#1D9AEF" }} marginTop={3} />
+            </Center>
           </Link>
 
           <IconButton
