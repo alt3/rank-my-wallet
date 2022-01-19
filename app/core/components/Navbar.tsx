@@ -45,9 +45,10 @@ export const Navbar: React.FC = () => {
             fontSize="lg"
             marginRight="0.25rem"
             marginTop="0.35rem"
+            paddingTop="0.682rem"
           >
             <Center>
-              <Icon as={BsTwitter} w={5} h={5} _hover={{ color: "#1D9AEF" }} marginTop={3} />
+              <Icon as={BsTwitter} w={5} h={5} _hover={{ color: "#1D9AEF" }} />
             </Center>
           </Link>
 
