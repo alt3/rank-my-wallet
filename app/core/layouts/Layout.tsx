@@ -1,7 +1,7 @@
-import { Head, BlitzLayout } from "blitz"
-import { Box } from "@chakra-ui/react"
 import { Footer } from "@/components/Footer"
-import { Navbar } from "@/components/navbar"
+import { Navbar } from "@/components/Navbar"
+import { Box } from "@chakra-ui/react"
+import { BlitzLayout, Head } from "blitz"
 
 const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   return (

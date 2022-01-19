@@ -2,7 +2,7 @@ import { Link } from "@/components/Link"
 import { Box, Flex, Icon, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
 
-export const NavbarDesktop: React.FC = () => {
+export const Navbar: React.FC = () => {
   const { toggleColorMode: toggleMode } = useColorMode()
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
@@ -11,7 +11,7 @@ export const NavbarDesktop: React.FC = () => {
     <Box
       color={useColorModeValue("gray.700", "whiteAlpha.600")}
       fontWeight={useColorModeValue(600, 500)}
-      maxW="4xl"
+      maxW="6xl"
       mx="auto"
       paddingTop={2}
     >
