@@ -4,7 +4,7 @@ import React from "react"
 
 export function Hero() {
   return (
-    <Box marginBottom="4rem">
+    <Box marginBottom="3rem">
       <Container maxW="container.md" marginTop="4rem" paddingBottom={{ base: "5rem", md: "5rem" }}>
         <Center>
           <Stack width="100%" spacing={8} align="center">
