@@ -10,6 +10,7 @@ export function Footer() {
       maxW="100%"
       fontSize="sm"
       p={5}
+      paddingTop="7"
       bg={useColorModeValue("gray.200", "gray.900")}
       color={useColorModeValue("gray.700", "white")}
       centerContent
