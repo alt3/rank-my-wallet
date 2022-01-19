@@ -22,10 +22,10 @@ export function BlockChains() {
       </Center>
 
       <SimpleGrid columns={2} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
-        <FrontpageCard url="https://cardano.org/">
+        <FrontpageCard name="Cardano" url="https://cardano.org/">
           <CardanoLogo width="230px" fill={useColorModeValue("gray.600", "whiteAlpha.900")} />
         </FrontpageCard>
-        <FrontpageCard url="https://ergoplatform.org/">
+        <FrontpageCard name="Ergo" url="https://ergoplatform.org/">
           <ErgoLogo
             width="150px"
             height="59px"

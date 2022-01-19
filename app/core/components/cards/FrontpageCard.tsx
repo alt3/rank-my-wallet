@@ -3,9 +3,9 @@ import { MotionBoxFlex } from "@/components/MotionBoxFlex"
 import { useColorModeValue } from "@chakra-ui/react"
 import React from "react"
 
-export function FrontpageCard({ url, ...rest }) {
+export function FrontpageCard({ url, name, ...rest }) {
   return (
-    <Link href={url} isExternal passHref>
+    <Link href={url} title={`Visit the ${name} website`} isExternal passHref>
       <MotionBoxFlex
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

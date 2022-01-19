@@ -21,7 +21,7 @@ export function Sponsors() {
       </Center>
 
       <SimpleGrid columns={[2, null, 3]} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
-        <FrontpageCard url="https://liqwid.finance/">
+        <FrontpageCard name="Liqwid" url="https://liqwid.finance/">
           <LiqwidLogo
             width="150px"
             height="59px"
