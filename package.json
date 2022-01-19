@@ -30,6 +30,7 @@
     "@chakra-ui/react": "1.x",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
+    "@fontsource/inter": "4.5.1",
     "@prisma/client": "3.7.0",
     "bech32": "2.0.0",
     "blakejs": "1.1.1",
