@@ -12,14 +12,31 @@ import {
   RegexAddress,
   UnrecognizedAddress,
 } from "app/lib/address-types"
+import { capitalize } from "../lib/utils"
 
 export const Ranking = ({ data }) => {
+  const meta = {
+    title: `Rank My Wallet - Ranking for ${capitalize(data.parsedAddress.blockchain)} address ${
+      data.parsedAddress.address
+    } ${data.parsedAddress.address}`,
+    description: `Ranking and detailed analysis of ${capitalize(
+      data.parsedAddress.blockchain
+    )} address ${data.parsedAddress.address}.`,
+    keywords: "rankings, cardano, ergo, blockchain, addresses, wallets, species, online",
+    url: `https://rankmywallet.com/${data.parsedAddress.address}`,
+  }
+
   return (
     <>
       <Head>
-        <title>Address page {data.parsedAddress.address}</title>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
+        <meta property="og:title" content={meta.title} key="title" />
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content={meta.description} />
       </Head>
-
       <AddressCounter rank={data.rank}></AddressCounter>
 
       <Container maxW="container.md" marginBottom="2.5rem">
