@@ -1,9 +1,9 @@
-import { BlitzPage } from "blitz"
-import Layout from "app/core/layouts/Layout"
-import { Container } from "@chakra-ui/react"
-import { Hero } from "@/components/Hero"
 import { BlockChains } from "@/components/BlockChains"
+import { Hero } from "@/components/Hero"
 import { Sponsors } from "@/components/Sponsors"
+import { Container } from "@chakra-ui/react"
+import Layout from "app/core/layouts/Layout"
+import { BlitzPage } from "blitz"
 
 const Home: BlitzPage = () => {
   return (

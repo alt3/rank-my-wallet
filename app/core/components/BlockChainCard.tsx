@@ -1,10 +1,9 @@
 import { Link } from "@/components/Link"
 import { MotionBoxFlex } from "@/components/MotionBoxFlex"
 import { useColorModeValue } from "@chakra-ui/react"
-import Img from "next/image"
 import React from "react"
 
-export function BlockChainCard({ id, name, logo, url, ...rest }) {
+export function BlockChainCard({ url, ...rest }) {
   return (
     <Link href={url} isExternal passHref>
       <MotionBoxFlex
@@ -12,15 +11,16 @@ export function BlockChainCard({ id, name, logo, url, ...rest }) {
         whileTap={{ scale: 0.95 }}
         justifyContent="center"
         height="100%"
-        padding={{ base: 4, md: 10 }}
+        paddingLeft={{ base: 4, md: 15 }}
+        paddingRight={{ base: 4, md: 15 }}
+        paddingTop={{ base: 4, md: 7 }}
+        paddingBottom={{ base: 4, md: 7 }}
         shadow="md"
         borderWidth={useColorModeValue(1, 0)}
         borderRadius="md"
         bg={useColorModeValue("white", "gray.900")}
         {...rest}
-      >
-        <Img id={id} src={logo} alt={`Logo for the ${name} blockchain`} />
-      </MotionBoxFlex>
+      ></MotionBoxFlex>
     </Link>
   )
 }

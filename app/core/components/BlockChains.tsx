@@ -1,10 +1,7 @@
-import React from "react"
-import { Box, Center, Text, SimpleGrid, useColorModeValue } from "@chakra-ui/react"
 import { BlockChainCard } from "@/components/BlockChainCard"
-
-// svg logos
-import logoErgo from "public/images/blockchains/ergo.svg"
-import logoCardano from "public/images/blockchains/cardano.svg"
+import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
+import React from "react"
+import { CardanoLogo, ErgoLogo } from "./logos"
 
 export function BlockChains() {
   return (
@@ -25,8 +22,16 @@ export function BlockChains() {
       </Center>
 
       <SimpleGrid columns={2} spacing={{ base: "15px", sm: "30px", md: "40px" }}>
-        <BlockChainCard id="1" name="Cardano" logo={logoCardano} url="https://cardano.org/" />
-        <BlockChainCard id="2" name="Ergo" logo={logoErgo} url="https://ergoplatform.org/" />
+        <BlockChainCard url="https://cardano.org/">
+          <CardanoLogo width="230px" fill={useColorModeValue("gray.600", "whiteAlpha.900")} />
+        </BlockChainCard>
+        <BlockChainCard url="https://ergoplatform.org/">
+          <ErgoLogo
+            width="150px"
+            height="59px"
+            fill={useColorModeValue("gray.600", "whiteAlpha.900")}
+          />
+        </BlockChainCard>
       </SimpleGrid>
     </Box>
   )
