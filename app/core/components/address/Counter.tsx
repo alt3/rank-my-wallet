@@ -1,4 +1,4 @@
-import { Box, Container, Center, Heading, Text, Stack, useColorModeValue } from "@chakra-ui/react"
+import { Box, Center, Container, Heading, Stack, useColorModeValue } from "@chakra-ui/react"
 import React from "react"
 import Countup from "react-countup"
 import { capitalize } from "../../../lib/utils"

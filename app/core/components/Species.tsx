@@ -2,28 +2,6 @@ import React from "react"
 import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra-ui/react"
 import { capitalize, getSpecies } from "app/lib/utils"
 
-const styles = {
-  grid: {
-    templateColumns: "repeat(8, 1fr)",
-    gap: 4,
-    marginBottom: "2.5rem",
-  },
-  // GridItem for key part of key/value pair
-  key: {
-    colSpan: {
-      base: 3,
-      sm: 2,
-    },
-  },
-  // GridItem for value part of key/value pair
-  value: {
-    colSpan: {
-      base: 5,
-      sm: 6,
-    },
-  },
-}
-
 interface SpeciesProps {
   blockchain: "cardano" | "ergo"
   balance: number
@@ -32,17 +10,38 @@ interface SpeciesProps {
 export function Species({ blockchain, balance }: SpeciesProps) {
   const species = getSpecies(blockchain, balance)
 
+  const styles = {
+    caption: {
+      fontSize: { base: "2xl", sm: "3xl" },
+      marginBottom: "1.25rem",
+      fontWeight: "normal",
+      color: useColorModeValue("gray.700", "gray.400"),
+    },
+    grid: {
+      templateColumns: "repeat(8, 1fr)",
+      gap: 4,
+      marginBottom: "2.5rem",
+    },
+    // GridItem for key part of key/value pair
+    key: {
+      colSpan: {
+        base: 3,
+        sm: 2,
+      },
+    },
+    // GridItem for value part of key/value pair
+    value: {
+      colSpan: {
+        base: 5,
+        sm: 6,
+      },
+    },
+  }
+
   return (
     <Box>
       <Center>
-        <Heading
-          fontSize={{ base: "2xl", sm: "3xl" }}
-          marginBottom="1.25rem"
-          fontWeight="normal"
-          color={useColorModeValue("gray.700", "gray.400")}
-        >
-          Species
-        </Heading>
+        <Heading {...styles.caption}>Species</Heading>
       </Center>
 
       <Grid {...styles.grid}>
