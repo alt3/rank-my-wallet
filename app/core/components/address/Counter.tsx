@@ -4,11 +4,12 @@ import Countup from "react-countup"
 import { capitalize } from "../../../lib/utils"
 
 interface AddressCounterProps {
+  addressCount: number
   rank: number
   blockchain: string
 }
 
-export function AddressCounter({ rank, blockchain }: AddressCounterProps) {
+export function AddressCounter({ addressCount, rank, blockchain }: AddressCounterProps) {
   return (
     <Box marginBottom="3rem">
       <Container maxW="container.md" marginTop="4rem" paddingBottom={{ base: "5rem", md: "5rem" }}>
@@ -30,7 +31,7 @@ export function AddressCounter({ rank, blockchain }: AddressCounterProps) {
               fontWeight="bold"
               letterSpacing="tighter"
             >
-              # <Countup start={rank} end={1} duration={2.75} separator="." />
+              # <Countup start={addressCount} end={rank} duration={2.75} separator="." />
             </Heading>
           </Stack>
         </Center>

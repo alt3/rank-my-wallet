@@ -39,7 +39,11 @@ export const Ranking = ({ data }) => {
         <meta name="twitter:content" content="summary" />
         <meta name="twitter:site" content="@RankMyWallet" />
       </Head>
-      <AddressCounter blockchain={data.parsedAddress.blockchain} rank={data.rank}></AddressCounter>
+      <AddressCounter
+        blockchain={data.parsedAddress.blockchain}
+        addressCount={data.addressCount}
+        rank={data.rank}
+      ></AddressCounter>
 
       <Container maxW="container.md" marginBottom="2.5rem">
         {data.parsedAddress.blockchain && (
@@ -97,14 +101,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   // still here so the address is valid
-  const walletCount = parsedAddress.blockchain === "cardano" ? 250000000 : 87000
+  const addressCount = parsedAddress.blockchain === "cardano" ? 2500000 : 87000
   const maxBalance = parsedAddress.blockchain === "cardano" ? 110000000 : 1100000
 
   return {
     props: {
       data: {
         parsedAddress: parseAddress(context.params.address.toString()),
-        rank: getRandomInt(1, walletCount),
+        addressCount: addressCount,
+        rank: getRandomInt(1, addressCount),
         balance: getRandomInt(0, maxBalance),
       },
     },
