@@ -29,7 +29,7 @@ export function Sponsors() {
         <FrontpageCard name="Liqwid" url="https://liqwid.finance/">
           <LiqwidLogo
             width="150px"
-            height="59px"
+            height={{ base: "52px", md: "59px" }}
             padding="12px"
             fill={useColorModeValue("gray.600", "whiteAlpha.900")}
           />
