@@ -12,7 +12,7 @@ interface AddressCounterProps {
 export function AddressCounter({ addressCount, rank, blockchain }: AddressCounterProps) {
   return (
     <Box marginBottom="3rem">
-      <Container maxW="container.md" marginTop="4rem" paddingBottom={{ base: "5rem", md: "5rem" }}>
+      <Container maxW="container.md" marginTop="4rem" paddingBottom={{ base: "4rem", md: "5rem" }}>
         <Center>
           <Stack width="100%" spacing={2} align="center">
             <Heading

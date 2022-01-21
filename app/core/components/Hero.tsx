@@ -5,7 +5,11 @@ import React from "react"
 export function Hero() {
   return (
     <Box marginBottom="3rem">
-      <Container maxW="container.md" marginTop="4rem" paddingBottom={{ base: "5rem", md: "5rem" }}>
+      <Container
+        maxW="container.md"
+        marginTop={{ base: "3rem", md: "4rem" }}
+        paddingBottom={{ base: "4rem", md: "5rem" }}
+      >
         <Center>
           <Stack width="100%" spacing={8} align="center">
             <Heading
@@ -13,7 +17,7 @@ export function Hero() {
               fontWeight="bold"
               letterSpacing="tighter"
               color={useColorModeValue("gray.700", "whiteAlpha.900")}
-              marginBottom="2rem"
+              marginBottom={{ base: "1rem", md: "2rem" }}
             >
               Rank My{" "}
               <Text as="span" color={useColorModeValue("teal.500", "teal.300")}>
