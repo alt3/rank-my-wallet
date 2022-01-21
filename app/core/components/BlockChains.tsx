@@ -32,7 +32,7 @@ export function BlockChains() {
         <FrontpageCard name="Ergo" url="https://ergoplatform.org/">
           <ErgoLogo
             width="150px"
-            height={{ base: "40px", md: "59px" }}
+            maxHeight={{ base: "40px", md: "59px" }}
             fill={useColorModeValue("gray.600", "whiteAlpha.900")}
           />
         </FrontpageCard>
