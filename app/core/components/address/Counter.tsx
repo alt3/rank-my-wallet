@@ -1,4 +1,4 @@
-import { Box, Center, Container, Heading, Stack, useColorModeValue } from "@chakra-ui/react"
+import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import React from "react"
 import Countup from "react-countup"
 import { capitalize } from "../../../lib/utils"
@@ -28,6 +28,12 @@ export function AddressCounter({ addressCount, rank, blockchain }: AddressCounte
     },
     counter: {
       color: useColorModeValue("teal.500", "teal.300"),
+      css: {
+        "@supports (-webkit-touch-callout: none) {": {
+          fontFamily: "Menlo", // iOS MUST use a monospace font or the counter will shake
+          letterSpacing: "tight",
+        },
+      },
     },
   }
 
@@ -35,10 +41,13 @@ export function AddressCounter({ addressCount, rank, blockchain }: AddressCounte
     <Box {...styles.box}>
       <Container {...styles.container}>
         <Center>
-          <Stack width="100%" spacing={2} align="center">
+          <Stack spacing={2} width="100%" align="center">
             <Heading {...styles.heading}>You are {capitalize(blockchain)}</Heading>
             <Heading as="h3" {...styles.heading} {...styles.counter}>
-              # <Countup start={addressCount} end={rank} duration={2.75} separator="." />
+              <Text as="span" marginRight="0.6rem">
+                #
+              </Text>
+              <Countup start={addressCount} end={rank} duration={2.75} separator="." />
             </Heading>
           </Stack>
         </Center>
