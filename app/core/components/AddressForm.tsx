@@ -28,6 +28,16 @@ export function AddressForm() {
     router.push("/" + values.address)
   }
 
+  const styles = {
+    input: {
+      size: "lg",
+      marginRight: "0.25rem",
+      bg: useColorModeValue("white", "gray.700"),
+      borderColor: useColorModeValue("gray.200", "gray.700"),
+      _placeholder: { color: useColorModeValue("gray.400", "gray.400") },
+    },
+  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
       <FormControl isInvalid={errors.address}>
@@ -35,11 +45,7 @@ export function AddressForm() {
           <Input
             id="address"
             placeholder="Wallet address"
-            size="lg"
-            marginRight="0.25rem"
-            bg={useColorModeValue("white", "gray.700")}
-            borderColor={useColorModeValue("gray.200", "gray.700")}
-            _placeholder={{ color: useColorModeValue("gray.400", "gray.400") }}
+            {...styles.input}
             {...register("address", {
               required: "Please provide a wallet address",
             })}

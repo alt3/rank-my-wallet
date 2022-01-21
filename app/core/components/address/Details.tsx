@@ -2,40 +2,39 @@ import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra
 import { capitalize } from "app/lib/utils"
 import React from "react"
 
-const styles = {
-  grid: {
-    templateColumns: "repeat(8, 1fr)",
-    gap: 4,
-    marginBottom: "2.5rem",
-  },
-  // GridItem for key part of key/value pair
-  key: {
-    colSpan: {
-      base: 3,
-      sm: 2,
-    },
-  },
-  // GridItem for value part of key/value pair
-  value: {
-    colSpan: {
-      base: 5,
-      sm: 6,
-    },
-  },
-}
-
 export function AddressDetails({ parsedAddress }) {
+  const styles = {
+    heading: {
+      fontSize: { base: "2xl", sm: "3xl" },
+      marginBottom: "1.25rem",
+      fontWeight: "normal",
+      color: useColorModeValue("gray.700", "gray.400"),
+    },
+    grid: {
+      templateColumns: "repeat(8, 1fr)",
+      gap: 4,
+      marginBottom: "2.5rem",
+    },
+    // GridItem for key part of key/value pair
+    key: {
+      colSpan: {
+        base: 3,
+        sm: 2,
+      },
+    },
+    // GridItem for value part of key/value pair
+    value: {
+      colSpan: {
+        base: 5,
+        sm: 6,
+      },
+    },
+  }
+
   return (
     <Box marginBottom="2.5rem">
       <Center>
-        <Heading
-          fontSize={{ base: "2xl", sm: "3xl" }}
-          marginBottom="1.25rem"
-          fontWeight="normal"
-          color={useColorModeValue("gray.700", "gray.400")}
-        >
-          Address Details
-        </Heading>
+        <Heading {...styles.heading}>Address Details</Heading>
       </Center>
 
       <Grid {...styles.grid}>
