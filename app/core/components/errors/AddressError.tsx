@@ -1,4 +1,3 @@
-import React from "react"
 import { Heading, useColorModeValue, Box, Center, Container, Stack, Text } from "@chakra-ui/react"
 
 export function AddressError({ statusCode, title, parsedAddress = undefined }) {

@@ -1,6 +1,5 @@
 import { AddressForm } from "@/components/AddressForm"
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
-import React from "react"
 
 export function Hero() {
   const styles = {

@@ -1,4 +1,3 @@
-import React from "react"
 import { Flex, FlexProps, forwardRef, ComponentWithAs } from "@chakra-ui/react"
 import { motion, MotionProps, isValidMotionProp } from "framer-motion"
 

@@ -1,4 +1,3 @@
-import React from "react"
 import { Link as BlitzLink, LinkProps as BlitzLinkProps } from "blitz"
 import { Link as ChakraLink, LinkProps as ChakraLinkProps } from "@chakra-ui/react"
 

@@ -1,6 +1,5 @@
 import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra-ui/react"
 import { capitalize } from "app/lib/utils"
-import React from "react"
 
 export function AddressDetails({ parsedAddress }) {
   const styles = {

@@ -1,4 +1,3 @@
-import React from "react"
 import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra-ui/react"
 import { capitalize, getSpecies } from "app/lib/utils"
 
