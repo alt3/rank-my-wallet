@@ -1,18 +1,19 @@
 import { AddressAnalysis, AddressCounter, AddressDetails } from "@/components/address"
+import { Species } from "@/components/Species"
 import { Container } from "@chakra-ui/react"
 import Layout from "app/core/layouts/Layout"
+import {
+  Base58Address,
+  Bech32Address,
+  RegexAddress,
+  UnrecognizedAddress,
+} from "app/lib/address-types"
 import { parseAddress } from "app/lib/parse-address"
 import { getRandomInt } from "app/lib/utils"
 import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
 import { Suspense } from "react"
-import { Species } from "@/components/Species"
-import {
-  Bech32Address,
-  Base58Address,
-  RegexAddress,
-  UnrecognizedAddress,
-} from "app/lib/address-types"
-import { capitalize } from "../lib/utils"
+import { basicAuth } from "app/core/auth/basic-auth"
+import { capitalize } from "app/lib/utils"
 
 export const Ranking = ({ data }) => {
   const meta = {
@@ -73,6 +74,8 @@ const ShowRankingPage: BlitzPage<InferGetServerSidePropsType<typeof getServerSid
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  await basicAuth(context.req, context.res)
+
   if (context.params === undefined || context.params.address === undefined) {
     throw "It should not be possible to enter the rankings page without the 'address' parameter"
   }
