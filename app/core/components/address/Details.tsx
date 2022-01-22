@@ -1,74 +1,69 @@
-import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra-ui/react"
+import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react"
 import { capitalize } from "app/lib/utils"
 
 export function AddressDetails({ parsedAddress }) {
   const styles = {
     heading: {
-      fontSize: { base: "2xl", sm: "3xl" },
       marginBottom: "1.25rem",
-      fontWeight: "normal",
-      color: useColorModeValue("gray.700", "gray.400"),
+      fontSize: { base: "2xl", sm: "4xl" },
+      fontWeight: "bold",
+      letterSpacing: "tighter",
     },
-    grid: {
-      templateColumns: "repeat(8, 1fr)",
-      gap: 4,
-      marginBottom: "2.5rem",
-    },
-    // GridItem for key part of key/value pair
-    key: {
-      colSpan: {
-        base: 3,
-        sm: 2,
-      },
-    },
-    // GridItem for value part of key/value pair
-    value: {
-      colSpan: {
-        base: 5,
-        sm: 6,
-      },
+    caption: {
+      color: useColorModeValue("teal.500", "teal.300"),
     },
   }
 
   return (
     <Box marginBottom="2.5rem">
-      <Center>
-        <Heading {...styles.heading}>Address Details</Heading>
-      </Center>
+      <Heading {...styles.heading}>Address Details</Heading>
 
-      <Grid {...styles.grid}>
-        <GridItem {...styles.key}>Address</GridItem>
-        <GridItem {...styles.value}>{parsedAddress.address}</GridItem>
+      <Box marginBottom="2rem">
+        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+          Address
+        </Text>
+        <Text>{parsedAddress.address}</Text>
+      </Box>
 
-        <GridItem {...styles.key}>Blockchain</GridItem>
-        <GridItem {...styles.value}>{capitalize(parsedAddress.blockchain)}</GridItem>
+      <Box marginBottom="2rem">
+        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+          Blockchain
+        </Text>
+        <Text>{capitalize(parsedAddress.blockchain)}</Text>
+      </Box>
 
-        {parsedAddress.version && (
-          <>
-            <GridItem {...styles.key}>Address Version</GridItem>
-            <GridItem {...styles.value}>{capitalize(parsedAddress.version)}</GridItem>
-          </>
-        )}
+      {parsedAddress.version && (
+        <Box marginBottom="2rem">
+          <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+            Address Version
+          </Text>
+          <Text>{capitalize(parsedAddress.version)}</Text>
+        </Box>
+      )}
 
-        {parsedAddress.network && (
-          <>
-            <GridItem {...styles.key}>Network</GridItem>
-            <GridItem {...styles.value}>{capitalize(parsedAddress.network)}</GridItem>
-          </>
-        )}
+      {parsedAddress.network && (
+        <Box marginBottom="2rem">
+          <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+            Network
+          </Text>
+          <Text>{capitalize(parsedAddress.network)}</Text>
+        </Box>
+      )}
 
-        {parsedAddress.type && (
-          <>
-            <GridItem {...styles.key}>Address Type</GridItem>
-            <GridItem {...styles.value}>
-              {capitalize(parsedAddress.type.name)}
-              {parsedAddress.type.abbreviation && (
-                <Box as="span"> ({parsedAddress.type.abbreviation})</Box>
-              )}
-            </GridItem>
-          </>
-        )}
-      </Grid>
+      {parsedAddress.type && (
+        <Box marginBottom="2rem">
+          <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+            Address Type
+          </Text>
+          <Text>
+            {" "}
+            {capitalize(parsedAddress.type.name)}
+            {parsedAddress.type.abbreviation && (
+              <Box as="span"> ({parsedAddress.type.abbreviation})</Box>
+            )}
+          </Text>
+        </Box>
+      )}
     </Box>
   )
 }

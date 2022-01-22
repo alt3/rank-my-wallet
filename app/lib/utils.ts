@@ -20,12 +20,26 @@ export const byteToBits = function (number: number, bits: number): Array<number>
 }
 
 /**
+ * Converts an 8-bit array into a number.
+ *
+ * @param bits - Array with bits to convert
+ */
+export const bitsToByte = (bits: Array<number | undefined>): number => {
+  let value = 0
+  for (let i = bits.length - 1; i >= 0; i--) {
+    value = value * 2 + (bits[i] ?? 0) // escape to null to silence Typescript "possibly undefined index"
+  }
+
+  return value
+}
+
+/**
  * Returns an array with the 4 trailing bits.
  *
  * @param bits - Array with 8 bits
  */
 export const getLeadingBits = function (bits: Array<number>): Array<number> {
-  return bits.slice(-4)
+  return bits.slice(0, 4)
 }
 
 /**
@@ -34,7 +48,7 @@ export const getLeadingBits = function (bits: Array<number>): Array<number> {
  * @param bits - Array with 8 bits
  */
 export const getTrailingBits = function (bits: Array<number>): Array<number> {
-  return bits.slice(0, 4)
+  return bits.slice(-4)
 }
 
 /**

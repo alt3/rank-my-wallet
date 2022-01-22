@@ -87,13 +87,14 @@ export class Bech32Address extends BlockchainAddress {
 
     this.encoding = "bech32"
     this.decoded = decoded
+
     this.bytes = wordsToBytes(decoded.words)
 
     if (this.bytes !== undefined) {
       this.blockchain = "cardano"
       this.version = "shelley"
-      const headerByte = getFirstByte(this.bytes)
 
+      const headerByte = getFirstByte(this.bytes)
       const headerBits = byteToBits(headerByte, 8)
 
       this.header = {
@@ -101,17 +102,17 @@ export class Bech32Address extends BlockchainAddress {
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
-          type: "type",
+          type: "network",
         },
         trailing: {
           bits: getTrailingBits(headerBits),
-          type: "network",
+          type: "address type",
         },
       }
 
-      this.network = getShelleyNetwork(this.header.trailing.bits)
+      this.network = getShelleyNetwork(this.header.leading.bits)
 
-      const typeObject = getType(this.header.leading.bits)
+      const typeObject = getType(this.header.trailing.bits)
 
       Object.assign(this, { type: typeObject })
 

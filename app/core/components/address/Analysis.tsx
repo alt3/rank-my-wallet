@@ -1,68 +1,105 @@
-import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra-ui/react"
+import { Box, Grid, GridItem, Heading, Text, useColorModeValue } from "@chakra-ui/react"
 import { capitalize } from "app/lib/utils"
+import nextId from "react-id-generator"
+import BitsTable from "../BitsTable"
 
 export function AddressAnalysis({ parsedAddress }) {
+  // console.log(parsedAddress)
+
   const styles = {
     heading: {
-      fontSize: { base: "2xl", sm: "3xl" },
       marginBottom: "1.25rem",
-      fontWeight: "normal",
-      color: useColorModeValue("gray.700", "gray.400"),
+      fontSize: { base: "2xl", sm: "4xl" },
+      fontWeight: "bold",
+      letterSpacing: "tighter",
     },
-    grid: {
-      templateColumns: "repeat(8, 1fr)",
-      gap: 4,
-      marginBottom: "2.5rem",
+    caption: {
+      color: useColorModeValue("teal.500", "teal.300"),
     },
-    // GridItem for key part of key/value pair
-    key: {
-      colSpan: {
-        base: 3,
-        sm: 2,
-      },
+    table: {
+      marginBottom: "3rem",
+      maxWidth: "400px",
     },
-    // GridItem for value part of key/value pair
-    value: {
-      colSpan: {
-        base: 5,
-        sm: 6,
-      },
+    th: {
+      textAlign: "left" as const,
+    },
+    td: {
+      textAlign: "left" as const,
+    },
+    tdSum: {
+      fontWeight: "extrabold",
+      color: useColorModeValue("teal.500", "teal.300"),
+    },
+    tdSumLabel: {
+      colSpan: 2,
+      textAlign: "right" as const,
+      color: useColorModeValue("gray.600", "gray.400"),
+      fontSize: "xs",
+      fontFamily: "heading",
+      textTransform: "uppercase" as const,
+      letterSpacing: "wider",
     },
   }
 
   return (
     <Box>
-      <Center>
-        <Heading {...styles.heading}>Address Analysis</Heading>
-      </Center>
+      <Heading {...styles.heading}>Address Analysis</Heading>
 
-      <Grid {...styles.grid}>
-        <GridItem {...styles.key}>Encoding</GridItem>
-        <GridItem {...styles.value}>{capitalize(parsedAddress.encoding)}</GridItem>
+      <Box marginBottom="2rem">
+        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+          Encoding
+        </Text>
+        <Text>{capitalize(parsedAddress.encoding)}</Text>
+      </Box>
 
-        <GridItem {...styles.key}>Bytes</GridItem>
-        <GridItem {...styles.value}>{parsedAddress.bytes.join(", ")}</GridItem>
+      {parsedAddress.decoded.prefix !== undefined && (
+        <Box marginBottom="2rem">
+          <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+            Decoded Prefix
+          </Text>
+          <Text>{parsedAddress.decoded.prefix}</Text>
+        </Box>
+      )}
 
-        {parsedAddress.header !== undefined && (
-          <>
-            <GridItem {...styles.key}>Header Byte</GridItem>
-            <GridItem {...styles.value}>{parsedAddress.header.byte}</GridItem>
+      <Box marginBottom="2rem">
+        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+          Decoded Bytes
+        </Text>
+        <Grid templateColumns="repeat(6, 1fr)">
+          {parsedAddress.bytes.map((byte) => (
+            <GridItem key={nextId("byte")}>{byte}</GridItem>
+          ))}
+        </Grid>
+      </Box>
 
-            <GridItem {...styles.key}>Header Bits</GridItem>
-            <GridItem {...styles.value}>{parsedAddress.header.bits.join(", ")}</GridItem>
+      {parsedAddress.header !== undefined && (
+        <>
+          <Box marginBottom="2rem">
+            <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+              Header Byte
+            </Text>
+            <Text>{parsedAddress.header.byte}</Text>
+          </Box>
 
-            <GridItem {...styles.key}>
-              Leading Header Bits ({capitalize(parsedAddress.header.leading.type)})
-            </GridItem>
-            <GridItem {...styles.value}>{parsedAddress.header.leading.bits.join(", ")}</GridItem>
+          <BitsTable
+            caption="Header Bits"
+            bits={parsedAddress.header.bits}
+            sumLabel="Header Byte"
+          ></BitsTable>
 
-            <GridItem {...styles.key}>
-              Trailing Header Bits ({capitalize(parsedAddress.header.trailing.type)})
-            </GridItem>
-            <GridItem {...styles.value}>{parsedAddress.header.trailing.bits.join(", ")}</GridItem>
-          </>
-        )}
-      </Grid>
+          <BitsTable
+            caption="Leading Header Bits"
+            bits={parsedAddress.header.leading.bits}
+            sumLabel={parsedAddress.header.leading.type}
+          ></BitsTable>
+
+          <BitsTable
+            caption="Trailing Header Bits"
+            bits={parsedAddress.header.trailing.bits}
+            sumLabel={parsedAddress.header.trailing.type}
+          ></BitsTable>
+        </>
+      )}
     </Box>
   )
 }

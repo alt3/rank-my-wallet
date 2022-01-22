@@ -1,4 +1,4 @@
-import { Box, Center, Grid, GridItem, Heading, useColorModeValue } from "@chakra-ui/react"
+import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react"
 import { capitalize, getSpecies } from "app/lib/utils"
 
 interface SpeciesProps {
@@ -10,49 +10,42 @@ export function Species({ blockchain, balance }: SpeciesProps) {
   const species = getSpecies(blockchain, balance)
 
   const styles = {
-    caption: {
-      fontSize: { base: "2xl", sm: "3xl" },
+    heading: {
       marginBottom: "1.25rem",
-      fontWeight: "normal",
-      color: useColorModeValue("gray.700", "gray.400"),
+      fontSize: { base: "2xl", sm: "4xl" },
+      fontWeight: "bold",
+      letterSpacing: "tighter",
+      // color: useColorModeValue("gray.700", "gray.300"),
     },
-    grid: {
-      templateColumns: "repeat(8, 1fr)",
-      gap: 4,
-      marginBottom: "2.5rem",
-    },
-    // GridItem for key part of key/value pair
-    key: {
-      colSpan: {
-        base: 3,
-        sm: 2,
-      },
-    },
-    // GridItem for value part of key/value pair
-    value: {
-      colSpan: {
-        base: 5,
-        sm: 6,
-      },
+    caption: {
+      color: useColorModeValue("teal.500", "teal.300"),
     },
   }
 
   return (
     <Box>
-      <Center>
-        <Heading {...styles.caption}>Species</Heading>
-      </Center>
+      <Heading {...styles.heading}>Species</Heading>
 
-      <Grid {...styles.grid}>
-        <GridItem {...styles.key}>Balance</GridItem>
-        <GridItem {...styles.value}>{balance.toLocaleString(undefined)}</GridItem>
+      <Box marginBottom="2rem">
+        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+          Balance
+        </Text>
+        <Text>₳ {balance.toLocaleString(undefined)}</Text>
+      </Box>
 
-        <GridItem {...styles.key}>Species</GridItem>
-        <GridItem {...styles.value}>{capitalize(species.name)}</GridItem>
+      <Box marginBottom="2rem">
+        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+          Species
+        </Text>
+        <Text>{capitalize(species.name)}</Text>
+      </Box>
 
-        <GridItem {...styles.key}>startsAt</GridItem>
-        <GridItem {...styles.value}>{species.startsAt.toLocaleString(undefined)}</GridItem>
-      </Grid>
+      <Box marginBottom="2rem">
+        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
+          startsAt
+        </Text>
+        <Text>₳ {species.startsAt.toLocaleString(undefined)}</Text>
+      </Box>
     </Box>
   )
 }

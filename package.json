@@ -47,6 +47,7 @@
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020",
     "react-hook-form": "7.22.5",
     "react-icons": "4.3.1",
+    "react-id-generator": "3.0.2",
     "ripple-regex": "1.1.8"
   },
   "devDependencies": {
