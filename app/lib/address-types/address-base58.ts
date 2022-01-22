@@ -65,19 +65,20 @@ export class Base58Address extends BlockchainAddress {
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
-          type: "network",
+          type: "type",
         },
         trailing: {
           bits: getTrailingBits(headerBits),
-          type: "type",
+          type: "network",
         },
-      }
-      if (this.header.leading !== undefined) {
-        this.network = getErgoNetwork(this.header.leading.bits)
       }
 
       if (this.header.trailing !== undefined) {
-        const typeObject = getErgoType(this.header.trailing.bits)
+        this.network = getErgoNetwork(this.header.trailing.bits)
+      }
+
+      if (this.header.leading !== undefined) {
+        const typeObject = getErgoType(this.header.leading.bits)
 
         Object.assign(this, { type: typeObject })
       }

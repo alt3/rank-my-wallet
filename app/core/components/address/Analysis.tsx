@@ -52,7 +52,7 @@ export function AddressAnalysis({ parsedAddress }) {
         <Text>{capitalize(parsedAddress.encoding)}</Text>
       </Box>
 
-      {parsedAddress.decoded.prefix !== undefined && (
+      {parsedAddress.decoded !== undefined && parsedAddress.decoded.prefix !== undefined && (
         <Box marginBottom="2rem">
           <Text as="h3" {...styles.caption} marginBottom="0.25rem">
             Decoded Prefix
