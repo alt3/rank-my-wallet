@@ -20,7 +20,7 @@ export function AddressCounter({ addressCount, rank, blockchain }: AddressCounte
       paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
-      fontSize: { base: "3xl", lg: "6xl", sm: "4xl" },
+      fontSize: { base: "2xl", lg: "6xl", sm: "4xl" },
       fontWeight: "bold",
       letterSpacing: "tighter",
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
