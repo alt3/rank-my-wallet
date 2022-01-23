@@ -1,6 +1,6 @@
-import { AddressAnalysis, AddressCounter, AddressDetails } from "@/components/address"
-import { Species } from "@/components/Species"
+import { AddressAnalysis, AddressCounter, AddressDetails, Species } from "@/components/address"
 import { Container } from "@chakra-ui/react"
+import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import {
   Base58Address,
@@ -9,11 +9,9 @@ import {
   UnrecognizedAddress,
 } from "app/lib/address-types"
 import { parseAddress } from "app/lib/parse-address"
-import { getRandomInt } from "app/lib/utils"
+import { capitalize, getRandomInt } from "app/lib/utils"
 import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
 import { Suspense } from "react"
-import { basicAuth } from "app/core/auth/basic-auth"
-import { capitalize } from "app/lib/utils"
 
 export const Ranking = ({ data }) => {
   const meta = {
@@ -40,6 +38,7 @@ export const Ranking = ({ data }) => {
         <meta name="twitter:content" content="summary" />
         <meta name="twitter:site" content="@RankMyWallet" />
       </Head>
+
       <AddressCounter
         blockchain={data.parsedAddress.blockchain}
         addressCount={data.addressCount}

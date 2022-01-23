@@ -1,3 +1,4 @@
+import { SectionHeader } from "@/components/address"
 import {
   Accordion,
   AccordionButton,
@@ -7,7 +8,6 @@ import {
   Box,
   Grid,
   GridItem,
-  Heading,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
@@ -19,12 +19,6 @@ export function AddressAnalysis({ parsedAddress }) {
   // console.log(parsedAddress)
 
   const styles = {
-    heading: {
-      marginBottom: "1.25rem",
-      fontSize: { base: "2xl", sm: "4xl" },
-      fontWeight: "bold",
-      letterSpacing: "tighter",
-    },
     caption: {
       color: useColorModeValue("teal.500", "teal.300"),
     },
@@ -59,9 +53,9 @@ export function AddressAnalysis({ parsedAddress }) {
         <AccordionItem borderStyle="none">
           <h2>
             <AccordionButton p={0}>
-              <Heading {...styles.heading} flex="1" textAlign="left">
+              <SectionHeader flex="1" textAlign="left">
                 Address Analysis
-              </Heading>
+              </SectionHeader>
               <Box as="span" verticalAlign="top" minHeight="3rem">
                 <AccordionIcon />
               </Box>

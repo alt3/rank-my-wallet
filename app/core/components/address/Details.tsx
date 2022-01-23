@@ -1,14 +1,9 @@
-import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react"
+import { SectionHeader } from "@/components/address"
+import { Box, Text, useColorModeValue } from "@chakra-ui/react"
 import { capitalize } from "app/lib/utils"
 
 export function AddressDetails({ parsedAddress }) {
   const styles = {
-    heading: {
-      marginBottom: "1.25rem",
-      fontSize: { base: "2xl", sm: "4xl" },
-      fontWeight: "bold",
-      letterSpacing: "tighter",
-    },
     caption: {
       color: useColorModeValue("teal.500", "teal.300"),
     },
@@ -16,7 +11,7 @@ export function AddressDetails({ parsedAddress }) {
 
   return (
     <Box marginBottom="2.5rem">
-      <Heading {...styles.heading}>Address Details</Heading>
+      <SectionHeader>Address Details</SectionHeader>
 
       <Box marginBottom="2rem">
         <Text as="h3" {...styles.caption} marginBottom="0.25rem">
