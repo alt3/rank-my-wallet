@@ -23,7 +23,7 @@ export function Species({ blockchain, balance }: SpeciesProps) {
   }
 
   return (
-    <Box>
+    <Box marginBottom="2.5rem">
       <Heading {...styles.heading}>Species</Heading>
 
       <Box marginBottom="2rem">
