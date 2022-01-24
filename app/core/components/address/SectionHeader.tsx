@@ -1,17 +1,13 @@
-import { Heading } from "@chakra-ui/react"
+import { chakra, useStyleConfig } from "@chakra-ui/react"
 
-export function SectionHeader({ children, ...rest }) {
-  const styles = {
-    marginBottom: "1.25rem",
-    fontSize: { base: "2xl", sm: "4xl" },
-    fontWeight: "bold",
-    letterSpacing: "tighter",
-  }
+export const SectionHeader = (props) => {
+  const { variant, children, ...rest } = props
+  const styles = useStyleConfig("SectionHeader", variant)
 
   return (
-    <Heading {...styles} {...rest}>
+    <chakra.header __css={styles} {...rest}>
       {children}
-    </Heading>
+    </chakra.header>
   )
 }
 
