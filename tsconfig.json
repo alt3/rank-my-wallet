@@ -19,7 +19,8 @@
     "incremental": true,
     "tsBuildInfoFile": ".tsbuildinfo",
     "paths": {
-      "@/components/*": ["app/core/components/*"]
+      "@/components/*": ["app/core/components/*"],
+      "@/types/*": ["app/core/types/*"]
     }
   },
   "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],
