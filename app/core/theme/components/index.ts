@@ -1,3 +1,4 @@
+import DataGrid from "@/components/data-grid/DataGrid.styles"
 import SectionHeader from "@/components/address/SectionHeader/SectionHeader.styles"
 
-export { SectionHeader }
+export { DataGrid, SectionHeader }

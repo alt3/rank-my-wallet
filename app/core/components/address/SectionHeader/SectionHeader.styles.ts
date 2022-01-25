@@ -1,6 +1,6 @@
-import StyleConfigType from "@/types/StyleConfigType"
+import StyleConfigSingle from "@/types/StyleConfigSingle"
 
-const SectionHeader: StyleConfigType = {
+const SectionHeader: StyleConfigSingle = {
   baseStyle: {
     fontFamily: "heading",
     fontSize: { base: "2xl", sm: "3xl" },

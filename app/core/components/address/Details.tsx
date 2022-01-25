@@ -1,64 +1,26 @@
 import { SectionHeader } from "@/components/address"
-import { Box, Text, useColorModeValue } from "@chakra-ui/react"
+import { DataGrid, DataGridEntry } from "@/components/data-grid"
+import { Box } from "@chakra-ui/react"
 import { capitalize } from "app/lib/utils"
 
 export function AddressDetails({ parsedAddress }) {
-  const styles = {
-    caption: {
-      color: useColorModeValue("teal.500", "teal.300"),
-    },
-  }
-
   return (
     <Box marginBottom="2.5rem">
       <SectionHeader>Address Details</SectionHeader>
 
-      <Box marginBottom="2rem">
-        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
-          Address
-        </Text>
-        <Text>{parsedAddress.address}</Text>
-      </Box>
-
-      <Box marginBottom="2rem">
-        <Text as="h3" {...styles.caption} marginBottom="0.25rem">
-          Blockchain
-        </Text>
-        <Text>{capitalize(parsedAddress.blockchain)}</Text>
-      </Box>
-
-      {parsedAddress.version && (
-        <Box marginBottom="2rem">
-          <Text as="h3" {...styles.caption} marginBottom="0.25rem">
-            Address Version
-          </Text>
-          <Text>{capitalize(parsedAddress.version)}</Text>
-        </Box>
-      )}
-
-      {parsedAddress.network && (
-        <Box marginBottom="2rem">
-          <Text as="h3" {...styles.caption} marginBottom="0.25rem">
-            Network
-          </Text>
-          <Text>{capitalize(parsedAddress.network)}</Text>
-        </Box>
-      )}
-
-      {parsedAddress.type && (
-        <Box marginBottom="2rem">
-          <Text as="h3" {...styles.caption} marginBottom="0.25rem">
-            Address Type
-          </Text>
-          <Text>
-            {" "}
-            {capitalize(parsedAddress.type.name)}
-            {parsedAddress.type.abbreviation && (
-              <Box as="span"> ({parsedAddress.type.abbreviation})</Box>
-            )}
-          </Text>
-        </Box>
-      )}
+      <DataGrid>
+        <DataGridEntry field="Address" value={parsedAddress.address} />
+        <DataGridEntry field="Blockchain" value={capitalize(parsedAddress.blockchain)} />
+        {parsedAddress.version && (
+          <DataGridEntry field="Address Version" value={capitalize(parsedAddress.version)} />
+        )}
+        {parsedAddress.network && (
+          <DataGridEntry field="Network" value={capitalize(parsedAddress.network)} />
+        )}
+        {parsedAddress.type && (
+          <DataGridEntry field="Address Type" value={capitalize(parsedAddress.type.name)} />
+        )}
+      </DataGrid>
     </Box>
   )
 }

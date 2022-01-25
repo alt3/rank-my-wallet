@@ -1,8 +1,8 @@
 import { chakra, useStyleConfig } from "@chakra-ui/react"
 
 export const SectionHeader = (props) => {
-  const { variant, children, ...rest } = props
-  const styles = useStyleConfig("SectionHeader", variant)
+  const { size, variant, children, ...rest } = props
+  const styles = useStyleConfig("SectionHeader", { size, variant })
 
   return (
     <chakra.header __css={styles} {...rest}>
