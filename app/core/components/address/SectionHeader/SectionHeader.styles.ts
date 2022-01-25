@@ -6,7 +6,7 @@ const SectionHeader: StyleConfigSingle = {
     fontSize: { base: "2xl", sm: "3xl" },
     fontWeight: "bold",
     letterSpacing: "tighter",
-    marginBottom: "1.25rem",
+    marginBottom: { base: "0.5rem", sm: "1.25rem" },
   },
 }
 
