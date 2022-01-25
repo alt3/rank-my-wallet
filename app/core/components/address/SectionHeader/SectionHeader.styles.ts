@@ -1,6 +1,6 @@
-import SinglePartComponentStyleProps from "@/types/SinglePartComponentStyleProps"
+import StyleConfigType from "@/types/StyleConfigType"
 
-const SectionHeader: SinglePartComponentStyleProps = {
+const SectionHeader: StyleConfigType = {
   baseStyle: {
     fontFamily: "heading",
     fontSize: { base: "2xl", sm: "3xl" },
