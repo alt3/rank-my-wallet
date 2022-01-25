@@ -10,16 +10,14 @@ interface StyleOptions {
 }
 
 type StyleInterpolation =
-  | { [part: string]: StyleProps }
-  | ((options: StyleOptions) => { [part: string]: SystemStyleObject })
+  | { [part: string]: SystemStyleObject }
+  | ((options: StyleOptions) => {
+      [part: string]: StyleProps | SystemStyleObject
+    })
 
 export default interface StyleConfigMulti {
   parts?: string[]
   baseStyle: StyleInterpolation
   sizes?: { [size: string]: StyleInterpolation }
   variants?: { [variant: string]: StyleInterpolation }
-  defaultProps?: {
-    size?: string
-    variant?: string
-  }
 }

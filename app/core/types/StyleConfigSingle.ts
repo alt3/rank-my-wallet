@@ -15,8 +15,4 @@ export default interface StyleConfigSingle {
   baseStyle: StyleInterpolation
   sizes?: { [size: string]: StyleInterpolation }
   variants?: { [variant: string]: StyleInterpolation }
-  defaultProps?: {
-    variant: string
-    size: string
-  }
 }
