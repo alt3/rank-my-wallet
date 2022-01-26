@@ -45,7 +45,7 @@ interface BitsTableProps {
   sumLabel?: string
 }
 
-export function BitsTable({ caption, bits, sumLabel }: BitsTableProps) {
+export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
   const styles = {
@@ -54,7 +54,6 @@ export function BitsTable({ caption, bits, sumLabel }: BitsTableProps) {
     },
     table: {
       marginBottom: "3rem",
-      maxWidth: "400px",
     },
     th: {
       textAlign: "center" as const,
@@ -120,4 +119,4 @@ export function BitsTable({ caption, bits, sumLabel }: BitsTableProps) {
   )
 }
 
-export default BitsTable
+export default BitsTableMobile
