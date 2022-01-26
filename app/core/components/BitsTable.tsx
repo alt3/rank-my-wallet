@@ -57,10 +57,10 @@ export function BitsTable({ caption, bits, sumLabel }: BitsTableProps) {
       maxWidth: "400px",
     },
     th: {
-      textAlign: "left" as const,
+      textAlign: "center" as const,
     },
     td: {
-      textAlign: "left" as const,
+      textAlign: "center" as const,
     },
     tdSum: {
       fontWeight: "extrabold",

@@ -5,7 +5,7 @@ export const DataGridField = (props) => {
   const styles = useMultiStyleConfig("DataGrid", { size, variant })
 
   return (
-    <GridItem sx={styles.DataGridField} {...rest}>
+    <GridItem __css={styles.DataGridField} {...rest}>
       {children}
     </GridItem>
   )

@@ -1,5 +1,5 @@
-import { AddressAnalysis, AddressCounter, AddressDetails, Species } from "@/components/address"
-import { Container } from "@chakra-ui/react"
+import { AddressCounter } from "@/components/address"
+import { ValidAddressDetails } from "@/components/ValidAddressDetails"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import {
@@ -45,17 +45,12 @@ export const Ranking = ({ data }) => {
         rank={data.rank}
       ></AddressCounter>
 
-      <Container maxW="container.md" marginBottom="2.5rem">
-        {data.parsedAddress.blockchain && (
-          <>
-            <Container maxW="container.md" marginBottom="2.5rem">
-              <AddressDetails parsedAddress={data.parsedAddress}></AddressDetails>
-              <Species blockchain={data.parsedAddress.blockchain} balance={data.balance}></Species>
-              <AddressAnalysis parsedAddress={data.parsedAddress}></AddressAnalysis>
-            </Container>
-          </>
-        )}
-      </Container>
+      {data.parsedAddress.blockchain && (
+        <ValidAddressDetails
+          parsedAddress={data.parsedAddress}
+          balance={data.balance}
+        ></ValidAddressDetails>
+      )}
     </>
   )
 }

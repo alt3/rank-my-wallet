@@ -6,12 +6,13 @@ export class BlockchainAddress {
   class: string
   encoding: string
   blockchain: string
+  ticker: "ADA" | "ERG"
+  currencySymbol: "₳" | "Σ"
   network: string
   type: {
     type: number
     bits: Array<number>
     name: string
-    abbreviation?: string
   }
   error: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
 

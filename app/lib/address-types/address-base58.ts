@@ -12,20 +12,17 @@ const ergoAddressTypes = [
   {
     type: 1,
     bits: [1, 0, 0, 0],
-    name: "Pay-to-PublicKey",
-    abbreviation: "P2PK",
+    name: "Pay-to-PublicKey (P2PK)",
   },
   {
     type: 2,
     bits: [0, 1, 0, 0],
-    name: "Pay-to-Script-Hash",
-    abbreviation: "P2SH",
+    name: "Pay-to-Script-Hash (P2SH)",
   },
   {
     type: 3,
     bits: [1, 1, 0, 0],
-    name: "Pay-to-Script",
-    abbreviation: "P2S",
+    name: "Pay-to-Script (P2S)",
   },
 ]
 
@@ -59,6 +56,8 @@ export class Base58Address extends BlockchainAddress {
 
     if (isErgoAddress(decoded)) {
       this.blockchain = "ergo"
+      this.currencySymbol = "Σ"
+      this.ticker = "ERG"
 
       this.header = {
         byte: headerByte,
