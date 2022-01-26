@@ -18,6 +18,8 @@ import nextId from "react-id-generator"
 export function ValidAddressDetails({ parsedAddress, balance }) {
   const species = getSpecies(parsedAddress.blockchain, balance)
 
+  console.log(parsedAddress)
+
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
       <SectionHeader>Address Details</SectionHeader>

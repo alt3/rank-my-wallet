@@ -64,11 +64,11 @@ export class Base58Address extends BlockchainAddress {
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
-          type: "type",
+          type: "address type",
         },
         trailing: {
           bits: getTrailingBits(headerBits),
-          type: "network",
+          type: "blockchain network",
         },
       }
 
