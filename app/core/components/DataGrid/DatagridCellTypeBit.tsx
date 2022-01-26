@@ -1,17 +1,16 @@
 import { Td } from "@chakra-ui/react"
+import { useMediaQuery } from "@chakra-ui/react"
 
 interface Props {
   bit: number | null
 }
 
 export const DataGridCellTypeBit = ({ bit }: Props) => {
-  const styles = {
-    td: {
-      textAlign: "center" as const,
-    },
-  }
+  const [isMobile] = useMediaQuery("(max-width: 768px)")
 
-  return <Td {...styles.td}>{bit}</Td>
+  const paddingLeft = isMobile ? 0 : "inherit"
+
+  return <Td paddingLeft={paddingLeft}>{bit}</Td>
 }
 
 export default DataGridCellTypeBit

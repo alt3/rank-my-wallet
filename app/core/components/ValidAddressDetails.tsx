@@ -81,7 +81,6 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
             <Grid
               templateColumns={{ base: "repeat(4, 1fr)", sm: "repeat(6, 1fr)" }}
               paddingBottom="1.5rem"
-              marginLeft={{ base: "2.1rem", sm: 0 }}
             >
               {parsedAddress.bytes.map((byte) => (
                 <GridItem key={nextId("byte")}>{byte}</GridItem>

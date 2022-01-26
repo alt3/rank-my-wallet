@@ -1,6 +1,7 @@
 import { Td } from "@chakra-ui/react"
 import nextId from "react-id-generator"
 import isEqual from "lodash.isequal"
+import { useMediaQuery } from "@chakra-ui/react"
 
 // Simple lookup table to keep sanity
 const bitLookup = [
@@ -45,11 +46,9 @@ interface Props {
 }
 
 export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
-  const styles = {
-    td: {
-      textAlign: "center" as const,
-    },
-  }
+  const [isMobile] = useMediaQuery("(max-width: 768px)")
+
+  const paddingLeft = isMobile ? 0 : "inherit"
 
   let cellText: string | number | null = null
 
@@ -67,7 +66,7 @@ export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
   }
 
   return (
-    <Td key={nextId("td")} {...styles.td}>
+    <Td key={nextId("td")} paddingLeft={paddingLeft}>
       {cellText}
     </Td>
   )

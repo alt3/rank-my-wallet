@@ -1,4 +1,5 @@
 import { Td } from "@chakra-ui/react"
+import { useMediaQuery } from "@chakra-ui/react"
 
 interface Props {
   binary: number
@@ -6,9 +7,10 @@ interface Props {
 }
 
 export const DataGridCellTypeBinary = ({ binary, bit }: Props) => {
+  const [isMobile] = useMediaQuery("(max-width: 768px)")
+
   const styles = {
     td: {
-      textAlign: "center" as const,
       color: "inherit",
       fontWeight: "inherit",
     },
@@ -19,7 +21,13 @@ export const DataGridCellTypeBinary = ({ binary, bit }: Props) => {
     styles.td.fontWeight = "bold"
   }
 
-  return <Td {...styles.td}>{binary}</Td>
+  const paddingLeft = isMobile ? 0 : "inherit"
+
+  return (
+    <Td {...styles.td} paddingLeft={paddingLeft}>
+      {binary}{" "}
+    </Td>
+  )
 }
 
 export default DataGridCellTypeBinary

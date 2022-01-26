@@ -1,43 +1,10 @@
 import { Text, useColorModeValue, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react"
-import nextId from "react-id-generator"
-import isEqual from "lodash.isequal"
-import { bitsToByte } from "app/lib/utils"
+import { DataGridCellTypeBinary } from "@components/DataGrid/DatagridCellTypeBinary"
+import { DataGridCellTypeBit } from "@components/DataGrid/DatagridCellTypeBit"
+import { DataGridCellTypeDecimal } from "@components/DataGrid/DataGridCellTypeDecimal"
 
-// Simple lookup table to keep sanity
-const bitLookup = [
-  {
-    index: 0,
-    binary: 1,
-  },
-  {
-    index: 1,
-    binary: 2,
-  },
-  {
-    index: 2,
-    binary: 4,
-  },
-  {
-    index: 3,
-    binary: 8,
-  },
-  {
-    index: 4,
-    binary: 16,
-  },
-  {
-    index: 5,
-    binary: 32,
-  },
-  {
-    index: 6,
-    binary: 64,
-  },
-  {
-    index: 7,
-    binary: 128,
-  },
-]
+import nextId from "react-id-generator"
+import { bitsToByte } from "app/lib/utils"
 
 interface BitsTableProps {
   caption: string
@@ -48,6 +15,8 @@ interface BitsTableProps {
 export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
+  let binaryCounter = 256 // we will divide by two to generate the static binary cell headers
+
   const styles = {
     caption: {
       color: useColorModeValue("teal.500", "teal.300"),
@@ -56,23 +25,27 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       marginBottom: "3rem",
     },
     th: {
-      textAlign: "center" as const,
-    },
-    td: {
-      textAlign: "center" as const,
-    },
-    tdSum: {
-      fontWeight: "extrabold",
-      color: useColorModeValue("teal.500", "teal.300"),
+      textAlign: "left" as const,
+      paddingLeft: 0,
+      marginLeft: 0,
     },
     tdSumLabel: {
-      colSpan: 2,
+      colSpan: 3,
       textAlign: "right" as const,
       color: useColorModeValue("gray.600", "gray.400"),
       fontSize: "xs",
       fontFamily: "heading",
       textTransform: "uppercase" as const,
       letterSpacing: "wider",
+      paddingLeft: 0,
+      paddingRight: "5rem",
+    },
+    tdSum: {
+      colSpan: 1,
+      fontWeight: "extrabold",
+      color: useColorModeValue("teal.500", "teal.300"),
+      textAlign: "left" as const,
+      paddingLeft: 0,
     },
   }
 
@@ -92,25 +65,34 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
 
         <Tbody>
           {/* One row per bit */}
-          {reversedBits.map((bit, i) => (
-            <Tr key={nextId("tr")}>
-              <Td key={nextId("td")} {...styles.td}>
-                {bitLookup.find(({ index }) => isEqual(index, bits.length - 1 - i))?.binary}
-              </Td>
-              <Td {...styles.td}>{bit}</Td>
-              <Td {...styles.td}>
-                {bit === 0
-                  ? 0
-                  : bitLookup.find(({ index }) => isEqual(index, bits.length - 1 - i))?.binary}
-              </Td>
-            </Tr>
-          ))}
+          {reversedBits.map((bit, i) => {
+            binaryCounter = binaryCounter / 2
+
+            return (
+              <Tr key={nextId("tr")}>
+                <DataGridCellTypeBinary binary={binaryCounter} bit={bit} key={nextId("td-bin")} />
+                <DataGridCellTypeBit bit={bit} key={nextId("td-bit")} />
+                <DataGridCellTypeDecimal
+                  bits={reversedBits}
+                  bit={bit}
+                  i={i}
+                  key={nextId("td-dec")}
+                />
+              </Tr>
+            )
+          })}
 
           {/* Summary row */}
-          <Tr border={"none"}>
-            <Td {...styles.tdSumLabel}>{sumLabel}</Td>
-            <Td {...styles.td} {...styles.tdSum}>
+          <Tr>
+            <Td borderBottom={0} colspan={2}></Td>
+            <Td borderBottom={0} {...styles.tdSum}>
               {bitsToByte(bits)}
+            </Td>
+          </Tr>
+
+          <Tr>
+            <Td borderBottom={0} {...styles.tdSumLabel} paddingTop={0}>
+              {sumLabel}
             </Td>
           </Tr>
         </Tbody>

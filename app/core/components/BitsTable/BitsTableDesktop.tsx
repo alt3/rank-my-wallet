@@ -14,6 +14,8 @@ interface BitsTableProps {
 export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
+  let binaryCounter = 256 // we will divide by two to generate the static binary cell headers
+
   // add nullified trailing bits to get to 8-bit format
   if (reversedBits.length !== 8) {
     for (let i = 0; i <= 8 - reversedBits.length; i++) {
@@ -22,20 +24,12 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
     }
   }
 
-  let binaryCounter = 256 // we will divide by two to generate the static binary cell headers
-
   const styles = {
     caption: {
       color: useColorModeValue("teal.500", "teal.300"),
     },
     table: {
       marginBottom: "3rem",
-    },
-    th: {
-      textAlign: "center" as const,
-    },
-    tdBinary: {
-      // bg: "gray.00",
     },
     td: {
       textAlign: "center" as const,
@@ -79,7 +73,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
             {reversedBits.map((bit) => {
               binaryCounter = binaryCounter / 2
               return (
-                <DataGridCellTypeBinary binary={binaryCounter} bit={bit} key={nextId("td-bit")} />
+                <DataGridCellTypeBinary binary={binaryCounter} bit={bit} key={nextId("td-bin")} />
               )
             })}
 
@@ -115,7 +109,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
                   bits={reversedBits}
                   bit={bit}
                   i={i}
-                  key={nextId("td-decimal")}
+                  key={nextId("td-dec")}
                 />
               )
             })}
