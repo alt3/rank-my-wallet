@@ -58,7 +58,7 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
               Address Analysis
             </SectionHeader>
             <Box as="span" verticalAlign="top" minHeight="3rem">
-              <AccordionIcon />
+              <AccordionIcon color={useColorModeValue("teal.500", "teal.300")} />
             </Box>
           </AccordionButton>
 
