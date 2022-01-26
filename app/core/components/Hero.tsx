@@ -1,4 +1,4 @@
-import { AddressForm } from "@/components/AddressForm"
+import { AddressForm } from "@components"
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 
 export function Hero() {

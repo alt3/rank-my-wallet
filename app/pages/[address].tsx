@@ -1,5 +1,4 @@
-import { AddressCounter } from "@/components/address"
-import { ValidAddressDetails } from "@/components/ValidAddressDetails"
+import { Counter, ValidAddressDetails } from "@components"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import {
@@ -39,11 +38,11 @@ export const Ranking = ({ data }) => {
         <meta name="twitter:site" content="@RankMyWallet" />
       </Head>
 
-      <AddressCounter
+      <Counter
         blockchain={data.parsedAddress.blockchain}
         addressCount={data.addressCount}
         rank={data.rank}
-      ></AddressCounter>
+      ></Counter>
 
       {data.parsedAddress.blockchain && (
         <ValidAddressDetails

@@ -19,7 +19,8 @@
     "incremental": true,
     "tsBuildInfoFile": ".tsbuildinfo",
     "paths": {
-      "@/components/*": ["app/core/components/*"],
+      "@components": ["app/core/components"],
+      "@components/*": ["app/core/components/*"],
       "@/types/*": ["app/core/types/*"]
     }
   },

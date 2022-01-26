@@ -1,6 +1,3 @@
-import { SectionHeader } from "@/components/address"
-import { DataGrid, DataGridEntry } from "@/components/data-grid"
-import { BitsTable } from "@/components/BitsTable"
 import {
   Accordion,
   AccordionButton,
@@ -14,6 +11,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "@components"
 import { capitalize, getSpecies } from "app/lib/utils"
 import nextId from "react-id-generator"
 
@@ -40,7 +38,10 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
 
       <SectionHeader>Species</SectionHeader>
       <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
-        <DataGridEntry field="Balance" value={balance} />
+        <DataGridEntry
+          field="Balance"
+          value={parsedAddress.currencySymbol + " " + balance.toLocaleString(undefined)}
+        />
         <DataGridEntry field="Species" value={capitalize(species.name)} />
         <DataGridEntry
           field="Starts At"
@@ -72,7 +73,7 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
               )}
             </DataGrid>
 
-            <Text as="h3" color={useColorModeValue("teal.500", "teal.300")} marginBottom="0.25rem">
+            <Text color={useColorModeValue("teal.500", "teal.300")} marginBottom="0.25rem">
               Decoded Bytes:
             </Text>
             <Grid

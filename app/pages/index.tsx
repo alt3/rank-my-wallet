@@ -1,10 +1,8 @@
-import { BlockChains } from "@/components/BlockChains"
-import { Hero } from "@/components/Hero"
-import { Sponsors } from "@/components/Sponsors"
 import { Container } from "@chakra-ui/react"
+import { BlockChains, Hero, Sponsors } from "@components"
+import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
-import { basicAuth } from "app/core/auth/basic-auth"
 
 const Home: BlitzPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
   const meta = {

@@ -1,4 +1,4 @@
-import { AddressError } from "@/components/errors/AddressError"
+import { AddressError } from "@components"
 
 function Error({ statusCode, address = undefined }) {
   return (

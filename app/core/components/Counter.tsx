@@ -1,14 +1,14 @@
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import Countup from "react-countup"
-import { capitalize } from "../../../lib/utils"
+import { capitalize } from "../../lib/utils"
 
-interface AddressCounterProps {
+interface CounterProps {
   addressCount: number
   rank: number
   blockchain: string
 }
 
-export function AddressCounter({ addressCount, rank, blockchain }: AddressCounterProps) {
+export function Counter({ addressCount, rank, blockchain }: CounterProps) {
   const styles = {
     box: {
       marginBottom: "3rem",
@@ -56,4 +56,4 @@ export function AddressCounter({ addressCount, rank, blockchain }: AddressCounte
   )
 }
 
-export default AddressCounter
+export default Counter
