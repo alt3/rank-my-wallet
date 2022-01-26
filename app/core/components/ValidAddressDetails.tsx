@@ -24,7 +24,7 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
     <Container maxW="container.md" marginBottom="2.5rem">
       <SectionHeader>Address Details</SectionHeader>
 
-      <DataGrid>
+      <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
         <DataGridEntry field="Address" value={parsedAddress.address} />
         <DataGridEntry field="Blockchain" value={capitalize(parsedAddress.blockchain)} />
         {parsedAddress.version && (
@@ -39,7 +39,7 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
       </DataGrid>
 
       <SectionHeader>Species</SectionHeader>
-      <DataGrid>
+      <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
         <DataGridEntry field="Balance" value={balance} />
         <DataGridEntry field="Species" value={capitalize(species.name)} />
         <DataGridEntry
