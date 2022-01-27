@@ -105,7 +105,7 @@ export class Bech32Address extends BlockchainAddress {
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
-          type: "blockchain network",
+          type: "network type",
         },
         trailing: {
           bits: getTrailingBits(headerBits),
