@@ -1,5 +1,4 @@
 import { StringOrNumber } from "@chakra-ui/utils"
-import next from "next"
 import species from "../constants/species"
 
 /**
