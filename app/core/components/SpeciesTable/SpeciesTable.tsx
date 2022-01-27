@@ -55,7 +55,14 @@ export function SpeciesTable({ blockchain, currencySymbol, species }: SpeciesTab
           {species.map((element, i) => {
             return (
               <Tr key={nextId("tr")}>
-                <Td {...styles.left} color="gray.500" fontWeight="bolder" maxWidth="10px">
+                <Td
+                  {...styles.left}
+                  color="gray.500"
+                  fontWeight="bolder"
+                  maxWidth="10px"
+                  whiteSpace="nowrap"
+                  paddingRight={{ base: "2rem", sm: 0 }}
+                >
                   {i + 1}
                 </Td>
                 <Td {...styles.left}>{capitalize(element.name)}</Td>
