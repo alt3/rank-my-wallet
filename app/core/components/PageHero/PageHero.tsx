@@ -16,11 +16,12 @@ export const PageHero = ({ title, subtitle }: PageHeroProps) => {
       // paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
-      fontSize: { base: "4xl", lg: "6xl", sm: "4xl" },
+      fontSize: { base: "3xl", md: "6xl" },
       fontWeight: "bold",
       letterSpacing: "tighter",
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
-      // marginBottom: { base: "1rem", md: "2rem" },
+      marginBottom: 0,
+      paddingBottom: 0,
     },
   }
 

@@ -11,6 +11,7 @@ export function Footer() {
       paddingTop: 7,
       background: useColorModeValue("gray.200", "gray.900"),
       color: useColorModeValue("gray.700", "white"),
+      marginTop: "auto",
     },
     link: {
       color: "teal.500",

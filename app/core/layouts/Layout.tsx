@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Flex } from "@chakra-ui/react"
 import { Footer, Navbar } from "@components"
 import { BlitzLayout, Head } from "blitz"
 
@@ -10,13 +10,14 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
+      <Flex display="flex" minHeight="100vh" direction="column" justifyContent="space-between">
+        <Navbar />
+        <Box>
+          <main>{children}</main>
+        </Box>
 
-      <Box>
-        <main>{children}</main>
-      </Box>
-
-      <Footer />
+        <Footer />
+      </Flex>
     </>
   )
 }

@@ -15,6 +15,13 @@ export const Navbar: React.FC = () => {
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
 
+  const styles = {
+    container: {
+      bg: "yellow",
+    },
+    width: "100%",
+  }
+
   return (
     <Box
       color={useColorModeValue("gray.700", "whiteAlpha.600")}
@@ -22,6 +29,7 @@ export const Navbar: React.FC = () => {
       maxW="6xl"
       mx="auto"
       paddingTop={2}
+      width="100%"
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
         <Flex align="center">
