@@ -1,3 +1,5 @@
+import { StringOrNumber } from "@chakra-ui/utils"
+import next from "next"
 import species from "../constants/species"
 
 /**
@@ -105,4 +107,28 @@ export const getSpecies = function (
   }
 
   return match
+}
+
+/**
+ * Returns the blockchain species for given wallet balance..
+ *
+ * @param blockchain - Name of the blockchain
+ * @param balance - Wallet balance with or without decimals
+ */
+export const getNextSpecies = function (
+  blockchain: "cardano" | "ergo",
+  currentSpecies: StringOrNumber
+): { startsAt: number; name: string } | undefined {
+  const currentIndex = species[blockchain].findIndex((element) => currentSpecies === element.name)
+
+  if (currentIndex === undefined) {
+    throw `Unable to determine next ${blockchain} species index for currenct species name ${currentSpecies}`
+  }
+
+  if (currentIndex === species[blockchain].length - 1) {
+    return undefined
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return species[blockchain][currentIndex + 1]!
 }

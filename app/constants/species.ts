@@ -10,11 +10,11 @@ const species = {
     },
     {
       startsAt: 1,
-      name: "seaHorse",
+      name: "seahorse",
     },
     {
       startsAt: 10,
-      name: "pipeFish",
+      name: "pipefish",
     },
     {
       startsAt: 25,
@@ -89,7 +89,87 @@ const species = {
   ergo: [
     {
       startsAt: 0,
+      name: "ghost (0)",
+    },
+    {
+      startsAt: 0.000001,
       name: "dust",
+    },
+    {
+      startsAt: 1,
+      name: "seahorse",
+    },
+    {
+      startsAt: 10,
+      name: "pipefish",
+    },
+    {
+      startsAt: 25,
+      name: "shrimp",
+    },
+    {
+      startsAt: 50,
+      name: "shell",
+    },
+    {
+      startsAt: 100,
+      name: "oyster",
+    },
+    {
+      startsAt: 250,
+      name: "starfish",
+    },
+    {
+      startsAt: 500,
+      name: "crab",
+    },
+    {
+      startsAt: 1000,
+      name: "fish",
+    },
+    {
+      startsAt: 2500,
+      name: "jellyfish",
+    },
+    {
+      startsAt: 5000,
+      name: "piranha",
+    },
+    {
+      startsAt: 10000,
+      name: "swordfish",
+    },
+    {
+      startsAt: 25000,
+      name: "octopus",
+    },
+    {
+      startsAt: 50000,
+      name: "shark",
+    },
+    {
+      startsAt: 100000,
+      name: "tiger shark",
+    },
+    {
+      startsAt: 250000,
+      name: "great white shark",
+    },
+    {
+      startsAt: 500000,
+      name: "orca",
+    },
+    {
+      startsAt: 1000000,
+      name: "whale",
+    },
+    {
+      startsAt: 2500000,
+      name: "fin whale",
+    },
+    {
+      startsAt: 5000000,
+      name: "blue whale",
     },
   ],
 }

@@ -12,13 +12,12 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "@components"
-import { capitalize, getSpecies } from "app/lib/utils"
+import { capitalize, getSpecies, getNextSpecies } from "app/lib/utils"
 import nextId from "react-id-generator"
 
 export function ValidAddressDetails({ parsedAddress, balance }) {
   const species = getSpecies(parsedAddress.blockchain, balance)
-
-  console.log(parsedAddress)
+  const nextSpecies = getNextSpecies(parsedAddress.blockchain, species.name)
 
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
@@ -44,11 +43,34 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
           field="Balance"
           value={parsedAddress.currencySymbol + " " + balance.toLocaleString(undefined)}
         />
-        <DataGridEntry field="Species" value={capitalize(species.name)} />
-        <DataGridEntry
-          field="Starts At"
-          value={parsedAddress.currencySymbol + " " + species.startsAt.toLocaleString(undefined)}
-        />
+        <DataGridEntry field="Current Species" value={capitalize(species.name)} />
+
+        {nextSpecies === undefined && (
+          <DataGridEntry
+            field="Next Level"
+            value="Nothing more to strive for, you're an end boss now 🎉"
+          />
+        )}
+
+        {nextSpecies !== undefined && (
+          <>
+            <DataGridEntry field="Next Level" value={capitalize(nextSpecies.name)} />
+            <DataGridEntry
+              field="Starts At"
+              value={
+                parsedAddress.currencySymbol + " " + nextSpecies.startsAt.toLocaleString(undefined)
+              }
+            />
+            <DataGridEntry
+              field="Requires"
+              value={
+                parsedAddress.currencySymbol +
+                " " +
+                (nextSpecies.startsAt - balance).toLocaleString(undefined)
+              }
+            />
+          </>
+        )}
       </DataGrid>
 
       <Accordion allowToggle>
