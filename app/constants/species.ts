@@ -92,7 +92,7 @@ const species = {
       name: "ghost (0)",
     },
     {
-      startsAt: 0.000001,
+      startsAt: 0.00000001,
       name: "dust",
     },
     {
