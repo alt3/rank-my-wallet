@@ -20,9 +20,6 @@ export const RadioCard = (props) => {
           color: "white",
           borderColor: "teal.600",
         }}
-        _focus={{
-          boxShadow: "outline",
-        }}
         px={5}
         py={3}
       >
