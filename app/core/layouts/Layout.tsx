@@ -10,6 +10,7 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* This flex keeps the footer nicely at bottom. See // https://stackoverflow.com/a/66565163/9850103 */}
       <Flex display="flex" minHeight="100vh" direction="column" justifyContent="space-between">
         <Navbar />
         <Box>

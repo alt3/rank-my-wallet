@@ -43,7 +43,11 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
           field="Balance"
           value={parsedAddress.currencySymbol + " " + balance.toLocaleString(undefined)}
         />
-        <DataGridEntry field="Current Species" value={capitalize(species.name)} />
+        <DataGridEntry
+          field="Current Species"
+          value={capitalize(species.name)}
+          url={{ href: "/species", title: "Blockchain Species" }}
+        />
 
         {nextSpecies === undefined && (
           <DataGridEntry
@@ -54,7 +58,11 @@ export function ValidAddressDetails({ parsedAddress, balance }) {
 
         {nextSpecies !== undefined && (
           <>
-            <DataGridEntry field="Next Level" value={capitalize(nextSpecies.name)} />
+            <DataGridEntry
+              field="Next Level"
+              value={capitalize(nextSpecies.name)}
+              url={{ href: "/species", title: "Blockchain Species" }}
+            />
             <DataGridEntry
               field="Starts At"
               value={
