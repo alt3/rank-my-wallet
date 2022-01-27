@@ -6,7 +6,7 @@ const species = {
     },
     {
       startsAt: 0.000001,
-      name: "dust",
+      name: "plankton",
     },
     {
       startsAt: 1,
@@ -93,7 +93,7 @@ const species = {
     },
     {
       startsAt: 0.00000001,
-      name: "dust",
+      name: "plankton",
     },
     {
       startsAt: 1,
