@@ -14,7 +14,10 @@ export class BlockchainAddress {
     bits: Array<number>
     name: string
   }
-  error: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
+  error: {
+    message: string
+    type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
+  }
 
   constructor(address: string) {
     this.address = address
