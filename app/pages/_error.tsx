@@ -12,19 +12,6 @@ function Error({ statusCode, address = undefined }) {
 }
 
 Error.getInitialProps = ({ res, err }) => {
-  // handle server side address errors (only those will have the `parsedAddress` prop)
-  if (err.parsedAddress) {
-    if (res) {
-      res.statusCode = 501 // set response header if possible (only via direct address URL, not via the form)
-    }
-
-    return {
-      statusCode: 501,
-      address: err.parsedAddress,
-    }
-  }
-
-  // default blitz error handling
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
 
   return { statusCode }
