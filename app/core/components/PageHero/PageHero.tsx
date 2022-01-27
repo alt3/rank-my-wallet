@@ -1,11 +1,11 @@
-import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
+import { Box, Center, Container, Heading, Stack, useColorModeValue } from "@chakra-ui/react"
 
 interface PageHeroProps {
   title: string
   subtitle?: string
 }
 
-export const PageHero = ({ title, subtitle }: PageHeroProps) => {
+export const PageHero = ({ title }: PageHeroProps) => {
   const styles = {
     box: {
       marginBottom: "3rem",

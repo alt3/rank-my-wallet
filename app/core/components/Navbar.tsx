@@ -15,13 +15,6 @@ export const Navbar: React.FC = () => {
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
 
-  const styles = {
-    container: {
-      bg: "yellow",
-    },
-    width: "100%",
-  }
-
   return (
     <Box
       color={useColorModeValue("gray.700", "whiteAlpha.600")}
