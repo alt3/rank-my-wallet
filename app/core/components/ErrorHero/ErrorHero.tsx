@@ -34,7 +34,7 @@ export const ErrorHero = ({ title, subtitle }: ErrorHeroProps) => {
     <Box {...styles.box}>
       <Container {...styles.container}>
         <Center>
-          <Stack width="100%" spacing={8} align="center">
+          <Stack width="100%" spacing={{ base: 6, sm: 8 }} align="center">
             <Heading {...styles.title}>{title}</Heading>
             {subtitle && <Heading {...styles.subtitle}>{subtitle}</Heading>}
           </Stack>

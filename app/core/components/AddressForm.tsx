@@ -1,5 +1,7 @@
 import {
   Button,
+  Box,
+  ChakraProps,
   FormControl,
   FormErrorMessage,
   HStack,
@@ -10,7 +12,11 @@ import { useRouter } from "blitz"
 import React from "react"
 import { useForm } from "react-hook-form"
 
-export function AddressForm() {
+interface IAddressFormProps extends ChakraProps {
+  placeholder?: string
+}
+
+export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
   const router = useRouter()
 
   const {
@@ -39,24 +45,26 @@ export function AddressForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
-      <FormControl isInvalid={errors.address}>
-        <HStack>
-          <Input
-            id="address"
-            placeholder="Wallet address"
-            {...styles.input}
-            {...register("address", {
-              required: "Please provide a wallet address",
-            })}
-          ></Input>
-          <Button size="lg" isLoading={isSubmitting} type="submit" colorScheme="teal">
-            Go
-          </Button>
-        </HStack>
-        <FormErrorMessage>{errors.address && errors.address.message}</FormErrorMessage>
-      </FormControl>
-    </form>
+    <Box style={{ width: "100%" }} {...rest}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <FormControl isInvalid={errors.address}>
+          <HStack>
+            <Input
+              id="address"
+              placeholder={placeholder}
+              {...styles.input}
+              {...register("address", {
+                required: "Please provide a wallet address",
+              })}
+            ></Input>
+            <Button size="lg" isLoading={isSubmitting} type="submit" colorScheme="teal">
+              Go
+            </Button>
+          </HStack>
+          <FormErrorMessage>{errors.address && errors.address.message}</FormErrorMessage>
+        </FormControl>
+      </form>
+    </Box>
   )
 }
 

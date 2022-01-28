@@ -32,7 +32,7 @@ export function Hero() {
                 Wallet
               </Text>
             </Heading>
-            <AddressForm />
+            <AddressForm placeholder="Wallet address" />
           </Stack>
         </Center>
       </Container>

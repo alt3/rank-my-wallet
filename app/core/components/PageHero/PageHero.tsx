@@ -22,6 +22,7 @@ export const PageHero = ({ title }: PageHeroProps) => {
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
       marginBottom: 0,
       paddingBottom: 0,
+      textAlign: "center" as const,
     },
   }
 
@@ -29,7 +30,7 @@ export const PageHero = ({ title }: PageHeroProps) => {
     <Box {...styles.box}>
       <Container {...styles.container}>
         <Center>
-          <Stack width="100%" spacing={8} align="center">
+          <Stack width="100%" spacing={{ base: 6, sm: 8 }} align="center">
             <Heading {...styles.heading}>{title}</Heading>
           </Stack>
         </Center>
