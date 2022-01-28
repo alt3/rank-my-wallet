@@ -143,13 +143,39 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const addressCount = parsedAddress.blockchain === "cardano" ? 2500000 : 87000
   const maxBalance = parsedAddress.blockchain === "cardano" ? 110000000 : 1100000
 
+  // fetch balance
+  let balance: number
+
+  if (parsedAddress.blockchain === "cardano") {
+    console.log("Start fetching from API")
+    balance = getRandomInt(0, maxBalance) // await API
+    const apiRes = fetch(
+      `https://cardano-mainnet.blockfrost.io/api/v0/addresses/${parsedAddress.address}`,
+      {
+        headers: {
+          project_id: "mainnet8Kzd0kkF8okh0Z5pD8woequ8SZpPZm5O",
+        },
+      }
+    )
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
+    console.log(apiRes)
+  } else {
+    balance = getRandomInt(0, maxBalance)
+  }
+
   return {
     props: {
       data: {
         parsedAddress: parseAddress(context.params.address.toString()),
         addressCount: addressCount,
         rank: getRandomInt(1, addressCount),
-        balance: getRandomInt(0, maxBalance),
+        balance: balance,
       },
     },
   }
@@ -163,7 +189,7 @@ const getInvalidAddressProps = function (
     | "UnsupportedNetwork"
     | "UnsupportedType",
   parsedAddress: Bech32Address | Base58Address | RegexAddress | UnrecognizedAddress
-): any {
+) {
   const errorObject = addressErrors.find((element) => element.type === errorType)
 
   if (!errorObject) {

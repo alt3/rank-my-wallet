@@ -1,15 +1,7 @@
-import {
-  Box,
-  Center,
-  Container,
-  Divider,
-  Heading,
-  Stack,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import Countup from "react-countup"
-import { capitalize } from "../../lib/utils"
+import { capitalize, getIntegerSeparator } from "../../lib/utils"
+import { getUserLocale } from "get-user-locale"
 
 interface CounterProps {
   addressCount: number
@@ -57,7 +49,12 @@ export function Counter({ addressCount, rank, blockchain }: CounterProps) {
               <Text as="span" marginRight="0.6rem">
                 #
               </Text>
-              <Countup start={addressCount} end={rank} duration={2.75} separator="." />
+              <Countup
+                start={addressCount}
+                end={rank}
+                duration={2.75}
+                separator={getIntegerSeparator(getUserLocale())}
+              />
             </Heading>
           </Stack>
         </Center>
