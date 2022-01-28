@@ -11,21 +11,30 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "@components"
-import { capitalize, getSpecies, getNextSpecies } from "app/lib/utils"
+import { BitsTable, Counter, DataGrid, DataGridEntry, SectionHeader } from "@components"
+import { capitalize, getNextSpecies, getSpecies } from "app/lib/utils"
 import nextId from "react-id-generator"
 
-export function ValidAddressDetails({ parsedAddress, balance }) {
+export function ValidAddressDetails({ parsedAddress, balance, rank, addressCount }) {
   const species = getSpecies(parsedAddress.blockchain, balance)
   const nextSpecies = getNextSpecies(parsedAddress.blockchain, species.name)
 
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
+      <Counter
+        blockchain={parsedAddress.blockchain}
+        addressCount={addressCount}
+        rank={rank}
+      ></Counter>
+
       <SectionHeader>Address Details</SectionHeader>
 
       <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
         <DataGridEntry field="Address" value={parsedAddress.address} />
-        <DataGridEntry field="Blockchain" value={capitalize(parsedAddress.blockchain)} />
+        <DataGridEntry
+          field="Blockchain"
+          value={`${capitalize(parsedAddress.blockchain)} (${parsedAddress.ticker})`}
+        />
         {parsedAddress.version && (
           <DataGridEntry field="Address Version" value={capitalize(parsedAddress.version)} />
         )}

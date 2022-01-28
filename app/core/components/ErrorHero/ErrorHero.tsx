@@ -22,6 +22,7 @@ export const ErrorHero = ({ title, subtitle }: ErrorHeroProps) => {
       color: useColorModeValue("teal.500", "teal.300"),
       marginBottom: 0,
       paddingBottom: 0,
+      textAlign: "center" as const,
     },
     subtitle: {
       color: useColorModeValue("gray.700", "whiteAlpha.900"),

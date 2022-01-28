@@ -6,19 +6,19 @@ interface addressErrorProps {
 const addressErrors: addressErrorProps[] = [
   {
     type: "UnrecognizedAddress",
-    message: "Sorry but we were unable to recognize this blockchain address.",
+    message: "We apologize, but we were unable to recognize this blockchain address.",
   },
   {
     type: "UnsupportedBlockchain",
-    message: "Sorry but we do not support the {{BLOCKCHAIN}} blockchain.",
+    message: "We apologize, but we do not support the __BLOCKCHAIN__ blockchain.",
   },
   {
     type: "UnsupportedNetwork",
-    message: "Sorry but we do not support the {{BLOCKCHAIN}} {{NETWORK}} network",
+    message: "We apologize, but we do not support __BLOCKCHAIN__ __NETWORK__ addresses.",
   },
   {
     type: "UnsupportedType",
-    message: "Sorry but we do not support the {{BLOCKCHAIN}} address type {{ADDRESS_TYPE}}",
+    message: "We apologize, but we do not support __BLOCKCHAIN__ __ADDRESS_TYPE__ address types.",
   },
 ]
 
