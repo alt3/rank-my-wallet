@@ -16,7 +16,7 @@ export const PageHero = ({ title }: PageHeroProps) => {
       // paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
-      fontSize: { base: "3xl", md: "6xl" },
+      fontSize: { base: "4xl", md: "6xl" },
       fontWeight: "bold",
       letterSpacing: "tighter",
       color: useColorModeValue("gray.700", "whiteAlpha.900"),

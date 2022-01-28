@@ -16,7 +16,7 @@ export const ErrorHero = ({ title, subtitle }: ErrorHeroProps) => {
       // paddingBottom: { base: "4rem", md: "5rem" },
     },
     title: {
-      fontSize: { base: "3xl", md: "6xl" },
+      fontSize: { base: "4xl", md: "6xl" },
       fontWeight: "bold",
       letterSpacing: "tighter",
       color: useColorModeValue("teal.500", "teal.300"),

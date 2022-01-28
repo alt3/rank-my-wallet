@@ -27,27 +27,8 @@ export function ValidAddressDetails({ parsedAddress, balance, rank, addressCount
         rank={rank}
       ></Counter>
 
-      <SectionHeader>Address Details</SectionHeader>
-
-      <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
-        <DataGridEntry field="Address" value={parsedAddress.address} />
-        <DataGridEntry
-          field="Blockchain"
-          value={`${capitalize(parsedAddress.blockchain)} (${parsedAddress.ticker})`}
-        />
-        {parsedAddress.version && (
-          <DataGridEntry field="Address Version" value={capitalize(parsedAddress.version)} />
-        )}
-        {parsedAddress.network && (
-          <DataGridEntry field="Network" value={capitalize(parsedAddress.network)} />
-        )}
-        {parsedAddress.type && (
-          <DataGridEntry field="Address Type" value={capitalize(parsedAddress.type.name)} />
-        )}
-      </DataGrid>
-
       <SectionHeader>Species</SectionHeader>
-      <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
+      <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
         <DataGridEntry
           field="Balance"
           value={parsedAddress.currencySymbol + " " + balance.toLocaleString(undefined)}
@@ -90,12 +71,43 @@ export function ValidAddressDetails({ parsedAddress, balance, rank, addressCount
         )}
       </DataGrid>
 
-      <Accordion allowToggle>
+      <Accordion allowMultiple>
+        <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", sm: "0.5rem" }}>
+          <h2>
+            <AccordionButton p={0}>
+              <Box flex="1" textAlign="left">
+                <SectionHeader>Address Details</SectionHeader>
+              </Box>
+              <Box as="span" verticalAlign="top" minHeight="3rem">
+                <AccordionIcon color={useColorModeValue("teal.500", "teal.300")} />
+              </Box>
+            </AccordionButton>
+          </h2>
+          <AccordionPanel p={0} pb="2rem">
+            <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
+              <DataGridEntry field="Address" value={parsedAddress.address} />
+              <DataGridEntry
+                field="Blockchain"
+                value={`${capitalize(parsedAddress.blockchain)} (${parsedAddress.ticker})`}
+              />
+              {parsedAddress.version && (
+                <DataGridEntry field="Address Version" value={capitalize(parsedAddress.version)} />
+              )}
+              {parsedAddress.network && (
+                <DataGridEntry field="Network" value={capitalize(parsedAddress.network)} />
+              )}
+              {parsedAddress.type && (
+                <DataGridEntry field="Address Type" value={capitalize(parsedAddress.type.name)} />
+              )}
+            </DataGrid>
+          </AccordionPanel>
+        </AccordionItem>
+
         <AccordionItem borderStyle="none">
           <AccordionButton p={0}>
-            <SectionHeader flex="1" textAlign="left">
-              Address Analysis
-            </SectionHeader>
+            <Box flex="1" textAlign="left">
+              <SectionHeader>Address Analysis</SectionHeader>
+            </Box>
             <Box as="span" verticalAlign="top" minHeight="3rem">
               <AccordionIcon color={useColorModeValue("teal.500", "teal.300")} />
             </Box>

@@ -1,4 +1,13 @@
-import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
+import {
+  Box,
+  Center,
+  Container,
+  Divider,
+  Heading,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react"
 import Countup from "react-countup"
 import { capitalize } from "../../lib/utils"
 
@@ -19,11 +28,12 @@ export function Counter({ addressCount, rank, blockchain }: CounterProps) {
       paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
-      fontSize: { base: "2xl", sm: "5xl" },
+      fontSize: { base: "4xl", sm: "6xl" },
       fontWeight: "bold",
       letterSpacing: "tighter",
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
       marginBottom: 0,
+      textAlign: "center" as const,
     },
     counter: {
       fontSize: { base: "4xl", sm: "6xl" },
