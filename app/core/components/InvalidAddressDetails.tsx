@@ -15,13 +15,12 @@ import {
 import {
   AddressForm,
   BitsTable,
-  Counter,
-  ErrorHero,
   DataGrid,
   DataGridEntry,
+  ErrorHero,
   SectionHeader,
 } from "@components"
-import { capitalize, getNextSpecies, getSpecies } from "app/lib/utils"
+import { capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
 export function InvalidAddressDetails({ parsedAddress }) {
