@@ -3,6 +3,7 @@ import theme from "app/core/theme"
 import { AppProps, ErrorBoundary, ErrorComponent, ErrorFallbackProps } from "blitz"
 import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users
 import { AddressError } from "app/errors/AddressError"
+import { ReactQueryDevtools } from "react-query/devtools"
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -14,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ChakraProvider theme={theme}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <ErrorBoundary FallbackComponent={RootErrorFallback}>
         {getLayout(<Component {...pageProps} />)}
       </ErrorBoundary>
