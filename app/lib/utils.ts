@@ -4,7 +4,7 @@ import species from "../constants/species"
 /**
  * Returns the first byte from an array of bytes.
  *
- * @param bits - Array with bytes
+ * @param bytes - Array with bytes
  */
 export const getFirstByte = function (bytes: Array<number>): number {
   return <number>bytes[0]
@@ -146,7 +146,6 @@ export const regexReplace = function (string: string, placeholders: regexReplace
     const cappedValue = capitalize(value)
     string = string.replace(key, cappedValue)
   }
-  console.log(string)
 
   return string
 }
@@ -177,4 +176,17 @@ export const getIntegerSeparator = (locale: string) => {
   }
 
   return separator
+}
+
+/**
+ * Converts a bytes array into a hex string, optionally padded so that each byte will be two
+ *
+ * @see {@link https://stackoverflow.com/a/34310051/9850103}
+ * @param bytes - Array with bytes
+ * @param pad - True to add leading zeros
+ */
+export const bytesToHex = (bytes: Array<number>) => {
+  return Array.from(bytes, function (byte) {
+    return ("0" + (byte & 0xff).toString(16)).slice(-2)
+  }).join("")
 }
