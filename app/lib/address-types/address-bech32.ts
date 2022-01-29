@@ -1,7 +1,7 @@
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
+import { bytesToHex, byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "../utils"
 import { BlockchainAddress } from "./blockhain-address"
-import { getFirstByte, byteToBits, getLeadingBits, getTrailingBits } from "../utils"
 
 /**
  * Shelley address types.
@@ -65,9 +65,22 @@ const shelleyAddressTypes = [
  * Extended class that parses Bech32 address during initialization.
  */
 export class Bech32Address extends BlockchainAddress {
-  decoded: Decoded
-  bytes: Array<number> | undefined
-  version: string
+  decoded: {
+    prefix: string
+    words: Array<number>
+    bytes?: Array<number>
+    hex?: string
+  }
+  version: string // shelley
+  accountAddress: {
+    bytes: Array<number>
+    hex: string
+  }
+  stakeAddress: {
+    bytes: Array<number>
+    hex: string
+    bech32: string
+  }
   header: {
     byte: number
     bits: Array<number>
@@ -86,18 +99,50 @@ export class Bech32Address extends BlockchainAddress {
     this.class = this.constructor.name
 
     this.encoding = "bech32"
-    this.decoded = decoded
 
-    this.bytes = wordsToBytes(decoded.words)
+    const prefix = decoded.prefix
+    const words = decoded.words
+    const bytes = wordsToBytes(decoded.words)
 
-    if (this.bytes !== undefined) {
+    this.decoded = {
+      prefix: prefix,
+      words: words,
+    }
+
+    // if cardano address
+    if (bytes !== undefined) {
+      this.decoded.bytes = bytes
       this.blockchain = "cardano"
       this.currencySymbol = "₳"
       this.ticker = "ADA"
-
       this.version = "shelley"
 
-      const headerByte = getFirstByte(this.bytes)
+      // add hex conversion
+      this.decoded.hex = bytesToHex(bytes)
+
+      // get account address (last 28 bytes)
+      const accountAddressBytes = this.decoded.bytes.slice(-28)
+      const accountAddressHex = bytesToHex(accountAddressBytes)
+
+      this.accountAddress = {
+        bytes: accountAddressBytes,
+        hex: accountAddressHex,
+      }
+
+      // stake address = account hex + added header '1e' (225)
+      // we do not need bytes for this but we render it anyway for a property-complete object
+      const stakeAddressBytes = [225, ...this.accountAddress.bytes]
+      const stakeAddressHex = "e1" + this.accountAddress.hex
+      const stakeAddressWords = bech32.toWords(Buffer.from(stakeAddressHex, "hex"))
+
+      this.stakeAddress = {
+        bytes: stakeAddressBytes,
+        hex: stakeAddressHex,
+        bech32: bech32.encode("stake", stakeAddressWords, 200),
+      }
+
+      // analyze the header byte
+      const headerByte = getFirstByte(bytes)
       const headerBits = byteToBits(headerByte, 8)
 
       this.header = {
