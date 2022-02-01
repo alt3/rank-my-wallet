@@ -1,20 +1,44 @@
-import { ValidAddressDetails, InvalidAddressDetails } from "@components"
-import addressErrors from "app/constants/address-errors"
+import { InvalidAddressDetails, ValidAddressDetails } from "@components"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
-import {
-  Base58Address,
-  Bech32Address,
-  RegexAddress,
-  UnrecognizedAddress,
-} from "app/lib/address-types"
+import getAccount from "app/core/queries/getAccount"
+import { getUnsupportedAddressProps } from "app/lib/get-unsupported-address-props"
 import { parseAddress } from "app/lib/parse-address"
-import { capitalize, getRandomInt, regexReplace } from "app/lib/utils"
-import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
+import { capitalize, getNextSpecies, getRandomInt, getSpecies } from "app/lib/utils"
+import {
+  BlitzPage,
+  ErrorBoundary,
+  GetServerSideProps,
+  Head,
+  InferGetServerSidePropsType,
+} from "blitz"
 import { Suspense } from "react"
 
-export const Ranking = ({ data }) => {
-  // console.log(data)
+function ErrorFallback({ error, resetErrorBoundary }) {
+  console.log(error)
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  )
+}
+
+export const Ranking = ({ props }) => {
+  console.log(props)
+
+  if (props.error) {
+    return (
+      <>
+        <h1>
+          API Request for {capitalize(props.parsedAddress.blockchain)} failed with status code{" "}
+          {props.error.status_code} ({props.error.error}){props.error.status_code}
+        </h1>
+        <h2>Reason: {props.error.message}</h2>
+      </>
+    )
+  }
 
   const meta = {
     // title: `Rank My Wallet - Ranking for ${capitalize(data.parsedAddress.blockchain)} address ${
@@ -41,16 +65,18 @@ export const Ranking = ({ data }) => {
         <meta name="twitter:site" content="@RankMyWallet" /> */}
       </Head>
 
-      {!data.parsedAddress.error && (
+      {props.parsedAddress.isSupported === true && (
         <ValidAddressDetails
-          parsedAddress={data.parsedAddress}
-          balance={data.balance}
-          rank={data.rank}
-          addressCount={data.addressCount}
+          parsedAddress={props.parsedAddress}
+          account={props.account}
+          rank={props.rank}
+          species={props.species}
         ></ValidAddressDetails>
       )}
 
-      {data.parsedAddress.error && <InvalidAddressDetails parsedAddress={data.parsedAddress} />}
+      {props.parsedAddress.isSupported === false && (
+        <InvalidAddressDetails parsedAddress={props.parsedAddress} />
+      )}
     </>
   )
 }
@@ -61,7 +87,9 @@ const ShowRankingPage: BlitzPage<InferGetServerSidePropsType<typeof getServerSid
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Ranking data={data} />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Ranking props={data} />
+        </ErrorBoundary>
       </Suspense>
     </div>
   )
@@ -75,138 +103,49 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const parsedAddress = parseAddress(context.params.address.toString())
+  console.log(parsedAddress)
 
-  if (parsedAddress.blockchain === undefined) {
-    return getInvalidAddressProps("UnrecognizedAddress", parsedAddress)
+  if (parsedAddress.isSupported !== true) {
+    return getUnsupportedAddressProps(parsedAddress)
   }
 
-  // detected a blockchain but it is not Cardano or Ergo
-  if (!["cardano", "ergo"].includes(parsedAddress.blockchain)) {
-    const props = getInvalidAddressProps("UnsupportedBlockchain", parsedAddress)
-
-    props.props.data.parsedAddress.error.message = regexReplace(
-      props.props.data.parsedAddress.error.message,
-      {
-        __BLOCKCHAIN__: props.props.data.parsedAddress.blockchain,
-      }
-    )
-
-    return props
+  // still here so we must be cardano or ergo
+  if (parsedAddress.blockchain !== "cardano" && parsedAddress.blockchain !== "ergo") {
+    throw "we should never reach this point without being cardano or ergo"
   }
 
-  // not mainnet
-  if (parsedAddress.network !== "mainnet") {
-    const props = getInvalidAddressProps("UnsupportedNetwork", parsedAddress)
+  const account = await getAccount(parsedAddress)
+  const currentSpecies = getSpecies(parsedAddress.blockchain, account.account.balance.ticker)
+  const nextSpecies = getNextSpecies(
+    parsedAddress.blockchain,
+    account.account.balance.ticker,
+    currentSpecies.name
+  )
 
-    props.props.data.parsedAddress.error.message = regexReplace(
-      props.props.data.parsedAddress.error.message,
-      {
-        __BLOCKCHAIN__: props.props.data.parsedAddress.blockchain,
-        __NETWORK__: props.props.data.parsedAddress.network,
-      }
-    )
-
-    return props
-  }
-
-  // not a normal Cardano Type-00 address
-  if (parsedAddress.blockchain === "cardano" && parsedAddress.type.type !== 0) {
-    const props = getInvalidAddressProps("UnsupportedType", parsedAddress)
-
-    props.props.data.parsedAddress.error.message = regexReplace(
-      props.props.data.parsedAddress.error.message,
-      {
-        __BLOCKCHAIN__: props.props.data.parsedAddress.blockchain,
-        __ADDRESS_TYPE__: props.props.data.parsedAddress.type.name,
-      }
-    )
-
-    return props
-  }
-
-  // not a normal Ergo P2PK address
-  if (parsedAddress.blockchain === "ergo" && parsedAddress.type.type !== 1) {
-    const props = getInvalidAddressProps("UnsupportedType", parsedAddress)
-
-    props.props.data.parsedAddress.error.message = regexReplace(
-      props.props.data.parsedAddress.error.message,
-      {
-        __BLOCKCHAIN__: props.props.data.parsedAddress.blockchain,
-        __ADDRESS_TYPE__: props.props.data.parsedAddress.type.name,
-      }
-    )
-
-    return props
-  }
-
-  // still here so the address is valid, fetch ranking data
+  // random rank until implemented
   const addressCount = parsedAddress.blockchain === "cardano" ? 2500000 : 87000
-  const maxBalance = parsedAddress.blockchain === "cardano" ? 110000000 : 1100000
 
-  // fetch balance
-  let balance: number
-
-  if (parsedAddress.blockchain === "cardano") {
-    console.log("Start fetching from API")
-    balance = getRandomInt(0, maxBalance) // await API
-    const apiRes = fetch(
-      `https://cardano-mainnet.blockfrost.io/api/v0/addresses/${parsedAddress.address}`,
-      {
-        headers: {
-          project_id: "mainnet8Kzd0kkF8okh0Z5pD8woequ8SZpPZm5O",
+  return {
+    props: {
+      data: {
+        ...account, // we need to spread here because response could be an error object
+        parsedAddress: parsedAddress, //parseAddress(context.params.address.toString()),
+        rank: {
+          addressCount: parsedAddress.blockchain === "cardano" ? 2500000 : 87000,
+          position: getRandomInt(1, addressCount),
+          next: "addr-of-next-account",
+          previous: "addr-of-previous-account",
         },
-      }
-    )
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-
-    console.log(apiRes)
-  } else {
-    balance = getRandomInt(0, maxBalance)
-  }
-
-  return {
-    props: {
-      data: {
-        parsedAddress: parseAddress(context.params.address.toString()),
-        addressCount: addressCount,
-        rank: getRandomInt(1, addressCount),
-        balance: balance,
+        species: {
+          current: currentSpecies,
+          next: nextSpecies,
+        },
       },
     },
   }
 }
 
-// helper function to prevent duplication when generating errors for invalid addresses
-const getInvalidAddressProps = function (
-  errorType:
-    | "UnrecognizedAddress"
-    | "UnsupportedBlockchain"
-    | "UnsupportedNetwork"
-    | "UnsupportedType",
-  parsedAddress: Bech32Address | Base58Address | RegexAddress | UnrecognizedAddress
-) {
-  const errorObject = addressErrors.find((element) => element.type === errorType)
-
-  if (!errorObject) {
-    throw "We need to fix this: errorObject could not be fetched from constants, perhaps add UnknownAddressError?"
-  }
-
-  parsedAddress.error = errorObject
-
-  return {
-    props: {
-      data: {
-        parsedAddress,
-      },
-    },
-  }
-}
-
+ShowRankingPage.suppressFirstRenderFlicker = true
 ShowRankingPage.authenticate = false
 ShowRankingPage.getLayout = (page) => <Layout>{page}</Layout>
 

@@ -12,59 +12,57 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import { BitsTable, Counter, DataGrid, DataGridEntry, SectionHeader } from "@components"
-import { capitalize, getNextSpecies, getSpecies } from "app/lib/utils"
+import { capitalize } from "app/lib/utils"
+import { bigToString } from "app/lib/utils2"
 import nextId from "react-id-generator"
 
-export function ValidAddressDetails({ parsedAddress, balance, rank, addressCount }) {
-  const species = getSpecies(parsedAddress.blockchain, balance)
-  const nextSpecies = getNextSpecies(parsedAddress.blockchain, species.name)
-
+export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
       <Counter
         blockchain={parsedAddress.blockchain}
-        addressCount={addressCount}
-        rank={rank}
+        addressCount={rank.addressCount}
+        rank={rank.position}
       ></Counter>
 
       <SectionHeader>Species</SectionHeader>
       <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
         <DataGridEntry
           field="Balance"
-          value={parsedAddress.currencySymbol + " " + balance.toLocaleString(undefined)}
+          value={parsedAddress.currency.tickerSymbol + " " + bigToString(account.balance.ticker, 0)}
         />
         <DataGridEntry
           field="Current Species"
-          value={capitalize(species.name)}
+          value={capitalize(species.current.name)}
           url={{ href: "/species", title: "Blockchain Species" }}
         />
 
-        {nextSpecies === undefined && (
+        {species.next === undefined && (
           <DataGridEntry
             field="Next Level"
             value="Nothing more to strive for, you're an end boss now 🎉"
           />
         )}
 
-        {nextSpecies !== undefined && (
+        {species.next !== undefined && (
           <>
             <DataGridEntry
               field="Next Level"
-              value={capitalize(nextSpecies.name)}
+              value={capitalize(species.next.name)}
               url={{ href: "/species", title: "Blockchain Species" }}
             />
             <DataGridEntry
               field="Starts At"
               value={
-                parsedAddress.currencySymbol + " " + nextSpecies.startsAt.toLocaleString(undefined)
+                parsedAddress.currency.tickerSymbol + " " + bigToString(species.next.startsAt, 0)
               }
             />
             <DataGridEntry
               field="Requires"
               value={
-                parsedAddress.currencySymbol +
+                parsedAddress.currency.tickerSymbol +
                 " " +
-                (nextSpecies.startsAt - balance).toLocaleString(undefined)
+                bigToString(species.next.requires, parsedAddress.currency.decimals)
               }
             />
           </>
@@ -88,7 +86,7 @@ export function ValidAddressDetails({ parsedAddress, balance, rank, addressCount
               <DataGridEntry field="Address" value={parsedAddress.address} />
               <DataGridEntry
                 field="Blockchain"
-                value={`${capitalize(parsedAddress.blockchain)} (${parsedAddress.ticker})`}
+                value={`${capitalize(parsedAddress.blockchain)} (${parsedAddress.currency.ticker})`}
               />
               {parsedAddress.version && (
                 <DataGridEntry field="Address Version" value={capitalize(parsedAddress.version)} />

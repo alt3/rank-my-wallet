@@ -111,13 +111,14 @@ export class Bech32Address extends BlockchainAddress {
 
     // if cardano address
     if (bytes !== undefined) {
+      this.isSupported = true
       this.decoded.bytes = bytes
       this.blockchain = "cardano"
       this.currency = {
-        ticker: "ADA",
-        nano: "Lovelace",
-        symbol: "₳",
         decimals: 6,
+        ticker: "ADA",
+        tickerSymbol: "₳",
+        nano: "lovelace",
       }
 
       // add hex conversion
@@ -166,8 +167,6 @@ export class Bech32Address extends BlockchainAddress {
       const typeObject = getType(this.header.trailing.bits)
 
       Object.assign(this, { type: typeObject })
-
-      return
     }
   }
 }

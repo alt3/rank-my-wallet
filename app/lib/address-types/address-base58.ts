@@ -30,8 +30,10 @@ const ergoAddressTypes = [
  * Extended class that parses Bech32 address during initialization.
  */
 export class Base58Address extends BlockchainAddress {
-  bytes: Array<number>
-  blockchainVersion: string
+  decoded: {
+    bytes: Array<number>
+    hex: string
+  }
   header: {
     byte: number
     bits: Array<number>
@@ -50,17 +52,22 @@ export class Base58Address extends BlockchainAddress {
     this.class = this.constructor.name
     this.encoding = "base58"
 
-    this.bytes = Array.from(decoded)
-    const headerByte = getFirstByte(this.bytes)
+    this.decoded = {
+      bytes: Array.from(decoded),
+      hex: decoded.toString("hex"),
+    }
+
+    const headerByte = getFirstByte(this.decoded.bytes)
     const headerBits = byteToBits(headerByte, 8)
 
     if (isErgoAddress(decoded)) {
+      this.isSupported = true
       this.blockchain = "ergo"
       this.currency = {
-        ticker: "ERG",
-        nano: "nanoERG",
-        symbol: "Σ",
         decimals: 9,
+        ticker: "ERG",
+        tickerSymbol: "Σ",
+        nano: "nanoERG",
       }
 
       this.header = {
@@ -85,8 +92,6 @@ export class Base58Address extends BlockchainAddress {
 
         Object.assign(this, { type: typeObject })
       }
-
-      return
     }
   }
 }

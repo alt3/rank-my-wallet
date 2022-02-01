@@ -1,5 +1,6 @@
 import { StringOrNumber } from "@chakra-ui/utils"
 import species from "../constants/species"
+import Big from "big.js"
 
 /**
  * Returns the first byte from an array of bytes.
@@ -87,7 +88,7 @@ export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
 }
 
 /**
- * Returns the blockchain species for given wallet balance..
+ * Returns the blockchain species for given wallet balance.
  *
  * @param blockchain - Name of the blockchain
  * @param balance - Wallet balance with or without decimals
@@ -95,7 +96,7 @@ export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
 export const getSpecies = function (
   blockchain: "cardano" | "ergo",
   balance: number
-): { startsAt: number; name: string } {
+): { name: string; startsAt: number } {
   const match = species[blockchain]
     .slice()
     .reverse()
@@ -114,10 +115,12 @@ export const getSpecies = function (
  * @param blockchain - Name of the blockchain
  * @param balance - Wallet balance with or without decimals
  */
+
 export const getNextSpecies = function (
   blockchain: "cardano" | "ergo",
+  balance: Big,
   currentSpecies: StringOrNumber
-): { startsAt: number; name: string } | undefined {
+): { name: string; startsAt: number; requires: Big } | undefined {
   const currentIndex = species[blockchain].findIndex((element) => currentSpecies === element.name)
 
   if (currentIndex === undefined) {
@@ -129,7 +132,15 @@ export const getNextSpecies = function (
   }
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  return species[blockchain][currentIndex + 1]!
+  const nextSpecies = species[blockchain][currentIndex + 1]!
+
+  const result = {
+    name: nextSpecies.name,
+    startsAt: nextSpecies.startsAt,
+    requires: new Big(nextSpecies.startsAt - balance),
+  }
+
+  return result
 }
 
 /**

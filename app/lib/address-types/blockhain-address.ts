@@ -5,12 +5,13 @@ export class BlockchainAddress {
   readonly address: string
   class: string
   encoding: string
+  isSupported?: boolean
   blockchain: string
   currency: {
-    ticker: "ADA" | "ERG"
-    nano: "Lovelace" | "nanoERG"
-    symbol: "₳" | "Σ"
     decimals: 6 | 9
+    ticker: "ADA" | "ERG"
+    tickerSymbol: "₳" | "Σ"
+    nano: "lovelace" | "nanoERG"
   }
   network: string
   type: {
@@ -18,12 +19,17 @@ export class BlockchainAddress {
     bits: Array<number>
     name: string
   }
-  error: {
+  unsupported: {
     message: string
     type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
   }
+  // error: {
+  //   message: string
+  //   type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
+  // }
 
   constructor(address: string) {
     this.address = address
+    this.isSupported = false // default to false
   }
 }

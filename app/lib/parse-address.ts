@@ -4,7 +4,7 @@ import { Bech32Address, Base58Address, RegexAddress, UnrecognizedAddress } from 
 import bs58 from "bs58"
 
 /**
- * Helper function that parses the given blockchain against all of the supported formats.
+ * Helper function that parses the given blockchain address against all of the supported formats.
  *
  * @param address - The given blockchain address
  */

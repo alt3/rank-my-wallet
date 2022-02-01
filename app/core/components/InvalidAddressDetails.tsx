@@ -24,12 +24,11 @@ import { capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
 export function InvalidAddressDetails({ parsedAddress }) {
-  console.log(parsedAddress)
   const colorTeal = useColorModeValue("teal.500", "teal.300")
 
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
-      <ErrorHero title="Address Error" subtitle={parsedAddress.error.message}></ErrorHero>
+      <ErrorHero title="Address Error" subtitle={parsedAddress.unsupported.message}></ErrorHero>
 
       <AddressForm
         placeholder="Try again?"

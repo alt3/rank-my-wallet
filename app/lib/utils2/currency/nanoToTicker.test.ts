@@ -22,7 +22,7 @@ describe("Ensure nanoToTicker:", function () {
     expect(result.toString()).toEqual("111000.123456789")
   })
 
-  it("can handle very large number", () => {
+  it("can handle very large numbers", () => {
     const result = nanoToTicker("9994333222111000001", 6)
     expect(result.toString()).toEqual("9994333222111.000001")
   })
