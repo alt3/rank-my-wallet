@@ -33,6 +33,7 @@
     "@prisma/client": "3.7.0",
     "@storyofams/next-password-protect": "1.5.14",
     "bech32": "2.0.0",
+    "big.js": "6.1.1",
     "blakejs": "1.1.1",
     "blitz": "0.45.0",
     "bs58": "^4.0.1",
@@ -49,7 +50,8 @@
     "react-hook-form": "7.22.5",
     "react-icons": "4.3.1",
     "react-id-generator": "3.0.2",
-    "ripple-regex": "1.1.8"
+    "ripple-regex": "1.1.8",
+    "toformat": "2.0.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "12.0.7",
