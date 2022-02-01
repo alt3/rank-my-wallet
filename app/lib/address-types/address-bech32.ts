@@ -113,9 +113,12 @@ export class Bech32Address extends BlockchainAddress {
     if (bytes !== undefined) {
       this.decoded.bytes = bytes
       this.blockchain = "cardano"
-      this.currencySymbol = "₳"
-      this.ticker = "ADA"
-      this.version = "shelley"
+      this.currency = {
+        ticker: "ADA",
+        nano: "Lovelace",
+        symbol: "₳",
+        decimals: 6,
+      }
 
       // add hex conversion
       this.decoded.hex = bytesToHex(bytes)

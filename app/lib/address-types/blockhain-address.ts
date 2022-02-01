@@ -6,8 +6,12 @@ export class BlockchainAddress {
   class: string
   encoding: string
   blockchain: string
-  ticker: "ADA" | "ERG"
-  currencySymbol: "₳" | "Σ"
+  currency: {
+    ticker: "ADA" | "ERG"
+    nano: "Lovelace" | "nanoERG"
+    symbol: "₳" | "Σ"
+    decimals: 6 | 9
+  }
   network: string
   type: {
     type: number

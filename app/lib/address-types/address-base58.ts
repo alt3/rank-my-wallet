@@ -56,8 +56,12 @@ export class Base58Address extends BlockchainAddress {
 
     if (isErgoAddress(decoded)) {
       this.blockchain = "ergo"
-      this.currencySymbol = "Σ"
-      this.ticker = "ERG"
+      this.currency = {
+        ticker: "ERG",
+        nano: "nanoERG",
+        symbol: "Σ",
+        decimals: 9,
+      }
 
       this.header = {
         byte: headerByte,
