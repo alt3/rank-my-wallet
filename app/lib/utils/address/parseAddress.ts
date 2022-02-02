@@ -1,7 +1,11 @@
 import { bech32 } from "bech32"
-import { Bech32Address, Base58Address, RegexAddress, UnrecognizedAddress } from "./address-types"
-
 import bs58 from "bs58"
+import {
+  Base58Address,
+  Bech32Address,
+  RegexAddress,
+  UnrecognizedAddress,
+} from "../../classes/addresses"
 
 /**
  * Helper function that parses the given blockchain address against all of the supported formats.

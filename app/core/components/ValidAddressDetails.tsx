@@ -12,8 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import { BitsTable, Counter, DataGrid, DataGridEntry, SectionHeader } from "@components"
-import { capitalize } from "app/lib/utils"
-import { bigToString } from "app/lib/utils2"
+import { bigToString, capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
 export function ValidAddressDetails({ parsedAddress, account, rank, species }) {

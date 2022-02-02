@@ -2,9 +2,14 @@ import { InvalidAddressDetails, ValidAddressDetails } from "@components"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import getAccount from "app/core/queries/getAccount"
-import { getUnsupportedAddressProps } from "app/lib/get-unsupported-address-props"
-import { parseAddress } from "app/lib/parse-address"
-import { capitalize, getNextSpecies, getRandomInt, getSpecies } from "app/lib/utils"
+import {
+  capitalize,
+  getNextSpecies,
+  getRandomInt,
+  getSpecies,
+  getUnsupportedAddressProps,
+} from "app/lib/utils"
+import { parseAddress } from "app/lib/utils/address/parseAddress"
 import {
   BlitzPage,
   ErrorBoundary,

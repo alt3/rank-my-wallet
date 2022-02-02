@@ -1,4 +1,4 @@
-import { BlockchainAddress } from "./blockhain-address"
+import { BlockchainAddress } from "./BlockhainAddress"
 
 /**
  * Catch all class for all unrecognizable addresses.

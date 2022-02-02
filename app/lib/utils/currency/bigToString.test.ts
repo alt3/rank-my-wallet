@@ -1,5 +1,4 @@
-import { bigToString } from "./bigToString"
-import { nanoToTicker } from "./nanoToTicker"
+import { bigToString, nanoToTicker } from "app/lib/utils"
 import { Big } from "big.js"
 
 describe("Ensure bigToString:", function () {

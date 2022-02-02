@@ -1,7 +1,7 @@
-import { BlockchainAddress } from "./blockhain-address"
 import ethereumRegex from "ethereum-regex"
 import moneroRegex from "monero-regex"
 import rippleRegex from "ripple-regex"
+import { BlockchainAddress } from "./BlockhainAddress"
 
 /**
  * Catch all class for regex addresses.

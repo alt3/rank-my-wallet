@@ -1,5 +1,5 @@
 import axios from "axios"
-import { nanoToTicker } from "app/lib/utils2"
+import { nanoToTicker } from "app/lib/utils"
 
 export default async function getErgoAccount(parsedAddress): Promise<any> {
   const url = `https://api.ergoplatform.com/api/v1/addresses/${parsedAddress.address}/balance/total`

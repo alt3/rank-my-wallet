@@ -1,6 +1,11 @@
 import addressErrors from "app/constants/address-errors"
-import { Base58Address, Bech32Address, RegexAddress, UnrecognizedAddress } from "./address-types"
-import { regexReplace } from "./utils"
+import {
+  Base58Address,
+  Bech32Address,
+  RegexAddress,
+  UnrecognizedAddress,
+} from "../../classes/addresses"
+import { regexReplace } from "app/lib/utils"
 
 /**
  * Helper function to return GetServerSideProps compatible error props for unsupported addresses.
