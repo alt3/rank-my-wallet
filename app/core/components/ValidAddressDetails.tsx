@@ -19,7 +19,7 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
       <Counter
-        blockchain={parsedAddress.blockchain}
+        blockchain={parsedAddress.blockchain.name}
         addressCount={rank.addressCount}
         rank={rank.position}
       ></Counter>
@@ -85,7 +85,9 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
               <DataGridEntry field="Address" value={parsedAddress.address} />
               <DataGridEntry
                 field="Blockchain"
-                value={`${capitalize(parsedAddress.blockchain)} (${parsedAddress.currency.ticker})`}
+                value={`${capitalize(parsedAddress.blockchain.name)} (${
+                  parsedAddress.currency.ticker
+                })`}
               />
               {parsedAddress.version && (
                 <DataGridEntry field="Address Version" value={capitalize(parsedAddress.version)} />

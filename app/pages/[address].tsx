@@ -2,13 +2,7 @@ import { InvalidAddressDetails, ValidAddressDetails } from "@components"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import getAccount from "app/core/queries/getAccount"
-import {
-  capitalize,
-  getNextSpecies,
-  getRandomInt,
-  getSpecies,
-  getUnsupportedAddressProps,
-} from "app/lib/utils"
+import { capitalize, getNextSpecies, getRandomInt, getSpecies } from "app/lib/utils"
 import { parseAddress } from "app/lib/utils/address/parseAddress"
 import {
   BlitzPage,
@@ -18,6 +12,8 @@ import {
   InferGetServerSidePropsType,
 } from "blitz"
 import { Suspense } from "react"
+
+import { validateAddress } from "app/lib/utils/address/validateAddress"
 
 function ErrorFallback({ error, resetErrorBoundary }) {
   console.log(error)
@@ -37,7 +33,7 @@ export const Ranking = ({ props }) => {
     return (
       <>
         <h1>
-          API Request for {capitalize(props.parsedAddress.blockchain)} failed with status code{" "}
+          API Request for {capitalize(props.parsedAddress.blockchain.name)} failed with status code{" "}
           {props.error.status_code} ({props.error.error}){props.error.status_code}
         </h1>
         <h2>Reason: {props.error.message}</h2>
@@ -108,27 +104,33 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const parsedAddress = parseAddress(context.params.address.toString())
-  console.log(parsedAddress)
+  const validatedAddress = validateAddress(parsedAddress)
 
-  if (parsedAddress.isSupported !== true) {
-    return getUnsupportedAddressProps(parsedAddress)
+  if (!parsedAddress.isSupported) {
+    return {
+      props: {
+        data: {
+          parsedAddress: validatedAddress,
+        },
+      },
+    }
   }
 
   // still here so we must be cardano or ergo
-  if (parsedAddress.blockchain !== "cardano" && parsedAddress.blockchain !== "ergo") {
+  if (parsedAddress.blockchain.name !== "cardano" && parsedAddress.blockchain.name !== "ergo") {
     throw "we should never reach this point without being cardano or ergo"
   }
 
   const account = await getAccount(parsedAddress)
-  const currentSpecies = getSpecies(parsedAddress.blockchain, account.account.balance.ticker)
+  const currentSpecies = getSpecies(parsedAddress.blockchain.name, account.account.balance.ticker)
   const nextSpecies = getNextSpecies(
-    parsedAddress.blockchain,
+    parsedAddress.blockchain.name,
     account.account.balance.ticker,
     currentSpecies.name
   )
 
   // random rank until implemented
-  const addressCount = parsedAddress.blockchain === "cardano" ? 2500000 : 87000
+  const addressCount = parsedAddress.blockchain.name === "cardano" ? 2500000 : 87000
 
   return {
     props: {
@@ -136,7 +138,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         ...account, // we need to spread here because response could be an error object
         parsedAddress: parsedAddress, //parseAddress(context.params.address.toString()),
         rank: {
-          addressCount: parsedAddress.blockchain === "cardano" ? 2500000 : 87000,
+          addressCount: addressCount,
           position: getRandomInt(1, addressCount),
           next: "addr-of-next-account",
           previous: "addr-of-previous-account",

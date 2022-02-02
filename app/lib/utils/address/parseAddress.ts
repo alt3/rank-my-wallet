@@ -21,7 +21,7 @@ export const parseAddress = function (
   if (bech32decoded !== undefined) {
     const parsedBech32 = new Bech32Address(address.toLowerCase(), bech32decoded)
 
-    if (parsedBech32.blockchain !== undefined) {
+    if (parsedBech32.blockchain.name !== undefined) {
       return parsedBech32
     }
   }
@@ -31,7 +31,7 @@ export const parseAddress = function (
     const base58decoded = bs58.decode(address)
     const parsedBase58 = new Base58Address(address, base58decoded)
 
-    if (parsedBase58.blockchain !== undefined) {
+    if (parsedBase58.blockchain.name !== undefined) {
       return parsedBase58
     }
   } catch (e) {}
@@ -39,7 +39,7 @@ export const parseAddress = function (
   // Regexes first, just for fun
   const parsedRegex = new RegexAddress(address)
 
-  if (parsedRegex.blockchain !== undefined) {
+  if (parsedRegex.blockchain.name !== undefined) {
     return parsedRegex
   }
 

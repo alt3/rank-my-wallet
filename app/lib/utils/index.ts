@@ -1,5 +1,5 @@
-export * from "./address/getUnsupportedAddressProps"
 export * from "./address/parseAddress"
+export * from "./address/validateAddress"
 export * from "./bits/bitstoByte"
 export * from "./bits/getLeadingBits"
 export * from "./bits/getTrailingBits"

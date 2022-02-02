@@ -14,6 +14,12 @@ import { BlockchainAddress } from "./BlockhainAddress"
  *
  * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#shelley-addresses}
  */
+type TCardanoAddressType = {
+  type: number
+  name: string
+  bits: Array<number>
+}
+
 const shelleyAddressTypes = [
   {
     type: 0,
@@ -119,7 +125,8 @@ export class Bech32Address extends BlockchainAddress {
     if (bytes !== undefined) {
       this.isSupported = true
       this.decoded.bytes = bytes
-      this.blockchain = "cardano"
+      this.blockchain.name = "cardano"
+
       this.currency = {
         decimals: 6,
         ticker: "ADA",
@@ -168,9 +175,14 @@ export class Bech32Address extends BlockchainAddress {
         },
       }
 
-      this.network = getShelleyNetwork(this.header.leading.bits)
+      this.blockchain.network = getShelleyNetwork(this.header.leading.bits)
 
       const typeObject = getType(this.header.trailing.bits)
+
+      // invalidate address if not mainnet or not type-00
+      if (this.blockchain.network !== "mainnet" || typeObject.type !== 0) {
+        this.isSupported = false
+      }
 
       Object.assign(this, { type: typeObject })
     }
@@ -215,7 +227,7 @@ function getShelleyNetwork(networkBits: Array<number>) {
  *
  * @param typeBits - Array with 4 bits
  */
-function getType(typeBits: Array<number>): object {
+function getType(typeBits: Array<number>): TCardanoAddressType {
   const type = shelleyAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
 
   if (type === undefined) {

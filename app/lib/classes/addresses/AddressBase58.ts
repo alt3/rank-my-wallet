@@ -8,6 +8,12 @@ import { BlockchainAddress } from "./BlockhainAddress"
  *
  * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#shelley-addresses}
  */
+type TErgoAddressType = {
+  type: number
+  bits: Array<number>
+  name: string
+}
+
 const ergoAddressTypes = [
   {
     type: 1,
@@ -62,7 +68,7 @@ export class Base58Address extends BlockchainAddress {
 
     if (isErgoAddress(decoded)) {
       this.isSupported = true
-      this.blockchain = "ergo"
+      this.blockchain.name = "ergo"
       this.currency = {
         decimals: 9,
         ticker: "ERG",
@@ -84,13 +90,23 @@ export class Base58Address extends BlockchainAddress {
       }
 
       if (this.header.trailing !== undefined) {
-        this.network = getErgoNetwork(this.header.trailing.bits)
+        this.blockchain.network = getErgoNetwork(this.header.trailing.bits)
+
+        // invalidate if not mainnet
+        if (this.blockchain.network !== "mainnet") {
+          this.isSupported = false
+        }
       }
 
       if (this.header.leading !== undefined) {
         const typeObject = getErgoType(this.header.leading.bits)
 
         Object.assign(this, { type: typeObject })
+
+        // invalidate if not mainnet
+        if (typeObject.type !== 1) {
+          this.isSupported = false
+        }
       }
     }
   }
@@ -134,7 +150,7 @@ function getErgoNetwork(networkBits: Array<number>) {
  *
  * @param typeBits - Array with 4 type bits
  */
-function getErgoType(typeBits: Array<number>): object {
+function getErgoType(typeBits: Array<number>): TErgoAddressType {
   const type = ergoAddressTypes.find(({ bits }) => isEqual(bits, typeBits))
 
   if (type === undefined) {

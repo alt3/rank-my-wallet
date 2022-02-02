@@ -2,13 +2,13 @@ import getCardanoAccount from "./getCardanoAccount"
 import getErgoAccount from "./getErgoAccount"
 
 export default async function getAccount(parsedAddress) {
-  if (parsedAddress.blockchain === "cardano") {
+  if (parsedAddress.blockchain.name === "cardano") {
     return getCardanoAccount({ ...parsedAddress })
   }
 
-  if (parsedAddress.blockchain === "ergo") {
+  if (parsedAddress.blockchain.name === "ergo") {
     return getErgoAccount({ ...parsedAddress })
   }
 
-  throw `Async function getAccount should called for non-cardano/non-ergo blockchain ${parsedAddress.blockchain}`
+  throw `Async function getAccount called for non-cardano/non-ergo blockchain ${parsedAddress.blockchain.name}`
 }
