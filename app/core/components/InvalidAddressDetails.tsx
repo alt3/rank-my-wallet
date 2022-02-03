@@ -28,7 +28,10 @@ export function InvalidAddressDetails({ parsedAddress }) {
 
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
-      <ErrorHero title="Address Error" subtitle={parsedAddress.unsupported.message}></ErrorHero>
+      <ErrorHero
+        title="Unsupported Address"
+        subtitle={parsedAddress.unsupported.message}
+      ></ErrorHero>
 
       <AddressForm
         placeholder="Try again?"
@@ -57,7 +60,9 @@ export function InvalidAddressDetails({ parsedAddress }) {
                   <DataGridEntry field="Address" value={parsedAddress.address} />
                   <DataGridEntry
                     field="Blockchain"
-                    value={`${capitalize(parsedAddress.blockchain.name)} (${parsedAddress.ticker})`}
+                    value={`${capitalize(parsedAddress.blockchain.name)} (${
+                      parsedAddress.currency.ticker
+                    })`}
                   />
                   {parsedAddress.version && (
                     <DataGridEntry
