@@ -8,6 +8,7 @@ import Big from "big.js"
  * all fractions. This is on purpose so the object can used by consuming functions like
  * calculations in the business layer or localized formatting in the presentation layer.
  *
+ * @see {@link https://github.com/MikeMcl/big.js}
  * @param nano - Nano currency
  * @param decimals - Number of decimals used by the ticker
  */
