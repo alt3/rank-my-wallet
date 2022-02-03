@@ -63,7 +63,7 @@ const shelleyAddressTypes = [
   },
   {
     type: 14,
-    name: "type-14",
+    name: "type-14 (Stake Address)",
     bits: [0, 1, 1, 1],
   },
   {
