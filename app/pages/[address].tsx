@@ -130,7 +130,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   )
 
   // random rank until implemented
-  const addressCount = parsedAddress.blockchain.name === "cardano" ? 2500000 : 87000
+  const totalAccounts = parsedAddress.blockchain.name === "cardano" ? 2500000 : 87000
 
   return {
     props: {
@@ -138,10 +138,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         ...account, // we need to spread here because response could be an error object
         parsedAddress: parsedAddress, //parseAddress(context.params.address.toString()),
         rank: {
-          addressCount: addressCount,
-          position: getRandomInt(1, addressCount),
-          next: "addr-of-next-account",
-          previous: "addr-of-previous-account",
+          totalAccounts: totalAccounts,
+          rank: getRandomInt(1, totalAccounts),
+          next: "account-id-of-next-rank",
+          previous: "account-id-of-previous-rank",
         },
         species: {
           current: currentSpecies,

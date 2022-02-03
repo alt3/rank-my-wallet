@@ -84,7 +84,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
 
           {/* Summary row */}
           <Tr>
-            <Td borderBottom={0} colspan={2}></Td>
+            <Td borderBottom={0} colSpan={2}></Td>
             <Td borderBottom={0} {...styles.tdSum}>
               {bitsToByte(bits)}
             </Td>

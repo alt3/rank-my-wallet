@@ -4,12 +4,12 @@ import { capitalize, getIntegerSeparator } from "../../lib/utils"
 import { getUserLocale } from "get-user-locale"
 
 interface CounterProps {
-  addressCount: number
+  totalAccounts: number
   rank: number
   blockchain: string
 }
 
-export function Counter({ addressCount, rank, blockchain }: CounterProps) {
+export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
   const styles = {
     box: {
       marginBottom: "3rem",
@@ -50,7 +50,7 @@ export function Counter({ addressCount, rank, blockchain }: CounterProps) {
                 #
               </Text>
               <Countup
-                start={addressCount}
+                start={totalAccounts}
                 end={rank}
                 duration={2.75}
                 separator={getIntegerSeparator(getUserLocale())}

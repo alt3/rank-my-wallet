@@ -20,8 +20,8 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
     <Container maxW="container.md" marginBottom="2.5rem">
       <Counter
         blockchain={parsedAddress.blockchain.name}
-        addressCount={rank.addressCount}
-        rank={rank.position}
+        totalAccounts={rank.totalAccounts}
+        rank={rank.rank}
       ></Counter>
 
       <SectionHeader>Species</SectionHeader>

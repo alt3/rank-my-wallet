@@ -3,8 +3,14 @@
  *
  * @remarks
  *
- * Best used in combination with https://github.com/wojtekmaj/get-user-locale
+ * Beware of Javascript limitation of 15 significant digits.
  *
+ * http://rxaviers.github.io/javascript-globalization/
+ * https://stackoverflow.com/questions/68848954/how-to-format-a-big-number-represented-by-string-in-javascript-with-currency-a
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toLocaleString
+ *
+ * @see {@link https://github.com/wojtekmaj/get-user-locale}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString#using_locales}
  * @param locale - Locale as an IETF language tag like 'en/US'
  */
 export const getIntegerSeparator = (locale: string) => {
