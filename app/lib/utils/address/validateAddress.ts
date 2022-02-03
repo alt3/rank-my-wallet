@@ -14,19 +14,19 @@ type TUnsupportedAddressReasons = {
 const reasons: TUnsupportedAddressReasons[] = [
   {
     type: "UnrecognizedAddress",
-    message: "We were unable to recognize this blockchain address.",
+    message: "Sorry, but we are unable to recognize this address.",
   },
   {
     type: "UnsupportedBlockchain",
-    message: "Sorry, but we do not support the __BLOCKCHAIN__ blockchain.",
+    message: "Sorry, but we do not support __BLOCKCHAIN__.",
   },
   {
     type: "UnsupportedNetwork",
-    message: "Sorry, we do not support __BLOCKCHAIN__ __NETWORK__ addresses.",
+    message: "Sorry, but we do not support __BLOCKCHAIN__ __NETWORK__ addresses.",
   },
   {
     type: "UnsupportedType",
-    message: "Sorry, we do not support __BLOCKCHAIN__ __ADDRESS_TYPE__ address types.",
+    message: 'Sorry, but we do not support __BLOCKCHAIN__ "__ADDRESS_TYPE__" address types.',
   },
 ]
 
