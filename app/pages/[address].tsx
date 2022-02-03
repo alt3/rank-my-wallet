@@ -1,4 +1,4 @@
-import { InvalidAddressDetails, ValidAddressDetails } from "@components"
+import { UnsupportedAddressDetails, ValidAddressDetails } from "@components"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import getAccount from "app/core/queries/getAccount"
@@ -76,7 +76,7 @@ export const Ranking = ({ props }) => {
       )}
 
       {props.parsedAddress.isSupported === false && (
-        <InvalidAddressDetails parsedAddress={props.parsedAddress} />
+        <UnsupportedAddressDetails parsedAddress={props.parsedAddress} />
       )}
     </>
   )

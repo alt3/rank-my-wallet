@@ -23,7 +23,7 @@ import {
 import { capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
-export function InvalidAddressDetails({ parsedAddress }) {
+export function UnsupportedAddressDetails({ parsedAddress }) {
   const colorTeal = useColorModeValue("teal.500", "teal.300")
 
   return (
@@ -148,4 +148,4 @@ export function InvalidAddressDetails({ parsedAddress }) {
   )
 }
 
-export default InvalidAddressDetails
+export default UnsupportedAddressDetails
