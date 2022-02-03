@@ -191,8 +191,13 @@ export class Bech32Address extends BlockchainAddress {
 
       const typeObject = getType(this.header.trailing.bits)
 
+      // invalidate address if type not base or stake
+      if (typeObject.type !== 0 && typeObject.type !== 14) {
+        this.isSupported = false
+      }
+
       // invalidate address if not mainnet or not type-00
-      if (this.blockchain.network !== "mainnet" || typeObject.type !== 0) {
+      if (this.blockchain.network !== "mainnet") {
         this.isSupported = false
       }
 
