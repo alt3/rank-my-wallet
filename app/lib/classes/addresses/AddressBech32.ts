@@ -122,7 +122,7 @@ export class Bech32Address extends BlockchainAddress {
     }
 
     // bech 32 decoded address
-    if (bytes !== undefined) {
+    if (words !== undefined) {
       this.decoded.bytes = bytes
 
       // reject bitcoin addresses
@@ -147,61 +147,63 @@ export class Bech32Address extends BlockchainAddress {
       }
 
       // add hex conversion
-      this.decoded.hex = bytesToHex(bytes)
+      if (bytes) {
+        this.decoded.hex = bytesToHex(bytes)
 
-      // get account address (last 28 bytes)
-      const accountAddressBytes = this.decoded.bytes.slice(-28)
-      const accountAddressHex = bytesToHex(accountAddressBytes)
+        // get account address (last 28 bytes)
+        const accountAddressBytes = bytes.slice(-28)
+        const accountAddressHex = bytesToHex(accountAddressBytes)
 
-      this.accountAddress = {
-        bytes: accountAddressBytes,
-        hex: accountAddressHex,
+        this.accountAddress = {
+          bytes: accountAddressBytes,
+          hex: accountAddressHex,
+        }
+
+        // stake address = account hex + added header '1e' (225)
+        // we do not need bytes for this but we render it anyway for a property-complete object
+        const stakeAddressBytes = [225, ...this.accountAddress.bytes]
+        const stakeAddressHex = "e1" + this.accountAddress.hex
+        const stakeAddressWords = bech32.toWords(Buffer.from(stakeAddressHex, "hex"))
+
+        this.stakeAddress = {
+          bytes: stakeAddressBytes,
+          hex: stakeAddressHex,
+          bech32: bech32.encode("stake", stakeAddressWords, 200),
+        }
+
+        // analyze the header byte
+        const headerByte = getFirstByte(bytes)
+        const headerBits = byteToBits(headerByte, 8)
+
+        this.header = {
+          byte: headerByte,
+          bits: headerBits,
+          leading: {
+            bits: getLeadingBits(headerBits),
+            type: "network type",
+          },
+          trailing: {
+            bits: getTrailingBits(headerBits),
+            type: "address type",
+          },
+        }
+
+        this.blockchain.network = getShelleyNetwork(this.header.leading.bits)
+
+        const typeObject = getType(this.header.trailing.bits)
+
+        // invalidate address if type not base or stake
+        if (typeObject.type !== 0 && typeObject.type !== 14) {
+          this.isSupported = false
+        }
+
+        // invalidate address if not mainnet or not type-00
+        if (this.blockchain.network !== "mainnet") {
+          this.isSupported = false
+        }
+
+        Object.assign(this, { type: typeObject })
       }
-
-      // stake address = account hex + added header '1e' (225)
-      // we do not need bytes for this but we render it anyway for a property-complete object
-      const stakeAddressBytes = [225, ...this.accountAddress.bytes]
-      const stakeAddressHex = "e1" + this.accountAddress.hex
-      const stakeAddressWords = bech32.toWords(Buffer.from(stakeAddressHex, "hex"))
-
-      this.stakeAddress = {
-        bytes: stakeAddressBytes,
-        hex: stakeAddressHex,
-        bech32: bech32.encode("stake", stakeAddressWords, 200),
-      }
-
-      // analyze the header byte
-      const headerByte = getFirstByte(bytes)
-      const headerBits = byteToBits(headerByte, 8)
-
-      this.header = {
-        byte: headerByte,
-        bits: headerBits,
-        leading: {
-          bits: getLeadingBits(headerBits),
-          type: "network type",
-        },
-        trailing: {
-          bits: getTrailingBits(headerBits),
-          type: "address type",
-        },
-      }
-
-      this.blockchain.network = getShelleyNetwork(this.header.leading.bits)
-
-      const typeObject = getType(this.header.trailing.bits)
-
-      // invalidate address if type not base or stake
-      if (typeObject.type !== 0 && typeObject.type !== 14) {
-        this.isSupported = false
-      }
-
-      // invalidate address if not mainnet or not type-00
-      if (this.blockchain.network !== "mainnet") {
-        this.isSupported = false
-      }
-
-      Object.assign(this, { type: typeObject })
     }
   }
 }
