@@ -1,9 +1,15 @@
 import { UnsupportedAddressDetails, ValidAddressDetails } from "@components"
+import { ServerSidePropsError } from "@components/errors/ServerSidePropsError"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import getAccount from "app/core/queries/getAccount"
-import { capitalize, getNextSpecies, getRandomInt, getSpecies } from "app/lib/utils"
-import { parseAddress } from "app/lib/utils/address/parseAddress"
+import {
+  getNextSpecies,
+  getRandomInt,
+  getSpecies,
+  parseAddress,
+  validateAddress,
+} from "app/lib/utils"
 import {
   BlitzPage,
   ErrorBoundary,
@@ -12,8 +18,6 @@ import {
   InferGetServerSidePropsType,
 } from "blitz"
 import { Suspense } from "react"
-
-import { validateAddress } from "app/lib/utils/address/validateAddress"
 
 function ErrorFallback({ error, resetErrorBoundary }) {
   console.log(error)
@@ -27,18 +31,9 @@ function ErrorFallback({ error, resetErrorBoundary }) {
 }
 
 export const Ranking = ({ props }) => {
-  console.log(props)
-
+  // server side props contains `error` property
   if (props.error) {
-    return (
-      <>
-        <h1>
-          API Request for {capitalize(props.parsedAddress.blockchain.name)} failed with status code{" "}
-          {props.error.status_code} ({props.error.error}){props.error.status_code}
-        </h1>
-        <h2>Reason: {props.error.message}</h2>
-      </>
-    )
+    return <ServerSidePropsError error={props.error} />
   }
 
   const meta = {
@@ -122,6 +117,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const account = await getAccount(parsedAddress)
+
+  if (account.error) {
+    console.log(account)
+    return {
+      props: {
+        data: {
+          ...account, // contains the api error
+          parsedAddress: parsedAddress,
+        },
+      },
+    }
+  }
+
   const currentSpecies = getSpecies(parsedAddress.blockchain.name, account.account.balance.ticker)
   const nextSpecies = getNextSpecies(
     parsedAddress.blockchain.name,
