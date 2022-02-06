@@ -1,11 +1,6 @@
 import { Box, Center, Container, Heading, Stack, useColorModeValue } from "@chakra-ui/react"
 
-interface PageHeroProps {
-  title: string
-  subtitle?: string
-}
-
-export const PageHero = ({ title }: PageHeroProps) => {
+export const PageHero = ({ title, ...rest }) => {
   const styles = {
     box: {
       marginBottom: "3rem",
@@ -27,7 +22,7 @@ export const PageHero = ({ title }: PageHeroProps) => {
   }
 
   return (
-    <Box {...styles.box}>
+    <Box {...styles.box} {...rest}>
       <Container {...styles.container}>
         <Center>
           <Stack width="100%" spacing={{ base: 6, sm: 8 }} align="center">
