@@ -1,6 +1,6 @@
 import { UnsupportedAddressDetails, ValidAddressDetails } from "@components"
-import { ServerSidePropsError } from "@components/errors/ServerSidePropsError"
 import { basicAuth } from "app/core/auth/basic-auth"
+import { ServerSidePropsError } from "app/core/errors"
 import Layout from "app/core/layouts/Layout"
 import getAccount from "app/core/queries/getAccount"
 import {
@@ -20,7 +20,6 @@ import {
 import { Suspense } from "react"
 
 function ErrorFallback({ error, resetErrorBoundary }) {
-  console.log(error)
   return (
     <div role="alert">
       <p>Something went wrong:</p>
@@ -116,10 +115,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     throw "we should never reach this point without being cardano or ergo"
   }
 
+  // fetch account data from API, catch errors nicely
   const account = await getAccount(parsedAddress)
 
   if (account.error) {
-    console.log(account)
     return {
       props: {
         data: {
@@ -130,6 +129,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   }
 
+  // we have the API data, calculate all others
   const currentSpecies = getSpecies(parsedAddress.blockchain.name, account.account.balance.ticker)
   const nextSpecies = getNextSpecies(
     parsedAddress.blockchain.name,

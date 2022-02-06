@@ -13,5 +13,6 @@ export * from "./species/getNextSpecies"
 export * from "./species/getSpecies"
 
 export * from "./capitalize"
+export * from "./getHttpStatusCode"
 export * from "./getRandomInt"
 export * from "./regexReplace"

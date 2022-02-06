@@ -1,20 +1,32 @@
-import { AddressError } from "@components"
+import { UnexpectedError } from "app/core/errors"
+import { getHttpStatusCode } from "app/lib/utils"
 
-function Error({ statusCode, address = undefined }) {
+function Error({ statusCode, err }) {
+  const side = statusCode ? "Server" : "Client"
+
+  let statusCodeName = ""
+  if (statusCode) {
+    statusCodeName = getHttpStatusCode(statusCode)
+  }
+
+  if (err) {
+    err = err.toString()
+  }
+
   return (
-    <>
-      <p>
-        {statusCode ? `An error ${statusCode} occurred on server` : "An error occurred on client"}
-      </p>
-      <AddressError statusCode={statusCode} title="Not implemented" parsedAddress={address} />
-    </>
+    <UnexpectedError
+      side={side}
+      statusCode={statusCode}
+      statusCodeName={statusCodeName}
+      message={err}
+    />
   )
 }
 
 Error.getInitialProps = ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
 
-  return { statusCode }
+  return { statusCode, err }
 }
 
 export default Error
