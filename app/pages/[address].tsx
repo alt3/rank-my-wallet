@@ -1,9 +1,8 @@
-import { UnsupportedAddressDetails, SupportedAddressDetails } from "@components"
+import { SupportedAddressDetails, SuspenseLoader, UnsupportedAddressDetails } from "@components"
 import Layout from "app/core/layouts/Layout"
 import getAddressDetails from "app/core/queries/getAddressDetails"
 import { BlitzPage, useParam, useQuery } from "blitz"
 import { Suspense } from "react"
-import { SuspenseLoader } from "@components"
 
 export const Ranking = () => {
   const address = useParam("address", "string")
