@@ -1,9 +1,6 @@
 import { useEffect } from "react"
 import NProgress from "nprogress"
-import "nprogress/nprogress.css"
-
-// TODO: dynamic import
-// TODO: colors
+// styles loaded via global theme (styles.ts)
 
 const delay = 500
 
@@ -30,7 +27,7 @@ const stopProgressBar = () => {
 
 export const SuspenseLoader = () => {
   useEffect(() => {
-    NProgress.configure({ showSpinner: true })
+    NProgress.configure({ showSpinner: false })
     startProgressBar()
 
     return () => {
