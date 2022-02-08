@@ -1,4 +1,5 @@
 import { SupportedAddressDetails, SuspenseLoader, UnsupportedAddressDetails } from "@components"
+import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import getAddressDetails from "app/core/queries/getAddressDetails"
 import { BlitzPage, useParam, useQuery } from "blitz"
@@ -34,6 +35,12 @@ const ShowRankingPage: BlitzPage = () => {
       </Suspense>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  await basicAuth(context.req, context.res)
+
+  return { props: {} }
 }
 
 ShowRankingPage.suppressFirstRenderFlicker = true

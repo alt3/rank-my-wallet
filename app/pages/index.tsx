@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react"
 import { BlockChains, Hero, Sponsors } from "@components"
+import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import { BlitzPage, Head } from "blitz"
 
@@ -34,6 +35,12 @@ const Home: BlitzPage = () => {
       </Container>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  await basicAuth(context.req, context.res)
+
+  return { props: {} }
 }
 
 Home.suppressFirstRenderFlicker = true

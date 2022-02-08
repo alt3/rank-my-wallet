@@ -31,7 +31,6 @@
     "@emotion/styled": "11.x",
     "@fontsource/inter": "4.5.1",
     "@prisma/client": "3.7.0",
-    "@storyofams/next-password-protect": "1.5.14",
     "axios": "0.25.0",
     "bech32": "2.0.0",
     "big.js": "6.1.1",
