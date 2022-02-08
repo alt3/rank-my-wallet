@@ -2,6 +2,9 @@ import { useEffect } from "react"
 import NProgress from "nprogress"
 import "nprogress/nprogress.css"
 
+// TODO: dynamic import
+// TODO: colors
+
 const delay = 500
 
 let progressBarTimeout: ReturnType<typeof setTimeout>

@@ -1,10 +1,9 @@
 import { Container } from "@chakra-ui/react"
 import { BlockChains, Hero, Sponsors } from "@components"
-import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
+import { BlitzPage, Head } from "blitz"
 
-const Home: BlitzPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
+const Home: BlitzPage = () => {
   const meta = {
     title: "Rank My Wallet - Online ranking of blockchain wallets",
     description: "Rank your Cardano and Ergo blockchain addresses.",
@@ -35,14 +34,6 @@ const Home: BlitzPage<InferGetServerSidePropsType<typeof getServerSideProps>> = 
       </Container>
     </>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  await basicAuth(context.req, context.res)
-
-  return {
-    props: {},
-  }
 }
 
 Home.suppressFirstRenderFlicker = true

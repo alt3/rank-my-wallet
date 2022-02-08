@@ -9,28 +9,16 @@ export default async function getCardanoAccount(parsedAddress) {
     },
   }
 
-  return await axios
-    .get(url, config)
-    .then((response) => {
-      const balance = {
-        nano: response.data.controlled_amount,
-        ticker: nanoToTicker(response.data.controlled_amount, 6),
-      }
+  return await axios.get(url, config).then((response) => {
+    const balance = {
+      nano: response.data.controlled_amount,
+      ticker: nanoToTicker(response.data.controlled_amount, 6),
+    }
 
-      response.data.balance = balance
+    response.data.balance = balance
 
-      return {
-        account: response.data,
-      }
-    })
-    // https://stackoverflow.com/a/51768316/9850103
-    .catch((error) => {
-      if (error.response) {
-        return {
-          error: { message: error.message, ...error.response.data },
-        }
-      } else {
-        return { error }
-      }
-    })
+    return {
+      account: response.data,
+    }
+  })
 }

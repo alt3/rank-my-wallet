@@ -15,11 +15,11 @@ import { BitsTable, Counter, DataGrid, DataGridEntry, SectionHeader } from "@com
 import { bigToString, capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
-export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
+export function SupportedAddressDetails({ parsed, rank, account, species }) {
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
       <Counter
-        blockchain={parsedAddress.blockchain.name}
+        blockchain={parsed.blockchain.name}
         totalAccounts={rank.totalAccounts}
         rank={rank.rank}
       ></Counter>
@@ -28,7 +28,7 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
       <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
         <DataGridEntry
           field="Balance"
-          value={parsedAddress.currency.tickerSymbol + " " + bigToString(account.balance.ticker, 0)}
+          value={parsed.currency.tickerSymbol + " " + bigToString(account.balance.ticker, 0)}
         />
         <DataGridEntry
           field="Current Species"
@@ -52,16 +52,14 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
             />
             <DataGridEntry
               field="Starts At"
-              value={
-                parsedAddress.currency.tickerSymbol + " " + bigToString(species.next.startsAt, 0)
-              }
+              value={parsed.currency.tickerSymbol + " " + bigToString(species.next.startsAt, 0)}
             />
             <DataGridEntry
               field="Requires"
               value={
-                parsedAddress.currency.tickerSymbol +
+                parsed.currency.tickerSymbol +
                 " " +
-                bigToString(species.next.requires, parsedAddress.currency.decimals)
+                bigToString(species.next.requires, parsed.currency.decimals)
               }
             />
           </>
@@ -82,21 +80,19 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
           </h2>
           <AccordionPanel p={0} pb="2rem">
             <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
-              <DataGridEntry field="Address" value={parsedAddress.address} />
+              <DataGridEntry field="Address" value={parsed.address} />
               <DataGridEntry
                 field="Blockchain"
-                value={`${capitalize(parsedAddress.blockchain.name)} (${
-                  parsedAddress.currency.ticker
-                })`}
+                value={`${capitalize(parsed.blockchain.name)} (${parsed.currency.ticker})`}
               />
-              {parsedAddress.version && (
-                <DataGridEntry field="Address Version" value={capitalize(parsedAddress.version)} />
+              {parsed.version && (
+                <DataGridEntry field="Address Version" value={capitalize(parsed.version)} />
               )}
-              {parsedAddress.network && (
-                <DataGridEntry field="Network" value={capitalize(parsedAddress.network)} />
+              {parsed.network && (
+                <DataGridEntry field="Network" value={capitalize(parsed.network)} />
               )}
-              {parsedAddress.type && (
-                <DataGridEntry field="Address Type" value={capitalize(parsedAddress.type.name)} />
+              {parsed.type && (
+                <DataGridEntry field="Address Type" value={capitalize(parsed.type.name)} />
               )}
             </DataGrid>
           </AccordionPanel>
@@ -114,14 +110,13 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
 
           <AccordionPanel p={0} pb={4}>
             <DataGrid>
-              <DataGridEntry field="Encoding" value={capitalize(parsedAddress.encoding)} />
-              {parsedAddress.decoded !== undefined &&
-                parsedAddress.decoded.prefix !== undefined && (
-                  <DataGridEntry field="Decoded Prefix" value={parsedAddress.decoded.prefix} />
-                )}
+              <DataGridEntry field="Encoding" value={capitalize(parsed.encoding)} />
+              {parsed.decoded !== undefined && parsed.decoded.prefix !== undefined && (
+                <DataGridEntry field="Decoded Prefix" value={parsed.decoded.prefix} />
+              )}
 
-              {parsedAddress.header !== undefined && (
-                <DataGridEntry field="Header Byte" value={parsedAddress.header.byte} />
+              {parsed.header !== undefined && (
+                <DataGridEntry field="Header Byte" value={parsed.header.byte} />
               )}
             </DataGrid>
 
@@ -132,29 +127,29 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
               templateColumns={{ base: "repeat(4, 1fr)", sm: "repeat(6, 1fr)" }}
               paddingBottom="1.5rem"
             >
-              {parsedAddress.decoded.bytes.map((byte) => (
+              {parsed.decoded.bytes.map((byte) => (
                 <GridItem key={nextId("byte")}>{byte}</GridItem>
               ))}
             </Grid>
 
-            {parsedAddress.header !== undefined && (
+            {parsed.header !== undefined && (
               <>
                 <BitsTable
                   caption="Header Bits:"
-                  bits={parsedAddress.header.bits}
+                  bits={parsed.header.bits}
                   sumLabel="Header Byte"
                 ></BitsTable>
 
                 <BitsTable
                   caption="Leading Header Bits:"
-                  bits={parsedAddress.header.leading.bits}
-                  sumLabel={parsedAddress.header.leading.type}
+                  bits={parsed.header.leading.bits}
+                  sumLabel={parsed.header.leading.type}
                 ></BitsTable>
 
                 <BitsTable
                   caption="Trailing Header Bits:"
-                  bits={parsedAddress.header.trailing.bits}
-                  sumLabel={parsedAddress.header.trailing.type}
+                  bits={parsed.header.trailing.bits}
+                  sumLabel={parsed.header.trailing.type}
                 ></BitsTable>
               </>
             )}
@@ -165,4 +160,4 @@ export function ValidAddressDetails({ parsedAddress, account, rank, species }) {
   )
 }
 
-export default ValidAddressDetails
+export default SupportedAddressDetails
