@@ -1,16 +1,17 @@
-const color = "teal.400"
+import { mode, SystemStyleFunction } from "@chakra-ui/theme-tools"
+
 const barHeight = "4px"
 const spinnerSize = "24px" // was 18px
 const spinnerThickness = "2px" // was 2px
 
-export const nprogress = {
+export const nprogress: SystemStyleFunction = (props) => ({
   /* Make clicks pass-through */
   "#nprogress": {
     pointerEvents: "none",
   },
 
   "#nprogress .bar": {
-    background: color,
+    background: mode("teal.500", "teal.300")(props),
 
     position: "fixed",
     zIndex: 1031,
@@ -18,21 +19,6 @@ export const nprogress = {
     left: 0,
     width: "100%",
     height: barHeight,
-  },
-
-  /* Fancy blur effect */
-  "#nprogress .peg": {
-    display: "block",
-    position: "absolute",
-    right: "0px",
-    width: "100px",
-    height: "100%",
-    boxShadow: "0 0 10px #29d, 0 0 5px #29d",
-    opacity: "1.0",
-
-    webkitTransform: "rotate(3deg) translate(0px, -4px)",
-    msTransform: "rotate(3deg) translate(0px, -4px)",
-    transform: "rotate(3deg) translate(0px, -4px)",
   },
 
   // /* Remove these to get rid of the spinner */
@@ -50,8 +36,8 @@ export const nprogress = {
     boxSizing: "border-box",
 
     border: `solid ${spinnerThickness} transparent`,
-    borderTopColor: color,
-    borderLeftColor: color,
+    borderTopColor: mode("teal.500", "teal.300")(props),
+    borderLeftColor: mode("teal.500", "teal.300")(props),
     borderRadius: "50%",
 
     webkitAnimation: "nprogress-spinner 400ms linear infinite",
@@ -81,4 +67,4 @@ export const nprogress = {
     },
     "100%": { transform: "rotate(360deg)" },
   },
-}
+})
