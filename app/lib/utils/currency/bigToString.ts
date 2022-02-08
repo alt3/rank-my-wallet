@@ -4,7 +4,7 @@ import toFormat from "toformat"
 /**
  * Converts currency number to localized string without rounding.
  *
- * @see {@link} https://github.com/MikeMcl/toFormat
+ * @see {@link https://github.com/MikeMcl/toFormat}
  * @param big - Big object
  * @param fractions - Optional number of fractions to return
  */
