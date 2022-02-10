@@ -35,7 +35,7 @@
     "bech32": "2.0.0",
     "big.js": "6.1.1",
     "blakejs": "1.1.1",
-    "blitz": "0.45.0",
+    "blitz": "0.45.3",
     "bs58": "^4.0.1",
     "ethereum-regex": "1.1.13",
     "focus-visible": "5.2.0",
