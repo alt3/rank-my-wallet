@@ -1,37 +1,14 @@
-import { SupportedAddressDetails, SuspenseLoader, UnsupportedAddressDetails } from "@components"
+import { AddressDetails, SuspenseLoader } from "@components"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
-import getAddressDetails from "app/core/queries/getAddressDetails"
-import { BlitzPage, useParam, useQuery } from "blitz"
+import { BlitzPage } from "blitz"
 import { Suspense } from "react"
-
-export const Ranking = () => {
-  const address = useParam("address", "string")
-  const [addressDetails] = useQuery(getAddressDetails, address)
-
-  return (
-    <>
-      {addressDetails.parsed.isSupported === false && (
-        <UnsupportedAddressDetails parsed={addressDetails.parsed} />
-      )}
-
-      {addressDetails.parsed.isSupported === true && (
-        <SupportedAddressDetails
-          parsed={addressDetails.parsed}
-          account={addressDetails.account}
-          rank={addressDetails.rank}
-          species={addressDetails.species}
-        />
-      )}
-    </>
-  )
-}
 
 const ShowRankingPage: BlitzPage = () => {
   return (
     <div>
       <Suspense fallback={<SuspenseLoader />}>
-        <Ranking />
+        <AddressDetails />
       </Suspense>
     </div>
   )
