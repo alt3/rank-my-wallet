@@ -1,21 +1,13 @@
-import {
-  Center,
-  Container,
-  HStack,
-  useRadioGroup,
-  useDisclosure,
-  SlideFade,
-} from "@chakra-ui/react"
+import { Center, Container, HStack, useDisclosure, useRadioGroup } from "@chakra-ui/react"
 import { PageHero, RadioCard } from "@components"
 import SpeciesTable from "@components/SpeciesTable/SpeciesTable"
+import species from "app/constants/species"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage, GetServerSideProps, Head, InferGetServerSidePropsType } from "blitz"
+import { BlitzPage, GetServerSideProps, Head } from "blitz"
 import React from "react"
 
-import species from "app/constants/species"
-
-const Species: BlitzPage<InferGetServerSidePropsType<typeof getServerSideProps>> = () => {
+const Species: BlitzPage = () => {
   const meta = {
     title: "Rank My Wallet - Blockchain species",
     description: "Blockchain species for Cardano and Ergo based on wallet balance.",
@@ -87,21 +79,21 @@ const Species: BlitzPage<InferGetServerSidePropsType<typeof getServerSideProps>>
           </HStack>
         </Center>
 
-        <SlideFade in={isOpenCardano} unmountOnExit>
+        {isOpenCardano && (
           <SpeciesTable
             blockchain="cardano"
             currencySymbol="₳"
             species={species["cardano"].slice(1)}
           ></SpeciesTable>
-        </SlideFade>
+        )}
 
-        <SlideFade in={isOpenErgo} unmountOnExit>
+        {isOpenErgo && (
           <SpeciesTable
             blockchain="ergo"
             currencySymbol="Σ"
             species={species["ergo"].slice(1)}
           ></SpeciesTable>
-        </SlideFade>
+        )}
       </Container>
     </>
   )
@@ -110,12 +102,11 @@ const Species: BlitzPage<InferGetServerSidePropsType<typeof getServerSideProps>>
 export const getServerSideProps: GetServerSideProps = async (context) => {
   await basicAuth(context.req, context.res)
 
-  return {
-    props: {},
-  }
+  return { props: {} }
 }
 
 Species.suppressFirstRenderFlicker = true
+Species.authenticate = false
 Species.getLayout = (page) => <Layout title="Species">{page}</Layout>
 
 export default Species
