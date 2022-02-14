@@ -33,7 +33,10 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
         <DataGridEntry
           field="Current Species"
           value={capitalize(species.current.name)}
-          url={{ href: "/species", title: "Blockchain Species" }}
+          url={{
+            href: `/species?blockchain=${parsed.blockchain.name}`,
+            title: "Blockchain Species",
+          }}
         />
 
         {species.next === undefined && (
@@ -48,7 +51,10 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
             <DataGridEntry
               field="Next Level"
               value={capitalize(species.next.name)}
-              url={{ href: "/species", title: "Blockchain Species" }}
+              url={{
+                href: `/species?blockchain=${parsed.blockchain.name}`,
+                title: "Blockchain Species",
+              }}
             />
             <DataGridEntry
               field="Starts At"
