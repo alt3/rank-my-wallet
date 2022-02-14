@@ -1,10 +1,17 @@
-import { Center, Container, HStack, useDisclosure, useRadioGroup } from "@chakra-ui/react"
+import {
+  Center,
+  Container,
+  HStack,
+  useBoolean,
+  useDisclosure,
+  useRadioGroup,
+} from "@chakra-ui/react"
 import { PageHero, RadioCard } from "@components"
 import SpeciesTable from "@components/SpeciesTable/SpeciesTable"
 import species from "app/constants/species"
 import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage, GetServerSideProps, Head } from "blitz"
+import { BlitzPage, GetServerSideProps, Head, useRouterQuery } from "blitz"
 import React from "react"
 
 const Species: BlitzPage = () => {
@@ -13,6 +20,15 @@ const Species: BlitzPage = () => {
     description: "Blockchain species for Cardano and Ergo based on wallet balance.",
     keywords: "rankings, cardano, ergo, blockchain, species, whale, orca, shark, shrimp, online",
     url: "https://rankmywallet.com/species",
+  }
+
+  // check for query param
+  const [initialRouterCheck, setInitialRouterFlag] = useBoolean()
+  const routerQuery = useRouterQuery()
+  let blockchainParam = ""
+
+  if (routerQuery.blockchain && typeof routerQuery.blockchain === "string") {
+    blockchainParam = routerQuery.blockchain.toLowerCase()
   }
 
   // custom names for useDisclosure hooks for understandable code
@@ -35,18 +51,38 @@ const Species: BlitzPage = () => {
         if (isOpenErgo) {
           onCloseErgo()
         }
-        onToggleCardano()
+
+        if (!isOpenCardano) {
+          onToggleCardano()
+        }
 
         return
       }
 
       // still here so Ergo
       onCloseCardano()
-      onToggleErgo()
+
+      if (!isOpenErgo) {
+        onToggleErgo()
+      }
     },
   })
 
+  // instantiate the group
   const group = getRootProps()
+
+  // set active blockchain using the query param (if given)
+  if (!initialRouterCheck) {
+    setInitialRouterFlag.toggle() // make sure we only run this once to prevent redirect loop
+
+    if (blockchainParam === "cardano") {
+      onToggleCardano()
+    }
+
+    if (blockchainParam === "ergo") {
+      onToggleErgo()
+    }
+  }
 
   return (
     <>
