@@ -37,6 +37,7 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
             href: `/species?blockchain=${parsed.blockchain.name}`,
             title: "Blockchain Species",
           }}
+          linkColor={useColorModeValue("pink.600", "pink.400")}
         />
 
         {species.next === undefined && (
