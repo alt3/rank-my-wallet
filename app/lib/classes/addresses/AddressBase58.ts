@@ -36,11 +36,6 @@ const ergoAddressTypes = [
  * Extended class that parses Bech32 address during initialization.
  */
 export class Base58Address extends BlockchainAddress {
-  decoded: {
-    bytes: Array<number>
-    hex: string
-  }
-
   constructor(address: string, decoded: Buffer) {
     super(address) // sets address property in the base class (lowercased there)
     this.class = this.constructor.name

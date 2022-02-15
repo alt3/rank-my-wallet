@@ -1,6 +1,12 @@
 /**
  * Interfaces so we can set properties independently
  */
+interface Decoded {
+  bytes?: Array<number>
+  hex?: string
+  prefix?: string
+  words?: Array<number>
+}
 interface Blockchain {
   name: string
   network?: string
@@ -37,6 +43,7 @@ export class BlockchainAddress {
   readonly address: string
   class: string
   encoding: string
+  decoded: Decoded
   isSupported?: boolean
   blockchain: Blockchain
   payload: Payload
@@ -60,6 +67,7 @@ export class BlockchainAddress {
     this.address = address
     this.isSupported = false // default to false
     this.blockchain = {} as Blockchain // initialize object so we can set properties independently
-    this.payload = {} as Payload //
+    this.decoded = {} as Decoded
+    this.payload = {} as Payload
   }
 }

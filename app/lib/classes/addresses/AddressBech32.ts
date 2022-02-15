@@ -71,12 +71,6 @@ const shelleyAddressTypes = [
  * Extended class that parses Bech32 address during initialization.
  */
 export class Bech32Address extends BlockchainAddress {
-  decoded: {
-    prefix: string
-    words: Array<number>
-    bytes?: Array<number>
-    hex?: string
-  }
   version: string // shelley
   accountAddress: {
     bytes: Array<number>
