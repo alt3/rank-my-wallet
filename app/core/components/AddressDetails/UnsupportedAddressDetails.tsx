@@ -62,8 +62,8 @@ export function UnsupportedAddressDetails({ parsed }) {
                   {parsed.version && (
                     <DataGridEntry field="Address Version" value={capitalize(parsed.version)} />
                   )}
-                  {parsed.network && (
-                    <DataGridEntry field="Network" value={capitalize(parsed.network)} />
+                  {parsed.blockchain.network && (
+                    <DataGridEntry field="Network" value={capitalize(parsed.blockchain.network)} />
                   )}
                   {parsed.type && (
                     <DataGridEntry field="Address Type" value={capitalize(parsed.type.name)} />
@@ -106,24 +106,24 @@ export function UnsupportedAddressDetails({ parsed }) {
                   ))}
                 </Grid>
 
-                {parsed.header !== undefined && (
+                {parsed.payload.prefix !== undefined && (
                   <>
                     <BitsTable
-                      caption="Header Bits:"
-                      bits={parsed.header.bits}
+                      caption="Prefix Bits:"
+                      bits={parsed.payload.prefix.bits}
                       sumLabel="Header Byte"
                     ></BitsTable>
 
                     <BitsTable
-                      caption="Leading Header Bits:"
-                      bits={parsed.header.leading.bits}
-                      sumLabel={parsed.header.leading.type}
+                      caption="Leading Prefix Bits:"
+                      bits={parsed.payload.prefix.leading.bits}
+                      sumLabel={parsed.payload.prefix.leading.type}
                     ></BitsTable>
 
                     <BitsTable
-                      caption="Trailing Header Bits:"
-                      bits={parsed.header.trailing.bits}
-                      sumLabel={parsed.header.trailing.type}
+                      caption="Trailing Prefix Bits:"
+                      bits={parsed.payload.prefix.trailing.bits}
+                      sumLabel={parsed.payload.prefix.trailing.type}
                     ></BitsTable>
                   </>
                 )}

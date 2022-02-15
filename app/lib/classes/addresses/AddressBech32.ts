@@ -93,18 +93,6 @@ export class Bech32Address extends BlockchainAddress {
     hex: string
     bech32: string
   }
-  header: {
-    byte: number
-    bits: Array<number>
-    leading: {
-      bits: Array<number>
-      type: string
-    }
-    trailing: {
-      bits: Array<number>
-      type: string
-    }
-  }
 
   constructor(address: string, decoded: Decoded) {
     super(address) // sets address property in the base class (lowercased there)
@@ -175,8 +163,9 @@ export class Bech32Address extends BlockchainAddress {
         const headerByte = getFirstByte(bytes)
         const headerBits = byteToBits(headerByte, 8)
 
-        this.header = {
+        this.payload.prefix = {
           byte: headerByte,
+          hex: bytesToHex([headerByte]),
           bits: headerBits,
           leading: {
             bits: getLeadingBits(headerBits),
@@ -188,21 +177,23 @@ export class Bech32Address extends BlockchainAddress {
           },
         }
 
-        this.blockchain.network = getShelleyNetwork(this.header.leading.bits)
+        if (this.payload.prefix.leading && this.payload.prefix.trailing) {
+          this.blockchain.network = getShelleyNetwork(this.payload.prefix.leading.bits)
 
-        const typeObject = getType(this.header.trailing.bits)
+          const typeObject = getType(this.payload.prefix.trailing.bits)
 
-        // invalidate address if type not base or stake
-        if (typeObject.type !== 0 && typeObject.type !== 14) {
-          this.isSupported = false
+          // invalidate address if type not base or stake
+          if (typeObject.type !== 0 && typeObject.type !== 14) {
+            this.isSupported = false
+          }
+
+          // invalidate address if not mainnet or not type-00
+          if (this.blockchain.network !== "mainnet") {
+            this.isSupported = false
+          }
+
+          Object.assign(this, { type: typeObject })
         }
-
-        // invalidate address if not mainnet or not type-00
-        if (this.blockchain.network !== "mainnet") {
-          this.isSupported = false
-        }
-
-        Object.assign(this, { type: typeObject })
       }
     }
   }

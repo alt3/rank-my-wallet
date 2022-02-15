@@ -1,4 +1,10 @@
-import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "app/lib/utils"
+import {
+  bytesToHex,
+  byteToBits,
+  getFirstByte,
+  getLeadingBits,
+  getTrailingBits,
+} from "app/lib/utils"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
 import { BlockchainAddress } from "./BlockhainAddress"
@@ -40,18 +46,6 @@ export class Base58Address extends BlockchainAddress {
     bytes: Array<number>
     hex: string
   }
-  header: {
-    byte: number
-    bits: Array<number>
-    leading?: {
-      bits: Array<number>
-      type: string
-    }
-    trailing?: {
-      bits: Array<number>
-      type: string
-    }
-  }
 
   constructor(address: string, decoded: Buffer) {
     super(address) // sets address property in the base class (lowercased there)
@@ -63,8 +57,24 @@ export class Base58Address extends BlockchainAddress {
       hex: decoded.toString("hex"),
     }
 
+    // generate header
     const headerByte = getFirstByte(this.decoded.bytes)
     const headerBits = byteToBits(headerByte, 8)
+
+    // generate checksum property
+    const checksumBytes = getErgoChecksum(decoded)
+
+    this.payload.checksum = {
+      bytes: Array.from(Buffer.from(checksumBytes)),
+      hex: checksumBytes.toString("hex"),
+    }
+
+    // generate content
+    const contentBytes = getErgoContent(decoded)
+    this.payload.content = {
+      bytes: Array.from(Buffer.from(contentBytes)),
+      hex: contentBytes.toString("hex"),
+    }
 
     if (isErgoAddress(decoded)) {
       this.isSupported = true
@@ -76,8 +86,9 @@ export class Base58Address extends BlockchainAddress {
         nano: "nanoERG",
       }
 
-      this.header = {
+      this.payload.prefix = {
         byte: headerByte,
+        hex: bytesToHex([headerByte]),
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
@@ -89,8 +100,8 @@ export class Base58Address extends BlockchainAddress {
         },
       }
 
-      if (this.header.trailing !== undefined) {
-        this.blockchain.network = getErgoNetwork(this.header.trailing.bits)
+      if (this.payload.prefix.trailing !== undefined) {
+        this.blockchain.network = getErgoNetwork(this.payload.prefix.trailing.bits)
 
         // invalidate if not mainnet
         if (this.blockchain.network !== "mainnet") {
@@ -98,8 +109,8 @@ export class Base58Address extends BlockchainAddress {
         }
       }
 
-      if (this.header.leading !== undefined) {
-        const typeObject = getErgoType(this.header.leading.bits)
+      if (this.payload.prefix.leading !== undefined) {
+        const typeObject = getErgoType(this.payload.prefix.leading.bits)
 
         Object.assign(this, { type: typeObject })
 
@@ -113,6 +124,30 @@ export class Base58Address extends BlockchainAddress {
 }
 
 /**
+ * Returns the content bytes last four bytes of the Ergo address (which is the checksum payload).
+ *
+ * @param decoded - Buffer with the full decoded address
+ */
+function getErgoContent(decoded: Buffer): Buffer {
+  const size = decoded.length
+
+  const result = decoded.slice(0, size - 4) // remove last four (checksum) bytes
+
+  return result.slice(1) // remove first (header) byte
+}
+
+/**
+ * Returns the last four bytes of the Ergo address (which is the checksum payload).
+ *
+ * @param decoded - Buffer with the full decoded address
+ */
+function getErgoChecksum(decoded: Buffer): Buffer {
+  const size = decoded.length
+
+  return decoded.slice(size - 4, size)
+}
+
+/**
  * Returns true if this is an Ergo address.
  *
  * @param decoded - Array with 8 bits
@@ -121,6 +156,7 @@ function isErgoAddress(decoded: Buffer): boolean {
   const size = decoded.length
   const script = decoded.slice(0, size - 4)
   const checksum = decoded.slice(size - 4, size)
+
   const calculatedChecksum = Buffer.from(blake.blake2b(script, undefined, 32)).slice(0, 4)
 
   return calculatedChecksum.toString("hex") === checksum.toString("hex")

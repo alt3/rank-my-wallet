@@ -95,8 +95,8 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
               {parsed.version && (
                 <DataGridEntry field="Address Version" value={capitalize(parsed.version)} />
               )}
-              {parsed.network && (
-                <DataGridEntry field="Network" value={capitalize(parsed.network)} />
+              {parsed.blockchain.network && (
+                <DataGridEntry field="Network" value={capitalize(parsed.blockchain.network)} />
               )}
               {parsed.type && (
                 <DataGridEntry field="Address Type" value={capitalize(parsed.type.name)} />
@@ -122,8 +122,16 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
                 <DataGridEntry field="Decoded Prefix" value={parsed.decoded.prefix} />
               )}
 
-              {parsed.header !== undefined && (
-                <DataGridEntry field="Header Byte" value={parsed.header.byte} />
+              {parsed.payload.prefix !== undefined && (
+                <DataGridEntry field="Prefix Byte" value={parsed.payload.prefix.byte} />
+              )}
+
+              {parsed.payload.checksum !== undefined && (
+                <DataGridEntry field="Checksum" value={parsed.payload.checksum.hex} />
+              )}
+
+              {parsed.payload.content !== undefined && (
+                <DataGridEntry field="Content" value={parsed.payload.content.hex} />
               )}
             </DataGrid>
 
@@ -139,24 +147,24 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
               ))}
             </Grid>
 
-            {parsed.header !== undefined && (
+            {parsed.payload.prefix !== undefined && (
               <>
                 <BitsTable
-                  caption="Header Bits:"
-                  bits={parsed.header.bits}
-                  sumLabel="Header Byte"
+                  caption="Prefix Bits:"
+                  bits={parsed.payload.prefix.bits}
+                  sumLabel="Prefix Byte"
                 ></BitsTable>
 
                 <BitsTable
-                  caption="Leading Header Bits:"
-                  bits={parsed.header.leading.bits}
-                  sumLabel={parsed.header.leading.type}
+                  caption="Leading Prefix Bits:"
+                  bits={parsed.payload.prefix.leading.bits}
+                  sumLabel={parsed.payload.prefix.leading.type}
                 ></BitsTable>
 
                 <BitsTable
-                  caption="Trailing Header Bits:"
-                  bits={parsed.header.trailing.bits}
-                  sumLabel={parsed.header.trailing.type}
+                  caption="Trailing Prefix Bits:"
+                  bits={parsed.payload.prefix.trailing.bits}
+                  sumLabel={parsed.payload.prefix.trailing.type}
                 ></BitsTable>
               </>
             )}

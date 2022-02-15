@@ -6,6 +6,30 @@ interface Blockchain {
   network?: string
 }
 
+interface Payload {
+  prefix: {
+    byte: number
+    hex: string
+    bits: Array<number>
+    leading?: {
+      bits: Array<number>
+      type: string
+    }
+    trailing?: {
+      bits: Array<number>
+      type: string
+    }
+  }
+  content?: {
+    bytes: Array<number>
+    hex: string
+  }
+  checksum?: {
+    bytes: Array<number>
+    hex: string
+  }
+}
+
 /**
  * Base class with properties shared by all blockchain addresses.
  */
@@ -14,10 +38,8 @@ export class BlockchainAddress {
   class: string
   encoding: string
   isSupported?: boolean
-  blockchain: {
-    name: string
-    network?: string
-  }
+  blockchain: Blockchain
+  payload: Payload
   currency: {
     decimals: 6 | 9
     ticker: "ADA" | "ERG"
@@ -38,5 +60,6 @@ export class BlockchainAddress {
     this.address = address
     this.isSupported = false // default to false
     this.blockchain = {} as Blockchain // initialize object so we can set properties independently
+    this.payload = {} as Payload //
   }
 }
