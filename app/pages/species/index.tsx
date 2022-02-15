@@ -110,6 +110,16 @@ const Species: BlitzPage = () => {
           <HStack {...group} align="justify-center" marginBottom="4rem">
             {options.map((value) => {
               const radio = getRadioProps({ value })
+
+              // sets active button for direct page visits
+              if (radio.value === "Cardano" && isOpenCardano) {
+                radio.isChecked = true
+              }
+
+              if (radio.value === "Ergo" && isOpenErgo) {
+                radio.isChecked = true
+              }
+
               return (
                 <RadioCard key={value} {...radio}>
                   {value}
