@@ -175,6 +175,14 @@ const addresses = [
         type: "Pay-to-Script (P2S)",
         isSupported: false,
       },
+      {
+        // should support long addresses
+        address:
+          "J3JuxbRZSTFQrWtXY997t5vCi3dgBqWQjvd8Y5deJxQfxNF9ieaVegSSF7KGh9neCwovYasneYcKkcNXey7xsZbkiRbYLyENpoB242v7T5DQKUPLBSPCQoAVW8PzjC7d5pwdRPt82XLhMyVr3mh6pSmHkaQDej7YB7eoT3CDwVBNztZdNL61ksaSwifZQywzG5nsHiLnkYF1aW4izEY7drZxoM2TB3eksaQoNjVq5yG5QkVeEBPAg7GqtusVWg2xMLzzAS824SBB5twybJUUsoYqLtapWSow2A2miYht5dVjZs88UmynNVwLs9rv4kDhte9VXGxmcELSAKPoNvevoCBzFasMKnjRCeFjjYVhq1HhPYnzGMGeVxKD41rcgjoddqoRwBqmkcodhT1ck6za1bBsn6nnEXREvM4Pzd6TxBVQkRhaBwgHv2c2NLD8guEp4FbXoWVgHVCSN417tM4M9Td5DEXito5jdBc9kEawUwDg2X9UJ3ypGyAgXENLmVtMDa6xnNLFW2toS1f8KzaUEon",
+        network: "testnet",
+        type: "Pay-to-Script (P2S)",
+        isSupported: false,
+      },
     ],
   },
   {
