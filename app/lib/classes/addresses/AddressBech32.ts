@@ -99,8 +99,6 @@ export class Bech32Address extends BlockchainAddress {
 
     // bech 32 decoded address
     if (words !== undefined) {
-      this.decoded.bytes = Array.from(bytesBuffer)
-
       // reject bitcoin addresses
       if (["bc", "tb"].includes(prefix)) {
         this.blockchain.name = "bitcoin"
@@ -112,9 +110,10 @@ export class Bech32Address extends BlockchainAddress {
         this.blockchain.name = "unrecognized bech32"
       }
 
-      // cardano
+      // still here so must be a supported cardano address
       this.isSupported = true
       this.blockchain.name = "cardano"
+      this.decoded.bytes = Array.from(bytesBuffer)
       this.currency = {
         decimals: 6,
         ticker: "ADA",
@@ -150,7 +149,7 @@ export class Bech32Address extends BlockchainAddress {
 
         // analyze the header byte
         const headerByteBuffer = getFirstByte(bytesBuffer)
-        const headerByte = parseInt(headerByteBuffer.toString("hex"))
+        const headerByte = parseInt(headerByteBuffer.toString("hex"), 16)
         const headerBits = byteToBits(headerByte, 8)
 
         this.payload.prefix = {

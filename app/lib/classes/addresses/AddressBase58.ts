@@ -48,7 +48,7 @@ export class Base58Address extends BlockchainAddress {
 
     // generate header
     const headerByteBuffer = getFirstByte(decoded)
-    const headerByte = parseInt(headerByteBuffer.toString("hex"))
+    const headerByte = parseInt(headerByteBuffer.toString("hex"), 16)
     const headerBits = byteToBits(headerByte, 8)
 
     // generate checksum property
