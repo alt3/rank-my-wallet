@@ -99,7 +99,11 @@ const Species: BlitzPage = () => {
         <meta name="twitter:site" content="@RankMyWallet" />
       </Head>
 
-      <PageHero title="Blockchain Species" />
+      {!isOpenCardano && !isOpenErgo && <PageHero title="Blockchain Species" />}
+
+      {isOpenCardano && <PageHero title="Cardano Species" />}
+
+      {isOpenErgo && <PageHero title="Ergo Species" />}
 
       <Container maxW="container.md" marginBottom="2.5rem">
         <Center>
