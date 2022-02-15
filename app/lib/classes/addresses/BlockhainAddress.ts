@@ -10,6 +10,7 @@ interface Decoded {
 interface Blockchain {
   name: string
   network?: string
+  explorerUrl?: string
 }
 
 interface Payload {

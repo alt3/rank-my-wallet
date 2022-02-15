@@ -87,7 +87,15 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
           </h2>
           <AccordionPanel p={0} pb="2rem">
             <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
-              <DataGridEntry field="Address" value={parsed.address} />
+              <DataGridEntry
+                field="Address"
+                value={parsed.address}
+                url={{
+                  href: `${parsed.blockchain.explorerUrl + parsed.address}`,
+                  title: `${capitalize(parsed.blockchain.name)} Explorer`,
+                  isExternal: true,
+                }}
+              />
 
               <DataGridEntry
                 field="Blockchain"

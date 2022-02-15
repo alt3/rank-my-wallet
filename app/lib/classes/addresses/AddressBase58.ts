@@ -69,6 +69,7 @@ export class Base58Address extends BlockchainAddress {
     if (isErgoAddress(decoded)) {
       this.isSupported = true
       this.blockchain.name = "ergo"
+      this.blockchain.explorerUrl = `https://explorer.ergoplatform.com/en/addresses/`
       this.currency = {
         decimals: 9,
         ticker: "ERG",

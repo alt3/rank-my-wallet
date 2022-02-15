@@ -113,6 +113,7 @@ export class Bech32Address extends BlockchainAddress {
       // still here so must be a supported cardano address
       this.isSupported = true
       this.blockchain.name = "cardano"
+      this.blockchain.explorerUrl = `https://pool.pm/`
       this.version = "shelley"
       this.decoded.bytes = Array.from(bytesBuffer)
       this.currency = {
