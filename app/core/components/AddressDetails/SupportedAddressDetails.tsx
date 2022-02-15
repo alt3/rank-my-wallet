@@ -88,16 +88,20 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
           <AccordionPanel p={0} pb="2rem">
             <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
               <DataGridEntry field="Address" value={parsed.address} />
+
               <DataGridEntry
                 field="Blockchain"
                 value={`${capitalize(parsed.blockchain.name)} (${parsed.currency.ticker})`}
               />
-              {parsed.version && (
-                <DataGridEntry field="Address Version" value={capitalize(parsed.version)} />
-              )}
+
               {parsed.blockchain.network && (
                 <DataGridEntry field="Network" value={capitalize(parsed.blockchain.network)} />
               )}
+
+              {parsed.version && (
+                <DataGridEntry field="Version" value={capitalize(parsed.version)} />
+              )}
+
               {parsed.type && (
                 <DataGridEntry field="Address Type" value={capitalize(parsed.type.name)} />
               )}
