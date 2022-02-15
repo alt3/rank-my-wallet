@@ -1,10 +1,4 @@
-import {
-  bytesToHex,
-  byteToBits,
-  getFirstByte,
-  getLeadingBits,
-  getTrailingBits,
-} from "app/lib/utils"
+import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "app/lib/utils"
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
 import { BlockchainAddress } from "./BlockhainAddress"
@@ -102,7 +96,7 @@ export class Bech32Address extends BlockchainAddress {
 
     const prefix = decoded.prefix
     const words = decoded.words
-    const bytes = wordsToBytes(decoded.words)
+    const bytesBuffer = wordsToBytesBuffer(words)
 
     this.decoded = {
       prefix: prefix,
@@ -111,7 +105,7 @@ export class Bech32Address extends BlockchainAddress {
 
     // bech 32 decoded address
     if (words !== undefined) {
-      this.decoded.bytes = bytes
+      this.decoded.bytes = Array.from(bytesBuffer)
 
       // reject bitcoin addresses
       if (["bc", "tb"].includes(prefix)) {
@@ -135,12 +129,13 @@ export class Bech32Address extends BlockchainAddress {
       }
 
       // add hex conversion
-      if (bytes) {
-        this.decoded.hex = bytesToHex(bytes)
+      if (bytesBuffer) {
+        this.decoded.hex = bytesBuffer.toString("hex")
 
         // get account address (last 28 bytes)
-        const accountAddressBytes = bytes.slice(-28)
-        const accountAddressHex = bytesToHex(accountAddressBytes)
+        const accountAddressBuffer = bytesBuffer.slice(-28)
+        const accountAddressBytes = Array.from(accountAddressBuffer)
+        const accountAddressHex = accountAddressBuffer.toString("hex")
 
         this.accountAddress = {
           bytes: accountAddressBytes,
@@ -160,12 +155,13 @@ export class Bech32Address extends BlockchainAddress {
         }
 
         // analyze the header byte
-        const headerByte = getFirstByte(bytes)
+        const headerByteBuffer = getFirstByte(bytesBuffer)
+        const headerByte = parseInt(headerByteBuffer.toString("hex"))
         const headerBits = byteToBits(headerByte, 8)
 
         this.payload.prefix = {
           byte: headerByte,
-          hex: bytesToHex([headerByte]),
+          hex: headerByteBuffer.toString("hex"),
           bits: headerBits,
           leading: {
             bits: getLeadingBits(headerBits),
@@ -204,13 +200,14 @@ export class Bech32Address extends BlockchainAddress {
  *
  * @param bytes - Bech32 words
  */
-function wordsToBytes(words: number[]): Array<number> | undefined {
-  let bytes
+function wordsToBytesBuffer(words: number[]): Buffer {
+  let result
+
   try {
-    bytes = bech32.fromWords(words)
+    result = Buffer.from(bech32.fromWords(words))
   } catch (e) {}
 
-  return bytes
+  return result
 }
 
 /**

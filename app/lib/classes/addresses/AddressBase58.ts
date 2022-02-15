@@ -1,10 +1,4 @@
-import {
-  bytesToHex,
-  byteToBits,
-  getFirstByte,
-  getLeadingBits,
-  getTrailingBits,
-} from "app/lib/utils"
+import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "app/lib/utils"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
 import { BlockchainAddress } from "./BlockhainAddress"
@@ -58,7 +52,8 @@ export class Base58Address extends BlockchainAddress {
     }
 
     // generate header
-    const headerByte = getFirstByte(this.decoded.bytes)
+    const headerByteBuffer = getFirstByte(decoded)
+    const headerByte = parseInt(headerByteBuffer.toString("hex"))
     const headerBits = byteToBits(headerByte, 8)
 
     // generate checksum property
@@ -88,7 +83,7 @@ export class Base58Address extends BlockchainAddress {
 
       this.payload.prefix = {
         byte: headerByte,
-        hex: bytesToHex([headerByte]),
+        hex: headerByteBuffer.toString("hex"),
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),

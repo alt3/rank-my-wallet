@@ -1,8 +1,8 @@
 /**
  * Returns the first byte from an array of bytes.
  *
- * @param bytes - Array with bytes
+ * @param bytes - Buffer with bytes array
  */
-export const getFirstByte = function (bytes: Array<number>): number {
-  return <number>bytes[0]
+export const getFirstByte = function (bytes: Buffer): Buffer {
+  return bytes.slice(0, 1)
 }
