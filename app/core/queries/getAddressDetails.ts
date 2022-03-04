@@ -45,12 +45,19 @@ export default async function getAddressDetails(address) {
   // random rank until implemented
   const totalAccounts = parsedAddress.blockchain.name === "cardano" ? 2500000 : 87000
 
+  // if ergo, extract rank from API response
+  let rank = getRandomInt(1, totalAccounts)
+
+  if (validatedAddress.blockchain.name === "ergo") {
+    rank = account.account.target.rank
+  }
+
   return {
     parsed: validatedAddress,
     ...account,
     rank: {
       totalAccounts: totalAccounts,
-      rank: getRandomInt(1, totalAccounts),
+      rank,
       next: "account-id-of-next-rank",
       previous: "account-id-of-previous-rank",
     },

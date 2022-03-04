@@ -9,6 +9,8 @@ export const AddressDetails = () => {
     staleTime: Infinity,
   })
 
+  console.log(addressDetails)
+
   return (
     <>
       {addressDetails.parsed.isSupported === false && (
