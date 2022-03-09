@@ -2,7 +2,7 @@ import axios from "axios"
 import { nanoToTicker } from "app/lib/utils"
 
 export default async function getErgoAccount(parsedAddress) {
-  const url = `https://ergo.watch/api/v0/api/v0/addresses/p2pk/rank/${parsedAddress.address}`
+  const url = `https://ergo.watch/api/v0/ranking/${parsedAddress.address}`
   const config = {}
 
   return await axios.get(url, config).then((response) => {
