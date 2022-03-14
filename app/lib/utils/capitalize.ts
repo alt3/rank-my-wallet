@@ -1,5 +1,5 @@
 /**
- * Capitalizes a word by uppercasing the fisrst character.
+ * Capitalizes a word by uppercasing the first character.
  *
  * @param word - The given word as string
  */
