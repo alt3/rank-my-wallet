@@ -1,3 +1,4 @@
+export * from "./address/abbreviateAddress"
 export * from "./address/parseAddress"
 export * from "./address/validateAddress"
 export * from "./bits/bitstoByte"
