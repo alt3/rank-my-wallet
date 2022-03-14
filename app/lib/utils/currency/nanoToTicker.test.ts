@@ -12,6 +12,11 @@ describe("Ensure nanoToTicker:", function () {
     expect(result.toString()).toEqual("0")
   })
 
+  it("does not preserve trailing zeros", () => {
+    const result = nanoToTicker("25000123400", 6)
+    expect(result.toString()).toEqual("25000.1234")
+  })
+
   it("converts lovelace to ADA retaining default six fraction digits", () => {
     const result = nanoToTicker("25000123456", 6)
     expect(result.toString()).toEqual("25000.123456")
