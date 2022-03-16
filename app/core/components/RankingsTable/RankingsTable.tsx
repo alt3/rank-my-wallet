@@ -15,7 +15,7 @@ export function RankingsTable({ rankings }: RankingsTableProps) {
   const [isMobile] = useMediaQuery("(max-width: 768px)")
 
   if (isMobile) {
-    return <RankingsTableMobile rankings={rankings} />
+    return <RankingsTableMobile rankings={rankings} currencySymbol={"Σ"} />
   } else {
     return <RankingsTableDesktop rankings={rankings} currencySymbol={"Σ"} />
   }

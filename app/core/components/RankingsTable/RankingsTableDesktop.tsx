@@ -14,15 +14,11 @@ interface RankingsTableProps {
 }
 
 export function RankingsTableDesktop({ rankings, currencySymbol }: RankingsTableProps) {
+  const currentAddressColor = useColorModeValue("teal.600", "teal.500")
+
   const styles = {
-    caption: {
-      color: useColorModeValue("teal.500", "teal.300"),
-    },
     table: {
       marginBottom: "3rem",
-    },
-    currentAddress: {
-      color: useColorModeValue("teal.600", "teal.500"),
     },
     left: {
       textAlign: "left" as const,
@@ -35,58 +31,59 @@ export function RankingsTableDesktop({ rankings, currencySymbol }: RankingsTable
   }
 
   return (
-    <>
-      <Table variant="simple" {...styles.table}>
-        <Thead>
-          <Tr>
-            <Th {...styles.left} maxWidth="10px">
-              Rank
-            </Th>
-            <Th {...styles.left}>Address</Th>
-            <Th {...styles.right} textAlign="right">
-              Balance
-            </Th>
-          </Tr>
-        </Thead>
+    <Table variant="simple" {...styles.table}>
+      <Thead>
+        <Tr>
+          <Th {...styles.left} maxWidth="10px">
+            Rank
+          </Th>
+          <Th {...styles.left}>Address</Th>
+          <Th {...styles.right} textAlign="right">
+            Balance
+          </Th>
+        </Tr>
+      </Thead>
 
-        <Tbody>
-          {/* One row per specie */}
-          {rankings.map((element) => {
-            return (
-              <Tr key={nextId("tr")}>
-                <Td {...styles.left} maxWidth="80px" whiteSpace="nowrap">
-                  {bigToString(element.rank, 0)}
-                </Td>
+      <Tbody>
+        {/* One row per competitor */}
+        {rankings.map((element) => {
+          return (
+            <Tr key={nextId("tr")}>
+              <Td
+                {...styles.left}
+                maxWidth="80px"
+                whiteSpace="nowrap"
+                color={element.position === "current" ? currentAddressColor : "inherit"}
+              >
+                {bigToString(element.rank, 0)}
+              </Td>
 
-                {element.position === "current" && (
-                  <Td {...styles.left} {...styles.currentAddress}>
-                    Your address
-                  </Td>
-                )}
-                {element.position !== "current" && (
-                  <Td {...styles.left}>
-                    <Link
-                      href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
-                      title={"Ergo Explorer"}
-                      passHref
-                      isExternal
-                    >
-                      {abbreviateAddress(element.address)}
-                    </Link>
-                  </Td>
-                )}
+              <Td
+                {...styles.left}
+                color={element.position === "current" ? currentAddressColor : "inherit"}
+              >
+                <Link
+                  href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
+                  title={"Ergo Explorer"}
+                  passHref
+                  isExternal
+                >
+                  {abbreviateAddress(element.address)}
+                </Link>
+              </Td>
 
-                <Td {...styles.right} whiteSpace="nowrap">
-                  {currencySymbol +
-                    " " +
-                    bigToString(nanoToTicker(element.balance.toString(), 9), 9)}
-                </Td>
-              </Tr>
-            )
-          })}
-        </Tbody>
-      </Table>
-    </>
+              <Td
+                {...styles.right}
+                whiteSpace="nowrap"
+                color={element.position === "current" ? currentAddressColor : "inherit"}
+              >
+                {currencySymbol + " " + bigToString(nanoToTicker(element.balance.toString(), 9), 9)}
+              </Td>
+            </Tr>
+          )
+        })}
+      </Tbody>
+    </Table>
   )
 }
 
