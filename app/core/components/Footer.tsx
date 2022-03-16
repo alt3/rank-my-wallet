@@ -21,7 +21,7 @@ export function Footer() {
 
   return (
     <Container as="footer" centerContent {...styles.container}>
-      <Flex verticalAlign="center" align="center" gridGap={2}>
+      <Flex verticalAlign="center" textAlign="center" gridGap={2}>
         <Text>
           An{" "}
           <Link isExternal href="https://github.com/alt3" passHref {...styles.link}>
