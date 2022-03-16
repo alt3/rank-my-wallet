@@ -28,6 +28,10 @@ export function Footer() {
             Alt3{" "}
           </Link>
           product powered by{" "}
+          <Link isExternal href="https://ergo.watch/" passHref {...styles.link}>
+            Ergo Watch{" "}
+          </Link>
+          and{" "}
           <Link isExternal href="https://chakra-ui.com/" passHref {...styles.link}>
             ChakraUI{" "}
           </Link>
