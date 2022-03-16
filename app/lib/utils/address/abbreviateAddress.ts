@@ -1,5 +1,5 @@
 /**
- * Capitalizes a word by uppercasing the fisrst character.
+ * Abbreviates a blockchain address by chopping into two equal parts.
  *
  * @param address - Any blockchain address
  */
