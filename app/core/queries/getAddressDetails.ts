@@ -1,11 +1,5 @@
-import {
-  getNextSpecies,
-  getRandomInt,
-  getSpecies,
-  parseAddress,
-  validateAddress,
-} from "app/lib/utils"
-import getAccount from "./getAccount"
+import { getNextSpecies, getSpecies, parseAddress, validateAddress } from "app/lib/utils"
+import fetchData from "./fetchData"
 
 export default async function getAddressDetails(address) {
   const parsedAddress = parseAddress(address)
@@ -14,9 +8,10 @@ export default async function getAddressDetails(address) {
   if (validatedAddress.isSupported === false) {
     return {
       parsed: validatedAddress,
-      account: undefined,
-      rank: undefined,
+      addressCount: undefined,
+      balance: undefined,
       species: undefined,
+      rankings: undefined,
     }
   }
 
@@ -28,42 +23,28 @@ export default async function getAddressDetails(address) {
     throw "we should never reach this point without being Cardano or Ergo"
   }
 
-  // fetch account data from API, errors caught auto-magically
-  const account = await getAccount(validatedAddress)
+  // fetch API data, errors caught automatically
+  const apiData = await fetchData(validatedAddress)
 
-  // we have the API data, calculate all others
-  const currentSpecies = getSpecies(
-    validatedAddress.blockchain.name,
-    account.account.balance.ticker
-  )
+  // we now have API data, generate remaining properties
+  const currentSpecies = getSpecies(validatedAddress.blockchain.name, apiData.balance.ticker)
   const nextSpecies = getNextSpecies(
     validatedAddress.blockchain.name,
-    account.account.balance.ticker,
+    apiData.balance.ticker,
     currentSpecies.name
   )
 
-  // random rank until implemented
-  const totalAccounts = parsedAddress.blockchain.name === "cardano" ? 2500000 : 87000
-
-  // if ergo, extract rank from API response
-  let rank = getRandomInt(1, totalAccounts)
-
-  if (validatedAddress.blockchain.name === "ergo") {
-    rank = account.account.target.rank
-  }
-
-  return {
+  // prepare result
+  const result = {
     parsed: validatedAddress,
-    ...account,
-    rank: {
-      totalAccounts: totalAccounts,
-      rank,
-      next: "account-id-of-next-rank",
-      previous: "account-id-of-previous-rank",
-    },
+    addressCount: apiData.addressCount,
+    balance: apiData.balance,
     species: {
       current: currentSpecies,
       next: nextSpecies,
     },
+    rankings: apiData.rankings,
   }
+
+  return result
 }

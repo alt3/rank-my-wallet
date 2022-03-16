@@ -11,25 +11,35 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { BitsTable, Counter, DataGrid, DataGridEntry, SectionHeader } from "@components"
+import {
+  BitsTable,
+  Counter,
+  DataGrid,
+  DataGridEntry,
+  RankingsTable,
+  SectionHeader,
+} from "@components"
 import { bigToString, capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
-export function SupportedAddressDetails({ parsed, rank, account, species }) {
+export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
+  const accordionIconColor = useColorModeValue("teal.500", "teal.300")
+
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
       <Counter
         blockchain={parsed.blockchain.name}
-        totalAccounts={rank.totalAccounts}
-        rank={rank.rank}
+        totalAccounts={addressCount}
+        rank={rankings.find(({ position }) => position === "current").rank}
       ></Counter>
 
       <SectionHeader>Species</SectionHeader>
       <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
         <DataGridEntry
-          field="Balance"
-          value={parsed.currency.tickerSymbol + " " + bigToString(account.balance.ticker, 0)}
+          field="Your Balance"
+          value={parsed.currency.tickerSymbol + " " + bigToString(balance.ticker, 0)}
         />
+
         <DataGridEntry
           field="Current Species"
           value={capitalize(species.current.name)}
@@ -74,6 +84,29 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
       </DataGrid>
 
       <Accordion allowMultiple>
+        {/* COMPETITION PANE - IF APPLICABLE */}
+        {rankings.length > 1 && (
+          <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", sm: "0.5rem" }}>
+            <h2>
+              <AccordionButton p={0}>
+                <Box flex="1" textAlign="left">
+                  <SectionHeader>Competition</SectionHeader>
+                </Box>
+                <Box as="span" verticalAlign="top" minHeight="3rem">
+                  <AccordionIcon color={accordionIconColor} />
+                </Box>
+              </AccordionButton>
+            </h2>
+            <AccordionPanel p={0} pb="2rem">
+              <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
+                <DataGridEntry field="Competitors" value={bigToString(addressCount, 0)} />
+              </DataGrid>
+              <RankingsTable rankings={rankings} />
+            </AccordionPanel>
+          </AccordionItem>
+        )}
+
+        {/* ADDRESS DETAILS PANE */}
         <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", sm: "0.5rem" }}>
           <h2>
             <AccordionButton p={0}>
@@ -81,7 +114,7 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
                 <SectionHeader>Address Details</SectionHeader>
               </Box>
               <Box as="span" verticalAlign="top" minHeight="3rem">
-                <AccordionIcon color={useColorModeValue("teal.500", "teal.300")} />
+                <AccordionIcon color={accordionIconColor} />
               </Box>
             </AccordionButton>
           </h2>
@@ -117,13 +150,14 @@ export function SupportedAddressDetails({ parsed, rank, account, species }) {
           </AccordionPanel>
         </AccordionItem>
 
+        {/* ADDRESS ANALYSIS PANE */}
         <AccordionItem borderStyle="none">
           <AccordionButton p={0}>
             <Box flex="1" textAlign="left">
               <SectionHeader>Address Analysis</SectionHeader>
             </Box>
             <Box as="span" verticalAlign="top" minHeight="3rem">
-              <AccordionIcon color={useColorModeValue("teal.500", "teal.300")} />
+              <AccordionIcon color={accordionIconColor} />
             </Box>
           </AccordionButton>
 

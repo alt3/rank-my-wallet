@@ -11,7 +11,7 @@ interface BitsTableProps {
   sumLabel?: string
 }
 
-export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
+export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
   let binaryCounter = 256 // we will divide by two to generate the static binary cell headers
@@ -130,4 +130,4 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
   )
 }
 
-export default BitsTableMobile
+export default BitsTableDesktop

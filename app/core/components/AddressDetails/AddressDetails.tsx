@@ -9,7 +9,7 @@ export const AddressDetails = () => {
     staleTime: Infinity,
   })
 
-  console.log(addressDetails)
+  // console.log(addressDetails)
 
   return (
     <>
@@ -20,9 +20,10 @@ export const AddressDetails = () => {
       {addressDetails.parsed.isSupported === true && (
         <SupportedAddressDetails
           parsed={addressDetails.parsed}
-          account={addressDetails.account}
-          rank={addressDetails.rank}
+          addressCount={addressDetails.addressCount}
+          balance={addressDetails.balance}
           species={addressDetails.species}
+          rankings={addressDetails.rankings}
         />
       )}
     </>
