@@ -30,6 +30,7 @@
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
     "@fontsource/inter": "4.5.1",
+    "@next/bundle-analyzer": "12.0.7",
     "@prisma/client": "3.7.0",
     "axios": "0.25.0",
     "bech32": "2.0.0",
@@ -55,7 +56,6 @@
     "toformat": "2.0.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "12.0.7",
     "@types/bs58": "4.0.1",
     "@types/lodash.isequal": "4.5.5",
     "@types/react": "17.0.38",
