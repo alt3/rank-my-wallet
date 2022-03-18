@@ -21,7 +21,7 @@ export function Sponsors() {
     <Box marginBottom="6rem">
       <Center>
         <Text as="h2" textTransform="uppercase" {...styles.caption}>
-          Sponsored and Backed by
+          Made Possible By
         </Text>
       </Center>
 
