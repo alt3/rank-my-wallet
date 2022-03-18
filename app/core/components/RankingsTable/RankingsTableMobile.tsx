@@ -1,5 +1,5 @@
-import { Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
-import { Link } from "@components"
+import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
+import { Link, TickerString } from "@components"
 import { bigToString, nanoToTicker } from "app/lib/utils"
 import nextId from "react-id-generator"
 
@@ -10,11 +10,11 @@ interface RankingsTableProps {
     rank: number
     position: string
   }>
-  currencySymbol: "₳" | "Σ"
+  tickerSymbol: "₳" | "Σ"
 }
 
-export function RankingsTableMobile({ rankings, currencySymbol }: RankingsTableProps) {
-  const currentAddressColor = useColorModeValue("teal.600", "teal.500")
+export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTableProps) {
+  const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
   const styles = {
     table: {
@@ -28,13 +28,18 @@ export function RankingsTableMobile({ rankings, currencySymbol }: RankingsTableP
       textAlign: "right" as const,
       paddingRight: 0,
     },
+    asterisk: {
+      verticalAlign: "super",
+      fontSize: "smaller",
+      lineHeight: "normal",
+    },
   }
 
   return (
     <Table variant="simple" {...styles.table}>
       <Thead>
         <Tr>
-          <Th {...styles.left} maxWidth="10px">
+          <Th {...styles.left} maxWidth="10px" whiteSpace="nowrap">
             Rank
           </Th>
           <Th {...styles.right} textAlign="right">
@@ -48,12 +53,7 @@ export function RankingsTableMobile({ rankings, currencySymbol }: RankingsTableP
         {rankings.map((element) => {
           return (
             <Tr key={nextId("tr")}>
-              <Td
-                {...styles.left}
-                maxWidth="80px"
-                whiteSpace="nowrap"
-                color={element.position === "current" ? currentAddressColor : "inherit"}
-              >
+              <Td {...styles.left} maxWidth="80px" whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
                   title={"Ergo Explorer"}
@@ -61,23 +61,27 @@ export function RankingsTableMobile({ rankings, currencySymbol }: RankingsTableP
                   isExternal
                 >
                   {bigToString(element.rank, 0)}
+
+                  {element.position === "current" && (
+                    <Box as="span" {...styles.asterisk} title="Your rank">
+                      *
+                    </Box>
+                  )}
                 </Link>
               </Td>
 
-              <Td
-                {...styles.right}
-                whiteSpace="nowrap"
-                color={element.position === "current" ? currentAddressColor : "inherit"}
-              >
+              <Td {...styles.right} whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
                   title={"Ergo Explorer"}
                   passHref
                   isExternal
                 >
-                  {currencySymbol +
-                    " " +
-                    bigToString(nanoToTicker(element.balance.toString(), 9), 9)}
+                  <TickerString
+                    ticker={bigToString(nanoToTicker(element.balance.toString(), 9), 9)}
+                    tickerSymbol={tickerSymbol}
+                    fractionsColor={fractionsColor}
+                  ></TickerString>
                 </Link>
               </Td>
             </Tr>

@@ -1,5 +1,5 @@
-import { Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
-import { Link } from "@components"
+import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
+import { Link, TickerString } from "@components"
 import { abbreviateAddress, bigToString, nanoToTicker } from "app/lib/utils"
 import nextId from "react-id-generator"
 
@@ -10,11 +10,11 @@ interface RankingsTableProps {
     rank: number
     position: string
   }>
-  currencySymbol: "₳" | "Σ"
+  tickerSymbol: "₳" | "Σ"
 }
 
-export function RankingsTableDesktop({ rankings, currencySymbol }: RankingsTableProps) {
-  const currentAddressColor = useColorModeValue("teal.600", "teal.500")
+export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTableProps) {
+  const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
   const styles = {
     table: {
@@ -28,13 +28,18 @@ export function RankingsTableDesktop({ rankings, currencySymbol }: RankingsTable
       textAlign: "right" as const,
       paddingRight: 0,
     },
+    asterisk: {
+      verticalAlign: "super",
+      fontSize: "smaller",
+      lineHeight: "normal",
+    },
   }
 
   return (
     <Table variant="simple" {...styles.table}>
       <Thead>
         <Tr>
-          <Th {...styles.left} maxWidth="10px">
+          <Th {...styles.left} maxWidth="10px" whiteSpace="nowrap">
             Rank
           </Th>
           <Th {...styles.left}>Address</Th>
@@ -49,35 +54,34 @@ export function RankingsTableDesktop({ rankings, currencySymbol }: RankingsTable
         {rankings.map((element) => {
           return (
             <Tr key={nextId("tr")}>
-              <Td
-                {...styles.left}
-                maxWidth="80px"
-                whiteSpace="nowrap"
-                color={element.position === "current" ? currentAddressColor : "inherit"}
-              >
+              <Td {...styles.left} maxWidth="80px" whiteSpace="nowrap">
                 {bigToString(element.rank, 0)}
+
+                {element.position === "current" && (
+                  <Box as="span" {...styles.asterisk} title="Your rank">
+                    *
+                  </Box>
+                )}
               </Td>
 
-              <Td
-                {...styles.left}
-                color={element.position === "current" ? currentAddressColor : "inherit"}
-              >
+              <Td {...styles.left} whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
                   title={"Ergo Explorer"}
                   passHref
                   isExternal
+                  whiteSpace="nowrap"
                 >
                   {abbreviateAddress(element.address)}
                 </Link>
               </Td>
 
-              <Td
-                {...styles.right}
-                whiteSpace="nowrap"
-                color={element.position === "current" ? currentAddressColor : "inherit"}
-              >
-                {currencySymbol + " " + bigToString(nanoToTicker(element.balance.toString(), 9), 9)}
+              <Td {...styles.right}>
+                <TickerString
+                  ticker={bigToString(nanoToTicker(element.balance.toString(), 9), 9)}
+                  tickerSymbol={tickerSymbol}
+                  fractionsColor={fractionsColor}
+                ></TickerString>
               </Td>
             </Tr>
           )
