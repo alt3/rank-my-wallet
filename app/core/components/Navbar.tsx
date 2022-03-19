@@ -1,6 +1,6 @@
-import { Link } from "@components"
 import {
   Box,
+  Button,
   Center,
   Flex,
   Icon,
@@ -8,6 +8,7 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { Link } from "@components"
 import { BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
 
 export const Navbar: React.FC = () => {
@@ -36,6 +37,12 @@ export const Navbar: React.FC = () => {
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
+          <Link href="/tipbox">
+            <Button variant="ghost" color="inherit">
+              Tip Box
+            </Button>
+          </Link>
+
           <Link
             href="https://www.twitter.com/RankMyWallet/"
             aria-label="Visit RankMyWallet on Twitter"

@@ -38,6 +38,7 @@
     "blakejs": "1.1.1",
     "blitz": "0.45.3",
     "bs58": "^4.0.1",
+    "clipboard": "2.0.10",
     "ethereum-regex": "1.1.13",
     "focus-visible": "5.2.0",
     "framer-motion": "5.x",
@@ -46,6 +47,7 @@
     "monero-regex": "1.0.9",
     "nextjs-basic-auth-middleware": "0.2.1",
     "nprogress": "0.2.0",
+    "qrcode.react": "2.0.0",
     "react": "18.0.0-beta-149b420f6-20211119",
     "react-countup": "6.1.0",
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020",
@@ -58,6 +60,7 @@
   "devDependencies": {
     "@types/bs58": "4.0.1",
     "@types/lodash.isequal": "4.5.5",
+    "@types/qrcode.react": "1.0.2",
     "@types/react": "17.0.38",
     "cross-env": "7.0.3",
     "eslint": "7.32.0",
