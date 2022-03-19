@@ -16,14 +16,18 @@ import {
   Counter,
   DataGrid,
   DataGridEntry,
+  DataGridField,
+  DataGridValue,
   RankingsTable,
   SectionHeader,
+  TickerString,
 } from "@components"
 import { bigToString, capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
 export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
+  const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
@@ -71,14 +75,16 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
               field="Starts At"
               value={parsed.currency.tickerSymbol + " " + bigToString(species.next.startsAt, 0)}
             />
-            <DataGridEntry
-              field="Requires"
-              value={
-                parsed.currency.tickerSymbol +
-                " " +
-                bigToString(species.next.requires, parsed.currency.decimals)
-              }
-            />
+
+            {/* NEXT SPECIES REQUIRES */}
+            <DataGridField>Requires</DataGridField>
+            <DataGridValue>
+              <TickerString
+                ticker={bigToString(species.next.requires, parsed.currency.decimals)}
+                tickerSymbol={parsed.currency.tickerSymbol}
+                fractionsColor={fractionsColor}
+              ></TickerString>
+            </DataGridValue>
           </>
         )}
       </DataGrid>
