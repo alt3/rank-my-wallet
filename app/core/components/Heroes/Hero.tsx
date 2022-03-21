@@ -12,7 +12,7 @@ export function Hero() {
       paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
-      fontSize: { base: "4xl", sm: "6xl" },
+      fontSize: { base: "4xl", md: "6xl" },
       letterSpacing: { base: "tighter", sm: "normal" },
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
       marginBottom: { base: "1rem", md: "2rem" },

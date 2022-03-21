@@ -22,7 +22,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
       paddingRight: 0,
     },
     heading: {
-      fontSize: { base: "4xl", sm: "6xl" },
+      fontSize: { base: "4xl", md: "6xl" },
       letterSpacing: { base: "tighter", sm: "normal" },
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
       marginBottom: 0,
