@@ -8,7 +8,7 @@ export function Hero() {
     },
     container: {
       maxW: "container.md",
-      marginTop: { base: "3rem", md: "4rem" },
+      marginTop: { base: "3rem", md: "5rem" },
       paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
@@ -19,6 +19,13 @@ export function Hero() {
       marginBottom: { base: "1rem", md: "2rem" },
       textAlign: "center" as const,
     },
+    headingSub: {
+      color: useColorModeValue("teal.500", "teal.300"),
+      marginTop: 0,
+    },
+    form: {
+      marginTop: { base: "2.5rem", md: "4rem" },
+    },
   }
 
   return (
@@ -26,13 +33,14 @@ export function Hero() {
       <Container {...styles.container}>
         <Center>
           <Stack width="100%" spacing={8} align="center">
-            <Heading {...styles.heading}>
+            <Heading display={{ base: "inline", sm: "none" }} {...styles.heading}>
               Rank My{" "}
-              <Text as="span" color={useColorModeValue("teal.500", "teal.300")}>
+              <Text as="span" {...styles.headingSub}>
                 Wallet
               </Text>
             </Heading>
-            <AddressForm placeholder="Wallet address" />
+
+            <AddressForm placeholder="Wallet address" {...styles.form} />
           </Stack>
         </Center>
       </Container>
