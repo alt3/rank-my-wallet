@@ -1314,6 +1314,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.1.tgz#058d8a02354f3c78e369d452c15d33557ec1b705"
   integrity sha512-mvtOvXNNVLlF1p/UbLgLrmz2RCOl6Ow+TqyiK10SosoLKX7edsXYiHFHb7XIZdjII6F2sJVPPsJXWhBnbXT2DQ==
 
+"@fontsource/poppins@4.5.3":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.5.3.tgz#0d50e7c48cac6dab2b76d7e711001256875cc2b0"
+  integrity sha512-YtJjTzPv5Zy3hdFGpm0D45yquJBGbOrY3obvf8RBkyCXC8NFT0EjWoUM9ZE4SXhvp5HYvKL1zl8JtLbVRRijSA==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"

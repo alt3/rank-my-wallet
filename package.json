@@ -30,6 +30,7 @@
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
     "@fontsource/inter": "4.5.1",
+    "@fontsource/poppins": "4.5.3",
     "@next/bundle-analyzer": "12.0.7",
     "@prisma/client": "3.7.0",
     "axios": "0.25.0",
