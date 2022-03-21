@@ -6,10 +6,12 @@ import {
   AccordionPanel,
   Box,
   Container,
+  Divider,
   Grid,
   GridItem,
   Text,
   useColorModeValue,
+  useMediaQuery,
 } from "@chakra-ui/react"
 import {
   BitsTable,
@@ -26,6 +28,7 @@ import { bigToString, capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
 
 export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
+  const [isMobile] = useMediaQuery("(max-width: 768px)")
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
@@ -36,6 +39,8 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         totalAccounts={addressCount}
         rank={rankings.find(({ position }) => position === "current").rank}
       ></Counter>
+
+      {isMobile && <Divider marginBottom="2rem" />}
 
       <SectionHeader>Species</SectionHeader>
       <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
