@@ -12,12 +12,12 @@ interface CounterProps {
 export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
   const styles = {
     box: {
-      marginBottom: "3rem",
+      marginBottom: { base: 0, sm: "3rem" },
     },
     container: {
       maxW: "container.md",
       marginTop: { base: "3rem", md: "4rem" },
-      paddingBottom: { base: "4rem", md: "5rem" },
+      paddingBottom: { base: "2rem", md: "5rem" },
     },
     heading: {
       fontSize: { base: "4xl", sm: "6xl" },
