@@ -19,7 +19,7 @@ export const TipBox = () => {
     disclaimer: {
       align: "center" as const,
       color: useColorModeValue("teal.500", "gray.600"),
-      marginTop: { base: "4rem", sm: "5rem" },
+      marginTop: { base: "2rem", sm: "5rem" },
     },
   }
 
@@ -47,7 +47,7 @@ export const TipBox = () => {
           </SimpleGrid>
 
           <Text {...styles.disclaimer}>
-            Thanks to your donations, this website can remain ad-free.
+            Thanks to your donations, this website remains ad-free.
           </Text>
         </Box>
       </Container>
