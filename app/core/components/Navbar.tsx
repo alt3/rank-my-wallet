@@ -1,19 +1,15 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Icon,
-  IconButton,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { Link } from "@components"
 import { BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
+import { Logo, LogoMobile } from "./logos"
 
 export const Navbar: React.FC = () => {
   const { toggleColorMode: toggleMode } = useColorMode()
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
+
+  const logoColorPrimary = useColorModeValue("#1B202C", "#52E3D1")
+  const logoColorSecondary = useColorModeValue("#52E3D1", "#fff")
 
   return (
     <Box
@@ -25,8 +21,26 @@ export const Navbar: React.FC = () => {
       width="100%"
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
-        <Flex align="center">
-          <Link href="/">Home</Link>
+        <Flex align="left">
+          <Link href="/">
+            <LogoMobile
+              display={{ base: "block", sm: "none" }}
+              marginTop="0.5rem"
+              h="10"
+              pointerEvents="none"
+              fill={logoColorPrimary}
+            />
+            <Logo
+              display={{ base: "none", sm: "block" }}
+              marginTop="0.5rem"
+              h="14"
+              pointerEvents="none"
+              fill={{
+                primary: logoColorPrimary,
+                secondary: logoColorSecondary,
+              }}
+            />
+          </Link>
         </Flex>
 
         <Flex
@@ -36,23 +50,29 @@ export const Navbar: React.FC = () => {
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
-          <Link href="/tipbox">Tip Box</Link>
+          <Link href="/tipbox" textDecoration="none">
+            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
+              Tip Box
+            </Button>
+          </Link>
 
           <Link
             href="https://www.twitter.com/RankMyWallet/"
             aria-label="Visit RankMyWallet on Twitter"
             isExternal
             passHref
-            h="48px"
-            w="48px"
-            fontSize="lg"
-            marginRight="0.25rem"
-            marginTop="0.35rem"
-            paddingTop="0.682rem"
           >
-            <Center>
-              <Icon as={BsTwitter} w={5} h={5} _hover={{ color: "#1D9AEF" }} />
-            </Center>
+            <IconButton
+              size="lg"
+              maxWidth="1rem"
+              w={10}
+              ml={0}
+              aria-label={`Twitter`}
+              variant="ghost"
+              color="current"
+              marginLeft="0"
+              icon={<BsTwitter />}
+            />
           </Link>
 
           <IconButton
