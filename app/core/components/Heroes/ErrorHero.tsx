@@ -12,8 +12,7 @@ export const ErrorHero = ({ title, subtitle }: ErrorHeroProps) => {
     },
     container: {
       maxW: "container.md",
-      marginTop: { base: "3rem", md: "4rem" },
-      // paddingBottom: { base: "4rem", md: "5rem" },
+      marginTop: { base: "2.5rem", md: "4rem" },
     },
     title: {
       fontSize: { base: "4xl", md: "6xl" },

@@ -8,13 +8,12 @@ export function Hero() {
     },
     container: {
       maxW: "container.md",
-      marginTop: { base: "3rem", md: "5rem" },
+      marginTop: { base: "2.5rem", md: "5rem" },
       paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
       fontSize: { base: "4xl", sm: "6xl" },
-      fontWeight: "bold",
-      letterSpacing: "tighter",
+      letterSpacing: { base: "tighter", sm: "normal" },
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
       marginBottom: { base: "1rem", md: "2rem" },
       textAlign: "center" as const,

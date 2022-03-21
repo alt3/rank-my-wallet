@@ -16,13 +16,14 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
     },
     container: {
       maxW: "container.md",
-      marginTop: { base: "3rem", md: "4rem" },
+      marginTop: { base: "2.5rem", md: "4rem" },
       paddingBottom: { base: "2rem", md: "5rem" },
+      paddingLeft: 0,
+      paddingRight: 0,
     },
     heading: {
       fontSize: { base: "4xl", sm: "6xl" },
-      fontWeight: "bold",
-      letterSpacing: "tighter",
+      letterSpacing: { base: "tighter", sm: "normal" },
       color: useColorModeValue("gray.700", "whiteAlpha.900"),
       marginBottom: 0,
       textAlign: "center" as const,
@@ -30,10 +31,10 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
     counter: {
       fontSize: { base: "4xl", sm: "6xl" },
       color: useColorModeValue("teal.500", "teal.300"),
+      letterSpacing: { base: "tighter", sm: "normal" },
       css: {
         "@supports (-webkit-touch-callout: none) {": {
           fontFamily: "Menlo", // iOS MUST use a monospace font or the counter will shake
-          letterSpacing: "tight",
         },
       },
     },
@@ -46,10 +47,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
           <Stack spacing={2} width="100%" align="center">
             {blockchain === "cardano" && (
               <>
-                <Heading {...styles.heading}>Cardano Rankings</Heading>
-                <Heading as="h3" {...styles.heading} {...styles.counter}>
-                  are coming soon
-                </Heading>
+                <Heading {...styles.heading}>Cardano Rankings are coming soon</Heading>
               </>
             )}
 
