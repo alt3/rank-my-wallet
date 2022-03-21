@@ -11,7 +11,7 @@ export function BlockChains() {
       fontSize: "sm",
       fontWeight: useColorModeValue(600, 500),
       letterSpacing: "widest",
-      color: useColorModeValue("teal.500", "teal.300"),
+      color: useColorModeValue("gray.600", "gray.400"),
       marginBottom: "2.5rem",
     },
     grid: {

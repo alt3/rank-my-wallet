@@ -9,7 +9,7 @@ export function Sponsors() {
       marginBottom: "2.5rem",
       fontWeight: useColorModeValue(600, 500),
       letterSpacing: "widest",
-      color: useColorModeValue("teal.500", "teal.300"),
+      color: useColorModeValue("gray.600", "gray.400"),
     },
     grid: {
       columns: [2, null, 3],
