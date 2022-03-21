@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Center,
   Flex,
   Icon,
@@ -37,11 +36,7 @@ export const Navbar: React.FC = () => {
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
-          <Link href="/tipbox">
-            <Button variant="ghost" color="inherit">
-              Tip Box
-            </Button>
-          </Link>
+          <Link href="/tipbox">Tip Box</Link>
 
           <Link
             href="https://www.twitter.com/RankMyWallet/"
