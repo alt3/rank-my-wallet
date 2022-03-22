@@ -11,7 +11,7 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
       </Head>
 
       {/* Global site tag (gtag.js) - Google Analytics */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-X0651PNQQN" />
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-X0651PNQQN" />
 
       <Script id="google-analytics" strategy="afterInteractive">
         {`
