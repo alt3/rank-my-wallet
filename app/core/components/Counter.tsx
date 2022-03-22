@@ -29,14 +29,10 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
       textAlign: "center" as const,
     },
     counter: {
+      fontFamily: '"Noto Mono", "monospace"',
       fontSize: { base: "4xl", sm: "6xl" },
       color: useColorModeValue("teal.500", "teal.300"),
-      letterSpacing: { base: "tighter", sm: "normal" },
-      css: {
-        "@supports (-webkit-touch-callout: none) {": {
-          fontFamily: "Menlo", // iOS MUST use a monospace font or the counter will shake
-        },
-      },
+      letterSpacing: { base: "tight", sm: "tighter" },
     },
   }
 

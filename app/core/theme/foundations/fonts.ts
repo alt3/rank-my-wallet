@@ -1,8 +1,8 @@
 // import external fonts
-import "@fontsource/inter"
 import "@fontsource/poppins"
+import "@fontsource/noto-mono" // used for the counter
 
 export const fonts = {
-  body: "Inter, sans-serif",
+  body: "Poppins, sans-serif",
   heading: "Poppins", // font used by chakra headings
 }
