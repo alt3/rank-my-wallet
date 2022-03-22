@@ -7,9 +7,10 @@ interface CounterProps {
   totalAccounts: number
   rank: number
   blockchain: string
+  balance: string | number
 }
 
-export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
+export function Counter({ totalAccounts, rank, blockchain, balance }: CounterProps) {
   const styles = {
     box: {
       marginBottom: { base: 0, sm: "3rem" },
@@ -41,13 +42,17 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
       <Container {...styles.container}>
         <Center>
           <Stack spacing={2} width="100%" align="center">
-            {blockchain === "cardano" && (
+            {(balance === "0" || balance === 0) && (
+              <Heading {...styles.heading}>Sorry, but we do not rank empty wallets</Heading>
+            )}
+
+            {blockchain === "cardano" && balance !== "0" && balance !== 0 && (
               <>
                 <Heading {...styles.heading}>Cardano Rankings are coming soon</Heading>
               </>
             )}
 
-            {blockchain !== "cardano" && (
+            {blockchain !== "cardano" && balance !== "0" && balance !== 0 && (
               <>
                 <Heading {...styles.heading}>You are {capitalize(blockchain)} holder</Heading>
                 <Heading as="h3" {...styles.heading} {...styles.counter}>

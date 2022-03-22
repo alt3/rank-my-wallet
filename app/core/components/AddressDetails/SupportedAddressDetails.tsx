@@ -36,6 +36,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         blockchain={parsed.blockchain.name}
         totalAccounts={addressCount}
         rank={rankings.find(({ position }) => position === "current").rank}
+        balance={balance.nano}
       ></Counter>
 
       <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
