@@ -89,10 +89,10 @@ const species = {
   ergo: [
     {
       startsAt: 0,
-      name: "ghost (0)",
+      name: "ghost",
     },
     {
-      startsAt: 0.00000001,
+      startsAt: 0.000000001,
       name: "plankton",
     },
     {
