@@ -9,7 +9,6 @@ import {
 import { PageHero, RadioCard } from "@components"
 import SpeciesTable from "@components/SpeciesTable/SpeciesTable"
 import species from "app/constants/species"
-import { basicAuth } from "app/core/auth/basic-auth"
 import Layout from "app/core/layouts/Layout"
 import { BlitzPage, GetServerSideProps, Head, useRouterQuery } from "blitz"
 import React from "react"
@@ -147,12 +146,6 @@ const Species: BlitzPage = () => {
       </Container>
     </>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  await basicAuth(context.req, context.res)
-
-  return { props: {} }
 }
 
 Species.suppressFirstRenderFlicker = true

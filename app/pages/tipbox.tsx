@@ -3,9 +3,8 @@ import { TipboxCard } from "@components"
 import tipboxAddresses from "app/constants/tipbox-addresses"
 import Layout from "app/core/layouts/Layout"
 import { BlitzPage, Head } from "blitz"
-import { Suspense } from "react"
 
-export const TipBox = () => {
+const TipBox: BlitzPage = () => {
   const styles = {
     container: {
       maxW: "container.md",
@@ -55,17 +54,8 @@ export const TipBox = () => {
   )
 }
 
-const ShowTipBoxPage: BlitzPage = () => {
-  return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <TipBox />
-      </Suspense>
-    </div>
-  )
-}
+TipBox.suppressFirstRenderFlicker = true
+TipBox.authenticate = false
+TipBox.getLayout = (page) => <Layout title="Tip Box">{page}</Layout>
 
-ShowTipBoxPage.authenticate = false
-ShowTipBoxPage.getLayout = (page) => <Layout>{page}</Layout>
-
-export default ShowTipBoxPage
+export default TipBox
