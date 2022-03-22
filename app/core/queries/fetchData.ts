@@ -21,8 +21,10 @@ export default async function fetchData(parsedAddress) {
       fetchCardanoRankings({ ...parsedAddress }),
     ])
 
-    nano = rankings.find(({ position }) => position === "current").balance.toString()
-    ticker = nanoToTicker(nano, 6)
+    if (rankings.balance !== 0) {
+      nano = rankings.find(({ position }) => position === "current").balance.toString()
+      ticker = nanoToTicker(nano, 6)
+    }
   }
 
   if (parsedAddress.blockchain.name === "ergo") {
@@ -32,8 +34,10 @@ export default async function fetchData(parsedAddress) {
       fetchErgoRankings({ ...parsedAddress }),
     ])
 
-    nano = rankings.find(({ position }) => position === "current").balance.toString()
-    ticker = nanoToTicker(nano, 9)
+    if (rankings.balance !== 0) {
+      nano = rankings.find(({ position }) => position === "current").balance.toString()
+      ticker = nanoToTicker(nano, 9)
+    }
   }
 
   const result = {

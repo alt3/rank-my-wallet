@@ -11,16 +11,33 @@ export default async function fetchCardanoRankings(parsedAddress) {
     },
   }
 
-  return await axios.get(url, config).then((response) => {
-    const rankings = [
-      {
-        position: "current",
-        rank: undefined,
-        balance: response.data.controlled_amount,
-        address: undefined,
-      },
-    ]
+  return await axios
+    .get(url, config)
+    .then((response) => {
+      const rankings = [
+        {
+          position: "current",
+          rank: undefined,
+          balance: response.data.controlled_amount,
+          address: undefined,
+        },
+      ]
 
-    return rankings
-  })
+      return rankings
+    })
+    .catch((err) => {
+      // 404 means no balance
+      if (err.response.status === 404) {
+        return [
+          {
+            position: "current",
+            rank: undefined,
+            balance: 0,
+            address: parsedAddress.address,
+          },
+        ]
+      }
+      // not a 404, rethrow
+      throw err
+    })
 }
