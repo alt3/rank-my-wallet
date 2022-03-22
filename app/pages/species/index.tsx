@@ -16,7 +16,7 @@ import React from "react"
 
 const Species: BlitzPage = () => {
   const meta = {
-    title: "Rank My Wallet - Blockchain species",
+    title: "Rank My Wallet - Species",
     description: "Blockchain species for Cardano and Ergo based on wallet balance.",
     keywords: "rankings, cardano, ergo, blockchain, species, whale, orca, shark, shrimp, online",
     url: "https://rankmywallet.com/species",

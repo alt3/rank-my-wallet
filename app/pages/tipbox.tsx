@@ -26,7 +26,7 @@ export const TipBox = () => {
   return (
     <>
       <Head>
-        <title>Tip Box</title>
+        <title>Rank My Wallet - Tip Box</title>
       </Head>
 
       <Container {...styles.container}>

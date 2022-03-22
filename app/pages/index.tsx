@@ -6,9 +6,9 @@ import { BlitzPage, Head } from "blitz"
 
 const Home: BlitzPage = () => {
   const meta = {
-    title: "Rank My Wallet - Online ranking of blockchain wallets",
-    description: "Rank your Cardano and Ergo blockchain addresses.",
-    keywords: "rankings, cardano, ergo, blockchain, addresses, wallets, species, online",
+    title: "Rank My Wallet",
+    description: "Realtime Cardano and Ergo blockchain address rankings",
+    keywords: "rankings, cardano, ergo, blockchain, addresses, wallets, species, analyser, online",
     url: "https://rankmywallet.com/",
   }
 
