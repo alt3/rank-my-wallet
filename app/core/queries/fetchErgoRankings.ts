@@ -1,18 +1,20 @@
 import axios from "axios"
 
+interface Rank {
+  position: string
+  rank: number
+  balance: number
+  address: string
+}
+
+type RankItems = Array<Rank>
+
 export default async function fetchErgoRankings(parsedAddress) {
   const url = `https://ergo.watch/api/v0/ranking/${parsedAddress.address}`
   const config = {}
 
   return await axios.get(url, config).then((response) => {
-    const rankings = [
-      {
-        position: "current",
-        rank: response.data.target.rank,
-        balance: response.data.target.balance,
-        address: response.data.target.address,
-      },
-    ]
+    const rankings = [] as RankItems
 
     if (response.data.above !== null) {
       rankings.push({
@@ -22,6 +24,13 @@ export default async function fetchErgoRankings(parsedAddress) {
         address: response.data.above.address,
       })
     }
+
+    rankings.push({
+      position: "current",
+      rank: response.data.target.rank,
+      balance: response.data.target.balance,
+      address: response.data.target.address,
+    })
 
     if (response.data.under !== null) {
       rankings.push({
