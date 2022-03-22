@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
         <Flex align="left">
-          <Link href="/" passHref>
+          <Link href="/" aria-label="Home" passHref>
             <LogoMobile
               display={{ base: "block", sm: "none" }}
               marginTop="0.25rem"
