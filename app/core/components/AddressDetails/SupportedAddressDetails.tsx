@@ -59,6 +59,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             title: "Blockchain Species",
           }}
           linkColor={useColorModeValue("pink.600", "pink.400")}
+          linkIcon={true}
         />
 
         {species.next === undefined && (
