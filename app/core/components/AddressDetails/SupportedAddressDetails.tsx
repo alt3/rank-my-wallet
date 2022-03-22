@@ -42,10 +42,13 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
       <SectionHeader>Species</SectionHeader>
       <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
-        <DataGridEntry
-          field="Your Balance"
-          value={parsed.currency.tickerSymbol + " " + bigToString(balance.ticker, 0)}
-        />
+        <DataGridField>Your Balance</DataGridField>
+        <DataGridValue>
+          <TickerString
+            ticker={bigToString(balance.ticker, 0)}
+            tickerSymbol={parsed.currency.tickerSymbol}
+          ></TickerString>
+        </DataGridValue>
 
         <DataGridEntry
           field="Current Species"
@@ -74,10 +77,15 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 title: "Blockchain Species",
               }}
             />
-            <DataGridEntry
-              field="Starts At"
-              value={parsed.currency.tickerSymbol + " " + bigToString(species.next.startsAt, 0)}
-            />
+
+            {/* NEXT SPECIES STARTS AT */}
+            <DataGridField>Starts At</DataGridField>
+            <DataGridValue>
+              <TickerString
+                ticker={bigToString(species.next.startsAt, 0)}
+                tickerSymbol={parsed.currency.tickerSymbol}
+              ></TickerString>
+            </DataGridValue>
 
             {/* NEXT SPECIES REQUIRES */}
             <DataGridField>Requires</DataGridField>

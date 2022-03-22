@@ -54,7 +54,12 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
         {rankings.map((element) => {
           return (
             <Tr key={nextId("tr")}>
-              <Td {...styles.left} maxWidth="80px" whiteSpace="nowrap">
+              <Td
+                {...styles.left}
+                maxWidth="80px"
+                whiteSpace="nowrap"
+                fontFamily="Inter, monospace"
+              >
                 {bigToString(element.rank, 0)}
 
                 {element.position === "current" && (

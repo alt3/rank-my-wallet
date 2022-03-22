@@ -53,7 +53,12 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
         {rankings.map((element) => {
           return (
             <Tr key={nextId("tr")}>
-              <Td {...styles.left} maxWidth="80px" whiteSpace="nowrap">
+              <Td
+                {...styles.left}
+                maxWidth="80px"
+                whiteSpace="nowrap"
+                fontFamily="Inter, monospace"
+              >
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
                   title={"Ergo Explorer"}

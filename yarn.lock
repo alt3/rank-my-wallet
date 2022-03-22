@@ -1309,6 +1309,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/inter@4.5.5":
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.5.tgz#d4e52e8a0c84b93abae46efd4c43bd7a7f23907f"
+  integrity sha512-mWnePEroLfaJQWmynipzOVcH6JwT8Jta3+yLsC5Pm/snHBXnOiAOnjBqYjKnvXwJ4eUPt2AaAhyrtwCgWQRGOg==
+
 "@fontsource/noto-mono@4.5.1":
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/@fontsource/noto-mono/-/noto-mono-4.5.1.tgz#dc2f776572fc968bb61c013532d11fa5053a0fca"
