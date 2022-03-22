@@ -3,7 +3,7 @@ import { Script } from "blitz"
 /**
  * Insert Google Analytics script
  *
- * @see {@link https://frontend-digest.com/using-nextjs-with-google-analytics-and-typescript-620ba2359dea}}
+ * @see {@link https://frontend-digest.com/using-nextjs-with-google-analytics-and-typescript-620ba2359dea}
  */
 export function GtagScript() {
   const GA_TRACKING_ID = "G-X0651PNQQN"
