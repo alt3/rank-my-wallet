@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
         <Flex align="left">
-          <Link href="/">
+          <Link href="/" passHref>
             <LogoMobile
               display={{ base: "block", sm: "none" }}
               marginTop="0.25rem"
@@ -50,15 +50,20 @@ export const Navbar: React.FC = () => {
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
-          <Link href="/tipbox" textDecoration="none">
-            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-              Tip Box
-            </Button>
-          </Link>
+          <Button
+            as="a"
+            href="/tipbox"
+            variant="ghost"
+            color="inherit"
+            fontWeight="normal"
+            textDecoration="none"
+          >
+            Tip Box
+          </Button>
 
           <Link
             href="https://www.twitter.com/RankMyWallet/"
-            aria-label="Visit RankMyWallet on Twitter"
+            aria-label="RankMyWallet on Twitter"
             isExternal
             passHref
           >
@@ -67,7 +72,7 @@ export const Navbar: React.FC = () => {
               maxWidth="1rem"
               w={10}
               ml={0}
-              aria-label={`Twitter`}
+              aria-label={`RankMyWallet on Twitter`}
               variant="ghost"
               color="current"
               marginLeft="0"
