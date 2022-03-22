@@ -25,15 +25,15 @@ export const Navbar: React.FC = () => {
           <Link href="/">
             <LogoMobile
               display={{ base: "block", sm: "none" }}
-              marginTop="0.5rem"
-              h="10"
+              marginTop="0.25rem"
+              h="8"
               pointerEvents="none"
               fill={logoColorPrimary}
             />
             <Logo
               display={{ base: "none", sm: "block" }}
               marginTop="0.5rem"
-              h="14"
+              h="10"
               pointerEvents="none"
               fill={{
                 primary: logoColorPrimary,
