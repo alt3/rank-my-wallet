@@ -34,7 +34,7 @@ export const DataGridEntry = ({ field, value, url, linkColor, linkIcon }: DataGr
               {value}{" "}
               {linkIcon && (
                 <span>
-                  <Box as={HiExternalLink} viewBox="0 0 20 15" />
+                  <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
                 </span>
               )}
             </Link>
