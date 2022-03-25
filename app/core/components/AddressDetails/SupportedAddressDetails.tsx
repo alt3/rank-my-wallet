@@ -118,7 +118,16 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             </h2>
             <AccordionPanel p={0} pb="2rem">
               <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
-                <DataGridEntry field="Competitors" value={bigToString(addressCount, 0)} />
+                <DataGridEntry
+                  field="Competitors"
+                  value={bigToString(addressCount, 0)}
+                  url={{
+                    href: "https://ergo.watch/metrics/addresses",
+                    title: "Ergo Watch address metrics",
+                    isExternal: true,
+                  }}
+                  linkIcon={true}
+                />
               </DataGrid>
               <RankingsTable rankings={rankings} />
             </AccordionPanel>
