@@ -6,9 +6,9 @@ import { Suspense } from "react"
 const ShowRankingPage: BlitzPage = () => {
   const meta = {
     title: "Rank My Wallet - Rankings",
-    description: "Blockchain species for Cardano and Ergo based on wallet balance.",
-    keywords: "rankings, cardano, ergo, blockchain, species, whale, orca, shark, shrimp, online",
-    url: "https://rankmywallet.com/species",
+    description: "Your blockchain ranking and address analysis",
+    keywords: "rankings, cardano, ergo, blockchain, addresses, wallets, species, analyser, online",
+    url: "https://rankmywallet.com/rankings",
   }
 
   return (

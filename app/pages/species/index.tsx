@@ -10,13 +10,13 @@ import { PageHero, RadioCard } from "@components"
 import SpeciesTable from "@components/SpeciesTable/SpeciesTable"
 import species from "app/constants/species"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage, GetServerSideProps, Head, useRouterQuery } from "blitz"
+import { BlitzPage, Head, useRouterQuery } from "blitz"
 import React from "react"
 
 const Species: BlitzPage = () => {
   const meta = {
     title: "Rank My Wallet - Species",
-    description: "Blockchain species for Cardano and Ergo based on wallet balance.",
+    description: "Blockchain species for Cardano and Ergo.",
     keywords: "rankings, cardano, ergo, blockchain, species, whale, orca, shark, shrimp, online",
     url: "https://rankmywallet.com/species",
   }
