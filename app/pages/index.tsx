@@ -24,6 +24,8 @@ const Home: BlitzPage = () => {
         <meta property="og:description" content={meta.description} />
         <meta name="twitter:content" content="summary" />
         <meta name="twitter:site" content="@RankMyWallet" />
+        <meta name="twitter:image" content="https://rankmywallet.com/twitter-card-index.png" />
+        <meta name="twitter:image:alt" content="Screenshot of home page" />
       </Head>
 
       <Hero />
