@@ -26,6 +26,7 @@ import {
 } from "@components"
 import { bigToString, capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
+import tipboxAddresses from "app/constants/tipbox-addresses"
 
 export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
@@ -103,7 +104,10 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         )}
       </DataGrid>
 
-      <PleaseDonate marginBottom={{ base: "1rem", sm: "2rem" }} />
+      {/* SHOW PLEASE DONATE UNLESS ALREADY DONATED  */}
+      {tipboxAddresses.donators.includes(parsed.address) === false && (
+        <PleaseDonate marginBottom={{ base: "1rem", sm: "2rem" }} />
+      )}
 
       <Accordion allowMultiple>
         {/* COMPETITION PANE - IF APPLICABLE */}

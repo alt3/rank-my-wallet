@@ -7,7 +7,7 @@ export function PleaseDonate({ ...rest }) {
     <Link
       href="/tipbox"
       _hover={{ textDecoration: "none" }}
-      title="This message will not be shown to donators"
+      title="This message will not be shown for recognized donator addresses"
     >
       <Box borderWidth="1px" borderRadius="sm" textAlign="center" padding="2rem" {...rest}>
         <Text color={useColorModeValue("gray.300", "gray.500")}>
