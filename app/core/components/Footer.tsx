@@ -33,7 +33,7 @@ export function Footer() {
           </Link>
           and{" "}
           <Link isExternal href="https://chakra-ui.com/" passHref {...styles.link}>
-            ChakraUI{" "}
+            Chakra UI{" "}
           </Link>
         </Text>
       </Flex>
