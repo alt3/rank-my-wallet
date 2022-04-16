@@ -5,7 +5,7 @@ const tipboxAddresses = {
   donators: [
     "9hvLmZHtSTgBEGXcjGiHNHujYJtsjQufbK9znTASKhjVVvDJDe2",
     "9fvCAYUCdCXeA1d2ssKiyxzsaAPSMiYrTirPCfdZFxLU9yZZFpj",
-    "9es3y7Q9aNUKUFNqZqAGtu53hubZSt75qyb8jFomeFrntcHY9nG",
+    "9hVmoLU4H3Ru6QNGmiZjSGDwZj8PN7RBxjBjcjNJLbUQWhCpUQC",
   ],
 }
 
