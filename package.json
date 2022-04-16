@@ -38,7 +38,7 @@
     "bech32": "2.0.0",
     "big.js": "6.1.1",
     "blakejs": "1.1.1",
-    "blitz": "0.45.3",
+    "blitz": "0.45.4",
     "bs58": "^4.0.1",
     "clipboard": "2.0.10",
     "ethereum-regex": "1.1.13",
