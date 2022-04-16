@@ -19,6 +19,7 @@ import {
   DataGridEntry,
   DataGridField,
   DataGridValue,
+  PleaseDonate,
   RankingsTable,
   SectionHeader,
   TickerString,
@@ -101,6 +102,8 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
           </>
         )}
       </DataGrid>
+
+      <PleaseDonate marginBottom={{ base: "1rem", sm: "2rem" }} />
 
       <Accordion allowMultiple>
         {/* COMPETITION PANE - IF APPLICABLE */}
