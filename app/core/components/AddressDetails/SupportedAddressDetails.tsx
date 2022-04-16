@@ -106,7 +106,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
       {/* SHOW PLEASE DONATE UNLESS ALREADY DONATED  */}
       {tipboxAddresses.donators.includes(parsed.address) === false && (
-        <PleaseDonate marginBottom={{ base: "1rem", sm: "2rem" }} />
+        <PleaseDonate marginBottom={{ base: "2rem", sm: "2rem" }} />
       )}
 
       <Accordion allowMultiple>
