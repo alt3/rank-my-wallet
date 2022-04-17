@@ -9,8 +9,15 @@ export function PleaseDonate({ ...rest }) {
       _hover={{ textDecoration: "none" }}
       title="This message will not be shown for recognized donator addresses"
     >
-      <Box borderWidth="1px" borderRadius="sm" textAlign="center" padding="2rem" {...rest}>
-        <Text color={useColorModeValue("gray.300", "gray.500")}>
+      <Box
+        borderWidth="1px"
+        borderRadius="sm"
+        textAlign="center"
+        padding="2rem"
+        borderColor={useColorModeValue("gray.300", "inherit")}
+        {...rest}
+      >
+        <Text color={useColorModeValue("gray.600", "gray.500")}>
           <Box
             as={BsHeartFill}
             viewBox="0 0 20 10"
