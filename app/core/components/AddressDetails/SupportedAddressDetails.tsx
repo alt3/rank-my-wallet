@@ -94,7 +94,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
       <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
-      {/* TEST GRID */}
+      {/* SPECIES GRID */}
       <SectionHeader>Species</SectionHeader>
       <Box minHeight="100px" height="auto">
         <Grid gap={0} marginBottom={{ base: ".5rem", sm: ".75rem" }}>

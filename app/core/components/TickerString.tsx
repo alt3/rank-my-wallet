@@ -40,7 +40,8 @@ export function TickerString({
     )
   }
 
-  // fractions
+  // get the fractions
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [matchString, decimals, decimalSeparator, fractions] = matches
 
   return (

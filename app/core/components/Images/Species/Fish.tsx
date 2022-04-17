@@ -1,11 +1,11 @@
 import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 
 export const FishIcon = (props: HTMLChakraProps<"svg">) => {
-  const class1Fill = "#a6dcf7"
-  const class2Opacity = "0.5"
+  // const class1Fill = "#a6dcf7"
+  // const class2Opacity = "0.5"
   const class3Fill = "#fff"
-  const class4Fill = "#8bd0f7"
-  const class5Opacity = "0.7"
+  // const class4Fill = "#8bd0f7"
+  // const class5Opacity = "0.7"
   const class6Fill = "#8cc0f4"
   const class7Fill = "#b9ddfc"
   const class8Opacity = "0.2"

@@ -1,8 +1,6 @@
 import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 
 export const PipefishIcon = (props: HTMLChakraProps<"svg">) => {
-  const fill = props.fill ? props.fill.toString() : "#b0b0b0"
-
   return (
     <chakra.svg
       viewBox="0 0 128 128"

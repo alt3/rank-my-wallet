@@ -1,11 +1,11 @@
 import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 
 export const OctopusIcon = (props: HTMLChakraProps<"svg">) => {
-  const class1Fill = "#a6dcf7"
-  const class2Opacity = "0.5"
+  // const class1Fill = "#a6dcf7"
+  // const class2Opacity = "0.5"
   const class3Fill = "#fff"
-  const class4Fill = "#8bd0f7"
-  const class5Opacity = "0.7"
+  // const class4Fill = "#8bd0f7"
+  // const class5Opacity = "0.7"
   const class6Fill = "#ff9499"
   const class7Opacity = "0.2"
   const class8Fill = "#3f456b"

@@ -1,15 +1,15 @@
 import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 
 export const WhaleIcon = (props: HTMLChakraProps<"svg">) => {
-  const class1Fill = "#a6dcf7"
+  // const class1Fill = "#a6dcf7"
   const class2Opacity = "0.5"
   const class3Fill = "#fff"
   const class4Fill = "#f0f3f7"
   const class5Fill = "#50a3d1"
   const class6Opacity = "0.2"
   const class7Fill = "#3f456b"
-  const class8Fill = "#8bd0f7"
-  const class9Opacity = "0.7"
+  // const class8Fill = "#8bd0f7"
+  // const class9Opacity = "0.7"
   const class10Opacity = "0.15"
   const class11Opacity = "0.3"
 

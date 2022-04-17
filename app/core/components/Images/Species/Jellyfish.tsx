@@ -1,12 +1,12 @@
 import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 
 export const JellyfishIcon = (props: HTMLChakraProps<"svg">) => {
-  const class1Fill = "#a6dcf7"
+  // const class1Fill = "#a6dcf7"
   const class2Fill = "#d4f3ff"
-  const class3Opacity = "0.5"
+  // const class3Opacity = "0.5"
   const class4Fill = "#fff"
-  const class5Fill = "#8bd0f7"
-  const class6Opacity = "0.7"
+  // const class5Fill = "#8bd0f7"
+  // const class6Opacity = "0.7"
   const class7Fill = "#b9b9ea"
   const class8Fill = "#d3d3f4"
   const class9Opacity = "0.3"
