@@ -17,20 +17,71 @@ import {
   Counter,
   DataGrid,
   DataGridEntry,
-  DataGridField,
-  DataGridValue,
+  ExternalLinkIcon,
+  Link,
   PleaseDonate,
   RankingsTable,
   SectionHeader,
   TickerString,
 } from "@components"
+import {
+  CrabIcon,
+  FishIcon,
+  GhostIcon,
+  JellyfishIcon,
+  OctopusIcon,
+  OrcaIcon,
+  OysterIcon,
+  PipefishIcon,
+  PiranhaIcon,
+  PlanktonIcon,
+  SeahorseIcon,
+  SharkIcon,
+  ShellIcon,
+  ShrimpIcon,
+  StarfishIcon,
+  SwordfishIcon,
+  WhaleIcon,
+} from "@components/Images/Species"
+import tipboxAddresses from "app/constants/tipbox-addresses"
 import { bigToString, capitalize } from "app/lib/utils"
 import nextId from "react-id-generator"
-import tipboxAddresses from "app/constants/tipbox-addresses"
+
+const imageComponents = {
+  Crab: CrabIcon,
+  Fish: FishIcon,
+  Ghost: GhostIcon,
+  Jellyfish: JellyfishIcon,
+  Octopus: OctopusIcon,
+  Orca: OrcaIcon,
+  Oyster: OysterIcon,
+  Pipefish: PipefishIcon,
+  Piranha: PiranhaIcon,
+  Plankton: PlanktonIcon,
+  Seahorse: SeahorseIcon,
+  Shark: SharkIcon,
+  Shell: ShellIcon,
+  Shrimp: ShrimpIcon,
+  Starfish: StarfishIcon,
+  Swordfish: SwordfishIcon,
+  Whale: WhaleIcon,
+}
 
 export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
+  const SpeciesImageComponent = imageComponents[species.current.icon] // dynamically load the correct image component
+
+  const styles = {
+    gridField: {
+      gridColumn: { base: "span 8/span 8", sm: "span 3/span 3" },
+      color: useColorModeValue("teal.500", "teal.300"),
+    },
+    gridValue: {
+      gridColumn: { base: "span 8/span 8", sm: "span 5/span 5" },
+      paddingBottom: { base: "1.5rem", sm: "1rem" },
+    },
+  }
 
   return (
     <Container maxW="container.md" marginBottom="2.5rem">
@@ -43,66 +94,67 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
       <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
+      {/* TEST GRID */}
       <SectionHeader>Species</SectionHeader>
-      <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
-        <DataGridField>Your Balance</DataGridField>
-        <DataGridValue>
-          <TickerString
-            ticker={bigToString(balance.ticker, 0)}
-            tickerSymbol={parsed.currency.tickerSymbol}
-          ></TickerString>
-        </DataGridValue>
+      <Box minHeight="100px" height="auto">
+        <Grid gap={0} marginBottom={{ base: ".5rem", sm: ".75rem" }}>
+          <GridItem {...styles.gridField}>Your Balance</GridItem>
+          <GridItem {...styles.gridValue}>
+            {" "}
+            <TickerString
+              ticker={bigToString(balance.ticker, 0)}
+              tickerSymbol={parsed.currency.tickerSymbol}
+            ></TickerString>
+          </GridItem>
 
-        <DataGridEntry
-          field="Current Species"
-          value={capitalize(species.current.name)}
-          url={{
-            href: `/species?blockchain=${parsed.blockchain.name}`,
-            title: "Blockchain Species",
-          }}
-          linkColor={useColorModeValue("pink.600", "pink.400")}
-          linkIcon={true}
-        />
+          <GridItem {...styles.gridField}>Current Species</GridItem>
+          <GridItem {...styles.gridValue}>
+            <Link
+              href={`/species?blockchain=${parsed.blockchain.name}`}
+              title={`${capitalize(parsed.blockchain.name)} Species`}
+              color={useColorModeValue("pink.600", "pink.400")}
+              passHref
+            >
+              {capitalize(species.current.name)} <ExternalLinkIcon />
+            </Link>
+          </GridItem>
 
-        {species.next === undefined && (
-          <DataGridEntry
-            field="Next Level"
-            value="Nothing more to strive for, you're an end boss now 🎉"
-          />
-        )}
+          <GridItem {...styles.gridField}>Next Species</GridItem>
+          <GridItem {...styles.gridValue}>{capitalize(species.next.name)}</GridItem>
 
-        {species.next !== undefined && (
-          <>
-            <DataGridEntry
-              field="Next Level"
-              value={capitalize(species.next.name)}
-              url={{
-                href: `/species?blockchain=${parsed.blockchain.name}`,
-                title: "Blockchain Species",
-              }}
+          <GridItem {...styles.gridField}>Starts At</GridItem>
+          <GridItem {...styles.gridValue}>
+            {" "}
+            <TickerString
+              ticker={bigToString(species.next.startsAt, 0)}
+              tickerSymbol={parsed.currency.tickerSymbol}
+            ></TickerString>
+          </GridItem>
+
+          <GridItem {...styles.gridField}>Requires</GridItem>
+          <GridItem {...styles.gridValue}>
+            {" "}
+            <TickerString
+              ticker={bigToString(species.next.requires, parsed.currency.decimals)}
+              tickerSymbol={parsed.currency.tickerSymbol}
+              fractionsColor={fractionsColor}
+            ></TickerString>
+          </GridItem>
+
+          {/* Species Image */}
+          <GridItem
+            rowStart={{ base: 1, sm: 1 }}
+            rowSpan={{ base: 6, sm: 5 }}
+            colStart={{ base: 9, sm: 9 }}
+            colSpan={{ base: 4, sm: 4 }}
+          >
+            <SpeciesImageComponent
+              height={{ base: "100px", sm: "75%" }}
+              marginLeft={{ base: "inherit", sm: "auto" }}
             />
-
-            {/* NEXT SPECIES STARTS AT */}
-            <DataGridField>Starts At</DataGridField>
-            <DataGridValue>
-              <TickerString
-                ticker={bigToString(species.next.startsAt, 0)}
-                tickerSymbol={parsed.currency.tickerSymbol}
-              ></TickerString>
-            </DataGridValue>
-
-            {/* NEXT SPECIES REQUIRES */}
-            <DataGridField>Requires</DataGridField>
-            <DataGridValue>
-              <TickerString
-                ticker={bigToString(species.next.requires, parsed.currency.decimals)}
-                tickerSymbol={parsed.currency.tickerSymbol}
-                fractionsColor={fractionsColor}
-              ></TickerString>
-            </DataGridValue>
-          </>
-        )}
-      </DataGrid>
+          </GridItem>
+        </Grid>
+      </Box>
 
       {/* SHOW PLEASE DONATE UNLESS ALREADY DONATED  */}
       {tipboxAddresses.donators.includes(parsed.address) === false && (
