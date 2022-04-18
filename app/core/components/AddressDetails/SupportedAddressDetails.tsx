@@ -143,7 +143,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
           {/* Species Image */}
           <GridItem
-            rowStart={{ base: 1, sm: 1 }}
+            rowStart={{ base: 3, sm: 1 }}
             rowSpan={{ base: 6, sm: 5 }}
             colStart={{ base: 9, sm: 9 }}
             colSpan={{ base: 4, sm: 4 }}
