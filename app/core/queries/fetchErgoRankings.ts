@@ -10,7 +10,7 @@ interface Rank {
 type RankItems = Array<Rank>
 
 export default async function fetchErgoRankings(parsedAddress) {
-  const url = `https://ergo.watch/api/v0/ranking/${parsedAddress.address}`
+  const url = `https://api.ergo.watch/ranking/${parsedAddress.address}`
   const config = {}
 
   return await axios

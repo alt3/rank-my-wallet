@@ -6,7 +6,7 @@ import axios from "axios"
  * @returns number
  */
 export default async function fetchErgoAddressCount() {
-  const url = `https://ergo.watch/api/v0/p2pk/count`
+  const url = `https://api.ergo.watch/p2pk/count`
   const config = {}
 
   return await axios.get(url, config).then((response) => {
