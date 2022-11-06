@@ -10,7 +10,9 @@ import { PageHero, RadioCard } from "@components"
 import SpeciesTable from "@components/SpeciesTable/SpeciesTable"
 import species from "app/constants/species"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage, Head, useRouterQuery } from "blitz"
+import { BlitzPage } from "@blitzjs/next"
+import Head from "next/head"
+import { useRouter } from "next/router"
 import React from "react"
 
 const Species: BlitzPage = () => {
@@ -23,11 +25,11 @@ const Species: BlitzPage = () => {
 
   // check for query param
   const [initialRouterCheck, setInitialRouterFlag] = useBoolean()
-  const routerQuery = useRouterQuery()
+  const router = useRouter()
   let blockchainParam = ""
 
-  if (routerQuery.blockchain && typeof routerQuery.blockchain === "string") {
-    blockchainParam = routerQuery.blockchain.toLowerCase()
+  if (router.query.blockchain && typeof router.query.blockchain === "string") {
+    blockchainParam = router.query.blockchain.toLowerCase()
   }
 
   // custom names for useDisclosure hooks for understandable code

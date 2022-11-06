@@ -7,7 +7,7 @@ import * as components from "./components"
 const extendThemeObj: ThemeOverride = {
   config: {
     initialColorMode: "dark",
-    useSystemColorMode: false,
+    // useSystemColorMode: false,
   },
   colors,
   fonts,

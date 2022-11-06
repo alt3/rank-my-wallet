@@ -1,4 +1,4 @@
-import { Script } from "blitz"
+import Script from "next/script"
 
 /**
  * Insert Google Analytics script

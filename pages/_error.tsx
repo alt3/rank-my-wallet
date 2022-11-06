@@ -1,13 +1,14 @@
 import Layout from "app/core/layouts/Layout"
-import { Head } from "blitz"
+import Head from "next/head"
 import { Text, VStack } from "@chakra-ui/react"
 import { BackHomeButton, PageHero } from "@components"
 
 export function Error({ statusCode, title }) {
+  const pageTitle = "Unexpected Error"
   return (
     <>
       <Head>
-        <title>Unexpected Error</title>
+        <title>{pageTitle}</title>
       </Head>
 
       <Layout>

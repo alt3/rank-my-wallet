@@ -1,6 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react"
 import { Footer, Navbar, GtagScript } from "@components"
-import { BlitzLayout, Head } from "blitz"
+import { BlitzLayout } from "@blitzjs/next"
+import Head from "next/head"
 
 const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   return (
