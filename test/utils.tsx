@@ -82,6 +82,7 @@ export const mockRouter: NextRouter = {
   isReady: true,
   isLocaleDomain: false,
   isPreview: false,
+  forward: jest.fn(),
   push: jest.fn(),
   replace: jest.fn(),
   reload: jest.fn(),
