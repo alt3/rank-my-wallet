@@ -151,7 +151,6 @@ const Species: BlitzPage = () => {
 }
 
 Species.suppressFirstRenderFlicker = true
-Species.authenticate = false
 Species.getLayout = (page) => <Layout title="Species">{page}</Layout>
 
 export default Species
