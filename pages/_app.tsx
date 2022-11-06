@@ -10,7 +10,7 @@ function RootErrorFallback({ error }: ErrorFallbackProps) {
   return <Error statusCode={error.statusCode || 400} title={error.message || error.name} />
 }
 
-function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
@@ -22,4 +22,4 @@ function App({ Component, pageProps }: AppProps) {
   )
 }
 
-export default withBlitz(App)
+export default withBlitz(MyApp)

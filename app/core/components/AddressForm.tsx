@@ -31,6 +31,7 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
   }, [setFocus])
 
   function onSubmit(values) {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     router.push("/" + values.address)
   }
 
