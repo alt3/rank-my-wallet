@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -22,13 +22,8 @@
       "@components": ["app/core/components"],
       "@components/*": ["app/core/components/*"],
       "@/types/*": ["app/core/types/*"]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    }
   },
   "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],
-  "include": ["blitz-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.ks", ".next/types/**/*.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types"]
 }
