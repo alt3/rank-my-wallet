@@ -2,7 +2,8 @@ import { Box, Container, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/
 import { TipboxCard } from "@components"
 import tipboxAddresses from "app/constants/tipbox-addresses"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage, Head } from "blitz"
+import { BlitzPage } from "@blitzjs/next"
+import Head from "next/head"
 
 const TipBox: BlitzPage = () => {
   const styles = {
@@ -55,7 +56,6 @@ const TipBox: BlitzPage = () => {
 }
 
 TipBox.suppressFirstRenderFlicker = true
-TipBox.authenticate = false
 TipBox.getLayout = (page) => <Layout title="Tip Box">{page}</Layout>
 
 export default TipBox

@@ -1,14 +1,15 @@
-import { Container } from "@chakra-ui/react"
-import { BlockChains, Hero, Sponsors } from "@components"
+import { AddressDetails, SuspenseLoader } from "@components"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage, Head } from "blitz"
+import { BlitzPage } from "@blitzjs/next"
+import Head from "next/head"
+import { Suspense } from "react"
 
-const Home: BlitzPage = () => {
+const ShowRankingPage: BlitzPage = () => {
   const meta = {
-    title: "Rank My Wallet",
-    description: "Realtime blockchain rankings for Cardano and Ergo",
+    title: "Rank My Wallet - Rankings",
+    description: "Your blockchain ranking and address analysis",
     keywords: "rankings, cardano, ergo, blockchain, addresses, wallets, species, analyser, online",
-    url: "https://rankmywallet.com/",
+    url: "https://rankmywallet.com/rankings",
   }
 
   return (
@@ -24,22 +25,18 @@ const Home: BlitzPage = () => {
         <meta property="og:description" content={meta.description} />
         <meta name="twitter:content" content="summary" />
         <meta name="twitter:site" content="@RankMyWallet" />
-        <meta name="twitter:image" content="https://rankmywallet.com/twitter-card-index.png" />
-        <meta name="twitter:image:alt" content="Screenshot of home page" />
       </Head>
 
-      <Hero />
-
-      <Container maxW="container.md" marginBottom="2.5rem">
-        <BlockChains />
-        <Sponsors />
-      </Container>
+      <div>
+        <Suspense fallback={<SuspenseLoader />}>
+          <AddressDetails />
+        </Suspense>
+      </div>
     </>
   )
 }
 
-Home.suppressFirstRenderFlicker = true
-Home.authenticate = false
-Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
+ShowRankingPage.suppressFirstRenderFlicker = true
+ShowRankingPage.getLayout = (page) => <Layout>{page}</Layout>
 
-export default Home
+export default ShowRankingPage

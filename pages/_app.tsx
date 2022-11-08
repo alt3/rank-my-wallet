@@ -1,10 +1,16 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import theme from "app/core/theme"
-import Error from "app/pages/_error"
-import { AppProps, ErrorBoundary, ErrorFallbackProps } from "blitz"
+import Error from "pages/_error"
+import { ErrorFallbackProps, ErrorBoundary, AppProps } from "@blitzjs/next"
+import { withBlitz } from "app/blitz-client"
 import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users
+import React from "react"
 
-export default function App({ Component, pageProps }: AppProps) {
+function RootErrorFallback({ error }: ErrorFallbackProps) {
+  return <Error statusCode={error.statusCode || 400} title={error.message || error.name} />
+}
+
+function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
@@ -16,6 +22,4 @@ export default function App({ Component, pageProps }: AppProps) {
   )
 }
 
-function RootErrorFallback({ error }: ErrorFallbackProps) {
-  return <Error statusCode={error.statusCode || 400} title={error.message || error.name} />
-}
+export default withBlitz(MyApp)

@@ -1,20 +1,22 @@
 import { BackHomeButton, PageHero } from "@components"
 import Layout from "app/core/layouts/Layout"
-import { Head } from "blitz"
+import Head from "next/head"
 
 // ------------------------------------------------------
 // This page is rendered if a route match is not found
 // ------------------------------------------------------
 export default function Page404() {
-  const title = "Page not found"
   const statusCode = 404
+  const title = "Page not found"
+
+  return <h2>Hello 404</h2>
+
+  const pageTitle = `${statusCode}: ${title}`
 
   return (
     <>
       <Head>
-        <title>
-          {statusCode}: {title}
-        </title>
+        <title>{pageTitle}</title>
       </Head>
       <PageHero title={title} />
 

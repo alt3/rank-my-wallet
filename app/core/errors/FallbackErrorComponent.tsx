@@ -1,6 +1,6 @@
 import { BackHomeButton, PageHero } from "@components"
 import Layout from "app/core/layouts/Layout"
-import { Head } from "blitz"
+import Head from "next/head"
 import { Text, VStack } from "@chakra-ui/react"
 
 export default function UnexpectedError({ error }) {

@@ -1,7 +1,7 @@
-import { Link as BlitzLink, LinkProps as BlitzLinkProps } from "blitz"
+import NextLink, { LinkProps as NextLinkProps } from "next/link"
 import { Link as ChakraLink, LinkProps as ChakraLinkProps } from "@chakra-ui/react"
 
-interface LinkProps extends BlitzLinkProps, Omit<ChakraLinkProps, keyof BlitzLinkProps> {}
+interface LinkProps extends NextLinkProps, Omit<ChakraLinkProps, keyof NextLinkProps> {}
 
 export const Link: React.FC<LinkProps> = ({
   children,
@@ -9,13 +9,14 @@ export const Link: React.FC<LinkProps> = ({
   as,
   locale,
   passHref,
+  legacyBehavior = true,
   prefetch,
   replace,
   scroll,
   shallow,
   ...props
 }) => (
-  <BlitzLink {...{ href, as, locale, passHref, prefetch, replace, scroll, shallow }}>
+  <NextLink {...{ href, as, locale, legacyBehavior, passHref, prefetch, replace, scroll, shallow }}>
     <ChakraLink {...props}>{children}</ChakraLink>
-  </BlitzLink>
+  </NextLink>
 )

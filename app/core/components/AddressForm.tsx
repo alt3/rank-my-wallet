@@ -8,7 +8,7 @@ import {
   Input,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { useRouter } from "blitz"
+import { useRouter } from "next/router"
 import React from "react"
 import { useForm } from "react-hook-form"
 
@@ -31,6 +31,7 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
   }, [setFocus])
 
   function onSubmit(values) {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     router.push("/" + values.address)
   }
 
