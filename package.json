@@ -26,9 +26,9 @@
     ]
   },
   "dependencies": {
-    "@blitzjs/auth": "2.0.0-beta.16",
-    "@blitzjs/next": "2.0.0-beta.16",
-    "@blitzjs/rpc": "2.0.0-beta.16",
+    "@blitzjs/auth": "2.0.0-beta.17",
+    "@blitzjs/next": "2.0.0-beta.17",
+    "@blitzjs/rpc": "2.0.0-beta.17",
     "@chakra-ui/react": "^2.0.0",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
@@ -41,7 +41,7 @@
     "bech32": "2.0.0",
     "big.js": "6.1.1",
     "blakejs": "1.1.1",
-    "blitz": "2.0.0-beta.16",
+    "blitz": "2.0.0-beta.17",
     "bs58": "^4.0.1",
     "clipboard": "2.0.10",
     "ethereum-regex": "1.1.13",
