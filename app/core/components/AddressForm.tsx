@@ -48,7 +48,7 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
   return (
     <Box style={{ width: "100%" }} {...rest}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl isInvalid={errors.address}>
+        <FormControl isInvalid={errors.address ? true : false}>
           <HStack>
             <Input
               id="address"
