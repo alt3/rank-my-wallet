@@ -64,6 +64,7 @@ export function Counter({ totalAccounts, rank, blockchain, balance }: CounterPro
                     end={rank}
                     duration={2.75}
                     separator={getIntegerSeparator(getUserLocale())}
+                    useEasing={true}
                   />
                 </Heading>
               </>
