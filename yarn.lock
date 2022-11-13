@@ -1967,20 +1967,20 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/inter@4.5.5":
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.5.tgz#d4e52e8a0c84b93abae46efd4c43bd7a7f23907f"
-  integrity sha512-mWnePEroLfaJQWmynipzOVcH6JwT8Jta3+yLsC5Pm/snHBXnOiAOnjBqYjKnvXwJ4eUPt2AaAhyrtwCgWQRGOg==
+"@fontsource/inter@4.5.14":
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.14.tgz#3944b809aa7bf27dacd20bdc04a49fb738959724"
+  integrity sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==
 
-"@fontsource/noto-mono@4.5.1":
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/@fontsource/noto-mono/-/noto-mono-4.5.1.tgz#dc2f776572fc968bb61c013532d11fa5053a0fca"
-  integrity sha512-/zSaHoH/oUPrjBgWLb5lTxlBIa4MBzWAiTWATzR3MQyYzEi1A1vG/4AkR8rHfqUgVmHbxp06kw6qq0DonBio7A==
-
-"@fontsource/poppins@4.5.3":
+"@fontsource/noto-mono@4.5.3":
   version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.5.3.tgz#0d50e7c48cac6dab2b76d7e711001256875cc2b0"
-  integrity sha512-YtJjTzPv5Zy3hdFGpm0D45yquJBGbOrY3obvf8RBkyCXC8NFT0EjWoUM9ZE4SXhvp5HYvKL1zl8JtLbVRRijSA==
+  resolved "https://registry.yarnpkg.com/@fontsource/noto-mono/-/noto-mono-4.5.3.tgz#d00c143dd7d92415a51716c6153b9755000fad4d"
+  integrity sha512-d6xHqBCkkZZk+8Sq4MahON+TDOHpeNP76woozj52VVSmaVa1dgzdZAsSXREUgmCnOLjVaDb5SLI3WkUDQJhqmg==
+
+"@fontsource/poppins@4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.5.10.tgz#44dbfeacb5d89efca5ad7ad6cc941b2ac1ee424b"
+  integrity sha512-oYZVHsnlwV3VWM1SE/m6SUxVh0QLk5+2wB+lBiXcI7N/0KVQWmV9YykaPqfJHBLvmdya+MAOnv+BQHeLU1vOOw==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
@@ -2303,10 +2303,10 @@
   dependencies:
     chevrotain "^9.0.1"
 
-"@next/bundle-analyzer@12.0.7":
-  version "12.0.7"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-12.0.7.tgz#2822e2c530ca7d7b83948154a69221e309eaa073"
-  integrity sha512-u3er2QTSPrcouO8CqfNraHrj9e/A+sBMQWe4w4yy2kSmK4L7PXkWDb8OFWB25eaDD24LrnMPTuuEq2pNCnbujA==
+"@next/bundle-analyzer@12.0.8":
+  version "12.0.8"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-12.0.8.tgz#a4fef1b14f8a4a87c09d97a3d909deddc88d12f8"
+  integrity sha512-tRwFyAkJA0h+rwt4exq31T59qo4qwp7vPoR3yC8gIpK/E5NAwafyk40aNpk4OWhiQ2IvJMFutukMzY3xl79NXA==
   dependencies:
     webpack-bundle-analyzer "4.3.0"
 

@@ -32,10 +32,9 @@
     "@chakra-ui/react": "^2.0.0",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
-    "@fontsource/inter": "4.5.5",
-    "@fontsource/noto-mono": "4.5.1",
-    "@fontsource/poppins": "4.5.3",
-    "@next/bundle-analyzer": "12.0.7",
+    "@fontsource/inter": "4.5.14",
+    "@fontsource/noto-mono": "4.5.3",
+    "@fontsource/poppins": "4.5.10",
     "@prisma/client": "3.7.0",
     "axios": "0.27.2",
     "bech32": "2.0.0",
@@ -63,6 +62,7 @@
     "toformat": "2.0.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "12.0.8",
     "@testing-library/jest-dom": "5.16.3",
     "@testing-library/react": "13.4.0",
     "@testing-library/react-hooks": "8.0.1",
