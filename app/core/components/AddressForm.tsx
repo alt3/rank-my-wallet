@@ -62,7 +62,10 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
               Go
             </Button>
           </HStack>
-          <FormErrorMessage>{errors.address && errors.address.message}</FormErrorMessage>
+          <FormErrorMessage>
+            {/* https://github.com/react-hook-form/react-hook-form/issues/8653#issuecomment-1179465376 */}
+            {String(errors.address?.ref && errors.address.message)}
+          </FormErrorMessage>
         </FormControl>
       </form>
     </Box>
