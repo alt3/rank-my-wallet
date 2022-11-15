@@ -50,15 +50,10 @@ export const Navbar: React.FC = () => {
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
-          <Button
-            as="a"
-            href="/tipbox"
-            variant="ghost"
-            color="inherit"
-            fontWeight="normal"
-            textDecoration="none"
-          >
-            Tip Box
+          <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
+            <Link href="/tipbox" aria-label="TipBox" passHref>
+              TipBox
+            </Link>
           </Button>
 
           <Link
