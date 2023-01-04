@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
           </Button>
 
           <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-            <Link href="/tipbox" aria-label="TipBox" passHref>
+            <Link href="/tipbox" aria-label="Tip Box" passHref>
               Tip Box
             </Link>
           </Button>
