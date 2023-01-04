@@ -35,7 +35,7 @@ export function Sponsors() {
               color="red"
               marginRight="0.25rem"
             />
-            Become a Sponsor
+            Your Project Here
           </Box>
         </FrontpageCard>
 
@@ -48,7 +48,7 @@ export function Sponsors() {
               color="red"
               marginRight="0.25rem"
             />
-            Become a Sponsor
+            Your Project Here
           </Box>
         </FrontpageCard>
 
@@ -61,7 +61,7 @@ export function Sponsors() {
               color="red"
               marginRight="0.25rem"
             />
-            Become a Sponsor
+            Your Project Here
           </Box>
         </FrontpageCard>
       </SimpleGrid>
