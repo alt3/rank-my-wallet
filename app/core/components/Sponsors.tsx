@@ -1,6 +1,6 @@
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
+import { BsHeartFill } from "react-icons/bs"
 import { FrontpageCard } from "./cards"
-import { LiqwidLogo } from "./logos"
 
 export function Sponsors() {
   const styles = {
@@ -21,18 +21,48 @@ export function Sponsors() {
     <Box marginBottom="6rem">
       <Center>
         <Text as="h2" textTransform="uppercase" {...styles.caption}>
-          Made Possible By
+          Sponsored By:
         </Text>
       </Center>
 
       <SimpleGrid {...styles.grid}>
-        <FrontpageCard name="Liqwid" url="https://liqwid.finance/">
-          <LiqwidLogo
-            width="150px"
-            height={{ base: "52px", md: "59px" }}
-            padding="12px"
-            fill={useColorModeValue("gray.600", "whiteAlpha.900")}
-          />
+        <FrontpageCard title="Become a sponsor" url="/tipbox" isExternal={false}>
+          <Box as={"span"}>
+            <Box
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              color="red"
+              marginRight="0.25rem"
+            />
+            Sponsor
+          </Box>
+        </FrontpageCard>
+
+        <FrontpageCard title="Become a sponsor" url="/tipbox" isExternal={false}>
+          <Box as={"span"}>
+            <Box
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              color="red"
+              marginRight="0.25rem"
+            />
+            Sponsor
+          </Box>
+        </FrontpageCard>
+
+        <FrontpageCard title="Become a sponsor" url="/tipbox" isExternal={false}>
+          <Box as={"span"}>
+            <Box
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              color="red"
+              marginRight="0.25rem"
+            />
+            Sponsor
+          </Box>
         </FrontpageCard>
       </SimpleGrid>
     </Box>

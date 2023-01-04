@@ -1,8 +1,8 @@
+import { BlitzPage } from "@blitzjs/next"
 import { Box, Container, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
-import { TipboxCard } from "@components"
+import { PageHero, TipboxCard } from "@components"
 import tipboxAddresses from "app/constants/tipbox-addresses"
 import Layout from "app/core/layouts/Layout"
-import { BlitzPage } from "@blitzjs/next"
 import Head from "next/head"
 
 const TipBox: BlitzPage = () => {
@@ -30,6 +30,8 @@ const TipBox: BlitzPage = () => {
       </Head>
 
       <Container {...styles.container}>
+        <PageHero title="Tipbox" />
+
         <Box>
           <SimpleGrid {...styles.grid}>
             <TipboxCard
