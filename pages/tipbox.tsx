@@ -4,6 +4,7 @@ import { PageHero, TipboxCard } from "@components"
 import tipboxAddresses from "app/constants/tipbox-addresses"
 import Layout from "app/core/layouts/Layout"
 import Head from "next/head"
+import { BsHeartFill } from "react-icons/bs"
 
 const TipBox: BlitzPage = () => {
   const styles = {
@@ -17,7 +18,7 @@ const TipBox: BlitzPage = () => {
     },
     disclaimer: {
       align: "center" as const,
-      color: useColorModeValue("teal.500", "gray.600"),
+      color: useColorModeValue("teal.500", "gray.500"),
       marginTop: { base: "2rem", sm: "5rem" },
     },
   }
@@ -29,7 +30,7 @@ const TipBox: BlitzPage = () => {
       </Head>
 
       <Container {...styles.container}>
-        <PageHero title="Tipbox" />
+        <PageHero title="Tip Box" />
 
         <Box>
           <SimpleGrid {...styles.grid}>
@@ -48,7 +49,21 @@ const TipBox: BlitzPage = () => {
           </SimpleGrid>
 
           <Text {...styles.disclaimer}>
-            Thanks to your donations, this website remains ad-free.
+            <Box
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              color="red"
+              marginRight="0.25rem"
+            />
+            Thanks to your donations, this website remains ad-free{" "}
+            <Box
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              color="red"
+              marginRight="0.25rem"
+            />
           </Text>
         </Box>
       </Container>
