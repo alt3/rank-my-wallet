@@ -10,7 +10,6 @@ const TipBox: BlitzPage = () => {
     container: {
       maxW: "container.md",
       marginBottom: "2.5rem",
-      marginTop: { base: "2rem", sm: "5rem" },
     },
     grid: {
       columns: { base: 1, sm: 2 },
