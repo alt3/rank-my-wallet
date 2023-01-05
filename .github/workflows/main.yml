@@ -22,7 +22,7 @@ jobs:
     - run: npm lint
 
   # Ensure all tests pass
-  lint:
+  test:
     name: Tests
     runs-on: ubuntu-latest
     steps:
