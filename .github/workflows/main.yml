@@ -1,0 +1,35 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  # Ensure correct code formatting
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run npm lint script using Node 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+      - run: npm lint
+
+  # Ensure all tests pass
+  lint:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run npm test script using Node 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+      - run: npm test
