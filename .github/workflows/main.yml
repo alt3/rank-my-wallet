@@ -21,8 +21,6 @@ jobs:
         node-version: 16
     - run: yarn install --immutable
     - run: yarn lint
-    - run: npx lint-staged
-    - run: npx pretty-quick --staged
 
   # Ensure all tests pass
   test:
