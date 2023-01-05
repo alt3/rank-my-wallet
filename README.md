@@ -1,4 +1,4 @@
-![Build Status](https://github.com/alt3/rank-my-wallet/actions/workflows/main.yml/badge.svg?branch=main)
+![Build Status](https://github.com/alt3/rank-my-wallet/actions/workflows/ci.yml/badge.svg?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg?style=flat-square)](https://www.contributor-covenant.org/version/2/1/code_of_conduct)
 
