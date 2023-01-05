@@ -1,3 +1,9 @@
+[![Build Status](https://github.com/alt3/rank-my-wallet/actions/workflows/main.yml/badge.svg)](https://github.com/alt3/rank-my-wallet/actions/workflows/main.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg?style=flat-square)](https://www.contributor-covenant.org/version/2/1/code_of_conduct)
+
+# Rank My Wallet
+
 [![Blitz.js](https://raw.githubusercontent.com/blitz-js/art/master/github-cover-photo.png)](https://blitzjs.com)
 
 This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
