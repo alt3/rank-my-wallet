@@ -19,8 +19,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-      - run: npm lint
-
+    - run: npm lint
 
   # Ensure all tests pass
   lint:
@@ -33,4 +32,4 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-      - run: npm test
+    - run: npm test
