@@ -19,8 +19,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: yarn install --immutable
-    - run: yarn lint
+    - run: npm ci
+    - run: npm run lint
 
   # Ensure all tests pass
   test:
@@ -33,5 +33,5 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: yarn install --immutable
-    - run: yarn test
+    - run: npm ci
+    - run: npm run test
