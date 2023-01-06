@@ -19,6 +19,12 @@ git clone git@github.com:alt3/rank-my-wallet.git
 cd rank-my-wallet
 ```
 
+Install dependencies once.
+
+```
+npm install
+```
+
 Run website in development mode.
 
 ```
