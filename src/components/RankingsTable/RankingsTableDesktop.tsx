@@ -1,5 +1,5 @@
 import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
-import { Link, TickerString } from "src/core/components"
+import { Link, TickerString } from "src/components"
 import { abbreviateAddress, bigToString, nanoToTicker } from "src/core/lib/utils"
 import nextId from "react-id-generator"
 

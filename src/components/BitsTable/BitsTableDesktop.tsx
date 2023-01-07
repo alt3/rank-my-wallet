@@ -1,7 +1,7 @@
 import { Text, useColorModeValue, Table, Tbody, Tr, Td } from "@chakra-ui/react"
-import { DataGridCellTypeBinary } from "src/core/components/DataGrid/DatagridCellTypeBinary"
-import { DataGridCellTypeBit } from "src/core/components/DataGrid/DatagridCellTypeBit"
-import { DataGridCellTypeDecimal } from "src/core/components/DataGrid/DataGridCellTypeDecimal"
+import { DataGridCellTypeBinary } from "src/components/DataGrid/DatagridCellTypeBinary"
+import { DataGridCellTypeBit } from "src/components/DataGrid/DatagridCellTypeBit"
+import { DataGridCellTypeDecimal } from "src/components/DataGrid/DataGridCellTypeDecimal"
 import nextId from "react-id-generator"
 import { bitsToByte } from "src/core/lib/utils"
 

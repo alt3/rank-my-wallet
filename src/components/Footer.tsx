@@ -1,4 +1,4 @@
-import { Link } from "src/core/components"
+import { Link } from "src/components"
 import { Container, Flex, Text, useColorModeValue } from "@chakra-ui/react"
 
 export function Footer() {

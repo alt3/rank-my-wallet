@@ -6,8 +6,8 @@ import {
   useDisclosure,
   useRadioGroup,
 } from "@chakra-ui/react"
-import { PageHero, RadioCard } from "src/core/components"
-import SpeciesTable from "src/core/components/SpeciesTable/SpeciesTable"
+import { PageHero, RadioCard } from "src/components"
+import SpeciesTable from "src/components/SpeciesTable/SpeciesTable"
 import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
 import { BlitzPage } from "@blitzjs/next"

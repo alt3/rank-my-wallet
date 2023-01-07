@@ -1,5 +1,5 @@
 import { Box, Text, useColorModeValue } from "@chakra-ui/react"
-import { Link } from "src/core/components"
+import { Link } from "src/components"
 import { BsHeartFill } from "react-icons/bs"
 
 export function PleaseDonate({ ...rest }) {

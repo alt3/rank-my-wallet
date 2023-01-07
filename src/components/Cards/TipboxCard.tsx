@@ -1,5 +1,5 @@
 import { Box, Icon, Text, useColorModeValue, useToast, useToken, VStack } from "@chakra-ui/react"
-import { Link } from "src/core/components"
+import { Link } from "src/components"
 import ClipboardAPI from "clipboard"
 import QRCode from "qrcode.react"
 import { useEffect } from "react"

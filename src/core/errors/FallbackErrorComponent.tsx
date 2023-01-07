@@ -1,4 +1,4 @@
-import { BackHomeButton, PageHero } from "src/core/components"
+import { BackHomeButton, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 import Head from "next/head"
 import { Text, VStack } from "@chakra-ui/react"
