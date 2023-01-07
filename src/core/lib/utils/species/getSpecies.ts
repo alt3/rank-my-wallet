@@ -1,4 +1,4 @@
-import species from "app/constants/species"
+import species from "src/core/constants/species"
 
 /**
  * Returns the blockchain species for given wallet balance.

@@ -1,7 +1,7 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Box, Container, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
 import { PageHero, TipboxCard } from "@components"
-import tipboxAddresses from "app/constants/tipbox-addresses"
+import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import Layout from "src/core/layouts/Layout"
 import Head from "next/head"
 import { BsHeartFill } from "react-icons/bs"

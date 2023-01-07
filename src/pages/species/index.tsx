@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react"
 import { PageHero, RadioCard } from "@components"
 import SpeciesTable from "@components/SpeciesTable/SpeciesTable"
-import species from "app/constants/species"
+import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
 import { BlitzPage } from "@blitzjs/next"
 import Head from "next/head"

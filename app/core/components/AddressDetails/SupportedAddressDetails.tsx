@@ -43,7 +43,7 @@ import {
   SwordfishIcon,
   WhaleIcon,
 } from "@components/Images/Species"
-import tipboxAddresses from "app/constants/tipbox-addresses"
+import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import { bigToString, capitalize } from "src/core/lib/utils"
 import nextId from "react-id-generator"
 
