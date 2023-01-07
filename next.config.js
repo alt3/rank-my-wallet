@@ -5,8 +5,7 @@ const { withBlitz } = require("@blitzjs/next")
 const shouldAnalyzeBundles = process.env.ANALYZE === "true"
 const withBundleAnalyzer = shouldAnalyzeBundles
   ? require("@next/bundle-analyzer")({ enabled: true })
-  : (config) => config
-if (shouldAnalyzeBundles) console.log("Analyze!!!")
+  : (/** @type {any} */ config) => config
 
 const config = {
   // experimental: { appDir: true },
