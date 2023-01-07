@@ -5,7 +5,7 @@ const { withBlitz } = require("@blitzjs/next")
 const shouldAnalyzeBundles = process.env.ANALYZE === "true"
 const withBundleAnalyzer = shouldAnalyzeBundles
   ? require("@next/bundle-analyzer")({ enabled: true })
-  : (/** @type {any} */ config) => config
+  : () => config
 
 /**
  * @type {import('@blitzjs/next').BlitzConfig}
