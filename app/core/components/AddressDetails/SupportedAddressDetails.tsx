@@ -44,7 +44,7 @@ import {
   WhaleIcon,
 } from "@components/Images/Species"
 import tipboxAddresses from "app/constants/tipbox-addresses"
-import { bigToString, capitalize } from "app/lib/utils"
+import { bigToString, capitalize } from "src/lib/utils"
 import nextId from "react-id-generator"
 
 const imageComponents = {

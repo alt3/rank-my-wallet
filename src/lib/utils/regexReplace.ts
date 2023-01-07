@@ -1,4 +1,4 @@
-import { capitalize } from "./"
+import { capitalize } from "."
 
 /**
  * Replaces one or more placeholders with capitalized passed string.

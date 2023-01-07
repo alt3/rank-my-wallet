@@ -4,7 +4,7 @@ import {
   RegexAddress,
   UnrecognizedAddress,
 } from "../../classes/addresses"
-import { regexReplace } from "app/lib/utils"
+import { regexReplace } from "src/lib/utils"
 
 type TUnsupportedAddressReasons = {
   type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"

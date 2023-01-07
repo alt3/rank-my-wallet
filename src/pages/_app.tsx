@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react"
-import theme from "app/core/theme"
+import theme from "src/core/theme"
 import Error from "src/pages/_error"
 import { ErrorFallbackProps, ErrorBoundary, AppProps } from "@blitzjs/next"
 import { withBlitz } from "src/blitz-client"

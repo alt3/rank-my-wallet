@@ -20,7 +20,7 @@ import {
   ErrorHero,
   SectionHeader,
 } from "@components"
-import { capitalize } from "app/lib/utils"
+import { capitalize } from "src/lib/utils"
 import nextId from "react-id-generator"
 
 export function UnsupportedAddressDetails({ parsed }) {

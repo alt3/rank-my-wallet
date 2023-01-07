@@ -1,4 +1,4 @@
-import { nanoToTicker } from "app/lib/utils"
+import { nanoToTicker } from "src/lib/utils"
 import fetchCardanoAddressCount from "./fetchCardanoAddressCount"
 import fetchCardanoRankings from "./fetchCardanoRankings"
 import fetchErgoAddressCount from "./fetchErgoAddressCount"
