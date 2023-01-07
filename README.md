@@ -12,33 +12,36 @@ This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
 
 ## Getting Started
 
-Clone repository to your local machine.
+Install the [Blitz CLI](https://blitzjs.com/docs/get-started#install-blitz) globally.
+
+Clone repository.
 
 ```
 git clone git@github.com:alt3/rank-my-wallet.git
 cd rank-my-wallet
 ```
 
-Install dependencies once.
+Install dependencies.
 
 ```
 npm install
 ```
 
-Run website in development mode.
+Start website in development mode.
 
 ```
 blitz dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Browse to local website [http://localhost:3000](http://localhost:3000).
 
 Make live code changes.
 
 ## Tests
 
-Runs tests using Jest.
+Runs tests using ESLint and Jest.
 
 ```
-yarn test
+npm run lint
+npm run test
 ```
