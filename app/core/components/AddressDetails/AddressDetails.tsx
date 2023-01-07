@@ -1,4 +1,4 @@
-import getAddressDetails from "app/core/queries/getAddressDetails"
+import getAddressDetails from "src/core/queries/getAddressDetails"
 import { useQuery } from "@blitzjs/rpc"
 import { useParam } from "@blitzjs/next"
 import SupportedAddressDetails from "./SupportedAddressDetails"

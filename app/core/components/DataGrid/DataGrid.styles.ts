@@ -1,4 +1,4 @@
-import StyleConfigMulti from "@/types/StyleConfigMulti"
+import StyleConfigMulti from "src/core/types/StyleConfigMulti"
 
 const components: StyleConfigMulti = {
   parts: ["DataGrid", "DataGridField", "DataGridValue"],

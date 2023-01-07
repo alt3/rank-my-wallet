@@ -1,4 +1,4 @@
-import StyleConfigSingle from "@/types/StyleConfigSingle"
+import StyleConfigSingle from "src/core/types/StyleConfigSingle"
 
 const SectionHeader: StyleConfigSingle = {
   baseStyle: {
