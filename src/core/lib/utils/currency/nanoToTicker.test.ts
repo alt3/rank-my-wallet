@@ -1,4 +1,4 @@
-import { nanoToTicker } from "src/lib/utils"
+import { nanoToTicker } from "src/core/lib/utils"
 import Big from "big.js"
 
 describe("Ensure nanoToTicker:", function () {

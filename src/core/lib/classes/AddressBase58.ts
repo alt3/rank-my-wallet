@@ -1,4 +1,4 @@
-import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib/utils"
+import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/core/lib/utils"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
 import { BlockchainAddress } from "./BlockhainAddress"
