@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/react"
 import { BlockChains, Hero, Sponsors } from "@components"
-import Layout from "app/core/layouts/Layout"
+import Layout from "src/core/layouts/Layout"
 import { BlitzPage } from "@blitzjs/next"
 import Head from "next/head"
 

@@ -9,7 +9,7 @@ import {
 import { PageHero, RadioCard } from "@components"
 import SpeciesTable from "@components/SpeciesTable/SpeciesTable"
 import species from "app/constants/species"
-import Layout from "app/core/layouts/Layout"
+import Layout from "src/core/layouts/Layout"
 import { BlitzPage } from "@blitzjs/next"
 import Head from "next/head"
 import { useRouter } from "next/router"

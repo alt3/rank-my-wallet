@@ -1,7 +1,7 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Container, Text } from "@chakra-ui/react"
 import { ExternalLinkIcon, Link, PageHero } from "@components"
-import Layout from "app/core/layouts/Layout"
+import Layout from "src/core/layouts/Layout"
 import Head from "next/head"
 
 const Sponsoring: BlitzPage = () => {
