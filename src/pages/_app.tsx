@@ -1,8 +1,8 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import theme from "app/core/theme"
-import Error from "pages/_error"
+import Error from "src/pages/_error"
 import { ErrorFallbackProps, ErrorBoundary, AppProps } from "@blitzjs/next"
-import { withBlitz } from "app/blitz-client"
+import { withBlitz } from "src/blitz-client"
 import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users
 import React from "react"
 
