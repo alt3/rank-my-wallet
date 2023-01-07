@@ -37,8 +37,9 @@ Make live code changes.
 
 ## Tests
 
-Runs tests using Jest.
+Runs tests using ESLint and Jest.
 
 ```
-yarn test
+npm run lint
+npm run test
 ```
