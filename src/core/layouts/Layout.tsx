@@ -1,6 +1,6 @@
 import { BlitzLayout } from "@blitzjs/next"
 import { Box, Flex } from "@chakra-ui/react"
-import { Footer, Navbar } from "@components"
+import { Footer, Navbar } from "src/core/components"
 import Head from "next/head"
 
 const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {

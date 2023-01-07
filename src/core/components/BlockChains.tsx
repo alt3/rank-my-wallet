@@ -1,6 +1,6 @@
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
-import { FrontpageCard } from "./cards"
-import { CardanoLogo, ErgoLogo } from "./logos"
+import { FrontpageCard } from "./Cards"
+import { CardanoLogo, ErgoLogo } from "./Logos"
 
 export function BlockChains() {
   const styles = {

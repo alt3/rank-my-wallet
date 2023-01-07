@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react"
-import { Link } from "@components"
+import { Link } from "src/core/components"
 import { HiExternalLink } from "react-icons/hi"
 import { DataGridField } from "./DataGridField"
 import { DataGridValue } from "./DataGridValue"

@@ -1,7 +1,7 @@
 import Layout from "src/core/layouts/Layout"
 import Head from "next/head"
 import { Text, VStack } from "@chakra-ui/react"
-import { BackHomeButton, PageHero } from "@components"
+import { BackHomeButton, PageHero } from "src/core/components"
 
 export function Error({ statusCode, title }) {
   const pageTitle = "Unexpected Error"

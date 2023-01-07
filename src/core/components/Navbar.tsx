@@ -1,7 +1,7 @@
 import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { Link } from "@components"
+import { Link } from "src/core/components"
 import { BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
-import { Logo, LogoMobile } from "./logos"
+import { Logo, LogoMobile } from "./Logos"
 
 export const Navbar: React.FC = () => {
   const { toggleColorMode: toggleMode } = useColorMode()

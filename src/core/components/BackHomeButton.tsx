@@ -1,5 +1,5 @@
 import { Button, Center } from "@chakra-ui/react"
-import { Link } from "@components"
+import { Link } from "src/core/components"
 
 export function BackHomeButton({ title, ...rest }) {
   return (

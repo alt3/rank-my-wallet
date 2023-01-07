@@ -1,4 +1,4 @@
-import { AddressDetails, SuspenseLoader } from "@components"
+import { AddressDetails, SuspenseLoader } from "src/core/components"
 import Layout from "src/core/layouts/Layout"
 import { BlitzPage } from "@blitzjs/next"
 import Head from "next/head"

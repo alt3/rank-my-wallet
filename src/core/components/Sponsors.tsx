@@ -1,6 +1,6 @@
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
 import { BsHeartFill } from "react-icons/bs"
-import { FrontpageCard } from "./cards"
+import { FrontpageCard } from "./Cards"
 
 export function Sponsors() {
   const styles = {

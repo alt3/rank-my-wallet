@@ -1,6 +1,6 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Container, Text } from "@chakra-ui/react"
-import { ExternalLinkIcon, Link, PageHero } from "@components"
+import { ExternalLinkIcon, Link, PageHero } from "src/core/components"
 import Layout from "src/core/layouts/Layout"
 import Head from "next/head"
 

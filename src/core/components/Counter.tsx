@@ -1,6 +1,6 @@
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import Countup from "react-countup"
-import { capitalize, getIntegerSeparator } from "../../../src/core/lib/utils"
+import { capitalize, getIntegerSeparator } from "../lib/utils"
 import { getUserLocale } from "get-user-locale"
 
 interface CounterProps {

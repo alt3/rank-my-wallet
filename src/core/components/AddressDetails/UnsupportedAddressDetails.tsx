@@ -19,7 +19,7 @@ import {
   DataGridEntry,
   ErrorHero,
   SectionHeader,
-} from "@components"
+} from "src/core/components"
 import { capitalize } from "src/core/lib/utils"
 import nextId from "react-id-generator"
 

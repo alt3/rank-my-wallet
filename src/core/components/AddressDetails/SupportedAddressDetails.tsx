@@ -23,7 +23,7 @@ import {
   RankingsTable,
   SectionHeader,
   TickerString,
-} from "@components"
+} from "src/core/components"
 import {
   CrabIcon,
   FishIcon,
@@ -42,7 +42,7 @@ import {
   StarfishIcon,
   SwordfishIcon,
   WhaleIcon,
-} from "@components/Images/Species"
+} from "src/core/components/Images/Species"
 import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import { bigToString, capitalize } from "src/core/lib/utils"
 import nextId from "react-id-generator"
