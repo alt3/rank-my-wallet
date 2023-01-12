@@ -13,7 +13,10 @@
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString#using_locales}
  * @param locale - Locale as an IETF language tag like 'en/US'
  */
-export const getIntegerSeparator = (locale: string) => {
+export const getIntegerSeparator = (locale: string | null) => {
+  if (locale === null) {
+    return ","
+  }
   const numberWithIntegerSeparator = 10000 // use 10.000 for e.g. India
   const intlParts = Intl.NumberFormat(locale).formatToParts(numberWithIntegerSeparator)
 
