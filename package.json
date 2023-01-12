@@ -22,8 +22,8 @@
     ]
   },
   "dependencies": {
-    "@blitzjs/next": "2.0.0-beta.21",
-    "@blitzjs/rpc": "2.0.0-beta.21",
+    "@blitzjs/next": "2.0.0-beta.22",
+    "@blitzjs/rpc": "2.0.0-beta.22",
     "@chakra-ui/react": "2.4.6",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
@@ -34,7 +34,7 @@
     "bech32": "2.0.0",
     "big.js": "6.2.1",
     "blakejs": "1.1.1",
-    "blitz": "2.0.0-beta.21",
+    "blitz": "2.0.0-beta.22",
     "bs58": "^4.0.1",
     "clipboard": "2.0.11",
     "ethereum-regex": "1.1.13",
