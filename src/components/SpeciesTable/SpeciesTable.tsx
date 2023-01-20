@@ -4,14 +4,14 @@ import { capitalize } from "src/core/lib/utils"
 
 interface SpeciesTableProps {
   blockchain: "cardano" | "ergo"
-  currencySymbol: "₳" | "Σ"
+  tickerSymbol: "₳" | "Σ"
   species: {
     startsAt: number
     name: string
   }[]
 }
 
-export function SpeciesTable({ blockchain, currencySymbol, species }: SpeciesTableProps) {
+export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTableProps) {
   const maximumSignificantDigits = blockchain === "cardano" ? 6 : 8
 
   const styles = {
@@ -69,7 +69,7 @@ export function SpeciesTable({ blockchain, currencySymbol, species }: SpeciesTab
                 <Td {...styles.right}>
                   <Box as="span" whiteSpace="nowrap">
                     <Box as="span" {...styles.currency}>
-                      {currencySymbol}
+                      {tickerSymbol}
                     </Box>{" "}
                     {element.startsAt.toLocaleString(undefined, { maximumSignificantDigits })}{" "}
                   </Box>

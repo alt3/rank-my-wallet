@@ -133,7 +133,7 @@ const Species: BlitzPage = () => {
         {isOpenCardano && (
           <SpeciesTable
             blockchain="cardano"
-            currencySymbol="₳"
+            tickerSymbol="₳"
             species={species["cardano"].slice(1)}
           ></SpeciesTable>
         )}
@@ -141,7 +141,7 @@ const Species: BlitzPage = () => {
         {isOpenErgo && (
           <SpeciesTable
             blockchain="ergo"
-            currencySymbol="Σ"
+            tickerSymbol="Σ"
             species={species["ergo"].slice(1)}
           ></SpeciesTable>
         )}
