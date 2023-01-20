@@ -65,7 +65,7 @@
     "@types/qrcode.react": "1.0.2",
     "@types/react": "18.0.26",
     "@typescript-eslint/eslint-plugin": "5.48.0",
-    "@vitejs/plugin-react": "2.2.0",
+    "@vitejs/plugin-react": "3.0.1",
     "cross-env": "7.0.3",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.3",
