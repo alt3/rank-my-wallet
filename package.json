@@ -30,7 +30,7 @@
     "@fontsource/inter": "4.5.14",
     "@fontsource/noto-mono": "4.5.3",
     "@fontsource/poppins": "4.5.10",
-    "axios": "0.27.2",
+    "axios": "1.2.3",
     "bech32": "2.0.0",
     "big.js": "6.2.1",
     "blakejs": "1.2.1",
