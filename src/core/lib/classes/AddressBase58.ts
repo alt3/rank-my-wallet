@@ -36,19 +36,20 @@ const ergoAddressTypes = [
  * Extended class that parses Bech32 address during initialization.
  */
 export class Base58Address extends BlockchainAddress {
-  constructor(address: string, decoded: Buffer) {
+  constructor(address: string, decoded: Uint8Array) {
     super(address) // sets address property in the base class (lowercased there)
     this.class = this.constructor.name
     this.encoding = "base58"
 
     this.decoded = {
       bytes: Array.from(decoded),
-      hex: decoded.toString("hex"),
+      hex: Buffer.from(decoded).toString("hex"),
     }
 
     // generate header
-    const headerByteBuffer = getFirstByte(decoded)
-    const headerByte = parseInt(headerByteBuffer.toString("hex"), 16)
+    const headerByteArray = getFirstByte(decoded)
+
+    const headerByte = parseInt(Buffer.from(headerByteArray).toString("hex"), 16)
     const headerBits = byteToBits(headerByte, 8)
 
     // generate checksum property
@@ -56,14 +57,14 @@ export class Base58Address extends BlockchainAddress {
 
     this.payload.checksum = {
       bytes: Array.from(Buffer.from(checksumBytes)),
-      hex: checksumBytes.toString("hex"),
+      hex: Buffer.from(checksumBytes).toString("hex"),
     }
 
     // generate content
     const contentBytes = getErgoContent(decoded)
     this.payload.content = {
       bytes: Array.from(Buffer.from(contentBytes)),
-      hex: contentBytes.toString("hex"),
+      hex: Buffer.from(contentBytes).toString("hex"),
     }
 
     if (isErgoAddress(decoded)) {
@@ -79,7 +80,7 @@ export class Base58Address extends BlockchainAddress {
 
       this.payload.prefix = {
         byte: headerByte,
-        hex: headerByteBuffer.toString("hex"),
+        hex: Buffer.from(headerByteArray).toString("hex"),
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
@@ -117,9 +118,9 @@ export class Base58Address extends BlockchainAddress {
 /**
  * Returns the content bytes last four bytes of the Ergo address (which is the checksum payload).
  *
- * @param decoded - Buffer with the full decoded address
+ * @param decoded - Uint8Array with the full decoded address
  */
-function getErgoContent(decoded: Buffer): Buffer {
+function getErgoContent(decoded: Uint8Array): Uint8Array {
   const size = decoded.length
 
   const result = decoded.slice(0, size - 4) // remove last four (checksum) bytes
@@ -130,9 +131,9 @@ function getErgoContent(decoded: Buffer): Buffer {
 /**
  * Returns the last four bytes of the Ergo address (which is the checksum payload).
  *
- * @param decoded - Buffer with the full decoded address
+ * @param decoded - Uint8Array with the full decoded address
  */
-function getErgoChecksum(decoded: Buffer): Buffer {
+function getErgoChecksum(decoded: Uint8Array): Uint8Array {
   const size = decoded.length
 
   return decoded.slice(size - 4, size)
@@ -143,14 +144,14 @@ function getErgoChecksum(decoded: Buffer): Buffer {
  *
  * @param decoded - Array with 8 bits
  */
-function isErgoAddress(decoded: Buffer): boolean {
+function isErgoAddress(decoded: Uint8Array): boolean {
   const size = decoded.length
   const script = decoded.slice(0, size - 4)
   const checksum = decoded.slice(size - 4, size)
 
   const calculatedChecksum = Buffer.from(blake.blake2b(script, undefined, 32)).slice(0, 4)
 
-  return calculatedChecksum.toString("hex") === checksum.toString("hex")
+  return calculatedChecksum.toString("hex") === Buffer.from(checksum).toString("hex")
 }
 
 /**

@@ -151,12 +151,12 @@ export class Bech32Address extends BlockchainAddress {
 
         // analyze the header byte
         const headerByteBuffer = getFirstByte(bytesBuffer)
-        const headerByte = parseInt(headerByteBuffer.toString("hex"), 16)
+        const headerByte = parseInt(Buffer.from(headerByteBuffer).toString("hex"), 16)
         const headerBits = byteToBits(headerByte, 8)
 
         this.payload.prefix = {
           byte: headerByte,
-          hex: headerByteBuffer.toString("hex"),
+          hex: Buffer.from(headerByteBuffer).toString("hex"),
           bits: headerBits,
           leading: {
             bits: getLeadingBits(headerBits),
