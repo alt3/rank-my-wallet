@@ -1,15 +1,17 @@
 import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { Link } from "src/components"
 import { BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
-import { Logo, LogoMobile } from "./Images/Logos"
+import { Link } from "src/components"
+import { Logo } from "../Images/Logos"
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  logoColorPrimary: string // TODO: use stricter type
+  logoColorSecondary: string
+}
+
+export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarProps) {
   const { toggleColorMode: toggleMode } = useColorMode()
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
-
-  const logoColorPrimary = useColorModeValue("#1B202C", "#52E3D1")
-  const logoColorSecondary = useColorModeValue("#52E3D1", "#fff")
 
   return (
     <Box
@@ -23,15 +25,7 @@ export const Navbar: React.FC = () => {
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
         <Flex align="left">
           <Link href="/" aria-label="Home" passHref>
-            <LogoMobile
-              display={{ base: "block", sm: "none" }}
-              marginTop="0.25rem"
-              h="8"
-              pointerEvents="none"
-              fill={logoColorPrimary}
-            />
             <Logo
-              display={{ base: "none", sm: "block" }}
               marginTop="0.5rem"
               h="10"
               pointerEvents="none"
@@ -97,3 +91,5 @@ export const Navbar: React.FC = () => {
     </Box>
   )
 }
+
+export default NavbarDesktop
