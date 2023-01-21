@@ -76,7 +76,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
           </Link>
 
           <Link
-            href="https://github.com/rank-my-wallet/"
+            href="https://github.com/alt3/rank-my-wallet/"
             aria-label="RankMyWallet on Github"
             isExternal
             passHref
