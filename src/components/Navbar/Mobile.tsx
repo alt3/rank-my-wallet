@@ -68,6 +68,9 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
 
         <Drawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} title={null} footer={null}>
           <VStack alignItems="right">
+            <Link href={"/"} onClick={() => onClose()}>
+              Home
+            </Link>
             <Link href={"/species"} onClick={() => onClose()}>
               Blockchain Species
             </Link>
