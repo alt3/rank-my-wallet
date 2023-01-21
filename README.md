@@ -4,44 +4,43 @@
 
 # Rank My Wallet
 
-Source files for the [Rank My Wallet](https://rankmyallet.com) website.
+Source files for https://rankmyallet.com.
 
 ## Good to Know
 
-This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
+This is a [Next.js](https://nextjs.org/) app built with the [Blitz.js](https://github.com/blitz-js/blitz) toolkit.
 
 ## Getting Started
 
-Install the [Blitz CLI](https://blitzjs.com/docs/get-started#install-blitz) globally.
+1. Install the [Blitz CLI](https://blitzjs.com/docs/get-started#install-blitz) globally (once).
 
-Clone repository.
+2. Clone repository.
 
-```
-git clone git@github.com:alt3/rank-my-wallet.git
-cd rank-my-wallet
-```
+   ```
+   git clone git@github.com:alt3/rank-my-wallet.git
+   cd rank-my-wallet
+   ```
 
-Install dependencies.
+3. Install dependencies.
 
-```
-npm install
-```
+   ```
+   npm install
+   ```
 
-Start website in development mode.
+4. Start website in development mode.
 
-```
-blitz dev
-```
+   ```
+   blitz dev
+   ```
 
-Browse to local website [http://localhost:3000](http://localhost:3000).
+5. Browse to [http://localhost:3000](http://localhost:3000).
 
-Make live code changes.
+6. Make live code changes.
 
-## Tests
+## License
 
-Runs tests using ESLint and Jest.
+This project is released under [MIT LICENSE](LICENSE.txt).
 
-```
-npm run lint
-npm run test
-```
+## Contributing
+
+Please refer to the [guidelines for contributing](./contributing.md).
