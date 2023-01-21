@@ -4,7 +4,7 @@
 
 # Rank My Wallet
 
-Source files for https://rankmyallet.com.
+Source files for https://rankmywallet.com.
 
 ## Good to Know
 
