@@ -1,5 +1,5 @@
 import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
+import { BsMoonFill, BsSunFill, BsTwitter, BsGithub } from "react-icons/bs"
 import { Link } from "src/components"
 import { Logo } from "../Images/Logos"
 
@@ -72,6 +72,25 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               color="current"
               marginLeft="0"
               icon={<BsTwitter />}
+            />
+          </Link>
+
+          <Link
+            href="https://github.com/rank-my-wallet/"
+            aria-label="RankMyWallet on Github"
+            isExternal
+            passHref
+          >
+            <IconButton
+              size="lg"
+              maxWidth="1rem"
+              w={10}
+              ml={0}
+              aria-label={`RankMyWallet on Github`}
+              variant="ghost"
+              color="current"
+              marginLeft="0"
+              icon={<BsGithub />}
             />
           </Link>
 
