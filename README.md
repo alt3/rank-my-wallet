@@ -39,7 +39,7 @@ This is a [Next.js](https://nextjs.org/) app built with the [Blitz.js](https://g
 
 ## License
 
-This project is released under [MIT LICENSE](LICENSE.txt).
+This project is released under the [MIT LICENSE](LICENSE.txt).
 
 ## Contributing
 

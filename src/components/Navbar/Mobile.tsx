@@ -71,19 +71,32 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
             <Link href={"/"} onClick={() => onClose()}>
               Home
             </Link>
-            <Link href={"/species"} onClick={() => onClose()}>
+            <Link href={"/species"} aria-label="Species" onClick={() => onClose()}>
               Blockchain Species
             </Link>
-            <Link href={"/tipbox"} onClick={() => onClose()}>
+            <Link href={"/tipbox"} aria-label="Tip Box" onClick={() => onClose()}>
               Tip Box
             </Link>
             <Link
               href={"https://twitter.com/RankMyWallet/"}
+              aria-label="RankMyWallet on Twitter"
               onClick={() => onClose()}
               isExternal
               passHref
             >
               Twitter{" "}
+              <span>
+                <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
+              </span>
+            </Link>
+            <Link
+              href={"https://github.com/alt3/rank-my-wallet/"}
+              aria-label="RankMyWallet on Github"
+              onClick={() => onClose()}
+              isExternal
+              passHref
+            >
+              Github{" "}
               <span>
                 <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
               </span>
