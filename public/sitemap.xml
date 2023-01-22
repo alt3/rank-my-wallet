@@ -7,6 +7,11 @@
       <priority>1.00</priority>
     </url>
     <url>
+      <loc>https://rankmywallet.com/species</loc>
+      <lastmod>2023-01-22T13:26:59+00:00</lastmod>
+      <priority>0.80</priority>
+    </url>
+    <url>
       <loc>https://rankmywallet.com/tipbox</loc>
       <lastmod>2022-03-25T13:26:59+00:00</lastmod>
       <priority>0.80</priority>
@@ -18,16 +23,6 @@
     </url>
     <url>
       <loc>https://rankmywallet.com/9h1cuw5d6TJb6cGgrqfPHkFJcjPPaARTy5dmucanqtranQ2xRMu</loc>
-      <lastmod>2022-03-25T13:26:59+00:00</lastmod>
-      <priority>0.80</priority>
-    </url>
-    <url>
-      <loc>https://rankmywallet.com/species?blockchain=cardano</loc>
-      <lastmod>2022-03-25T13:26:59+00:00</lastmod>
-      <priority>0.80</priority>
-    </url>
-    <url>
-      <loc>https://rankmywallet.com/species?blockchain=ergo</loc>
       <lastmod>2022-03-25T13:26:59+00:00</lastmod>
       <priority>0.80</priority>
     </url>
