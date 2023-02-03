@@ -30,6 +30,7 @@
     "@fontsource/inter": "4.5.15",
     "@fontsource/noto-mono": "4.5.3",
     "@fontsource/poppins": "4.5.10",
+    "@vercel/analytics": "0.1.8",
     "axios": "1.2.5",
     "bech32": "2.0.0",
     "big.js": "6.2.1",

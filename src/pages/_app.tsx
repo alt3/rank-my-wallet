@@ -1,10 +1,10 @@
+import { AppProps, ErrorBoundary, ErrorFallbackProps } from "@blitzjs/next"
 import { ChakraProvider } from "@chakra-ui/react"
+import { Analytics } from "@vercel/analytics/react"
+import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users
+import { withBlitz } from "src/blitz-client"
 import theme from "src/core/theme"
 import Error from "src/pages/_error"
-import { ErrorFallbackProps, ErrorBoundary, AppProps } from "@blitzjs/next"
-import { withBlitz } from "src/blitz-client"
-import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users
-import React from "react"
 
 function RootErrorFallback({ error }: ErrorFallbackProps) {
   return <Error statusCode={error.statusCode || 400} title={error.message || error.name} />
@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <ErrorBoundary FallbackComponent={RootErrorFallback}>
         {getLayout(<Component {...pageProps} />)}
+        <Analytics />
       </ErrorBoundary>
     </ChakraProvider>
   )
