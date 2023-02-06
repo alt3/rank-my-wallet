@@ -1,15 +1,23 @@
 import { BlitzPage } from "@blitzjs/next"
+import Head from "next/head"
 import { Suspense } from "react"
 import { AddressDetails, SuspenseLoader } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const ShowRankingPage: BlitzPage = () => {
+  const pageTitle = "Rank My Wallet"
+
   return (
-    <div>
-      <Suspense fallback={<SuspenseLoader />}>
-        <AddressDetails />
-      </Suspense>
-    </div>
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
+      <div>
+        <Suspense fallback={<SuspenseLoader />}>
+          <AddressDetails />
+        </Suspense>
+      </div>
+    </>
   )
 }
 
