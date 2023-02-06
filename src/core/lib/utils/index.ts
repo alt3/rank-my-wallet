@@ -11,8 +11,6 @@ export * from "./currency/nanoToTicker"
 export * from "./locales/getIntegerSeparator"
 export * from "./species/getNextSpecies"
 export * from "./species/getSpecies"
-
 export * from "./capitalize"
-export * from "./getHttpStatusCode"
 export * from "./regexReplace"
 export * from "./sleep"
