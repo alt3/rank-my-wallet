@@ -12,6 +12,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
+import nextId from "react-id-generator"
 import {
   BitsTable,
   Counter,
@@ -43,9 +44,7 @@ import {
   SwordfishIcon,
   WhaleIcon,
 } from "src/components/Images/Species"
-import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import { bigToString, capitalize } from "src/core/lib/utils"
-import nextId from "react-id-generator"
 
 const imageComponents = {
   Crab: CrabIcon,
@@ -156,10 +155,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         </Grid>
       </Box>
 
-      {/* SHOW PLEASE DONATE UNLESS ALREADY DONATED  */}
-      {tipboxAddresses.donators.includes(parsed.address) === false && (
-        <PleaseDonate marginBottom={{ base: "2rem", sm: "2rem" }} />
-      )}
+      <PleaseDonate marginBottom={{ base: "2rem", sm: "2rem" }} />
 
       <Accordion allowMultiple>
         {/* COMPETITION PANE - IF APPLICABLE */}
