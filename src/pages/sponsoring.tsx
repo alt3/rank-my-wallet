@@ -1,8 +1,7 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Container, Text } from "@chakra-ui/react"
-import { ExternalLinkIcon, Link, PageHero } from "src/components"
+import { ExternalLinkIcon, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
-import Head from "next/head"
 
 const Sponsoring: BlitzPage = () => {
   const styles = {
@@ -14,9 +13,11 @@ const Sponsoring: BlitzPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Rank My Wallet - Become a Sponsor</title>
-      </Head>
+      <MetaTags
+        title="Rank My Wallet - Become a Sponsor"
+        description="Promote your project by becoming a sponsor"
+        keywords="blockchain, cardano, ergo, wallets, rankings, sponsoring, sponsor"
+      />
 
       <Container {...styles.container}>
         <PageHero title="Become a Sponsor" />

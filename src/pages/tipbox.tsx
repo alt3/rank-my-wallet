@@ -1,10 +1,9 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Box, Container, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
-import { PageHero, TipboxCard } from "src/components"
+import { BsHeartFill } from "react-icons/bs"
+import { MetaTags, PageHero, TipboxCard } from "src/components"
 import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import Layout from "src/core/layouts/Layout"
-import Head from "next/head"
-import { BsHeartFill } from "react-icons/bs"
 
 const TipBox: BlitzPage = () => {
   const styles = {
@@ -25,9 +24,11 @@ const TipBox: BlitzPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Rank My Wallet - Tip Box</title>
-      </Head>
+      <MetaTags
+        title="Rank My Wallet - Tip Box"
+        description="Donate some coins to keep this website ad-free"
+        keywords="blockchain, cardano, ergo, wallets, rankings, tip-box, support"
+      />
 
       <Container {...styles.container}>
         <PageHero title="Tip Box" />
