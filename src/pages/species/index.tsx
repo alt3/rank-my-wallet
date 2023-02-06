@@ -1,3 +1,4 @@
+import { BlitzPage } from "@blitzjs/next"
 import {
   Center,
   Container,
@@ -6,23 +7,13 @@ import {
   useDisclosure,
   useRadioGroup,
 } from "@chakra-ui/react"
-import { PageHero, RadioCard } from "src/components"
+import { useRouter } from "next/router"
+import { MetaTags, PageHero, RadioCard } from "src/components"
 import SpeciesTable from "src/components/SpeciesTable/SpeciesTable"
 import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
-import { BlitzPage } from "@blitzjs/next"
-import Head from "next/head"
-import { useRouter } from "next/router"
-import React from "react"
 
 const Species: BlitzPage = () => {
-  const meta = {
-    title: "Rank My Wallet - Species",
-    description: "Blockchain species for Cardano and Ergo.",
-    keywords: "rankings, cardano, ergo, blockchain, species, whale, orca, shark, shrimp, online",
-    url: "https://rankmywallet.com/species",
-  }
-
   // check for query param
   const [initialRouterCheck, setInitialRouterFlag] = useBoolean()
   const router = useRouter()
@@ -87,18 +78,11 @@ const Species: BlitzPage = () => {
 
   return (
     <>
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <meta name="keywords" content={meta.keywords} />
-        <meta property="og:title" content={meta.title} key="title" />
-        <meta property="og:url" content={meta.url} />
-        <meta property="og:type" content="website" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:description" content={meta.description} />
-        <meta name="twitter:content" content="summary" />
-        <meta name="twitter:site" content="@RankMyWallet" />
-      </Head>
+      <MetaTags
+        title="Rank My Wallet - Species"
+        description="Blockchain species for Cardano and Ergo"
+        keywords="blockchain, cardano, ergo, species, whale, orca, shark, shrimp, ghost"
+      />
 
       {!isOpenCardano && !isOpenErgo && <PageHero title="Blockchain Species" />}
 
