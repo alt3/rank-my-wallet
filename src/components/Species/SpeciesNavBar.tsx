@@ -22,7 +22,7 @@ export function SpeciesNavBar({ ...rest }) {
         </Button>
       </Link>
 
-      <Link href="/species/ergo" aria-label="Ergo Species" textDecoration={"none"}>
+      <Link href="/species/ergo" aria-label="Ergo Species" {...styles.link}>
         <Button {...styles.button} width={140}>
           Ergo
         </Button>
