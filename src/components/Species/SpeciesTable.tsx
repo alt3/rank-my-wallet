@@ -1,4 +1,4 @@
-import { Box, Center, useColorModeValue, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react"
+import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
 import nextId from "react-id-generator"
 import { capitalize } from "src/core/lib/utils"
 
