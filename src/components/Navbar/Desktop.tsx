@@ -1,5 +1,5 @@
 import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { BsMoonFill, BsSunFill, BsTwitter, BsGithub } from "react-icons/bs"
+import { BsGithub, BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
 import { Link } from "src/components"
 import { Logo } from "../Images/Logos"
 
@@ -44,17 +44,22 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
-          <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-            <Link href="/species" aria-label="Species" passHref>
+          <Link
+            href="/species"
+            aria-label="Blockchain species"
+            textDecoration="none !important"
+            passHref
+          >
+            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
               Species
-            </Link>
-          </Button>
+            </Button>
+          </Link>
 
-          <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-            <Link href="/tipbox" aria-label="Tip Box" passHref>
+          <Link href="/tipbox" aria-label="Tip Box" textDecoration="none !important" passHref>
+            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
               Tip Box
-            </Link>
-          </Button>
+            </Button>
+          </Link>
 
           <Link
             href="https://www.twitter.com/RankMyWallet/"
