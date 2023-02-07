@@ -43,6 +43,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
       fontWeight: "extrabold",
       color: useColorModeValue("teal.500", "teal.300"),
       marginRight: "0.25rem",
+      borderBottom: "1px",
     },
     tdSumLabel: {
       border: "none",
