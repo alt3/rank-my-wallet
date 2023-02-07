@@ -1,5 +1,5 @@
-import NextLink, { LinkProps as NextLinkProps } from "next/link"
 import { Link as ChakraLink, LinkProps as ChakraLinkProps } from "@chakra-ui/react"
+import NextLink, { LinkProps as NextLinkProps } from "next/link"
 
 interface LinkProps extends NextLinkProps, Omit<ChakraLinkProps, keyof NextLinkProps> {}
 
