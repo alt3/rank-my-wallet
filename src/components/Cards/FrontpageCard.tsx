@@ -20,7 +20,13 @@ export function FrontpageCard({ url, title, isExternal = true, ...rest }) {
   }
 
   return (
-    <Link href={url} title={title} isExternal={isExternal} passHref>
+    <Link
+      href={url}
+      title={title}
+      isExternal={isExternal}
+      textDecoration="none !important"
+      passHref
+    >
       <MotionBoxFlex {...styles.box} {...rest}></MotionBoxFlex>
     </Link>
   )
