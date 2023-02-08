@@ -42,11 +42,12 @@ export function TipboxCard({ title, address, url, linkTitle, ...rest }) {
     caption: {
       fontWeight: useColorModeValue(600, 500),
       letterSpacing: "widest",
-      color: useColorModeValue("teal.500", "teal.300"),
+      color: useColorModeValue("gray.900", "gray.400"),
       marginBottom: { base: "2rem", sm: "3rem" },
     },
     linkBox: {
       marginTop: { base: "2.5rem", sm: "3.5rem" },
+      color: useColorModeValue("gray.900", "gray.400"),
     },
   }
 
@@ -65,7 +66,7 @@ export function TipboxCard({ title, address, url, linkTitle, ...rest }) {
                 as="span"
                 align="center"
                 wordBreak="break-word"
-                color={useColorModeValue("gray.900", "whiteAlpha.900")}
+                color={useColorModeValue("gray.900", "gray.400")}
               >
                 {address}{" "}
               </Text>
@@ -75,6 +76,7 @@ export function TipboxCard({ title, address, url, linkTitle, ...rest }) {
               as={FaRegCopy}
               w={4}
               h={4}
+              // marginLeft="1"
               _hover={{ color: useColorModeValue("teal.500", "teal.300") }}
               id="test"
               onClick={handleClick}

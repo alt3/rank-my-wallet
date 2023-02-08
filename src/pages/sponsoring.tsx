@@ -1,5 +1,5 @@
 import { BlitzPage } from "@blitzjs/next"
-import { Container, Text } from "@chakra-ui/react"
+import { Container, Text, useColorModeValue } from "@chakra-ui/react"
 import { ExternalLinkIcon, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
@@ -8,6 +8,9 @@ const Sponsoring: BlitzPage = () => {
     container: {
       maxW: "container.md",
       marginBottom: "2.5rem",
+    },
+    link: {
+      color: useColorModeValue("teal.500", "teal.300"),
     },
   }
 
@@ -24,7 +27,7 @@ const Sponsoring: BlitzPage = () => {
 
         <Text width="70%" margin="auto" textAlign={"center"} marginBottom={10}>
           If you are an individual looking to sponsor this project, please consider donating via the{" "}
-          <Link href="/tipbox" aria-label="RankMyWallet Tip Box">
+          <Link href="/tipbox" aria-label="RankMyWallet Tip Box" {...styles.link}>
             Tip Box
           </Link>
           .
@@ -38,6 +41,7 @@ const Sponsoring: BlitzPage = () => {
             aria-label="RankMyWallet on Twitter"
             isExternal
             passHref
+            {...styles.link}
           >
             Twitter <ExternalLinkIcon />
           </Link>{" "}
