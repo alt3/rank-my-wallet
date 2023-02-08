@@ -20,6 +20,7 @@ jobs:
           AUTHOR_NAME: GitHub Actions
           EXECUTE: 'true'
           LOG_LEVEL: debug
+          BRANCH_PREFIX: update-packages
           COMMIT_MESSAGE: Update packages
         run: |
           git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
