@@ -8,16 +8,26 @@ jobs:
   package-update:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: set remote url
-      run: git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-    - name: package-update
-      uses: taichi/actions-package-update@master
-      env:
-        AUTHOR_EMAIL: bravo-kernel@users.noreply.github.com
-        AUTHOR_NAME: bravo-kernel
-        EXECUTE: "true"
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        LOG_LEVEL: debug
-      with:
-        args: -u --packageFile package.json --loglevel verbose
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - env:
+          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_NCU_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTHOR_EMAIL: bravo-kernel@users.noreply.github.com
+          AUTHOR_NAME: GitHub Actions
+          EXECUTE: 'true'
+          LOG_LEVEL: debug
+          COMMIT_MESSAGE: Update packages
+        run: |
+          git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
+          eval `ssh-agent -t 600 -s`
+          echo "$ACTION_DEPLOY_KEY" | ssh-add -
+          mkdir -p ~/.ssh/
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+          npx actions-package-update -u --packageFile package.json --loglevel verbose
+
+          ssh-agent -k
