@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 16
       - env:
-          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_NCU_DEPLOY_KEY }}
+          ACTION_NCU_DEPLOY_KEY: ${{ secrets.ACTION_NCU_DEPLOY_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AUTHOR_EMAIL: bravo-kernel@users.noreply.github.com
           AUTHOR_NAME: GitHub Actions
