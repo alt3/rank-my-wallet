@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   schedule:
-  - cron: 0 0 2 1 * ? # every first day of month at 02:00
+  - cron: 0 2 1 * * # every first day of month at 02:00
 
 name: Update Packages
 jobs:
