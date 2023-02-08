@@ -1,4 +1,5 @@
 on:
+  workflow_displatch:
   schedule:
   - cron: 0 0 * * 3 # every Wednesday
 
