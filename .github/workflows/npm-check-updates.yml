@@ -1,0 +1,35 @@
+on:
+  schedule:
+  - cron: 0 2 1 * * # every first day of month at 02:00
+
+name: Update Packages
+jobs:
+  package-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - env:
+          BRANCH_PREFIX: update-packages/
+          COMMIT_MESSAGE: Update packages
+          ACTION_NCU_DEPLOY_KEY: ${{ secrets.ACTION_NCU_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTHOR_EMAIL: bravo-kernel@users.noreply.github.com
+          AUTHOR_NAME: GitHub Actions
+          EXECUTE: 'true'
+          LOG_LEVEL: debug
+        run: |
+          echo "Starting ssh-agent"
+          git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
+          eval `ssh-agent -t 600 -s`
+          echo "$ACTION_NCU_DEPLOY_KEY" | ssh-add -
+          mkdir -p ~/.ssh/
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+          npm install npm-check-updates --global
+          npx actions-package-update -u --packageFile package.json --loglevel info
+
+          ssh-agent -k
