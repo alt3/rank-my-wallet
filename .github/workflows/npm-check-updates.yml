@@ -14,12 +14,12 @@ jobs:
     - name: update-packages
       uses: taichi/actions-package-update@master
       env:
+        BRANCH_PREFIX: update-packages
+        COMMIT_MESSAGE: Update packages
         AUTHOR_EMAIL: bravo-kernel@users.noreply.github.com
         AUTHOR_NAME: GitHub Actions
         EXECUTE: "true"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LOG_LEVEL: debug
-        BRANCH_PREFIX: update-packages
-        COMMIT_MESSAGE: Update packages
       with:
         args: -u --packageFile package.json --loglevel info
