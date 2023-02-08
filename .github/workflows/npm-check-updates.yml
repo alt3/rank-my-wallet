@@ -24,7 +24,7 @@ jobs:
         run: |
           git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
           eval `ssh-agent -t 600 -s`
-          echo "$ACTION_DEPLOY_KEY" | ssh-add -
+          echo "$ACTION_NCU_DEPLOY_KEY" | ssh-add -
           mkdir -p ~/.ssh/
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
