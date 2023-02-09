@@ -1,7 +1,7 @@
 import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
-import { Link, TickerString } from "src/components"
-import { abbreviateAddress, bigToString, nanoToTicker } from "src/lib"
 import nextId from "react-id-generator"
+import { ExternalLinkIcon, Link, TickerString } from "src/components"
+import { abbreviateAddress, bigToString, nanoToTicker } from "src/lib"
 
 interface RankingsTableProps {
   rankings: Array<{
@@ -77,7 +77,7 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
                   isExternal
                   whiteSpace="nowrap"
                 >
-                  {abbreviateAddress(element.address)}
+                  {abbreviateAddress(element.address)} <ExternalLinkIcon />
                 </Link>
               </Td>
 

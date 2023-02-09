@@ -1,7 +1,7 @@
 import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
-import { Link, TickerString } from "src/components"
-import { bigToString, nanoToTicker } from "src/lib"
 import nextId from "react-id-generator"
+import { ExternalLinkIcon, Link, TickerString } from "src/components"
+import { bigToString, nanoToTicker } from "src/lib"
 
 interface RankingsTableProps {
   rankings: Array<{
@@ -66,12 +66,12 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
                   isExternal
                 >
                   {bigToString(element.rank, 0)}
-
                   {element.position === "current" && (
                     <Box as="span" {...styles.asterisk} title="Your rank">
                       *
                     </Box>
-                  )}
+                  )}{" "}
+                  <ExternalLinkIcon />
                 </Link>
               </Td>
 

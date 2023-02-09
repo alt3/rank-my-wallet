@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react"
-import { Link } from "src/components"
-import { HiExternalLink } from "react-icons/hi"
+import { ExternalLinkIcon, Link } from "src/components"
 import { DataGridField } from "./DataGridField"
 import { DataGridValue } from "./DataGridValue"
 
@@ -13,10 +12,9 @@ interface DataGridEntryProps {
     isExternal?: boolean
   }
   linkColor?: string
-  linkIcon?: boolean
 }
 
-export const DataGridEntry = ({ field, value, url, linkColor, linkIcon }: DataGridEntryProps) => {
+export const DataGridEntry = ({ field, value, url, linkColor }: DataGridEntryProps) => {
   if (url) {
     return (
       <>
@@ -31,12 +29,7 @@ export const DataGridEntry = ({ field, value, url, linkColor, linkIcon }: DataGr
               passHref
               isExternal={url.isExternal}
             >
-              {value}{" "}
-              {linkIcon && (
-                <span>
-                  <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
-                </span>
-              )}
+              {value} {url.isExternal && <ExternalLinkIcon />}
             </Link>
           </Box>
         </DataGridValue>

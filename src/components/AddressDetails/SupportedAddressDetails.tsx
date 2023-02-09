@@ -191,7 +191,6 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                       title: "Ergo Watch address metrics",
                       isExternal: true,
                     }}
-                    linkIcon={true}
                   />
                 </DataGrid>
                 <RankingsTable rankings={rankings} />
