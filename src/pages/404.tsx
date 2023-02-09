@@ -1,28 +1,28 @@
-import { BackHomeButton, PageHero } from "src/components"
+import { BlitzPage } from "@blitzjs/next"
+import { BackHomeButton, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
-import Head from "next/head"
 
 // ------------------------------------------------------
 // This page is rendered if a route match is not found
 // ------------------------------------------------------
-export default function Page404() {
+const Page404: BlitzPage = () => {
   const statusCode = 404
   const title = "Page not found"
 
-  return <h2>Hello 404</h2>
-
-  const pageTitle = `${statusCode}: ${title}`
-
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
-      <PageHero title={title} />
+      <MetaTags
+        title="Error 404 - Page not Found"
+        keywords="blockchain, cardano, ergo, wallets, rankings"
+      />
 
-      <BackHomeButton title="Home" marginTop="5rem" />
+      <PageHero title="Page not Found" />
+      <BackHomeButton title="Back to homepage" />
     </>
   )
 }
 
+Page404.suppressFirstRenderFlicker = true
 Page404.getLayout = (page) => <Layout>{page}</Layout>
+
+export default Page404
