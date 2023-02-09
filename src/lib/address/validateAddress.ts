@@ -1,5 +1,5 @@
-import { Base58Address, Bech32Address, RegexAddress, UnrecognizedAddress } from "../../classes"
-import { regexReplace } from "src/core/lib/utils"
+import { Base58Address, Bech32Address, RegexAddress, UnrecognizedAddress } from "./formats"
+import { regexReplace } from "src/lib"
 
 type TUnsupportedAddressReasons = {
   type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"

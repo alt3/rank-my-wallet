@@ -1,7 +1,7 @@
 import { useParam } from "@blitzjs/next"
 import { useQuery } from "@blitzjs/rpc"
 import { MetaTags } from "src/components"
-import { capitalize } from "src/core/lib/utils"
+import { capitalize } from "src/lib"
 import getAddressDetails from "src/core/queries/getAddressDetails"
 import SupportedAddressDetails from "./SupportedAddressDetails"
 import UnsupportedAddressDetails from "./UnsupportedAddressDetails"

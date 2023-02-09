@@ -44,7 +44,7 @@ import {
   SwordfishIcon,
   WhaleIcon,
 } from "src/components/Images/Species"
-import { bigToString, capitalize } from "src/core/lib/utils"
+import { bigToString, capitalize } from "src/lib"
 
 const imageComponents = {
   Crab: CrabIcon,

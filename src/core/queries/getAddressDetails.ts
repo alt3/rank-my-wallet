@@ -1,4 +1,4 @@
-import { getNextSpecies, getSpecies, parseAddress, validateAddress } from "src/core/lib/utils"
+import { getNextSpecies, getSpecies, parseAddress, validateAddress } from "src/lib"
 import fetchData from "./fetchData"
 
 export default async function getAddressDetails(address) {

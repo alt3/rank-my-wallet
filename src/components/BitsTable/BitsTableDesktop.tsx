@@ -3,7 +3,7 @@ import { DataGridCellTypeBinary } from "src/components/DataGrid/DatagridCellType
 import { DataGridCellTypeBit } from "src/components/DataGrid/DatagridCellTypeBit"
 import { DataGridCellTypeDecimal } from "src/components/DataGrid/DataGridCellTypeDecimal"
 import nextId from "react-id-generator"
-import { bitsToByte } from "src/core/lib/utils"
+import { bitsToByte } from "src/lib"
 
 interface BitsTableProps {
   caption: string

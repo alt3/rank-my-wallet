@@ -1,6 +1,6 @@
 import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
 import { Link, TickerString } from "src/components"
-import { bigToString, nanoToTicker } from "src/core/lib/utils"
+import { bigToString, nanoToTicker } from "src/lib"
 import nextId from "react-id-generator"
 
 interface RankingsTableProps {

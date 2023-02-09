@@ -1,5 +1,5 @@
 import addresses from "./address.fixtures"
-import { parseAddress } from "src/core/lib/utils"
+import { parseAddress } from "src/lib"
 
 for (const [index, blockchainAddresses] of Object.entries(addresses)) {
   const blockchain = Object.keys(blockchainAddresses).toString()
