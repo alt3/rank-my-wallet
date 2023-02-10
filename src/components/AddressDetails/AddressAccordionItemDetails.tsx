@@ -13,7 +13,7 @@ export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
   return (
-    <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", sm: "0.5rem" }}>
+    <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
       <h2>
         <AccordionButton p={0}>
           <Box flex="1" textAlign="left">

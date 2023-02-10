@@ -20,6 +20,7 @@ import {
   ExternalLinkIcon,
   Link,
   MetaTags,
+  PageHero,
   PleaseDonate,
   RankingsTable,
   SectionHeader,
@@ -93,12 +94,29 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
       />
 
       <Container maxW="container.md" marginBottom="2.5rem">
-        <Counter
-          blockchain={parsed.blockchain.name}
-          totalAccounts={addressCount}
-          rank={rankings.find(({ position }) => position === "current").rank}
-          balance={balance.nano}
-        ></Counter>
+        {(balance.nano === "0" || balance.nano === 0) && (
+          <PageHero
+            title="Sorry, we do not rank empty wallets"
+            marginBottom={{ base: "2rem", md: "8rem" }}
+          />
+        )}
+
+        {parsed.blockchain.name === "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
+          <>
+            <PageHero
+              title="Cardano Rankings are coming soon"
+              marginBottom={{ base: "2rem", md: "8rem" }}
+            />
+          </>
+        )}
+
+        {parsed.blockchain.name !== "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
+          <Counter
+            blockchain={parsed.blockchain.name}
+            totalAccounts={addressCount}
+            rank={rankings.find(({ position }) => position === "current").rank}
+          />
+        )}
 
         <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
@@ -169,7 +187,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         <Accordion allowMultiple>
           {/* COMPETITION PANE - IF APPLICABLE */}
           {rankings.length > 1 && (
-            <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", sm: "0.5rem" }}>
+            <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
               <h2>
                 <AccordionButton p={0}>
                   <Box flex="1" textAlign="left">
@@ -180,7 +198,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                   </Box>
                 </AccordionButton>
               </h2>
-              <AccordionPanel p={0} pb="2rem">
+              <AccordionPanel p={0}>
                 <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
                   <DataGridEntry
                     field="Competitors"

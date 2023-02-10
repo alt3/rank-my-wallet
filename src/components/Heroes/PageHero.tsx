@@ -8,7 +8,6 @@ export const PageHero = ({ title, ...rest }) => {
     container: {
       maxW: "container.md",
       marginTop: { base: "2.5rem", md: "4rem" },
-      // paddingBottom: { base: "4rem", md: "5rem" },
     },
     heading: {
       fontSize: { base: "4xl", md: "6xl" },
