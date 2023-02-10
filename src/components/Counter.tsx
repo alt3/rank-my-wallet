@@ -16,7 +16,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
     },
     container: {
       maxW: "container.md",
-      paddingBottom: { base: "2rem", md: "2.5rem" },
+      paddingBottom: { base: "1.5rem", md: "4.5rem" },
       paddingLeft: 0,
       paddingRight: 0,
     },

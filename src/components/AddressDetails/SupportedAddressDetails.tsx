@@ -95,12 +95,18 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
       <Container maxW="container.md" marginBottom="2.5rem">
         {(balance.nano === "0" || balance.nano === 0) && (
-          <PageHero title="Sorry, we do not rank empty wallets" marginBottom="6rem" />
+          <PageHero
+            title="Sorry, we do not rank empty wallets"
+            marginBottom={{ base: "2rem", md: "8rem" }}
+          />
         )}
 
         {parsed.blockchain.name === "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
           <>
-            <PageHero title="Cardano Rankings are coming soon" marginBottom="6rem" />
+            <PageHero
+              title="Cardano Rankings are coming soon"
+              marginBottom={{ base: "2rem", md: "8rem" }}
+            />
           </>
         )}
 
