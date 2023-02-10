@@ -17,7 +17,7 @@ export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
   return (
-    <AccordionItem borderStyle="none">
+    <AccordionItem borderStyle="none" marginBottom={"0.5rem"}>
       <AccordionButton p={0}>
         <Box flex="1" textAlign="left">
           <SectionHeader>Address Analysis</SectionHeader>

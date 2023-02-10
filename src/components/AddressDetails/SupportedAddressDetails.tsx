@@ -181,7 +181,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         <Accordion allowMultiple>
           {/* COMPETITION PANE - IF APPLICABLE */}
           {rankings.length > 1 && (
-            <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", sm: "0.5rem" }}>
+            <AccordionItem borderStyle="none" marginBottom={"0.5rem"}>
               <h2>
                 <AccordionButton p={0}>
                   <Box flex="1" textAlign="left">
@@ -192,7 +192,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                   </Box>
                 </AccordionButton>
               </h2>
-              <AccordionPanel p={0} pb="2rem">
+              <AccordionPanel p={0}>
                 <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
                   <DataGridEntry
                     field="Competitors"
