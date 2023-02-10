@@ -20,6 +20,7 @@ import {
   ExternalLinkIcon,
   Link,
   MetaTags,
+  PageHero,
   PleaseDonate,
   RankingsTable,
   SectionHeader,
@@ -93,12 +94,23 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
       />
 
       <Container maxW="container.md" marginBottom="2.5rem">
-        <Counter
-          blockchain={parsed.blockchain.name}
-          totalAccounts={addressCount}
-          rank={rankings.find(({ position }) => position === "current").rank}
-          balance={balance.nano}
-        ></Counter>
+        {(balance.nano === "0" || balance.nano === 0) && (
+          <PageHero title="Sorry, we do not rank empty wallets" marginBottom="0" />
+        )}
+
+        {parsed.blockchain.name === "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
+          <>
+            <PageHero title="Cardano Rankings are coming soon" marginBottom="0" />
+          </>
+        )}
+
+        {parsed.blockchain.name !== "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
+          <Counter
+            blockchain={parsed.blockchain.name}
+            totalAccounts={addressCount}
+            rank={rankings.find(({ position }) => position === "current").rank}
+          />
+        )}
 
         <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
