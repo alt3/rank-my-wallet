@@ -187,7 +187,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         <Accordion allowMultiple>
           {/* COMPETITION PANE - IF APPLICABLE */}
           {rankings.length > 1 && (
-            <AccordionItem borderStyle="none" marginBottom={"0.5rem"}>
+            <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
               <h2>
                 <AccordionButton p={0}>
                   <Box flex="1" textAlign="left">
