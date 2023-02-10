@@ -24,7 +24,7 @@ export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
           </Box>
         </AccordionButton>
       </h2>
-      <AccordionPanel p={0} pb="2rem">
+      <AccordionPanel p={0}>
         <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
           <DataGridEntry
             field="Address"
