@@ -1,7 +1,6 @@
 import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
 import nextId from "react-id-generator"
 import { bigToString, capitalize } from "src/lib"
-import Big from "big.js"
 
 interface SpeciesTableProps {
   blockchain: "cardano" | "ergo"
