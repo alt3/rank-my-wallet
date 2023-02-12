@@ -1,4 +1,6 @@
 import Big from "big.js"
+import { getUserLocale } from "get-user-locale"
+import { getNumberSeparators } from "src/lib"
 import toFormat from "toformat"
 
 /**
@@ -21,9 +23,11 @@ export const bigToString = (
     fractions = formattedBig.dp
   }
 
+  const integerSeparators = getNumberSeparators(getUserLocale())
+
   return formattedBig.toFormat(fractions, {
-    decimalSeparator: ".",
-    groupSeparator: ",",
+    groupSeparator: integerSeparators.group,
+    decimalSeparator: integerSeparators.decimal,
   })
 }
 
