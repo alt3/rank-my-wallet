@@ -1,7 +1,7 @@
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { getUserLocale } from "get-user-locale"
 import Countup from "react-countup"
-import { capitalize, getIntegerSeparator } from "../lib"
+import { capitalize, getNumberSeparators } from "src/lib"
 
 interface CounterProps {
   totalAccounts: number
@@ -50,7 +50,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
                 start={totalAccounts}
                 end={rank}
                 duration={2.75}
-                separator={getIntegerSeparator(getUserLocale())}
+                separator={getNumberSeparators(getUserLocale()).group}
                 useEasing={true}
               />
             </Heading>

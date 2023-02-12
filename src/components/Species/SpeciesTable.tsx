@@ -1,6 +1,6 @@
 import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
 import nextId from "react-id-generator"
-import { capitalize } from "src/lib"
+import { bigToString, capitalize } from "src/lib"
 
 interface SpeciesTableProps {
   blockchain: "cardano" | "ergo"
@@ -68,10 +68,12 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                 <Td {...styles.left}>{capitalize(element.name)}</Td>
                 <Td {...styles.right}>
                   <Box as="span" whiteSpace="nowrap">
-                    <Box as="span" {...styles.currency}>
+                    <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>
                       {tickerSymbol}
                     </Box>{" "}
-                    {element.startsAt.toLocaleString(undefined, { maximumSignificantDigits })}{" "}
+                    {element.startsAt.toString().match("^(?!([0-9]+$)).*$")
+                      ? bigToString(element.startsAt, maximumSignificantDigits)
+                      : bigToString(element.startsAt, 0)}{" "}
                   </Box>
                 </Td>
               </Tr>
