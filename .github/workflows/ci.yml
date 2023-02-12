@@ -24,7 +24,7 @@ jobs:
     - run: npm run lint
 
   # Ensure typescript compiles
-  lint:
+  typescript:
     name: Typescript
     runs-on: ubuntu-latest
     steps:
