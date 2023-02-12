@@ -8,7 +8,6 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
     <>
       <Head>
         <title>{title || "wallet-rankings"}</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* This flex keeps the footer nicely at bottom. See // https://stackoverflow.com/a/66565163/9850103 */}
