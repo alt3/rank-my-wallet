@@ -7,7 +7,7 @@ const species = {
       icon: "Ghost",
     },
     {
-      startsAt: "0.000001",
+      startsAt: 0.000001,
       name: "plankton",
       icon: "Plankton",
     },
@@ -115,7 +115,7 @@ const species = {
       icon: "Ghost",
     },
     {
-      startsAt: "0.000000001",
+      startsAt: 0.000000001,
       name: "plankton",
       icon: "Plankton",
     },

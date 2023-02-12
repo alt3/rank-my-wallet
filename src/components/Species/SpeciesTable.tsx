@@ -1,12 +1,13 @@
 import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
 import nextId from "react-id-generator"
 import { bigToString, capitalize } from "src/lib"
+import Big from "big.js"
 
 interface SpeciesTableProps {
   blockchain: "cardano" | "ergo"
   tickerSymbol: "₳" | "Σ"
   species: {
-    startsAt: string
+    startsAt: number
     name: string
   }[]
 }
@@ -71,7 +72,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                     <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>
                       {tickerSymbol}
                     </Box>{" "}
-                    {element.startsAt.toString().includes(".")
+                    {element.startsAt.toString().match("^(?!([0-9]+$)).*$")
                       ? bigToString(element.startsAt, maximumSignificantDigits)
                       : bigToString(element.startsAt, 0)}{" "}
                   </Box>
