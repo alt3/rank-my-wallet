@@ -1,6 +1,5 @@
 import { BlitzPage } from "@blitzjs/next"
-import { Container } from "@chakra-ui/react"
-import { BlockChains, Hero, MetaTags, Sponsors } from "src/components"
+import { BlockChains, ContentContainer, Hero, MetaTags, Sponsors } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const Home: BlitzPage = () => {
@@ -14,10 +13,10 @@ const Home: BlitzPage = () => {
 
       <Hero />
 
-      <Container maxW="container.md" marginBottom="2.5rem">
+      <ContentContainer>
         <BlockChains />
         <Sponsors />
-      </Container>
+      </ContentContainer>
     </>
   )
 }

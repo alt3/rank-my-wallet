@@ -1,14 +1,10 @@
 import { BlitzPage } from "@blitzjs/next"
-import { Container, Text, useColorModeValue } from "@chakra-ui/react"
-import { ExternalLinkIcon, Link, MetaTags, PageHero } from "src/components"
+import { Text, useColorModeValue } from "@chakra-ui/react"
+import { ContentContainer, ExternalLinkIcon, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const Sponsoring: BlitzPage = () => {
   const styles = {
-    container: {
-      maxW: "container.md",
-      marginBottom: "2.5rem",
-    },
     link: {
       color: useColorModeValue("teal.500", "teal.300"),
     },
@@ -22,7 +18,7 @@ const Sponsoring: BlitzPage = () => {
         keywords="blockchain, cardano, ergo, wallets, rankings, sponsoring, sponsor"
       />
 
-      <Container {...styles.container}>
+      <ContentContainer>
         <PageHero title="Become a Sponsor" />
 
         <Text width="70%" margin="auto" textAlign={"center"} marginBottom={10}>
@@ -41,13 +37,14 @@ const Sponsoring: BlitzPage = () => {
             aria-label="RankMyWallet on Twitter"
             isExternal
             passHref
+            withExternalIcon
             {...styles.link}
           >
-            Twitter <ExternalLinkIcon />
+            Twitter
           </Link>{" "}
           for details.
         </Text>
-      </Container>
+      </ContentContainer>
     </>
   )
 }
