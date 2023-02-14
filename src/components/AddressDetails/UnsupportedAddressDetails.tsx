@@ -1,15 +1,14 @@
-import { Accordion, Container, Divider, useColorModeValue } from "@chakra-ui/react"
+import { Accordion, Divider, useColorModeValue } from "@chakra-ui/react"
 import {
   AddressAccordionItemAnalysis,
   AddressAccordionItemDetails,
   AddressForm,
+  ContentContainer,
   ErrorHero,
   MetaTags,
 } from "src/components"
 
 export function UnsupportedAddressDetails({ parsed }) {
-  const colorTeal = useColorModeValue("teal.500", "teal.300")
-
   return (
     <>
       <MetaTags
@@ -18,7 +17,7 @@ export function UnsupportedAddressDetails({ parsed }) {
         keywords={`blockchain, wallets, rankings, species, address-analyzer`}
       />
 
-      <Container maxW="container.md" marginBottom="2.5rem">
+      <ContentContainer>
         <ErrorHero title="Unsupported Address" subtitle={parsed.unsupported.message}></ErrorHero>
 
         <AddressForm
@@ -37,7 +36,7 @@ export function UnsupportedAddressDetails({ parsed }) {
             </Accordion>
           </>
         )}
-      </Container>
+      </ContentContainer>
     </>
   )
 }

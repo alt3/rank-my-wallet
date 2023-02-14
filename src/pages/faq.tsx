@@ -1,7 +1,6 @@
 import { BlitzPage } from "@blitzjs/next"
 import {
   Accordion,
-  Container,
   ListItem,
   Tab,
   TabList,
@@ -11,15 +10,11 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react"
-import { AccordionItemFaq, Link, MetaTags, PageHero } from "src/components"
+import { AccordionItemFaq, ContentContainer, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const FaqPage: BlitzPage = () => {
   const styles = {
-    container: {
-      maxW: "container.md",
-      marginBottom: "2.5rem",
-    },
     listItems: {
       marginLeft: "0.25rem",
     },
@@ -33,7 +28,7 @@ const FaqPage: BlitzPage = () => {
         keywords="blockchain, cardano, ergo, wallets, rankings, species, faq, questions"
       />
 
-      <Container {...styles.container}>
+      <ContentContainer>
         <PageHero title="Frequently Asked Questions (FAQ)" />
 
         <Tabs variant="enclosed" colorScheme="teal">
@@ -113,7 +108,7 @@ const FaqPage: BlitzPage = () => {
             </TabPanel>
           </TabPanels>
         </Tabs>
-      </Container>
+      </ContentContainer>
     </>
   )
 }

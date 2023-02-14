@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Container,
   Divider,
   Grid,
   GridItem,
@@ -14,6 +13,7 @@ import {
 import {
   AddressAccordionItemAnalysis,
   AddressAccordionItemDetails,
+  ContentContainer,
   Counter,
   DataGrid,
   DataGridEntry,
@@ -92,7 +92,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         keywords={`blockchain, ${parsed.blockchain.name}, wallets, rankings, species, address-analyzer`}
       />
 
-      <Container maxW="container.md" marginBottom="2.5rem">
+      <ContentContainer>
         {(balance.nano === "0" || balance.nano === 0) && (
           <PageHero
             title="Sorry, we do not rank empty wallets"
@@ -218,7 +218,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
           <AddressAccordionItemDetails parsedAddress={parsed} />
           <AddressAccordionItemAnalysis parsedAddress={parsed} />
         </Accordion>
-      </Container>
+      </ContentContainer>
     </>
   )
 }
