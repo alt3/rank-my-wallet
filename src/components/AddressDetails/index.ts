@@ -1,3 +1,3 @@
-export * from "./AddressAccordionItemDetails"
-export * from "./AddressAccordionItemAnalysis"
+export * from "./AccordionItemAddressAnalysis"
+export * from "./AccordionItemAddressDetails"
 export * from "./AddressDetails"
