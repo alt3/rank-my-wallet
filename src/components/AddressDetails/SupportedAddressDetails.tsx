@@ -17,7 +17,6 @@ import {
   Counter,
   DataGrid,
   DataGridEntry,
-  ExternalLinkIcon,
   Link,
   MetaTags,
   PageHero,
@@ -140,8 +139,9 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 title={`${capitalize(parsed.blockchain.name)} Species`}
                 color={useColorModeValue("pink.600", "pink.400")}
                 passHref
+                withExternalIcon
               >
-                {capitalize(species.current.name)} <ExternalLinkIcon />
+                {capitalize(species.current.name)}
               </Link>
             </GridItem>
 
