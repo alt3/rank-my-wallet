@@ -1,7 +1,7 @@
-import { Accordion, Divider, useColorModeValue } from "@chakra-ui/react"
+import { Accordion, Divider } from "@chakra-ui/react"
 import {
-  AddressAccordionItemAnalysis,
-  AddressAccordionItemDetails,
+  AccordionItemAddressAnalysis,
+  AccordionItemAddressDetails,
   AddressForm,
   ContentContainer,
   ErrorHero,
@@ -31,8 +31,8 @@ export function UnsupportedAddressDetails({ parsed }) {
             <Divider marginBottom={{ base: "1.5rem", sm: "1.5rem" }} />
 
             <Accordion allowMultiple>
-              <AddressAccordionItemDetails parsedAddress={parsed} />
-              <AddressAccordionItemAnalysis parsedAddress={parsed} />
+              <AccordionItemAddressDetails parsedAddress={parsed} />
+              <AccordionItemAddressAnalysis parsedAddress={parsed} />
             </Accordion>
           </>
         )}

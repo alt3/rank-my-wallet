@@ -13,7 +13,7 @@ import nextId from "react-id-generator"
 import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "src/components"
 import { capitalize } from "src/lib"
 
-export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
+export function AccordionItemAddressAnalysis({ parsedAddress, ...rest }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
   return (
@@ -84,4 +84,4 @@ export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
     </AccordionItem>
   )
 }
-export default AddressAccordionItemAnalysis
+export default AccordionItemAddressAnalysis

@@ -11,8 +11,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import {
-  AddressAccordionItemAnalysis,
-  AddressAccordionItemDetails,
+  AccordionItemAddressAnalysis,
+  AccordionItemAddressDetails,
   ContentContainer,
   Counter,
   DataGrid,
@@ -215,8 +215,8 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             </AccordionItem>
           )}
 
-          <AddressAccordionItemDetails parsedAddress={parsed} />
-          <AddressAccordionItemAnalysis parsedAddress={parsed} />
+          <AccordionItemAddressDetails parsedAddress={parsed} />
+          <AccordionItemAddressAnalysis parsedAddress={parsed} />
         </Accordion>
       </ContentContainer>
     </>

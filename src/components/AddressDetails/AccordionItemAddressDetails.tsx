@@ -9,7 +9,7 @@ import {
 import { DataGrid, DataGridEntry, SectionHeader } from "src/components"
 import { capitalize } from "src/lib"
 
-export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
+export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
   return (
@@ -59,4 +59,4 @@ export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
     </AccordionItem>
   )
 }
-export default AddressAccordionItemDetails
+export default AccordionItemAddressDetails
