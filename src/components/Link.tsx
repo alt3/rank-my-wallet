@@ -1,9 +1,14 @@
 import { Link as ChakraLink, LinkProps as ChakraLinkProps } from "@chakra-ui/react"
 import NextLink, { LinkProps as NextLinkProps } from "next/link"
+import { ExternalLinkIcon } from "src/components"
 
 interface LinkProps extends NextLinkProps, Omit<ChakraLinkProps, keyof NextLinkProps> {}
 
-export const Link: React.FC<LinkProps> = ({
+interface CustomLinkProps extends LinkProps {
+  withExternalIcon?: boolean
+}
+
+export const Link: React.FC<CustomLinkProps> = ({
   children,
   href,
   as,
@@ -14,9 +19,13 @@ export const Link: React.FC<LinkProps> = ({
   replace,
   scroll,
   shallow,
+  withExternalIcon,
   ...props
 }) => (
   <NextLink {...{ href, as, locale, legacyBehavior, passHref, prefetch, replace, scroll, shallow }}>
-    <ChakraLink {...props}>{children}</ChakraLink>
+    <ChakraLink {...props}>
+      {children}
+      {withExternalIcon && <ExternalLinkIcon marginLeft="0.25rem" />}
+    </ChakraLink>
   </NextLink>
 )

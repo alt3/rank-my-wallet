@@ -49,24 +49,29 @@ const FaqPage: BlitzPage = () => {
                 <AccordionItemFaq question="What technology stack does this website use?">
                   <UnorderedList>
                     <ListItem {...styles.listItems}>
-                      <Link href="https://blitzjs.com/" isExternal passHref>
+                      <Link href="https://blitzjs.com/" isExternal passHref withExternalIcon>
                         Blitzjs
                       </Link>
                     </ListItem>
                     <ListItem {...styles.listItems}>
-                      <Link href="https://chakra-ui.com/" isExternal passHref>
+                      <Link href="https://chakra-ui.com/" isExternal passHref withExternalIcon>
                         Chakra-UI
                       </Link>
                     </ListItem>
                     <ListItem {...styles.listItems}>
-                      <Link href="https://ergo.watch" isExternal passHref>
+                      <Link href="https://ergo.watch" isExternal passHref withExternalIcon>
                         Ergo Watch
                       </Link>
                     </ListItem>
                   </UnorderedList>
                 </AccordionItemFaq>
                 <AccordionItemFaq question="Where do I report bugs?">
-                  <Link href="https://github.com/alt3/rank-my-wallet/issues" isExternal passHref>
+                  <Link
+                    href="https://github.com/alt3/rank-my-wallet/issues"
+                    isExternal
+                    passHref
+                    withExternalIcon
+                  >
                     Github Issues
                   </Link>
                 </AccordionItemFaq>
