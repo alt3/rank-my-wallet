@@ -10,14 +10,11 @@ import {
   Tabs,
   Text,
   UnorderedList,
-  useColorModeValue,
 } from "@chakra-ui/react"
-import { AccordionItemFaq, MetaTags, Link, PageHero } from "src/components"
+import { AccordionItemFaq, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const FaqPage: BlitzPage = () => {
-  const accordionIconColor = useColorModeValue("teal.500", "teal.300")
-
   const styles = {
     container: {
       maxW: "container.md",
