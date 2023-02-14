@@ -71,12 +71,23 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
             <Link href={"/"} onClick={() => onClose()}>
               Home
             </Link>
+
             <Link href={"/species"} aria-label="Species" onClick={() => onClose()}>
-              Blockchain Species
+              Species
             </Link>
+
             <Link href={"/tipbox"} aria-label="Tip Box" onClick={() => onClose()}>
               Tip Box
             </Link>
+
+            <Link
+              href={"/faq"}
+              aria-label="Frequently Asked Questions (FAQ)"
+              onClick={() => onClose()}
+            >
+              FAQ
+            </Link>
+
             <Link
               href={"https://twitter.com/RankMyWallet/"}
               aria-label="RankMyWallet on Twitter"

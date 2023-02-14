@@ -62,6 +62,17 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
           </Link>
 
           <Link
+            href="/faq"
+            aria-label="Frequently Asked Questions (FAQ)"
+            textDecoration="none !important"
+            passHref
+          >
+            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
+              FAQ
+            </Button>
+          </Link>
+
+          <Link
             href="https://www.twitter.com/RankMyWallet/"
             aria-label="RankMyWallet on Twitter"
             isExternal

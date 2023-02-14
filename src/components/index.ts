@@ -1,3 +1,4 @@
+export * from "./AccordionItemFaq"
 export * from "./AddressDetails"
 export * from "./AddressForm"
 export * from "./BackHomeButton"
