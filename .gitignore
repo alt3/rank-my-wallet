@@ -31,6 +31,10 @@ blitz-log.log
 logs
 *.log
 
+# Translations
+/src/translations/**/*.mo
+
+
 # Runtime data
 pids
 *.pid
