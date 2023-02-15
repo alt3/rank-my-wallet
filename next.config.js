@@ -12,6 +12,10 @@ const withBundleAnalyzer = shouldAnalyzeBundles
  **/
 const config = {
   // experimental: { appDir: true },
+  i18n: {
+    locales: ["en", "nl", "pseudo"],
+    defaultLocale: "en",
+  },
 }
 
 module.exports = withBlitz(withBundleAnalyzer(config))
