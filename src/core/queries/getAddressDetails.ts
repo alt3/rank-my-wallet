@@ -17,8 +17,8 @@ export default async function getAddressDetails(address) {
 
   // still here, supported address
   if (
-    validatedAddress.blockchain.name !== "cardano" &&
-    validatedAddress.blockchain.name !== "ergo"
+    validatedAddress.blockchain.name !== "Cardano" &&
+    validatedAddress.blockchain.name !== "Ergo"
   ) {
     throw "we should never reach this point without being Cardano or Ergo"
   }

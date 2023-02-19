@@ -30,7 +30,7 @@ export function UnsupportedAddressDetails({ parsed }) {
           marginBottom={{ base: "4rem", sm: "7rem" }}
         />
 
-        {["cardano", "ergo"].includes(parsed.blockchain.name) && (
+        {["Cardano", "Ergo"].includes(parsed.blockchain.name) && (
           <>
             <Divider marginBottom={{ base: "1.5rem", sm: "1.5rem" }} />
 

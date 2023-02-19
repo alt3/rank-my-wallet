@@ -39,17 +39,17 @@ const FaqPage: BlitzPage = () => {
           <TabList>
             <Tab>
               <Text>
-                <Trans>general</Trans>
+                <Trans>General</Trans>
               </Text>
             </Tab>
             <Tab>
               <Text>
-                <Trans>cardano</Trans>
+                <Trans>Cardano</Trans>
               </Text>
             </Tab>
             <Tab>
               <Text>
-                <Trans>ergo</Trans>
+                <Trans>Ergo</Trans>
               </Text>
             </Tab>
           </TabList>

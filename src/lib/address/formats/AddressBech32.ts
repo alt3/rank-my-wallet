@@ -19,51 +19,51 @@ const shelleyAddressTypes = [
   {
     type: 0,
     bits: [0, 0, 0, 0],
-    name: "type-00 (Base Address)",
+    name: "Type-00 (Base Address)",
   },
   {
     type: 1,
-    name: "type-01",
+    name: "Type-01",
     bits: [1, 0, 0, 0],
   },
   {
     type: 2,
-    name: "type-02",
+    name: "Type-02",
     bits: [0, 1, 0, 0],
   },
   {
     type: 3,
-    name: "type-03",
+    name: "Type-03",
     bits: [1, 1, 0, 0],
   },
   {
     type: 4,
-    name: "type-04",
+    name: "Type-04",
     bits: [0, 0, 1, 0],
   },
   {
     type: 5,
-    name: "type-05",
+    name: "Type-05",
     bits: [1, 0, 1, 0],
   },
   {
     type: 6,
-    name: "type-06",
+    name: "Type-06",
     bits: [0, 1, 1, 0],
   },
   {
     type: 7,
-    name: "type-07",
+    name: "Type-07",
     bits: [1, 1, 1, 0],
   },
   {
     type: 14,
-    name: "type-14 (Stake Address)",
+    name: "Type-14 (Stake Address)",
     bits: [0, 1, 1, 1],
   },
   {
     type: 15,
-    name: "type-15",
+    name: "Type-15",
     bits: [1, 1, 1, 1],
   },
 ]
@@ -87,7 +87,7 @@ export class Bech32Address extends BlockchainAddress {
     super(address) // sets address property in the base class (lowercased there)
     this.class = this.constructor.name
 
-    this.encoding = "bech32"
+    this.encoding = "Bech32"
 
     const prefix = decoded.prefix
     const words = decoded.words
@@ -102,20 +102,20 @@ export class Bech32Address extends BlockchainAddress {
     if (words !== undefined) {
       // reject bitcoin addresses
       if (["bc", "tb"].includes(prefix)) {
-        this.blockchain.name = "bitcoin"
+        this.blockchain.name = "Bitcoin"
         return
       }
 
       // reject non-cardano prefixes
       if (["addr", "addr_test"].includes(prefix)) {
-        this.blockchain.name = "unrecognized bech32"
+        this.blockchain.name = "Unrecognized Bech32"
       }
 
       // still here so must be a supported cardano address
       this.isSupported = true
-      this.blockchain.name = "cardano"
+      this.blockchain.name = "Cardano"
       this.blockchain.explorerUrl = `https://pool.pm/`
-      this.version = "shelley"
+      this.version = "Shelley"
       this.decoded.bytes = Array.from(bytesBuffer)
       this.currency = {
         decimals: 6,
@@ -179,8 +179,8 @@ export class Bech32Address extends BlockchainAddress {
             this.isSupported = false
           }
 
-          // invalidate address if not mainnet or not type-00
-          if (this.blockchain.network !== "mainnet") {
+          // invalidate address if not mainnet or not Type-00
+          if (this.blockchain.network !== "Mainnet") {
             this.isSupported = false
           }
 
@@ -215,11 +215,11 @@ function getShelleyNetwork(networkBits: Array<number>) {
   const sum = networkBits.reduce((a, b) => a + b)
 
   if (sum === 0) {
-    return "testnet"
+    return "Testnet"
   }
 
   if (sum === 1) {
-    return "mainnet"
+    return "Mainnet"
   }
 
   throw `Unable to determine Shelley network using network header bits ${networkBits.join()}`

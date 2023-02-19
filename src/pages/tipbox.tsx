@@ -36,12 +36,12 @@ const TipBox: BlitzPage = () => {
         <Box>
           <SimpleGrid {...styles.grid}>
             <TipboxCard
-              title={<Trans>cardano</Trans>}
+              title={<Trans>Cardano</Trans>}
               address={tipboxAddresses.cardano}
               url={`https://pool.pm/${tipboxAddresses.cardano}`}
             />
             <TipboxCard
-              title={<Trans>ergo</Trans>}
+              title={<Trans>Ergo</Trans>}
               address={tipboxAddresses.ergo}
               url={`https://explorer.ergoplatform.com/en/addresses/${tipboxAddresses.ergo}`}
             />

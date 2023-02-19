@@ -46,8 +46,8 @@ export const validateAddress = function (
   // let reason = {} as TUnsupportedAddressReasons
 
   if (parsedAddress.blockchain.name) {
-    // blockchain but not cardano or erg
-    if (!["cardano", "ergo"].includes(parsedAddress.blockchain.name)) {
+    // recognized blockchain but not cardano or erg
+    if (!["Cardano", "Ergo"].includes(parsedAddress.blockchain.name)) {
       const reason = getReason("UnsupportedBlockchain")
 
       parsedAddress.unsupported = {
@@ -61,7 +61,7 @@ export const validateAddress = function (
     }
 
     // not mainnet
-    if (parsedAddress.blockchain.network !== "mainnet") {
+    if (parsedAddress.blockchain.network !== "Mainnet") {
       const reason = getReason("UnsupportedNetwork")
 
       if (!parsedAddress.blockchain.network) {
@@ -78,7 +78,7 @@ export const validateAddress = function (
     }
 
     // not a normal Cardano Type-00 address
-    if (parsedAddress.blockchain.name === "cardano" && parsedAddress.type.type !== 0) {
+    if (parsedAddress.blockchain.name === "Cardano" && parsedAddress.type.type !== 0) {
       const reason = getReason("UnsupportedType")
 
       parsedAddress.unsupported = {
@@ -93,7 +93,7 @@ export const validateAddress = function (
     }
 
     // not a normal Ergo P2PK address
-    if (parsedAddress.blockchain.name === "ergo" && parsedAddress.type.type !== 1) {
+    if (parsedAddress.blockchain.name === "Ergo" && parsedAddress.type.type !== 1) {
       const reason = getReason("UnsupportedType")
 
       parsedAddress.unsupported = {

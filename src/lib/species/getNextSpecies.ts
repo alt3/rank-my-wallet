@@ -9,7 +9,7 @@ import Big from "big.js"
  */
 
 export const getNextSpecies = function (
-  blockchain: "cardano" | "ergo",
+  blockchain: "Cardano" | "Ergo",
   balance: Big,
   currentSpeciesName: string
 ): { name: string; startsAt: number; requires: Big } | undefined {

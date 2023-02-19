@@ -12,22 +12,22 @@ export class RegexAddress extends BlockchainAddress {
     this.class = this.constructor.name
 
     if (ethereumRegex({ exact: true }).test(address)) {
-      this.blockchain.name = "ethereum"
+      this.blockchain.name = "Ethereum"
       return
     }
 
     if (rippleRegex({ exact: true }).test(address)) {
-      this.blockchain.name = "ripple"
+      this.blockchain.name = "Ripple"
       return
     }
 
     if (moneroRegex({ exact: true }).test(address)) {
-      this.blockchain.name = "monero"
+      this.blockchain.name = "Monero"
       return
     }
 
     if (address.match(/^[1-9A-HJ-NP-Za-km-z]{32,44}$/)) {
-      this.blockchain.name = "solana"
+      this.blockchain.name = "Solana"
       return
     }
   }

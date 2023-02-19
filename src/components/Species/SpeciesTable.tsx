@@ -4,7 +4,7 @@ import nextId from "react-id-generator"
 import { bigToString } from "src/lib"
 
 interface SpeciesTableProps {
-  blockchain: "cardano" | "ergo"
+  blockchain: "Cardano" | "Ergo"
   tickerSymbol: "₳" | "Σ"
   species: {
     startsAt: number
@@ -13,7 +13,7 @@ interface SpeciesTableProps {
 }
 
 export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTableProps) {
-  const maximumSignificantDigits = blockchain === "cardano" ? 6 : 8
+  const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
 
   const styles = {
     caption: {
@@ -26,13 +26,15 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
       width: { base: "100", sm: "100%" },
       marginBottom: "3rem",
     },
-    left: {
+    th: {
       fontSize: "sm",
+    },
+    left: {
       textAlign: "left" as const,
       paddingLeft: 0,
     },
     right: {
-      fontSize: "sm",
+      // fontSize: "sm",
       textAlign: "right" as const,
       paddingRight: 0,
     },
@@ -43,13 +45,13 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
       <Table variant="simple" {...styles.table}>
         <Thead>
           <Tr>
-            <Th {...styles.left} maxWidth="10px">
+            <Th {...styles.th} {...styles.left} maxWidth="10px">
               #
             </Th>
-            <Th {...styles.left}>
+            <Th {...styles.th} {...styles.left}>
               <Trans>SpeciesSingular</Trans>
             </Th>
-            <Th {...styles.right} textAlign="right">
+            <Th {...styles.th} {...styles.right} textAlign="right">
               <Trans>Starts At</Trans>
             </Th>
           </Tr>

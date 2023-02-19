@@ -22,13 +22,13 @@ export function SpeciesNavBar({ ...rest }) {
     <Center>
       <Link href="/species/cardano" {...styles.link}>
         <Button {...styles.button} aria-label={t`Cardano Species`} width={140} marginRight={5}>
-          <Trans>cardano</Trans>
+          <Trans>Cardano</Trans>
         </Button>
       </Link>
 
       <Link href="/species/ergo" {...styles.link}>
         <Button {...styles.button} aria-label={t`Ergo Species`} width={140}>
-          <Trans>ergo</Trans>
+          <Trans>Ergo</Trans>
         </Button>
       </Link>
     </Center>

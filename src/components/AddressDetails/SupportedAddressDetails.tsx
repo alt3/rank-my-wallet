@@ -102,7 +102,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
           />
         )}
 
-        {parsed.blockchain.name === "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
+        {parsed.blockchain.name === "Cardano" && balance.nano !== "0" && balance.nano !== 0 && (
           <>
             <PageHero
               title={<Trans>Cardano Rankings are coming soon</Trans>}
@@ -111,7 +111,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
           </>
         )}
 
-        {parsed.blockchain.name !== "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
+        {parsed.blockchain.name !== "Cardano" && balance.nano !== "0" && balance.nano !== 0 && (
           <Counter
             blockchain={parsed.blockchain.name}
             totalAccounts={addressCount}

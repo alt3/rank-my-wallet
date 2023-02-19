@@ -20,9 +20,9 @@ const CardanoPage: BlitzPage = () => {
         <PageHero title={<Trans>Cardano Species</Trans>} />
 
         <SpeciesTable
-          blockchain="cardano"
+          blockchain="Cardano"
           tickerSymbol="₳"
-          species={species["cardano"].slice(1)}
+          species={species["Cardano"].slice(1)}
         ></SpeciesTable>
       </ContentContainer>
     </>

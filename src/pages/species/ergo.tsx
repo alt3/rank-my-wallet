@@ -20,9 +20,9 @@ const ErgoSpeciesPage: BlitzPage = () => {
         <PageHero title={<Trans>Ergo Species</Trans>} />
 
         <SpeciesTable
-          blockchain="ergo"
+          blockchain="Ergo"
           tickerSymbol="Σ"
-          species={species["ergo"].slice(1)}
+          species={species["Ergo"].slice(1)}
         ></SpeciesTable>
       </ContentContainer>
     </>

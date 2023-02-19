@@ -43,8 +43,8 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
         <Center>
           <Stack spacing={2} width="100%" align="center">
             <Heading {...styles.heading}>
-              {blockchain === "cardano" && <Trans>You are Cardano holder</Trans>}
-              {blockchain === "ergo" && <Trans>You are Ergo holder</Trans>}
+              {blockchain === "Cardano" && <Trans>You are Cardano holder</Trans>}
+              {blockchain === "Ergo" && <Trans>You are Ergo holder</Trans>}
             </Heading>
             <Heading as="h3" {...styles.heading} {...styles.counter}>
               <Text as="span" marginRight="0.6rem">
