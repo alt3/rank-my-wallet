@@ -1,8 +1,12 @@
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { BsHeartFill } from "react-icons/bs"
 import { FrontpageCard } from "./Cards"
 
 export function Sponsors() {
+  useLingui()
+
   const styles = {
     caption: {
       fontSize: "sm",
@@ -21,12 +25,12 @@ export function Sponsors() {
     <Box marginBottom="6rem">
       <Center>
         <Text as="h2" textTransform="uppercase" {...styles.caption}>
-          Sponsored By:
+          <Trans>Sponsored By:</Trans>
         </Text>
       </Center>
 
       <SimpleGrid {...styles.grid}>
-        <FrontpageCard title="Become a sponsor" url="/sponsoring" isExternal={false}>
+        <FrontpageCard title={t`Become a sponsor`} url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
@@ -35,11 +39,11 @@ export function Sponsors() {
               color="red"
               marginRight="0.25rem"
             />
-            Your Project
+            <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>
 
-        <FrontpageCard title="Become a sponsor" url="/sponsoring" isExternal={false}>
+        <FrontpageCard title={t`Become a sponsor`} url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
@@ -48,11 +52,11 @@ export function Sponsors() {
               color="red"
               marginRight="0.25rem"
             />
-            Your Project
+            <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>
 
-        <FrontpageCard title="Become a sponsor" url="/sponsoring" isExternal={false}>
+        <FrontpageCard title={t`Become a sponsor`} url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
@@ -61,7 +65,7 @@ export function Sponsors() {
               color="red"
               marginRight="0.25rem"
             />
-            Your Project
+            <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>
       </SimpleGrid>

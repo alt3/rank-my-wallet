@@ -1,6 +1,6 @@
 import {
-  Button,
   Box,
+  Button,
   ChakraProps,
   FormControl,
   FormErrorMessage,
@@ -8,6 +8,8 @@ import {
   Input,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { t } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { useRouter } from "next/router"
 import React from "react"
 import { useForm } from "react-hook-form"
@@ -17,6 +19,8 @@ interface IAddressFormProps extends ChakraProps {
 }
 
 export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
+  useLingui()
+
   const router = useRouter()
 
   const {
@@ -45,6 +49,8 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
     },
   }
 
+  const requiredErrorMessage = t`Please provide a wallet address`
+
   return (
     <Box style={{ width: "100%" }} {...rest}>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -55,11 +61,11 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
               placeholder={placeholder}
               {...styles.input}
               {...register("address", {
-                required: "Please provide a wallet address",
+                required: requiredErrorMessage,
               })}
             ></Input>
             <Button size="lg" isLoading={isSubmitting} type="submit" colorScheme="teal">
-              Go
+              {t`Go`}
             </Button>
           </HStack>
           <FormErrorMessage>
