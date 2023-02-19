@@ -1,8 +1,11 @@
 import { Button, Center } from "@chakra-ui/react"
-import { Trans } from "@lingui/macro"
+import { t, Trans } from "@lingui/macro"
 import { Link } from "src/components"
+import { useLingui } from "@lingui/react"
 
 export function SpeciesNavBar({ ...rest }) {
+  useLingui()
+
   const styles = {
     link: {
       textDecoration: "none !important",
@@ -17,14 +20,14 @@ export function SpeciesNavBar({ ...rest }) {
 
   return (
     <Center>
-      <Link href="/species/cardano" aria-label="Cardano Species" {...styles.link}>
-        <Button {...styles.button} width={140} marginRight={5}>
+      <Link href="/species/cardano" {...styles.link}>
+        <Button {...styles.button} aria-label={t`Cardano Species`} width={140} marginRight={5}>
           <Trans>cardano</Trans>
         </Button>
       </Link>
 
-      <Link href="/species/ergo" aria-label="Ergo Species" {...styles.link}>
-        <Button {...styles.button} width={140}>
+      <Link href="/species/ergo" {...styles.link}>
+        <Button {...styles.button} aria-label={t`Ergo Species`} width={140}>
           <Trans>ergo</Trans>
         </Button>
       </Link>

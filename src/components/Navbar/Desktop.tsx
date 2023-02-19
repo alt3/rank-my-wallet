@@ -28,8 +28,9 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
         <Flex align="left">
-          <Link href="/" aria-label={t`Home`} passHref>
+          <Link href="/" passHref>
             <Logo
+              aria-label={t`Home`}
               marginTop="0.5rem"
               h="10"
               pointerEvents="none"
@@ -48,40 +49,43 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
-          <Link
-            href="/species"
-            aria-label={t`Blockchain Species`}
-            textDecoration="none !important"
-            passHref
-          >
-            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
+          <Link href="/species" textDecoration="none !important" passHref>
+            <Button
+              variant="ghost"
+              aria-label={t`Blockchain Species`}
+              color="inherit"
+              fontWeight="normal"
+              textDecoration="none"
+            >
               <Trans>SpeciesPlural</Trans>
             </Button>
           </Link>
 
-          <Link href="/tipbox" aria-label={t`Tip Box`} textDecoration="none !important" passHref>
-            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
+          <Link href="/tipbox" textDecoration="none !important" passHref>
+            <Button
+              variant="ghost"
+              aria-label={t`Tip Box`}
+              color="inherit"
+              fontWeight="normal"
+              textDecoration="none"
+            >
               <Trans>Tip Box</Trans>
             </Button>
           </Link>
 
-          <Link
-            href="/faq"
-            aria-label={t`Frequently Asked Questions (FAQ)`}
-            textDecoration="none !important"
-            passHref
-          >
-            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
+          <Link href="/faq" textDecoration="none !important" passHref>
+            <Button
+              variant="ghost"
+              aria-label={t`Frequently Asked Questions (FAQ)`}
+              color="inherit"
+              fontWeight="normal"
+              textDecoration="none"
+            >
               <Trans>FAQ</Trans>
             </Button>
           </Link>
 
-          <Link
-            href="https://www.twitter.com/RankMyWallet/"
-            aria-label={t`RankMyWallet on Twitter`}
-            isExternal
-            passHref
-          >
+          <Link href="https://www.twitter.com/RankMyWallet/" isExternal passHref>
             <IconButton
               size="lg"
               maxWidth="1rem"
@@ -95,12 +99,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
             />
           </Link>
 
-          <Link
-            href="https://github.com/alt3/rank-my-wallet/"
-            aria-label={t`RankMyWallet on Github`}
-            isExternal
-            passHref
-          >
+          <Link href="https://github.com/alt3/rank-my-wallet/" isExternal passHref>
             <IconButton
               size="lg"
               maxWidth="1rem"
@@ -118,7 +117,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
             size="lg"
             maxWidth="1rem"
             ml={0}
-            aria-label={t`Switch to ${text} mode`}
+            aria-label={`Switch to ${text} mode`}
             variant="ghost"
             color="current"
             marginLeft="0"

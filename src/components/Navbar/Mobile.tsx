@@ -42,7 +42,7 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
       width="100%"
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
-        <Link href="/" aria-label={t`Home`} passHref marginLeft={"-1"}>
+        <Link href="/" passHref marginLeft={"-1"}>
           <LogoMobile marginTop="0.25rem" h="8" pointerEvents="none" fill={logoColorPrimary} />
         </Link>
 
@@ -72,29 +72,24 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
 
         <Drawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} title={null} footer={null}>
           <VStack alignItems="right">
-            <Link href={"/"} aria-label={t`Home`} onClick={() => onClose()}>
+            <Link href={"/"} onClick={() => onClose()}>
               <Trans>Home</Trans>
             </Link>
 
-            <Link href={"/species"} aria-label={t`Blockchain Species`} onClick={() => onClose()}>
+            <Link href={"/species"} onClick={() => onClose()}>
               <Trans>SpeciesPlural</Trans>
             </Link>
 
-            <Link href={"/tipbox"} aria-label={t`Tip Box`} onClick={() => onClose()}>
+            <Link href={"/tipbox"} onClick={() => onClose()}>
               <Trans>Tip Box</Trans>
             </Link>
 
-            <Link
-              href={"/faq"}
-              aria-label={t`Frequently Asked Questions (FAQ)`}
-              onClick={() => onClose()}
-            >
+            <Link href={"/faq"} onClick={() => onClose()}>
               <Trans>FAQ</Trans>
             </Link>
 
             <Link
               href={"https://twitter.com/RankMyWallet/"}
-              aria-label={t`RankMyWallet on Twitter`}
               onClick={() => onClose()}
               isExternal
               passHref
@@ -106,7 +101,6 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
             </Link>
             <Link
               href={"https://github.com/alt3/rank-my-wallet/"}
-              aria-label={t`RankMyWallet on Github`}
               onClick={() => onClose()}
               isExternal
               passHref

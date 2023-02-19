@@ -17,19 +17,19 @@ const Sponsoring: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title={`RankMyWallet - ${t`Become a sponsor`}`}
+        title={`RankMyWallet - ${t`Become a Sponsor`}`}
         description="Promote your project by becoming a sponsor"
         keywords="blockchain, cardano, ergo, wallets, rankings, sponsoring, sponsor"
       />
 
       <ContentContainer>
-        <PageHero title={t`Become a sponsor`} />
+        <PageHero title={t`Become a Sponsor`} />
 
         <Text width="70%" margin="auto" textAlign={"center"} marginBottom={10}>
           <Trans>
             If you are an individual looking to sponsor this project, please consider donating via
             the{" "}
-            <Link href="/tipbox" aria-label={t`Tip Box`} {...styles.link}>
+            <Link href="/tipbox" {...styles.link}>
               Tip Box
             </Link>
             .
@@ -42,7 +42,6 @@ const Sponsoring: BlitzPage = () => {
             contact us on{" "}
             <Link
               href="https://www.twitter.com/RankMyWallet/"
-              aria-label={t`RankMyWallet on Twitter`}
               isExternal
               passHref
               withExternalIcon

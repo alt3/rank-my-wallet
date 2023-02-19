@@ -78,7 +78,6 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
               <Td {...styles.left} whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
-                  aria-label={t`Ergo Explorer`}
                   passHref
                   isExternal
                   whiteSpace="nowrap"

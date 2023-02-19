@@ -7,7 +7,6 @@ export function PleaseDonate({ ...rest }) {
   return (
     <Link
       href="/tipbox"
-      aria-label="Tip Box"
       _hover={{ textDecoration: "none" }}
       title="This message will not be shown for recognized donator addresses"
     >
