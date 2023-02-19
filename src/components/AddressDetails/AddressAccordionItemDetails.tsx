@@ -9,7 +9,6 @@ import {
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { DataGrid, DataGridEntry, SectionHeader } from "src/components"
-import { capitalize } from "src/lib"
 
 export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
   useLingui()
@@ -47,18 +46,15 @@ export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
           />
 
           {parsedAddress.blockchain.network && (
-            <DataGridEntry
-              field={t`Network`}
-              value={capitalize(parsedAddress.blockchain.network)}
-            />
+            <DataGridEntry field={t`Network`} value={parsedAddress.blockchain.network} />
           )}
 
           {parsedAddress.version && (
-            <DataGridEntry field={t`Version`} value={capitalize(parsedAddress.version)} />
+            <DataGridEntry field={t`Version`} value={parsedAddress.version} />
           )}
 
           {parsedAddress.type && (
-            <DataGridEntry field={t`Address Type`} value={capitalize(parsedAddress.type.name)} />
+            <DataGridEntry field={t`Address Type`} value={parsedAddress.type.name} />
           )}
         </DataGrid>
       </AccordionPanel>

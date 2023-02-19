@@ -38,17 +38,17 @@ const FaqPage: BlitzPage = () => {
         <Tabs variant="enclosed" colorScheme="teal">
           <TabList>
             <Tab>
-              <Text className="capitalize">
+              <Text>
                 <Trans>general</Trans>
               </Text>
             </Tab>
             <Tab>
-              <Text className="capitalize">
+              <Text>
                 <Trans>cardano</Trans>
               </Text>
             </Tab>
             <Tab>
-              <Text className="capitalize">
+              <Text>
                 <Trans>ergo</Trans>
               </Text>
             </Tab>

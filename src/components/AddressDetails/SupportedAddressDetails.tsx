@@ -46,7 +46,7 @@ import {
   SwordfishIcon,
   WhaleIcon,
 } from "src/components/Images/Species"
-import { bigToString, capitalize } from "src/lib"
+import { bigToString } from "src/lib"
 
 const imageComponents = {
   Crab: CrabIcon,
@@ -90,9 +90,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
     <>
       <MetaTags
         title={`RankMyWallet - ${t`Your Rank`}`}
-        description={`Your ${capitalize(
-          parsed.blockchain.name
-        )} blockchain ranking and address analysis`}
+        description={`Your ${parsed.blockchain.name} blockchain ranking and address analysis`}
         keywords={`blockchain, ${parsed.blockchain.name}, wallets, rankings, species, address-analyzer`}
       />
 
@@ -146,7 +144,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             <GridItem {...styles.gridValue}>
               <Link
                 href={`/species/${parsed.blockchain.name}`}
-                title={`${capitalize(parsed.blockchain.name)} Species`}
+                title={`${parsed.blockchain.name} Species`}
                 color={useColorModeValue("pink.600", "pink.400")}
                 passHref
                 withExternalIcon
