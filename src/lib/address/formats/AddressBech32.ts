@@ -1,6 +1,7 @@
-import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib"
+import { t } from "@lingui/macro"
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
+import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib"
 import { BlockchainAddress } from "./BlockhainAddress"
 
 /**
@@ -160,11 +161,11 @@ export class Bech32Address extends BlockchainAddress {
           bits: headerBits,
           leading: {
             bits: getLeadingBits(headerBits),
-            type: "network type",
+            type: t`Network Type`,
           },
           trailing: {
             bits: getTrailingBits(headerBits),
-            type: "address type",
+            type: t`Address Type`,
           },
         }
 

@@ -1,4 +1,6 @@
 import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { ExternalLinkIcon, Link, TickerString } from "src/components"
 import { bigToString, nanoToTicker } from "src/lib"
@@ -14,6 +16,8 @@ interface RankingsTableProps {
 }
 
 export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTableProps) {
+  useLingui()
+
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
   const styles = {
@@ -40,10 +44,10 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
       <Thead>
         <Tr>
           <Th {...styles.left} maxWidth="10px" whiteSpace="nowrap">
-            Rank
+            <Trans>Rank</Trans>
           </Th>
           <Th {...styles.right} textAlign="right">
-            Balance
+            <Trans>Balance</Trans>
           </Th>
         </Tr>
       </Thead>
@@ -61,13 +65,12 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
               >
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
-                  title={"Ergo Explorer"}
                   passHref
                   isExternal
                 >
                   {bigToString(element.rank, 0)}
                   {element.position === "current" && (
-                    <Box as="span" {...styles.asterisk} title="Your rank">
+                    <Box as="span" {...styles.asterisk} title={t`Your Rank`}>
                       *
                     </Box>
                   )}{" "}
@@ -78,7 +81,6 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
               <Td {...styles.right} whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
-                  title={"Ergo Explorer"}
                   passHref
                   isExternal
                 >

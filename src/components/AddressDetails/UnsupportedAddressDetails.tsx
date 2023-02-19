@@ -1,4 +1,6 @@
-import { Accordion, Divider, useColorModeValue } from "@chakra-ui/react"
+import { Accordion, Divider } from "@chakra-ui/react"
+import { t } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import {
   AddressAccordionItemAnalysis,
   AddressAccordionItemDetails,
@@ -9,6 +11,8 @@ import {
 } from "src/components"
 
 export function UnsupportedAddressDetails({ parsed }) {
+  useLingui()
+
   return (
     <>
       <MetaTags
@@ -18,10 +22,10 @@ export function UnsupportedAddressDetails({ parsed }) {
       />
 
       <ContentContainer>
-        <ErrorHero title="Unsupported Address" subtitle={parsed.unsupported.message}></ErrorHero>
+        <ErrorHero title={t`Unsupported Address`} subtitle={parsed.unsupported.message}></ErrorHero>
 
         <AddressForm
-          placeholder="Try again?"
+          placeholder={t`Try again?`}
           marginTop={{ base: "3rem", sm: "5rem" }}
           marginBottom={{ base: "4rem", sm: "7rem" }}
         />

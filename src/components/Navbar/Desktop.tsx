@@ -50,7 +50,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
         >
           <Link
             href="/species"
-            aria-label={t`Blockchain species`}
+            aria-label={t`Blockchain Species`}
             textDecoration="none !important"
             passHref
           >

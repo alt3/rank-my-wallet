@@ -1,8 +1,10 @@
-import { Text, useColorModeValue, Table, Tbody, Tr, Td } from "@chakra-ui/react"
+import { Table, Tbody, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
+import nextId from "react-id-generator"
 import { DataGridCellTypeBinary } from "src/components/DataGrid/DatagridCellTypeBinary"
 import { DataGridCellTypeBit } from "src/components/DataGrid/DatagridCellTypeBit"
 import { DataGridCellTypeDecimal } from "src/components/DataGrid/DataGridCellTypeDecimal"
-import nextId from "react-id-generator"
 import { bitsToByte } from "src/lib"
 
 interface BitsTableProps {
@@ -12,6 +14,8 @@ interface BitsTableProps {
 }
 
 export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
+  useLingui()
+
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
   let binaryCounter = 256 // we will divide by two to generate the static binary cell headers
@@ -69,7 +73,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
           <Tr>
             {/* binary row */}
             <Td {...styles.td} {...styles.tdField}>
-              Binary
+              <Trans>Binaries</Trans>
             </Td>
 
             {reversedBits.map((bit) => {
@@ -87,7 +91,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
           {/* bits row */}
           <Tr>
             <Td {...styles.td} {...styles.tdField}>
-              Bits
+              <Trans>Bits</Trans>
             </Td>
 
             {reversedBits.map((bit) => {
@@ -102,7 +106,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
           {/* decimal row */}
           <Tr>
             <Td {...styles.td} {...styles.tdField}>
-              Decimal
+              <Trans>Decimals</Trans>
             </Td>
 
             {reversedBits.map((bit, i) => {
@@ -123,7 +127,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
 
           {/* Summary row */}
           <Tr border={"none"}>
-            <Td {...styles.tdSumLabel}>{sumLabel}</Td>
+            <Td {...styles.tdSumLabel}>{t({ id: sumLabel })}</Td>
           </Tr>
         </Tbody>
       </Table>

@@ -10,6 +10,8 @@ import {
   GridItem,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import {
   AddressAccordionItemAnalysis,
   AddressAccordionItemDetails,
@@ -67,6 +69,8 @@ const imageComponents = {
 }
 
 export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
+  useLingui()
+
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
   const SpeciesImageComponent = imageComponents[species.current.icon] // dynamically load the correct image component
@@ -95,7 +99,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
       <ContentContainer>
         {(balance.nano === "0" || balance.nano === 0) && (
           <PageHero
-            title="Sorry, we do not rank empty wallets"
+            title={<Trans>Sorry, we do not rank empty wallets</Trans>}
             marginBottom={{ base: "2rem", md: "8rem" }}
           />
         )}
@@ -103,7 +107,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         {parsed.blockchain.name === "cardano" && balance.nano !== "0" && balance.nano !== 0 && (
           <>
             <PageHero
-              title="Cardano Rankings are coming soon"
+              title={<Trans>Cardano Rankings are coming soon</Trans>}
               marginBottom={{ base: "2rem", md: "8rem" }}
             />
           </>
@@ -120,10 +124,14 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
         <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
         {/* SPECIES GRID */}
-        <SectionHeader>Species</SectionHeader>
+        <SectionHeader>
+          <Trans>SpeciesPlural</Trans>
+        </SectionHeader>
         <Box minHeight="100px" height="auto">
           <Grid gap={0} marginBottom={{ base: ".5rem", sm: ".75rem" }}>
-            <GridItem {...styles.gridField}>Your Balance</GridItem>
+            <GridItem {...styles.gridField}>
+              <Trans>Your Balance</Trans>
+            </GridItem>
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
@@ -132,7 +140,9 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
               ></TickerString>
             </GridItem>
 
-            <GridItem {...styles.gridField}>Current Species</GridItem>
+            <GridItem {...styles.gridField}>
+              <Trans>Current Species</Trans>
+            </GridItem>
             <GridItem {...styles.gridValue}>
               <Link
                 href={`/species/${parsed.blockchain.name}`}
@@ -141,14 +151,18 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 passHref
                 withExternalIcon
               >
-                {capitalize(species.current.name)}
+                {t({ id: species.current.name })}
               </Link>
             </GridItem>
 
-            <GridItem {...styles.gridField}>Next Species</GridItem>
-            <GridItem {...styles.gridValue}>{capitalize(species.next.name)}</GridItem>
+            <GridItem {...styles.gridField}>
+              <Trans>Next Species</Trans>
+            </GridItem>
+            <GridItem {...styles.gridValue}>{t({ id: species.next.name })}</GridItem>
 
-            <GridItem {...styles.gridField}>Starts At</GridItem>
+            <GridItem {...styles.gridField}>
+              <Trans>Starts At</Trans>
+            </GridItem>
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
@@ -157,7 +171,9 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
               ></TickerString>
             </GridItem>
 
-            <GridItem {...styles.gridField}>Requires</GridItem>
+            <GridItem {...styles.gridField}>
+              <Trans>Required</Trans>
+            </GridItem>
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
@@ -191,7 +207,9 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
               <h2>
                 <AccordionButton p={0}>
                   <Box flex="1" textAlign="left">
-                    <SectionHeader>Competition</SectionHeader>
+                    <SectionHeader>
+                      <Trans>Competiton</Trans>
+                    </SectionHeader>
                   </Box>
                   <Box as="span" verticalAlign="top" minHeight="3rem">
                     <AccordionIcon color={accordionIconColor} />
@@ -201,11 +219,10 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
               <AccordionPanel p={0}>
                 <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
                   <DataGridEntry
-                    field="Competitors"
+                    field={t`Competitors`}
                     value={bigToString(addressCount, 0)}
                     url={{
                       href: "https://ergo.watch/metrics/addresses",
-                      title: "Ergo Watch address metrics",
                       isExternal: true,
                     }}
                   />

@@ -9,18 +9,23 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "src/components"
-import { capitalize } from "src/lib"
 
 export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
+  useLingui()
+
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
   return (
     <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
       <AccordionButton p={0}>
         <Box flex="1" textAlign="left">
-          <SectionHeader>Address Analysis</SectionHeader>
+          <SectionHeader>
+            <Trans>Address Analysis</Trans>
+          </SectionHeader>
         </Box>
         <Box as="span" verticalAlign="top" minHeight="3rem">
           <AccordionIcon color={accordionIconColor} />
@@ -29,26 +34,26 @@ export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
 
       <AccordionPanel p={0} pb={4}>
         <DataGrid>
-          <DataGridEntry field="Encoding" value={capitalize(parsedAddress.encoding)} />
+          <DataGridEntry field={t`Encoding`} value={parsedAddress.encoding} />
           {parsedAddress.decoded !== undefined && parsedAddress.decoded.prefix !== undefined && (
             <DataGridEntry field="Decoded Prefix" value={parsedAddress.decoded.prefix} />
           )}
 
           {parsedAddress.payload.prefix !== undefined && (
-            <DataGridEntry field="Prefix Byte" value={parsedAddress.payload.prefix.byte} />
+            <DataGridEntry field={t`Prefix Byte`} value={parsedAddress.payload.prefix.byte} />
           )}
 
           {parsedAddress.payload.checksum !== undefined && (
-            <DataGridEntry field="Checksum" value={parsedAddress.payload.checksum.hex} />
+            <DataGridEntry field={t`Checksum`} value={parsedAddress.payload.checksum.hex} />
           )}
 
           {parsedAddress.payload.content !== undefined && (
-            <DataGridEntry field="Content" value={parsedAddress.payload.content.hex} />
+            <DataGridEntry field={t`Content`} value={parsedAddress.payload.content.hex} />
           )}
         </DataGrid>
 
         <Text color={useColorModeValue("teal.500", "teal.300")} marginBottom="0.25rem">
-          Decoded Bytes:
+          <Trans>Decoded Bytes:</Trans>
         </Text>
         <Grid
           templateColumns={{ base: "repeat(4, 1fr)", sm: "repeat(6, 1fr)" }}
@@ -62,19 +67,19 @@ export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
         {parsedAddress.payload.prefix !== undefined && (
           <>
             <BitsTable
-              caption="Prefix Bits:"
+              caption={t`Prefix Bits:`}
               bits={parsedAddress.payload.prefix.bits}
-              sumLabel="Prefix Byte"
+              sumLabel={t`Prefix Byte`}
             ></BitsTable>
 
             <BitsTable
-              caption="Leading Prefix Bits:"
+              caption={t`Leading Prefix Bits:`}
               bits={parsedAddress.payload.prefix.leading.bits}
               sumLabel={parsedAddress.payload.prefix.leading.type}
             ></BitsTable>
 
             <BitsTable
-              caption="Trailing Prefix Bits:"
+              caption={t`Trailing Prefix Bits:`}
               bits={parsedAddress.payload.prefix.trailing.bits}
               sumLabel={parsedAddress.payload.prefix.trailing.type}
             ></BitsTable>

@@ -76,7 +76,7 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
               <Trans>Home</Trans>
             </Link>
 
-            <Link href={"/species"} aria-label={t`Blockchain species`} onClick={() => onClose()}>
+            <Link href={"/species"} aria-label={t`Blockchain Species`} onClick={() => onClose()}>
               <Trans>SpeciesPlural</Trans>
             </Link>
 

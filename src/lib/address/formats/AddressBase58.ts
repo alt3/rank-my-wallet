@@ -1,6 +1,7 @@
-import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib"
+import { t } from "@lingui/macro"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
+import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib"
 import { BlockchainAddress } from "./BlockhainAddress"
 
 /**
@@ -84,11 +85,11 @@ export class Base58Address extends BlockchainAddress {
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
-          type: "address type",
+          type: t`Address Type`,
         },
         trailing: {
           bits: getTrailingBits(headerBits),
-          type: "network type",
+          type: t`Network Type`,
         },
       }
 
