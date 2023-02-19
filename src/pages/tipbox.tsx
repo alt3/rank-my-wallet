@@ -25,7 +25,7 @@ const TipBox: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title="Rank My Wallet - Tip Box"
+        title={`RankMyWallet - ${t`Tip Box`}`}
         description="Donate some coins to keep this website ad-free"
         keywords="blockchain, cardano, ergo, wallets, rankings, tip-box, support"
       />

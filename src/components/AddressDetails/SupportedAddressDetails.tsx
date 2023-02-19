@@ -89,7 +89,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
   return (
     <>
       <MetaTags
-        title={`Rank My Wallet - Your ${capitalize(parsed.blockchain.name)} Rank`}
+        title={`RankMyWallet - ${t`Your Rank`}`}
         description={`Your ${capitalize(
           parsed.blockchain.name
         )} blockchain ranking and address analysis`}

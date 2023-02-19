@@ -10,11 +10,14 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react"
-import { Trans } from "@lingui/macro"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { AccordionItemFaq, ContentContainer, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const FaqPage: BlitzPage = () => {
+  useLingui()
+
   const styles = {
     listItems: {
       marginLeft: "0.25rem",
@@ -24,8 +27,8 @@ const FaqPage: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title="Rank My Wallet - Frequently Asked Questions (FAQ)"
-        description="Frequently asked questions for Rank My Wallet"
+        title={`RankMyWallet - ${t`FAQ`}`}
+        description="Frequently asked questions for RankMyWallet"
         keywords="blockchain, cardano, ergo, wallets, rankings, species, faq, questions"
       />
 

@@ -1,14 +1,17 @@
 import { BlitzPage } from "@blitzjs/next"
-import { Trans } from "@lingui/macro"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { ContentContainer, MetaTags, PageHero, SpeciesTable } from "src/components"
 import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
 
 const CardanoPage: BlitzPage = () => {
+  useLingui()
+
   return (
     <>
       <MetaTags
-        title="Rank My Wallet - Cardano Species"
+        title={`RankMyWallet - ${t`Cardano Species`}`}
         description="Species for the Cardano blockchain"
         keywords="blockchain, cardano, species, whale, orca, shark, shrimp, ghost"
       />

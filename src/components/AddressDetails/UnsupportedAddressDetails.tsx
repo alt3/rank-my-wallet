@@ -16,7 +16,7 @@ export function UnsupportedAddressDetails({ parsed }) {
   return (
     <>
       <MetaTags
-        title={`Rank My Wallet - Unrecognized Address`}
+        title={`RankMyWallet - ${t`Unsupported Address`}`}
         description={`Unrecognized Address`}
         keywords={`blockchain, wallets, rankings, species, address-analyzer`}
       />

@@ -1,9 +1,9 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Text, useColorModeValue } from "@chakra-ui/react"
-import { ContentContainer, ExternalLinkIcon, Link, MetaTags, PageHero } from "src/components"
-import Layout from "src/core/layouts/Layout"
-import { Trans, t } from "@lingui/macro"
+import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
+import { ContentContainer, Link, MetaTags, PageHero } from "src/components"
+import Layout from "src/core/layouts/Layout"
 
 const Sponsoring: BlitzPage = () => {
   useLingui()
@@ -17,7 +17,7 @@ const Sponsoring: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title="Rank My Wallet - Become a Sponsor"
+        title={`RankMyWallet - ${t`Become a sponsor`}`}
         description="Promote your project by becoming a sponsor"
         keywords="blockchain, cardano, ergo, wallets, rankings, sponsoring, sponsor"
       />

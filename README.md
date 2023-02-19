@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.1%20adopted-ff69b4.svg?style=flat-square)](https://www.contributor-covenant.org/version/2/1/code_of_conduct)
 
-# Rank My Wallet
+# RankMyWallet
 
 Source files for https://rankmywallet.com.
 

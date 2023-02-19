@@ -5,7 +5,7 @@ import { AddressDetails, SuspenseLoader } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const ShowRankingPage: BlitzPage = () => {
-  const pageTitle = "Rank My Wallet"
+  const pageTitle = "RankMyWallet"
 
   return (
     <>
