@@ -60,7 +60,7 @@ export const validateAddress = function (
       return parsedAddress
     }
 
-    // // not mainnet
+    // not mainnet
     if (parsedAddress.blockchain.network !== "mainnet") {
       const reason = getReason("UnsupportedNetwork")
 
@@ -75,11 +75,9 @@ export const validateAddress = function (
           __NETWORK__: parsedAddress.blockchain.network,
         }),
       }
-
-      return parsedAddress
     }
 
-    // // not a normal Cardano Type-00 address
+    // not a normal Cardano Type-00 address
     if (parsedAddress.blockchain.name === "cardano" && parsedAddress.type.type !== 0) {
       const reason = getReason("UnsupportedType")
 
