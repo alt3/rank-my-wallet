@@ -27,10 +27,12 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
       marginBottom: "3rem",
     },
     left: {
+      fontSize: "sm",
       textAlign: "left" as const,
       paddingLeft: 0,
     },
     right: {
+      fontSize: "sm",
       textAlign: "right" as const,
       paddingRight: 0,
     },
