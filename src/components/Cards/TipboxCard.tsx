@@ -7,7 +7,7 @@ import { useEffect } from "react"
 import { FaRegCopy } from "react-icons/fa"
 import { Link } from "src/components"
 
-export function TipboxCard({ title, address, url, linkTitle, ariaLabel, ...rest }) {
+export function TipboxCard({ title, address, url, ariaLabel, ...rest }) {
   useLingui()
 
   const qrBackgroundColor = useToken("colors", useColorModeValue("gray.700", "whiteAlpha.900"))
@@ -65,7 +65,7 @@ export function TipboxCard({ title, address, url, linkTitle, ariaLabel, ...rest 
 
           <QRCode value={address} fgColor={qrForegroundColor} bgColor={qrBackgroundColor} />
           <Box {...styles.linkBox}>
-            <Link href={url} title={linkTitle} aria-label={ariaLabel} isExternal passHref>
+            <Link href={url} aria-label={ariaLabel} isExternal passHref>
               <Text
                 as="span"
                 align="center"

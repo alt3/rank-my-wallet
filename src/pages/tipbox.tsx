@@ -1,12 +1,11 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Box, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { BsHeartFill } from "react-icons/bs"
 import { ContentContainer, MetaTags, PageHero, TipboxCard } from "src/components"
 import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import Layout from "src/core/layouts/Layout"
-import { Trans, t } from "@lingui/macro"
-// import { i18n } from "@lingui/core"
-import { useLingui } from "@lingui/react"
 
 const TipBox: BlitzPage = () => {
   useLingui()
@@ -40,14 +39,12 @@ const TipBox: BlitzPage = () => {
               title={<Trans>cardano</Trans>}
               address={tipboxAddresses.cardano}
               url={`https://pool.pm/${tipboxAddresses.cardano}`}
-              linkTitle={t`Cardano Explorer`}
               ariaLabel={t`Cardano Explorer`}
             />
             <TipboxCard
               title={<Trans>ergo</Trans>}
               address={tipboxAddresses.ergo}
               url={`https://explorer.ergoplatform.com/en/addresses/${tipboxAddresses.ergo}`}
-              linkTitle={t`Ergo Explorer`}
               ariaLabel={t`Ergo Explorer`}
             />
           </SimpleGrid>
@@ -60,7 +57,7 @@ const TipBox: BlitzPage = () => {
               color="red"
               marginRight="0.25rem"
             />
-            <Trans>Thanks to your donation, this website remains ad-free</Trans>{" "}
+            <Trans>Please donate to keep this website ad-free</Trans>{" "}
             <Box
               as={BsHeartFill}
               viewBox="0 0 20 10"

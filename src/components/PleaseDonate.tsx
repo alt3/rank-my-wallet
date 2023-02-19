@@ -1,6 +1,7 @@
 import { Box, Text, useColorModeValue } from "@chakra-ui/react"
 import { Link } from "src/components"
 import { BsHeartFill } from "react-icons/bs"
+import { Trans } from "@lingui/macro"
 
 export function PleaseDonate({ ...rest }) {
   return (
@@ -26,7 +27,7 @@ export function PleaseDonate({ ...rest }) {
             color="red"
             marginRight="0.25rem"
           />
-          Your donations help keep this site ad-free
+          <Trans>Please donate to keep this website ad-free</Trans>
           <Box
             as={BsHeartFill}
             viewBox="0 0 20 10"
