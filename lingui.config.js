@@ -15,7 +15,7 @@ module.exports = {
   catalogs: [
     {
       path: "src/translations/locales/{locale}/messages",
-      include: ["src/components", "src/core", "src/pages"],
+      include: ["src/components", "src/core", "src/lib", "src/pages"],
     },
   ],
   format: "po",
