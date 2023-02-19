@@ -1,7 +1,7 @@
 import { useColorModeValue } from "@chakra-ui/react"
 import { Link, MotionBoxFlex } from "src/components"
 
-export function FrontpageCard({ url, title, isExternal = true, ...rest }) {
+export function FrontpageCard({ url, isExternal = true, ...rest }) {
   const styles = {
     box: {
       whileHover: { scale: 1.05 },
@@ -20,13 +20,7 @@ export function FrontpageCard({ url, title, isExternal = true, ...rest }) {
   }
 
   return (
-    <Link
-      href={url}
-      title={title}
-      isExternal={isExternal}
-      textDecoration="none !important"
-      passHref
-    >
+    <Link href={url} isExternal={isExternal} textDecoration="none !important" passHref>
       <MotionBoxFlex {...styles.box} {...rest}></MotionBoxFlex>
     </Link>
   )

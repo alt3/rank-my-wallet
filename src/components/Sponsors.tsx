@@ -1,12 +1,9 @@
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
-import { useLingui } from "@lingui/react"
+import { Trans } from "@lingui/macro"
 import { BsHeartFill } from "react-icons/bs"
 import { FrontpageCard } from "./Cards"
 
 export function Sponsors() {
-  useLingui()
-
   const styles = {
     caption: {
       fontSize: "sm",
@@ -30,7 +27,7 @@ export function Sponsors() {
       </Center>
 
       <SimpleGrid {...styles.grid}>
-        <FrontpageCard title={t`Become a sponsor`} url="/sponsoring" isExternal={false}>
+        <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
@@ -43,7 +40,7 @@ export function Sponsors() {
           </Box>
         </FrontpageCard>
 
-        <FrontpageCard title={t`Become a sponsor`} url="/sponsoring" isExternal={false}>
+        <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
@@ -56,7 +53,7 @@ export function Sponsors() {
           </Box>
         </FrontpageCard>
 
-        <FrontpageCard title={t`Become a sponsor`} url="/sponsoring" isExternal={false}>
+        <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}

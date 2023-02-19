@@ -1,12 +1,9 @@
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
-import { useLingui } from "@lingui/react"
+import { Trans } from "@lingui/macro"
 import { FrontpageCard } from "./Cards"
 import { CardanoLogo, ErgoLogo } from "./Images/Logos"
 
 export function BlockChains() {
-  useLingui()
-
   const styles = {
     box: {
       marginBottom: { base: "3rem", md: "5 rem" },
@@ -36,18 +33,10 @@ export function BlockChains() {
       </Center>
 
       <SimpleGrid {...styles.grid}>
-        <FrontpageCard
-          title={t`Visit the Cardano website`}
-          url="https://cardano.org/"
-          {...styles.card}
-        >
+        <FrontpageCard url="https://cardano.org/" {...styles.card}>
           <CardanoLogo width="230px" fill={useColorModeValue("gray.600", "whiteAlpha.900")} />
         </FrontpageCard>
-        <FrontpageCard
-          title={t`Visit the Ergo website`}
-          url="https://ergoplatform.org/"
-          {...styles.card}
-        >
+        <FrontpageCard url="https://ergoplatform.org/" {...styles.card}>
           <ErgoLogo width="150px" fill={useColorModeValue("gray.600", "whiteAlpha.900")} />
         </FrontpageCard>
       </SimpleGrid>
