@@ -8,6 +8,8 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import React from "react"
 import { BsList, BsMoonFill, BsSunFill } from "react-icons/bs"
 import { HiExternalLink } from "react-icons/hi"
@@ -21,6 +23,8 @@ interface NavbarProps {
 }
 
 export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarProps) {
+  useLingui()
+
   const { toggleColorMode: toggleMode } = useColorMode()
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
@@ -38,7 +42,7 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
       width="100%"
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
-        <Link href="/" aria-label="Home" passHref marginLeft={"-1"}>
+        <Link href="/" aria-label={t`Home`} passHref marginLeft={"-1"}>
           <LogoMobile marginTop="0.25rem" h="8" pointerEvents="none" fill={logoColorPrimary} />
         </Link>
 
@@ -48,7 +52,7 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
             variant="ghost"
             maxWidth="1rem"
             ml={0}
-            aria-label={`Switch to ${text} mode`}
+            aria-label={t`Switch to ${text} mode`}
             color="current"
             onClick={toggleMode}
             icon={<SwitchIcon />}
@@ -68,46 +72,46 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
 
         <Drawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} title={null} footer={null}>
           <VStack alignItems="right">
-            <Link href={"/"} onClick={() => onClose()}>
-              Home
+            <Link href={"/"} aria-label={t`Home`} onClick={() => onClose()}>
+              <Trans>Home</Trans>
             </Link>
 
-            <Link href={"/species"} aria-label="Species" onClick={() => onClose()}>
-              Species
+            <Link href={"/species"} aria-label={t`Blockchain species`} onClick={() => onClose()}>
+              <Trans>SpeciesPlural</Trans>
             </Link>
 
-            <Link href={"/tipbox"} aria-label="Tip Box" onClick={() => onClose()}>
-              Tip Box
+            <Link href={"/tipbox"} aria-label={t`Tip Box`} onClick={() => onClose()}>
+              <Trans>Tip Box</Trans>
             </Link>
 
             <Link
               href={"/faq"}
-              aria-label="Frequently Asked Questions (FAQ)"
+              aria-label={t`Frequently Asked Questions (FAQ)`}
               onClick={() => onClose()}
             >
-              FAQ
+              <Trans>FAQ</Trans>
             </Link>
 
             <Link
               href={"https://twitter.com/RankMyWallet/"}
-              aria-label="RankMyWallet on Twitter"
+              aria-label={t`RankMyWallet on Twitter`}
               onClick={() => onClose()}
               isExternal
               passHref
             >
-              Twitter{" "}
+              <Trans>Twitter</Trans>{" "}
               <span>
                 <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
               </span>
             </Link>
             <Link
               href={"https://github.com/alt3/rank-my-wallet/"}
-              aria-label="RankMyWallet on Github"
+              aria-label={t`RankMyWallet on Github`}
               onClick={() => onClose()}
               isExternal
               passHref
             >
-              Github{" "}
+              <Trans>Github</Trans>{" "}
               <span>
                 <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
               </span>

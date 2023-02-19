@@ -1,4 +1,6 @@
 import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { BsGithub, BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
 import { Link } from "src/components"
 import { Logo } from "../Images/Logos"
@@ -9,6 +11,8 @@ interface NavbarProps {
 }
 
 export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarProps) {
+  useLingui()
+
   const { toggleColorMode: toggleMode } = useColorMode()
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
@@ -24,7 +28,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
         <Flex align="left">
-          <Link href="/" aria-label="Home" passHref>
+          <Link href="/" aria-label={t`Home`} passHref>
             <Logo
               marginTop="0.5rem"
               h="10"
@@ -46,35 +50,35 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
         >
           <Link
             href="/species"
-            aria-label="Blockchain species"
+            aria-label={t`Blockchain species`}
             textDecoration="none !important"
             passHref
           >
             <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-              Species
+              <Trans>SpeciesPlural</Trans>
             </Button>
           </Link>
 
-          <Link href="/tipbox" aria-label="Tip Box" textDecoration="none !important" passHref>
+          <Link href="/tipbox" aria-label={t`Tip Box`} textDecoration="none !important" passHref>
             <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-              Tip Box
+              <Trans>Tip Box</Trans>
             </Button>
           </Link>
 
           <Link
             href="/faq"
-            aria-label="Frequently Asked Questions (FAQ)"
+            aria-label={t`Frequently Asked Questions (FAQ)`}
             textDecoration="none !important"
             passHref
           >
             <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-              FAQ
+              <Trans>FAQ</Trans>
             </Button>
           </Link>
 
           <Link
             href="https://www.twitter.com/RankMyWallet/"
-            aria-label="RankMyWallet on Twitter"
+            aria-label={t`RankMyWallet on Twitter`}
             isExternal
             passHref
           >
@@ -83,7 +87,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               maxWidth="1rem"
               w={10}
               ml={0}
-              aria-label={`RankMyWallet on Twitter`}
+              aria-label={t`RankMyWallet on Twitter`}
               variant="ghost"
               color="current"
               marginLeft="0"
@@ -93,7 +97,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
 
           <Link
             href="https://github.com/alt3/rank-my-wallet/"
-            aria-label="RankMyWallet on Github"
+            aria-label={t`RankMyWallet on Github`}
             isExternal
             passHref
           >
@@ -102,7 +106,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               maxWidth="1rem"
               w={10}
               ml={0}
-              aria-label={`RankMyWallet on Github`}
+              aria-label={t`RankMyWallet on Github`}
               variant="ghost"
               color="current"
               marginLeft="0"
@@ -114,7 +118,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
             size="lg"
             maxWidth="1rem"
             ml={0}
-            aria-label={`Switch to ${text} mode`}
+            aria-label={t`Switch to ${text} mode`}
             variant="ghost"
             color="current"
             marginLeft="0"
