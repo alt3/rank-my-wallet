@@ -1,0 +1,445 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-02-15 20:16+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:35
+#: src/components/RankingsTable/RankingsTableDesktop.tsx:50
+msgid "Address"
+msgstr "Address"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:27
+msgid "Address Analysis"
+msgstr "Address Analysis"
+
+#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:24
+msgid "Address Details"
+msgstr "Address Details"
+
+#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:57
+#: src/lib/address/formats/AddressBase58.ts:88
+#: src/lib/address/formats/AddressBech32.ts:168
+msgid "Address Type"
+msgstr "Address Type"
+
+#: src/components/Footer.tsx:27
+msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
+msgstr "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
+
+#: src/components/RankingsTable/RankingsTableDesktop.tsx:53
+#: src/components/RankingsTable/RankingsTableMobile.tsx:50
+msgid "Balance"
+msgstr "Balance"
+
+#: src/pages/sponsoring.tsx:20
+#: src/pages/sponsoring.tsx:26
+msgid "Become a Sponsor"
+msgstr "Become a Sponsor"
+
+#: src/components/BitsTable/BitsTableDesktop.tsx:76
+#: src/components/BitsTable/BitsTableMobile.tsx:64
+msgid "Binaries"
+msgstr "Binaries"
+
+#: src/components/BitsTable/BitsTableDesktop.tsx:94
+#: src/components/BitsTable/BitsTableMobile.tsx:67
+msgid "Bits"
+msgstr "Bits"
+
+#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:44
+msgid "Blockchain"
+msgstr "Blockchain"
+
+#: src/components/Navbar/Desktop.tsx:55
+#: src/pages/species/index.tsx:13
+#: src/pages/species/index.tsx:18
+msgid "Blockchain Species"
+msgstr "Blockchain Species"
+
+#: src/core/constants/species.ts:108
+#: src/core/constants/species.ts:216
+msgid "Blue whale"
+msgstr "Blue whale"
+
+#: src/pages/faq.tsx:97
+msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
+msgstr "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
+
+#: src/components/Species/SpeciesNavBar.tsx:25
+#: src/pages/faq.tsx:47
+#: src/pages/tipbox.tsx:39
+msgid "Cardano"
+msgstr "Cardano"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:108
+msgid "Cardano Rankings are coming soon"
+msgstr "Cardano Rankings are coming soon"
+
+#: src/components/Species/SpeciesNavBar.tsx:24
+#: src/pages/species/cardano.tsx:14
+#: src/pages/species/cardano.tsx:20
+msgid "Cardano Species"
+msgstr "Cardano Species"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:47
+msgid "Checksum"
+msgstr "Checksum"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:209
+msgid "Competiton"
+msgstr "Competiton"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:220
+msgid "Competitors"
+msgstr "Competitors"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:51
+msgid "Content"
+msgstr "Content"
+
+#: src/components/Cards/TipboxCard.tsx:24
+msgid "Copied!"
+msgstr "Copied!"
+
+#: src/core/constants/species.ts:48
+#: src/core/constants/species.ts:156
+msgid "Crab"
+msgstr "Crab"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:142
+msgid "Current Species"
+msgstr "Current Species"
+
+#: src/components/BitsTable/BitsTableDesktop.tsx:109
+#: src/components/BitsTable/BitsTableMobile.tsx:70
+msgid "Decimals"
+msgstr "Decimals"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:56
+msgid "Decoded Bytes:"
+msgstr "Decoded Bytes:"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:37
+msgid "Encoding"
+msgstr "Encoding"
+
+#: src/components/Species/SpeciesNavBar.tsx:31
+#: src/pages/faq.tsx:52
+#: src/pages/tipbox.tsx:44
+msgid "Ergo"
+msgstr "Ergo"
+
+#: src/components/Species/SpeciesNavBar.tsx:30
+#: src/pages/species/ergo.tsx:14
+#: src/pages/species/ergo.tsx:20
+msgid "Ergo Species"
+msgstr "Ergo Species"
+
+#: src/pages/faq.tsx:118
+msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
+msgstr "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
+
+#: src/components/Navbar/Desktop.tsx:84
+#: src/components/Navbar/Mobile.tsx:88
+#: src/pages/faq.tsx:30
+msgid "FAQ"
+msgstr "FAQ"
+
+#: src/core/constants/species.ts:103
+#: src/core/constants/species.ts:211
+msgid "Fin whale"
+msgstr "Fin whale"
+
+#: src/core/constants/species.ts:53
+#: src/core/constants/species.ts:161
+msgid "Fish"
+msgstr "Fish"
+
+#: src/components/Navbar/Desktop.tsx:79
+#: src/pages/faq.tsx:36
+msgid "Frequently Asked Questions (FAQ)"
+msgstr "Frequently Asked Questions (FAQ)"
+
+#: src/pages/faq.tsx:42
+msgid "General"
+msgstr "General"
+
+#: src/core/constants/species.ts:8
+#: src/core/constants/species.ts:116
+msgid "Ghost"
+msgstr "Ghost"
+
+#: src/components/Navbar/Mobile.tsx:108
+msgid "Github"
+msgstr "Github"
+
+#: src/components/AddressForm.tsx:68
+msgid "Go"
+msgstr "Go"
+
+#: src/core/constants/species.ts:88
+#: src/core/constants/species.ts:196
+msgid "Great white shark"
+msgstr "Great white shark"
+
+#: src/components/Navbar/Desktop.tsx:33
+#: src/components/Navbar/Mobile.tsx:76
+msgid "Home"
+msgstr "Home"
+
+#: src/pages/faq.tsx:127
+msgid "How do I consolidate my boxes?"
+msgstr "How do I consolidate my boxes?"
+
+#: src/pages/sponsoring.tsx:40
+msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
+msgstr "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
+
+#: src/pages/sponsoring.tsx:29
+msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
+msgstr "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
+
+#: src/core/constants/species.ts:58
+#: src/core/constants/species.ts:166
+msgid "Jellyfish"
+msgstr "Jellyfish"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:76
+msgid "Leading Prefix Bits:"
+msgstr "Leading Prefix Bits:"
+
+#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:49
+msgid "Network"
+msgstr "Network"
+
+#: src/lib/address/formats/AddressBase58.ts:92
+#: src/lib/address/formats/AddressBech32.ts:164
+msgid "Network Type"
+msgstr "Network Type"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:157
+msgid "Next Species"
+msgstr "Next Species"
+
+#: src/core/constants/species.ts:73
+#: src/core/constants/species.ts:181
+msgid "Octopus"
+msgstr "Octopus"
+
+#: src/core/constants/species.ts:93
+#: src/core/constants/species.ts:201
+msgid "Orca"
+msgstr "Orca"
+
+#: src/core/constants/species.ts:38
+#: src/core/constants/species.ts:146
+msgid "Oyster"
+msgstr "Oyster"
+
+#: src/core/constants/species.ts:23
+#: src/core/constants/species.ts:131
+msgid "Pipefish"
+msgstr "Pipefish"
+
+#: src/core/constants/species.ts:63
+#: src/core/constants/species.ts:171
+msgid "Piranha"
+msgstr "Piranha"
+
+#: src/core/constants/species.ts:13
+#: src/core/constants/species.ts:121
+msgid "Plankton"
+msgstr "Plankton"
+
+#: src/components/PleaseDonate.tsx:29
+#: src/pages/tipbox.tsx:58
+msgid "Please donate to keep this website ad-free"
+msgstr "Please donate to keep this website ad-free"
+
+#: src/components/AddressForm.tsx:52
+msgid "Please provide a wallet address"
+msgstr "Please provide a wallet address"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:70
+msgid "Prefix Bits:"
+msgstr "Prefix Bits:"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:43
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:72
+msgid "Prefix Byte"
+msgstr "Prefix Byte"
+
+#: src/components/RankingsTable/RankingsTableDesktop.tsx:47
+#: src/components/RankingsTable/RankingsTableMobile.tsx:47
+msgid "Rank"
+msgstr "Rank"
+
+#: src/components/Navbar/Desktop.tsx:108
+msgid "RankMyWallet on Github"
+msgstr "RankMyWallet on Github"
+
+#: src/components/Navbar/Desktop.tsx:94
+msgid "RankMyWallet on Twitter"
+msgstr "RankMyWallet on Twitter"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:173
+msgid "Required"
+msgstr "Required"
+
+#: src/core/constants/species.ts:18
+#: src/core/constants/species.ts:126
+msgid "Seahorse"
+msgstr "Seahorse"
+
+#: src/core/constants/species.ts:78
+#: src/core/constants/species.ts:186
+msgid "Shark"
+msgstr "Shark"
+
+#: src/core/constants/species.ts:33
+#: src/core/constants/species.ts:141
+msgid "Shell"
+msgstr "Shell"
+
+#: src/core/constants/species.ts:28
+#: src/core/constants/species.ts:136
+msgid "Shrimp"
+msgstr "Shrimp"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:100
+msgid "Sorry, we do not rank empty wallets"
+msgstr "Sorry, we do not rank empty wallets"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:126
+#: src/components/Navbar/Desktop.tsx:60
+#: src/components/Navbar/Mobile.tsx:80
+msgid "SpeciesPlural"
+msgstr "Species"
+
+#: src/components/Species/SpeciesTable.tsx:52
+msgid "SpeciesSingular"
+msgstr "Species"
+
+#: src/components/Sponsors.tsx:25
+msgid "Sponsored By:"
+msgstr "Sponsored By:"
+
+#: src/core/constants/species.ts:43
+#: src/core/constants/species.ts:151
+msgid "Starfish"
+msgstr "Starfish"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:162
+#: src/components/Species/SpeciesTable.tsx:55
+msgid "Starts At"
+msgstr "Starts At"
+
+#: src/components/BlockChains.tsx:31
+msgid "Supported Blockchains:"
+msgstr "Supported Blockchains:"
+
+#: src/components/Navbar/Mobile.tsx:55
+msgid "Switch to {text} mode"
+msgstr "Switch to {text} mode"
+
+#: src/core/constants/species.ts:68
+#: src/core/constants/species.ts:176
+msgid "Swordfish"
+msgstr "Swordfish"
+
+#: src/core/constants/species.ts:83
+#: src/core/constants/species.ts:191
+msgid "Tiger shark"
+msgstr "Tiger shark"
+
+#: src/components/Navbar/Desktop.tsx:67
+#: src/components/Navbar/Desktop.tsx:72
+#: src/components/Navbar/Mobile.tsx:84
+#: src/pages/tipbox.tsx:28
+#: src/pages/tipbox.tsx:34
+msgid "Tip Box"
+msgstr "Tip Box"
+
+#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:82
+msgid "Trailing Prefix Bits:"
+msgstr "Trailing Prefix Bits:"
+
+#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:28
+msgid "Try again?"
+msgstr "Try again?"
+
+#: src/components/Navbar/Mobile.tsx:97
+msgid "Twitter"
+msgstr "Twitter"
+
+#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:19
+#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:25
+msgid "Unsupported Address"
+msgstr "Unsupported Address"
+
+#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:53
+msgid "Version"
+msgstr "Version"
+
+#: src/components/Heroes/Hero.tsx:46
+msgid "Wallet address"
+msgstr "Wallet address"
+
+#: src/core/constants/species.ts:98
+#: src/core/constants/species.ts:206
+msgid "Whale"
+msgstr "Whale"
+
+#: src/pages/faq.tsx:60
+msgid "What technology does this website use?"
+msgstr "What technology does this website use?"
+
+#: src/pages/faq.tsx:79
+msgid "Where do I report bugs?"
+msgstr "Where do I report bugs?"
+
+#: src/pages/faq.tsx:95
+msgid "Why are Byron addresses not supported?"
+msgstr "Why are Byron addresses not supported?"
+
+#: src/pages/faq.tsx:111
+msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
+msgstr "Why is the balance on this website different from the balance in my Ergo wallet?"
+
+#: src/components/Counter.tsx:46
+msgid "You are Cardano holder"
+msgstr "You are Cardano holder"
+
+#: src/components/Counter.tsx:47
+msgid "You are Ergo holder"
+msgstr "You are Ergo holder"
+
+#: src/pages/faq.tsx:129
+msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
+msgstr "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:131
+msgid "Your Balance"
+msgstr "Your Balance"
+
+#: src/components/Sponsors.tsx:39
+#: src/components/Sponsors.tsx:52
+#: src/components/Sponsors.tsx:65
+msgid "Your Project"
+msgstr "Your Project"
+
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:92
+#: src/components/RankingsTable/RankingsTableDesktop.tsx:72
+#: src/components/RankingsTable/RankingsTableMobile.tsx:73
+msgid "Your Rank"
+msgstr "Your Rank"
