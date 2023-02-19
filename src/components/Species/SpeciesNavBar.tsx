@@ -1,4 +1,5 @@
 import { Button, Center } from "@chakra-ui/react"
+import { Trans } from "@lingui/macro"
 import { Link } from "src/components"
 
 export function SpeciesNavBar({ ...rest }) {
@@ -18,13 +19,13 @@ export function SpeciesNavBar({ ...rest }) {
     <Center>
       <Link href="/species/cardano" aria-label="Cardano Species" {...styles.link}>
         <Button {...styles.button} width={140} marginRight={5}>
-          Cardano
+          <Trans>cardano</Trans>
         </Button>
       </Link>
 
       <Link href="/species/ergo" aria-label="Ergo Species" {...styles.link}>
         <Button {...styles.button} width={140}>
-          Ergo
+          <Trans>ergo</Trans>
         </Button>
       </Link>
     </Center>

@@ -1,4 +1,5 @@
 import { BlitzPage } from "@blitzjs/next"
+import { Trans } from "@lingui/macro"
 import { ContentContainer, MetaTags, PageHero, SpeciesTable } from "src/components"
 import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
@@ -13,7 +14,7 @@ const CardanoPage: BlitzPage = () => {
       />
 
       <ContentContainer>
-        <PageHero title="Cardano Species" />
+        <PageHero title={<Trans>Cardano Species</Trans>} />
 
         <SpeciesTable
           blockchain="cardano"
@@ -26,6 +27,6 @@ const CardanoPage: BlitzPage = () => {
 }
 
 CardanoPage.suppressFirstRenderFlicker = true
-CardanoPage.getLayout = (page) => <Layout title="Tip Box">{page}</Layout>
+CardanoPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default CardanoPage

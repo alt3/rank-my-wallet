@@ -1,4 +1,5 @@
 import { BlitzPage } from "@blitzjs/next"
+import { Trans } from "@lingui/macro"
 import { ContentContainer, MetaTags, PageHero, SpeciesTable } from "src/components"
 import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
@@ -13,7 +14,7 @@ const ErgoSpeciesPage: BlitzPage = () => {
       />
 
       <ContentContainer>
-        <PageHero title="Ergo Species" />
+        <PageHero title={<Trans>Ergo Species</Trans>} />
 
         <SpeciesTable
           blockchain="ergo"
@@ -26,6 +27,6 @@ const ErgoSpeciesPage: BlitzPage = () => {
 }
 
 ErgoSpeciesPage.suppressFirstRenderFlicker = true
-ErgoSpeciesPage.getLayout = (page) => <Layout title="Tip Box">{page}</Layout>
+ErgoSpeciesPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default ErgoSpeciesPage
