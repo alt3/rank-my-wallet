@@ -27,8 +27,8 @@ export function Footer() {
           <Trans>
             An{" "}
             <Link isExternal href="https://github.com/alt3" passHref {...styles.link}>
-              Alt3{" "}
-            </Link>
+              Alt3
+            </Link>{" "}
             product powered by{" "}
             <Link isExternal href="https://ergo.watch/" passHref {...styles.link}>
               Ergo Watch{" "}
