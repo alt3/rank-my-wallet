@@ -1,11 +1,15 @@
 import { Box, Icon, Text, useColorModeValue, useToast, useToken, VStack } from "@chakra-ui/react"
-import { Link } from "src/components"
+import { t } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import ClipboardAPI from "clipboard"
 import QRCode from "qrcode.react"
 import { useEffect } from "react"
 import { FaRegCopy } from "react-icons/fa"
+import { Link } from "src/components"
 
-export function TipboxCard({ title, address, url, linkTitle, ...rest }) {
+export function TipboxCard({ title, address, url, linkTitle, ariaLabel, ...rest }) {
+  useLingui()
+
   const qrBackgroundColor = useToken("colors", useColorModeValue("gray.700", "whiteAlpha.900"))
   const qrForegroundColor = useToken("colors", useColorModeValue("white", "gray.900"))
 
@@ -17,7 +21,7 @@ export function TipboxCard({ title, address, url, linkTitle, ...rest }) {
 
   const handleClick = () => {
     toast({
-      title: "Copied!",
+      title: t`Copied!`,
       duration: 1500,
       position: "top-right",
       isClosable: false,
@@ -61,7 +65,7 @@ export function TipboxCard({ title, address, url, linkTitle, ...rest }) {
 
           <QRCode value={address} fgColor={qrForegroundColor} bgColor={qrBackgroundColor} />
           <Box {...styles.linkBox}>
-            <Link href={url} title={linkTitle} isExternal passHref>
+            <Link href={url} title={linkTitle} aria-label={ariaLabel} isExternal passHref>
               <Text
                 as="span"
                 align="center"

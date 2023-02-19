@@ -4,8 +4,13 @@ import { BsHeartFill } from "react-icons/bs"
 import { ContentContainer, MetaTags, PageHero, TipboxCard } from "src/components"
 import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import Layout from "src/core/layouts/Layout"
+import { Trans, t } from "@lingui/macro"
+// import { i18n } from "@lingui/core"
+import { useLingui } from "@lingui/react"
 
 const TipBox: BlitzPage = () => {
+  useLingui()
+
   const styles = {
     grid: {
       columns: { base: 1, sm: 2 },
@@ -27,21 +32,23 @@ const TipBox: BlitzPage = () => {
       />
 
       <ContentContainer>
-        <PageHero title="Tip Box" />
+        <PageHero title={<Trans>Tip Box</Trans>} />
 
         <Box>
           <SimpleGrid {...styles.grid}>
             <TipboxCard
-              title="Cardano"
+              title={<Trans>cardano</Trans>}
               address={tipboxAddresses.cardano}
               url={`https://pool.pm/${tipboxAddresses.cardano}`}
-              linkTitle="Cardano Explorer"
+              linkTitle={t`Cardano Explorer`}
+              ariaLabel={t`Cardano Explorer`}
             />
             <TipboxCard
-              title="Ergo"
+              title={<Trans>ergo</Trans>}
               address={tipboxAddresses.ergo}
               url={`https://explorer.ergoplatform.com/en/addresses/${tipboxAddresses.ergo}`}
-              linkTitle="Ergo Explorer"
+              linkTitle={t`Ergo Explorer`}
+              ariaLabel={t`Ergo Explorer`}
             />
           </SimpleGrid>
 
@@ -53,7 +60,7 @@ const TipBox: BlitzPage = () => {
               color="red"
               marginRight="0.25rem"
             />
-            Thanks to your donations, this website remains ad-free{" "}
+            <Trans>Thanks to your donation, this website remains ad-free</Trans>{" "}
             <Box
               as={BsHeartFill}
               viewBox="0 0 20 10"
@@ -69,6 +76,6 @@ const TipBox: BlitzPage = () => {
 }
 
 TipBox.suppressFirstRenderFlicker = true
-TipBox.getLayout = (page) => <Layout title="Tip Box">{page}</Layout>
+TipBox.getLayout = (page) => <Layout>{page}</Layout>
 
 export default TipBox
