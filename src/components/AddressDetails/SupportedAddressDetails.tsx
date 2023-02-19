@@ -13,8 +13,8 @@ import {
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import {
-  AddressAccordionItemAnalysis,
-  AddressAccordionItemDetails,
+  AccordionItemAddressAnalysis,
+  AccordionItemAddressDetails,
   ContentContainer,
   Counter,
   DataGrid,
@@ -230,8 +230,8 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             </AccordionItem>
           )}
 
-          <AddressAccordionItemDetails parsedAddress={parsed} />
-          <AddressAccordionItemAnalysis parsedAddress={parsed} />
+          <AccordionItemAddressDetails parsedAddress={parsed} />
+          <AccordionItemAddressAnalysis parsedAddress={parsed} />
         </Accordion>
       </ContentContainer>
     </>

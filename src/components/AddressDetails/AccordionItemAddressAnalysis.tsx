@@ -14,7 +14,7 @@ import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "src/components"
 
-export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
+export function AccordionItemAddressAnalysis({ parsedAddress, ...rest }) {
   useLingui()
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
@@ -89,4 +89,4 @@ export function AddressAccordionItemAnalysis({ parsedAddress, ...rest }) {
     </AccordionItem>
   )
 }
-export default AddressAccordionItemAnalysis
+export default AccordionItemAddressAnalysis

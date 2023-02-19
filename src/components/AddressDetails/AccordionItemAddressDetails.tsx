@@ -10,7 +10,7 @@ import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { DataGrid, DataGridEntry, SectionHeader } from "src/components"
 
-export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
+export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
   useLingui()
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
@@ -61,4 +61,4 @@ export function AddressAccordionItemDetails({ parsedAddress, ...rest }) {
     </AccordionItem>
   )
 }
-export default AddressAccordionItemDetails
+export default AccordionItemAddressDetails
