@@ -11,7 +11,17 @@ const withBundleAnalyzer = shouldAnalyzeBundles
  * @type {import('@blitzjs/next').BlitzConfig}
  **/
 const config = {
-  // experimental: { appDir: true },
+  experimental: {
+    // appDir: true,
+    swcPlugins: [
+      [
+        "@lingui/swc-plugin",
+        {
+          // the same options as in .swcrc
+        },
+      ],
+    ],
+  },
   i18n: {
     locales: ["en", "nl", "pseudo"],
     defaultLocale: "en",
