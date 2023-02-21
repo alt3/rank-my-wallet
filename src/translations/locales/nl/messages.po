@@ -13,20 +13,20 @@ msgstr ""
 "Plural-Forms: \n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:35
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:35
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:50
 msgid "Address"
 msgstr "Adres"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:27
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:27
 msgid "Address Analysis"
 msgstr "Adresanalyze"
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:24
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:24
 msgid "Address Details"
 msgstr "Adresgegevens"
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:57
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:57
 #: src/lib/address/formats/AddressBase58.ts:88
 #: src/lib/address/formats/AddressBech32.ts:168
 msgid "Address Type"
@@ -35,6 +35,10 @@ msgstr "Adrestype"
 #: src/components/Footer.tsx:27
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
 msgstr "Een <0>Alt3</0> product gebouwd op <1>Ergo Watch </1>"
+
+#: src/pages/404.tsx:24
+msgid "Back to homepage"
+msgstr "Terug naar de homepagina"
 
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:53
 #: src/components/RankingsTable/RankingsTableMobile.tsx:50
@@ -55,7 +59,7 @@ msgstr "Binair"
 msgid "Bits"
 msgstr "Bits"
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:44
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:44
 msgid "Blockchain"
 msgstr "Blockchain"
 
@@ -86,7 +90,7 @@ msgstr "Cardano Rankings komen binnenkort"
 msgid "Cardano Species"
 msgstr "Cardano Soorten"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:47
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:47
 msgid "Checksum"
 msgstr "Controlesom"
 
@@ -98,7 +102,7 @@ msgstr "Competitie"
 msgid "Competitors"
 msgstr "Concurrenten"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:51
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:51
 msgid "Content"
 msgstr "Inhoud"
 
@@ -119,11 +123,11 @@ msgstr "Huidige Soort"
 msgid "Decimals"
 msgstr "Decimalen"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:56
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:56
 msgid "Decoded Bytes:"
 msgstr "Gedecodeerde Bytes:"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:37
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:37
 msgid "Encoding"
 msgstr "Codering"
 
@@ -198,11 +202,11 @@ msgstr "Ben je een individu en wil je dit project ondersteunen? Overweeg dan om 
 msgid "Jellyfish"
 msgstr "Kwal"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:76
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:76
 msgid "Leading Prefix Bits:"
 msgstr "Leidende Prefix Bits:"
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:49
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:49
 msgid "Network"
 msgstr "Netwerk"
 
@@ -227,6 +231,10 @@ msgstr "Orka"
 msgid "Oyster"
 msgstr "Oester"
 
+#: src/pages/404.tsx:14 src/pages/404.tsx:19 src/pages/404.tsx:23
+msgid "Page Not Found"
+msgstr "Pagina Niet Gevonden"
+
 #: src/core/constants/species.ts:23 src/core/constants/species.ts:131
 msgid "Pipefish"
 msgstr "Zeenaald"
@@ -247,12 +255,12 @@ msgstr "Doneer om deze website advertentievrij te houden"
 msgid "Please provide a wallet address"
 msgstr "Voer eerst een wallet adres in"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:70
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:70
 msgid "Prefix Bits:"
 msgstr "Prefix Bits:"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:43
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:72
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:43
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:72
 msgid "Prefix Byte"
 msgstr "Prefix Byte"
 
@@ -337,7 +345,7 @@ msgstr "Tijgerhaai"
 msgid "Tip Box"
 msgstr "Fooienpot"
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:82
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:82
 msgid "Trailing Prefix Bits:"
 msgstr "Volgende Prefix Bits:"
 
@@ -354,7 +362,7 @@ msgstr "Twitter"
 msgid "Unsupported Address"
 msgstr "Niet Ondersteund Adres"
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:53
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:53
 msgid "Version"
 msgstr "Versie"
 

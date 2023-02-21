@@ -13,20 +13,20 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:35
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:35
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:50
 msgid "Address"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:27
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:27
 msgid "Address Analysis"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:24
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:24
 msgid "Address Details"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:57
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:57
 #: src/lib/address/formats/AddressBase58.ts:88
 #: src/lib/address/formats/AddressBech32.ts:168
 msgid "Address Type"
@@ -34,6 +34,10 @@ msgstr ""
 
 #: src/components/Footer.tsx:27
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
+msgstr ""
+
+#: src/pages/404.tsx:24
+msgid "Back to homepage"
 msgstr ""
 
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:53
@@ -56,7 +60,7 @@ msgstr ""
 msgid "Bits"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:44
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:44
 msgid "Blockchain"
 msgstr ""
 
@@ -91,7 +95,7 @@ msgstr ""
 msgid "Cardano Species"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:47
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:47
 msgid "Checksum"
 msgstr ""
 
@@ -103,7 +107,7 @@ msgstr ""
 msgid "Competitors"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:51
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:51
 msgid "Content"
 msgstr ""
 
@@ -125,11 +129,11 @@ msgstr ""
 msgid "Decimals"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:56
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:56
 msgid "Decoded Bytes:"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:37
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:37
 msgid "Encoding"
 msgstr ""
 
@@ -214,11 +218,11 @@ msgstr ""
 msgid "Jellyfish"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:76
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:76
 msgid "Leading Prefix Bits:"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:49
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:49
 msgid "Network"
 msgstr ""
 
@@ -246,6 +250,12 @@ msgstr ""
 msgid "Oyster"
 msgstr ""
 
+#: src/pages/404.tsx:14
+#: src/pages/404.tsx:19
+#: src/pages/404.tsx:23
+msgid "Page Not Found"
+msgstr ""
+
 #: src/core/constants/species.ts:23
 #: src/core/constants/species.ts:131
 msgid "Pipefish"
@@ -270,12 +280,12 @@ msgstr ""
 msgid "Please provide a wallet address"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:70
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:70
 msgid "Prefix Bits:"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:43
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:72
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:43
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:72
 msgid "Prefix Byte"
 msgstr ""
 
@@ -370,7 +380,7 @@ msgstr ""
 msgid "Tip Box"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemAnalysis.tsx:82
+#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:82
 msgid "Trailing Prefix Bits:"
 msgstr ""
 
@@ -387,7 +397,7 @@ msgstr ""
 msgid "Unsupported Address"
 msgstr ""
 
-#: src/components/AddressDetails/AddressAccordionItemDetails.tsx:53
+#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:53
 msgid "Version"
 msgstr ""
 
