@@ -16,7 +16,7 @@ const Page404: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title={`404 - ${t`Page Not Found`}`}
+        title={`${t`Page Not Found`}`}
         keywords="blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
       />
 
