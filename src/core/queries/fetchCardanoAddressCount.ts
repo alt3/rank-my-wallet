@@ -3,6 +3,6 @@
  *
  * @returns number
  */
-export default async function fetchErgoAddressCount() {
+export default async function fetchCardanoAddressCount() {
   return 2500000
 }
