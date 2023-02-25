@@ -37,6 +37,7 @@ msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
 msgstr ""
 
 #: src/pages/404.tsx:24
+#: src/pages/_error.tsx:29
 msgid "Back to homepage"
 msgstr ""
 
@@ -211,6 +212,11 @@ msgstr ""
 
 #: src/pages/sponsoring.tsx:29
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
+msgstr ""
+
+#: src/pages/_error.tsx:22
+#: src/pages/_error.tsx:23
+msgid "Internal Server Error"
 msgstr ""
 
 #: src/core/constants/species.ts:58
