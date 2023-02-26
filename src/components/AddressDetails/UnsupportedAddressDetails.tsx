@@ -9,6 +9,7 @@ import {
   ErrorHero,
   MetaTags,
 } from "src/components"
+import { unsupportedAddressMessage } from "src/lib"
 
 export function UnsupportedAddressDetails({ parsed }) {
   useLingui()
@@ -17,17 +18,25 @@ export function UnsupportedAddressDetails({ parsed }) {
     <>
       <MetaTags
         title={`RankMyWallet - ${t`Unsupported Address`}`}
-        description={`Unrecognized Address`}
+        description={`Unsupported Address`}
         keywords={`blockchain, wallets, rankings, species, address-analyzer`}
       />
 
       <ContentContainer>
-        <ErrorHero title={t`Unsupported Address`} subtitle={parsed.unsupported.message}></ErrorHero>
+        <ErrorHero
+          title={t`Unsupported Address`}
+          subtitle={unsupportedAddressMessage({
+            type: parsed.unsupported.type,
+            blockchain: parsed.blockchain.name,
+            network: parsed.blockchain?.network,
+            addressType: parsed.type?.name,
+          })}
+        ></ErrorHero>
 
         <AddressForm
           placeholder={t`Try again?`}
-          marginTop={{ base: "3rem", sm: "5rem" }}
-          marginBottom={{ base: "4rem", sm: "7rem" }}
+          marginTop={{ base: "4rem", md: "4rem" }}
+          marginBottom={{ base: "4rem", md: "7rem" }}
         />
 
         {["Cardano", "Ergo"].includes(parsed.blockchain.name) && (

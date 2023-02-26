@@ -332,6 +332,22 @@ msgstr "Schelpdier"
 msgid "Shrimp"
 msgstr "Garnaal"
 
+#: src/lib/address/unsupportedAddressMessage.ts:28
+msgid "Sorry, but we are unable to recognize this address."
+msgstr "Sorry, maar we zijn niet in staat om dit adres te herkennen."
+
+#: src/lib/address/unsupportedAddressMessage.ts:25
+msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
+msgstr "Sorry, maar we ondersteunen geen {blockchain} {addressType} adressen."
+
+#: src/lib/address/unsupportedAddressMessage.ts:21
+msgid "Sorry, but we do not support {blockchain} {network} addresses."
+msgstr "Sorry, maar we ondersteunen geen {blockchain} {network} adressen."
+
+#: src/lib/address/unsupportedAddressMessage.ts:17
+msgid "Sorry, but we do not support {blockchain}."
+msgstr "Sorry, maar we ondersteunen geen {blockchain}."
+
 #: src/components/AddressDetails/SupportedAddressDetails.tsx:100
 msgid "Sorry, we do not rank empty wallets"
 msgstr "Sorry maar we ranken geen lege wallets"
@@ -390,7 +406,7 @@ msgstr "Fooienpot"
 msgid "Trailing Prefix Bits:"
 msgstr "Volgende Prefix Bits:"
 
-#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:28
+#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:37
 msgid "Try again?"
 msgstr "Opnieuw proberen?"
 
@@ -398,8 +414,8 @@ msgstr "Opnieuw proberen?"
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:19
-#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:25
+#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:20
+#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:27
 msgid "Unsupported Address"
 msgstr "Niet Ondersteund Adres"
 

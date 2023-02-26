@@ -29,7 +29,19 @@ export default async function fetchCardanoRankings(parsedAddress) {
     })
     .catch((error) => {
       if (error.response) {
-        // The request was made but the server responded with a non-2xx status code
+        // The request was made but the server responded with a non-2xx status code.
+        // Note that we do not throw on 404 because it means no Blockfrost record exists for the given (valid) address.
+        if (error.response.status === 404) {
+          return [
+            {
+              position: "current",
+              rank: undefined,
+              balance: 0,
+              address: parsedAddress.address,
+            },
+          ]
+        }
+
         throwError(
           `${error.response.data.error} - ${error.response.data.message}`,
           error.response.data.status_code

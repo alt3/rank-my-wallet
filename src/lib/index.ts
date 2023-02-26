@@ -1,5 +1,6 @@
 export * from "./address/abbreviateAddress"
 export * from "./address/parseAddress"
+export * from "./address/unsupportedAddressMessage"
 export * from "./address/validateAddress"
 export * from "./bits/bitstoByte"
 export * from "./bits/getLeadingBits"
