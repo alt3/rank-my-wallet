@@ -1,4 +1,5 @@
 import axios from "axios"
+import { throwError } from "src/lib"
 
 /**
  * Dummy function until we can fetch rankings for Cardano
@@ -26,19 +27,19 @@ export default async function fetchCardanoRankings(parsedAddress) {
 
       return rankings
     })
-    .catch((err) => {
-      // 404 means no balance
-      if (err.response.status === 404) {
-        return [
-          {
-            position: "current",
-            rank: undefined,
-            balance: 0,
-            address: parsedAddress.address,
-          },
-        ]
+    .catch((error) => {
+      if (error.response) {
+        // The request was made but the server responded with a non-2xx status code
+        throwError(
+          `${error.response.data.error} - ${error.response.data.message}`,
+          error.response.data.status_code
+        )
+      } else if (error.request) {
+        // The request was made but no response was received. E.g. when using non-existent domain
+        throwError(error.message)
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        throwError(error.message)
       }
-      // not a 404, rethrow
-      throw err
     })
 }
