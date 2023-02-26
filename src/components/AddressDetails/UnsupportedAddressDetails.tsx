@@ -19,7 +19,7 @@ export function UnsupportedAddressDetails({ parsed }) {
       <MetaTags
         title={`RankMyWallet - ${t`Unsupported Address`}`}
         description={`Unsupported Address`}
-        keywords={`blockchain, wallets, rankings, species, address-analyzer`}
+        keywords={`crypto, blockchain, wallets, rankings, species, address-analyzer`}
       />
 
       <ContentContainer>

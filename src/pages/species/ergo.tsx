@@ -13,7 +13,7 @@ const ErgoSpeciesPage: BlitzPage = () => {
       <MetaTags
         title={`RankMyWallet - ${t`Ergo Species`}`}
         description="Species for the Ergo blockchain"
-        keywords="blockchain, ergo, species, whale, orca, shark, shrimp, ghost"
+        keywords="crypto, blockchain, ergo, species, whale, orca, shark, shrimp, ghost"
       />
 
       <ContentContainer>
