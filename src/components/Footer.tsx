@@ -1,5 +1,6 @@
-import { Link } from "src/components"
 import { Container, Flex, Text, useColorModeValue } from "@chakra-ui/react"
+import { Trans } from "@lingui/macro"
+import { Link } from "src/components"
 
 export function Footer() {
   const styles = {
@@ -23,18 +24,16 @@ export function Footer() {
     <Container as="footer" centerContent {...styles.container}>
       <Flex verticalAlign="center" textAlign="center" gridGap={2}>
         <Text>
-          An{" "}
-          <Link isExternal href="https://github.com/alt3" passHref {...styles.link}>
-            Alt3{" "}
-          </Link>
-          product powered by{" "}
-          <Link isExternal href="https://ergo.watch/" passHref {...styles.link}>
-            Ergo Watch{" "}
-          </Link>
-          and{" "}
-          <Link isExternal href="https://chakra-ui.com/" passHref {...styles.link}>
-            Chakra UI{" "}
-          </Link>
+          <Trans>
+            An{" "}
+            <Link isExternal href="https://github.com/alt3" passHref {...styles.link}>
+              Alt3
+            </Link>{" "}
+            product powered by{" "}
+            <Link isExternal href="https://ergo.watch/" passHref {...styles.link}>
+              Ergo Watch{" "}
+            </Link>
+          </Trans>
         </Text>
       </Flex>
     </Container>

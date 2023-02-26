@@ -11,6 +11,7 @@ for (const [index, blockchainAddresses] of Object.entries(addresses)) {
         const parsedAddress = parseAddress(fixture.address)
 
         expect(parsedAddress.blockchain.name).toEqual(blockchain)
+
         expect(parsedAddress.isSupported).toEqual(fixture.isSupported)
 
         if (parsedAddress.blockchain.network) {

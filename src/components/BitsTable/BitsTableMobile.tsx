@@ -1,9 +1,10 @@
-import { Text, useColorModeValue, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react"
+import { Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
+import nextId from "react-id-generator"
 import { DataGridCellTypeBinary } from "src/components/DataGrid/DatagridCellTypeBinary"
 import { DataGridCellTypeBit } from "src/components/DataGrid/DatagridCellTypeBit"
 import { DataGridCellTypeDecimal } from "src/components/DataGrid/DataGridCellTypeDecimal"
-
-import nextId from "react-id-generator"
 import { bitsToByte } from "src/lib"
 
 interface BitsTableProps {
@@ -13,6 +14,8 @@ interface BitsTableProps {
 }
 
 export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
+  useLingui()
+
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
   let binaryCounter = 256 // we will divide by two to generate the static binary cell headers
@@ -57,9 +60,15 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       <Table variant="simple" {...styles.table}>
         <Thead>
           <Tr>
-            <Th {...styles.th}>Bin</Th>
-            <Th {...styles.th}>Bit</Th>
-            <Th {...styles.th}>Dec</Th>
+            <Th {...styles.th}>
+              <Trans>Binaries</Trans>
+            </Th>
+            <Th {...styles.th}>
+              <Trans>Bits</Trans>
+            </Th>
+            <Th {...styles.th}>
+              <Trans>Decimals</Trans>
+            </Th>
           </Tr>
         </Thead>
 
@@ -92,7 +101,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
 
           <Tr>
             <Td borderBottom={0} {...styles.tdSumLabel} paddingTop={0}>
-              {sumLabel}
+              {t({ id: sumLabel })}
             </Td>
           </Tr>
         </Tbody>

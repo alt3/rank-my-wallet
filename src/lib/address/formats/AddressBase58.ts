@@ -1,12 +1,13 @@
-import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib"
+import { t } from "@lingui/macro"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
+import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib"
 import { BlockchainAddress } from "./BlockhainAddress"
 
 /**
- * Shelley address types.
+ * Ergo address types.
  *
- * @see {@link https://developers.cardano.org/docs/governance/cardano-improvement-proposals/cip-0019/#shelley-addresses}
+ * @see {@link https://docs.ergoplatform.com/dev/wallet/address/}
  */
 type TErgoAddressType = {
   type: number
@@ -39,7 +40,7 @@ export class Base58Address extends BlockchainAddress {
   constructor(address: string, decoded: Uint8Array) {
     super(address) // sets address property in the base class (lowercased there)
     this.class = this.constructor.name
-    this.encoding = "base58"
+    this.encoding = "Base58"
 
     this.decoded = {
       bytes: Array.from(decoded),
@@ -69,7 +70,7 @@ export class Base58Address extends BlockchainAddress {
 
     if (isErgoAddress(decoded)) {
       this.isSupported = true
-      this.blockchain.name = "ergo"
+      this.blockchain.name = "Ergo"
       this.blockchain.explorerUrl = `https://explorer.ergoplatform.com/en/addresses/`
       this.currency = {
         decimals: 9,
@@ -84,11 +85,11 @@ export class Base58Address extends BlockchainAddress {
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
-          type: "address type",
+          type: t`Address Type`,
         },
         trailing: {
           bits: getTrailingBits(headerBits),
-          type: "network type",
+          type: t`Network Type`,
         },
       }
 
@@ -96,7 +97,7 @@ export class Base58Address extends BlockchainAddress {
         this.blockchain.network = getErgoNetwork(this.payload.prefix.trailing.bits)
 
         // invalidate if not mainnet
-        if (this.blockchain.network !== "mainnet") {
+        if (this.blockchain.network !== "Mainnet") {
           this.isSupported = false
         }
       }
@@ -163,11 +164,11 @@ function getErgoNetwork(networkBits: Array<number>) {
   const sum = networkBits.reduce((a, b) => a + b)
 
   if (sum === 0) {
-    return "mainnet"
+    return "Mainnet"
   }
 
   if (sum === 1) {
-    return "testnet"
+    return "Testnet"
   }
 
   throw `Unable to determine Ergo network using network header bits ${networkBits.join()}`

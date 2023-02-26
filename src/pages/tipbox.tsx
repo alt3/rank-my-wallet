@@ -1,11 +1,15 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Box, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { BsHeartFill } from "react-icons/bs"
 import { ContentContainer, MetaTags, PageHero, TipboxCard } from "src/components"
 import tipboxAddresses from "src/core/constants/tipbox-addresses"
 import Layout from "src/core/layouts/Layout"
 
 const TipBox: BlitzPage = () => {
+  useLingui()
+
   const styles = {
     grid: {
       columns: { base: 1, sm: 2 },
@@ -21,27 +25,25 @@ const TipBox: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title="Rank My Wallet - Tip Box"
+        title={`RankMyWallet - ${t`Tip Box`}`}
         description="Donate some coins to keep this website ad-free"
         keywords="blockchain, cardano, ergo, wallets, rankings, tip-box, support"
       />
 
       <ContentContainer>
-        <PageHero title="Tip Box" />
+        <PageHero title={<Trans>Tip Box</Trans>} />
 
         <Box>
           <SimpleGrid {...styles.grid}>
             <TipboxCard
-              title="Cardano"
+              title={<Trans>Cardano</Trans>}
               address={tipboxAddresses.cardano}
               url={`https://pool.pm/${tipboxAddresses.cardano}`}
-              linkTitle="Cardano Explorer"
             />
             <TipboxCard
-              title="Ergo"
+              title={<Trans>Ergo</Trans>}
               address={tipboxAddresses.ergo}
               url={`https://explorer.ergoplatform.com/en/addresses/${tipboxAddresses.ergo}`}
-              linkTitle="Ergo Explorer"
             />
           </SimpleGrid>
 
@@ -53,7 +55,7 @@ const TipBox: BlitzPage = () => {
               color="red"
               marginRight="0.25rem"
             />
-            Thanks to your donations, this website remains ad-free{" "}
+            <Trans>Please donate to keep this website ad-free</Trans>{" "}
             <Box
               as={BsHeartFill}
               viewBox="0 0 20 10"
@@ -69,6 +71,6 @@ const TipBox: BlitzPage = () => {
 }
 
 TipBox.suppressFirstRenderFlicker = true
-TipBox.getLayout = (page) => <Layout title="Tip Box">{page}</Layout>
+TipBox.getLayout = (page) => <Layout>{page}</Layout>
 
 export default TipBox

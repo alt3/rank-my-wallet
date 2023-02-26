@@ -1,28 +1,33 @@
-import Layout from "src/core/layouts/Layout"
-import Head from "next/head"
-import { Text, VStack } from "@chakra-ui/react"
+import { Text, useColorModeValue } from "@chakra-ui/react"
+import { t } from "@lingui/macro"
 import { BackHomeButton, PageHero } from "src/components"
+import ExceptionLayout from "src/core/layouts/ExceptionLayout"
 
+/**
+ * This page is imported by the RootErrorFallback() function in
+ * _app.tsx and then used as the ErrorBoundary FallbackComponent.
+ *
+ * @remarks
+ * We cannot use the default layout for server-side errors because
+ * it will throw `useLingui hook was used without I18nProvider`.
+ */
 export function Error({ statusCode, title }) {
-  const pageTitle = "Unexpected Error"
+  const styles = {
+    errorMessage: {
+      color: useColorModeValue("teal.500", "teal.300"),
+    },
+  }
+
   return (
-    <>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
+    <ExceptionLayout title={t`Internal Server Error`}>
+      <PageHero title={t`Internal Server Error`} marginTop={{ base: "6rem", md: "7.5rem" }} />
 
-      <Layout>
-        <PageHero title="Unexpected Error" />
+      <Text {...styles.errorMessage} align="center">
+        {statusCode} : {title}
+      </Text>
 
-        <VStack>
-          <Text>
-            Error {statusCode}: {title}
-          </Text>
-        </VStack>
-
-        <BackHomeButton title="Home" marginTop="5rem" />
-      </Layout>
-    </>
+      <BackHomeButton title={t`Back to homepage`} marginTop="4rem" />
+    </ExceptionLayout>
   )
 }
 

@@ -60,7 +60,6 @@ export class BlockchainAddress {
     name: string
   }
   unsupported: {
-    message: string
     type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
   }
 

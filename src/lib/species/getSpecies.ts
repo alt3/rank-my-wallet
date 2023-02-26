@@ -7,7 +7,7 @@ import species from "src/core/constants/species"
  * @param balance - Wallet balance with or without decimals
  */
 export const getSpecies = function (
-  blockchain: "cardano" | "ergo",
+  blockchain: "Cardano" | "Ergo",
   balance: number
 ): { name: string; startsAt: number } {
   const match = species[blockchain]

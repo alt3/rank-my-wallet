@@ -6,7 +6,7 @@ const Home: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title="Rank My Wallet"
+        title="RankMyWallet"
         description="Blockchain rankings for Cardano and Ergo"
         keywords="blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
       />
@@ -22,6 +22,6 @@ const Home: BlitzPage = () => {
 }
 
 Home.suppressFirstRenderFlicker = true
-Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
+Home.getLayout = (page) => <Layout>{page}</Layout>
 
 export default Home

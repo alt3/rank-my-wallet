@@ -8,7 +8,6 @@ interface DataGridEntryProps {
   value: string
   url?: {
     href: string
-    title: string
     isExternal?: boolean
   }
   linkColor?: string
@@ -22,13 +21,7 @@ export const DataGridEntry = ({ field, value, url, linkColor }: DataGridEntryPro
 
         <DataGridValue>
           <Box>
-            <Link
-              href={url.href}
-              title={url.title}
-              color={linkColor}
-              passHref
-              isExternal={url.isExternal}
-            >
+            <Link href={url.href} color={linkColor} passHref isExternal={url.isExternal}>
               {value} {url.isExternal && <ExternalLinkIcon />}
             </Link>
           </Box>

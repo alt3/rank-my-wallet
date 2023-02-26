@@ -5,7 +5,7 @@ import fetchErgoAddressCount from "./fetchErgoAddressCount"
 import fetchErgoRankings from "./fetchErgoRankings"
 
 export default async function fetchData(parsedAddress) {
-  if (parsedAddress.blockchain.name !== "cardano" && parsedAddress.blockchain.name !== "ergo") {
+  if (parsedAddress.blockchain.name !== "Cardano" && parsedAddress.blockchain.name !== "Ergo") {
     throw `Async function getAccount called for non-supported blockchain ${parsedAddress.blockchain.name}`
   }
 
@@ -14,7 +14,7 @@ export default async function fetchData(parsedAddress) {
   let nano
   let ticker
 
-  if (parsedAddress.blockchain.name === "cardano") {
+  if (parsedAddress.blockchain.name === "Cardano") {
     // eslint-disable-next-line @typescript-eslint/no-extra-semi
     ;[addressCount, rankings] = await Promise.all([
       fetchCardanoAddressCount(),
@@ -27,7 +27,7 @@ export default async function fetchData(parsedAddress) {
     }
   }
 
-  if (parsedAddress.blockchain.name === "ergo") {
+  if (parsedAddress.blockchain.name === "Ergo") {
     // eslint-disable-next-line @typescript-eslint/no-extra-semi
     ;[addressCount, rankings] = await Promise.all([
       fetchErgoAddressCount(),

@@ -1,4 +1,6 @@
 import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { BsGithub, BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
 import { Link } from "src/components"
 import { Logo } from "../Images/Logos"
@@ -9,6 +11,8 @@ interface NavbarProps {
 }
 
 export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarProps) {
+  useLingui()
+
   const { toggleColorMode: toggleMode } = useColorMode()
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
@@ -24,8 +28,9 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
         <Flex align="left">
-          <Link href="/" aria-label="Home" passHref>
+          <Link href="/" passHref>
             <Logo
+              aria-label={t`Home`}
               marginTop="0.5rem"
               h="10"
               pointerEvents="none"
@@ -44,46 +49,49 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
           maxW="1100px"
           color={useColorModeValue("gray.700", "whiteAlpha.600")}
         >
-          <Link
-            href="/species"
-            aria-label="Blockchain species"
-            textDecoration="none !important"
-            passHref
-          >
-            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-              Species
+          <Link href="/species" textDecoration="none !important" passHref>
+            <Button
+              variant="ghost"
+              aria-label={t`Blockchain Species`}
+              color="inherit"
+              fontWeight="normal"
+              textDecoration="none"
+            >
+              <Trans>SpeciesPlural</Trans>
             </Button>
           </Link>
 
-          <Link href="/tipbox" aria-label="Tip Box" textDecoration="none !important" passHref>
-            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-              Tip Box
+          <Link href="/tipbox" textDecoration="none !important" passHref>
+            <Button
+              variant="ghost"
+              aria-label={t`Tip Box`}
+              color="inherit"
+              fontWeight="normal"
+              textDecoration="none"
+            >
+              <Trans>Tip Box</Trans>
             </Button>
           </Link>
 
-          <Link
-            href="/faq"
-            aria-label="Frequently Asked Questions (FAQ)"
-            textDecoration="none !important"
-            passHref
-          >
-            <Button variant="ghost" color="inherit" fontWeight="normal" textDecoration="none">
-              FAQ
+          <Link href="/faq" textDecoration="none !important" passHref>
+            <Button
+              variant="ghost"
+              aria-label={t`Frequently Asked Questions (FAQ)`}
+              color="inherit"
+              fontWeight="normal"
+              textDecoration="none"
+            >
+              <Trans>FAQ</Trans>
             </Button>
           </Link>
 
-          <Link
-            href="https://www.twitter.com/RankMyWallet/"
-            aria-label="RankMyWallet on Twitter"
-            isExternal
-            passHref
-          >
+          <Link href="https://www.twitter.com/RankMyWallet/" isExternal passHref>
             <IconButton
               size="lg"
               maxWidth="1rem"
               w={10}
               ml={0}
-              aria-label={`RankMyWallet on Twitter`}
+              aria-label={t`RankMyWallet on Twitter`}
               variant="ghost"
               color="current"
               marginLeft="0"
@@ -91,18 +99,13 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
             />
           </Link>
 
-          <Link
-            href="https://github.com/alt3/rank-my-wallet/"
-            aria-label="RankMyWallet on Github"
-            isExternal
-            passHref
-          >
+          <Link href="https://github.com/alt3/rank-my-wallet/" isExternal passHref>
             <IconButton
               size="lg"
               maxWidth="1rem"
               w={10}
               ml={0}
-              aria-label={`RankMyWallet on Github`}
+              aria-label={t`RankMyWallet on Github`}
               variant="ghost"
               color="current"
               marginLeft="0"

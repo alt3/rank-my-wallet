@@ -1,7 +1,11 @@
-import { AddressForm } from "src/components"
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
+import { t } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
+import { AddressForm } from "src/components"
 
 export function Hero() {
+  useLingui()
+
   const styles = {
     box: {
       marginBottom: "3rem",
@@ -39,7 +43,7 @@ export function Hero() {
               </Text>
             </Heading>
 
-            <AddressForm placeholder="Wallet address" {...styles.form} />
+            <AddressForm placeholder={t`Wallet address`} {...styles.form} />
           </Stack>
         </Center>
       </Container>

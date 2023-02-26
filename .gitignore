@@ -19,6 +19,9 @@ web_modules/
 .blitz**
 blitz-log.log
 
+# next
+.swc/
+
 # misc
 .DS_Store
 
@@ -30,6 +33,10 @@ blitz-log.log
 # Logs
 logs
 *.log
+
+# Translations
+/src/translations/**/*.mo
+
 
 # Runtime data
 pids

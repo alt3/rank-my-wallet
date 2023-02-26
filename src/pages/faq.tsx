@@ -10,10 +10,14 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react"
+import { t, Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import { AccordionItemFaq, ContentContainer, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 
 const FaqPage: BlitzPage = () => {
+  useLingui()
+
   const styles = {
     listItems: {
       marginLeft: "0.25rem",
@@ -23,25 +27,37 @@ const FaqPage: BlitzPage = () => {
   return (
     <>
       <MetaTags
-        title="Rank My Wallet - Frequently Asked Questions (FAQ)"
-        description="Frequently asked questions for Rank My Wallet"
+        title={`RankMyWallet - ${t`FAQ`}`}
+        description="Frequently asked questions for RankMyWallet"
         keywords="blockchain, cardano, ergo, wallets, rankings, species, faq, questions"
       />
 
       <ContentContainer>
-        <PageHero title="Frequently Asked Questions (FAQ)" />
+        <PageHero title={<Trans>Frequently Asked Questions (FAQ)</Trans>} />
 
         <Tabs variant="enclosed" colorScheme="teal">
           <TabList>
-            <Tab>General</Tab>
-            <Tab>Cardano</Tab>
-            <Tab>Ergo</Tab>
+            <Tab>
+              <Text>
+                <Trans>General</Trans>
+              </Text>
+            </Tab>
+            <Tab>
+              <Text>
+                <Trans>Cardano</Trans>
+              </Text>
+            </Tab>
+            <Tab>
+              <Text>
+                <Trans>Ergo</Trans>
+              </Text>
+            </Tab>
           </TabList>
           <TabPanels>
             {/* GENERAL PANEL */}
             <TabPanel>
               <Accordion allowMultiple>
-                <AccordionItemFaq question="What technology stack does this website use?">
+                <AccordionItemFaq question={<Trans>What technology does this website use?</Trans>}>
                   <UnorderedList>
                     <ListItem {...styles.listItems}>
                       <Link href="https://blitzjs.com/" isExternal passHref withExternalIcon>
@@ -60,7 +76,7 @@ const FaqPage: BlitzPage = () => {
                     </ListItem>
                   </UnorderedList>
                 </AccordionItemFaq>
-                <AccordionItemFaq question="Where do I report bugs?">
+                <AccordionItemFaq question={<Trans>Where do I report bugs?</Trans>}>
                   <Link
                     href="https://github.com/alt3/rank-my-wallet/issues"
                     isExternal
@@ -76,10 +92,12 @@ const FaqPage: BlitzPage = () => {
             {/* CARDANO PANEL */}
             <TabPanel>
               <Accordion allowMultiple>
-                <AccordionItemFaq question="Why are Byron addresses not supported?">
+                <AccordionItemFaq question={<Trans>Why are Byron addresses not supported?</Trans>}>
                   <Text>
-                    Byron (legacy) addresses lack staking functionality and therefore do not have
-                    the staking addresses that Rank My Wallet needs to determine your rank.
+                    <Trans>
+                      Byron (legacy) addresses lack the staking functionality that RankMyWallet uses
+                      to determine your rank.
+                    </Trans>
                   </Text>
                 </AccordionItemFaq>
               </Accordion>
@@ -88,20 +106,31 @@ const FaqPage: BlitzPage = () => {
             {/* ERGO PANEL */}
             <TabPanel>
               <Accordion allowMultiple>
-                <AccordionItemFaq question="Why is the balance on this website different from the balance in my Ergo wallet?">
+                <AccordionItemFaq
+                  question={
+                    <Trans>
+                      Why is the balance on this website different from the balance in my Ergo
+                      wallet?
+                    </Trans>
+                  }
+                >
                   <Text>
-                    Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets
-                    like Nautilus mostly show your &apos;consolidated&apos; balance by adding up the
-                    amounts found in all boxes related to your wallet. RankMyWallet however, will
-                    only show the balance of a single box.
+                    <Trans>
+                      Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets
+                      like Nautilus mostly show your &apos;consolidated&apos; balance by adding up
+                      the amounts found in all boxes related to your wallet. RankMyWallet however,
+                      will only show the balance of a single box.
+                    </Trans>
                   </Text>
                 </AccordionItemFaq>
 
-                <AccordionItemFaq question="How do I consolidate my boxes?">
+                <AccordionItemFaq question={<Trans>How do I consolidate my boxes?</Trans>}>
                   <Text>
-                    You can consolidate all of your boxes, and thereby your balance, into a single
-                    box by sending all Ergo to yourself using either a new address or one of your
-                    existing receive addresses.
+                    <Trans>
+                      You can consolidate all of your boxes, and thereby your balance, into a single
+                      box by sending all Ergo to yourself using either a new address or one of your
+                      existing receive addresses.
+                    </Trans>
                   </Text>
                 </AccordionItemFaq>
               </Accordion>
@@ -114,6 +143,6 @@ const FaqPage: BlitzPage = () => {
 }
 
 FaqPage.suppressFirstRenderFlicker = true
-FaqPage.getLayout = (page) => <Layout title="Tip Box">{page}</Layout>
+FaqPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default FaqPage

@@ -1,4 +1,6 @@
 import { Accordion, Divider } from "@chakra-ui/react"
+import { t } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import {
   AccordionItemAddressAnalysis,
   AccordionItemAddressDetails,
@@ -7,26 +9,37 @@ import {
   ErrorHero,
   MetaTags,
 } from "src/components"
+import { unsupportedAddressMessage } from "src/lib"
 
 export function UnsupportedAddressDetails({ parsed }) {
+  useLingui()
+
   return (
     <>
       <MetaTags
-        title={`Rank My Wallet - Unrecognized Address`}
-        description={`Unrecognized Address`}
+        title={`RankMyWallet - ${t`Unsupported Address`}`}
+        description={`Unsupported Address`}
         keywords={`blockchain, wallets, rankings, species, address-analyzer`}
       />
 
       <ContentContainer>
-        <ErrorHero title="Unsupported Address" subtitle={parsed.unsupported.message}></ErrorHero>
+        <ErrorHero
+          title={t`Unsupported Address`}
+          subtitle={unsupportedAddressMessage({
+            type: parsed.unsupported.type,
+            blockchain: parsed.blockchain.name,
+            network: parsed.blockchain?.network,
+            addressType: parsed.type?.name,
+          })}
+        ></ErrorHero>
 
         <AddressForm
-          placeholder="Try again?"
-          marginTop={{ base: "3rem", sm: "5rem" }}
-          marginBottom={{ base: "4rem", sm: "7rem" }}
+          placeholder={t`Try again?`}
+          marginTop={{ base: "4rem", md: "4rem" }}
+          marginBottom={{ base: "4rem", md: "7rem" }}
         />
 
-        {["cardano", "ergo"].includes(parsed.blockchain.name) && (
+        {["Cardano", "Ergo"].includes(parsed.blockchain.name) && (
           <>
             <Divider marginBottom={{ base: "1.5rem", sm: "1.5rem" }} />
 

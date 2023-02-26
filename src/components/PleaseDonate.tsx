@@ -1,12 +1,12 @@
 import { Box, Text, useColorModeValue } from "@chakra-ui/react"
-import { Link } from "src/components"
+import { Trans } from "@lingui/macro"
 import { BsHeartFill } from "react-icons/bs"
+import { Link } from "src/components"
 
 export function PleaseDonate({ ...rest }) {
   return (
     <Link
       href="/tipbox"
-      aria-label="Tip Box"
       _hover={{ textDecoration: "none" }}
       title="This message will not be shown for recognized donator addresses"
     >
@@ -26,7 +26,7 @@ export function PleaseDonate({ ...rest }) {
             color="red"
             marginRight="0.25rem"
           />
-          Your donations help keep this site ad-free
+          <Trans>Please donate to keep this website ad-free</Trans>
           <Box
             as={BsHeartFill}
             viewBox="0 0 20 10"

@@ -1,7 +1,8 @@
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
+import { Trans } from "@lingui/macro"
 import { getUserLocale } from "get-user-locale"
 import Countup from "react-countup"
-import { capitalize, getNumberSeparators } from "src/lib"
+import { getNumberSeparators } from "src/lib"
 
 interface CounterProps {
   totalAccounts: number
@@ -41,7 +42,10 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
       <Container {...styles.container}>
         <Center>
           <Stack spacing={2} width="100%" align="center">
-            <Heading {...styles.heading}>You are {capitalize(blockchain)} holder</Heading>
+            <Heading {...styles.heading}>
+              {blockchain === "Cardano" && <Trans>You are Cardano holder</Trans>}
+              {blockchain === "Ergo" && <Trans>You are Ergo holder</Trans>}
+            </Heading>
             <Heading as="h3" {...styles.heading} {...styles.counter}>
               <Text as="span" marginRight="0.6rem">
                 #
