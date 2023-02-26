@@ -1,4 +1,5 @@
 import axios from "axios"
+import { throwError } from "src/lib"
 
 interface Rank {
   position: string
@@ -45,19 +46,28 @@ export default async function fetchErgoRankings(parsedAddress) {
 
       return rankings
     })
-    .catch((err) => {
-      // 404 means no balance
-      if (err.response.status === 404) {
-        return [
-          {
-            position: "current",
-            rank: undefined,
-            balance: 0,
-            address: parsedAddress.address,
-          },
-        ]
+    .catch((error) => {
+      if (error.response) {
+        // The request was made but the server responded with a non-2xx status code.
+        // Note that we do not throw on 404 because it means no Ergo Watch record exists for the given (valid) address.
+        if (error.response.status === 404) {
+          return [
+            {
+              position: "current",
+              rank: undefined,
+              balance: 0,
+              address: parsedAddress.address,
+            },
+          ]
+        }
+
+        throwError(error.response.data.detail[0].msg, error.response.status)
+      } else if (error.request) {
+        // The request was made but no response was received. E.g. when using non-existent domain
+        throwError(error.message)
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        throwError(error.message)
       }
-      // not a 404, rethrow
-      throw err
     })
 }
