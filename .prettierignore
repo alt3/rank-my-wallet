@@ -10,3 +10,5 @@ db/migrations
 .pnp.*
 node_modules
 .blitz.config.compiled.js
+
+src/translations/
