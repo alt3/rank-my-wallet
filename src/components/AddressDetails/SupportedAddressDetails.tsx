@@ -91,7 +91,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
       <MetaTags
         title={`RankMyWallet - ${t`Your Rank`}`}
         description={`Your ${parsed.blockchain.name} blockchain ranking and address analysis`}
-        keywords={`blockchain, ${parsed.blockchain.name}, wallets, rankings, species, address-analyzer`}
+        keywords={`crypto, blockchain, ${parsed.blockchain.name}, wallets, rankings, species, address-analyzer`}
       />
 
       <ContentContainer>

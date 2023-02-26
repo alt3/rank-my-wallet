@@ -8,7 +8,7 @@ const Home: BlitzPage = () => {
       <MetaTags
         title="RankMyWallet"
         description="Blockchain rankings for Cardano and Ergo"
-        keywords="blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
+        keywords="crypto, blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
       />
 
       <Hero />

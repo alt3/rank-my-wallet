@@ -29,7 +29,7 @@ const FaqPage: BlitzPage = () => {
       <MetaTags
         title={`RankMyWallet - ${t`FAQ`}`}
         description="Frequently asked questions for RankMyWallet"
-        keywords="blockchain, cardano, ergo, wallets, rankings, species, faq, questions"
+        keywords="crypto, blockchain, cardano, ergo, wallets, rankings, species, faq, questions"
       />
 
       <ContentContainer>
