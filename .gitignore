@@ -34,9 +34,12 @@ blitz-log.log
 logs
 *.log
 
+# Ignore postbuild generated next-sitemap files
+/public/robots.txt
+/public/sitemap.xml
+
 # Translations
 /src/translations/**/*.mo
-
 
 # Runtime data
 pids
