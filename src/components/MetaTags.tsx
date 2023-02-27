@@ -9,7 +9,7 @@ interface Props {
 
 export function MetaTags({ title, description, keywords }: Props) {
   const { asPath } = useRouter()
-  const host = process.env["NEXT_PUBLIC_HOST"]
+  const host = process.env["NEXT_PUBLIC_SITE_URL"]
   const url = host + asPath
 
   return (
