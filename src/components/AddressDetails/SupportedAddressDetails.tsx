@@ -143,7 +143,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             </GridItem>
             <GridItem {...styles.gridValue}>
               <Link
-                href={`/species/${parsed.blockchain.name}`}
+                href={`/species/${parsed.blockchain.name.toLowerCase()}`}
                 title={`${parsed.blockchain.name} Species`}
                 color={useColorModeValue("pink.600", "pink.400")}
                 passHref
