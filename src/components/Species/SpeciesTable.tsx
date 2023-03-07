@@ -72,9 +72,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                 >
                   {i + 1}
                 </Td>
-                <Td {...styles.left}>
-                  <Trans id={element.name} />
-                </Td>
+                <Td {...styles.left}>{element.name}</Td>
                 <Td {...styles.right}>
                   <Box as="span" whiteSpace="nowrap">
                     <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>
