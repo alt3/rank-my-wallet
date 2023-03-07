@@ -149,14 +149,14 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 passHref
                 withExternalIcon
               >
-                {t({ id: species.current.name })}
+                {species.current.name}
               </Link>
             </GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Next Species</Trans>
             </GridItem>
-            <GridItem {...styles.gridValue}>{t({ id: species.next.name })}</GridItem>
+            <GridItem {...styles.gridValue}>{species.next.name}</GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Starts At</Trans>
