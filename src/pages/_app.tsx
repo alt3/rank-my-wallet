@@ -9,7 +9,7 @@ import { useEffect } from "react"
 import { withBlitz } from "src/blitz-client"
 import theme from "src/core/theme"
 import Error from "src/pages/_error"
-import { loadTranslation } from "src/translations/loadTranslation"
+import { activateTranslation } from "src/translations/activateTranslation"
 
 function RootErrorFallback({ error }: ErrorFallbackProps) {
   return <Error statusCode={error.statusCode || 400} title={error.message || error.name} />
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     async function load(locale) {
-      await loadTranslation(locale) // i18n
+      await activateTranslation(locale) // i18n
     }
     void load(locale)
   }, [locale])
