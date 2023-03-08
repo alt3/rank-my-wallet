@@ -1,4 +1,5 @@
 import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
+import { i18n, MessageDescriptor } from "@lingui/core"
 import { Trans } from "@lingui/macro"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib"
@@ -8,7 +9,7 @@ interface SpeciesTableProps {
   tickerSymbol: "₳" | "Σ"
   species: {
     startsAt: number
-    name: string
+    name: MessageDescriptor
   }[]
 }
 
@@ -72,7 +73,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                 >
                   {i + 1}
                 </Td>
-                <Td {...styles.left}>{element.name}</Td>
+                <Td {...styles.left}>{i18n._(element.name)}</Td>
                 <Td {...styles.right}>
                   <Box as="span" whiteSpace="nowrap">
                     <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>

@@ -11,10 +11,6 @@ module.exports = {
       {
         rules: [
           {
-            handlerName: "_",
-            message: "Use t`` from '@lingui/macro' instead",
-          },
-          {
             handlerName: "number",
             message: "Use formatCurrency or formatNumber instead",
           },

@@ -1,111 +1,111 @@
-import { t } from "@lingui/macro"
+import { defineMessage } from "@lingui/macro"
 
 const species = {
   // https://datastudio.google.com/reporting/3136c55b-635e-4f46-8e4b-b8ab54f2d460/page/r2LQC
   Cardano: [
     {
       startsAt: 0,
-      name: t`Ghost`, // t will extract name to PO
+      name: defineMessage({ message: "Ghost" }), // t will extract name to PO
       icon: "Ghost",
     },
     {
       startsAt: 0.000001,
-      name: t`Plankton`,
+      name: defineMessage({ message: "Plankton" }),
       icon: "Plankton",
     },
     {
       startsAt: 1,
-      name: t`Seahorse`,
+      name: defineMessage({ message: "Seahorse" }),
       icon: "Seahorse",
     },
     {
       startsAt: 10,
-      name: t`Pipefish`,
+      name: defineMessage({ message: "Pipefish" }),
       icon: "Pipefish",
     },
     {
       startsAt: 25,
-      name: t`Shrimp`,
+      name: defineMessage({ message: "Shrimp" }),
       icon: "Shrimp",
     },
     {
       startsAt: 100,
-      name: t`Shell`,
+      name: defineMessage({ message: "Shell" }),
       icon: "Shell",
     },
     {
       startsAt: 500,
-      name: t`Oyster`,
+      name: defineMessage({ message: "Oyster" }),
       icon: "Oyster",
     },
     {
       startsAt: 1000,
-      name: t`Starfish`,
+      name: defineMessage({ message: "Starfish" }),
       icon: "Starfish",
     },
     {
       startsAt: 2000,
-      name: t`Crab`,
+      name: defineMessage({ message: "Crab" }),
       icon: "Crab",
     },
     {
       startsAt: 5000,
-      name: t`Fish`,
+      name: defineMessage({ message: "Fish" }),
       icon: "Fish",
     },
     {
       startsAt: 10000,
-      name: t`Jellyfish`,
+      name: defineMessage({ message: "Jellyfish" }),
       icon: "Jellyfish",
     },
     {
       startsAt: 50000,
-      name: t`Piranha`,
+      name: defineMessage({ message: "Piranha" }),
       icon: "Piranha",
     },
     {
       startsAt: 100000,
-      name: t`Swordfish`,
+      name: defineMessage({ message: "Swordfish" }),
       icon: "Swordfish",
     },
     {
       startsAt: 150000,
-      name: t`Octopus`,
+      name: defineMessage({ message: "Octopus" }),
       icon: "Octopus",
     },
     {
       startsAt: 400000,
-      name: t`Shark`,
+      name: defineMessage({ message: "Shark" }),
       icon: "Shark",
     },
     {
       startsAt: 750000,
-      name: t`Tiger shark`,
+      name: defineMessage({ message: "Tiger shark" }),
       icon: "Shark",
     },
     {
       startsAt: 1000000,
-      name: t`Great white shark`,
+      name: defineMessage({ message: "Great white shark" }),
       icon: "Shark",
     },
     {
       startsAt: 5000000,
-      name: t`Orca`,
+      name: defineMessage({ message: "Orca" }),
       icon: "Orca",
     },
     {
       startsAt: 10000000,
-      name: t`Whale`,
+      name: defineMessage({ message: "Whale" }),
       icon: "Whale",
     },
     {
       startsAt: 50000000,
-      name: t`Fin whale`,
+      name: defineMessage({ message: "Fin whale" }),
       icon: "Whale",
     },
     {
       startsAt: 100000000,
-      name: t`Blue whale`,
+      name: defineMessage({ message: "Blue whale" }),
       icon: "Whale",
     },
   ],
@@ -113,107 +113,107 @@ const species = {
   Ergo: [
     {
       startsAt: 0,
-      name: t`Ghost`,
+      name: defineMessage({ message: "Ghost" }), // t will extract name to PO
       icon: "Ghost",
     },
     {
       startsAt: 0.000000001,
-      name: t`Plankton`,
+      name: defineMessage({ message: "Plankton" }),
       icon: "Plankton",
     },
     {
       startsAt: 1,
-      name: t`Seahorse`,
+      name: defineMessage({ message: "Seahorse" }),
       icon: "Seahorse",
     },
     {
       startsAt: 10,
-      name: t`Pipefish`,
+      name: defineMessage({ message: "Pipefish" }),
       icon: "Pipefish",
     },
     {
       startsAt: 25,
-      name: t`Shrimp`,
+      name: defineMessage({ message: "Shrimp" }),
       icon: "Shrimp",
     },
     {
       startsAt: 50,
-      name: t`Shell`,
+      name: defineMessage({ message: "Shell" }),
       icon: "Shell",
     },
     {
       startsAt: 100,
-      name: t`Oyster`,
+      name: defineMessage({ message: "Oyster" }),
       icon: "Oyster",
     },
     {
       startsAt: 250,
-      name: t`Starfish`,
+      name: defineMessage({ message: "Starfish" }),
       icon: "Starfish",
     },
     {
       startsAt: 500,
-      name: t`Crab`,
+      name: defineMessage({ message: "Crab" }),
       icon: "Crab",
     },
     {
       startsAt: 1000,
-      name: t`Fish`,
+      name: defineMessage({ message: "Fish" }),
       icon: "Fish",
     },
     {
       startsAt: 2500,
-      name: t`Jellyfish`,
+      name: defineMessage({ message: "Jellyfish" }),
       icon: "Jellyfish",
     },
     {
       startsAt: 5000,
-      name: t`Piranha`,
+      name: defineMessage({ message: "Piranha" }),
       icon: "Piranha",
     },
     {
       startsAt: 10000,
-      name: t`Swordfish`,
+      name: defineMessage({ message: "Swordfish" }),
       icon: "Starfish",
     },
     {
       startsAt: 25000,
-      name: t`Octopus`,
+      name: defineMessage({ message: "Octopus" }),
       icon: "Octopus",
     },
     {
       startsAt: 50000,
-      name: t`Shark`,
+      name: defineMessage({ message: "Shark" }),
       icon: "Shark",
     },
     {
       startsAt: 100000,
-      name: t`Tiger shark`,
+      name: defineMessage({ message: "Tiger shark" }),
       icon: "Shark",
     },
     {
       startsAt: 250000,
-      name: t`Great white shark`,
+      name: defineMessage({ message: "Great white shark" }),
       icon: "Shark",
     },
     {
       startsAt: 500000,
-      name: t`Orca`,
+      name: defineMessage({ message: "Orca" }),
       icon: "Orca",
     },
     {
       startsAt: 1000000,
-      name: t`Whale`,
+      name: defineMessage({ message: "Whale" }),
       icon: "Whale",
     },
     {
       startsAt: 2500000,
-      name: t`Fin whale`,
+      name: defineMessage({ message: "Fin whale" }),
       icon: "Whale",
     },
     {
       startsAt: 5000000,
-      name: t`Blue whale`,
+      name: defineMessage({ message: "Blue whale" }),
       icon: "Whale",
     },
   ],
