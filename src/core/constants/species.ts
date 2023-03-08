@@ -5,7 +5,7 @@ const species = {
   Cardano: [
     {
       startsAt: 0,
-      name: defineMessage({ message: "Ghost" }), // t will extract name to PO
+      name: defineMessage({ message: "Ghost" }), // defineMessage will make it appear in the PO
       icon: "Ghost",
     },
     {

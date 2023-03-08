@@ -61,6 +61,9 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
         <Tbody>
           {/* One row per specie */}
           {species.map((element, i) => {
+            // TODO replace once Lingui i18n._() supports passing expressions
+            const currentSpeciesName = element.name
+
             return (
               <Tr key={nextId("tr")}>
                 <Td
@@ -73,7 +76,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                 >
                   {i + 1}
                 </Td>
-                <Td {...styles.left}>{i18n._(element.name)}</Td>
+                <Td {...styles.left}>{i18n._(currentSpeciesName)}</Td>
                 <Td {...styles.right}>
                   <Box as="span" whiteSpace="nowrap">
                     <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>

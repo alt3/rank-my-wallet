@@ -30,7 +30,7 @@ export const getNextSpecies = function (
   const nextSpecies = species[blockchain][currentIndex + 1]!
 
   const result = {
-    name: nextSpecies.name,
+    name: nextSpecies.name, // Lingui MessageDescriptor
     icon: nextSpecies.icon,
     startsAt: nextSpecies.startsAt,
     requires: new Big(nextSpecies.startsAt - balance),

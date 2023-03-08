@@ -21,7 +21,7 @@ export const getSpecies = function (
   }
 
   return {
-    name: match.name,
+    name: match.name, // Lingui MessageDescriptor
     icon: match.icon,
     startsAt: match.startsAt,
   }

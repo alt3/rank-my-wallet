@@ -76,6 +76,10 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
   const SpeciesImageComponent = imageComponents[species.current.icon] // dynamically load the correct image component
 
+  // TODO replace once Lingui i18n._() supports passing expressions
+  const currentSpeciesName = species.current.name
+  const nextSpeciesName = species.next.name
+
   const styles = {
     gridField: {
       gridColumn: { base: "span 8/span 8", sm: "span 3/span 3" },
@@ -150,14 +154,14 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 passHref
                 withExternalIcon
               >
-                {i18n._(species.current.name)}
+                {i18n._(currentSpeciesName)}
               </Link>
             </GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Next Species</Trans>
             </GridItem>
-            <GridItem {...styles.gridValue}>{i18n._(species.next.name)}</GridItem>
+            <GridItem {...styles.gridValue}>{i18n._(nextSpeciesName)}</GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Starts At</Trans>
