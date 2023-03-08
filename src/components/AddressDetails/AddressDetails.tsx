@@ -10,7 +10,9 @@ export const AddressDetails = () => {
     staleTime: Infinity,
   })
 
-  // console.log(addressDetails)
+  if (process && process.env.NODE_ENV !== "production") {
+    console.log(addressDetails)
+  }
 
   return (
     <>

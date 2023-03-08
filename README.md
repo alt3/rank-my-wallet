@@ -37,6 +37,8 @@ This is a [Next.js](https://nextjs.org/) app built with the [Blitz.js](https://g
 
 6. Make live code changes.
 
+> In development mode, parsed address details will be logged to the browser console.
+
 ## License
 
 This project is released under the [MIT LICENSE](LICENSE.txt).
