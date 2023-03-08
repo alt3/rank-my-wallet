@@ -62,8 +62,6 @@
     "toformat": "2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.21.0",
-    "@babel/preset-react": "7.18.6",
     "@lingui/cli": "4.0.0-next.0",
     "@lingui/loader": "4.0.0-next.0",
     "@lingui/macro": "4.0.0-next.0",
