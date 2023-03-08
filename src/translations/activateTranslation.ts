@@ -1,9 +1,10 @@
 import { i18n } from "@lingui/core"
+import { en, nl } from "make-plural/plurals"
 
 i18n.loadLocaleData({
-  en : {},
-  nl: {},
-  pseudo: {},
+  en : {plurals: en},
+  nl: {plurals: nl},
+  pseudo: {plurals: en},
 })
 
 export async function activateTranslation(locale: string) {
