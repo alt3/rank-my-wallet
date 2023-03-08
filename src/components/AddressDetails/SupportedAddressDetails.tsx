@@ -10,6 +10,7 @@ import {
   GridItem,
   useColorModeValue,
 } from "@chakra-ui/react"
+import { i18n } from "@lingui/core"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import {
@@ -149,14 +150,14 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 passHref
                 withExternalIcon
               >
-                {species.current.name}
+                {i18n._(species.current.name)}
               </Link>
             </GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Next Species</Trans>
             </GridItem>
-            <GridItem {...styles.gridValue}>{species.next.name}</GridItem>
+            <GridItem {...styles.gridValue}>{i18n._(species.next.name)}</GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Starts At</Trans>

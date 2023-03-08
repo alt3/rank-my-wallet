@@ -1,8 +1,9 @@
-import species from "src/core/constants/species"
+import { MessageDescriptor } from "@lingui/core"
 import Big from "big.js"
+import species from "src/core/constants/species"
 
 /**
- * Returns the next blockchain species for given wallet balance..
+ * Returns next blockchain species information for the given wallet balance.
  *
  * @param blockchain - Name of the blockchain
  * @param balance - Wallet balance with or without decimals
@@ -11,10 +12,10 @@ import Big from "big.js"
 export const getNextSpecies = function (
   blockchain: "Cardano" | "Ergo",
   balance: Big,
-  currentSpeciesName: string
-): { name: string; startsAt: number; requires: Big } | undefined {
+  currentSpeciesName: MessageDescriptor
+): { name: MessageDescriptor; icon: string; startsAt: number; requires: Big } | undefined {
   const currentIndex = species[blockchain].findIndex(
-    (element) => currentSpeciesName === element.name
+    (element) => currentSpeciesName === element.name // Linqui MessageDescriptor
   )
 
   if (currentIndex === undefined) {
@@ -30,6 +31,7 @@ export const getNextSpecies = function (
 
   const result = {
     name: nextSpecies.name,
+    icon: nextSpecies.icon,
     startsAt: nextSpecies.startsAt,
     requires: new Big(nextSpecies.startsAt - balance),
   }
