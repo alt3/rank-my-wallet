@@ -49,7 +49,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
               #
             </Th>
             <Th {...styles.th} {...styles.left}>
-              <Trans>SpeciesSingular</Trans>
+              <Trans context="Singular">Species</Trans>
             </Th>
             <Th {...styles.th} {...styles.right} textAlign="right">
               <Trans>Starts At</Trans>

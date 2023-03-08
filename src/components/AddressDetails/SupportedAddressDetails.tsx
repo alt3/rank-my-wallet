@@ -123,7 +123,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
         {/* SPECIES GRID */}
         <SectionHeader>
-          <Trans>SpeciesPlural</Trans>
+          <Trans context="Plural">Species</Trans>
         </SectionHeader>
         <Box minHeight="100px" height="auto">
           <Grid gap={0} marginBottom={{ base: ".5rem", sm: ".75rem" }}>

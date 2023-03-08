@@ -57,7 +57,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               fontWeight="normal"
               textDecoration="none"
             >
-              <Trans>SpeciesPlural</Trans>
+              <Trans context="Plural">Species</Trans>
             </Button>
           </Link>
 

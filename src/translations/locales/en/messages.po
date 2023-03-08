@@ -164,6 +164,12 @@ msgstr "Fin whale"
 msgid "Address"
 msgstr "Address"
 
+#. js-lingui-id: Dzfc3Y
+#: src/components/Species/SpeciesTable.tsx:52
+msgctxt "Singular"
+msgid "Species"
+msgstr "Species"
+
 #. js-lingui-id: E2QasX
 #: src/core/constants/species.ts:73
 #: src/core/constants/species.ts:181
@@ -301,6 +307,14 @@ msgstr "Copied!"
 msgid "Checksum"
 msgstr "Checksum"
 
+#. js-lingui-id: QJjCNJ
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:126
+#: src/components/Navbar/Desktop.tsx:60
+#: src/components/Navbar/Mobile.tsx:80
+msgctxt "Plural"
+msgid "Species"
+msgstr "Species"
+
 #. js-lingui-id: QKFW85
 #: src/components/Counter.tsx:47
 msgid "You are Ergo holder"
@@ -316,13 +330,6 @@ msgstr "Decimals"
 #: src/components/Footer.tsx:27
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
 msgstr "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
-
-#. js-lingui-id: SRWZMw
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:126
-#: src/components/Navbar/Desktop.tsx:60
-#: src/components/Navbar/Mobile.tsx:80
-msgid "SpeciesPlural"
-msgstr "Species"
 
 #. js-lingui-id: Sbb4SW
 #: src/pages/faq.tsx:129
@@ -485,11 +492,6 @@ msgstr "RankMyWallet on Github"
 #: src/core/constants/species.ts:206
 msgid "Whale"
 msgstr "Whale"
-
-#. js-lingui-id: q2MJZc
-#: src/components/Species/SpeciesTable.tsx:52
-msgid "SpeciesSingular"
-msgstr "Species"
 
 #. js-lingui-id: qGesms
 #: src/components/Navbar/Desktop.tsx:94

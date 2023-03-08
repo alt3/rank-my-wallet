@@ -77,7 +77,7 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
             </Link>
 
             <Link href={"/species"} onClick={() => onClose()}>
-              <Trans>SpeciesPlural</Trans>
+              <Trans context="Plural">Species</Trans>
             </Link>
 
             <Link href={"/tipbox"} onClick={() => onClose()}>
