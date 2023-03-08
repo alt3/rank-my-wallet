@@ -5,9 +5,6 @@ module.exports = {
   locales: nextConfig.i18n.locales,
   sourceLocale: nextConfig.i18n.defaultLocale, // en
   pseudoLocale: "pseudo",
-  fallbackLocales: {
-    default: nextConfig.i18n.defaultLocale, // en
-  },
   catalogs: [
     {
       path: "src/translations/locales/{locale}/messages",
