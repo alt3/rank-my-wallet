@@ -8,7 +8,7 @@
     "build": "blitz build",
     "postbuild": "next-sitemap",
     "start": "blitz start",
-    "translations:extract": "cross-env NODE_ENV=development lingui extract --clean",
+    "translations:extract": "lingui extract --clean",
     "translations:compile": "lingui compile",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test": "vitest run",
