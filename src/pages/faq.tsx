@@ -12,8 +12,10 @@ import {
 } from "@chakra-ui/react"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
 import { AccordionItemFaq, ContentContainer, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
+import { loadCatalog } from "src/translations/utils"
 
 const FaqPage: BlitzPage = () => {
   useLingui()
@@ -140,6 +142,16 @@ const FaqPage: BlitzPage = () => {
       </ContentContainer>
     </>
   )
+}
+
+export async function getServerSideProps(
+  ctx: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<any>> {
+  return {
+    props: {
+      i18n: await loadCatalog(ctx.locale as string),
+    },
+  }
 }
 
 FaqPage.suppressFirstRenderFlicker = true
