@@ -16,7 +16,7 @@ interface RankingsTableProps {
 }
 
 export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTableProps) {
-  useLingui()
+  const { i18n } = useLingui()
 
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
@@ -68,7 +68,7 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
                   passHref
                   isExternal
                 >
-                  {bigToString(element.rank, 0)}
+                  {bigToString(element.rank, i18n.locale, 0)}
                   {element.position === "current" && (
                     <Box as="span" {...styles.asterisk} title={t`Your Rank`}>
                       *
@@ -85,7 +85,11 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
                   isExternal
                 >
                   <TickerString
-                    ticker={bigToString(nanoToTicker(element.balance.toString(), 9), 9)}
+                    ticker={bigToString(
+                      nanoToTicker(element.balance.toString(), 9),
+                      i18n.locale,
+                      9
+                    )}
                     tickerSymbol={tickerSymbol}
                     fractionsColor={fractionsColor}
                   ></TickerString>

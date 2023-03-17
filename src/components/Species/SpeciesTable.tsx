@@ -1,6 +1,7 @@
 import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
-import { i18n, MessageDescriptor } from "@lingui/core"
+import { MessageDescriptor } from "@lingui/core"
 import { Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib"
 
@@ -15,6 +16,8 @@ interface SpeciesTableProps {
 
 export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTableProps) {
   const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
+
+  const { i18n } = useLingui()
 
   const styles = {
     caption: {
@@ -83,8 +86,8 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                       {tickerSymbol}
                     </Box>{" "}
                     {element.startsAt.toString().match("^(?!([0-9]+$)).*$")
-                      ? bigToString(element.startsAt, maximumSignificantDigits)
-                      : bigToString(element.startsAt, 0)}{" "}
+                      ? bigToString(element.startsAt, i18n.locale, maximumSignificantDigits)
+                      : bigToString(element.startsAt, i18n.locale, 0)}{" "}
                   </Box>
                 </Td>
               </Tr>

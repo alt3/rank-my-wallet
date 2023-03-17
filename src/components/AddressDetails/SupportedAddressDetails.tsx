@@ -10,7 +10,6 @@ import {
   GridItem,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { i18n } from "@lingui/core"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import {
@@ -70,7 +69,7 @@ const imageComponents = {
 }
 
 export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
-  useLingui()
+  const { i18n } = useLingui()
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
@@ -138,7 +137,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
-                ticker={bigToString(balance.ticker, 0)}
+                ticker={bigToString(balance.ticker, i18n.locale, 0)}
                 tickerSymbol={parsed.currency.tickerSymbol}
               ></TickerString>
             </GridItem>
@@ -169,7 +168,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
-                ticker={bigToString(species.next.startsAt, 0)}
+                ticker={bigToString(species.next.startsAt, i18n.locale, 0)}
                 tickerSymbol={parsed.currency.tickerSymbol}
               ></TickerString>
             </GridItem>
@@ -180,7 +179,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
-                ticker={bigToString(species.next.requires, parsed.currency.decimals)}
+                ticker={bigToString(species.next.requires, i18n.locale, parsed.currency.decimals)}
                 tickerSymbol={parsed.currency.tickerSymbol}
                 fractionsColor={fractionsColor}
               ></TickerString>
@@ -211,7 +210,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 <AccordionButton p={0}>
                   <Box flex="1" textAlign="left">
                     <SectionHeader>
-                      <Trans>Competiton</Trans>
+                      <Trans>Competition</Trans>
                     </SectionHeader>
                   </Box>
                   <Box as="span" verticalAlign="top" minHeight="3rem">
@@ -223,7 +222,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
                   <DataGridEntry
                     field={t`Competitors`}
-                    value={bigToString(addressCount, 0)}
+                    value={bigToString(addressCount, i18n.locale, 0)}
                     url={{
                       href: "https://ergo.watch/metrics/addresses",
                       isExternal: true,
