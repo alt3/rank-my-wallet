@@ -1,2 +1,2 @@
-export * from "./SpeciesNavBar"
+export * from "./SpeciesNavbar"
 export * from "./SpeciesTable"

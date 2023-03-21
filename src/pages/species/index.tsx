@@ -2,7 +2,7 @@ import { BlitzPage } from "@blitzjs/next"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
-import { MetaTags, PageHero, SpeciesNavBar } from "src/components"
+import { MetaTags, PageHero, SpeciesNavbar } from "src/components"
 import Layout from "src/core/layouts/Layout"
 import { loadCatalog } from "src/translations/utils"
 
@@ -19,7 +19,7 @@ const CardanoSpeciesPage: BlitzPage = () => {
 
       <PageHero title={<Trans>Blockchain Species</Trans>} />
 
-      <SpeciesNavBar />
+      <SpeciesNavbar />
     </>
   )
 }
