@@ -72,6 +72,11 @@ const FaqPage: BlitzPage = () => {
                       </Link>
                     </ListItem>
                     <ListItem {...styles.listItems}>
+                      <Link href="https://lingui.dev/" isExternal passHref withExternalIcon>
+                        Lingui
+                      </Link>
+                    </ListItem>
+                    <ListItem {...styles.listItems}>
                       <Link href="https://ergo.watch" isExternal passHref withExternalIcon>
                         Ergo Watch
                       </Link>

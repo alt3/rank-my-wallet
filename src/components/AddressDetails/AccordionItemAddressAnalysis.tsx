@@ -15,7 +15,7 @@ import nextId from "react-id-generator"
 import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "src/components"
 
 export function AccordionItemAddressAnalysis({ parsedAddress, ...rest }) {
-  useLingui()
+  const { i18n } = useLingui()
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
@@ -75,13 +75,13 @@ export function AccordionItemAddressAnalysis({ parsedAddress, ...rest }) {
             <BitsTable
               caption={t`Leading Prefix Bits:`}
               bits={parsedAddress.payload.prefix.leading.bits}
-              sumLabel={parsedAddress.payload.prefix.leading.type}
+              sumLabel={i18n._(parsedAddress.payload.prefix.leading.type)}
             ></BitsTable>
 
             <BitsTable
               caption={t`Trailing Prefix Bits:`}
               bits={parsedAddress.payload.prefix.trailing.bits}
-              sumLabel={parsedAddress.payload.prefix.trailing.type}
+              sumLabel={i18n._(parsedAddress.payload.prefix.trailing.type)}
             ></BitsTable>
           </>
         )}
