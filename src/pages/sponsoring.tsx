@@ -2,8 +2,10 @@ import { BlitzPage } from "@blitzjs/next"
 import { Text, useColorModeValue } from "@chakra-ui/react"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
 import { ContentContainer, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
+import { loadCatalog } from "src/translations/utils"
 
 const Sponsoring: BlitzPage = () => {
   useLingui()
@@ -55,6 +57,16 @@ const Sponsoring: BlitzPage = () => {
       </ContentContainer>
     </>
   )
+}
+
+export async function getServerSideProps(
+  ctx: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<any>> {
+  return {
+    props: {
+      i18n: await loadCatalog(ctx.locale as string),
+    },
+  }
 }
 
 Sponsoring.suppressFirstRenderFlicker = true

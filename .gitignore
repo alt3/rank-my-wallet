@@ -39,6 +39,7 @@ logs
 /public/sitemap.xml
 
 # Translations
+/src/translations/**/*.js
 /src/translations/**/*.mo
 
 # Runtime data

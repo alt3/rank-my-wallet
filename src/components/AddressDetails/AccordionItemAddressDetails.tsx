@@ -42,7 +42,7 @@ export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
 
           <DataGridEntry
             field={t`Blockchain`}
-            value={`${t({ id: parsedAddress.blockchain.name })} (${parsedAddress.currency.ticker})`}
+            value={`${parsedAddress.blockchain.name} (${parsedAddress.currency.ticker})`}
           />
 
           {parsedAddress.blockchain.network && (

@@ -1,8 +1,10 @@
 import { BlitzPage } from "@blitzjs/next"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import { MetaTags, PageHero, SpeciesNavBar } from "src/components"
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
+import { MetaTags, PageHero, SpeciesNavbar } from "src/components"
 import Layout from "src/core/layouts/Layout"
+import { loadCatalog } from "src/translations/utils"
 
 const CardanoSpeciesPage: BlitzPage = () => {
   useLingui()
@@ -17,9 +19,19 @@ const CardanoSpeciesPage: BlitzPage = () => {
 
       <PageHero title={<Trans>Blockchain Species</Trans>} />
 
-      <SpeciesNavBar />
+      <SpeciesNavbar />
     </>
   )
+}
+
+export async function getServerSideProps(
+  ctx: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<any>> {
+  return {
+    props: {
+      i18n: await loadCatalog(ctx.locale as string),
+    },
+  }
 }
 
 CardanoSpeciesPage.suppressFirstRenderFlicker = true

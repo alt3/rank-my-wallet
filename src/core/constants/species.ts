@@ -1,111 +1,111 @@
-import { t } from "@lingui/macro"
+import { msg } from "@lingui/macro"
 
 const species = {
   // https://datastudio.google.com/reporting/3136c55b-635e-4f46-8e4b-b8ab54f2d460/page/r2LQC
   Cardano: [
     {
       startsAt: 0,
-      name: t`Ghost`, // t will extract name to PO
+      name: msg`Ghost`, // msg will make it appear in the PO
       icon: "Ghost",
     },
     {
       startsAt: 0.000001,
-      name: t`Plankton`,
+      name: msg`Plankton`,
       icon: "Plankton",
     },
     {
       startsAt: 1,
-      name: t`Seahorse`,
+      name: msg`Seahorse`,
       icon: "Seahorse",
     },
     {
       startsAt: 10,
-      name: t`Pipefish`,
+      name: msg`Pipefish`,
       icon: "Pipefish",
     },
     {
       startsAt: 25,
-      name: t`Shrimp`,
+      name: msg`Shrimp`,
       icon: "Shrimp",
     },
     {
       startsAt: 100,
-      name: t`Shell`,
+      name: msg`Shell`,
       icon: "Shell",
     },
     {
       startsAt: 500,
-      name: t`Oyster`,
+      name: msg`Oyster`,
       icon: "Oyster",
     },
     {
       startsAt: 1000,
-      name: t`Starfish`,
+      name: msg`Starfish`,
       icon: "Starfish",
     },
     {
       startsAt: 2000,
-      name: t`Crab`,
+      name: msg`Crab`,
       icon: "Crab",
     },
     {
       startsAt: 5000,
-      name: t`Fish`,
+      name: msg`Fish`,
       icon: "Fish",
     },
     {
       startsAt: 10000,
-      name: t`Jellyfish`,
+      name: msg`Jellyfish`,
       icon: "Jellyfish",
     },
     {
       startsAt: 50000,
-      name: t`Piranha`,
+      name: msg`Piranha`,
       icon: "Piranha",
     },
     {
       startsAt: 100000,
-      name: t`Swordfish`,
+      name: msg`Swordfish`,
       icon: "Swordfish",
     },
     {
       startsAt: 150000,
-      name: t`Octopus`,
+      name: msg`Octopus`,
       icon: "Octopus",
     },
     {
       startsAt: 400000,
-      name: t`Shark`,
+      name: msg`Shark`,
       icon: "Shark",
     },
     {
       startsAt: 750000,
-      name: t`Tiger shark`,
+      name: msg`Tiger shark`,
       icon: "Shark",
     },
     {
       startsAt: 1000000,
-      name: t`Great white shark`,
+      name: msg`Great white shark`,
       icon: "Shark",
     },
     {
       startsAt: 5000000,
-      name: t`Orca`,
+      name: msg`Orca`,
       icon: "Orca",
     },
     {
       startsAt: 10000000,
-      name: t`Whale`,
+      name: msg`Whale`,
       icon: "Whale",
     },
     {
       startsAt: 50000000,
-      name: t`Fin whale`,
+      name: msg`Fin whale`,
       icon: "Whale",
     },
     {
       startsAt: 100000000,
-      name: t`Blue whale`,
+      name: msg`Blue whale`,
       icon: "Whale",
     },
   ],
@@ -113,107 +113,107 @@ const species = {
   Ergo: [
     {
       startsAt: 0,
-      name: t`Ghost`,
+      name: msg`Ghost`, // t will extract name to PO
       icon: "Ghost",
     },
     {
       startsAt: 0.000000001,
-      name: t`Plankton`,
+      name: msg`Plankton`,
       icon: "Plankton",
     },
     {
       startsAt: 1,
-      name: t`Seahorse`,
+      name: msg`Seahorse`,
       icon: "Seahorse",
     },
     {
       startsAt: 10,
-      name: t`Pipefish`,
+      name: msg`Pipefish`,
       icon: "Pipefish",
     },
     {
       startsAt: 25,
-      name: t`Shrimp`,
+      name: msg`Shrimp`,
       icon: "Shrimp",
     },
     {
       startsAt: 50,
-      name: t`Shell`,
+      name: msg`Shell`,
       icon: "Shell",
     },
     {
       startsAt: 100,
-      name: t`Oyster`,
+      name: msg`Oyster`,
       icon: "Oyster",
     },
     {
       startsAt: 250,
-      name: t`Starfish`,
+      name: msg`Starfish`,
       icon: "Starfish",
     },
     {
       startsAt: 500,
-      name: t`Crab`,
+      name: msg`Crab`,
       icon: "Crab",
     },
     {
       startsAt: 1000,
-      name: t`Fish`,
+      name: msg`Fish`,
       icon: "Fish",
     },
     {
       startsAt: 2500,
-      name: t`Jellyfish`,
+      name: msg`Jellyfish`,
       icon: "Jellyfish",
     },
     {
       startsAt: 5000,
-      name: t`Piranha`,
+      name: msg`Piranha`,
       icon: "Piranha",
     },
     {
       startsAt: 10000,
-      name: t`Swordfish`,
+      name: msg`Swordfish`,
       icon: "Starfish",
     },
     {
       startsAt: 25000,
-      name: t`Octopus`,
+      name: msg`Octopus`,
       icon: "Octopus",
     },
     {
       startsAt: 50000,
-      name: t`Shark`,
+      name: msg`Shark`,
       icon: "Shark",
     },
     {
       startsAt: 100000,
-      name: t`Tiger shark`,
+      name: msg`Tiger shark`,
       icon: "Shark",
     },
     {
       startsAt: 250000,
-      name: t`Great white shark`,
+      name: msg`Great white shark`,
       icon: "Shark",
     },
     {
       startsAt: 500000,
-      name: t`Orca`,
+      name: msg`Orca`,
       icon: "Orca",
     },
     {
       startsAt: 1000000,
-      name: t`Whale`,
+      name: msg`Whale`,
       icon: "Whale",
     },
     {
       startsAt: 2500000,
-      name: t`Fin whale`,
+      name: msg`Fin whale`,
       icon: "Whale",
     },
     {
       startsAt: 5000000,
-      name: t`Blue whale`,
+      name: msg`Blue whale`,
       icon: "Whale",
     },
   ],

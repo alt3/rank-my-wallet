@@ -1,6 +1,6 @@
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { Trans } from "@lingui/macro"
-import { getUserLocale } from "get-user-locale"
+import { useLingui } from "@lingui/react"
 import Countup from "react-countup"
 import { getNumberSeparators } from "src/lib"
 
@@ -11,6 +11,8 @@ interface CounterProps {
 }
 
 export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
+  const { i18n } = useLingui()
+
   const styles = {
     box: {
       marginBottom: { base: 0, sm: "3rem" },
@@ -54,7 +56,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
                 start={totalAccounts}
                 end={rank}
                 duration={2.75}
-                separator={getNumberSeparators(getUserLocale()).group}
+                separator={getNumberSeparators(i18n.locale).group}
                 useEasing={true}
               />
             </Heading>

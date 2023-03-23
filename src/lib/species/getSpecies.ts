@@ -1,7 +1,8 @@
+import { MessageDescriptor } from "@lingui/core"
 import species from "src/core/constants/species"
 
 /**
- * Returns the blockchain species for given wallet balance.
+ * Returns current blockchain species information for the given wallet balance.
  *
  * @param blockchain - Name of the blockchain
  * @param balance - Wallet balance with or without decimals
@@ -9,7 +10,7 @@ import species from "src/core/constants/species"
 export const getSpecies = function (
   blockchain: "Cardano" | "Ergo",
   balance: number
-): { name: string; startsAt: number } {
+): { name: MessageDescriptor; icon: string; startsAt: number } {
   const match = species[blockchain]
     .slice()
     .reverse()
@@ -19,5 +20,9 @@ export const getSpecies = function (
     throw `Unable to determine ${blockchain} species index for wallet balance ${balance}`
   }
 
-  return match
+  return {
+    name: match.name, // Lingui MessageDescriptor
+    icon: match.icon,
+    startsAt: match.startsAt,
+  }
 }

@@ -127,7 +127,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
 
           {/* Summary row */}
           <Tr border={"none"}>
-            <Td {...styles.tdSumLabel}>{t({ id: sumLabel })}</Td>
+            <Td {...styles.tdSumLabel}>{sumLabel}</Td>
           </Tr>
         </Tbody>
       </Table>

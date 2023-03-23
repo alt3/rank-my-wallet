@@ -1,9 +1,11 @@
 import { BlitzPage } from "@blitzjs/next"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
 import { ContentContainer, MetaTags, PageHero, SpeciesTable } from "src/components"
 import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
+import { loadCatalog } from "src/translations/utils"
 
 const ErgoSpeciesPage: BlitzPage = () => {
   useLingui()
@@ -27,6 +29,16 @@ const ErgoSpeciesPage: BlitzPage = () => {
       </ContentContainer>
     </>
   )
+}
+
+export async function getServerSideProps(
+  ctx: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<any>> {
+  return {
+    props: {
+      i18n: await loadCatalog(ctx.locale as string),
+    },
+  }
 }
 
 ErgoSpeciesPage.suppressFirstRenderFlicker = true

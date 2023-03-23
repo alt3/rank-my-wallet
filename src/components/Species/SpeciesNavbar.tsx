@@ -3,7 +3,7 @@ import { t, Trans } from "@lingui/macro"
 import { Link } from "src/components"
 import { useLingui } from "@lingui/react"
 
-export function SpeciesNavBar({ ...rest }) {
+export function SpeciesNavbar({ ...rest }) {
   useLingui()
 
   const styles = {
@@ -35,4 +35,4 @@ export function SpeciesNavBar({ ...rest }) {
   )
 }
 
-export default SpeciesNavBar
+export default SpeciesNavbar

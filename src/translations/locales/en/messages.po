@@ -13,464 +13,566 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-id: Du6bPw
 #: src/components/AddressDetails/AccordionItemAddressDetails.tsx:35
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:50
 msgid "Address"
 msgstr "Address"
 
+#. js-lingui-id: K19C4k
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:27
 msgid "Address Analysis"
 msgstr "Address Analysis"
 
+#. js-lingui-id: YYaKLa
 #: src/components/AddressDetails/AccordionItemAddressDetails.tsx:24
 msgid "Address Details"
 msgstr "Address Details"
 
+#. js-lingui-id: YbNxTn
 #: src/components/AddressDetails/AccordionItemAddressDetails.tsx:57
 #: src/lib/address/formats/AddressBase58.ts:88
 #: src/lib/address/formats/AddressBech32.ts:168
 msgid "Address Type"
 msgstr "Address Type"
 
+#. js-lingui-id: RXD8jS
 #: src/components/Footer.tsx:27
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
 msgstr "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
 
-#: src/pages/404.tsx:24
+#. js-lingui-id: z74+Vv
 #: src/pages/_error.tsx:29
+#: src/pages/404.tsx:24
 msgid "Back to homepage"
 msgstr "Back to homepage"
 
+#. js-lingui-id: fsBGk0
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:53
 #: src/components/RankingsTable/RankingsTableMobile.tsx:50
 msgid "Balance"
 msgstr "Balance"
 
-#: src/pages/sponsoring.tsx:20
-#: src/pages/sponsoring.tsx:26
+#. js-lingui-id: ikClRl
+#: src/pages/sponsoring.tsx:22
+#: src/pages/sponsoring.tsx:28
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
+#. js-lingui-id: EfrMoZ
 #: src/components/BitsTable/BitsTableDesktop.tsx:76
 #: src/components/BitsTable/BitsTableMobile.tsx:64
 msgid "Binaries"
 msgstr "Binaries"
 
+#. js-lingui-id: zP9BpG
 #: src/components/BitsTable/BitsTableDesktop.tsx:94
 #: src/components/BitsTable/BitsTableMobile.tsx:67
 msgid "Bits"
 msgstr "Bits"
 
+#. js-lingui-id: 8+xvyR
 #: src/components/AddressDetails/AccordionItemAddressDetails.tsx:44
 msgid "Blockchain"
 msgstr "Blockchain"
 
+#. js-lingui-id: /Is+xN
 #: src/components/Navbar/Desktop.tsx:55
-#: src/pages/species/index.tsx:13
-#: src/pages/species/index.tsx:18
+#: src/pages/species/index.tsx:15
+#: src/pages/species/index.tsx:20
 msgid "Blockchain Species"
 msgstr "Blockchain Species"
 
+#. js-lingui-id: bbhAHk
 #: src/core/constants/species.ts:108
 #: src/core/constants/species.ts:216
 msgid "Blue whale"
 msgstr "Blue whale"
 
-#: src/pages/faq.tsx:97
+#. js-lingui-id: s88WTg
+#: src/pages/faq.tsx:99
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
 msgstr "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
 
+#. js-lingui-id: Itj/SP
 #: src/components/Species/SpeciesNavBar.tsx:25
-#: src/pages/faq.tsx:47
-#: src/pages/tipbox.tsx:39
+#: src/pages/faq.tsx:49
+#: src/pages/tipbox.tsx:41
 msgid "Cardano"
 msgstr "Cardano"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:108
+#. js-lingui-id: dNBPaT
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:112
 msgid "Cardano Rankings are coming soon"
 msgstr "Cardano Rankings are coming soon"
 
+#. js-lingui-id: O+iI2M
 #: src/components/Species/SpeciesNavBar.tsx:24
-#: src/pages/species/cardano.tsx:14
-#: src/pages/species/cardano.tsx:20
+#: src/pages/species/cardano.tsx:16
+#: src/pages/species/cardano.tsx:22
 msgid "Cardano Species"
 msgstr "Cardano Species"
 
+#. js-lingui-id: PzgYM9
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:47
 msgid "Checksum"
 msgstr "Checksum"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:209
-msgid "Competiton"
-msgstr "Competiton"
+#. js-lingui-id: djq7NN
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:213
+msgid "Competition"
+msgstr "Competition"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:220
+#. js-lingui-id: OKmipO
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:224
 msgid "Competitors"
 msgstr "Competitors"
 
+#. js-lingui-id: 4b3oEV
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:51
 msgid "Content"
 msgstr "Content"
 
+#. js-lingui-id: PiH3UR
 #: src/components/Cards/TipboxCard.tsx:24
 msgid "Copied!"
 msgstr "Copied!"
 
+#. js-lingui-id: Vqs4c9
 #: src/core/constants/species.ts:48
 #: src/core/constants/species.ts:156
 msgid "Crab"
 msgstr "Crab"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:142
+#. js-lingui-id: EzPpWI
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:146
 msgid "Current Species"
 msgstr "Current Species"
 
+#. js-lingui-id: QQ2SBx
 #: src/components/BitsTable/BitsTableDesktop.tsx:109
 #: src/components/BitsTable/BitsTableMobile.tsx:70
 msgid "Decimals"
 msgstr "Decimals"
 
+#. js-lingui-id: 2H4Wl3
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:56
 msgid "Decoded Bytes:"
 msgstr "Decoded Bytes:"
 
+#. js-lingui-id: o0XA5y
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:37
 msgid "Encoding"
 msgstr "Encoding"
 
+#. js-lingui-id: +W9uPf
 #: src/components/Species/SpeciesNavBar.tsx:31
-#: src/pages/faq.tsx:52
-#: src/pages/tipbox.tsx:44
+#: src/pages/faq.tsx:54
+#: src/pages/tipbox.tsx:46
 msgid "Ergo"
 msgstr "Ergo"
 
+#. js-lingui-id: JFG9SW
 #: src/components/Species/SpeciesNavBar.tsx:30
-#: src/pages/species/ergo.tsx:14
-#: src/pages/species/ergo.tsx:20
+#: src/pages/species/ergo.tsx:16
+#: src/pages/species/ergo.tsx:22
 msgid "Ergo Species"
 msgstr "Ergo Species"
 
-#: src/pages/faq.tsx:118
+#. js-lingui-id: MKj4Tj
+#: src/pages/faq.tsx:120
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
 msgstr "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
 
+#. js-lingui-id: /lDBHm
 #: src/components/Navbar/Desktop.tsx:84
 #: src/components/Navbar/Mobile.tsx:88
-#: src/pages/faq.tsx:30
+#: src/pages/faq.tsx:32
 msgid "FAQ"
 msgstr "FAQ"
 
+#. js-lingui-id: BHG8er
 #: src/core/constants/species.ts:103
 #: src/core/constants/species.ts:211
 msgid "Fin whale"
 msgstr "Fin whale"
 
+#. js-lingui-id: yYcP6C
 #: src/core/constants/species.ts:53
 #: src/core/constants/species.ts:161
 msgid "Fish"
 msgstr "Fish"
 
+#. js-lingui-id: neRWtI
 #: src/components/Navbar/Desktop.tsx:79
-#: src/pages/faq.tsx:36
+#: src/pages/faq.tsx:38
 msgid "Frequently Asked Questions (FAQ)"
 msgstr "Frequently Asked Questions (FAQ)"
 
-#: src/pages/faq.tsx:42
+#. js-lingui-id: Weq9zb
+#: src/pages/faq.tsx:44
 msgid "General"
 msgstr "General"
 
+#. js-lingui-id: eAKhBo
 #: src/core/constants/species.ts:8
 #: src/core/constants/species.ts:116
 msgid "Ghost"
 msgstr "Ghost"
 
+#. js-lingui-id: j3Cc3u
 #: src/components/Navbar/Mobile.tsx:108
 msgid "Github"
 msgstr "Github"
 
+#. js-lingui-id: 4pSxwB
 #: src/components/AddressForm.tsx:68
 msgid "Go"
 msgstr "Go"
 
+#. js-lingui-id: wR05Ft
 #: src/core/constants/species.ts:88
 #: src/core/constants/species.ts:196
 msgid "Great white shark"
 msgstr "Great white shark"
 
+#. js-lingui-id: i0qMbr
 #: src/components/Navbar/Desktop.tsx:33
 #: src/components/Navbar/Mobile.tsx:76
 msgid "Home"
 msgstr "Home"
 
-#: src/pages/faq.tsx:127
+#. js-lingui-id: OlPzYn
+#: src/pages/faq.tsx:129
 msgid "How do I consolidate my boxes?"
 msgstr "How do I consolidate my boxes?"
 
-#: src/pages/sponsoring.tsx:40
+#. js-lingui-id: btfUSl
+#: src/pages/sponsoring.tsx:42
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
 msgstr "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
 
-#: src/pages/sponsoring.tsx:29
+#. js-lingui-id: 7zQyB6
+#: src/pages/sponsoring.tsx:31
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 
+#. js-lingui-id: ZnrhXU
 #: src/pages/_error.tsx:22
 #: src/pages/_error.tsx:23
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
 
+#. js-lingui-id: GjTlS9
 #: src/core/constants/species.ts:58
 #: src/core/constants/species.ts:166
 msgid "Jellyfish"
 msgstr "Jellyfish"
 
+#. js-lingui-id: J1tWYu
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:76
 msgid "Leading Prefix Bits:"
 msgstr "Leading Prefix Bits:"
 
+#. js-lingui-id: OR475H
 #: src/components/AddressDetails/AccordionItemAddressDetails.tsx:49
 msgid "Network"
 msgstr "Network"
 
+#. js-lingui-id: yFTZRh
 #: src/lib/address/formats/AddressBase58.ts:92
 #: src/lib/address/formats/AddressBech32.ts:164
 msgid "Network Type"
 msgstr "Network Type"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:157
+#. js-lingui-id: 42Rn2Q
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:161
 msgid "Next Species"
 msgstr "Next Species"
 
+#. js-lingui-id: E2QasX
 #: src/core/constants/species.ts:73
 #: src/core/constants/species.ts:181
 msgid "Octopus"
 msgstr "Octopus"
 
+#. js-lingui-id: Msglzs
 #: src/core/constants/species.ts:93
 #: src/core/constants/species.ts:201
 msgid "Orca"
 msgstr "Orca"
 
+#. js-lingui-id: KEeT0w
 #: src/core/constants/species.ts:38
 #: src/core/constants/species.ts:146
 msgid "Oyster"
 msgstr "Oyster"
 
+#. js-lingui-id: boJlGf
 #: src/pages/404.tsx:14
 #: src/pages/404.tsx:19
 #: src/pages/404.tsx:23
 msgid "Page Not Found"
 msgstr "Page Not Found"
 
+#. js-lingui-id: yjO6jb
 #: src/core/constants/species.ts:23
 #: src/core/constants/species.ts:131
 msgid "Pipefish"
 msgstr "Pipefish"
 
+#. js-lingui-id: xcwWI4
 #: src/core/constants/species.ts:63
 #: src/core/constants/species.ts:171
 msgid "Piranha"
 msgstr "Piranha"
 
+#. js-lingui-id: WdBQWP
 #: src/core/constants/species.ts:13
 #: src/core/constants/species.ts:121
 msgid "Plankton"
 msgstr "Plankton"
 
+#. js-lingui-id: +VFoqX
 #: src/components/PleaseDonate.tsx:29
-#: src/pages/tipbox.tsx:58
+#: src/pages/tipbox.tsx:60
 msgid "Please donate to keep this website ad-free"
 msgstr "Please donate to keep this website ad-free"
 
+#. js-lingui-id: MKmI2z
 #: src/components/AddressForm.tsx:52
 msgid "Please provide a wallet address"
 msgstr "Please provide a wallet address"
 
+#. js-lingui-id: KUSR93
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:70
 msgid "Prefix Bits:"
 msgstr "Prefix Bits:"
 
+#. js-lingui-id: XrZLXL
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:43
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:72
 msgid "Prefix Byte"
 msgstr "Prefix Byte"
 
+#. js-lingui-id: 3awOET
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:47
 #: src/components/RankingsTable/RankingsTableMobile.tsx:47
 msgid "Rank"
 msgstr "Rank"
 
+#. js-lingui-id: pebDui
 #: src/components/Navbar/Desktop.tsx:108
 msgid "RankMyWallet on Github"
 msgstr "RankMyWallet on Github"
 
+#. js-lingui-id: qGesms
 #: src/components/Navbar/Desktop.tsx:94
 msgid "RankMyWallet on Twitter"
 msgstr "RankMyWallet on Twitter"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:173
+#. js-lingui-id: TMLAx2
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:177
 msgid "Required"
 msgstr "Required"
 
+#. js-lingui-id: 4GSKjc
 #: src/core/constants/species.ts:18
 #: src/core/constants/species.ts:126
 msgid "Seahorse"
 msgstr "Seahorse"
 
+#. js-lingui-id: 104zqc
 #: src/core/constants/species.ts:78
 #: src/core/constants/species.ts:186
 msgid "Shark"
 msgstr "Shark"
 
+#. js-lingui-id: t3e+pR
 #: src/core/constants/species.ts:33
 #: src/core/constants/species.ts:141
 msgid "Shell"
 msgstr "Shell"
 
+#. js-lingui-id: O/kQsX
 #: src/core/constants/species.ts:28
 #: src/core/constants/species.ts:136
 msgid "Shrimp"
 msgstr "Shrimp"
 
+#. js-lingui-id: /fmd3/
 #: src/lib/address/unsupportedAddressMessage.ts:28
 msgid "Sorry, but we are unable to recognize this address."
 msgstr "Sorry, but we are unable to recognize this address."
 
+#. js-lingui-id: cCS3lu
 #: src/lib/address/unsupportedAddressMessage.ts:25
 msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
 msgstr "Sorry, but we do not support {blockchain} {addressType} addresses."
 
+#. js-lingui-id: smJ2Fh
 #: src/lib/address/unsupportedAddressMessage.ts:21
 msgid "Sorry, but we do not support {blockchain} {network} addresses."
 msgstr "Sorry, but we do not support {blockchain} {network} addresses."
 
+#. js-lingui-id: 7rEqY4
 #: src/lib/address/unsupportedAddressMessage.ts:17
 msgid "Sorry, but we do not support {blockchain}."
 msgstr "Sorry, but we do not support {blockchain}."
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:100
+#. js-lingui-id: uASOWq
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:104
 msgid "Sorry, we do not rank empty wallets"
 msgstr "Sorry, we do not rank empty wallets"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:126
+#. js-lingui-id: QJjCNJ
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:130
 #: src/components/Navbar/Desktop.tsx:60
 #: src/components/Navbar/Mobile.tsx:80
-msgid "SpeciesPlural"
+msgctxt "Plural"
+msgid "Species"
 msgstr "Species"
 
-#: src/components/Species/SpeciesTable.tsx:52
-msgid "SpeciesSingular"
+#. js-lingui-id: Dzfc3Y
+#: src/components/Species/SpeciesTable.tsx:56
+msgctxt "Singular"
+msgid "Species"
 msgstr "Species"
 
+#. js-lingui-id: 97cI/A
 #: src/components/Sponsors.tsx:25
 msgid "Sponsored By:"
 msgstr "Sponsored By:"
 
+#. js-lingui-id: IyrfKB
 #: src/core/constants/species.ts:43
 #: src/core/constants/species.ts:151
 msgid "Starfish"
 msgstr "Starfish"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:162
-#: src/components/Species/SpeciesTable.tsx:55
+#. js-lingui-id: ksy5IX
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:166
+#: src/components/Species/SpeciesTable.tsx:59
 msgid "Starts At"
 msgstr "Starts At"
 
+#. js-lingui-id: 8oGOEj
 #: src/components/BlockChains.tsx:31
 msgid "Supported Blockchains:"
 msgstr "Supported Blockchains:"
 
+#. js-lingui-id: J8n1G7
 #: src/components/Navbar/Mobile.tsx:55
 msgid "Switch to {text} mode"
 msgstr "Switch to {text} mode"
 
+#. js-lingui-id: emhSf4
 #: src/core/constants/species.ts:68
 #: src/core/constants/species.ts:176
 msgid "Swordfish"
 msgstr "Swordfish"
 
+#. js-lingui-id: 69Dzwz
 #: src/core/constants/species.ts:83
 #: src/core/constants/species.ts:191
 msgid "Tiger shark"
 msgstr "Tiger shark"
 
+#. js-lingui-id: K0zEq0
 #: src/components/Navbar/Desktop.tsx:67
 #: src/components/Navbar/Desktop.tsx:72
 #: src/components/Navbar/Mobile.tsx:84
-#: src/pages/tipbox.tsx:28
-#: src/pages/tipbox.tsx:34
+#: src/pages/tipbox.tsx:30
+#: src/pages/tipbox.tsx:36
 msgid "Tip Box"
 msgstr "Tip Box"
 
+#. js-lingui-id: wv+52E
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:82
 msgid "Trailing Prefix Bits:"
 msgstr "Trailing Prefix Bits:"
 
+#. js-lingui-id: 5X8QZ4
 #: src/components/AddressDetails/UnsupportedAddressDetails.tsx:37
 msgid "Try again?"
 msgstr "Try again?"
 
+#. js-lingui-id: 0F2sI+
 #: src/components/Navbar/Mobile.tsx:97
 msgid "Twitter"
 msgstr "Twitter"
 
+#. js-lingui-id: 2+7qnI
 #: src/components/AddressDetails/UnsupportedAddressDetails.tsx:20
 #: src/components/AddressDetails/UnsupportedAddressDetails.tsx:27
 msgid "Unsupported Address"
 msgstr "Unsupported Address"
 
+#. js-lingui-id: eE0JZ4
 #: src/components/AddressDetails/AccordionItemAddressDetails.tsx:53
 msgid "Version"
 msgstr "Version"
 
+#. js-lingui-id: pR/Hvi
 #: src/components/Heroes/Hero.tsx:46
 msgid "Wallet address"
 msgstr "Wallet address"
 
+#. js-lingui-id: pmJ2H9
 #: src/core/constants/species.ts:98
 #: src/core/constants/species.ts:206
 msgid "Whale"
 msgstr "Whale"
 
-#: src/pages/faq.tsx:60
+#. js-lingui-id: wCRu6U
+#: src/pages/faq.tsx:62
 msgid "What technology does this website use?"
 msgstr "What technology does this website use?"
 
-#: src/pages/faq.tsx:79
+#. js-lingui-id: 0YA8nG
+#: src/pages/faq.tsx:81
 msgid "Where do I report bugs?"
 msgstr "Where do I report bugs?"
 
-#: src/pages/faq.tsx:95
+#. js-lingui-id: StxEzU
+#: src/pages/faq.tsx:97
 msgid "Why are Byron addresses not supported?"
 msgstr "Why are Byron addresses not supported?"
 
-#: src/pages/faq.tsx:111
+#. js-lingui-id: MhsyXw
+#: src/pages/faq.tsx:113
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
 msgstr "Why is the balance on this website different from the balance in my Ergo wallet?"
 
-#: src/components/Counter.tsx:46
+#. js-lingui-id: grOloa
+#: src/components/Counter.tsx:48
 msgid "You are Cardano holder"
 msgstr "You are Cardano holder"
 
-#: src/components/Counter.tsx:47
+#. js-lingui-id: QKFW85
+#: src/components/Counter.tsx:49
 msgid "You are Ergo holder"
 msgstr "You are Ergo holder"
 
-#: src/pages/faq.tsx:129
+#. js-lingui-id: Sbb4SW
+#: src/pages/faq.tsx:131
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
 msgstr "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:131
+#. js-lingui-id: 2tyCq7
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:135
 msgid "Your Balance"
 msgstr "Your Balance"
 
+#. js-lingui-id: +0mN5p
 #: src/components/Sponsors.tsx:39
 #: src/components/Sponsors.tsx:52
 #: src/components/Sponsors.tsx:65
 msgid "Your Project"
 msgstr "Your Project"
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:92
+#. js-lingui-id: uiFNIR
+#: src/components/AddressDetails/SupportedAddressDetails.tsx:96
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:72
 #: src/components/RankingsTable/RankingsTableMobile.tsx:73
 msgid "Your Rank"

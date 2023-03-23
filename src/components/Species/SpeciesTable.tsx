@@ -1,5 +1,7 @@
 import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
+import { MessageDescriptor } from "@lingui/core"
 import { Trans } from "@lingui/macro"
+import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib"
 
@@ -8,12 +10,14 @@ interface SpeciesTableProps {
   tickerSymbol: "₳" | "Σ"
   species: {
     startsAt: number
-    name: string
+    name: MessageDescriptor
   }[]
 }
 
 export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTableProps) {
   const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
+
+  const { i18n } = useLingui()
 
   const styles = {
     caption: {
@@ -49,7 +53,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
               #
             </Th>
             <Th {...styles.th} {...styles.left}>
-              <Trans>SpeciesSingular</Trans>
+              <Trans context="Singular">Species</Trans>
             </Th>
             <Th {...styles.th} {...styles.right} textAlign="right">
               <Trans>Starts At</Trans>
@@ -72,17 +76,15 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                 >
                   {i + 1}
                 </Td>
-                <Td {...styles.left}>
-                  <Trans id={element.name} />
-                </Td>
+                <Td {...styles.left}>{i18n._(element.name)}</Td>
                 <Td {...styles.right}>
                   <Box as="span" whiteSpace="nowrap">
                     <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>
                       {tickerSymbol}
                     </Box>{" "}
                     {element.startsAt.toString().match("^(?!([0-9]+$)).*$")
-                      ? bigToString(element.startsAt, maximumSignificantDigits)
-                      : bigToString(element.startsAt, 0)}{" "}
+                      ? bigToString(element.startsAt, i18n.locale, maximumSignificantDigits)
+                      : bigToString(element.startsAt, i18n.locale, 0)}{" "}
                   </Box>
                 </Td>
               </Tr>

@@ -101,7 +101,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
 
           <Tr>
             <Td borderBottom={0} {...styles.tdSumLabel} paddingTop={0}>
-              {t({ id: sumLabel })}
+              {sumLabel}
             </Td>
           </Tr>
         </Tbody>

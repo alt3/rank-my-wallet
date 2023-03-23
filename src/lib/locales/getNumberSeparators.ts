@@ -15,21 +15,12 @@
  */
 
 export const getNumberSeparators = (
-  locale: string | null // getUserLocale will fallback to 'en-US' if locale cannot be resolved
+  locale: string
 ): {
   group: string
   decimal: string
 } => {
-  // use en-US if user locale could not be resolved
-  if (locale === null) {
-    console.log("Using default locale")
-    return {
-      group: ",",
-      decimal: ".",
-    }
-  }
-
-  const numberWithIntegerSeparator = 10000.1 // use 10.000 so we also get e.g. India
+  const numberWithIntegerSeparator = 100000.1 // 100.000 so we can also get e.g. Indian 1,00,000 (hi-IN)
   const intlParts = Intl.NumberFormat(locale).formatToParts(numberWithIntegerSeparator)
 
   const groupSeparator = intlParts.find((part) => part.type === "group")
