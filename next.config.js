@@ -8,7 +8,7 @@ const withBundleAnalyzer = shouldAnalyzeBundles
   : () => config
 
 // i18n routes
-const locales = ["en", "nl"]
+const locales = ["en-us", "nl"]
 
 if (process.env.NODE_ENV !== "production") {
   locales.push("pseudo")
@@ -31,7 +31,7 @@ const config = {
   },
   i18n: {
     locales: locales,
-    defaultLocale: "en",
+    defaultLocale: "en-us",
   },
 }
 
