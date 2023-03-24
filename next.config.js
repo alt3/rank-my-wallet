@@ -7,6 +7,13 @@ const withBundleAnalyzer = shouldAnalyzeBundles
   ? require("@next/bundle-analyzer")({ enabled: true })
   : () => config
 
+// i18n routes
+const locales = ["en", "nl"]
+
+if (process.env.NODE_ENV !== "production") {
+  locales.push("pseudo")
+}
+
 /**
  * @type {import('@blitzjs/next').BlitzConfig}
  **/
@@ -23,7 +30,7 @@ const config = {
     ],
   },
   i18n: {
-    locales: ["en", "nl", "pseudo"],
+    locales: locales,
     defaultLocale: "en",
   },
 }
