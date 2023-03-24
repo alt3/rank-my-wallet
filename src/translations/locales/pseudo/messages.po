@@ -13,479 +13,313 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:35
-#: src/components/RankingsTable/RankingsTableDesktop.tsx:50
 msgid "Address"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:27
 msgid "Address Analysis"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:24
 msgid "Address Details"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:57
-#: src/lib/address/formats/AddressBase58.ts:88
-#: src/lib/address/formats/AddressBech32.ts:168
 msgid "Address Type"
 msgstr ""
 
-#: src/components/Footer.tsx:27
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
 msgstr ""
 
-#: src/pages/_error.tsx:29
-#: src/pages/404.tsx:24
 msgid "Back to homepage"
 msgstr ""
 
-#: src/components/RankingsTable/RankingsTableDesktop.tsx:53
-#: src/components/RankingsTable/RankingsTableMobile.tsx:50
 msgid "Balance"
 msgstr ""
 
-#: src/pages/sponsoring.tsx:22
-#: src/pages/sponsoring.tsx:28
 msgid "Become a Sponsor"
 msgstr ""
 
-#: src/components/BitsTable/BitsTableDesktop.tsx:76
-#: src/components/BitsTable/BitsTableMobile.tsx:64
 msgid "Binaries"
 msgstr ""
 
-#: src/components/BitsTable/BitsTableDesktop.tsx:94
-#: src/components/BitsTable/BitsTableMobile.tsx:67
 msgid "Bits"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:44
 msgid "Blockchain"
 msgstr ""
 
-#: src/components/Navbar/Desktop.tsx:55
-#: src/pages/species/index.tsx:15
-#: src/pages/species/index.tsx:20
 msgid "Blockchain Species"
 msgstr ""
 
-#: src/core/constants/species.ts:108
-#: src/core/constants/species.ts:216
 msgid "Blue whale"
 msgstr ""
 
-#: src/pages/faq.tsx:104
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
 msgstr ""
 
-#: src/components/Species/SpeciesNavbar.tsx:25
-#: src/pages/faq.tsx:49
-#: src/pages/tipbox.tsx:41
 msgid "Cardano"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:108
 msgid "Cardano Rankings are coming soon"
 msgstr ""
 
-#: src/components/Species/SpeciesNavbar.tsx:24
-#: src/pages/species/cardano.tsx:16
-#: src/pages/species/cardano.tsx:22
 msgid "Cardano Species"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:47
 msgid "Checksum"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:209
 msgid "Competition"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:220
 msgid "Competitors"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:51
 msgid "Content"
 msgstr ""
 
-#: src/components/Cards/TipboxCard.tsx:24
 msgid "Copied!"
 msgstr ""
 
-#: src/core/constants/species.ts:48
-#: src/core/constants/species.ts:156
 msgid "Crab"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:142
 msgid "Current Species"
 msgstr ""
 
-#: src/components/BitsTable/BitsTableDesktop.tsx:109
-#: src/components/BitsTable/BitsTableMobile.tsx:70
 msgid "Decimals"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:56
 msgid "Decoded Bytes:"
 msgstr ""
 
-#: src/components/LocaleSwitcher.tsx:25
 msgid "Dutch"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:37
 msgid "Encoding"
 msgstr ""
 
-#: src/components/LocaleSwitcher.tsx:21
 msgid "English"
 msgstr ""
 
-#: src/components/Species/SpeciesNavbar.tsx:31
-#: src/pages/faq.tsx:54
-#: src/pages/tipbox.tsx:46
 msgid "Ergo"
 msgstr ""
 
-#: src/components/Species/SpeciesNavbar.tsx:30
-#: src/pages/species/ergo.tsx:16
-#: src/pages/species/ergo.tsx:22
 msgid "Ergo Species"
 msgstr ""
 
-#: src/pages/faq.tsx:125
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
 msgstr ""
 
-#: src/components/Navbar/Desktop.tsx:84
-#: src/components/Navbar/Mobile.tsx:90
-#: src/pages/faq.tsx:32
 msgid "FAQ"
 msgstr ""
 
-#: src/core/constants/species.ts:103
-#: src/core/constants/species.ts:211
 msgid "Fin whale"
 msgstr ""
 
-#: src/core/constants/species.ts:53
-#: src/core/constants/species.ts:161
 msgid "Fish"
 msgstr ""
 
-#: src/components/Navbar/Desktop.tsx:79
-#: src/pages/faq.tsx:38
 msgid "Frequently Asked Questions (FAQ)"
 msgstr ""
 
-#: src/pages/faq.tsx:44
 msgid "General"
 msgstr ""
 
-#: src/core/constants/species.ts:8
-#: src/core/constants/species.ts:116
 msgid "Ghost"
 msgstr ""
 
-#: src/components/Navbar/Mobile.tsx:110
 msgid "Github"
 msgstr ""
 
-#: src/components/AddressForm.tsx:68
 msgid "Go"
 msgstr ""
 
-#: src/core/constants/species.ts:88
-#: src/core/constants/species.ts:196
 msgid "Great white shark"
 msgstr ""
 
-#: src/components/Navbar/Desktop.tsx:33
-#: src/components/Navbar/Mobile.tsx:78
 msgid "Home"
 msgstr ""
 
-#: src/pages/faq.tsx:134
 msgid "How do I consolidate my boxes?"
 msgstr ""
 
-#: src/pages/sponsoring.tsx:42
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
 msgstr ""
 
-#: src/pages/sponsoring.tsx:31
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr ""
 
-#: src/pages/_error.tsx:22
-#: src/pages/_error.tsx:23
 msgid "Internal Server Error"
 msgstr ""
 
-#: src/core/constants/species.ts:58
-#: src/core/constants/species.ts:166
 msgid "Jellyfish"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:76
 msgid "Leading Prefix Bits:"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:49
 msgid "Network"
 msgstr ""
 
-#: src/lib/address/formats/AddressBase58.ts:92
-#: src/lib/address/formats/AddressBech32.ts:164
 msgid "Network Type"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:157
 msgid "Next Species"
 msgstr ""
 
-#: src/core/constants/species.ts:73
-#: src/core/constants/species.ts:181
 msgid "Octopus"
 msgstr ""
 
-#: src/core/constants/species.ts:93
-#: src/core/constants/species.ts:201
 msgid "Orca"
 msgstr ""
 
-#: src/core/constants/species.ts:38
-#: src/core/constants/species.ts:146
 msgid "Oyster"
 msgstr ""
 
-#: src/pages/404.tsx:14
-#: src/pages/404.tsx:19
-#: src/pages/404.tsx:23
 msgid "Page Not Found"
 msgstr ""
 
-#: src/core/constants/species.ts:23
-#: src/core/constants/species.ts:131
 msgid "Pipefish"
 msgstr ""
 
-#: src/core/constants/species.ts:63
-#: src/core/constants/species.ts:171
 msgid "Piranha"
 msgstr ""
 
-#: src/core/constants/species.ts:13
-#: src/core/constants/species.ts:121
 msgid "Plankton"
 msgstr ""
 
-#: src/components/PleaseDonate.tsx:29
-#: src/pages/tipbox.tsx:60
 msgid "Please donate to keep this website ad-free"
 msgstr ""
 
-#: src/components/AddressForm.tsx:52
 msgid "Please provide a wallet address"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:70
 msgid "Prefix Bits:"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:43
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:72
 msgid "Prefix Byte"
 msgstr ""
 
-#: src/components/LocaleSwitcher.tsx:32
 msgid "Pseudo"
 msgstr ""
 
-#: src/components/RankingsTable/RankingsTableDesktop.tsx:47
-#: src/components/RankingsTable/RankingsTableMobile.tsx:47
 msgid "Rank"
 msgstr ""
 
-#: src/components/Navbar/Desktop.tsx:108
 msgid "RankMyWallet on Github"
 msgstr ""
 
-#: src/components/Navbar/Desktop.tsx:94
 msgid "RankMyWallet on Twitter"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:173
 msgid "Required"
 msgstr ""
 
-#: src/core/constants/species.ts:18
-#: src/core/constants/species.ts:126
 msgid "Seahorse"
 msgstr ""
 
-#: src/core/constants/species.ts:78
-#: src/core/constants/species.ts:186
 msgid "Shark"
 msgstr ""
 
-#: src/core/constants/species.ts:33
-#: src/core/constants/species.ts:141
 msgid "Shell"
 msgstr ""
 
-#: src/core/constants/species.ts:28
-#: src/core/constants/species.ts:136
 msgid "Shrimp"
 msgstr ""
 
-#: src/lib/address/unsupportedAddressMessage.ts:28
 msgid "Sorry, but we are unable to recognize this address."
 msgstr ""
 
-#: src/lib/address/unsupportedAddressMessage.ts:25
 msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
 msgstr ""
 
-#: src/lib/address/unsupportedAddressMessage.ts:21
 msgid "Sorry, but we do not support {blockchain} {network} addresses."
 msgstr ""
 
-#: src/lib/address/unsupportedAddressMessage.ts:17
 msgid "Sorry, but we do not support {blockchain}."
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:100
 msgid "Sorry, we do not rank empty wallets"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:126
-#: src/components/Navbar/Desktop.tsx:60
-#: src/components/Navbar/Mobile.tsx:82
 msgctxt "Plural"
 msgid "Species"
 msgstr ""
 
-#: src/components/Species/SpeciesTable.tsx:56
 msgctxt "Singular"
 msgid "Species"
 msgstr ""
 
-#: src/components/Sponsors.tsx:25
 msgid "Sponsored By:"
 msgstr ""
 
-#: src/core/constants/species.ts:43
-#: src/core/constants/species.ts:151
 msgid "Starfish"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:162
-#: src/components/Species/SpeciesTable.tsx:59
 msgid "Starts At"
 msgstr ""
 
-#: src/components/BlockChains.tsx:31
 msgid "Supported Blockchains:"
 msgstr ""
 
-#: src/components/Navbar/Mobile.tsx:57
 msgid "Switch to {text} mode"
 msgstr ""
 
-#: src/core/constants/species.ts:68
-#: src/core/constants/species.ts:176
 msgid "Swordfish"
 msgstr ""
 
-#: src/core/constants/species.ts:83
-#: src/core/constants/species.ts:191
 msgid "Tiger shark"
 msgstr ""
 
-#: src/components/Navbar/Desktop.tsx:67
-#: src/components/Navbar/Desktop.tsx:72
-#: src/components/Navbar/Mobile.tsx:86
-#: src/pages/tipbox.tsx:30
-#: src/pages/tipbox.tsx:36
 msgid "Tip Box"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:82
 msgid "Trailing Prefix Bits:"
 msgstr ""
 
-#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:37
 msgid "Try again?"
 msgstr ""
 
-#: src/components/Navbar/Mobile.tsx:99
 msgid "Twitter"
 msgstr ""
 
-#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:20
-#: src/components/AddressDetails/UnsupportedAddressDetails.tsx:27
 msgid "Unsupported Address"
 msgstr ""
 
-#: src/components/AddressDetails/AccordionItemAddressDetails.tsx:53
 msgid "Version"
 msgstr ""
 
-#: src/components/Heroes/Hero.tsx:46
 msgid "Wallet address"
 msgstr ""
 
-#: src/core/constants/species.ts:98
-#: src/core/constants/species.ts:206
 msgid "Whale"
 msgstr ""
 
-#: src/pages/faq.tsx:62
 msgid "What technology does this website use?"
 msgstr ""
 
-#: src/pages/faq.tsx:86
 msgid "Where do I report bugs?"
 msgstr ""
 
-#: src/pages/faq.tsx:102
 msgid "Why are Byron addresses not supported?"
 msgstr ""
 
-#: src/pages/faq.tsx:118
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
 msgstr ""
 
-#: src/components/Counter.tsx:48
 msgid "You are Cardano holder"
 msgstr ""
 
-#: src/components/Counter.tsx:49
 msgid "You are Ergo holder"
 msgstr ""
 
-#: src/pages/faq.tsx:136
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:131
 msgid "Your Balance"
 msgstr ""
 
-#: src/components/Sponsors.tsx:39
-#: src/components/Sponsors.tsx:52
-#: src/components/Sponsors.tsx:65
 msgid "Your Project"
 msgstr ""
 
-#: src/components/AddressDetails/SupportedAddressDetails.tsx:92
-#: src/components/RankingsTable/RankingsTableDesktop.tsx:72
-#: src/components/RankingsTable/RankingsTableMobile.tsx:73
 msgid "Your Rank"
 msgstr ""
