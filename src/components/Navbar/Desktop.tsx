@@ -2,7 +2,7 @@ import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { BsGithub, BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
-import { Link } from "src/components"
+import { Link, LocaleSwitcher } from "src/components"
 import { Logo } from "../Images/Logos"
 
 interface NavbarProps {
@@ -112,6 +112,18 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               icon={<BsGithub />}
             />
           </Link>
+
+          <IconButton
+            size="lg"
+            maxWidth="1rem"
+            w={10}
+            ml={0}
+            aria-label={t`RankMyWallet on Twitter`}
+            variant="ghost"
+            color="current"
+            marginLeft="0"
+            icon={<LocaleSwitcher />}
+          />
 
           <IconButton
             size="lg"
