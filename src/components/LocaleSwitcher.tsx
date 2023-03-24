@@ -74,7 +74,7 @@ export function LocaleSwitcher() {
           {languages.map((language) => {
             return (
               <MenuItem key={nextId()} onClick={() => handleClick(language.locale as LOCALES)}>
-                {i18n._(language.msg)} ({language.locale})
+                {i18n._(language.msg)}
               </MenuItem>
             )
           })}
