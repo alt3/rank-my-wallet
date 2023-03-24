@@ -13,7 +13,7 @@ import { useLingui } from "@lingui/react"
 import React from "react"
 import { BsList, BsMoonFill, BsSunFill } from "react-icons/bs"
 import { HiExternalLink } from "react-icons/hi"
-import { Link } from "src/components"
+import { Link, LocaleSwitcher } from "src/components"
 import { LogoMobile } from "../Images/Logos"
 import { Drawer } from "./Drawer"
 
@@ -47,6 +47,8 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
         </Link>
 
         <Box marginLeft={"auto"}>
+          <LocaleSwitcher />
+
           <IconButton
             size="lg"
             variant="ghost"
