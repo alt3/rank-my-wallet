@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2023-02-15 20:16+0100\n"
+"POT-Creation-Date: 2023-03-24 20:44+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: pseudo\n"
+"Language: en-us\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -14,312 +14,312 @@ msgstr ""
 "Plural-Forms: \n"
 
 msgid "Address"
-msgstr ""
+msgstr "Address"
 
 msgid "Address Analysis"
-msgstr ""
+msgstr "Address Analysis"
 
 msgid "Address Details"
-msgstr ""
+msgstr "Address Details"
 
 msgid "Address Type"
-msgstr ""
+msgstr "Address Type"
 
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
-msgstr ""
+msgstr "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
 
 msgid "Back to homepage"
-msgstr ""
+msgstr "Back to homepage"
 
 msgid "Balance"
-msgstr ""
+msgstr "Balance"
 
 msgid "Become a Sponsor"
-msgstr ""
+msgstr "Become a Sponsor"
 
 msgid "Binaries"
-msgstr ""
+msgstr "Binaries"
 
 msgid "Bits"
-msgstr ""
+msgstr "Bits"
 
 msgid "Blockchain"
-msgstr ""
+msgstr "Blockchain"
 
 msgid "Blockchain Species"
-msgstr ""
+msgstr "Blockchain Species"
 
 msgid "Blue whale"
-msgstr ""
+msgstr "Blue whale"
 
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr ""
+msgstr "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
 
 msgid "Cardano"
-msgstr ""
+msgstr "Cardano"
 
 msgid "Cardano Rankings are coming soon"
-msgstr ""
+msgstr "Cardano Rankings are coming soon"
 
 msgid "Cardano Species"
-msgstr ""
+msgstr "Cardano Species"
 
 msgid "Checksum"
-msgstr ""
+msgstr "Checksum"
 
 msgid "Competition"
-msgstr ""
+msgstr "Competition"
 
 msgid "Competitors"
-msgstr ""
+msgstr "Competitors"
 
 msgid "Content"
-msgstr ""
+msgstr "Content"
 
 msgid "Copied!"
-msgstr ""
+msgstr "Copied!"
 
 msgid "Crab"
-msgstr ""
+msgstr "Crab"
 
 msgid "Current Species"
-msgstr ""
+msgstr "Current Species"
 
 msgid "Decimals"
-msgstr ""
+msgstr "Decimals"
 
 msgid "Decoded Bytes:"
-msgstr ""
+msgstr "Decoded Bytes:"
 
 msgid "Dutch"
-msgstr ""
+msgstr "Dutch"
 
 msgid "Encoding"
-msgstr ""
+msgstr "Encoding"
 
 msgid "English"
-msgstr ""
+msgstr "English"
 
 msgid "Ergo"
-msgstr ""
+msgstr "Ergo"
 
 msgid "Ergo Species"
-msgstr ""
+msgstr "Ergo Species"
 
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
-msgstr ""
+msgstr "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
 
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 msgid "Fin whale"
-msgstr ""
+msgstr "Fin whale"
 
 msgid "Fish"
-msgstr ""
+msgstr "Fish"
 
 msgid "Frequently Asked Questions (FAQ)"
-msgstr ""
+msgstr "Frequently Asked Questions (FAQ)"
 
 msgid "General"
-msgstr ""
+msgstr "General"
 
 msgid "Ghost"
-msgstr ""
+msgstr "Ghost"
 
 msgid "Github"
-msgstr ""
+msgstr "Github"
 
 msgid "Go"
-msgstr ""
+msgstr "Go"
 
 msgid "Great white shark"
-msgstr ""
+msgstr "Great white shark"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "How do I consolidate my boxes?"
-msgstr ""
+msgstr "How do I consolidate my boxes?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr ""
+msgstr "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr ""
+msgstr "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 
 msgid "Internal Server Error"
-msgstr ""
+msgstr "Internal Server Error"
 
 msgid "Jellyfish"
-msgstr ""
+msgstr "Jellyfish"
 
 msgid "Leading Prefix Bits:"
-msgstr ""
+msgstr "Leading Prefix Bits:"
 
 msgid "Network"
-msgstr ""
+msgstr "Network"
 
 msgid "Network Type"
-msgstr ""
+msgstr "Network Type"
 
 msgid "Next Species"
-msgstr ""
+msgstr "Next Species"
 
 msgid "Octopus"
-msgstr ""
+msgstr "Octopus"
 
 msgid "Orca"
-msgstr ""
+msgstr "Orca"
 
 msgid "Oyster"
-msgstr ""
+msgstr "Oyster"
 
 msgid "Page Not Found"
-msgstr ""
+msgstr "Page Not Found"
 
 msgid "Pipefish"
-msgstr ""
+msgstr "Pipefish"
 
 msgid "Piranha"
-msgstr ""
+msgstr "Piranha"
 
 msgid "Plankton"
-msgstr ""
+msgstr "Plankton"
 
 msgid "Please donate to keep this website ad-free"
-msgstr ""
+msgstr "Please donate to keep this website ad-free"
 
 msgid "Please provide a wallet address"
-msgstr ""
+msgstr "Please provide a wallet address"
 
 msgid "Prefix Bits:"
-msgstr ""
+msgstr "Prefix Bits:"
 
 msgid "Prefix Byte"
-msgstr ""
+msgstr "Prefix Byte"
 
 msgid "Pseudo"
-msgstr ""
+msgstr "Pseudo"
 
 msgid "Rank"
-msgstr ""
+msgstr "Rank"
 
 msgid "RankMyWallet on Github"
-msgstr ""
+msgstr "RankMyWallet on Github"
 
 msgid "RankMyWallet on Twitter"
-msgstr ""
+msgstr "RankMyWallet on Twitter"
 
 msgid "Required"
-msgstr ""
+msgstr "Required"
 
 msgid "Seahorse"
-msgstr ""
+msgstr "Seahorse"
 
 msgid "Shark"
-msgstr ""
+msgstr "Shark"
 
 msgid "Shell"
-msgstr ""
+msgstr "Shell"
 
 msgid "Shrimp"
-msgstr ""
+msgstr "Shrimp"
 
 msgid "Sorry, but we are unable to recognize this address."
-msgstr ""
+msgstr "Sorry, but we are unable to recognize this address."
 
 msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
-msgstr ""
+msgstr "Sorry, but we do not support {blockchain} {addressType} addresses."
 
 msgid "Sorry, but we do not support {blockchain} {network} addresses."
-msgstr ""
+msgstr "Sorry, but we do not support {blockchain} {network} addresses."
 
 msgid "Sorry, but we do not support {blockchain}."
-msgstr ""
+msgstr "Sorry, but we do not support {blockchain}."
 
 msgid "Sorry, we do not rank empty wallets"
-msgstr ""
+msgstr "Sorry, we do not rank empty wallets"
 
 msgctxt "Plural"
 msgid "Species"
-msgstr ""
+msgstr "Species"
 
 msgctxt "Singular"
 msgid "Species"
-msgstr ""
+msgstr "Species"
 
 msgid "Sponsored By:"
-msgstr ""
+msgstr "Sponsored By:"
 
 msgid "Starfish"
-msgstr ""
+msgstr "Starfish"
 
 msgid "Starts At"
-msgstr ""
+msgstr "Starts At"
 
 msgid "Supported Blockchains:"
-msgstr ""
+msgstr "Supported Blockchains:"
 
 msgid "Switch to {text} mode"
-msgstr ""
+msgstr "Switch to {text} mode"
 
 msgid "Swordfish"
-msgstr ""
+msgstr "Swordfish"
 
 msgid "Tiger shark"
-msgstr ""
+msgstr "Tiger shark"
 
 msgid "Tip Box"
-msgstr ""
+msgstr "Tip Box"
 
 msgid "Trailing Prefix Bits:"
-msgstr ""
+msgstr "Trailing Prefix Bits:"
 
 msgid "Try again?"
-msgstr ""
+msgstr "Try again?"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Unsupported Address"
-msgstr ""
+msgstr "Unsupported Address"
 
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
 msgid "Wallet address"
-msgstr ""
+msgstr "Wallet address"
 
 msgid "Whale"
-msgstr ""
+msgstr "Whale"
 
 msgid "What technology does this website use?"
-msgstr ""
+msgstr "What technology does this website use?"
 
 msgid "Where do I report bugs?"
-msgstr ""
+msgstr "Where do I report bugs?"
 
 msgid "Why are Byron addresses not supported?"
-msgstr ""
+msgstr "Why are Byron addresses not supported?"
 
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
-msgstr ""
+msgstr "Why is the balance on this website different from the balance in my Ergo wallet?"
 
 msgid "You are Cardano holder"
-msgstr ""
+msgstr "You are Cardano holder"
 
 msgid "You are Ergo holder"
-msgstr ""
+msgstr "You are Ergo holder"
 
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
-msgstr ""
+msgstr "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
 
 msgid "Your Balance"
-msgstr ""
+msgstr "Your Balance"
 
 msgid "Your Project"
-msgstr ""
+msgstr "Your Project"
 
 msgid "Your Rank"
-msgstr ""
+msgstr "Your Rank"

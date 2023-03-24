@@ -6,8 +6,8 @@ module.exports = {
   generateIndexSitemap: false,
   alternateRefs: [
     {
-      href: `${process.env.NEXT_PUBLIC_SITE_URL}/nl`,
-      hreflang: "nl",
+      href: `${process.env.NEXT_PUBLIC_SITE_URL}/nl-nl`,
+      hreflang: "nl-nl",
     },
   ],
 }

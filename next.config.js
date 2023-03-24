@@ -7,8 +7,8 @@ const withBundleAnalyzer = shouldAnalyzeBundles
   ? require("@next/bundle-analyzer")({ enabled: true })
   : () => config
 
-// i18n routes
-const locales = ["en", "nl"]
+// When adding new i18n routes, also update LocaleSwitcher and next-sitemap
+const locales = ["en-us", "nl-nl"]
 
 if (process.env.NODE_ENV !== "production") {
   locales.push("pseudo")
@@ -31,7 +31,7 @@ const config = {
   },
   i18n: {
     locales: locales,
-    defaultLocale: "en",
+    defaultLocale: "en-us",
   },
 }
 

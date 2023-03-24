@@ -8,7 +8,7 @@ import nextId from "react-id-generator"
 
 import { MessageDescriptor } from "@lingui/core"
 
-type LOCALES = "en" | "nl" | "pseudo"
+type LOCALES = "en-us" | "nl-nl" | "pseudo"
 
 interface Languages {
   locale: string
@@ -17,11 +17,11 @@ interface Languages {
 
 const languages: Languages[] = [
   {
-    locale: "en",
+    locale: "en-us",
     msg: msg`English`,
   },
   {
-    locale: "nl",
+    locale: "nl-nl",
     msg: msg`Dutch`,
   },
 ]
@@ -59,15 +59,13 @@ export function LocaleSwitcher() {
     })
   }
 
-  const country = i18n.locale === "en" ? "us" : "nl"
-
   return (
     <>
       <Menu>
         <MenuButton
           as={IconButton}
           aria-label="Options"
-          icon={<ReactCountryFlag countryCode={country} svg />}
+          icon={<ReactCountryFlag countryCode={i18n.locale.substring(3)} svg />}
           variant="ghost"
         />
         <MenuList>

@@ -2,7 +2,7 @@ import { i18n, Messages } from '@lingui/core';
 import { useRouter } from 'next/router';
 
 export async function loadCatalog(locale: string) {
-  const { messages } = await import(`@lingui/loader!/src/translations/locales/${locale}/messages.po`)
+  const { messages } = await import(`@lingui/loader!./locales/${locale}/messages.po`)
 
   return messages
 }

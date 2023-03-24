@@ -12,4 +12,7 @@ module.exports = {
     },
   ],
   format: "po",
+  formatOptions: {
+    origins: false,
+  },
 }

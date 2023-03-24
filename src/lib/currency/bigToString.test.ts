@@ -1,7 +1,7 @@
 import { bigToString, nanoToTicker } from "src/lib"
 import { Big } from "big.js"
 
-const locale = "en"
+const locale = "en-en"
 
 describe("Ensure bigToString:", function () {
   it("produces a String", () => {
