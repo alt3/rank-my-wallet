@@ -76,7 +76,7 @@ msgstr "Blockchain Soorten"
 msgid "Blue whale"
 msgstr "Blauw vinvis"
 
-#: src/pages/faq.tsx:99
+#: src/pages/faq.tsx:104
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
 msgstr "Byron (legacy) adressen missen de staking functionaliteit die RankMyWallet nodig heeft om je ranking te kunnen bepalen."
 
@@ -134,9 +134,17 @@ msgstr "Decimalen"
 msgid "Decoded Bytes:"
 msgstr "Gedecodeerde Bytes:"
 
+#: src/components/LocaleSwitcher/LocaleSwitcher.tsx:14
+msgid "Dutch"
+msgstr "Nederlands"
+
 #: src/components/AddressDetails/AccordionItemAddressAnalysis.tsx:37
 msgid "Encoding"
 msgstr "Codering"
+
+#: src/components/LocaleSwitcher/LocaleSwitcher.tsx:15
+msgid "English"
+msgstr "Engels"
 
 #: src/components/Species/SpeciesNavbar.tsx:31
 #: src/pages/faq.tsx:54
@@ -150,12 +158,12 @@ msgstr "Ergo"
 msgid "Ergo Species"
 msgstr "Ergo Soorten"
 
-#: src/pages/faq.tsx:120
+#: src/pages/faq.tsx:125
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
 msgstr "Elke Ergo wallet kan meerdere adressen hebben, ook wel boxen genoemd. Ergo wallets zoals Nautius tonen je 'geconsolideerde' saldo door de saldi op te tellen van alle boxen die bij je wallet horen. RankMyWallet laat echter uitsluitend het saldo zien dat hoort bij één enkele box."
 
 #: src/components/Navbar/Desktop.tsx:84
-#: src/components/Navbar/Mobile.tsx:88
+#: src/components/Navbar/Mobile.tsx:90
 #: src/pages/faq.tsx:32
 msgid "FAQ"
 msgstr "FAQ"
@@ -184,7 +192,7 @@ msgstr "Algemeen"
 msgid "Ghost"
 msgstr "Geest"
 
-#: src/components/Navbar/Mobile.tsx:108
+#: src/components/Navbar/Mobile.tsx:110
 msgid "Github"
 msgstr "Github"
 
@@ -198,11 +206,11 @@ msgid "Great white shark"
 msgstr "Witte haai"
 
 #: src/components/Navbar/Desktop.tsx:33
-#: src/components/Navbar/Mobile.tsx:76
+#: src/components/Navbar/Mobile.tsx:78
 msgid "Home"
 msgstr "Home"
 
-#: src/pages/faq.tsx:129
+#: src/pages/faq.tsx:134
 msgid "How do I consolidate my boxes?"
 msgstr "Hoe consolideer ik mijn boxen?"
 
@@ -295,6 +303,10 @@ msgstr "Prefix Bits:"
 msgid "Prefix Byte"
 msgstr "Prefix Byte"
 
+#: src/components/LocaleSwitcher/LocaleSwitcher.tsx:23
+msgid "Pseudo"
+msgstr "Pseudo"
+
 #: src/components/RankingsTable/RankingsTableDesktop.tsx:47
 #: src/components/RankingsTable/RankingsTableMobile.tsx:47
 msgid "Rank"
@@ -354,7 +366,7 @@ msgstr "Sorry maar we ranken geen lege wallets"
 
 #: src/components/AddressDetails/SupportedAddressDetails.tsx:126
 #: src/components/Navbar/Desktop.tsx:60
-#: src/components/Navbar/Mobile.tsx:80
+#: src/components/Navbar/Mobile.tsx:82
 msgctxt "Plural"
 msgid "Species"
 msgstr "Soorten"
@@ -382,7 +394,7 @@ msgstr "Begint Bij"
 msgid "Supported Blockchains:"
 msgstr "Ondersteunde Blockchains:"
 
-#: src/components/Navbar/Mobile.tsx:55
+#: src/components/Navbar/Mobile.tsx:57
 msgid "Switch to {text} mode"
 msgstr "Schakel naar {text} mode"
 
@@ -398,7 +410,7 @@ msgstr "Tijgerhaai"
 
 #: src/components/Navbar/Desktop.tsx:67
 #: src/components/Navbar/Desktop.tsx:72
-#: src/components/Navbar/Mobile.tsx:84
+#: src/components/Navbar/Mobile.tsx:86
 #: src/pages/tipbox.tsx:30
 #: src/pages/tipbox.tsx:36
 msgid "Tip Box"
@@ -412,7 +424,7 @@ msgstr "Volgende Prefix Bits:"
 msgid "Try again?"
 msgstr "Opnieuw proberen?"
 
-#: src/components/Navbar/Mobile.tsx:97
+#: src/components/Navbar/Mobile.tsx:99
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -438,15 +450,15 @@ msgstr "Walvis"
 msgid "What technology does this website use?"
 msgstr "Welke technologie gebruikt deze website?"
 
-#: src/pages/faq.tsx:81
+#: src/pages/faq.tsx:86
 msgid "Where do I report bugs?"
 msgstr "Waar meld ik fouten?"
 
-#: src/pages/faq.tsx:97
+#: src/pages/faq.tsx:102
 msgid "Why are Byron addresses not supported?"
 msgstr "Waarom worden Byron adressen niet ondersteund?"
 
-#: src/pages/faq.tsx:113
+#: src/pages/faq.tsx:118
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
 msgstr "Waarom wijkt het saldo op deze website af van het saldo in mijn Ergo wallet?"
 
@@ -458,7 +470,7 @@ msgstr "Je bent Cardano holder"
 msgid "You are Ergo holder"
 msgstr "Je bent Ergo holder"
 
-#: src/pages/faq.tsx:131
+#: src/pages/faq.tsx:136
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
 msgstr "Je kunt al je boxen, en daarmee je saldo, consolideren door alle Ergo naar jezelf te sturen en daarbij gebruik te maken van ofwel een nieuw adres ofwel één van je bestaande ontvangstadressen."
 

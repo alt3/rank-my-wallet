@@ -113,17 +113,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
             />
           </Link>
 
-          <IconButton
-            size="lg"
-            maxWidth="1rem"
-            w={10}
-            ml={0}
-            aria-label={t`RankMyWallet on Twitter`}
-            variant="ghost"
-            color="current"
-            marginLeft="0"
-            icon={<LocaleSwitcher />}
-          />
+          <LocaleSwitcher />
 
           <IconButton
             size="lg"
