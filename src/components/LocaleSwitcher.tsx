@@ -10,20 +10,47 @@ import { MessageDescriptor } from "@lingui/core"
 
 type LOCALES = "en" | "nl" | "pseudo"
 
-const languages: { [key: string]: MessageDescriptor } = {
-  nl: msg`Dutch`,
-  en: msg`English`,
+interface Languages {
+  locale: string
+  msg: MessageDescriptor
+}
+
+const languages: Languages[] = [
+  {
+    locale: "en",
+    msg: msg`English`,
+  },
+  {
+    locale: "nl",
+    msg: msg`Dutch`,
+  },
+]
+
+if (process && process.env.NODE_ENV !== "production") {
+  languages.push({
+    locale: "pseudo",
+    msg: msg`Pseudo`,
+  })
 }
 
 export function LocaleSwitcher() {
   const { i18n } = useLingui()
   const router = useRouter()
 
-  if (process.env.NEXT_PUBLIC_NODE_ENV !== "production") {
-    languages["pseudo"] = msg`Pseudo`
-  }
-
   const [locale, setLocale] = useState<LOCALES>(router.locale!.split("-")[0] as LOCALES)
+
+  languages.sort((a, b) => {
+    const aMessage = i18n._(a.msg)
+    const bMessage = i18n._(b.msg)
+
+    if (aMessage > bMessage) {
+      return 1
+    }
+    if (aMessage < bMessage) {
+      return -1
+    }
+    return 0
+  })
 
   function handleClick(locale: LOCALES) {
     setLocale(locale)
@@ -44,10 +71,10 @@ export function LocaleSwitcher() {
           variant="ghost"
         />
         <MenuList>
-          {Object.keys(languages).map((locale, i) => {
+          {languages.map((language) => {
             return (
-              <MenuItem key={nextId()} onClick={() => handleClick(locale as LOCALES)}>
-                {i18n._(languages[locale] as MessageDescriptor)} ({locale})
+              <MenuItem key={nextId()} onClick={() => handleClick(language.locale as LOCALES)}>
+                {i18n._(language.msg)} ({language.locale})
               </MenuItem>
             )
           })}

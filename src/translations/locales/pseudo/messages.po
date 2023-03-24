@@ -134,7 +134,7 @@ msgstr ""
 msgid "Decoded Bytes:"
 msgstr ""
 
-#: src/components/LocaleSwitcher/LocaleSwitcher.tsx:14
+#: src/components/LocaleSwitcher.tsx:25
 msgid "Dutch"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "Encoding"
 msgstr ""
 
-#: src/components/LocaleSwitcher/LocaleSwitcher.tsx:15
+#: src/components/LocaleSwitcher.tsx:21
 msgid "English"
 msgstr ""
 
@@ -303,7 +303,7 @@ msgstr ""
 msgid "Prefix Byte"
 msgstr ""
 
-#: src/components/LocaleSwitcher/LocaleSwitcher.tsx:23
+#: src/components/LocaleSwitcher.tsx:32
 msgid "Pseudo"
 msgstr ""
 
