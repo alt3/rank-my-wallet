@@ -1,11 +1,13 @@
-import { useParam } from "@blitzjs/next"
 import { useQuery } from "@blitzjs/rpc"
+import { useRouter } from "next/router"
 import getAddressDetails from "src/core/queries/getAddressDetails"
 import SupportedAddressDetails from "./SupportedAddressDetails"
 import UnsupportedAddressDetails from "./UnsupportedAddressDetails"
 
 export const AddressDetails = () => {
-  const address = useParam("address", "string")
+  const router = useRouter()
+  const { address } = router.query
+
   const [addressDetails] = useQuery(getAddressDetails, address, {
     staleTime: Infinity,
   })

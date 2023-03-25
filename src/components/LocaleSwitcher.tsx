@@ -13,16 +13,19 @@ type LOCALES = "en-us" | "nl-nl" | "pseudo"
 interface Languages {
   locale: string
   msg: MessageDescriptor
+  territory?: string
 }
 
 const languages: Languages[] = [
   {
     locale: "en-us",
     msg: msg`English`,
+    territory: "US",
   },
   {
     locale: "nl-nl",
     msg: msg`Dutch`,
+    territory: "NL",
   },
 ]
 
@@ -54,8 +57,14 @@ export function LocaleSwitcher() {
 
   function handleClick(locale: LOCALES) {
     setLocale(locale)
-    router.push(router.pathname, router.pathname, { locale }).catch((e) => {
-      console.log(`error is ${e}`)
+
+    const href = {
+      pathname: router.pathname,
+      query: router.query,
+    }
+
+    router.push(href, href, { locale }).catch((e) => {
+      console.log(`Error: ${e}`)
     })
   }
 
@@ -76,9 +85,7 @@ export function LocaleSwitcher() {
             .map((language) => {
               return (
                 <MenuItem key={nextId()} onClick={() => handleClick(language.locale as LOCALES)}>
-                  {i18n._(language.msg)}{" "}
-                  {language.locale.length === 5 &&
-                    `(${language.locale.substring(3).toUpperCase()})`}
+                  {i18n._(language.msg)} {language.territory && `(${language.territory})`}
                 </MenuItem>
               )
             })}
