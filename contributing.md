@@ -23,7 +23,7 @@ npx tsc
 
 ## Translations
 
-TRANSLATORS DO NOT REQUIRE CODING SKILLS!!!
+TRANSLATORS DO NOT REQUIRE CODING SKILLS!
 
 ### Requirements
 
