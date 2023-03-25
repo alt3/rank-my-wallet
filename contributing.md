@@ -77,7 +77,7 @@ If you do have coding skills:
 
 4. Run `npm run translations:extract` which will create a new `messages.po` file for the new locale in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/)
 
-5. Update **all** `message.po` files that are now missing the name of your newly added language
+5. Update **all** `message.po` files that are now missing the name of your newly added language but do not touch the `pseudo` locale
 
 6. Submit your changes by creating a Pull Request
 
