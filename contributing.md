@@ -47,23 +47,25 @@ git clone git@github.com:alt3/rank-my-wallet.git
 
 ### Updating existing translations
 
-1. Open `messages.po` for the specific language, found in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/locales)
+1. Open the `messages.po` file for the specific language, found in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/locales)
 
-2. Submit your changes by creating a Pull Request
+2. Make and save changes
 
-3. Make sure to doublecheck your changes by using the Vercel website preview
+3. Submit your changes by creating a Pull Request
+
+4. Make sure to doublecheck your changes by using the Vercel website preview
 
 ### Adding new translations
 
-Translators without coding skills can:
+**Translators without coding skills** can:
 
 1. Copy an existing `messages.po` file
 
 2. Update translations in the copied file
 
-3. Submit your copied file by creating a Pull Request
+3. Submit the copied file by creating a Pull Request
 
-4. We will update your Pull Request with the required technical code
+4. We will add the required required technical code to your Pull Request
 
 If you do have coding skills:
 
@@ -75,7 +77,7 @@ If you do have coding skills:
 
 4. Run `npm run translations:extract` which will create a new `messages.po` file in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/)
 
-5. Update **all** `message.po` files that are missing the name of your newly added language
+5. Update **all** `message.po` files that are now missing the name of your newly added language
 
 6. Submit your new locale by creating a Pull Request
 
@@ -87,6 +89,6 @@ Every Pull Request creates a Vercel preview website containing your changes:
 
 1. Visit the Pull Request page on github
 
-2. Click on the `Visit Preview` link shown below:
+2. Click on the `Visit Preview` link as shown below:
 
    ![Screenshot of Vercel preview button](./docs/img/vercel-preview.png)
