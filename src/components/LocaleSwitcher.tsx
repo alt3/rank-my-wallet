@@ -54,8 +54,14 @@ export function LocaleSwitcher() {
 
   function handleClick(locale: LOCALES) {
     setLocale(locale)
-    router.push(router.pathname, router.pathname, { locale }).catch((e) => {
-      console.log(`error is ${e}`)
+
+    const href = {
+      pathname: router.pathname,
+      query: router.query,
+    }
+
+    router.push(href, href, { locale }).catch((e) => {
+      console.log(`Error: ${e}`)
     })
   }
 
