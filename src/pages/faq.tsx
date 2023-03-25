@@ -83,6 +83,23 @@ const FaqPage: BlitzPage = () => {
                     </ListItem>
                   </UnorderedList>
                 </AccordionItemFaq>
+
+                <AccordionItemFaq question={<Trans>How can I help with translations?</Trans>}>
+                  <Trans>
+                    Translators do not require coding skills and can help correcting or adding
+                    languages by following{" "}
+                    <Link
+                      href="https://github.com/alt3/rank-my-wallet/blob/main/contributing.md#translations"
+                      isExternal
+                      passHref
+                      withExternalIcon
+                    >
+                      the instructions on this page
+                    </Link>
+                    .
+                  </Trans>
+                </AccordionItemFaq>
+
                 <AccordionItemFaq question={<Trans>Where do I report bugs?</Trans>}>
                   <Link
                     href="https://github.com/alt3/rank-my-wallet/issues"

@@ -139,6 +139,9 @@ msgstr "Witte haai"
 msgid "Home"
 msgstr "Home"
 
+msgid "How can I help with translations?"
+msgstr "Hoe kan ik helpen met vertalen?"
+
 msgid "How do I consolidate my boxes?"
 msgstr "Hoe consolideer ik mijn boxen?"
 
@@ -275,6 +278,9 @@ msgstr "Fooienpot"
 
 msgid "Trailing Prefix Bits:"
 msgstr "Volgende Prefix Bits:"
+
+msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
+msgstr "Vertalers hebben geen programmeerkennis nodig en kunnen helpen met het corrigeren of toevoegen van talen door <0>de instructies op deze pagina</0> te volgen."
 
 msgid "Try again?"
 msgstr "Opnieuw proberen?"

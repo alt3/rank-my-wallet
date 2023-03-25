@@ -22,7 +22,9 @@ export function AccordionItemFaq({ question, children }) {
           </Box>
         </AccordionButton>
       </h2>
-      <AccordionPanel p={0}>{children}</AccordionPanel>
+      <AccordionPanel p={0} marginRight="2rem">
+        {children}
+      </AccordionPanel>
     </AccordionItem>
   )
 }
