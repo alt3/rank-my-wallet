@@ -23,72 +23,38 @@ npx tsc
 
 ## Translations
 
-TRANSLATORS DO NOT REQUIRE CODING SKILLS!
+Because we use the [Crowdin](https://crowdin.com/) web editor for translations, translators do not require any coding skills.
 
-### Requirements
+### Joining RankMyWallet on Crowdin
 
-Either use the Github website or download [PoEdit](https://poedit.net/).
+1. Create a [Crowdin](https://crowdin.com/) account
 
-If you are using PoEdit, create a local copy of the source files by running:
+2. Search for the `rankmywallet` project
 
-```
-git clone git@github.com:alt3/rank-my-wallet.git
-```
+   ![Screenshot of Crowdin project search](./docs/img/crowdin-search-project.png)
 
-### PoEdit
+3. Join the `rankmywallet` project by pressing the `Join` button
 
-1. Open PoEdit
+### Requesting new languages
 
-2. Select menu item `File`, then select `Preferences`
+If you want to add a new language, please start a discussion (so we can technically enable the language).
 
-3. On the `General` tab, **uncheck** option `Automatically compile MO files when saving`
-
-   ![Screenshot of PoEdit MO setting](./docs/img/poedit-disable-mo-files.png)
+![Screenshot of Crowdin project joining](./docs/img/crowdin-request-new-language.png)
 
 ### Updating existing translations
 
-1. Open the `messages.po` file for the specific language, found in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/locales)
+To update existing translations:
 
-2. Make and save changes
+1. First select the language you want to update
 
-3. Submit your changes by creating a Pull Request
+   ![Screenshot of Crowdin select language](./docs/img/crowdin-select-language.png)
 
-4. Make sure to doublecheck your changes by using the [Vercel website preview](#vercel-website-preview)
+2. Open the translation editor by pressing the `Translate All` button
 
-### Adding new translations
+3. Find and select the translation string you want to update
 
-Translators without coding skills can:
+4. After you have updated the translation string, press the `Save` button
 
-1. Copy an existing `messages.po` file
+   ![Screenshot of Crowdin translation editing](./docs/img/crowdin-edit-translation.png)
 
-2. Update translations in the copied file
-
-3. Submit the copied file by creating a Pull Request
-
-4. We will add the required required technical code to your Pull Request
-
-If you do have coding skills:
-
-1. Add the new locale on [this line in next.config.js](https://github.com/alt3/rank-my-wallet/blob/main/next.config.js#L11)
-
-2. Add the new locale to the [LocaleSwitcher component](https://github.com/alt3/rank-my-wallet/blob/main/src/components/LocaleSwitcher.tsx)
-
-3. Add the new locale to the [next-sitemap configuration file](https://github.com/alt3/rank-my-wallet/blob/main/next-sitemap.config.js#L7)
-
-4. Run `npm run translations:extract` which will create a new `messages.po` file for the new locale in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/)
-
-5. Update **all** `message.po` files that are now missing the name of your newly added language but do not touch the `pseudo` locale
-
-6. Submit your changes by creating a Pull Request
-
-7. Make sure to doublecheck your changes by using the [Vercel website preview](#vercel-website-preview)
-
-### Vercel website preview
-
-Every Pull Request creates a Vercel preview website containing your changes:
-
-1. Visit the Pull Request page on github
-
-2. Click on the `Visit Preview` link as shown below:
-
-   ![Screenshot of Vercel preview button](./docs/img/vercel-preview.png)
+5. That's it, no further action required. Crowdin will automatically create a Pull Request containing your changes within an hour.
