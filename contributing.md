@@ -41,21 +41,19 @@ git clone git@github.com:alt3/rank-my-wallet.git
 
 2. Select menu item `File`, then select `Preferences`
 
-3. On the `General` tab, disable option `Automatically compile MO files when saving`
+3. On the `General` tab, **uncheck** option `Automatically compile MO files when saving`
 
    ![Screenshot of PoEdit MO setting](./docs/img/poedit-disable-mo-files.png)
 
-### Update existing translation
+### Updating existing translations
 
 1. Open `messages.po` for the specific language, found in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/locales)
 
 2. Submit your changes by creating a Pull Request
 
-3. Make sure to doublecheck your changes by using the Vercel website preview:
+3. Make sure to doublecheck your changes by using the Vercel website preview
 
-   ![Screenshot of Vercel preview button](./docs/img/vercel-preview.png)
-
-### Add new translation
+### Adding new translations
 
 Translators without coding skills can:
 
@@ -82,3 +80,13 @@ If you do have coding skills:
 6. Submit your new locale by creating a Pull Request
 
 7. Make sure to doublecheck your changes by using the Vercel website preview
+
+### Vercel website preview
+
+Every Pull Request creates a Vercel preview website containing your changes:
+
+1. Visit the Pull Request page on github
+
+2. Click on the `Visit Preview` link shown below:
+
+   ![Screenshot of Vercel preview button](./docs/img/vercel-preview.png)
