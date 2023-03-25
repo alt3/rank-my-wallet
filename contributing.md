@@ -53,11 +53,11 @@ git clone git@github.com:alt3/rank-my-wallet.git
 
 3. Submit your changes by creating a Pull Request
 
-4. Make sure to doublecheck your changes by using the Vercel website preview
+4. Make sure to doublecheck your changes by using the [Vercel website preview](#vercel-website-preview)
 
 ### Adding new translations
 
-**Translators without coding skills** can:
+Translators without coding skills can:
 
 1. Copy an existing `messages.po` file
 
@@ -75,13 +75,13 @@ If you do have coding skills:
 
 3. Add the new locale to the [next-sitemap configuration file](https://github.com/alt3/rank-my-wallet/blob/main/next-sitemap.config.js#L7)
 
-4. Run `npm run translations:extract` which will create a new `messages.po` file in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/)
+4. Run `npm run translations:extract` which will create a new `messages.po` file for the new locale in the [translations folder](https://github.com/alt3/rank-my-wallet/tree/main/src/translations/)
 
 5. Update **all** `message.po` files that are now missing the name of your newly added language
 
-6. Submit your new locale by creating a Pull Request
+6. Submit your changes by creating a Pull Request
 
-7. Make sure to doublecheck your changes by using the Vercel website preview
+7. Make sure to doublecheck your changes by using the [Vercel website preview](#vercel-website-preview)
 
 ### Vercel website preview
 
