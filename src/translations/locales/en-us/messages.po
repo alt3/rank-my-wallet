@@ -139,6 +139,9 @@ msgstr "Great white shark"
 msgid "Home"
 msgstr "Home"
 
+msgid "How can I help with translations?"
+msgstr "How can I help with translations?"
+
 msgid "How do I consolidate my boxes?"
 msgstr "How do I consolidate my boxes?"
 
@@ -275,6 +278,9 @@ msgstr "Tip Box"
 
 msgid "Trailing Prefix Bits:"
 msgstr "Trailing Prefix Bits:"
+
+msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
+msgstr "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
 
 msgid "Try again?"
 msgstr "Try again?"

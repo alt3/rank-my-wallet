@@ -139,6 +139,9 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+msgid "How can I help with translations?"
+msgstr ""
+
 msgid "How do I consolidate my boxes?"
 msgstr ""
 
@@ -274,6 +277,9 @@ msgid "Tip Box"
 msgstr ""
 
 msgid "Trailing Prefix Bits:"
+msgstr ""
+
+msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
 msgstr ""
 
 msgid "Try again?"
