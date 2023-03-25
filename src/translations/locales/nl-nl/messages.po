@@ -8,7 +8,7 @@ msgstr ""
 "Language: nl\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-25 11:25\n"
+"PO-Revision-Date: 2023-03-25 11:54\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -22,7 +22,7 @@ msgid "Address"
 msgstr "Adres"
 
 msgid "Address Analysis"
-msgstr "Adresanalyze"
+msgstr "Adresanalyse"
 
 msgid "Address Details"
 msgstr "Adresgegevens"
@@ -46,10 +46,10 @@ msgid "Binaries"
 msgstr "Binair"
 
 msgid "Bits"
-msgstr ""
+msgstr "Bits"
 
 msgid "Blockchain"
-msgstr ""
+msgstr "Blockchain"
 
 msgid "Blockchain Species"
 msgstr "Blockchain Soorten"
@@ -61,7 +61,7 @@ msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet
 msgstr "Byron (legacy) adressen missen de staking functionaliteit die RankMyWallet nodig heeft om je ranking te kunnen bepalen."
 
 msgid "Cardano"
-msgstr ""
+msgstr "Cardano"
 
 msgid "Cardano Rankings are coming soon"
 msgstr "Cardano Rankings komen binnenkort"
@@ -106,16 +106,16 @@ msgid "English"
 msgstr "Engels"
 
 msgid "Ergo"
-msgstr ""
+msgstr "Ergo"
 
 msgid "Ergo Species"
 msgstr "Ergo Soorten"
 
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
-msgstr "Elke Ergo wallet kan meerdere adressen hebben, ook wel boxen genoemd. Ergo wallets zoals Nautius tonen je 'geconsolideerde' saldo door de saldi op te tellen van alle boxen die bij je wallet horen. RankMyWallet laat echter uitsluitend het saldo zien dat hoort bij één enkele box."
+msgstr "Elke Ergo wallet kan meerdere adressen hebben, ook wel boxen genoemd. Ergo wallets zoals Nautilus tonen je 'geconsolideerde' saldo door de saldi op te tellen van alle boxen die bij je wallet horen. RankMyWallet laat echter uitsluitend het saldo zien dat hoort bij één enkele box."
 
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 msgid "Fin whale"
 msgstr "Vinvis"
@@ -133,7 +133,7 @@ msgid "Ghost"
 msgstr "Geest"
 
 msgid "Github"
-msgstr ""
+msgstr "Github"
 
 msgid "Go"
 msgstr "Ga"
@@ -142,7 +142,7 @@ msgid "Great white shark"
 msgstr "Witte haai"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "How can I help with translations?"
 msgstr "Hoe kan ik helpen met vertalen?"
@@ -151,7 +151,7 @@ msgid "How do I consolidate my boxes?"
 msgstr "Hoe consolideer ik mijn boxen?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr "Ben je een project of bedrijf en wil je je logo op de home pagina laten zien? Neem dan contact met ons op via <0>Twitter</0> voor meer details."
+msgstr "Ben je een project of bedrijf en wil je je logo op de homepagina laten zien? Neem dan contact met ons op via <0>Twitter</0> voor meer details."
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr "Ben je een individu en wil je dit project ondersteunen? Overweeg dan om te doneren via de <0>Fooienpot</0>."
@@ -190,10 +190,10 @@ msgid "Pipefish"
 msgstr "Zeenaald"
 
 msgid "Piranha"
-msgstr ""
+msgstr "Piranha"
 
 msgid "Plankton"
-msgstr ""
+msgstr "Plankton"
 
 msgid "Please donate to keep this website ad-free"
 msgstr "Doneer om deze website advertentievrij te houden"
@@ -202,13 +202,13 @@ msgid "Please provide a wallet address"
 msgstr "Voer eerst een wallet adres in"
 
 msgid "Prefix Bits:"
-msgstr ""
+msgstr "Prefix Bits:"
 
 msgid "Prefix Byte"
-msgstr ""
+msgstr "Prefix Byte"
 
 msgid "Pseudo"
-msgstr ""
+msgstr "Pseudo"
 
 msgid "Rank"
 msgstr "Ranking"
@@ -291,7 +291,7 @@ msgid "Try again?"
 msgstr "Opnieuw proberen?"
 
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 msgid "Unsupported Address"
 msgstr "Niet Ondersteund Adres"
