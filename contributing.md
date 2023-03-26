@@ -57,8 +57,12 @@ To update existing translations:
 
 ### Request new languages
 
-If you want to add a missing language, please create a discussion as shown below.
+If you want to add a missing language, please create a discussion as shown below so we can:
 
-After we have technically enabled the language, you will receive an email and can start translating.
+1. Technically enable the language
+
+2. Pre-translate it for you
+
+Once the language is active, you will receive an email and can start working on the translation.
 
 ![Screenshot of Crowdin discussion for new language](./docs/img/crowdin-request-new-language.png)
