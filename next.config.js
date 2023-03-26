@@ -8,7 +8,7 @@ const withBundleAnalyzer = shouldAnalyzeBundles
   : () => config
 
 // When adding new i18n routes, also update LocaleSwitcher and next-sitemap
-const locales = ["en-us", "nl-nl"]
+const locales = ["en-us", "de-de", "nl-nl"]
 
 if (process.env.NODE_ENV !== "production") {
   locales.push("pseudo")
