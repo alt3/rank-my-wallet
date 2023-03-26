@@ -8,7 +8,7 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-26 18:09\n"
+"PO-Revision-Date: 2023-03-26 19:02\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -31,7 +31,7 @@ msgid "Address Type"
 msgstr "Adresstyp"
 
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
-msgstr "Ein <0>Alt3</0> Produkt powered by <1>Ergo Watch </1>"
+msgstr "Ein <0>Alt3</0> Produkt von <1>Ergo Watch </1>"
 
 msgid "Back to homepage"
 msgstr "Zurück zur Startseite"
@@ -43,7 +43,7 @@ msgid "Become a Sponsor"
 msgstr "Werde Sponsor"
 
 msgid "Binaries"
-msgstr "Binärdateien"
+msgstr "Binärdaten"
 
 msgid "Bits"
 msgstr "Bits"
@@ -58,7 +58,7 @@ msgid "Blue whale"
 msgstr "Blauwal"
 
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "Byron (Legacy) Adressen verfügen nicht über die Absteckfunktionalität, die RankMyWallet verwendet, um Ihren Rang zu bestimmen."
+msgstr "Byron (Legacy) Adressen verfügen nicht über die Stakingfunktion, die RankMyWallet verwendet, um deinen Rang zu bestimmen."
 
 msgid "Cardano"
 msgstr "Cardano"
@@ -67,10 +67,10 @@ msgid "Cardano Rankings are coming soon"
 msgstr "Cardano Rankings kommen bald"
 
 msgid "Cardano Species"
-msgstr "Kardano-Spezies"
+msgstr "Cardano Spezies"
 
 msgid "Checksum"
-msgstr "Prüfsumme"
+msgstr "Checksumme"
 
 msgid "Competition"
 msgstr "Wettbewerb"
@@ -88,7 +88,7 @@ msgid "Crab"
 msgstr "Krabbe"
 
 msgid "Current Species"
-msgstr "Aktuelle Arten"
+msgstr "Aktuelle Art"
 
 msgid "Decimals"
 msgstr "Dezimalstellen"
@@ -112,13 +112,13 @@ msgid "Ergo Species"
 msgstr "Ergo Arten"
 
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
-msgstr "Jedes Ergo Wallet kann mehrere Adressen haben, auch sogenannte Kästchen. Ergo Brieftaschen wie Nautilus zeigen meistens Ihr \"konsolidiertes\" Guthaben, indem Sie die Beträge, die in allen Kästchen im Zusammenhang mit Ihrer Brieftasche gefunden wurden, hinzufügen. RankMyWallet zeigt jedoch nur den Saldo einer einzelnen Box an."
+msgstr "Jedes Ergo Wallet kann mehrere Adressen haben, sogenannte Boxen. Ergo Wallets wie Nautilus zeigen meistens dein Gesamtguthaben an, indem Sie die Beträge, die in allen Boxen im Zusammenhang mit deiner Wallet gefunden wurden, addieren. RankMyWallet zeigt jedoch nur den Saldo einer einzelnen Box bzw. Adresse an."
 
 msgid "FAQ"
 msgstr "FAQ"
 
 msgid "Fin whale"
-msgstr "Fin-Wal"
+msgstr "Finnwal"
 
 msgid "Fish"
 msgstr "Fisch"
@@ -136,13 +136,13 @@ msgid "Github"
 msgstr "Github"
 
 msgid "Go"
-msgstr "Gehe"
+msgstr "Los"
 
 msgid "Great white shark"
-msgstr "Großer weißer Haien"
+msgstr "Weißer Hai"
 
 msgid "Home"
-msgstr "Zuhause"
+msgstr "Startseite"
 
 msgid "How can I help with translations?"
 msgstr "Wie kann ich bei Übersetzungen helfen?"
@@ -151,19 +151,19 @@ msgid "How do I consolidate my boxes?"
 msgstr "Wie kann ich meine Boxen konsolidieren?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr "Wenn Sie ein Projekt oder ein Unternehmen sind und Ihr Logo auf der Zielseite zeigen möchten, kontaktieren Sie uns auf <0>Twitter</0> für weitere Details."
+msgstr "Wenn du ein Projekt oder ein Unternehmen vertrittst und euer Logo auf der Zielseite zeigen möchtest, kontaktiere uns auf <0>Twitter</0> für weitere Details."
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr "Wenn Sie eine Person sind, die dieses Projekt unterstützen möchte, überlegen Sie bitte, über die <0>Tip Box</0> zu spenden."
+msgstr "Wenn du dieses Projekt unterstützen möchtest, würden wir uns über eine Spende über die <0>Tip Box</0> sehr freuen."
 
 msgid "Internal Server Error"
-msgstr "Interner Server-Fehler"
+msgstr "Interner Serverfehler"
 
 msgid "Jellyfish"
-msgstr "Gelee"
+msgstr "Qualle"
 
 msgid "Leading Prefix Bits:"
-msgstr "Führende Präfix-Bits:"
+msgstr "Leading Prefix Bits:"
 
 msgid "Network"
 msgstr "Netzwerk"
@@ -172,22 +172,22 @@ msgid "Network Type"
 msgstr "Netzwerktyp"
 
 msgid "Next Species"
-msgstr "Nächste Arten"
+msgstr "Nächste Art"
 
 msgid "Octopus"
 msgstr "Oktopus"
 
 msgid "Orca"
-msgstr "Jennifer"
+msgstr "Orca"
 
 msgid "Oyster"
-msgstr "Oyster"
+msgstr "Auster"
 
 msgid "Page Not Found"
 msgstr "Seite nicht gefunden"
 
 msgid "Pipefish"
-msgstr "Rohfisch"
+msgstr "Seenadel"
 
 msgid "Piranha"
 msgstr "Piranha"
@@ -196,16 +196,16 @@ msgid "Plankton"
 msgstr "Plankton"
 
 msgid "Please donate to keep this website ad-free"
-msgstr "Bitte spenden, um diese Website werbefrei zu halten"
+msgstr "Bitte hilf uns durch eine kleine Spende diese Website werbefrei zu halten"
 
 msgid "Please provide a wallet address"
-msgstr "Bitte geben Sie eine Wallet-Adresse an"
+msgstr "Bitte gib deine Wallet Adresse an"
 
 msgid "Prefix Bits:"
-msgstr "Präfix Bits:"
+msgstr "Prefix Bits:"
 
 msgid "Prefix Byte"
-msgstr "Präfix Byte"
+msgstr "Prefix Byte"
 
 msgid "Pseudo"
 msgstr "Pseudo"
@@ -223,16 +223,16 @@ msgid "Required"
 msgstr "Benötigt"
 
 msgid "Seahorse"
-msgstr "Seahorse"
+msgstr "Seepferdchen"
 
 msgid "Shark"
 msgstr "Hai"
 
 msgid "Shell"
-msgstr "Schale"
+msgstr "Muschel"
 
 msgid "Shrimp"
-msgstr "Garnelen"
+msgstr "Shrimp"
 
 msgid "Sorry, but we are unable to recognize this address."
 msgstr "Leider können wir diese Adresse nicht erkennen."
@@ -247,7 +247,7 @@ msgid "Sorry, but we do not support {blockchain}."
 msgstr "Entschuldigung, aber wir unterstützen {blockchain} nicht."
 
 msgid "Sorry, we do not rank empty wallets"
-msgstr "Entschuldigung, wir rangieren keine leeren Brieftaschen"
+msgstr "Entschuldigung, wir ranken keine leeren Wallets"
 
 msgctxt "Plural"
 msgid "Species"
@@ -261,10 +261,10 @@ msgid "Sponsored By:"
 msgstr "Gesponsert von:"
 
 msgid "Starfish"
-msgstr "Starfish"
+msgstr "Seestern"
 
 msgid "Starts At"
-msgstr "Beginnt am"
+msgstr "Beginnt ab"
 
 msgid "Supported Blockchains:"
 msgstr "Unterstützte Blockchains:"
@@ -279,13 +279,13 @@ msgid "Tiger shark"
 msgstr "Tigerhai"
 
 msgid "Tip Box"
-msgstr "Tipp Box"
+msgstr "Tip Box"
 
 msgid "Trailing Prefix Bits:"
-msgstr "Nachfolgende Präfix Bits:"
+msgstr "Trailing Prefix Bits:"
 
 msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr "Übersetzer benötigen keine Programmierkenntnisse und können helfen, Sprachen zu korrigieren oder hinzuzufügen, indem sie <0>den Anweisungen auf dieser Seite</0> folgen."
+msgstr "Übersetzer benötigen keine Programmierkenntnisse, können aber helfen, Sprachen zu korrigieren oder Neue hinzuzufügen, indem sie <0>den Anweisungen auf dieser Seite</0> folgen."
 
 msgid "Try again?"
 msgstr "Erneut versuchen?"
@@ -300,7 +300,7 @@ msgid "Version"
 msgstr "Version"
 
 msgid "Wallet address"
-msgstr "Wallet-Adresse"
+msgstr "Wallet Adresse"
 
 msgid "Whale"
 msgstr "Wal"
@@ -309,7 +309,7 @@ msgid "What technology does this website use?"
 msgstr "Welche Technologie nutzt diese Website?"
 
 msgid "Where do I report bugs?"
-msgstr "Wo melde ich Fehler?"
+msgstr "Wo kann ich Fehlermelden?"
 
 msgid "Why are Byron addresses not supported?"
 msgstr "Warum werden Byron-Adressen nicht unterstützt?"
@@ -318,19 +318,19 @@ msgid "Why is the balance on this website different from the balance in my Ergo 
 msgstr "Warum unterscheidet sich das Guthaben auf dieser Website vom Guthaben in meinem Ergo Wallet?"
 
 msgid "You are Cardano holder"
-msgstr "Sie sind Cardano-Halter"
+msgstr "Du bist Cardano-Holder"
 
 msgid "You are Ergo holder"
-msgstr "Du bist Ergo Halter"
+msgstr "Du bist Ergo-Holder"
 
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
-msgstr "Sie können alle Ihre Kästchen und damit Ihr Guthaben konsolidieren in einen einzigen Kasten, indem Sie alle Ergo an sich selbst senden und entweder eine neue Adresse oder eine Ihrer bestehenden Empfangsadressen verwenden."
+msgstr "Du kannst alle deine Boxen und damit dein Guthaben in einer einzigen Box konsolidieren, indem du alle ERG an dich selbst sendest und entweder eine neue Adresse oder eine deiner bestehenden Empfangsadressen verwendest."
 
 msgid "Your Balance"
-msgstr "Ihr Kontostand"
+msgstr "Dein Guthaben"
 
 msgid "Your Project"
-msgstr "Ihr Projekt"
+msgstr "Dein Projekt"
 
 msgid "Your Rank"
 msgstr "Dein Rang"
