@@ -8,15 +8,15 @@ msgstr ""
 "Language: nl\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-25 11:54\n"
+"PO-Revision-Date: 2023-03-26 13:11\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: rankmywallet\n"
-"X-Crowdin-Project-ID: 576829\n"
+"X-Crowdin-Project-ID: 576955\n"
 "X-Crowdin-Language: nl\n"
 "X-Crowdin-File: /main/src/translations/locales/en-us/messages.po\n"
-"X-Crowdin-File-ID: 11\n"
+"X-Crowdin-File-ID: 23\n"
 
 msgid "Address"
 msgstr "Adres"
@@ -46,10 +46,10 @@ msgid "Binaries"
 msgstr "Binair"
 
 msgid "Bits"
-msgstr "Bits"
+msgstr ""
 
 msgid "Blockchain"
-msgstr "Blockchain"
+msgstr ""
 
 msgid "Blockchain Species"
 msgstr "Blockchain Soorten"
@@ -61,7 +61,7 @@ msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet
 msgstr "Byron (legacy) adressen missen de staking functionaliteit die RankMyWallet nodig heeft om je ranking te kunnen bepalen."
 
 msgid "Cardano"
-msgstr "Cardano"
+msgstr ""
 
 msgid "Cardano Rankings are coming soon"
 msgstr "Cardano Rankings komen binnenkort"
@@ -106,7 +106,7 @@ msgid "English"
 msgstr "Engels"
 
 msgid "Ergo"
-msgstr "Ergo"
+msgstr ""
 
 msgid "Ergo Species"
 msgstr "Ergo Soorten"
@@ -115,7 +115,7 @@ msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wa
 msgstr "Elke Ergo wallet kan meerdere adressen hebben, ook wel boxen genoemd. Ergo wallets zoals Nautilus tonen je 'geconsolideerde' saldo door de saldi op te tellen van alle boxen die bij je wallet horen. RankMyWallet laat echter uitsluitend het saldo zien dat hoort bij één enkele box."
 
 msgid "FAQ"
-msgstr "FAQ"
+msgstr ""
 
 msgid "Fin whale"
 msgstr "Vinvis"
@@ -133,7 +133,7 @@ msgid "Ghost"
 msgstr "Geest"
 
 msgid "Github"
-msgstr "Github"
+msgstr ""
 
 msgid "Go"
 msgstr "Ga"
@@ -142,7 +142,7 @@ msgid "Great white shark"
 msgstr "Witte haai"
 
 msgid "Home"
-msgstr "Home"
+msgstr ""
 
 msgid "How can I help with translations?"
 msgstr "Hoe kan ik helpen met vertalen?"
@@ -190,10 +190,10 @@ msgid "Pipefish"
 msgstr "Zeenaald"
 
 msgid "Piranha"
-msgstr "Piranha"
+msgstr ""
 
 msgid "Plankton"
-msgstr "Plankton"
+msgstr ""
 
 msgid "Please donate to keep this website ad-free"
 msgstr "Doneer om deze website advertentievrij te houden"
@@ -202,13 +202,13 @@ msgid "Please provide a wallet address"
 msgstr "Voer eerst een wallet adres in"
 
 msgid "Prefix Bits:"
-msgstr "Prefix Bits:"
+msgstr ""
 
 msgid "Prefix Byte"
-msgstr "Prefix Byte"
+msgstr ""
 
 msgid "Pseudo"
-msgstr "Pseudo"
+msgstr ""
 
 msgid "Rank"
 msgstr "Ranking"
@@ -255,7 +255,7 @@ msgstr "Soorten"
 
 msgctxt "Singular"
 msgid "Species"
-msgstr "Soort"
+msgstr "Soorten"
 
 msgid "Sponsored By:"
 msgstr "Gesponsord Door:"
@@ -291,7 +291,7 @@ msgid "Try again?"
 msgstr "Opnieuw proberen?"
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 msgid "Unsupported Address"
 msgstr "Niet Ondersteund Adres"
