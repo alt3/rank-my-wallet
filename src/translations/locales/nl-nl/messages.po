@@ -8,7 +8,7 @@ msgstr ""
 "Language: nl\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-26 15:37\n"
+"PO-Revision-Date: 2023-03-26 19:34\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -337,3 +337,4 @@ msgstr "Uw Project"
 
 msgid "Your Rank"
 msgstr "Jouw Ranking"
+
