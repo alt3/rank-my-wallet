@@ -124,6 +124,9 @@ msgstr "Frequently Asked Questions (FAQ)"
 msgid "General"
 msgstr "General"
 
+msgid "German"
+msgstr "German"
+
 msgid "Ghost"
 msgstr "Ghost"
 

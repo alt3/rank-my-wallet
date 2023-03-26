@@ -129,6 +129,9 @@ msgstr "Häufig gestellte Fragen (FAQ)"
 msgid "General"
 msgstr "Allgemein"
 
+msgid "German"
+msgstr ""
+
 msgid "Ghost"
 msgstr "Geist"
 
@@ -334,4 +337,3 @@ msgstr "Dein Projekt"
 
 msgid "Your Rank"
 msgstr "Dein Rang"
-

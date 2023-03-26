@@ -124,6 +124,9 @@ msgstr ""
 msgid "General"
 msgstr ""
 
+msgid "German"
+msgstr ""
+
 msgid "Ghost"
 msgstr ""
 

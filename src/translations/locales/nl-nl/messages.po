@@ -129,6 +129,9 @@ msgstr "Veelgestelde Vragen (FAQ)"
 msgid "General"
 msgstr "Algemeen"
 
+msgid "German"
+msgstr "Duits"
+
 msgid "Ghost"
 msgstr "Geest"
 
@@ -334,4 +337,3 @@ msgstr "Uw Project"
 
 msgid "Your Rank"
 msgstr "Jouw Ranking"
-
