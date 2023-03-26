@@ -23,9 +23,9 @@ npx tsc
 
 ## Translations
 
-Because we use the [Crowdin](https://crowdin.com/) web editor for translations, translators do not require any coding skills.
+Translators do not require any coding skills because we use the [Crowdin online editor](https://support.crowdin.com/online-editor/) for all our translations.
 
-### Joining RankMyWallet on Crowdin
+### Join RankMyWallet on Crowdin
 
 1. Create a [Crowdin](https://crowdin.com/) account
 
@@ -35,13 +35,7 @@ Because we use the [Crowdin](https://crowdin.com/) web editor for translations, 
 
 3. Join the `rankmywallet` project by pressing the `Join` button
 
-### Requesting new languages
-
-If you want to add a new language, please start a discussion (so we can technically enable the language).
-
-![Screenshot of Crowdin project joining](./docs/img/crowdin-request-new-language.png)
-
-### Updating existing translations
+### Update existing translations
 
 To update existing translations:
 
@@ -57,4 +51,14 @@ To update existing translations:
 
    ![Screenshot of Crowdin translation editing](./docs/img/crowdin-edit-translation.png)
 
-5. That's it, no further action required. Crowdin will automatically create a Pull Request containing your changes within an hour.
+5. That's it, no further action required. Crowdin will automatically create a Pull Request after your suggested changes have been approved.
+
+> For more details about the online editor please visit this [Crowdin documention page](https://support.crowdin.com/enterprise/online-editor/).
+
+### Request new languages
+
+If you want to add a missing language, please create a discussion as shown below.
+
+After we have technically enabled the language, you will receive an email and can start translating.
+
+![Screenshot of Crowdin discussion for new language](./docs/img/crowdin-request-new-language.png)
