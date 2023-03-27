@@ -9,6 +9,7 @@ import {
   Tabs,
   Text,
   UnorderedList,
+  useColorModeValue,
 } from "@chakra-ui/react"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
@@ -90,6 +91,7 @@ const FaqPage: BlitzPage = () => {
                     languages by following{" "}
                     <Link
                       href="https://github.com/alt3/rank-my-wallet/blob/main/contributing.md#translations"
+                      color={useColorModeValue("pink.600", "pink.400")}
                       isExternal
                       passHref
                       withExternalIcon
