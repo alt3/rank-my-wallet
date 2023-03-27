@@ -35,9 +35,21 @@ Translators do not require any coding skills because we use the [Crowdin online 
 
 3. Join the `rankmywallet` project by pressing the `Join` button
 
+### Request a new language
+
+If the language you want to translate is not yet available, please create a [Crowdin discussion](https://crowdin.com/project/rankmywallet/discussions) as shown below so we can:
+
+1. Technically enable the language
+
+2. Pre-translate it for you
+
+Once the language is active, you will receive an email and can start working on the translation.
+
+![Screenshot of Crowdin discussion for new language](./docs/img/crowdin-request-new-language.png)
+
 ### Update existing translations
 
-To update existing translations:
+To update an existing translation:
 
 1. First select the language you want to update
 
@@ -55,14 +67,6 @@ To update existing translations:
 
 > For more details about the online editor please visit this [Crowdin documention page](https://support.crowdin.com/enterprise/online-editor/).
 
-### Request new languages
+### Questions
 
-If you want to add a missing language, please create a discussion as shown below so we can:
-
-1. Technically enable the language
-
-2. Pre-translate it for you
-
-Once the language is active, you will receive an email and can start working on the translation.
-
-![Screenshot of Crowdin discussion for new language](./docs/img/crowdin-request-new-language.png)
+If you need assistance or have any questions, please contact as via the [Crowdin discussions](https://crowdin.com/project/rankmywallet/discussions).
