@@ -1,5 +1,6 @@
 // use nextjs config as single source of truth for defining locales
 const nextConfig = require("./next.config")
+import { formatter } from "@lingui/format-po"
 
 module.exports = {
   locales: nextConfig.i18n.locales,
@@ -11,8 +12,5 @@ module.exports = {
       include: ["src/components", "src/core", "src/lib", "src/pages"],
     },
   ],
-  format: "po",
-  formatOptions: {
-    origins: false,
-  },
+  format: formatter({ origins: false }),
 }
