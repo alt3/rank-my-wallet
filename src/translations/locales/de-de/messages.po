@@ -8,7 +8,7 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-27 04:59\n"
+"PO-Revision-Date: 2023-03-27 09:18\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -139,7 +139,7 @@ msgid "Github"
 msgstr "Github"
 
 msgid "Go"
-msgstr "Los"
+msgstr "Los!"
 
 msgid "Great white shark"
 msgstr "Weißer Hai"
@@ -154,10 +154,10 @@ msgid "How do I consolidate my boxes?"
 msgstr "Wie kann ich meine Boxen konsolidieren?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr "Wenn du ein Projekt oder ein Unternehmen vertrittst und euer Logo auf der Zielseite zeigen möchtest, kontaktiere uns auf <0>Twitter</0> für weitere Details."
+msgstr "Wenn du ein Projekt oder ein Unternehmen vertrittst und euer Logo auf der Startseite zeigen möchtest, kontaktiere uns auf <0>Twitter</0> für weitere Details."
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr "Wenn du dieses Projekt unterstützen möchtest, würden wir uns über eine Spende über die <0>Tip Box</0> sehr freuen."
+msgstr "Wenn du dieses Projekt privat unterstützen möchtest, würden wir uns über eine Spende über die <0>Tip Box</0> sehr freuen."
 
 msgid "Internal Server Error"
 msgstr "Interner Serverfehler"
@@ -223,7 +223,7 @@ msgid "RankMyWallet on Twitter"
 msgstr "RankMyWallet auf Twitter"
 
 msgid "Required"
-msgstr "Benötigt"
+msgstr "Noch benötigt"
 
 msgid "Seahorse"
 msgstr "Seepferdchen"
@@ -312,7 +312,7 @@ msgid "What technology does this website use?"
 msgstr "Welche Technologie nutzt diese Website?"
 
 msgid "Where do I report bugs?"
-msgstr "Wo kann ich Fehlermelden?"
+msgstr "Wo kann ich Fehler melden?"
 
 msgid "Why are Byron addresses not supported?"
 msgstr "Warum werden Byron-Adressen nicht unterstützt?"
