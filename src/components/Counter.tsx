@@ -13,6 +13,8 @@ interface CounterProps {
 export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
   const { i18n } = useLingui()
 
+  const useIndianSeparators = i18n.locale === "hi-in" ? true : false
+
   const styles = {
     box: {
       marginBottom: { base: 0, sm: "3rem" },
@@ -58,6 +60,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
                 duration={2.75}
                 separator={getNumberSeparators(i18n.locale).group}
                 useEasing={true}
+                useIndianSeparators={useIndianSeparators}
               />
             </Heading>
           </Stack>
