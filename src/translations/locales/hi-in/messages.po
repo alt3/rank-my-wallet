@@ -8,7 +8,7 @@ msgstr ""
 "Language: hi\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-28 06:13\n"
+"PO-Revision-Date: 2023-03-28 15:14\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -223,6 +223,9 @@ msgid "RankMyWallet on Twitter"
 msgstr ""
 
 msgid "Required"
+msgstr ""
+
+msgid "Romanian"
 msgstr ""
 
 msgid "Seahorse"
