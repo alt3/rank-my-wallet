@@ -225,6 +225,9 @@ msgstr "RankMyWallet pe Twitter"
 msgid "Required"
 msgstr "Necesar"
 
+msgid "Romanian"
+msgstr ""
+
 msgid "Seahorse"
 msgstr "Cal de mare"
 

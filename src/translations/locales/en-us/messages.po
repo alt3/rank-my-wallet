@@ -220,6 +220,9 @@ msgstr "RankMyWallet on Twitter"
 msgid "Required"
 msgstr "Required"
 
+msgid "Romanian"
+msgstr "Romanian"
+
 msgid "Seahorse"
 msgstr "Seahorse"
 
