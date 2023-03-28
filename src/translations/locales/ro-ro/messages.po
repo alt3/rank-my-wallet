@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-28 06:13\n"
+"PO-Revision-Date: 2023-03-28 07:24\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -19,10 +19,10 @@ msgstr ""
 "X-Crowdin-File-ID: 23\n"
 
 msgid "Address"
-msgstr "Adresa"
+msgstr "Adresă"
 
 msgid "Address Analysis"
-msgstr "Analiza adreselor"
+msgstr "Analiza adresei"
 
 msgid "Address Details"
 msgstr "Detalii Adresă"
@@ -40,13 +40,13 @@ msgid "Balance"
 msgstr "Sold"
 
 msgid "Become a Sponsor"
-msgstr "Devino un Sponsor"
+msgstr "Devino sponsor"
 
 msgid "Binaries"
 msgstr "Binare"
 
 msgid "Bits"
-msgstr "Biți"
+msgstr "Bit"
 
 msgid "Blockchain"
 msgstr "Blockchain"
@@ -58,7 +58,7 @@ msgid "Blue whale"
 msgstr "Balenă albastră"
 
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "Adresele Byron (legacy) nu au funcționalitatea de miză pe care RankWallet o folosește pentru a vă determina rangul."
+msgstr "Adresele Byron (legacy) nu au funcționalitatea de investire pe care RankWallet o folosește pentru a vă determina rangul."
 
 msgid "Cardano"
 msgstr "Cardano"
@@ -67,16 +67,16 @@ msgid "Cardano Rankings are coming soon"
 msgstr "Clasamentul Cardano va veni în curând"
 
 msgid "Cardano Species"
-msgstr "Specii de Cardano"
+msgstr "Speciile Cardano"
 
 msgid "Checksum"
 msgstr "Suma"
 
 msgid "Competition"
-msgstr "Concurență"
+msgstr "Competiţie"
 
 msgid "Competitors"
-msgstr "Concurenți"
+msgstr "Competitori"
 
 msgid "Content"
 msgstr "Conținut"
@@ -85,7 +85,7 @@ msgid "Copied!"
 msgstr "Copiat!"
 
 msgid "Crab"
-msgstr "Capb"
+msgstr "Crab"
 
 msgid "Current Species"
 msgstr "Specii curente"
@@ -94,7 +94,7 @@ msgid "Decimals"
 msgstr "Zecimale"
 
 msgid "Decoded Bytes:"
-msgstr "Octeți decodați:"
+msgstr "Biți decodați:"
 
 msgid "Dutch"
 msgstr "Olandeză"
@@ -103,31 +103,31 @@ msgid "Encoding"
 msgstr "Codare"
 
 msgid "English"
-msgstr "Română"
+msgstr "Engleză"
 
 msgid "Ergo"
 msgstr "Ergo"
 
 msgid "Ergo Species"
-msgstr "Ergo Specii"
+msgstr "Speciile Ergo"
 
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
-msgstr "Fiecare portofel Ergo poate avea mai multe adrese, de asemenea numite cutii. Ergo wallets ca Nautilus arată soldul tău \"consolidat\" prin adăugarea sumelor găsite în toate casetele legate de portofelul tău. Cu toate acestea, Rankul MyWallet va afișa doar soldul unei singure căsuțe."
+msgstr "Fiecare portofel Ergo poate avea mai multe adrese, de asemenea numite cutii. Portofelele Ergo ca Nautilus arată soldul tău \"consolidat\" prin adăugarea sumelor găsite în toate cutiile legate de portofelul tău. Cu toate acestea, RankMyWallet va afișa doar soldul unei singure cutii."
 
 msgid "FAQ"
-msgstr "Întrebări"
+msgstr "FAQ"
 
 msgid "Fin whale"
-msgstr "Balenă fin"
+msgstr "Balenă cu aripioare"
 
 msgid "Fish"
-msgstr "Pești"
+msgstr "Pește"
 
 msgid "Frequently Asked Questions (FAQ)"
 msgstr "Întrebări frecvente (FAQ)"
 
 msgid "General"
-msgstr "Generalități"
+msgstr "General"
 
 msgid "German"
 msgstr "Germană"
@@ -154,10 +154,10 @@ msgid "How do I consolidate my boxes?"
 msgstr "Cum îmi pot consolida cutiile?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr "Dacă sunteți un proiect sau o afacere și doriți să afișați logo-ul dvs. pe pagina de aterizare, contactați-ne pe <0>Twitter</0> pentru mai multe detalii."
+msgstr "Dacă sunteți un proiect sau o afacere și doriți să afișați logo-ul dvs. pe pagina de destinație, contactați-ne pe <0>Twitter</0> pentru mai multe detalii."
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr "Dacă ești un individ care caută să sponsorizeze acest proiect, te rugăm să iei în considerare donația prin intermediul <0>Cutia de Tip </0>."
+msgstr "Dacă dorești să sponsorizezi acest proiect, te rugăm să iei în considerare donația prin intermediul <0>Cutia de Tip </0>."
 
 msgid "Internal Server Error"
 msgstr "Eroare internă de server"
@@ -184,25 +184,25 @@ msgid "Orca"
 msgstr "Orca"
 
 msgid "Oyster"
-msgstr "Oyster"
+msgstr "Stridie"
 
 msgid "Page Not Found"
 msgstr "Pagina nu a fost găsită"
 
 msgid "Pipefish"
-msgstr "Pipșă"
+msgstr "Pește țeavă"
 
 msgid "Piranha"
 msgstr "Piranha"
 
 msgid "Plankton"
-msgstr "Plankton"
+msgstr "Plancton"
 
 msgid "Please donate to keep this website ad-free"
 msgstr "Vă rugăm să donați pentru a păstra acest site fără reclame"
 
 msgid "Please provide a wallet address"
-msgstr "Vă rugăm să furnizaţi o adresă portofel"
+msgstr "Vă rugăm să furnizaţi adresa portofelului"
 
 msgid "Prefix Bits:"
 msgstr "Biți de prefix:"
