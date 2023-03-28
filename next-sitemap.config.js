@@ -13,5 +13,9 @@ module.exports = {
       href: `${process.env.NEXT_PUBLIC_SITE_URL}/nl-nl`,
       hreflang: "nl-nl",
     },
+    {
+      href: `${process.env.NEXT_PUBLIC_SITE_URL}/ro-ro`,
+      hreflang: "ro-ro",
+    },
   ],
 }

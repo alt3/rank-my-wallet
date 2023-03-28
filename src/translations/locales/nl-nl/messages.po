@@ -225,6 +225,9 @@ msgstr "RankMyWallet op Twitter"
 msgid "Required"
 msgstr "Vereist Nog"
 
+msgid "Romanian"
+msgstr "Roemeens"
+
 msgid "Seahorse"
 msgstr "Zeepaard"
 

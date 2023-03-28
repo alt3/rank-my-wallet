@@ -8,7 +8,7 @@ import nextId from "react-id-generator"
 
 import { MessageDescriptor } from "@lingui/core"
 
-type LOCALES = "en-us" | "de-de" | "nl-nl" | "pseudo"
+type LOCALES = "en-us" | "de-de" | "nl-nl" | "ro-ro" | "pseudo"
 
 interface Languages {
   locale: string
@@ -31,6 +31,11 @@ const languages: Languages[] = [
     locale: "nl-nl",
     msg: msg`Dutch`,
     territory: "NL",
+  },
+  {
+    locale: "ro-ro",
+    msg: msg`Romanian`,
+    territory: "RO",
   },
 ]
 
