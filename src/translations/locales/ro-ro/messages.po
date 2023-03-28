@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-28 07:24\n"
+"PO-Revision-Date: 2023-03-28 08:31\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -46,7 +46,7 @@ msgid "Binaries"
 msgstr "Binare"
 
 msgid "Bits"
-msgstr "Bit"
+msgstr "Biți"
 
 msgid "Blockchain"
 msgstr "Blockchain"
@@ -94,7 +94,7 @@ msgid "Decimals"
 msgstr "Zecimale"
 
 msgid "Decoded Bytes:"
-msgstr "Biți decodați:"
+msgstr "Octeți decodați:"
 
 msgid "Dutch"
 msgstr "Olandeză"
@@ -166,7 +166,7 @@ msgid "Jellyfish"
 msgstr "Meduză"
 
 msgid "Leading Prefix Bits:"
-msgstr "Biți prefix:"
+msgstr "Primul Prefix de Biți:"
 
 msgid "Network"
 msgstr "Rețea"
@@ -205,10 +205,10 @@ msgid "Please provide a wallet address"
 msgstr "Vă rugăm să furnizaţi adresa portofelului"
 
 msgid "Prefix Bits:"
-msgstr "Biți de prefix:"
+msgstr "Prefix de Biți:"
 
 msgid "Prefix Byte"
-msgstr "Prefix octet"
+msgstr "Prefix de Octeți"
 
 msgid "Pseudo"
 msgstr "Pseudo"
@@ -217,7 +217,7 @@ msgid "Rank"
 msgstr "Clasament"
 
 msgid "RankMyWallet on Github"
-msgstr "Rankul MyWallet pe Github"
+msgstr "RankMyWallet pe Github"
 
 msgid "RankMyWallet on Twitter"
 msgstr "RankMyWallet pe Twitter"
@@ -226,13 +226,13 @@ msgid "Required"
 msgstr "Necesar"
 
 msgid "Seahorse"
-msgstr "Cas de mare"
+msgstr "Cal de mare"
 
 msgid "Shark"
 msgstr "Rechin"
 
 msgid "Shell"
-msgstr "Proiectile"
+msgstr "Scoică"
 
 msgid "Shrimp"
 msgstr "Crevete"
@@ -241,13 +241,13 @@ msgid "Sorry, but we are unable to recognize this address."
 msgstr "Ne pare rău, dar nu putem recunoaște această adresă."
 
 msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
-msgstr "Ne pare rău, dar nu acceptăm {blockchain} adrese {addressType}."
+msgstr "Ne pare rău, dar nu oferim suport pentru adrese {blockchain} {addressType}."
 
 msgid "Sorry, but we do not support {blockchain} {network} addresses."
-msgstr "Ne pare rău, dar nu acceptăm {blockchain} adrese {network}."
+msgstr "Ne pare rău, dar nu oferim suport pentru adrese {blockchain} {network}."
 
 msgid "Sorry, but we do not support {blockchain}."
-msgstr "Ne pare rău, dar nu acceptăm {blockchain}."
+msgstr "Ne pare rău, dar nu oferim suport pentru {blockchain}."
 
 msgid "Sorry, we do not rank empty wallets"
 msgstr "Ne pare rău, nu clasificăm portofelele goale"
@@ -264,7 +264,7 @@ msgid "Sponsored By:"
 msgstr "Sponsorizat de:"
 
 msgid "Starfish"
-msgstr "Starfish"
+msgstr "Stea de Mare"
 
 msgid "Starts At"
 msgstr "Începe la"
@@ -276,19 +276,19 @@ msgid "Switch to {text} mode"
 msgstr "Comutare la modul {text}"
 
 msgid "Swordfish"
-msgstr "Pește-spadă"
+msgstr "Pește spadă"
 
 msgid "Tiger shark"
 msgstr "Rechin tigru"
 
 msgid "Tip Box"
-msgstr "Cutie cu ciubucuri"
+msgstr "Bacșiș"
 
 msgid "Trailing Prefix Bits:"
-msgstr "Tampon cu prefix:"
+msgstr "Urmă Prefix de Biți:"
 
 msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr "Traducătorii nu au nevoie de abilități de codificare și pot ajuta la corectarea sau adăugarea limbilor urmărind instrucțiunile de pe această pagină</0>."
+msgstr "Traducătorii nu au nevoie de abilități de codare și pot ajuta la corectarea sau adăugarea limbilor <0>urmărind instrucțiunile de pe această pagină</0>."
 
 msgid "Try again?"
 msgstr "Încercați din nou?"
@@ -297,7 +297,7 @@ msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Unsupported Address"
-msgstr "Adresă neacceptată"
+msgstr "Adresă nesuportată"
 
 msgid "Version"
 msgstr "Versiune"
@@ -318,16 +318,16 @@ msgid "Why are Byron addresses not supported?"
 msgstr "De ce nu sunt adresele Byron acceptate?"
 
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
-msgstr "De ce balanţa pe acest site este diferită de balanţa din portofelul meu Ergo?"
+msgstr "De ce soldul de pe acest site este diferit de soldul din portofelul meu Ergo?"
 
 msgid "You are Cardano holder"
-msgstr "Ești deținător al Cardano"
+msgstr "Ești deținătorul Cardano"
 
 msgid "You are Ergo holder"
-msgstr "Sunteţi deţinător al Ergo"
+msgstr "Ești deținătorul Ergo"
 
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
-msgstr "Puteți consolida toate cutiile și, prin urmare, soldul dvs., într-o singură casetă trimițând toate Ergo către tine folosind fie o adresă nouă, fie una dintre adresele de primire existente."
+msgstr "Puteți consolida toate cutiile și, prin urmare, soldul dvs., într-o singură cutie trimițând tot Ergo către tine folosind fie o adresă nouă, fie una dintre adresele de primire existente."
 
 msgid "Your Balance"
 msgstr "Soldul tău"
