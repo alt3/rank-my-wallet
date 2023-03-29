@@ -261,7 +261,7 @@ msgstr "Soorten"
 
 msgctxt "Singular"
 msgid "Species"
-msgstr "Soort"
+msgstr "Soorten"
 
 msgid "Sponsored By:"
 msgstr "Gesponsord Door:"
