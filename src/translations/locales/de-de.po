@@ -5,339 +5,339 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: ro\n"
+"Language: de\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-28 08:31\n"
+"PO-Revision-Date: 2023-03-27 09:18\n"
 "Last-Translator: \n"
-"Language-Team: Romanian\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
+"Language-Team: German\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: rankmywallet\n"
 "X-Crowdin-Project-ID: 576955\n"
-"X-Crowdin-Language: ro\n"
-"X-Crowdin-File: /main/src/translations/locales/en-us/messages.po\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: /main/src/translations/locales/de-de.po\n"
 "X-Crowdin-File-ID: 23\n"
 
 msgid "Address"
-msgstr "Adresă"
+msgstr "Adresse"
 
 msgid "Address Analysis"
-msgstr "Analiza adresei"
+msgstr "Adressenanalyse"
 
 msgid "Address Details"
-msgstr "Detalii Adresă"
+msgstr "Adressendetails"
 
 msgid "Address Type"
-msgstr "Tip de adresă"
+msgstr "Adresstyp"
 
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
-msgstr "Un produs <0>Alt3</0> alimentat de <1>Ergo Watch </1>"
+msgstr "Ein <0>Alt3</0> Produkt von <1>Ergo Watch </1>"
 
 msgid "Back to homepage"
-msgstr "Înapoi la pagina principală"
+msgstr "Zurück zur Startseite"
 
 msgid "Balance"
-msgstr "Sold"
+msgstr "Saldo"
 
 msgid "Become a Sponsor"
-msgstr "Devino sponsor"
+msgstr "Werde Sponsor"
 
 msgid "Binaries"
-msgstr "Binare"
+msgstr "Binärdaten"
 
 msgid "Bits"
-msgstr "Biți"
+msgstr "Bits"
 
 msgid "Blockchain"
 msgstr "Blockchain"
 
 msgid "Blockchain Species"
-msgstr "Specii de blockchain"
+msgstr "Blockchain-Arten"
 
 msgid "Blue whale"
-msgstr "Balenă albastră"
+msgstr "Blauwal"
 
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "Adresele Byron (legacy) nu au funcționalitatea de investire pe care RankWallet o folosește pentru a vă determina rangul."
+msgstr "Byron (Legacy) Adressen verfügen nicht über die Stakingfunktion, die RankMyWallet verwendet, um deinen Rang zu bestimmen."
 
 msgid "Cardano"
 msgstr "Cardano"
 
 msgid "Cardano Rankings are coming soon"
-msgstr "Clasamentul Cardano va veni în curând"
+msgstr "Cardano Rankings kommen bald"
 
 msgid "Cardano Species"
-msgstr "Speciile Cardano"
+msgstr "Cardano Spezies"
 
 msgid "Checksum"
-msgstr "Suma"
+msgstr "Checksumme"
 
 msgid "Competition"
-msgstr "Competiţie"
+msgstr "Wettbewerb"
 
 msgid "Competitors"
-msgstr "Competitori"
+msgstr "Wettbewerber"
 
 msgid "Content"
-msgstr "Conținut"
+msgstr "Inhalt"
 
 msgid "Copied!"
-msgstr "Copiat!"
+msgstr "Kopiert!"
 
 msgid "Crab"
-msgstr "Crab"
+msgstr "Krabbe"
 
 msgid "Current Species"
-msgstr "Specii curente"
+msgstr "Aktuelle Art"
 
 msgid "Decimals"
-msgstr "Zecimale"
+msgstr "Dezimalstellen"
 
 msgid "Decoded Bytes:"
-msgstr "Octeți decodați:"
+msgstr "Dekodierte Bytes:"
 
 msgid "Dutch"
-msgstr "Olandeză"
+msgstr "Niederländisch"
 
 msgid "Encoding"
-msgstr "Codare"
+msgstr "Encodierung"
 
 msgid "English"
-msgstr "Engleză"
+msgstr "Englisch"
 
 msgid "Ergo"
 msgstr "Ergo"
 
 msgid "Ergo Species"
-msgstr "Speciile Ergo"
+msgstr "Ergo Arten"
 
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
-msgstr "Fiecare portofel Ergo poate avea mai multe adrese, de asemenea numite cutii. Portofelele Ergo ca Nautilus arată soldul tău \"consolidat\" prin adăugarea sumelor găsite în toate cutiile legate de portofelul tău. Cu toate acestea, RankMyWallet va afișa doar soldul unei singure cutii."
+msgstr "Jedes Ergo Wallet kann mehrere Adressen haben, sogenannte Boxen. Ergo Wallets wie Nautilus zeigen meistens dein Gesamtguthaben an, indem Sie die Beträge, die in allen Boxen im Zusammenhang mit deiner Wallet gefunden wurden, addieren. RankMyWallet zeigt jedoch nur den Saldo einer einzelnen Box bzw. Adresse an."
 
 msgid "FAQ"
 msgstr "FAQ"
 
 msgid "Fin whale"
-msgstr "Balenă cu aripioare"
+msgstr "Finnwal"
 
 msgid "Fish"
-msgstr "Pește"
+msgstr "Fisch"
 
 msgid "Frequently Asked Questions (FAQ)"
-msgstr "Întrebări frecvente (FAQ)"
+msgstr "Häufig gestellte Fragen (FAQ)"
 
 msgid "General"
-msgstr "General"
+msgstr "Allgemein"
 
 msgid "German"
-msgstr "Germană"
+msgstr "Deutsch"
 
 msgid "Ghost"
-msgstr "Fantomă"
+msgstr "Geist"
 
 msgid "Github"
 msgstr "Github"
 
 msgid "Go"
-msgstr "Mergi"
+msgstr "Los!"
 
 msgid "Great white shark"
-msgstr "Marele rechin alb"
+msgstr "Weißer Hai"
 
 msgid "Home"
-msgstr "Acasă"
+msgstr "Startseite"
 
 msgid "How can I help with translations?"
-msgstr "Cum pot ajuta cu traducerile?"
+msgstr "Wie kann ich bei Übersetzungen helfen?"
 
 msgid "How do I consolidate my boxes?"
-msgstr "Cum îmi pot consolida cutiile?"
+msgstr "Wie kann ich meine Boxen konsolidieren?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr "Dacă sunteți un proiect sau o afacere și doriți să afișați logo-ul dvs. pe pagina de destinație, contactați-ne pe <0>Twitter</0> pentru mai multe detalii."
+msgstr "Wenn du ein Projekt oder ein Unternehmen vertrittst und euer Logo auf der Startseite zeigen möchtest, kontaktiere uns auf <0>Twitter</0> für weitere Details."
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr "Dacă dorești să sponsorizezi acest proiect, te rugăm să iei în considerare donația prin intermediul <0>Cutia de Tip </0>."
+msgstr "Wenn du dieses Projekt privat unterstützen möchtest, würden wir uns über eine Spende über die <0>Tip Box</0> sehr freuen."
 
 msgid "Internal Server Error"
-msgstr "Eroare internă de server"
+msgstr "Interner Serverfehler"
 
 msgid "Jellyfish"
-msgstr "Meduză"
+msgstr "Qualle"
 
 msgid "Leading Prefix Bits:"
-msgstr "Primul Prefix de Biți:"
+msgstr "Leading Prefix Bits:"
 
 msgid "Network"
-msgstr "Rețea"
+msgstr "Netzwerk"
 
 msgid "Network Type"
-msgstr "Tip reţea"
+msgstr "Netzwerktyp"
 
 msgid "Next Species"
-msgstr "Următoarea specie"
+msgstr "Nächste Art"
 
 msgid "Octopus"
-msgstr "Caracatiţă"
+msgstr "Oktopus"
 
 msgid "Orca"
 msgstr "Orca"
 
 msgid "Oyster"
-msgstr "Stridie"
+msgstr "Auster"
 
 msgid "Page Not Found"
-msgstr "Pagina nu a fost găsită"
+msgstr "Seite nicht gefunden"
 
 msgid "Pipefish"
-msgstr "Pește țeavă"
+msgstr "Seenadel"
 
 msgid "Piranha"
 msgstr "Piranha"
 
 msgid "Plankton"
-msgstr "Plancton"
+msgstr "Plankton"
 
 msgid "Please donate to keep this website ad-free"
-msgstr "Vă rugăm să donați pentru a păstra acest site fără reclame"
+msgstr "Bitte hilf uns durch eine kleine Spende diese Website werbefrei zu halten"
 
 msgid "Please provide a wallet address"
-msgstr "Vă rugăm să furnizaţi adresa portofelului"
+msgstr "Bitte gib deine Wallet Adresse an"
 
 msgid "Prefix Bits:"
-msgstr "Prefix de Biți:"
+msgstr "Prefix Bits:"
 
 msgid "Prefix Byte"
-msgstr "Prefix de Octeți"
+msgstr "Prefix Byte"
 
 msgid "Pseudo"
 msgstr "Pseudo"
 
 msgid "Rank"
-msgstr "Clasament"
+msgstr "Rang"
 
 msgid "RankMyWallet on Github"
-msgstr "RankMyWallet pe Github"
+msgstr "RankMyWallet auf Github"
 
 msgid "RankMyWallet on Twitter"
-msgstr "RankMyWallet pe Twitter"
+msgstr "RankMyWallet auf Twitter"
 
 msgid "Required"
-msgstr "Necesar"
+msgstr "Noch benötigt"
 
 msgid "Romanian"
 msgstr ""
 
 msgid "Seahorse"
-msgstr "Cal de mare"
+msgstr "Seepferdchen"
 
 msgid "Shark"
-msgstr "Rechin"
+msgstr "Hai"
 
 msgid "Shell"
-msgstr "Scoică"
+msgstr "Muschel"
 
 msgid "Shrimp"
-msgstr "Crevete"
+msgstr "Shrimp"
 
 msgid "Sorry, but we are unable to recognize this address."
-msgstr "Ne pare rău, dar nu putem recunoaște această adresă."
+msgstr "Leider können wir diese Adresse nicht erkennen."
 
 msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
-msgstr "Ne pare rău, dar nu oferim suport pentru adrese {blockchain} {addressType}."
+msgstr "Entschuldigung, aber wir unterstützen keine {blockchain} {addressType} Adressen."
 
 msgid "Sorry, but we do not support {blockchain} {network} addresses."
-msgstr "Ne pare rău, dar nu oferim suport pentru adrese {blockchain} {network}."
+msgstr "Entschuldigung, aber wir unterstützen keine {blockchain} {network} Adressen."
 
 msgid "Sorry, but we do not support {blockchain}."
-msgstr "Ne pare rău, dar nu oferim suport pentru {blockchain}."
+msgstr "Entschuldigung, aber wir unterstützen {blockchain} nicht."
 
 msgid "Sorry, we do not rank empty wallets"
-msgstr "Ne pare rău, nu clasificăm portofelele goale"
+msgstr "Entschuldigung, wir ranken keine leeren Wallets"
 
 msgctxt "Plural"
 msgid "Species"
-msgstr "Specii"
+msgstr "Arten"
 
 msgctxt "Singular"
 msgid "Species"
-msgstr "Specii"
+msgstr "Arten"
 
 msgid "Sponsored By:"
-msgstr "Sponsorizat de:"
+msgstr "Gesponsert von:"
 
 msgid "Starfish"
-msgstr "Stea de Mare"
+msgstr "Seestern"
 
 msgid "Starts At"
-msgstr "Începe la"
+msgstr "Beginnt ab"
 
 msgid "Supported Blockchains:"
-msgstr "Blockchain-uri suportate:"
+msgstr "Unterstützte Blockchains:"
 
 msgid "Switch to {text} mode"
-msgstr "Comutare la modul {text}"
+msgstr "Zum {text} Modus wechseln"
 
 msgid "Swordfish"
-msgstr "Pește spadă"
+msgstr "Schwertfisch"
 
 msgid "Tiger shark"
-msgstr "Rechin tigru"
+msgstr "Tigerhai"
 
 msgid "Tip Box"
-msgstr "Bacșiș"
+msgstr "Tip Box"
 
 msgid "Trailing Prefix Bits:"
-msgstr "Urmă Prefix de Biți:"
+msgstr "Trailing Prefix Bits:"
 
 msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr "Traducătorii nu au nevoie de abilități de codare și pot ajuta la corectarea sau adăugarea limbilor <0>urmărind instrucțiunile de pe această pagină</0>."
+msgstr "Übersetzer benötigen keine Programmierkenntnisse, können aber helfen, Sprachen zu korrigieren oder Neue hinzuzufügen, indem sie <0>den Anweisungen auf dieser Seite</0> folgen."
 
 msgid "Try again?"
-msgstr "Încercați din nou?"
+msgstr "Erneut versuchen?"
 
 msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Unsupported Address"
-msgstr "Adresă nesuportată"
+msgstr "Nicht unterstützte Adresse"
 
 msgid "Version"
-msgstr "Versiune"
+msgstr "Version"
 
 msgid "Wallet address"
-msgstr "Adresa portofelului"
+msgstr "Wallet Adresse"
 
 msgid "Whale"
-msgstr "Balenă"
+msgstr "Wal"
 
 msgid "What technology does this website use?"
-msgstr "Ce tehnologie utilizează acest site?"
+msgstr "Welche Technologie nutzt diese Website?"
 
 msgid "Where do I report bugs?"
-msgstr "Unde pot raporta erorile?"
+msgstr "Wo kann ich Fehler melden?"
 
 msgid "Why are Byron addresses not supported?"
-msgstr "De ce nu sunt adresele Byron acceptate?"
+msgstr "Warum werden Byron-Adressen nicht unterstützt?"
 
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
-msgstr "De ce soldul de pe acest site este diferit de soldul din portofelul meu Ergo?"
+msgstr "Warum unterscheidet sich das Guthaben auf dieser Website vom Guthaben in meinem Ergo Wallet?"
 
 msgid "You are Cardano holder"
-msgstr "Ești deținătorul Cardano"
+msgstr "Du bist Cardano-Holder"
 
 msgid "You are Ergo holder"
-msgstr "Ești deținătorul Ergo"
+msgstr "Du bist Ergo-Holder"
 
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
-msgstr "Puteți consolida toate cutiile și, prin urmare, soldul dvs., într-o singură cutie trimițând tot Ergo către tine folosind fie o adresă nouă, fie una dintre adresele de primire existente."
+msgstr "Du kannst alle deine Boxen und damit dein Guthaben in einer einzigen Box konsolidieren, indem du alle ERG an dich selbst sendest und entweder eine neue Adresse oder eine deiner bestehenden Empfangsadressen verwendest."
 
 msgid "Your Balance"
-msgstr "Soldul tău"
+msgstr "Dein Guthaben"
 
 msgid "Your Project"
-msgstr "Proiectul tău"
+msgstr "Dein Projekt"
 
 msgid "Your Rank"
-msgstr "Rangul tău"
+msgstr "Dein Rang"
 
