@@ -1,8 +1,8 @@
-import { i18n, Messages } from '@lingui/core';
-import { useRouter } from 'next/router';
+import { i18n, Messages } from "@lingui/core"
+import { useRouter } from "next/router"
 
 export async function loadCatalog(locale: string) {
-  const { messages } = await import(`@lingui/loader!./locales/${locale}/messages.po`)
+  const { messages } = await import(`@lingui/loader!./locales/${locale}.po`)
 
   return messages
 }
@@ -10,7 +10,7 @@ export async function loadCatalog(locale: string) {
 export function useLinguiInit(messages: Messages) {
   const router = useRouter()
   const locale = router.locale || router.defaultLocale!
-  i18n.loadAndActivate(locale, messages, false);
+  i18n.loadAndActivate(locale, messages, false)
 
-  return i18n;
+  return i18n
 }

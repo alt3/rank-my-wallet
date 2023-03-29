@@ -11,4 +11,4 @@ db/migrations
 node_modules
 .blitz.config.compiled.js
 
-src/translations/
+src/translations/locales

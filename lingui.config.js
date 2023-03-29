@@ -12,7 +12,7 @@ module.exports = {
   pseudoLocale: "pseudo",
   catalogs: [
     {
-      path: "src/translations/locales/{locale}/messages",
+      path: "src/translations/locales/{locale}",
       include: [
         "src/components",
         "src/core",
