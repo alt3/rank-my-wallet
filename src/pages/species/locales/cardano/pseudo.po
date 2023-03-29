@@ -1,0 +1,203 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-03-29 14:49+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pseudo\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/Footer.tsx:27
+msgid "An<0>Alt3</0>product powered by<1>Ergo Watch</1>"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:55
+msgid "Blockchain Species"
+msgstr ""
+
+#: src/core/constants/species.ts:108
+#: src/core/constants/species.ts:216
+msgid "Blue whale"
+msgstr ""
+
+#: src/pages/species/cardano.tsx:16
+#: src/pages/species/cardano.tsx:22
+msgid "Cardano Species"
+msgstr ""
+
+#: src/core/constants/species.ts:48
+#: src/core/constants/species.ts:156
+msgid "Crab"
+msgstr ""
+
+#: src/translations/languages.ts:25
+msgid "Dutch"
+msgstr ""
+
+#: src/translations/languages.ts:20
+msgid "English"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:84
+#: src/components/Navbar/Mobile.tsx:90
+msgid "FAQ"
+msgstr ""
+
+#: src/core/constants/species.ts:103
+#: src/core/constants/species.ts:211
+msgid "Fin whale"
+msgstr ""
+
+#: src/core/constants/species.ts:53
+#: src/core/constants/species.ts:161
+msgid "Fish"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:79
+msgid "Frequently Asked Questions (FAQ)"
+msgstr ""
+
+#: src/translations/languages.ts:15
+msgid "German"
+msgstr ""
+
+#: src/core/constants/species.ts:8
+#: src/core/constants/species.ts:116
+msgid "Ghost"
+msgstr ""
+
+#: src/components/Navbar/Mobile.tsx:110
+msgid "Github"
+msgstr ""
+
+#: src/core/constants/species.ts:88
+#: src/core/constants/species.ts:196
+msgid "Great white shark"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:33
+#: src/components/Navbar/Mobile.tsx:78
+msgid "Home"
+msgstr ""
+
+#: src/core/constants/species.ts:58
+#: src/core/constants/species.ts:166
+msgid "Jellyfish"
+msgstr ""
+
+#: src/core/constants/species.ts:73
+#: src/core/constants/species.ts:181
+msgid "Octopus"
+msgstr ""
+
+#: src/core/constants/species.ts:93
+#: src/core/constants/species.ts:201
+msgid "Orca"
+msgstr ""
+
+#: src/core/constants/species.ts:38
+#: src/core/constants/species.ts:146
+msgid "Oyster"
+msgstr ""
+
+#: src/core/constants/species.ts:23
+#: src/core/constants/species.ts:131
+msgid "Pipefish"
+msgstr ""
+
+#: src/core/constants/species.ts:63
+#: src/core/constants/species.ts:171
+msgid "Piranha"
+msgstr ""
+
+#: src/core/constants/species.ts:13
+#: src/core/constants/species.ts:121
+msgid "Plankton"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:108
+msgid "RankMyWallet on Github"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:94
+msgid "RankMyWallet on Twitter"
+msgstr ""
+
+#: src/translations/languages.ts:30
+msgid "Romanian"
+msgstr ""
+
+#: src/core/constants/species.ts:18
+#: src/core/constants/species.ts:126
+msgid "Seahorse"
+msgstr ""
+
+#: src/core/constants/species.ts:78
+#: src/core/constants/species.ts:186
+msgid "Shark"
+msgstr ""
+
+#: src/core/constants/species.ts:33
+#: src/core/constants/species.ts:141
+msgid "Shell"
+msgstr ""
+
+#: src/core/constants/species.ts:28
+#: src/core/constants/species.ts:136
+msgid "Shrimp"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:60
+#: src/components/Navbar/Mobile.tsx:82
+msgctxt "Plural"
+msgid "Species"
+msgstr ""
+
+#: src/components/Species/SpeciesTable.tsx:56
+msgctxt "Singular"
+msgid "Species"
+msgstr ""
+
+#: src/core/constants/species.ts:43
+#: src/core/constants/species.ts:151
+msgid "Starfish"
+msgstr ""
+
+#: src/components/Species/SpeciesTable.tsx:59
+msgid "Starts At"
+msgstr ""
+
+#: src/components/Navbar/Mobile.tsx:57
+msgid "Switch to {text} mode"
+msgstr ""
+
+#: src/core/constants/species.ts:68
+#: src/core/constants/species.ts:176
+msgid "Swordfish"
+msgstr ""
+
+#: src/core/constants/species.ts:83
+#: src/core/constants/species.ts:191
+msgid "Tiger shark"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:67
+#: src/components/Navbar/Desktop.tsx:72
+#: src/components/Navbar/Mobile.tsx:86
+msgid "Tip Box"
+msgstr ""
+
+#: src/components/Navbar/Mobile.tsx:99
+msgid "Twitter"
+msgstr ""
+
+#: src/core/constants/species.ts:98
+#: src/core/constants/species.ts:206
+msgid "Whale"
+msgstr ""

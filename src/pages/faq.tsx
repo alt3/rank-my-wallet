@@ -9,14 +9,13 @@ import {
   Tabs,
   Text,
   UnorderedList,
-  useColorModeValue,
+  useColorModeValue
 } from "@chakra-ui/react"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
+import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { AccordionItemFaq, ContentContainer, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
-import { loadCatalog } from "src/translations/utils"
 
 const FaqPage: BlitzPage = () => {
   useLingui()
@@ -168,12 +167,12 @@ const FaqPage: BlitzPage = () => {
   )
 }
 
-export async function getServerSideProps(
-  ctx: GetServerSidePropsContext
-): Promise<GetServerSidePropsResult<any>> {
+export async function getStaticProps(
+  ctx: GetStaticPropsContext
+): Promise<GetStaticPropsResult<any>> {
   return {
     props: {
-      i18n: await loadCatalog(ctx.locale as string),
+      i18n: (await import(`@lingui/loader!./locales/faq/${ctx.locale}.po`)).messages,
     },
   }
 }

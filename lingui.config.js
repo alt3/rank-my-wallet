@@ -6,21 +6,22 @@ if (process.env.NODE_ENV !== "production") {
   locales.push("pseudo")
 }
 
+/**
+ *
+ * @type {import('@lingui/conf').LinguiConfig}
+ */
 module.exports = {
   locales: locales,
   sourceLocale: "en-us",
   pseudoLocale: "pseudo",
-  catalogs: [
-    {
-      path: "src/translations/locales/{locale}",
-      include: [
-        "src/components",
-        "src/core",
-        "src/lib",
-        "src/pages",
-        "src/translations/languages.ts",
+  experimental: {
+    extractor: {
+      entries: [
+        "<rootDir>/src/pages/**/*.tsx"
       ],
-    },
-  ],
-  format: formatter({ origins: false }),
+      output: "<rootDir>/{entryDir}/locales/{entryName}/{locale}"
+    }
+  },
+  format: formatter(),
+
 }

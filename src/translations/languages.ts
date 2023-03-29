@@ -9,7 +9,7 @@ interface Languages {
 
 export type LOCALES = "de-de" | "en-us" | "nl-nl" | "ro-ro" | "pseudo"
 
-const languages : Languages[]= [
+const languages: Languages[]= /* @__PURE__ */ (() => [
   {
     locale: "de-de",
     msg: msg`German`,
@@ -30,13 +30,13 @@ const languages : Languages[]= [
     msg: msg`Romanian`,
     territory: "RO",
   },
-]
+])()
 
-if (process.env.NODE_ENV !== "production") {
-  languages.push({
-    locale: "pseudo",
-    msg: msg`Pseudo`,
-  })
-}
+// if (process.env.NODE_ENV !== "production") {
+//   languages.push({
+//     locale: "pseudo",
+//     msg: /* @__PURE__ */ msg`Pseudo`,
+//   })
+// }
 
 export default languages

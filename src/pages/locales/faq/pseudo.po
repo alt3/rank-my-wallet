@@ -1,0 +1,138 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-03-29 14:49+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pseudo\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/Footer.tsx:27
+msgid "An<0>Alt3</0>product powered by<1>Ergo Watch</1>"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:55
+msgid "Blockchain Species"
+msgstr ""
+
+#: src/pages/faq.tsx:123
+msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
+msgstr ""
+
+#: src/pages/faq.tsx:50
+msgid "Cardano"
+msgstr ""
+
+#: src/translations/languages.ts:25
+msgid "Dutch"
+msgstr ""
+
+#: src/translations/languages.ts:20
+msgid "English"
+msgstr ""
+
+#: src/pages/faq.tsx:55
+msgid "Ergo"
+msgstr ""
+
+#: src/pages/faq.tsx:144
+msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:84
+#: src/components/Navbar/Mobile.tsx:90
+#: src/pages/faq.tsx:33
+msgid "FAQ"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:79
+#: src/pages/faq.tsx:39
+msgid "Frequently Asked Questions (FAQ)"
+msgstr ""
+
+#: src/pages/faq.tsx:45
+msgid "General"
+msgstr ""
+
+#: src/translations/languages.ts:15
+msgid "German"
+msgstr ""
+
+#: src/components/Navbar/Mobile.tsx:110
+msgid "Github"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:33
+#: src/components/Navbar/Mobile.tsx:78
+msgid "Home"
+msgstr ""
+
+#: src/pages/faq.tsx:88
+msgid "How can I help with translations?"
+msgstr ""
+
+#: src/pages/faq.tsx:153
+msgid "How do I consolidate my boxes?"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:108
+msgid "RankMyWallet on Github"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:94
+msgid "RankMyWallet on Twitter"
+msgstr ""
+
+#: src/translations/languages.ts:30
+msgid "Romanian"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:60
+#: src/components/Navbar/Mobile.tsx:82
+msgctxt "Plural"
+msgid "Species"
+msgstr ""
+
+#: src/components/Navbar/Mobile.tsx:57
+msgid "Switch to {text} mode"
+msgstr ""
+
+#: src/components/Navbar/Desktop.tsx:67
+#: src/components/Navbar/Desktop.tsx:72
+#: src/components/Navbar/Mobile.tsx:86
+msgid "Tip Box"
+msgstr ""
+
+#: src/pages/faq.tsx:89
+msgid "Translators do not require coding skills and can help correcting or adding languages by following<0>the instructions on this page</0>."
+msgstr ""
+
+#: src/components/Navbar/Mobile.tsx:99
+msgid "Twitter"
+msgstr ""
+
+#: src/pages/faq.tsx:63
+msgid "What technology does this website use?"
+msgstr ""
+
+#: src/pages/faq.tsx:105
+msgid "Where do I report bugs?"
+msgstr ""
+
+#: src/pages/faq.tsx:121
+msgid "Why are Byron addresses not supported?"
+msgstr ""
+
+#: src/pages/faq.tsx:137
+msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
+msgstr ""
+
+#: src/pages/faq.tsx:155
+msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
+msgstr ""

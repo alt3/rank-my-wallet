@@ -1,6 +1,6 @@
 import { msg } from "@lingui/macro"
 
-const species = {
+const species = /* @__PURE__ */ (() => ({
   // https://datastudio.google.com/reporting/3136c55b-635e-4f46-8e4b-b8ab54f2d460/page/r2LQC
   Cardano: [
     {
@@ -217,6 +217,6 @@ const species = {
       icon: "Whale",
     },
   ],
-}
+}))()
 
 export default species

@@ -3,6 +3,7 @@ import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { BackHomeButton, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
+import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 
 // ------------------------------------------------------
 // This page is rendered if a route match is not found
@@ -24,6 +25,16 @@ const Page404: BlitzPage = () => {
       <BackHomeButton title={t`Back to homepage`} />
     </>
   )
+}
+
+export async function getStaticProps(
+  ctx: GetStaticPropsContext
+): Promise<GetStaticPropsResult<any>> {
+  return {
+    props: {
+      i18n: (await import(`@lingui/loader!./locales/404/${ctx.locale}.po`)).messages,
+    },
+  }
 }
 
 Page404.suppressFirstRenderFlicker = true

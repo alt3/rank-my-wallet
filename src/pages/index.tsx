@@ -1,8 +1,7 @@
 import { BlitzPage } from "@blitzjs/next"
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
+import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { BlockChains, ContentContainer, Hero, MetaTags, Sponsors } from "src/components"
 import Layout from "src/core/layouts/Layout"
-import { loadCatalog } from "src/translations/utils"
 
 const Home: BlitzPage = () => {
   return (
@@ -23,12 +22,12 @@ const Home: BlitzPage = () => {
   )
 }
 
-export async function getServerSideProps(
-  ctx: GetServerSidePropsContext
-): Promise<GetServerSidePropsResult<any>> {
+export async function getStaticProps(
+  ctx: GetStaticPropsContext
+): Promise<GetStaticPropsResult<any>> {
   return {
     props: {
-      i18n: await loadCatalog(ctx.locale as string),
+      i18n: (await import(`@lingui/loader!./locales/index/${ctx.locale}.po`)).messages,
     },
   }
 }
