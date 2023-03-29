@@ -1,0 +1,343 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-03-24 20:44+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: hi\n"
+"Project-Id-Version: rankmywallet\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-03-29 05:18\n"
+"Last-Translator: \n"
+"Language-Team: Hindi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: rankmywallet\n"
+"X-Crowdin-Project-ID: 576955\n"
+"X-Crowdin-Language: hi\n"
+"X-Crowdin-File: /main/src/translations/locales/en-us.po\n"
+"X-Crowdin-File-ID: 27\n"
+
+msgid "Address"
+msgstr "एड्रेस"
+
+msgid "Address Analysis"
+msgstr "एड्रेस विश्लेषण"
+
+msgid "Address Details"
+msgstr "एड्रेस विवरण"
+
+msgid "Address Type"
+msgstr "एड्रेस का प्रकार"
+
+msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
+msgstr "<1>Ergo Watch </1> द्वारा संचालित एक <0>Alt3</0> उत्पाद"
+
+msgid "Back to homepage"
+msgstr "होमपेज पर वापस"
+
+msgid "Balance"
+msgstr "बैलेंस"
+
+msgid "Become a Sponsor"
+msgstr "प्रायोजक बनें"
+
+msgid "Binaries"
+msgstr "बाइनरी"
+
+msgid "Bits"
+msgstr "बिट्स"
+
+msgid "Blockchain"
+msgstr "ब्लॉकचेन"
+
+msgid "Blockchain Species"
+msgstr "ब्लॉकचेन प्रजाति"
+
+msgid "Blue whale"
+msgstr "ब्लू व्हेल"
+
+msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
+msgstr "बायरन (विरासत) एड्रेस में आपके रैंक को निर्धारित करने के लिए रैंकमाइवालेट द्वारा उपयोग की जाने वाली स्टैकिंग कार्यक्षमता की कमी है।"
+
+msgid "Cardano"
+msgstr "कार्डानो"
+
+msgid "Cardano Rankings are coming soon"
+msgstr "कार्डानो रैंकिंग जल्द ही आ रही है"
+
+msgid "Cardano Species"
+msgstr "कार्डानो प्रजाति"
+
+msgid "Checksum"
+msgstr "अंततः"
+
+msgid "Competition"
+msgstr "प्रतियोगिता"
+
+msgid "Competitors"
+msgstr "प्रतियोगियों"
+
+msgid "Content"
+msgstr "कंटेंट"
+
+msgid "Copied!"
+msgstr "कॉपी किया गया!"
+
+msgid "Crab"
+msgstr "केकड़ा"
+
+msgid "Current Species"
+msgstr "वर्तमान प्रजातियां"
+
+msgid "Decimals"
+msgstr "दशमलव"
+
+msgid "Decoded Bytes:"
+msgstr ""
+
+msgid "Dutch"
+msgstr "डच"
+
+msgid "Encoding"
+msgstr "एन्कोडिंग"
+
+msgid "English"
+msgstr "अंग्रेज़ी"
+
+msgid "Ergo"
+msgstr "एर्गो"
+
+msgid "Ergo Species"
+msgstr "एर्गो प्रजाति"
+
+msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
+msgstr "प्रत्येक एर्गो वॉलेट में कई एड्रेस हो सकते हैं, जिन्हें बॉक्स भी कहा जाता है। नॉटिलस जैसे एर्गो वॉलेट ज्यादातर आपके वॉलेट्स से संबंधित सभी बक्सों में मिली राशि को जोड़कर आपका 'समेकित' संतुलन दिखाते हैं। हालांकि, रैंकमाई वॉलेट केवल एक बॉक्स का बैलेंस दिखाएगा।"
+
+msgid "FAQ"
+msgstr "सामान्य प्रश्न"
+
+msgid "Fin whale"
+msgstr "फिन व्हेल"
+
+msgid "Fish"
+msgstr "फिश"
+
+msgid "Frequently Asked Questions (FAQ)"
+msgstr "अक्सर पूछे जाने वाले प्रश्न (एफएक्यू)"
+
+msgid "General"
+msgstr "जनरल"
+
+msgid "German"
+msgstr ""
+
+msgid "Ghost"
+msgstr ""
+
+msgid "Github"
+msgstr ""
+
+msgid "Go"
+msgstr ""
+
+msgid "Great white shark"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "How can I help with translations?"
+msgstr ""
+
+msgid "How do I consolidate my boxes?"
+msgstr ""
+
+msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
+msgstr ""
+
+msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
+msgstr ""
+
+msgid "Internal Server Error"
+msgstr ""
+
+msgid "Jellyfish"
+msgstr ""
+
+msgid "Leading Prefix Bits:"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "Network Type"
+msgstr ""
+
+msgid "Next Species"
+msgstr ""
+
+msgid "Octopus"
+msgstr ""
+
+msgid "Orca"
+msgstr ""
+
+msgid "Oyster"
+msgstr ""
+
+msgid "Page Not Found"
+msgstr ""
+
+msgid "Pipefish"
+msgstr ""
+
+msgid "Piranha"
+msgstr ""
+
+msgid "Plankton"
+msgstr ""
+
+msgid "Please donate to keep this website ad-free"
+msgstr ""
+
+msgid "Please provide a wallet address"
+msgstr ""
+
+msgid "Prefix Bits:"
+msgstr ""
+
+msgid "Prefix Byte"
+msgstr ""
+
+msgid "Pseudo"
+msgstr ""
+
+msgid "Rank"
+msgstr ""
+
+msgid "RankMyWallet on Github"
+msgstr ""
+
+msgid "RankMyWallet on Twitter"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Romanian"
+msgstr ""
+
+msgid "Seahorse"
+msgstr ""
+
+msgid "Shark"
+msgstr ""
+
+msgid "Shell"
+msgstr ""
+
+msgid "Shrimp"
+msgstr ""
+
+msgid "Sorry, but we are unable to recognize this address."
+msgstr ""
+
+msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
+msgstr ""
+
+msgid "Sorry, but we do not support {blockchain} {network} addresses."
+msgstr ""
+
+msgid "Sorry, but we do not support {blockchain}."
+msgstr ""
+
+msgid "Sorry, we do not rank empty wallets"
+msgstr ""
+
+msgctxt "Plural"
+msgid "Species"
+msgstr ""
+
+msgctxt "Singular"
+msgid "Species"
+msgstr ""
+
+msgid "Sponsored By:"
+msgstr ""
+
+msgid "Starfish"
+msgstr ""
+
+msgid "Starts At"
+msgstr ""
+
+msgid "Supported Blockchains:"
+msgstr ""
+
+msgid "Switch to {text} mode"
+msgstr ""
+
+msgid "Swordfish"
+msgstr ""
+
+msgid "Tiger shark"
+msgstr ""
+
+msgid "Tip Box"
+msgstr ""
+
+msgid "Trailing Prefix Bits:"
+msgstr ""
+
+msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
+msgstr ""
+
+msgid "Try again?"
+msgstr ""
+
+msgid "Twitter"
+msgstr ""
+
+msgid "Unsupported Address"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Wallet address"
+msgstr ""
+
+msgid "Whale"
+msgstr ""
+
+msgid "What technology does this website use?"
+msgstr ""
+
+msgid "Where do I report bugs?"
+msgstr ""
+
+msgid "Why are Byron addresses not supported?"
+msgstr ""
+
+msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
+msgstr ""
+
+msgid "You are Cardano holder"
+msgstr ""
+
+msgid "You are Ergo holder"
+msgstr ""
+
+msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
+msgstr ""
+
+msgid "Your Balance"
+msgstr ""
+
+msgid "Your Project"
+msgstr ""
+
+msgid "Your Rank"
+msgstr ""
+
