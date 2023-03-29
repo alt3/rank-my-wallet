@@ -1,15 +1,25 @@
-// use nextjs config as single source of truth for defining locales
-const nextConfig = require("./next.config")
-import { formatter } from "@lingui/format-po"
+const { formatter } = require("@lingui/format-po")
+
+const locales = ["de-de", "en-us", "nl-nl", "ro-ro"]
+
+if (process.env.NODE_ENV !== "production") {
+  locales.push("pseudo")
+}
 
 module.exports = {
-  locales: nextConfig.i18n.locales,
-  sourceLocale: nextConfig.i18n.defaultLocale, // en
+  locales: locales,
+  sourceLocale: "en-us",
   pseudoLocale: "pseudo",
   catalogs: [
     {
-      path: "src/translations/locales/{locale}/messages",
-      include: ["src/components", "src/core", "src/lib", "src/pages"],
+      path: "src/translations/locales/{locale}",
+      include: [
+        "src/components",
+        "src/core",
+        "src/lib",
+        "src/pages",
+        "src/translations/languages.ts",
+      ],
     },
   ],
   format: formatter({ origins: false }),

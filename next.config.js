@@ -1,18 +1,12 @@
 // @ts-check
 const { withBlitz } = require("@blitzjs/next")
+const linguiConfig = require("./lingui.config")
 
 // NextJS bundle analyzer
 const shouldAnalyzeBundles = process.env.ANALYZE === "true"
 const withBundleAnalyzer = shouldAnalyzeBundles
   ? require("@next/bundle-analyzer")({ enabled: true })
   : () => config
-
-// When adding new i18n routes, also update LocaleSwitcher and next-sitemap
-const locales = ["en-us", "de-de", "nl-nl", "ro-ro"]
-
-if (process.env.NODE_ENV !== "production") {
-  locales.push("pseudo")
-}
 
 /**
  * @type {import('@blitzjs/next').BlitzConfig}
@@ -30,8 +24,8 @@ const config = {
     ],
   },
   i18n: {
-    locales: locales,
-    defaultLocale: "en-us",
+    locales: linguiConfig.locales,
+    defaultLocale: linguiConfig.sourceLocale,
   },
 }
 

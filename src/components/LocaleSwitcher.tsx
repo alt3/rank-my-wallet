@@ -1,50 +1,10 @@
 import { IconButton, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
-import { msg } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import ReactCountryFlag from "react-country-flag"
 import nextId from "react-id-generator"
-
-import { MessageDescriptor } from "@lingui/core"
-
-type LOCALES = "en-us" | "de-de" | "nl-nl" | "ro-ro" | "pseudo"
-
-interface Languages {
-  locale: string
-  msg: MessageDescriptor
-  territory?: string
-}
-
-const languages: Languages[] = [
-  {
-    locale: "en-us",
-    msg: msg`English`,
-    territory: "US",
-  },
-  {
-    locale: "de-de",
-    msg: msg`German`,
-    territory: "DE",
-  },
-  {
-    locale: "nl-nl",
-    msg: msg`Dutch`,
-    territory: "NL",
-  },
-  {
-    locale: "ro-ro",
-    msg: msg`Romanian`,
-    territory: "RO",
-  },
-]
-
-if (process && process.env.NODE_ENV !== "production") {
-  languages.push({
-    locale: "pseudo",
-    msg: msg`Pseudo`,
-  })
-}
+import languages, { LOCALES } from "src/translations/languages"
 
 export function LocaleSwitcher() {
   const { i18n } = useLingui()
