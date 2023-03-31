@@ -8,7 +8,7 @@ msgstr ""
 "Language: hi\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-29 05:18\n"
+"PO-Revision-Date: 2023-03-31 12:45\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -94,7 +94,7 @@ msgid "Decimals"
 msgstr "दशमलव"
 
 msgid "Decoded Bytes:"
-msgstr ""
+msgstr "डीकोडेड बाइट्स:"
 
 msgid "Dutch"
 msgstr "डच"
@@ -130,49 +130,49 @@ msgid "General"
 msgstr "जनरल"
 
 msgid "German"
-msgstr ""
+msgstr "जर्मन"
 
 msgid "Ghost"
-msgstr ""
+msgstr "घोस्ट"
 
 msgid "Github"
-msgstr ""
+msgstr "गिटहब"
 
 msgid "Go"
-msgstr ""
+msgstr "जाएँ"
 
 msgid "Great white shark"
-msgstr ""
+msgstr "ग्रेट वाइट शार्क"
 
 msgid "Home"
-msgstr ""
+msgstr "घर"
 
 msgid "How can I help with translations?"
-msgstr ""
+msgstr "मैं अनुवादों में कैसे मदद कर सकता हूँ?"
 
 msgid "How do I consolidate my boxes?"
-msgstr ""
+msgstr "मैं अपने बक्सों को कैसे समेकित करूं?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr ""
+msgstr "यदि आप एक परियोजना या व्यवसाय हैं और अपने लोगो को लैंडिंग पृष्ठ पर दिखाना चाहते हैं, तो अधिक विवरण के लिए हमसे <0>ट्विटर</0> पर संपर्क करें।"
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr ""
+msgstr "यदि आप एक ऐसे व्यक्ति हैं जो इस परियोजना को प्रायोजित करना चाहते हैं, तो कृपया <0>टिप बॉक्स</0> के माध्यम से दान करने पर विचार करें।"
 
 msgid "Internal Server Error"
-msgstr ""
+msgstr "इंटर्नल सर्वर एरर"
 
 msgid "Jellyfish"
-msgstr ""
+msgstr "जेलिफ़िश"
 
 msgid "Leading Prefix Bits:"
-msgstr ""
+msgstr "लीडिंग प्रीफिक्स बिट्स:"
 
 msgid "Network"
-msgstr ""
+msgstr "नेटवर्क"
 
 msgid "Network Type"
-msgstr ""
+msgstr "नेटवर्क प्रकार"
 
 msgid "Next Species"
 msgstr ""
