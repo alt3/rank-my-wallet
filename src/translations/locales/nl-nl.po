@@ -8,7 +8,7 @@ msgstr ""
 "Language: nl\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-29 05:18\n"
+"PO-Revision-Date: 2023-03-29 05:40\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -143,6 +143,9 @@ msgstr "Ga"
 
 msgid "Great white shark"
 msgstr "Witte haai"
+
+msgid "Hindi"
+msgstr "Hindi"
 
 msgid "Home"
 msgstr "Home"

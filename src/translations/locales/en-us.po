@@ -139,6 +139,9 @@ msgstr "Go"
 msgid "Great white shark"
 msgstr "Great white shark"
 
+msgid "Hindi"
+msgstr "Hindi"
+
 msgid "Home"
 msgstr "Home"
 

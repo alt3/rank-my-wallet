@@ -8,7 +8,7 @@ msgstr ""
 "Language: hi\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-29 05:18\n"
+"PO-Revision-Date: 2023-03-31 13:46\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -94,7 +94,7 @@ msgid "Decimals"
 msgstr "दशमलव"
 
 msgid "Decoded Bytes:"
-msgstr ""
+msgstr "डीकोडेड बाइट्स:"
 
 msgid "Dutch"
 msgstr "डच"
@@ -130,214 +130,217 @@ msgid "General"
 msgstr "जनरल"
 
 msgid "German"
-msgstr ""
+msgstr "जर्मन"
 
 msgid "Ghost"
-msgstr ""
+msgstr "घोस्ट"
 
 msgid "Github"
-msgstr ""
+msgstr "गिटहब"
 
 msgid "Go"
-msgstr ""
+msgstr "जाएँ"
 
 msgid "Great white shark"
-msgstr ""
+msgstr "ग्रेट वाइट शार्क"
+
+msgid "Hindi"
+msgstr "हिंदी"
 
 msgid "Home"
-msgstr ""
+msgstr "घर"
 
 msgid "How can I help with translations?"
-msgstr ""
+msgstr "मैं अनुवादों में कैसे मदद कर सकता हूँ?"
 
 msgid "How do I consolidate my boxes?"
-msgstr ""
+msgstr "मैं अपने बक्सों को कैसे समेकित करूं?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr ""
+msgstr "यदि आप एक परियोजना या व्यवसाय हैं और अपने लोगो को लैंडिंग पृष्ठ पर दिखाना चाहते हैं, तो अधिक विवरण के लिए हमसे <0>ट्विटर</0> पर संपर्क करें।"
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr ""
+msgstr "यदि आप एक ऐसे व्यक्ति हैं जो इस परियोजना को प्रायोजित करना चाहते हैं, तो कृपया <0>टिप बॉक्स</0> के माध्यम से दान करने पर विचार करें।"
 
 msgid "Internal Server Error"
-msgstr ""
+msgstr "इंटर्नल सर्वर एरर"
 
 msgid "Jellyfish"
-msgstr ""
+msgstr "जेलिफ़िश"
 
 msgid "Leading Prefix Bits:"
-msgstr ""
+msgstr "लीडिंग प्रीफिक्स बिट्स:"
 
 msgid "Network"
-msgstr ""
+msgstr "नेटवर्क"
 
 msgid "Network Type"
-msgstr ""
+msgstr "नेटवर्क प्रकार"
 
 msgid "Next Species"
-msgstr ""
+msgstr "अगली प्रजाति"
 
 msgid "Octopus"
-msgstr ""
+msgstr "ऑक्टोपस"
 
 msgid "Orca"
-msgstr ""
+msgstr "ओर्का"
 
 msgid "Oyster"
-msgstr ""
+msgstr "ओएस्टर"
 
 msgid "Page Not Found"
-msgstr ""
+msgstr "पेज नहीं मिला"
 
 msgid "Pipefish"
-msgstr ""
+msgstr "पाइपफिश"
 
 msgid "Piranha"
-msgstr ""
+msgstr "पिरान्हा"
 
 msgid "Plankton"
-msgstr ""
+msgstr "प्लैंकटन"
 
 msgid "Please donate to keep this website ad-free"
-msgstr ""
+msgstr "कृपया इस वेबसाइट को विज्ञापन-मुक्त रखने के लिए दान करें"
 
 msgid "Please provide a wallet address"
-msgstr ""
+msgstr "कृपया एक वॉलेट एड्रेस प्रदान करें"
 
 msgid "Prefix Bits:"
-msgstr ""
+msgstr "प्रीफिक्स बिट्स:"
 
 msgid "Prefix Byte"
-msgstr ""
+msgstr "प्रीफिक्स बाइट"
 
 msgid "Pseudo"
-msgstr ""
+msgstr "सूडो"
 
 msgid "Rank"
-msgstr ""
+msgstr "रैंक"
 
 msgid "RankMyWallet on Github"
-msgstr ""
+msgstr "गिटहब पर रैंक माय वॉलेट"
 
 msgid "RankMyWallet on Twitter"
-msgstr ""
+msgstr "ट्विटर पर रैंक माय वॉलेट"
 
 msgid "Required"
-msgstr ""
+msgstr "आवश्यक"
 
 msgid "Romanian"
-msgstr ""
+msgstr "रोमानियन"
 
 msgid "Seahorse"
-msgstr ""
+msgstr "सीहोरस"
 
 msgid "Shark"
-msgstr ""
+msgstr "शार्क"
 
 msgid "Shell"
-msgstr ""
+msgstr "शैल"
 
 msgid "Shrimp"
-msgstr ""
+msgstr "श्रिम्प"
 
 msgid "Sorry, but we are unable to recognize this address."
-msgstr ""
+msgstr "क्षमा करें, लेकिन हम इस एड्रेस को पहचानने में असमर्थ हैं।"
 
 msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
-msgstr ""
+msgstr "क्षमा करें, लेकिन हम {blockchain} {addressType} पतों का समर्थन नहीं करते हैं।"
 
 msgid "Sorry, but we do not support {blockchain} {network} addresses."
-msgstr ""
+msgstr "क्षमा करें, लेकिन हम {blockchain} {network} एड्रेस का समर्थन नहीं करते हैं।"
 
 msgid "Sorry, but we do not support {blockchain}."
-msgstr ""
+msgstr "क्षमा करें, लेकिन हम {blockchain} का समर्थन नहीं करते हैं।"
 
 msgid "Sorry, we do not rank empty wallets"
-msgstr ""
+msgstr "क्षमा करें, हम खाली वॉलेट्स को रैंक नहीं करते हैं"
 
 msgctxt "Plural"
 msgid "Species"
-msgstr ""
+msgstr "प्रजाति"
 
 msgctxt "Singular"
 msgid "Species"
-msgstr ""
+msgstr "प्रजाति"
 
 msgid "Sponsored By:"
-msgstr ""
+msgstr "द्वारा प्रायोजित:"
 
 msgid "Starfish"
-msgstr ""
+msgstr "स्टारफिश"
 
 msgid "Starts At"
-msgstr ""
+msgstr "पर आरंभ होती है"
 
 msgid "Supported Blockchains:"
-msgstr ""
+msgstr "समर्थित ब्लॉकचेन:"
 
 msgid "Switch to {text} mode"
-msgstr ""
+msgstr "{text} मोड पर स्विच करें"
 
 msgid "Swordfish"
-msgstr ""
+msgstr "स्वोर्डफ़िश"
 
 msgid "Tiger shark"
-msgstr ""
+msgstr "टाइगर शार्क"
 
 msgid "Tip Box"
-msgstr ""
+msgstr "टिप बॉक्स"
 
 msgid "Trailing Prefix Bits:"
-msgstr ""
+msgstr "ट्रेलिंग प्रीफिक्स बिट्स:"
 
 msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr ""
+msgstr "अनुवादकों को कोडिंग कौशल की आवश्यकता नहीं होती है और <0>इस पृष्ठ पर दिए गए निर्देशों</0> का पालन करके भाषाओं को सुधारने या जोड़ने में सहायता कर सकते हैं।"
 
 msgid "Try again?"
-msgstr ""
+msgstr "पुनः प्रयास करें?"
 
 msgid "Twitter"
-msgstr ""
+msgstr "ट्विटर"
 
 msgid "Unsupported Address"
-msgstr ""
+msgstr "असमर्थित एड्रेस"
 
 msgid "Version"
-msgstr ""
+msgstr "वर्ज़न"
 
 msgid "Wallet address"
-msgstr ""
+msgstr "वॉलेट एड्रेस"
 
 msgid "Whale"
-msgstr ""
+msgstr "व्हेल"
 
 msgid "What technology does this website use?"
-msgstr ""
+msgstr "यह वेबसाइट किस टेक्नोलॉजी का उपयोग करती है?"
 
 msgid "Where do I report bugs?"
-msgstr ""
+msgstr "मैं बग की रिपोर्ट कहां करूं?"
 
 msgid "Why are Byron addresses not supported?"
-msgstr ""
+msgstr "बायरन एड्रेस समर्थित क्यों नहीं हैं?"
 
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
-msgstr ""
+msgstr "इस वेबसाइट की शेष राशि मेरे एर्गो वॉलेट की शेष राशि से भिन्न क्यों है?"
 
 msgid "You are Cardano holder"
-msgstr ""
+msgstr "आप कार्डानो होल्डर हैं"
 
 msgid "You are Ergo holder"
-msgstr ""
+msgstr "आप एर्गो होल्डर हैं"
 
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
-msgstr ""
+msgstr "आप या तो एक नए एड्रेस या अपने मौजूदा प्राप्त एड्रेस में से एक का उपयोग करके अपने सभी एर्गो को स्वयं को भेजकर अपने सभी बक्सों को समेकित कर सकते हैं, और इस तरह अपनी शेष राशि को एक ही बॉक्स में रख सकते हैं।"
 
 msgid "Your Balance"
-msgstr ""
+msgstr "आपका बैलेंस"
 
 msgid "Your Project"
-msgstr ""
+msgstr "आपका प्रोजेक्ट"
 
 msgid "Your Rank"
-msgstr ""
+msgstr "आपका रैंक"
 
