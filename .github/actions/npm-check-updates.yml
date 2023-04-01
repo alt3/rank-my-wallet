@@ -14,6 +14,8 @@ jobs:
     - name: package-update
       uses: taichi/actions-package-update@master
       env:
+        BRANCH_PREFIX: package-bumps
+        COMMIT_MESSAGE: "Monthly package bumps"
         AUTHOR_EMAIL: bravo-kernel@users.noreply.github.com
         AUTHOR_NAME: bravo-kernel
         EXECUTE: "true"
