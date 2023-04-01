@@ -144,6 +144,9 @@ msgstr "Los!"
 msgid "Great white shark"
 msgstr "Weißer Hai"
 
+msgid "Hindi"
+msgstr "Hindi"
+
 msgid "Home"
 msgstr "Startseite"
 
