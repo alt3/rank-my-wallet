@@ -144,6 +144,9 @@ msgstr "जाएँ"
 msgid "Great white shark"
 msgstr "ग्रेट वाइट शार्क"
 
+msgid "Hindi"
+msgstr "हिंदी"
+
 msgid "Home"
 msgstr "घर"
 

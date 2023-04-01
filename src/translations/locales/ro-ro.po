@@ -144,6 +144,9 @@ msgstr "Mergi"
 msgid "Great white shark"
 msgstr "Marele rechin alb"
 
+msgid "Hindi"
+msgstr "Hindi"
+
 msgid "Home"
 msgstr "Acasă"
 

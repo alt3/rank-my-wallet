@@ -144,6 +144,9 @@ msgstr "Ga"
 msgid "Great white shark"
 msgstr "Witte haai"
 
+msgid "Hindi"
+msgstr "Hindi"
+
 msgid "Home"
 msgstr "Home"
 
