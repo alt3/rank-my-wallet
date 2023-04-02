@@ -207,6 +207,9 @@ msgstr "Doneer om deze website advertentievrij te houden"
 msgid "Please provide a wallet address"
 msgstr "Voer eerst een wallet adres in"
 
+msgid "Portugese"
+msgstr "Portugees"
+
 msgid "Prefix Bits:"
 msgstr "Prefix Bits:"
 
