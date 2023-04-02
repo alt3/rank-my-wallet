@@ -5,45 +5,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: nl\n"
+"Language: pt\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-01 10:27\n"
+"PO-Revision-Date: 2023-04-02 11:54\n"
 "Last-Translator: \n"
-"Language-Team: Dutch\n"
+"Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: rankmywallet\n"
 "X-Crowdin-Project-ID: 576955\n"
-"X-Crowdin-Language: nl\n"
+"X-Crowdin-Language: pt-BR\n"
 "X-Crowdin-File: /main/src/translations/locales/en-us.po\n"
 "X-Crowdin-File-ID: 27\n"
 
 msgid "Address"
-msgstr "Adres"
+msgstr "Endereço"
 
 msgid "Address Analysis"
-msgstr "Adresanalyse"
+msgstr "Análise de endereço"
 
 msgid "Address Details"
-msgstr "Adresgegevens"
+msgstr "Detalhes do Endereço"
 
 msgid "Address Type"
-msgstr "Adrestype"
+msgstr "Tipo de endereço"
 
 msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
-msgstr "Een <0>Alt3</0> product gebouwd op <1>Ergo Watch </1>"
+msgstr "Um produto <0>Alt3</0> alimentado por <1>Ergo Watch </1>"
 
 msgid "Back to homepage"
-msgstr "Terug naar de homepagina"
+msgstr "Voltar à página inicial"
 
 msgid "Balance"
 msgstr "Saldo"
 
 msgid "Become a Sponsor"
-msgstr "Wordt Sponsor"
+msgstr "Torne-se um Patrocinador"
 
 msgid "Binaries"
-msgstr "Binair"
+msgstr "Binários"
 
 msgid "Bits"
 msgstr "Bits"
@@ -52,295 +52,295 @@ msgid "Blockchain"
 msgstr "Blockchain"
 
 msgid "Blockchain Species"
-msgstr "Blockchain Soorten"
+msgstr "Espécies da Blockchain"
 
 msgid "Blue whale"
-msgstr "Blauwe vinvis"
+msgstr "Baleia azul"
 
 msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "Byron (legacy) adressen missen de staking functionaliteit die RankMyWallet nodig heeft om je ranking te kunnen bepalen."
+msgstr "Os endereços Byron (legado) não têm a funcionalidade de staking que o RankMyWallet usa para determinar seu ranking."
 
 msgid "Cardano"
 msgstr "Cardano"
 
 msgid "Cardano Rankings are coming soon"
-msgstr "Cardano Rankings komen binnenkort"
+msgstr "Rankings de Cardano chegarão em breve"
 
 msgid "Cardano Species"
-msgstr "Cardano Soorten"
+msgstr "Espécies Cardano"
 
 msgid "Checksum"
-msgstr "Controlesom"
+msgstr "Checksum"
 
 msgid "Competition"
-msgstr "Competitie"
+msgstr "Competição"
 
 msgid "Competitors"
-msgstr "Concurrenten"
+msgstr "Concorrentes"
 
 msgid "Content"
-msgstr "Inhoud"
+msgstr "Conteúdo"
 
 msgid "Copied!"
-msgstr "Gekopieerd!"
+msgstr "Copiado!"
 
 msgid "Crab"
-msgstr "Krab"
+msgstr "Caranguejo"
 
 msgid "Current Species"
-msgstr "Huidige Soort"
+msgstr "Espécies atuais"
 
 msgid "Decimals"
-msgstr "Decimalen"
+msgstr "Decimais"
 
 msgid "Decoded Bytes:"
-msgstr "Gedecodeerde Bytes:"
+msgstr "Bytes Decodificados:"
 
 msgid "Dutch"
-msgstr "Nederlands"
+msgstr "Holandês"
 
 msgid "Encoding"
-msgstr "Codering"
+msgstr "Codificação"
 
 msgid "English"
-msgstr "Engels"
+msgstr "Inglês"
 
 msgid "Ergo"
 msgstr "Ergo"
 
 msgid "Ergo Species"
-msgstr "Ergo Soorten"
+msgstr "Espécies Ergo"
 
 msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
-msgstr "Elke Ergo wallet kan meerdere adressen hebben, ook wel boxen genoemd. Ergo wallets zoals Nautilus tonen je 'geconsolideerde' saldo door de saldi op te tellen van alle boxen die bij je wallet horen. RankMyWallet laat echter uitsluitend het saldo zien dat hoort bij één enkele box."
+msgstr "Toda carteira Ergo pode ter vários endereços, também chamados de caixa. As carteiras Ergo, como Nautilus, mostram principalmente o seu saldo \"consolidado\", adicionando as quantidades encontradas em todas as caixas relacionadas à sua carteira. No entanto, RankMyWallet só mostrará o saldo de uma única caixa."
 
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "Perguntas Frequentes"
 
 msgid "Fin whale"
-msgstr "Vinvis"
+msgstr "Baleia-comum"
 
 msgid "Fish"
-msgstr "Vis"
+msgstr "Peixe"
 
 msgid "Frequently Asked Questions (FAQ)"
-msgstr "Veelgestelde Vragen (FAQ)"
+msgstr "Perguntas Frequentes (FAQ)"
 
 msgid "General"
-msgstr "Algemeen"
+msgstr "Geral"
 
 msgid "German"
-msgstr "Duits"
+msgstr "Alemão"
 
 msgid "Ghost"
-msgstr "Geest"
+msgstr "Fantasma"
 
 msgid "Github"
 msgstr "Github"
 
 msgid "Go"
-msgstr "Ga"
+msgstr "OK"
 
 msgid "Great white shark"
-msgstr "Witte haai"
+msgstr "Tubarão-branco"
 
 msgid "Hindi"
 msgstr "Hindi"
 
 msgid "Home"
-msgstr "Home"
+msgstr "Início"
 
 msgid "How can I help with translations?"
-msgstr "Hoe kan ik helpen met vertalen?"
+msgstr "Como posso ajudar com traduções?"
 
 msgid "How do I consolidate my boxes?"
-msgstr "Hoe consolideer ik mijn boxen?"
+msgstr "Como faço para consolidar minhas caixas?"
 
 msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
-msgstr "Ben je een project of bedrijf en wil je je logo op de homepagina laten zien? Neem dan contact met ons op via <0>Twitter</0> voor meer details."
+msgstr "Se você é um projeto ou empresa e gostaria de mostrar o seu logotipo na página inicial, entre em contato conosco pelo <0>Twitter</0> para mais detalhes."
 
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
-msgstr "Ben je een individu en wil je dit project ondersteunen? Overweeg dan om te doneren via de <0>Fooienpot</0>."
+msgstr "Se você é um indivíduo que deseja patrocinar este projeto, por favor considere doar através da <0>Caixa de Gorjetas</0>."
 
 msgid "Internal Server Error"
-msgstr "Interne Serverfout"
+msgstr "Erro interno do servidor"
 
 msgid "Jellyfish"
-msgstr "Kwal"
+msgstr "Água-viva"
 
 msgid "Leading Prefix Bits:"
-msgstr "Leidende Prefix Bits:"
+msgstr "Principais bits de prefixo:"
 
 msgid "Network"
-msgstr "Netwerk"
+msgstr "Rede"
 
 msgid "Network Type"
-msgstr "Netwerktype"
+msgstr "Tipo de rede"
 
 msgid "Next Species"
-msgstr "Volgende Soort"
+msgstr "Próximas Espécies"
 
 msgid "Octopus"
-msgstr "Inktvis"
+msgstr "Polvo"
 
 msgid "Orca"
-msgstr "Orka"
+msgstr "Orca"
 
 msgid "Oyster"
-msgstr "Oester"
+msgstr "Ostra"
 
 msgid "Page Not Found"
-msgstr "Pagina Niet Gevonden"
+msgstr "Página não encontrada"
 
 msgid "Pipefish"
-msgstr "Zeenaald"
+msgstr "Peixe-cachimbo"
 
 msgid "Piranha"
 msgstr "Piranha"
 
 msgid "Plankton"
-msgstr "Plankton"
+msgstr "Plâncton"
 
 msgid "Please donate to keep this website ad-free"
-msgstr "Doneer om deze website advertentievrij te houden"
+msgstr "Por favor, faça uma doação para manter este site livre de anúncios"
 
 msgid "Please provide a wallet address"
-msgstr "Voer eerst een wallet adres in"
+msgstr "Por favor, forneça um endereço de carteira"
 
 msgid "Prefix Bits:"
-msgstr "Prefix Bits:"
+msgstr "Bits de prefixo:"
 
 msgid "Prefix Byte"
-msgstr "Prefix Byte"
+msgstr "Byte de prefixo"
 
 msgid "Pseudo"
 msgstr "Pseudo"
 
 msgid "Rank"
-msgstr "Ranking"
+msgstr "Classificação"
 
 msgid "RankMyWallet on Github"
-msgstr "RankMyWallet op Github"
+msgstr "RankMyWallet no Github"
 
 msgid "RankMyWallet on Twitter"
-msgstr "RankMyWallet op Twitter"
+msgstr "RankMyWallet no Twitter"
 
 msgid "Required"
-msgstr "Vereist Nog"
+msgstr "Obrigatório"
 
 msgid "Romanian"
-msgstr "Roemeens"
+msgstr "Romeno"
 
 msgid "Seahorse"
-msgstr "Zeepaard"
+msgstr "Cavalo-marinho"
 
 msgid "Shark"
-msgstr "Haai"
+msgstr "Tubarão"
 
 msgid "Shell"
-msgstr "Schelpdier"
+msgstr "Concha"
 
 msgid "Shrimp"
-msgstr "Garnaal"
+msgstr "Camarão"
 
 msgid "Sorry, but we are unable to recognize this address."
-msgstr "Sorry, maar we zijn niet in staat om dit adres te herkennen."
+msgstr "Desculpe, mas não conseguimos reconhecer este endereço."
 
 msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
-msgstr "Sorry, maar we ondersteunen geen {blockchain} {addressType} adressen."
+msgstr "Desculpe, mas não suportamos endereços {blockchain} {addressType}."
 
 msgid "Sorry, but we do not support {blockchain} {network} addresses."
-msgstr "Sorry, maar we ondersteunen geen {blockchain} {network} adressen."
+msgstr "Desculpe, mas não suportamos endereços {network} {blockchain}."
 
 msgid "Sorry, but we do not support {blockchain}."
-msgstr "Sorry, maar we ondersteunen geen {blockchain}."
+msgstr "Desculpe, mas não suportamos {blockchain}."
 
 msgid "Sorry, we do not rank empty wallets"
-msgstr "Sorry maar we ranken geen lege wallets"
+msgstr "Desculpe, não classificamos carteiras vazias"
 
 msgctxt "Plural"
 msgid "Species"
-msgstr "Soorten"
+msgstr "Espécies"
 
 msgctxt "Singular"
 msgid "Species"
-msgstr "Soort"
+msgstr "Espécies"
 
 msgid "Sponsored By:"
-msgstr "Gesponsord Door:"
+msgstr "Patrocinado Por:"
 
 msgid "Starfish"
-msgstr "Zeester"
+msgstr "Estrela-do-mar"
 
 msgid "Starts At"
-msgstr "Begint Bij"
+msgstr "Começa em"
 
 msgid "Supported Blockchains:"
-msgstr "Ondersteunde Blockchains:"
+msgstr "Blockchains suportadas:"
 
 msgid "Switch to {text} mode"
-msgstr "Schakel naar {text} mode"
+msgstr "Mudar para o modo {text}"
 
 msgid "Swordfish"
-msgstr "Zwaardvis"
+msgstr "Peixe-espada"
 
 msgid "Tiger shark"
-msgstr "Tijgerhaai"
+msgstr "Tubarão-tigre"
 
 msgid "Tip Box"
-msgstr "Fooienpot"
+msgstr "Caixa de gorjetas"
 
 msgid "Trailing Prefix Bits:"
-msgstr "Volgende Prefix Bits:"
+msgstr "Últimos Bits de prefixo:"
 
 msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr "Vertalers hebben geen programmeerkennis nodig en kunnen helpen met het corrigeren of toevoegen van talen door <0>de instructies op deze pagina</0> te volgen."
+msgstr "Não é necessário que tradutores possuam habilidades de programação, e podem ajudar a corrigir ou adicionar idiomas seguindo <0>as instruções nesta página </0>."
 
 msgid "Try again?"
-msgstr "Opnieuw proberen?"
+msgstr "Tentar de novo?"
 
 msgid "Twitter"
 msgstr "Twitter"
 
 msgid "Unsupported Address"
-msgstr "Niet Ondersteund Adres"
+msgstr "Endereço não suportado"
 
 msgid "Version"
-msgstr "Versie"
+msgstr "Versão"
 
 msgid "Wallet address"
-msgstr "Wallet adres"
+msgstr "Endereço da carteira"
 
 msgid "Whale"
-msgstr "Walvis"
+msgstr "Baleia"
 
 msgid "What technology does this website use?"
-msgstr "Welke technologie gebruikt deze website?"
+msgstr "Qual tecnologia esse site usa?"
 
 msgid "Where do I report bugs?"
-msgstr "Waar meld ik fouten?"
+msgstr "Onde posso reportar erros?"
 
 msgid "Why are Byron addresses not supported?"
-msgstr "Waarom worden Byron adressen niet ondersteund?"
+msgstr "Por que endereços Byron não são suportados?"
 
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
-msgstr "Waarom wijkt het saldo op deze website af van het saldo in mijn Ergo wallet?"
+msgstr "Por que o saldo neste site é diferente do saldo na minha carteira Ergo?"
 
 msgid "You are Cardano holder"
-msgstr "Je bent Cardano holder"
+msgstr "Você é um detentor de Cardano"
 
 msgid "You are Ergo holder"
-msgstr "Je bent Ergo holder"
+msgstr "Você é detentor de Ergo"
 
 msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
-msgstr "Je kunt al je boxen, en daarmee je saldo, consolideren door alle Ergo naar jezelf te sturen en daarbij gebruik te maken van ofwel een nieuw adres ofwel één van je bestaande ontvangstadressen."
+msgstr "Você pode consolidar todas as suas caixas e, assim, seu saldo, em uma única caixa ao enviar todas suas Ergs para você mesmo usando um novo endereço ou um de seus endereços de recebimento existentes."
 
 msgid "Your Balance"
-msgstr "Jouw Saldo"
+msgstr "Seu Saldo"
 
 msgid "Your Project"
-msgstr "Uw Project"
+msgstr "Seu Projeto"
 
 msgid "Your Rank"
-msgstr "Jouw Ranking"
+msgstr "Sua Classificação"
 
