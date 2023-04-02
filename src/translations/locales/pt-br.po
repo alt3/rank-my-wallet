@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-02 13:39\n"
+"PO-Revision-Date: 2023-04-02 13:41\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -115,7 +115,7 @@ msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wa
 msgstr "Toda carteira Ergo pode ter vários endereços, também chamados de caixa. As carteiras Ergo, como Nautilus, mostram principalmente o seu saldo \"consolidado\", adicionando as quantidades encontradas em todas as caixas relacionadas à sua carteira. No entanto, RankMyWallet só mostrará o saldo de uma única caixa."
 
 msgid "FAQ"
-msgstr "Perguntas Frequentes"
+msgstr "FAQ"
 
 msgid "Fin whale"
 msgstr "Baleia-comum"
