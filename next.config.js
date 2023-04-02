@@ -1,6 +1,6 @@
 // @ts-check
 const { withBlitz } = require("@blitzjs/next")
-const linguiConfig = require("./lingui.config")
+const linguiConfig = require("./lingui.config") // use Lingui config as single source of truth for defining locales
 
 // NextJS bundle analyzer
 const shouldAnalyzeBundles = process.env.ANALYZE === "true"

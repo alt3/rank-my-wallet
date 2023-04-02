@@ -202,6 +202,9 @@ msgstr ""
 msgid "Please provide a wallet address"
 msgstr ""
 
+msgid "Portugese"
+msgstr ""
+
 msgid "Prefix Bits:"
 msgstr ""
 

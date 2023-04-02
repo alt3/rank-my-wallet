@@ -7,7 +7,7 @@ interface Languages {
   territory?: string
 }
 
-export type LOCALES = "de-de" | "en-us" | "hi-in" | "nl-nl" | "ro-ro" | "pseudo"
+export type LOCALES = "de-de" | "en-us" | "hi-in" | "nl-nl" | "pt-br" | "ro-ro" | "pseudo"
 
 const languages: Languages[] = [
   {
@@ -29,6 +29,11 @@ const languages: Languages[] = [
     locale: "nl-nl",
     msg: msg`Dutch`,
     territory: "NL",
+  },
+  {
+    locale: "pt-br",
+    msg: msg`Portugese`,
+    territory: "BR",
   },
   {
     locale: "ro-ro",

@@ -202,6 +202,9 @@ msgstr "Please donate to keep this website ad-free"
 msgid "Please provide a wallet address"
 msgstr "Please provide a wallet address"
 
+msgid "Portugese"
+msgstr "Portugese"
+
 msgid "Prefix Bits:"
 msgstr "Prefix Bits:"
 

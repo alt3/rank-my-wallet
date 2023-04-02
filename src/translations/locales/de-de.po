@@ -207,6 +207,9 @@ msgstr "Bitte hilf uns durch eine kleine Spende diese Website werbefrei zu halte
 msgid "Please provide a wallet address"
 msgstr "Bitte gib deine Wallet Adresse an"
 
+msgid "Portugese"
+msgstr "Portugiesisch"
+
 msgid "Prefix Bits:"
 msgstr "Prefix Bits:"
 

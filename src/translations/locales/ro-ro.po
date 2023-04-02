@@ -207,6 +207,9 @@ msgstr "Vă rugăm să donați pentru a păstra acest site fără reclame"
 msgid "Please provide a wallet address"
 msgstr "Vă rugăm să furnizaţi adresa portofelului"
 
+msgid "Portugese"
+msgstr "Portugheză"
+
 msgid "Prefix Bits:"
 msgstr "Prefix de Biți:"
 
