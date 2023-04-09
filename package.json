@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "scripts": {
     "analyze": "cross-env ANALYZE=true blitz build",
-    "predev": "docker-compose up -d",
     "dev": "blitz dev",
     "build": "blitz build",
     "postbuild": "next-sitemap",
