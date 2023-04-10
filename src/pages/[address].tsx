@@ -4,9 +4,11 @@ import Head from "next/head"
 import { Suspense } from "react"
 import { AddressDetails, SuspenseLoader } from "src/components"
 import Layout from "src/core/layouts/Layout"
+import { parseAddress, validateAddress } from "src/lib"
 import { loadCatalog } from "src/translations/utils"
+import superjson from "superjson"
 
-const ShowRankingPage: BlitzPage = () => {
+const ShowRankingPage: BlitzPage = ({ addressDetails }: any) => {
   const pageTitle = "RankMyWallet"
 
   return (
@@ -16,7 +18,7 @@ const ShowRankingPage: BlitzPage = () => {
       </Head>
       <div>
         <Suspense fallback={<SuspenseLoader />}>
-          <AddressDetails />
+          <AddressDetails addressDetails={superjson.parse(addressDetails)} />
         </Suspense>
       </div>
     </>
@@ -26,9 +28,18 @@ const ShowRankingPage: BlitzPage = () => {
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext
 ): Promise<GetServerSidePropsResult<any>> {
+  // @ts-ignore: Object is possibly 'null'.
+  const parsedAddress = parseAddress(ctx.params.address)
+  const validatedAddress = { parsed: validateAddress(parsedAddress) }
+
+  if (validatedAddress.parsed.isSupported === false) {
+    ctx.res.statusCode = 404
+  }
+
   return {
     props: {
       i18n: await loadCatalog(ctx.locale as string),
+      addressDetails: superjson.stringify(validatedAddress),
     },
   }
 }

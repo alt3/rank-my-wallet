@@ -41,7 +41,6 @@ export const validateAddress = function (
 
   // not a Cardano Type-00 address
   if (parsedAddress.blockchain.name === "Cardano" && parsedAddress.type.type !== 0) {
-    console.log("not supported mi mang")
     parsedAddress.unsupported = {
       type: "UnsupportedType",
     }
