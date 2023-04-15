@@ -1,8 +1,10 @@
 import { BlitzPage } from "@blitzjs/next"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
+import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { BackHomeButton, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
+import { loadCatalog } from "src/translations/utils"
 
 // ------------------------------------------------------
 // This page is rendered if a route match is not found
@@ -24,6 +26,18 @@ const Page404: BlitzPage = () => {
       <BackHomeButton title={t`Back to homepage`} />
     </>
   )
+}
+
+export async function getStaticProps(
+  ctx: GetStaticPropsContext
+): Promise<GetStaticPropsResult<any>> {
+  console.log(ctx)
+
+  return {
+    props: {
+      i18n: await loadCatalog(ctx.locale as string),
+    },
+  }
 }
 
 Page404.suppressFirstRenderFlicker = true
