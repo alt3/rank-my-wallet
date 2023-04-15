@@ -32,10 +32,6 @@ export async function getServerSideProps(
   const parsedAddress = parseAddress(ctx.params.address)
   const validatedAddress = { parsed: validateAddress(parsedAddress) }
 
-  if (validatedAddress.parsed.isSupported === false) {
-    ctx.res.statusCode = 404
-  }
-
   return {
     props: {
       i18n: await loadCatalog(ctx.locale as string),
