@@ -14,6 +14,10 @@ import { unsupportedAddressMessage } from "src/lib"
 export function UnsupportedAddressDetails({ parsed }) {
   useLingui()
 
+  if (process && process.env.NODE_ENV !== "production") {
+    console.log({ parsed })
+  }
+
   return (
     <>
       <MetaTags

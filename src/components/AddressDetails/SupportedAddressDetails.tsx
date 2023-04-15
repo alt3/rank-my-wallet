@@ -1,3 +1,4 @@
+import { useQuery } from "@blitzjs/rpc"
 import {
   Accordion,
   AccordionButton,
@@ -10,7 +11,7 @@ import {
   GridItem,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import {
   AccordionItemAddressAnalysis,
@@ -46,6 +47,7 @@ import {
   SwordfishIcon,
   WhaleIcon,
 } from "src/components/Images/Species"
+import getAddressDetails from "src/core/queries/getAddressDetails"
 import { bigToString } from "src/lib"
 
 const imageComponents = {
@@ -68,12 +70,20 @@ const imageComponents = {
   Whale: WhaleIcon,
 }
 
-export function SupportedAddressDetails({ parsed, addressCount, balance, species, rankings }) {
+export function SupportedAddressDetails({ parsed }) {
   const { i18n } = useLingui()
+
+  const [addressDetails] = useQuery(getAddressDetails, parsed, {
+    staleTime: Infinity,
+  })
+
+  if (process && process.env.NODE_ENV !== "production") {
+    console.log(addressDetails)
+  }
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
-  const SpeciesImageComponent = imageComponents[species.current.icon] // dynamically load the correct image component
+  const SpeciesImageComponent = imageComponents[addressDetails.species.current.icon] // dynamically load the correct image component
 
   const styles = {
     gridField: {
@@ -95,29 +105,33 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
       />
 
       <ContentContainer>
-        {(balance.nano === "0" || balance.nano === 0) && (
+        {(addressDetails.balance.nano === "0" || addressDetails.balance.nano === 0) && (
           <PageHero
             title={<Trans>Sorry, we do not rank empty wallets</Trans>}
             marginBottom={{ base: "2rem", md: "8rem" }}
           />
         )}
 
-        {parsed.blockchain.name === "Cardano" && balance.nano !== "0" && balance.nano !== 0 && (
-          <>
-            <PageHero
-              title={<Trans>Cardano Rankings are coming soon</Trans>}
-              marginBottom={{ base: "2rem", md: "8rem" }}
-            />
-          </>
-        )}
+        {parsed.blockchain.name === "Cardano" &&
+          addressDetails.balance.nano !== "0" &&
+          addressDetails.balance.nano !== 0 && (
+            <>
+              <PageHero
+                title={<Trans>Cardano Rankings are coming soon</Trans>}
+                marginBottom={{ base: "2rem", md: "8rem" }}
+              />
+            </>
+          )}
 
-        {parsed.blockchain.name !== "Cardano" && balance.nano !== "0" && balance.nano !== 0 && (
-          <Counter
-            blockchain={parsed.blockchain.name}
-            totalAccounts={addressCount}
-            rank={rankings.find(({ position }) => position === "current").rank}
-          />
-        )}
+        {parsed.blockchain.name !== "Cardano" &&
+          addressDetails.balance.nano !== "0" &&
+          addressDetails.balance.nano !== 0 && (
+            <Counter
+              blockchain={parsed.blockchain.name}
+              totalAccounts={addressDetails.addressCount}
+              rank={addressDetails.rankings.find(({ position }) => position === "current").rank}
+            />
+          )}
 
         <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
@@ -133,7 +147,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
-                ticker={bigToString(balance.ticker, i18n.locale, 0)}
+                ticker={bigToString(addressDetails.balance.ticker, i18n.locale, 0)}
                 tickerSymbol={parsed.currency.tickerSymbol}
               ></TickerString>
             </GridItem>
@@ -149,14 +163,18 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 passHref
                 withExternalIcon
               >
-                {i18n._(species.current.name)}
+                {i18n._(addressDetails.species.current.name)}
               </Link>
             </GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Next Species</Trans>
             </GridItem>
-            <GridItem {...styles.gridValue}>{i18n._(species.next.name)}</GridItem>
+            <GridItem {...styles.gridValue}>
+              {addressDetails.species.next !== undefined
+                ? i18n._(addressDetails.species.next.name)
+                : null}
+            </GridItem>
 
             <GridItem {...styles.gridField}>
               <Trans>Starts At</Trans>
@@ -164,7 +182,11 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
-                ticker={bigToString(species.next.startsAt, i18n.locale, 0)}
+                ticker={
+                  addressDetails.species.next !== undefined
+                    ? bigToString(addressDetails.species.next.startsAt, i18n.locale, 0)
+                    : "-"
+                }
                 tickerSymbol={parsed.currency.tickerSymbol}
               ></TickerString>
             </GridItem>
@@ -175,7 +197,15 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
             <GridItem {...styles.gridValue}>
               {" "}
               <TickerString
-                ticker={bigToString(species.next.requires, i18n.locale, parsed.currency.decimals)}
+                ticker={
+                  addressDetails.species.next !== undefined
+                    ? bigToString(
+                        addressDetails.species.next.requires,
+                        i18n.locale,
+                        parsed.currency.decimals
+                      )
+                    : "-"
+                }
                 tickerSymbol={parsed.currency.tickerSymbol}
                 fractionsColor={fractionsColor}
               ></TickerString>
@@ -200,7 +230,7 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
 
         <Accordion allowMultiple>
           {/* COMPETITION PANE - IF APPLICABLE */}
-          {rankings.length > 1 && (
+          {addressDetails.rankings.length > 1 && (
             <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
               <h2>
                 <AccordionButton p={0}>
@@ -218,14 +248,14 @@ export function SupportedAddressDetails({ parsed, addressCount, balance, species
                 <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
                   <DataGridEntry
                     field={t`Competitors`}
-                    value={bigToString(addressCount, i18n.locale, 0)}
+                    value={bigToString(addressDetails.addressCount, i18n.locale, 0)}
                     url={{
                       href: "https://ergo.watch/metrics/addresses",
                       isExternal: true,
                     }}
                   />
                 </DataGrid>
-                <RankingsTable rankings={rankings} />
+                <RankingsTable rankings={addressDetails.rankings} />
               </AccordionPanel>
             </AccordionItem>
           )}

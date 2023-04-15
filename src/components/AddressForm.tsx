@@ -35,6 +35,10 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
   }, [setFocus])
 
   function onSubmit(values) {
+    if (router.query.address === values.address) {
+      return null // Prevent Invariant Error: attempted to hard navigate to the same URL
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     router.push("/" + values.address)
   }
