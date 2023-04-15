@@ -31,8 +31,6 @@ const Page404: BlitzPage = () => {
 export async function getStaticProps(
   ctx: GetStaticPropsContext
 ): Promise<GetStaticPropsResult<any>> {
-  console.log(ctx)
-
   return {
     props: {
       i18n: await loadCatalog(ctx.locale as string),
