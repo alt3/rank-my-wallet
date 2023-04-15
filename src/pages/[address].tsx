@@ -2,13 +2,13 @@ import { BlitzPage } from "@blitzjs/next"
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
 import Head from "next/head"
 import { Suspense } from "react"
-import { AddressDetails, SuspenseLoader } from "src/components"
+import { SupportedAddressDetails, SuspenseLoader } from "src/components"
 import Layout from "src/core/layouts/Layout"
 import { parseAddress, validateAddress } from "src/lib"
 import { loadCatalog } from "src/translations/utils"
 import superjson from "superjson"
 
-const ShowRankingPage: BlitzPage = ({ addressDetails }: any) => {
+const ShowRankingPage: BlitzPage = ({ validated }: any) => {
   const pageTitle = "RankMyWallet"
 
   return (
@@ -18,7 +18,7 @@ const ShowRankingPage: BlitzPage = ({ addressDetails }: any) => {
       </Head>
       <div>
         <Suspense fallback={<SuspenseLoader />}>
-          <AddressDetails addressDetails={superjson.parse(addressDetails)} />
+          <SupportedAddressDetails parsed={superjson.parse(validated)} />
         </Suspense>
       </div>
     </>
@@ -32,10 +32,16 @@ export async function getServerSideProps(
   const parsedAddress = parseAddress(ctx.params.address)
   const validatedAddress = { parsed: validateAddress(parsedAddress) }
 
+  if (validatedAddress.parsed.isSupported === false) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
     props: {
       i18n: await loadCatalog(ctx.locale as string),
-      addressDetails: superjson.stringify(validatedAddress),
+      validated: superjson.stringify(validatedAddress.parsed),
     },
   }
 }

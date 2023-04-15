@@ -1,3 +1,4 @@
+import { useQuery } from "@blitzjs/rpc"
 import {
   Accordion,
   AccordionButton,
@@ -10,7 +11,7 @@ import {
   GridItem,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import {
   AccordionItemAddressAnalysis,
@@ -46,6 +47,7 @@ import {
   SwordfishIcon,
   WhaleIcon,
 } from "src/components/Images/Species"
+import getAddressDetails from "src/core/queries/getAddressDetails"
 import { bigToString } from "src/lib"
 
 const imageComponents = {
@@ -67,8 +69,6 @@ const imageComponents = {
   Swordfish: SwordfishIcon,
   Whale: WhaleIcon,
 }
-import getAddressDetails from "src/core/queries/getAddressDetails"
-import { useQuery } from "@blitzjs/rpc"
 
 export function SupportedAddressDetails({ parsed }) {
   const { i18n } = useLingui()
