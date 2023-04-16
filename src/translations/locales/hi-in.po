@@ -296,7 +296,7 @@ msgstr "टिप बॉक्स"
 msgid "Trailing Prefix Bits:"
 msgstr "ट्रेलिंग प्रीफिक्स बिट्स:"
 
-msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
+msgid "Translators do not require coding skills and can help correcting or adding languages by following the <0>instructions on this page</0>."
 msgstr "अनुवादकों को कोडिंग कौशल की आवश्यकता नहीं होती है और <0>इस पृष्ठ पर दिए गए निर्देशों</0> का पालन करके भाषाओं को सुधारने या जोड़ने में सहायता कर सकते हैं।"
 
 msgid "Try again?"

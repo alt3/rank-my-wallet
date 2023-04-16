@@ -88,7 +88,7 @@ const FaqPage: BlitzPage = () => {
                 <AccordionItemFaq question={<Trans>How can I help with translations?</Trans>}>
                   <Trans>
                     Translators do not require coding skills and can help correcting or adding
-                    languages by following{" "}
+                    languages by following the{" "}
                     <Link
                       href="https://github.com/alt3/rank-my-wallet/blob/main/contributing.md#translations"
                       color={useColorModeValue("pink.600", "pink.400")}
@@ -96,7 +96,7 @@ const FaqPage: BlitzPage = () => {
                       passHref
                       withExternalIcon
                     >
-                      the instructions on this page
+                      instructions on this page
                     </Link>
                     .
                   </Trans>
