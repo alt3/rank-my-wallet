@@ -296,8 +296,8 @@ msgstr "Caixa de gorjetas"
 msgid "Trailing Prefix Bits:"
 msgstr "Últimos Bits de prefixo:"
 
-msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr "Não é necessário que tradutores possuam habilidades de programação, e podem ajudar a corrigir ou adicionar idiomas seguindo <0>as instruções nesta página </0>."
+msgid "Translators do not require coding skills and can help correcting or adding languages by following the <0>instructions on this page</0>."
+msgstr "Não é necessário que tradutores possuam habilidades de programação, e podem ajudar a corrigir ou adicionar idiomas seguindo as <0>instruções nesta página </0>."
 
 msgid "Try again?"
 msgstr "Tentar de novo?"

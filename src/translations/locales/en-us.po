@@ -291,8 +291,8 @@ msgstr "Tip Box"
 msgid "Trailing Prefix Bits:"
 msgstr "Trailing Prefix Bits:"
 
-msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
+msgid "Translators do not require coding skills and can help correcting or adding languages by following the <0>instructions on this page</0>."
+msgstr "Translators do not require coding skills and can help correcting or adding languages by following the <0>instructions on this page</0>."
 
 msgid "Try again?"
 msgstr "Try again?"
@@ -341,3 +341,4 @@ msgstr "Your Project"
 
 msgid "Your Rank"
 msgstr "Your Rank"
+

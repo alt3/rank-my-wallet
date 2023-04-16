@@ -296,8 +296,8 @@ msgstr "Tip Box"
 msgid "Trailing Prefix Bits:"
 msgstr "Trailing Prefix Bits:"
 
-msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
-msgstr "Übersetzer benötigen keine Programmierkenntnisse, können aber helfen, Sprachen zu korrigieren oder Neue hinzuzufügen, indem sie <0>den Anweisungen auf dieser Seite</0> folgen."
+msgid "Translators do not require coding skills and can help correcting or adding languages by following the <0>instructions on this page</0>."
+msgstr "Übersetzer benötigen keine Programmierkenntnisse, können aber helfen, Sprachen zu korrigieren oder Neue hinzuzufügen, indem sie den <0>Anweisungen auf dieser Seite</0> folgen."
 
 msgid "Try again?"
 msgstr "Erneut versuchen?"

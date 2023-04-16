@@ -296,7 +296,7 @@ msgstr "Bacșiș"
 msgid "Trailing Prefix Bits:"
 msgstr "Urmă Prefix de Biți:"
 
-msgid "Translators do not require coding skills and can help correcting or adding languages by following <0>the instructions on this page</0>."
+msgid "Translators do not require coding skills and can help correcting or adding languages by following the <0>instructions on this page</0>."
 msgstr "Traducătorii nu au nevoie de abilități de codare și pot ajuta la corectarea sau adăugarea limbilor <0>urmărind instrucțiunile de pe această pagină</0>."
 
 msgid "Try again?"
