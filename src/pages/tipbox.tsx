@@ -1,8 +1,8 @@
 import { BlitzPage } from "@blitzjs/next"
 import { Box, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
+import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { BsHeartFill } from "react-icons/bs"
 import { ContentContainer, MetaTags, PageHero, TipboxCard } from "src/components"
 import tipboxAddresses from "src/core/constants/tipbox-addresses"
@@ -72,9 +72,9 @@ const TipBox: BlitzPage = () => {
   )
 }
 
-export async function getServerSideProps(
-  ctx: GetServerSidePropsContext
-): Promise<GetServerSidePropsResult<any>> {
+export async function getStaticProps(
+  ctx: GetStaticPropsContext
+): Promise<GetStaticPropsResult<any>> {
   return {
     props: {
       i18n: await loadCatalog(ctx.locale as string),

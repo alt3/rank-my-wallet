@@ -1,7 +1,7 @@
 import { BlitzPage } from "@blitzjs/next"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
+import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { ContentContainer, MetaTags, PageHero, SpeciesTable } from "src/components"
 import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
@@ -31,9 +31,9 @@ const ErgoSpeciesPage: BlitzPage = () => {
   )
 }
 
-export async function getServerSideProps(
-  ctx: GetServerSidePropsContext
-): Promise<GetServerSidePropsResult<any>> {
+export async function getStaticProps(
+  ctx: GetStaticPropsContext
+): Promise<GetStaticPropsResult<any>> {
   return {
     props: {
       i18n: await loadCatalog(ctx.locale as string),
