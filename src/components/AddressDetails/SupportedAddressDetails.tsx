@@ -34,17 +34,11 @@ import {
 import getAddressDetails from "src/core/queries/getAddressDetails"
 import { bigToString } from "src/lib"
 
-const dynamicallyImportSpeciesImage = (species: any) => {
-  const ImageComponent: ComponentType<HTMLChakraProps<"svg">> = dynamic(
-    () => import(`src/components/Images/Species/${species}`),
-    { ssr: false }
-  )
-  return (
-    <ImageComponent
-      height={{ base: "100px", sm: "75%" }}
-      marginLeft={{ base: "inherit", sm: "auto" }}
-    />
-  )
+const dynamicallyImportSpeciesImage = (species: any, props: HTMLChakraProps<"svg">) => {
+  const ImageComponent = dynamic(() => import(`src/components/Images/Species/${species}`), {
+    ssr: false,
+  })
+  return <ImageComponent {...props} />
 }
 
 export function SupportedAddressDetails({ parsed }) {
@@ -194,7 +188,10 @@ export function SupportedAddressDetails({ parsed }) {
               colStart={{ base: 9, sm: 9 }}
               colSpan={{ base: 4, sm: 4 }}
             >
-              {dynamicallyImportSpeciesImage(addressDetails.species.current.icon)}
+              {dynamicallyImportSpeciesImage(addressDetails.species.current.icon, {
+                height: { base: "100px", sm: "75%" },
+                marginLeft: { base: "inherit", sm: "auto" },
+              })}
             </GridItem>
           </Grid>
         </Box>
