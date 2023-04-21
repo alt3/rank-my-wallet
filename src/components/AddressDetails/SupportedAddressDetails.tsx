@@ -9,10 +9,13 @@ import {
   Divider,
   Grid,
   GridItem,
+  HTMLChakraProps,
   useColorModeValue,
 } from "@chakra-ui/react"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
+import dynamic from "next/dynamic"
+import { ComponentType } from "react"
 import {
   AccordionItemAddressAnalysis,
   AccordionItemAddressDetails,
@@ -28,46 +31,14 @@ import {
   SectionHeader,
   TickerString,
 } from "src/components"
-import {
-  CrabIcon,
-  FishIcon,
-  GhostIcon,
-  JellyfishIcon,
-  OctopusIcon,
-  OrcaIcon,
-  OysterIcon,
-  PipefishIcon,
-  PiranhaIcon,
-  PlanktonIcon,
-  SeahorseIcon,
-  SharkIcon,
-  ShellIcon,
-  ShrimpIcon,
-  StarfishIcon,
-  SwordfishIcon,
-  WhaleIcon,
-} from "src/components/Images/Species"
 import getAddressDetails from "src/core/queries/getAddressDetails"
 import { bigToString } from "src/lib"
 
-const imageComponents = {
-  Crab: CrabIcon,
-  Fish: FishIcon,
-  Ghost: GhostIcon,
-  Jellyfish: JellyfishIcon,
-  Octopus: OctopusIcon,
-  Orca: OrcaIcon,
-  Oyster: OysterIcon,
-  Pipefish: PipefishIcon,
-  Piranha: PiranhaIcon,
-  Plankton: PlanktonIcon,
-  Seahorse: SeahorseIcon,
-  Shark: SharkIcon,
-  Shell: ShellIcon,
-  Shrimp: ShrimpIcon,
-  Starfish: StarfishIcon,
-  Swordfish: SwordfishIcon,
-  Whale: WhaleIcon,
+const dynamicallyImportSpeciesImage = (species: any, props: HTMLChakraProps<"svg">) => {
+  const ImageComponent = dynamic(() => import(`src/components/Images/Species/${species}`), {
+    ssr: false,
+  })
+  return <ImageComponent {...props} />
 }
 
 export function SupportedAddressDetails({ parsed }) {
@@ -83,7 +54,6 @@ export function SupportedAddressDetails({ parsed }) {
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
-  const SpeciesImageComponent = imageComponents[addressDetails.species.current.icon] // dynamically load the correct image component
 
   const styles = {
     gridField: {
@@ -218,10 +188,10 @@ export function SupportedAddressDetails({ parsed }) {
               colStart={{ base: 9, sm: 9 }}
               colSpan={{ base: 4, sm: 4 }}
             >
-              <SpeciesImageComponent
-                height={{ base: "100px", sm: "75%" }}
-                marginLeft={{ base: "inherit", sm: "auto" }}
-              />
+              {dynamicallyImportSpeciesImage(addressDetails.species.current.icon, {
+                height: { base: "100px", sm: "75%" },
+                marginLeft: { base: "inherit", sm: "auto" },
+              })}
             </GridItem>
           </Grid>
         </Box>
