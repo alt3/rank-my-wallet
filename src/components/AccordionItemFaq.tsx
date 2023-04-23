@@ -1,11 +1,6 @@
-import {
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { Box } from "@chakra-ui/layout"
+import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel } from "@chakra-ui/accordion"
 
 export function AccordionItemFaq({ question, children }) {
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")

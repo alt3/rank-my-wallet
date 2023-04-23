@@ -1,4 +1,5 @@
-import { createStylesContext, Grid, useMultiStyleConfig } from "@chakra-ui/react"
+import { Grid } from "@chakra-ui/layout"
+import { createStylesContext, useMultiStyleConfig } from "@chakra-ui/system"
 
 const [StylesProvider, useStyles] = createStylesContext("Component")
 

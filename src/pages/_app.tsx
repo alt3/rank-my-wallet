@@ -1,5 +1,5 @@
 import { AppProps, ErrorBoundary, ErrorFallbackProps } from "@blitzjs/next"
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/provider"
 import { I18nProvider } from "@lingui/react"
 import { Analytics } from "@vercel/analytics/react"
 import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users

@@ -1,4 +1,4 @@
-import { chakra, HTMLChakraProps } from "@chakra-ui/react"
+import { chakra, HTMLChakraProps } from "@chakra-ui/system"
 
 export const StarfishIcon = (props: HTMLChakraProps<"svg">) => {
   const class1Fill = "" //"#a6dcf7"

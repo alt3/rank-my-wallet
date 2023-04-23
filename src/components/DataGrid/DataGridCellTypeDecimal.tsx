@@ -1,7 +1,7 @@
-import { Td } from "@chakra-ui/react"
-import nextId from "react-id-generator"
+import { useMediaQuery } from "@chakra-ui/media-query"
+import { Td } from "@chakra-ui/table"
 import isEqual from "lodash.isequal"
-import { useMediaQuery } from "@chakra-ui/react"
+import nextId from "react-id-generator"
 
 // Simple lookup table to keep sanity
 const bitLookup = [

@@ -1,5 +1,6 @@
 import { FrontpageCard } from "@/components/FrontpageCard"
-import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { Box, Center, SimpleGrid, Text } from "@chakra-ui/layout"
 import { Trans } from "@lingui/macro"
 import { BsHeartFill } from "react-icons/bs"
 

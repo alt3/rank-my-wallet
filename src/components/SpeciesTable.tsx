@@ -1,4 +1,6 @@
-import { Box, Center, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { Box, Center } from "@chakra-ui/layout"
+import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/table"
 import { MessageDescriptor } from "@lingui/core"
 import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"

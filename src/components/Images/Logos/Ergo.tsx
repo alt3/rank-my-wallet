@@ -1,4 +1,4 @@
-import { chakra, HTMLChakraProps } from "@chakra-ui/react"
+import { chakra, HTMLChakraProps } from "@chakra-ui/system"
 
 export const ErgoLogo = (props: HTMLChakraProps<"svg">) => {
   const fill = props.fill ? props.fill.toString() : "#000000"

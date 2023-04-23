@@ -1,5 +1,7 @@
 import { AddressForm } from "@/components/AddressForm"
-import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/layout"
+
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 

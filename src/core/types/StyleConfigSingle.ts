@@ -1,4 +1,5 @@
-import { SystemStyleObject, Theme, StyleProps } from "@chakra-ui/react"
+import { StyleProps, SystemStyleObject } from "@chakra-ui/system"
+import { Theme } from "@chakra-ui/theme"
 
 /**
  * Default properties for styling single part components with working VSCode autosuggest for css

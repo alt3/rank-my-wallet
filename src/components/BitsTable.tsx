@@ -1,6 +1,6 @@
 import BitsTableDesktop from "@/components/BitsTable/BitsTableDesktop"
 import BitsTableMobile from "@/components/BitsTable/BitsTableMobile"
-import { useMediaQuery } from "@chakra-ui/react"
+import { useMediaQuery } from "@chakra-ui/media-query"
 
 interface BitsTableProps {
   caption: string
