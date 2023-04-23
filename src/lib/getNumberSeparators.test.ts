@@ -1,4 +1,4 @@
-import getNumberSeparators from "./getNumberSeparators"
+import getNumberSeparators from "src/lib/getNumberSeparators"
 
 const expected = [
   {

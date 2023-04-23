@@ -7,7 +7,7 @@ interface Props {
   addressType?: string
 }
 
-export const unsupportedAddressMessage = ({
+export const getUnsupportedAddressMessage = ({
   type,
   blockchain,
   network,

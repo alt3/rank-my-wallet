@@ -40,7 +40,7 @@ interface Payload {
 /**
  * Base class with properties shared by all blockchain addresses.
  */
-export class BlockchainAddress {
+export class BaseAddress {
   readonly address: string
   class: string
   encoding: string

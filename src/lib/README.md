@@ -1,3 +1,3 @@
 # src/lib
 
-Custom utility functions.
+Custom helper functions.

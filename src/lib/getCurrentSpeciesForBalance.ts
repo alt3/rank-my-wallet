@@ -7,7 +7,7 @@ import species from "src/core/constants/species"
  * @param blockchain - Name of the blockchain
  * @param balance - Wallet balance with or without decimals
  */
-export const getSpecies = function (
+export const getCurrentSpeciesForBalance = function (
   blockchain: "Cardano" | "Ergo",
   balance: number
 ): { name: MessageDescriptor; icon: string; startsAt: number } {

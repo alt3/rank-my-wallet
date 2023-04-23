@@ -1,5 +1,5 @@
 import axios from "axios"
-import { throwError } from "src/lib"
+import { throwError } from "src/lib/throwError"
 
 /**
  * Dummy function until we can fetch rankings for Cardano

@@ -1,5 +1,5 @@
 import Big from "big.js"
-import { getNumberSeparators } from "src/lib"
+import { getNumberSeparators } from "src/lib/getNumberSeparators"
 import toFormat from "toformat"
 
 /**

@@ -9,7 +9,7 @@ import species from "src/core/constants/species"
  * @param balance - Wallet balance with or without decimals
  */
 
-export const getNextSpecies = function (
+export const getNextSpeciesForBalance = function (
   blockchain: "Cardano" | "Ergo",
   balance: Big,
   currentSpeciesName: MessageDescriptor

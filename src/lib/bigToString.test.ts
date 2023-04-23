@@ -1,5 +1,6 @@
-import { bigToString, nanoToTicker } from "src/lib"
 import { Big } from "big.js"
+import { bigToString } from "src/lib/bigToString"
+import { nanoToTicker } from "src/lib/nanoToTicker"
 
 const locale = "en-en"
 

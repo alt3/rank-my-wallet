@@ -7,7 +7,7 @@ import { MetaTags } from "@/components/MetaTags"
 import { Accordion, Divider } from "@chakra-ui/react"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import { unsupportedAddressMessage } from "src/lib"
+import { getUnsupportedAddressMessage } from "src/lib/getUnsupportedAddressMessage"
 
 export function UnsupportedAddressDetails({ parsed }) {
   useLingui()
@@ -27,7 +27,7 @@ export function UnsupportedAddressDetails({ parsed }) {
       <ContentContainer>
         <ErrorHero
           title={t`Unsupported Address`}
-          subtitle={unsupportedAddressMessage({
+          subtitle={getUnsupportedAddressMessage({
             type: parsed.unsupported.type,
             blockchain: parsed.blockchain.name,
             network: parsed.blockchain?.network,

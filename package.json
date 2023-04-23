@@ -1,7 +1,6 @@
 {
   "name": "rank-my-wallet",
   "version": "1.0.0",
-  "sideEffects": false,
   "scripts": {
     "analyze": "cross-env ANALYZE=true blitz build",
     "dev": "blitz dev",

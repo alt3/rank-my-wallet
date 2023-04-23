@@ -8,8 +8,8 @@ import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { useRouter } from "next/router"
 import Layout from "src/core/layouts/Layout"
-import { parseAddress } from "src/lib/address/parseAddress"
-import { validateAddress } from "src/lib/address/validateAddress"
+import { parseAddress } from "src/lib/parseAddress"
+import { validateAddress } from "src/lib/validateAddress"
 import { loadCatalog } from "src/translations/utils"
 
 const Page404: BlitzPage = () => {

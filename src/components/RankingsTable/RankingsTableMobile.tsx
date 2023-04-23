@@ -5,7 +5,8 @@ import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
-import { bigToString, nanoToTicker } from "src/lib"
+import { bigToString } from "src/lib/bigToString"
+import { nanoToTicker } from "src/lib/nanoToTicker"
 
 interface RankingsTableProps {
   rankings: Array<{

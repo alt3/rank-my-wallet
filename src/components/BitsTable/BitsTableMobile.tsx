@@ -5,7 +5,7 @@ import { Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from "@chakr
 import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
-import { bitsToByte } from "src/lib"
+import { bitsToByte } from "src/lib/bits/bitsToByte"
 
 interface BitsTableProps {
   caption: string

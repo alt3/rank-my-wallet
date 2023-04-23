@@ -3,7 +3,7 @@ import { MessageDescriptor } from "@lingui/core"
 import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
-import { bigToString } from "src/lib"
+import { bigToString } from "src/lib/bigToString"
 
 interface SpeciesTableProps {
   blockchain: "Cardano" | "Ergo"

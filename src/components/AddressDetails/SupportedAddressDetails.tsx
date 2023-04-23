@@ -28,9 +28,8 @@ import {
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import dynamic from "next/dynamic"
-
 import getAddressDetails from "src/core/queries/getAddressDetails"
-import { bigToString } from "src/lib"
+import { bigToString } from "src/lib/bigToString"
 
 const dynamicallyImportSpeciesImage = (species: any, props: HTMLChakraProps<"svg">) => {
   const ImageComponent = dynamic(() => import(`@/components/Images/Species/${species}`), {

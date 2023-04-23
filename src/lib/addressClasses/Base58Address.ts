@@ -1,8 +1,11 @@
 import { t } from "@lingui/macro"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
-import { byteToBits, getFirstByte, getLeadingBits, getTrailingBits } from "src/lib"
-import { BlockchainAddress } from "./BlockhainAddress"
+import { BaseAddress } from "src/lib/addressClasses/BaseAddress"
+import { getLeadingBits } from "src/lib/bits/getLeadingBits"
+import { getTrailingBits } from "src/lib/bits/getTrailingBits"
+import { byteToBits } from "src/lib/bytes/byteToBits"
+import { getFirstByte } from "src/lib/bytes/getFirstByte"
 
 /**
  * Ergo address types.
@@ -36,7 +39,7 @@ const ergoAddressTypes = [
 /**
  * Extended class that parses Bech32 address during initialization.
  */
-export class Base58Address extends BlockchainAddress {
+export class Base58Address extends BaseAddress {
   constructor(address: string, decoded: Uint8Array) {
     super(address) // sets address property in the base class (lowercased there)
     this.class = this.constructor.name
