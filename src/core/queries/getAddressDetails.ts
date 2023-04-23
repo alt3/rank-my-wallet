@@ -1,13 +1,14 @@
-import { getNextSpecies, getSpecies, parseAddress, validateAddress } from "src/lib"
-import fetchData from "./fetchData"
+import fetchData from "src/core/queries/fetchData"
+import { getCurrentSpeciesForBalance } from "src/lib/getCurrentSpeciesForBalance"
+import { getNextSpeciesForBalance } from "src/lib/getNextSpeciesForBalance"
 
 export default async function getAddressDetails(parsed) {
   // fetch API data, errors caught automatically
   const apiData = await fetchData(parsed)
 
   // we now have API data, generate remaining properties
-  const currentSpecies = getSpecies(parsed.blockchain.name, apiData.balance.ticker)
-  const nextSpecies = getNextSpecies(
+  const currentSpecies = getCurrentSpeciesForBalance(parsed.blockchain.name, apiData.balance.ticker)
+  const nextSpecies = getNextSpeciesForBalance(
     parsed.blockchain.name,
     apiData.balance.ticker,
     currentSpecies.name

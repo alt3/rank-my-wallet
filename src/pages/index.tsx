@@ -1,6 +1,10 @@
+import { ContentContainer } from "@/components/ContentContainer"
+import { AddressHero } from "@/components/Heroes/AddressHero"
+import { MetaTags } from "@/components/MetaTags"
+import { Sponsors } from "@/components/Sponsors"
+import { SupportedBlockChains } from "@/components/SupportedBlockchains"
 import { BlitzPage } from "@blitzjs/next"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
-import { BlockChains, ContentContainer, Hero, MetaTags, Sponsors } from "src/components"
 import Layout from "src/core/layouts/Layout"
 import { loadCatalog } from "src/translations/utils"
 
@@ -13,10 +17,10 @@ const Home: BlitzPage = () => {
         keywords="crypto, blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
       />
 
-      <Hero />
+      <AddressHero />
 
       <ContentContainer>
-        <BlockChains />
+        <SupportedBlockChains />
         <Sponsors />
       </ContentContainer>
     </>

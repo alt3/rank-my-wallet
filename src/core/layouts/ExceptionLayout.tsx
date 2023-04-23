@@ -1,6 +1,6 @@
+import { ContentContainer } from "@/components/ContentContainer"
 import { BlitzLayout } from "@blitzjs/next"
 import Head from "next/head"
-import { ContentContainer } from "src/components"
 
 const ExceptionLayout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   return (

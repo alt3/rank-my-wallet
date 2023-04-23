@@ -1,8 +1,10 @@
+import { PageHero } from "@/components/Heroes/PageHero"
+import { MetaTags } from "@/components/MetaTags"
+import { SpeciesNavbar } from "@/components/SpeciesNavbar"
 import { BlitzPage } from "@blitzjs/next"
 import { t, Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
-import { MetaTags, PageHero, SpeciesNavbar } from "src/components"
 import Layout from "src/core/layouts/Layout"
 import { loadCatalog } from "src/translations/utils"
 

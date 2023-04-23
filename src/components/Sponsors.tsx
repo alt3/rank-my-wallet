@@ -1,7 +1,7 @@
+import { FrontpageCard } from "@/components/FrontpageCard"
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
 import { Trans } from "@lingui/macro"
 import { BsHeartFill } from "react-icons/bs"
-import { FrontpageCard } from "./Cards"
 
 export function Sponsors() {
   const styles = {

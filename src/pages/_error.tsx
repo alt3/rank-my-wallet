@@ -1,6 +1,7 @@
+import { BackHomeButton } from "@/components/BackHomeButton"
+import { PageHero } from "@/components/Heroes/PageHero"
 import { Text, useColorModeValue } from "@chakra-ui/react"
 import { t } from "@lingui/macro"
-import { BackHomeButton, PageHero } from "src/components"
 import ExceptionLayout from "src/core/layouts/ExceptionLayout"
 
 /**

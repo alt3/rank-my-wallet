@@ -1,3 +1,16 @@
+import { AccordionItemAddressAnalysis } from "@/components/AddressDetails/AccordionItemAddressAnalysis"
+import { AccordionItemAddressDetails } from "@/components/AddressDetails/AccordionItemAddressDetails"
+import { SectionHeader } from "@/components/AddressDetails/SectionHeader"
+import { ContentContainer } from "@/components/ContentContainer"
+import { Counter } from "@/components/Counter"
+import { DataGrid } from "@/components/DataGrid"
+import { DataGridEntry } from "@/components/DataGridEntry"
+import { PageHero } from "@/components/Heroes/PageHero"
+import { Link } from "@/components/Link"
+import { MetaTags } from "@/components/MetaTags"
+import { PleaseDonate } from "@/components/PleaseDonate"
+import { RankingsTable } from "@/components/RankingsTable"
+import { TickerString } from "@/components/TickerString"
 import { useQuery } from "@blitzjs/rpc"
 import {
   Accordion,
@@ -15,27 +28,11 @@ import {
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import dynamic from "next/dynamic"
-import { ComponentType } from "react"
-import {
-  AccordionItemAddressAnalysis,
-  AccordionItemAddressDetails,
-  ContentContainer,
-  Counter,
-  DataGrid,
-  DataGridEntry,
-  Link,
-  MetaTags,
-  PageHero,
-  PleaseDonate,
-  RankingsTable,
-  SectionHeader,
-  TickerString,
-} from "src/components"
 import getAddressDetails from "src/core/queries/getAddressDetails"
-import { bigToString } from "src/lib"
+import { bigToString } from "src/lib/bigToString"
 
 const dynamicallyImportSpeciesImage = (species: any, props: HTMLChakraProps<"svg">) => {
-  const ImageComponent = dynamic(() => import(`src/components/Images/Species/${species}`), {
+  const ImageComponent = dynamic(() => import(`@/components/Images/Species/${species}`), {
     ssr: false,
   })
   return <ImageComponent {...props} />

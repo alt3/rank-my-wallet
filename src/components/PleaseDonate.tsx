@@ -1,7 +1,7 @@
+import { Link } from "@/components/Link"
 import { Box, Text, useColorModeValue } from "@chakra-ui/react"
 import { Trans } from "@lingui/macro"
 import { BsHeartFill } from "react-icons/bs"
-import { Link } from "src/components"
 
 export function PleaseDonate({ ...rest }) {
   return (

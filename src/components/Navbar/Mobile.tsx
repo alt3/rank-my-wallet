@@ -1,3 +1,7 @@
+import { LogoMobile } from "@/components/Images/Logos/LogoMobile"
+import { Link } from "@/components/Link"
+import { LocaleSwitcher } from "@/components/LocaleSwitcher"
+import { Drawer } from "@/components/Navbar/Drawer"
 import {
   Box,
   Button,
@@ -13,9 +17,6 @@ import { useLingui } from "@lingui/react"
 import React from "react"
 import { BsList, BsMoonFill, BsSunFill } from "react-icons/bs"
 import { HiExternalLink } from "react-icons/hi"
-import { Link, LocaleSwitcher } from "src/components"
-import { LogoMobile } from "../Images/Logos"
-import { Drawer } from "./Drawer"
 
 interface NavbarProps {
   logoColorPrimary: string // TODO: use stricter type

@@ -1,5 +1,5 @@
+import { Link } from "@/components/Link"
 import { Button, Center } from "@chakra-ui/react"
-import { Link } from "src/components"
 
 export function BackHomeButton({ title, buttonSize = "lg", ...rest }) {
   return (

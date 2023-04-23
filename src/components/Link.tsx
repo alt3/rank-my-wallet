@@ -1,6 +1,6 @@
+import { ExternalLinkIcon } from "@/components/ExternalLinkIcon"
 import { Link as ChakraLink, LinkProps as ChakraLinkProps } from "@chakra-ui/react"
 import NextLink, { LinkProps as NextLinkProps } from "next/link"
-import { ExternalLinkIcon } from "src/components"
 
 interface LinkProps extends NextLinkProps, Omit<ChakraLinkProps, keyof NextLinkProps> {}
 

@@ -1,3 +1,6 @@
+import { SectionHeader } from "@/components/AddressDetails/SectionHeader"
+import { DataGrid } from "@/components/DataGrid"
+import { DataGridEntry } from "@/components/DataGridEntry"
 import {
   AccordionButton,
   AccordionIcon,
@@ -6,9 +9,8 @@ import {
   Box,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import { DataGrid, DataGridEntry, SectionHeader } from "src/components"
 
 export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
   useLingui()

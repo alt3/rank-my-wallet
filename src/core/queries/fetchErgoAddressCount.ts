@@ -1,5 +1,5 @@
 import axios from "axios"
-import { throwError } from "src/lib"
+import { throwError } from "src/lib/throwError"
 
 /**
  * Fetches the total number of all (non-zero) P2PK addresses from the ErgoWatch API.

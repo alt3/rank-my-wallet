@@ -2,7 +2,7 @@ import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from 
 import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import Countup from "react-countup"
-import { getNumberSeparators } from "src/lib"
+import { getNumberSeparators } from "src/lib/getNumberSeparators"
 
 interface CounterProps {
   totalAccounts: number
