@@ -1,11 +1,15 @@
+import { UnsupportedAddressDetails } from "@/components/AddressDetails/UnsupportedAddressDetails"
+import { BackHomeButton } from "@/components/BackHomeButton"
+import { ErrorHero } from "@/components/Heroes/ErrorHero"
+import { MetaTags } from "@/components/MetaTags"
 import { BlitzPage } from "@blitzjs/next"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { useRouter } from "next/router"
-import { BackHomeButton, ErrorHero, MetaTags, UnsupportedAddressDetails } from "src/components"
 import Layout from "src/core/layouts/Layout"
-import { parseAddress, validateAddress } from "src/lib"
+import { parseAddress } from "src/lib/address/parseAddress"
+import { validateAddress } from "src/lib/address/validateAddress"
 import { loadCatalog } from "src/translations/utils"
 
 const Page404: BlitzPage = () => {

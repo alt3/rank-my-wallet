@@ -1,9 +1,12 @@
+import { ContentContainer } from "@/components/ContentContainer"
+import { PageHero } from "@/components/Heroes/PageHero"
+import { Link } from "@/components/Link"
+import { MetaTags } from "@/components/MetaTags"
 import { BlitzPage } from "@blitzjs/next"
 import { Text, useColorModeValue } from "@chakra-ui/react"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
-import { ContentContainer, Link, MetaTags, PageHero } from "src/components"
 import Layout from "src/core/layouts/Layout"
 import { loadCatalog } from "src/translations/utils"
 

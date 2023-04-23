@@ -1,8 +1,10 @@
+import { ExternalLinkIcon } from "@/components/ExternalLinkIcon"
+import { Link } from "@/components/Link"
+import { TickerString } from "@/components/TickerString"
 import { Box, Table, Tbody, Td, Th, Thead, Tr, useColorModeValue } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
-import { ExternalLinkIcon, Link, TickerString } from "src/components"
 import { abbreviateAddress, bigToString, nanoToTicker } from "src/lib"
 
 interface RankingsTableProps {

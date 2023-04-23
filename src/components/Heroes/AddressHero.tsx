@@ -1,9 +1,9 @@
+import { AddressForm } from "@/components/AddressForm"
 import { Box, Center, Container, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import { AddressForm } from "src/components"
 
-export function Hero() {
+export function AddressHero() {
   useLingui()
 
   const styles = {
@@ -51,4 +51,4 @@ export function Hero() {
   )
 }
 
-export default Hero
+export default AddressHero

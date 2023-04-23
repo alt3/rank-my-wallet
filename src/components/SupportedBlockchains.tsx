@@ -1,9 +1,10 @@
+import { FrontpageCard } from "@/components/FrontpageCard"
+import { CardanoLogo } from "@/components/Images/Logos/Cardano"
+import { ErgoLogo } from "@/components/Images/Logos/Ergo"
 import { Box, Center, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react"
 import { Trans } from "@lingui/macro"
-import { FrontpageCard } from "./Cards"
-import { CardanoLogo, ErgoLogo } from "./Images/Logos"
 
-export function BlockChains() {
+export function SupportedBlockChains() {
   const styles = {
     box: {
       marginBottom: { base: "3rem", md: "5 rem" },
@@ -44,4 +45,4 @@ export function BlockChains() {
   )
 }
 
-export default BlockChains
+export default SupportedBlockChains

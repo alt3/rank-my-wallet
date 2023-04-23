@@ -1,10 +1,10 @@
+import { DataGridCellTypeDecimal } from "@/components/DataGrid/DataGridCellTypeDecimal"
+import { DataGridCellTypeBinary } from "@/components/DataGrid/DatagridCellTypeBinary"
+import { DataGridCellTypeBit } from "@/components/DataGrid/DatagridCellTypeBit"
 import { Table, Tbody, Td, Text, Tr, useColorModeValue } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
-import { DataGridCellTypeBinary } from "src/components/DataGrid/DatagridCellTypeBinary"
-import { DataGridCellTypeBit } from "src/components/DataGrid/DatagridCellTypeBit"
-import { DataGridCellTypeDecimal } from "src/components/DataGrid/DataGridCellTypeDecimal"
 import { bitsToByte } from "src/lib"
 
 interface BitsTableProps {

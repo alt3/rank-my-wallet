@@ -1,3 +1,7 @@
+import { SectionHeader } from "@/components/AddressDetails/SectionHeader"
+import { BitsTable } from "@/components/BitsTable"
+import { DataGrid } from "@/components/DataGrid"
+import { DataGridEntry } from "@/components/DataGridEntry"
 import {
   AccordionButton,
   AccordionIcon,
@@ -9,10 +13,9 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
-import { BitsTable, DataGrid, DataGridEntry, SectionHeader } from "src/components"
 
 export function AccordionItemAddressAnalysis({ parsedAddress, ...rest }) {
   const { i18n } = useLingui()

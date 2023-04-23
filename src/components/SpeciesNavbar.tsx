@@ -1,6 +1,6 @@
+import { Link } from "@/components/Link"
 import { Button, Center } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
-import { Link } from "src/components"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 
 export function SpeciesNavbar({ ...rest }) {

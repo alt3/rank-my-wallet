@@ -1,9 +1,10 @@
+import { Logo } from "@/components/Images/Logos/Logo"
+import { Link } from "@/components/Link"
+import { LocaleSwitcher } from "@/components/LocaleSwitcher"
 import { Box, Button, Flex, IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { t, Trans } from "@lingui/macro"
+import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { BsGithub, BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
-import { Link, LocaleSwitcher } from "src/components"
-import { Logo } from "../Images/Logos"
 
 interface NavbarProps {
   logoColorPrimary: string // TODO: use stricter type

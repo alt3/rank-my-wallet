@@ -1,3 +1,4 @@
+import { Link } from "@/components/Link"
 import { Box, Icon, Text, useColorModeValue, useToast, useToken, VStack } from "@chakra-ui/react"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
@@ -5,7 +6,6 @@ import ClipboardAPI from "clipboard"
 import QRCode from "qrcode.react"
 import { useEffect } from "react"
 import { FaRegCopy } from "react-icons/fa"
-import { Link } from "src/components"
 
 export function TipboxCard({ title, address, url, ...rest }) {
   useLingui()

@@ -1,7 +1,8 @@
+import { DataGridField } from "@/components/DataGridField"
+import { DataGridValue } from "@/components/DataGridValue"
+import { ExternalLinkIcon } from "@/components/ExternalLinkIcon"
+import { Link } from "@/components/Link"
 import { Box } from "@chakra-ui/react"
-import { ExternalLinkIcon, Link } from "src/components"
-import { DataGridField } from "./DataGridField"
-import { DataGridValue } from "./DataGridValue"
 
 interface DataGridEntryProps {
   field: string

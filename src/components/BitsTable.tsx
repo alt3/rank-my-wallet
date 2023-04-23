@@ -1,5 +1,5 @@
-import BitsTableMobile from "./BitsTableMobile"
-import BitsTableDesktop from "./BitsTableDesktop"
+import BitsTableDesktop from "@/components/BitsTable/BitsTableDesktop"
+import BitsTableMobile from "@/components/BitsTable/BitsTableMobile"
 import { useMediaQuery } from "@chakra-ui/react"
 
 interface BitsTableProps {

@@ -1,5 +1,6 @@
+import { Link } from "@/components/Link"
+import { MotionBoxFlex } from "@/components/MotionBoxFlex"
 import { useColorModeValue } from "@chakra-ui/react"
-import { Link, MotionBoxFlex } from "src/components"
 
 export function FrontpageCard({ url, isExternal = true, ...rest }) {
   const styles = {

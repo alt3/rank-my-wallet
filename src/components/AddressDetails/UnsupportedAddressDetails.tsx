@@ -1,14 +1,12 @@
+import { AccordionItemAddressAnalysis } from "@/components/AddressDetails/AccordionItemAddressAnalysis"
+import { AccordionItemAddressDetails } from "@/components/AddressDetails/AccordionItemAddressDetails"
+import { AddressForm } from "@/components/AddressForm"
+import { ContentContainer } from "@/components/ContentContainer"
+import { ErrorHero } from "@/components/Heroes/ErrorHero"
+import { MetaTags } from "@/components/MetaTags"
 import { Accordion, Divider } from "@chakra-ui/react"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
-import {
-  AccordionItemAddressAnalysis,
-  AccordionItemAddressDetails,
-  AddressForm,
-  ContentContainer,
-  ErrorHero,
-  MetaTags,
-} from "src/components"
 import { unsupportedAddressMessage } from "src/lib"
 
 export function UnsupportedAddressDetails({ parsed }) {
