@@ -1,14 +1,9 @@
 import { SectionHeader } from "@/components/AddressDetails/SectionHeader"
 import { DataGrid } from "@/components/DataGrid"
 import { DataGridEntry } from "@/components/DataGridEntry"
-import {
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel } from "@chakra-ui/accordion"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { Box } from "@chakra-ui/layout"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 

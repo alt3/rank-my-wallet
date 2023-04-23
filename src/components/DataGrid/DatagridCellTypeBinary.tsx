@@ -1,5 +1,5 @@
-import { Td } from "@chakra-ui/react"
-import { useMediaQuery } from "@chakra-ui/react"
+import { useMediaQuery } from "@chakra-ui/media-query"
+import { Td } from "@chakra-ui/table"
 
 interface Props {
   binary: number

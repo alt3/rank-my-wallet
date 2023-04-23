@@ -2,17 +2,9 @@ import { SectionHeader } from "@/components/AddressDetails/SectionHeader"
 import { BitsTable } from "@/components/BitsTable"
 import { DataGrid } from "@/components/DataGrid"
 import { DataGridEntry } from "@/components/DataGridEntry"
-import {
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Grid,
-  GridItem,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel } from "@chakra-ui/accordion"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { Box, Grid, GridItem, Text } from "@chakra-ui/layout"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"

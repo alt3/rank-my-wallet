@@ -1,6 +1,6 @@
 import RankingsTableDesktop from "@/components/RankingsTable/RankingsTableDesktop"
 import RankingsTableMobile from "@/components/RankingsTable/RankingsTableMobile"
-import { useMediaQuery } from "@chakra-ui/react"
+import { useMediaQuery } from "@chakra-ui/media-query"
 
 interface RankingsTableProps {
   rankings: Array<{

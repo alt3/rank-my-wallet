@@ -1,6 +1,7 @@
 import { NavbarDesktop } from "@/components/Navbar/Desktop"
 import { NavbarMobile } from "@/components/Navbar/Mobile"
-import { useBreakpointValue, useColorModeValue } from "@chakra-ui/react"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { useBreakpointValue } from "@chakra-ui/media-query"
 
 export function Navbar() {
   const isMobile = useBreakpointValue({ base: true, md: false })

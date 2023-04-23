@@ -1,4 +1,5 @@
-import { GridItem, useMultiStyleConfig } from "@chakra-ui/react"
+import { GridItem } from "@chakra-ui/layout"
+import { useMultiStyleConfig } from "@chakra-ui/system"
 
 export const DataGridValue = (props) => {
   const { size, variant, children, ...rest } = props

@@ -1,13 +1,9 @@
-import {
-  Box,
-  Button,
-  ChakraProps,
-  FormControl,
-  FormErrorMessage,
-  HStack,
-  Input,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Button } from "@chakra-ui/button"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { FormControl, FormErrorMessage } from "@chakra-ui/form-control"
+import { Input } from "@chakra-ui/input"
+import { Box, HStack } from "@chakra-ui/layout"
+import { ChakraProps } from "@chakra-ui/system"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { useRouter } from "next/router"

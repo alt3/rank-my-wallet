@@ -18,13 +18,10 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-  Box,
-  Divider,
-  Grid,
-  GridItem,
-  HTMLChakraProps,
-  useColorModeValue,
-} from "@chakra-ui/react"
+} from "@chakra-ui/accordion"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { Box, Divider, Grid, GridItem } from "@chakra-ui/layout"
+import { HTMLChakraProps } from "@chakra-ui/system"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import dynamic from "next/dynamic"

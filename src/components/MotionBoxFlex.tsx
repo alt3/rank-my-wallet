@@ -1,5 +1,6 @@
-import { Flex, FlexProps, forwardRef, ComponentWithAs } from "@chakra-ui/react"
-import { motion, MotionProps, isValidMotionProp } from "framer-motion"
+import { Flex, FlexProps } from "@chakra-ui/layout"
+import { ComponentWithAs, forwardRef } from "@chakra-ui/system"
+import { MotionProps, isValidMotionProp, motion } from "framer-motion"
 
 export type MotionBoxProps = Omit<FlexProps, keyof MotionProps> &
   MotionProps & {

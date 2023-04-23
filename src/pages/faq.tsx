@@ -4,18 +4,10 @@ import { PageHero } from "@/components/Heroes/PageHero"
 import { Link } from "@/components/Link"
 import { MetaTags } from "@/components/MetaTags"
 import { BlitzPage } from "@blitzjs/next"
-import {
-  Accordion,
-  ListItem,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Text,
-  UnorderedList,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Accordion } from "@chakra-ui/accordion"
+import { useColorModeValue } from "@chakra-ui/color-mode"
+import { ListItem, Text, UnorderedList } from "@chakra-ui/layout"
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/tabs"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
