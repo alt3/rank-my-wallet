@@ -9,10 +9,18 @@ const alternateRefs = linguiConfig.locales
     hreflang: locale,
   }))
 
+const excludedPaths = linguiConfig.locales
+  .filter(function (locale) {
+    return locale !== "pseudo"
+  })
+  .map((locale) => `/${locale}/404`)
+  .concat("/404")
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   alternateRefs: alternateRefs,
+  exclude: excludedPaths,
 }
