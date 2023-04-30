@@ -27,6 +27,7 @@
     "@blitzjs/next": "2.0.0-beta.23",
     "@blitzjs/rpc": "2.0.0-beta.23",
     "@chakra-ui/react": "2.5.5",
+    "@emotion/cache": "11.10.8",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
     "@fontsource/inter": "4.5.15",
@@ -58,6 +59,8 @@
     "react-icons": "4.8.0",
     "react-id-generator": "3.0.2",
     "ripple-regex": "1.1.8",
+    "stylis": "4.1.4",
+    "stylis-plugin-rtl": "2.1.1",
     "toformat": "2.0.0"
   },
   "devDependencies": {
