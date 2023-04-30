@@ -43,7 +43,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       textTransform: "uppercase" as const,
       letterSpacing: "wider",
       paddingStart: 0,
-      paddingRight: "5rem",
+      paddingEnd: "5rem",
     },
     tdSum: {
       colSpan: 1,

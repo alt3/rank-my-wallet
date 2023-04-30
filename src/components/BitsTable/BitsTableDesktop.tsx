@@ -60,7 +60,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
       fontFamily: "heading",
       textTransform: "uppercase" as const,
       letterSpacing: "wider",
-      paddingRight: "0.3rem",
+      paddingEnd: "0.3rem",
       marginRight: 0,
     },
   }

@@ -36,7 +36,7 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
     },
     right: {
       textAlign: "right" as const,
-      paddingRight: 0,
+      paddingEnd: 0,
     },
     asterisk: {
       verticalAlign: "super",

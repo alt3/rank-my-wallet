@@ -42,7 +42,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
     right: {
       // fontSize: "sm",
       textAlign: "right" as const,
-      paddingRight: 0,
+      paddingEnd: 0,
     },
   }
 
@@ -74,14 +74,14 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                   fontWeight="bolder"
                   maxWidth="10px"
                   whiteSpace="nowrap"
-                  paddingRight={{ base: "2rem", sm: 0 }}
+                  paddingEnd={{ base: "2rem", sm: 0 }}
                 >
                   {i + 1}
                 </Td>
                 <Td {...styles.left}>{i18n._(element.name)}</Td>
                 <Td {...styles.right}>
                   <Box as="span" whiteSpace="nowrap">
-                    <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>
+                    <Box as="span" {...styles.currency} paddingEnd={"0.25rem"}>
                       {tickerSymbol}
                     </Box>{" "}
                     {element.startsAt.toString().match("^(?!([0-9]+$)).*$")
