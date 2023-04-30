@@ -31,7 +31,7 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
     },
     left: {
       textAlign: "left" as const,
-      paddingLeft: 0,
+      paddingStart: 0,
     },
     right: {
       textAlign: "right" as const,

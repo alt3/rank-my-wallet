@@ -31,7 +31,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
     },
     th: {
       textAlign: "left" as const,
-      paddingLeft: 0,
+      paddingStart: 0,
       marginLeft: 0,
     },
     tdSumLabel: {
@@ -42,7 +42,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       fontFamily: "heading",
       textTransform: "uppercase" as const,
       letterSpacing: "wider",
-      paddingLeft: 0,
+      paddingStart: 0,
       paddingRight: "5rem",
     },
     tdSum: {
@@ -50,7 +50,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       fontWeight: "extrabold",
       color: useColorModeValue("teal.500", "teal.300"),
       textAlign: "left" as const,
-      paddingLeft: 0,
+      paddingStart: 0,
     },
   }
 

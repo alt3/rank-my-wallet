@@ -8,9 +8,9 @@ interface Props {
 export const DataGridCellTypeBit = ({ bit }: Props) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)")
 
-  const paddingLeft = isMobile ? 0 : "inherit"
+  const paddingStart = isMobile ? 0 : "inherit"
 
-  return <Td paddingLeft={paddingLeft}>{bit}</Td>
+  return <Td paddingStart={paddingStart}>{bit}</Td>
 }
 
 export default DataGridCellTypeBit
