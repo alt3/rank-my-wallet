@@ -48,7 +48,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
     tdSum: {
       fontWeight: "extrabold",
       color: useColorModeValue("teal.500", "teal.300"),
-      marginRight: "0.25rem",
+      marginEnd: "0.25rem",
       borderBottom: "1px",
     },
     tdSumLabel: {
@@ -61,7 +61,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
       textTransform: "uppercase" as const,
       letterSpacing: "wider",
       paddingEnd: "0.3rem",
-      marginRight: 0,
+      marginEnd: 0,
     },
   }
 

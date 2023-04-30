@@ -42,7 +42,7 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
   const styles = {
     input: {
       size: "lg",
-      marginRight: "0.25rem",
+      marginEnd: "0.25rem",
       bg: useColorModeValue("white", "gray.700"),
       borderColor: useColorModeValue("gray.200", "gray.700"),
       _placeholder: { color: useColorModeValue("gray.400", "gray.400") },

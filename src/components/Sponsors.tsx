@@ -35,7 +35,7 @@ export function Sponsors() {
               viewBox="0 0 20 10"
               display="inline-block"
               color="red"
-              marginRight="0.25rem"
+              marginEnd="0.25rem"
             />
             <Trans>Your Project</Trans>
           </Box>
@@ -48,7 +48,7 @@ export function Sponsors() {
               viewBox="0 0 20 10"
               display="inline-block"
               color="red"
-              marginRight="0.25rem"
+              marginEnd="0.25rem"
             />
             <Trans>Your Project</Trans>
           </Box>
@@ -61,7 +61,7 @@ export function Sponsors() {
               viewBox="0 0 20 10"
               display="inline-block"
               color="red"
-              marginRight="0.25rem"
+              marginEnd="0.25rem"
             />
             <Trans>Your Project</Trans>
           </Box>

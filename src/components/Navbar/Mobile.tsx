@@ -61,7 +61,7 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
             ref={btnRef}
             onClick={onOpen}
             height={"auto"}
-            marginRight={-3}
+            marginEnd={-3}
           >
             <BsList size="26px" />
           </Button>

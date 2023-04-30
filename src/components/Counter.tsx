@@ -52,7 +52,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
               {blockchain === "Ergo" && <Trans>You are Ergo holder</Trans>}
             </Heading>
             <Heading as="h3" {...styles.heading} {...styles.counter}>
-              <Text as="span" marginRight="0.6rem">
+              <Text as="span" marginEnd="0.6rem">
                 #
               </Text>
               <Countup
