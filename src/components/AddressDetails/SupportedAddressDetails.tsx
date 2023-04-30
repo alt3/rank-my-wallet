@@ -184,7 +184,7 @@ export function SupportedAddressDetails({ parsed }) {
             >
               {dynamicallyImportSpeciesImage(addressDetails.species.current.icon, {
                 height: { base: "100px", sm: "75%" },
-                marginLeft: { base: "inherit", sm: "auto" },
+                marginStart: { base: "inherit", sm: "auto" },
               })}
             </GridItem>
           </Grid>

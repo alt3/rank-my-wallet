@@ -97,7 +97,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               aria-label={t`RankMyWallet on Twitter`}
               variant="ghost"
               color="current"
-              marginLeft="0"
+              marginStart="0"
               icon={<BsTwitter />}
             />
           </Link>
@@ -111,7 +111,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               aria-label={t`RankMyWallet on Github`}
               variant="ghost"
               color="current"
-              marginLeft="0"
+              marginStart="0"
               icon={<BsGithub />}
             />
           </Link>
@@ -125,7 +125,7 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
             aria-label={`Switch to ${text} mode`}
             variant="ghost"
             color="current"
-            marginLeft="0"
+            marginStart="0"
             onClick={toggleMode}
             icon={<SwitchIcon />}
           />

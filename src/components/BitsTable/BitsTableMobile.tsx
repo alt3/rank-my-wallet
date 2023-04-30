@@ -32,7 +32,7 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
     th: {
       textAlign: "left" as const,
       paddingStart: 0,
-      marginLeft: 0,
+      marginStart: 0,
     },
     tdSumLabel: {
       colSpan: 3,

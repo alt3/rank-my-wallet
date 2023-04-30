@@ -33,7 +33,7 @@ export function PleaseDonate({ ...rest }) {
             viewBox="0 0 20 10"
             display="inline-block"
             color="red"
-            marginLeft="0.5rem"
+            marginStart="0.5rem"
           />
         </Text>
       </Box>
