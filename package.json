@@ -58,8 +58,6 @@
     "react-icons": "4.8.0",
     "react-id-generator": "3.0.2",
     "ripple-regex": "1.1.8",
-    "stylis": "4.1.4",
-    "stylis-plugin-rtl": "2.1.1",
     "toformat": "2.0.0"
   },
   "devDependencies": {
