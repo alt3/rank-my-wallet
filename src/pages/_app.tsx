@@ -8,7 +8,7 @@ import { useEffect } from "react"
 import { withBlitz } from "src/blitz-client"
 import theme from "src/core/theme"
 import Error from "src/pages/_error"
-import { getLocaleDirection, useLinguiInit } from "src/translations/utils"
+import { getRTL, useLinguiInit } from "src/translations/utils"
 
 function RootErrorFallback({ error }: ErrorFallbackProps) {
   return <Error statusCode={error.statusCode || 400} title={error.message || error.name} />
@@ -22,12 +22,12 @@ function MyApp({ Component, pageProps: { i18n, ...pageProps } }: AppProps<Custom
   const getLayout = Component.getLayout || ((page) => page)
   const initializedI18n = useLinguiInit(i18n)
   const router = useRouter()
-  const localeDirection = getLocaleDirection(router.locale)
+  const rtl = getRTL(router.locale)
 
   useEffect(() => {
-    document.documentElement.dir = localeDirection
+    document.documentElement.dir = rtl.direction
   }),
-    [localeDirection]
+    [rtl]
 
   return (
     <ChakraProvider theme={theme}>

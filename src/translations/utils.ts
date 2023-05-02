@@ -12,6 +12,7 @@ export async function loadCatalog(locale: string) {
 export function useLinguiInit(messages: Messages) {
   const router = useRouter()
   const locale = router.locale || router.defaultLocale!
+
   const isClient = typeof window !== "undefined"
 
   if (!isClient && locale !== i18n.locale) {
@@ -33,10 +34,14 @@ export function useLinguiInit(messages: Messages) {
   return i18n
 }
 
-export function getLocaleDirection(locale) {
+export function getRTL(locale) {
   const language = languages.find((language) => {
     return language.locale === locale
   })
 
-  return language?.rtl === true ? "rtl" : "ltr"
+  return {
+    direction: language?.rtl === true ? "rtl" : "ltr",
+    left: language?.rtl === true ? "right" : "left",
+    right: language?.rtl === true ? "left" : "right",
+  }
 }

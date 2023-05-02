@@ -8,16 +8,18 @@ import { Box, Grid, GridItem, Text } from "@chakra-ui/layout"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
+import { getRTL } from "src/translations/utils"
 
 export function AccordionItemAddressAnalysis({ parsedAddress, ...rest }) {
   const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
   return (
     <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
       <AccordionButton p={0}>
-        <Box flex="1" textAlign="left">
+        <Box flex="1" textAlign={rtl.left}>
           <SectionHeader>
             <Trans>Address Analysis</Trans>
           </SectionHeader>

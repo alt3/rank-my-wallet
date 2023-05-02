@@ -6,7 +6,7 @@ import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib/bigToString"
-import { getLocaleDirection } from "src/translations/utils"
+import { getRTL } from "src/translations/utils"
 
 interface SpeciesTableProps {
   blockchain: "Cardano" | "Ergo"
@@ -19,12 +19,8 @@ interface SpeciesTableProps {
 
 export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTableProps) {
   const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
-
   const { i18n } = useLingui()
-
-  const direction = getLocaleDirection(i18n.locale)
-  const rtlLeft = direction === "ltr" ? "left" : "right"
-  const rtlRight = direction === "ltr" ? "right" : "left"
+  const rtl = getRTL(i18n.locale)
 
   const styles = {
     caption: {
@@ -53,13 +49,13 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
       <Table variant="simple" {...styles.table}>
         <Thead>
           <Tr>
-            <Th {...styles.th} {...styles.left} textAlign={rtlLeft} maxWidth="10px">
+            <Th {...styles.th} {...styles.left} textAlign={rtl.left} maxWidth="10px">
               #
             </Th>
-            <Th {...styles.th} {...styles.left} textAlign={rtlLeft}>
+            <Th {...styles.th} {...styles.left} textAlign={rtl.left}>
               <Trans context="Singular">Species</Trans>
             </Th>
-            <Th {...styles.th} {...styles.right} textAlign={rtlRight}>
+            <Th {...styles.th} {...styles.right} textAlign={rtl.right}>
               <Trans>Starts At</Trans>
             </Th>
           </Tr>
@@ -72,7 +68,7 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
               <Tr key={nextId("tr")}>
                 <Td
                   {...styles.left}
-                  textAlign={rtlLeft}
+                  textAlign={rtl.left}
                   color="gray.500"
                   fontWeight="bolder"
                   maxWidth="10px"
@@ -81,10 +77,10 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                 >
                   {i + 1}
                 </Td>
-                <Td {...styles.left} textAlign={rtlLeft}>
+                <Td {...styles.left} textAlign={rtl.left}>
                   {i18n._(element.name)}
                 </Td>
-                <Td {...styles.right} textAlign={rtlRight}>
+                <Td {...styles.right} textAlign={rtl.right}>
                   <Box as="span" whiteSpace="nowrap">
                     <Box as="span" {...styles.currency} paddingEnd={"0.25rem"}>
                       {tickerSymbol}

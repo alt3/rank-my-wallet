@@ -27,6 +27,7 @@ import { useLingui } from "@lingui/react"
 import dynamic from "next/dynamic"
 import getAddressDetails from "src/core/queries/getAddressDetails"
 import { bigToString } from "src/lib/bigToString"
+import { getRTL } from "src/translations/utils"
 
 const dynamicallyImportSpeciesImage = (species: any, props: HTMLChakraProps<"svg">) => {
   const ImageComponent = dynamic(() => import(`@/components/Images/Species/${species}`), {
@@ -37,6 +38,7 @@ const dynamicallyImportSpeciesImage = (species: any, props: HTMLChakraProps<"svg
 
 export function SupportedAddressDetails({ parsed }) {
   const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
 
   const [addressDetails] = useQuery(getAddressDetails, parsed, {
     staleTime: Infinity,
@@ -198,7 +200,7 @@ export function SupportedAddressDetails({ parsed }) {
             <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
               <h2>
                 <AccordionButton p={0}>
-                  <Box flex="1" textAlign="left">
+                  <Box flex="1" textAlign={rtl.left}>
                     <SectionHeader>
                       <Trans>Competition</Trans>
                     </SectionHeader>
