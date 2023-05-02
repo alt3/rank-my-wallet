@@ -10,6 +10,7 @@ import nextId from "react-id-generator"
 import { abbreviateAddress } from "src/lib/abbreviateAddress"
 import { bigToString } from "src/lib/bigToString"
 import { nanoToTicker } from "src/lib/nanoToTicker"
+import { getRTL } from "src/translations/utils"
 
 interface RankingsTableProps {
   rankings: Array<{
@@ -23,6 +24,7 @@ interface RankingsTableProps {
 
 export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTableProps) {
   const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
 
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
@@ -31,11 +33,9 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
       marginBottom: "3rem",
     },
     left: {
-      textAlign: "left" as const,
       paddingStart: 0,
     },
     right: {
-      textAlign: "right" as const,
       paddingEnd: 0,
     },
     asterisk: {
@@ -49,13 +49,13 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
     <Table variant="simple" {...styles.table}>
       <Thead>
         <Tr>
-          <Th {...styles.left} maxWidth="10px" whiteSpace="nowrap">
+          <Th {...styles.left} textAlign={rtl.left} maxWidth="10px" whiteSpace="nowrap">
             <Trans>Rank</Trans>
           </Th>
           <Th {...styles.left}>
             <Trans>Address</Trans>
           </Th>
-          <Th {...styles.right} textAlign="right">
+          <Th {...styles.right} textAlign={rtl.right}>
             <Trans>Balance</Trans>
           </Th>
         </Tr>
@@ -68,6 +68,7 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
             <Tr key={nextId("tr")}>
               <Td
                 {...styles.left}
+                textAlign={rtl.left}
                 maxWidth="80px"
                 whiteSpace="nowrap"
                 fontFamily="Inter, monospace"
@@ -81,7 +82,7 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
                 )}
               </Td>
 
-              <Td {...styles.left} whiteSpace="nowrap">
+              <Td {...styles.left} textAlign={rtl.left} whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
                   passHref
@@ -92,7 +93,7 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
                 </Link>
               </Td>
 
-              <Td {...styles.right}>
+              <Td {...styles.right} textAlign={rtl.right}>
                 <TickerString
                   ticker={bigToString(nanoToTicker(element.balance.toString(), 9), i18n.locale, 9)}
                   tickerSymbol={tickerSymbol}

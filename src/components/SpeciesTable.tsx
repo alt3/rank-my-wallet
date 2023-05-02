@@ -18,9 +18,10 @@ interface SpeciesTableProps {
 }
 
 export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTableProps) {
-  const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
   const { i18n } = useLingui()
   const rtl = getRTL(i18n.locale)
+
+  const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
 
   const styles = {
     caption: {

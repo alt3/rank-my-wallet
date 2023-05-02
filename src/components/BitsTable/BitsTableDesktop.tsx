@@ -8,6 +8,7 @@ import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bitsToByte } from "src/lib/bits/bitsToByte"
+import { getRTL } from "src/translations/utils"
 
 interface BitsTableProps {
   caption: string
@@ -16,7 +17,8 @@ interface BitsTableProps {
 }
 
 export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
-  useLingui()
+  const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
 
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
@@ -41,7 +43,6 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
       textAlign: "center" as const,
     },
     tdField: {
-      textAlign: "left" as const,
       padding: 0,
       margin: 0,
     },
@@ -54,7 +55,6 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
     tdSumLabel: {
       border: "none",
       colSpan: 10,
-      textAlign: "right" as const,
       color: useColorModeValue("gray.600", "gray.400"),
       fontSize: "xs",
       fontFamily: "heading",
@@ -74,7 +74,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
         <Tbody>
           <Tr>
             {/* binary row */}
-            <Td {...styles.td} {...styles.tdField}>
+            <Td {...styles.td} {...styles.tdField} textAlign={rtl.left}>
               <Trans>Binaries</Trans>
             </Td>
 
@@ -92,7 +92,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
 
           {/* bits row */}
           <Tr>
-            <Td {...styles.td} {...styles.tdField}>
+            <Td {...styles.td} {...styles.tdField} textAlign={rtl.left}>
               <Trans>Bits</Trans>
             </Td>
 
@@ -107,7 +107,7 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
 
           {/* decimal row */}
           <Tr>
-            <Td {...styles.td} {...styles.tdField}>
+            <Td {...styles.td} {...styles.tdField} textAlign={rtl.left}>
               <Trans>Decimals</Trans>
             </Td>
 
@@ -129,7 +129,9 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
 
           {/* Summary row */}
           <Tr border={"none"}>
-            <Td {...styles.tdSumLabel}>{sumLabel}</Td>
+            <Td {...styles.tdSumLabel} textAlign={rtl.right}>
+              {sumLabel}
+            </Td>
           </Tr>
         </Tbody>
       </Table>

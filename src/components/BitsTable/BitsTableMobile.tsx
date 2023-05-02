@@ -8,6 +8,7 @@ import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bitsToByte } from "src/lib/bits/bitsToByte"
+import { getRTL } from "src/translations/utils"
 
 interface BitsTableProps {
   caption: string
@@ -16,7 +17,8 @@ interface BitsTableProps {
 }
 
 export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
-  useLingui()
+  const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
 
   const reversedBits = [...bits].reverse() // create reversed clone so we can render top-down bits
 
@@ -30,13 +32,11 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       marginBottom: "3rem",
     },
     th: {
-      textAlign: "left" as const,
       paddingStart: 0,
       marginStart: 0,
     },
     tdSumLabel: {
       colSpan: 3,
-      textAlign: "right" as const,
       color: useColorModeValue("gray.600", "gray.400"),
       fontSize: "xs",
       fontFamily: "heading",
@@ -49,7 +49,6 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       colSpan: 1,
       fontWeight: "extrabold",
       color: useColorModeValue("teal.500", "teal.300"),
-      textAlign: "left" as const,
       paddingStart: 0,
     },
   }
@@ -62,13 +61,13 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
       <Table variant="simple" {...styles.table}>
         <Thead>
           <Tr>
-            <Th {...styles.th}>
+            <Th {...styles.th} textAlign={rtl.left}>
               <Trans>Binaries</Trans>
             </Th>
             <Th {...styles.th}>
               <Trans>Bits</Trans>
             </Th>
-            <Th {...styles.th}>
+            <Th {...styles.th} textAlign={rtl.left}>
               <Trans>Decimals</Trans>
             </Th>
           </Tr>
@@ -96,13 +95,13 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
           {/* Summary row */}
           <Tr>
             <Td borderBottom={0} colSpan={2}></Td>
-            <Td borderBottom={0} {...styles.tdSum}>
+            <Td borderBottom={0} {...styles.tdSum} textAlign={rtl.left}>
               {bitsToByte(bits)}
             </Td>
           </Tr>
 
           <Tr>
-            <Td borderBottom={0} {...styles.tdSumLabel} paddingTop={0}>
+            <Td borderBottom={0} {...styles.tdSumLabel} textAlign={rtl.right} paddingTop={0}>
               {sumLabel}
             </Td>
           </Tr>
