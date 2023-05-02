@@ -1,6 +1,7 @@
 import { i18n, Messages } from "@lingui/core"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
+import languages from "src/translations/languages"
 
 export async function loadCatalog(locale: string) {
   const { messages } = await import(`@lingui/loader!./locales/${locale}.po`)
@@ -30,4 +31,12 @@ export function useLinguiInit(messages: Messages) {
   }, [locale, messages])
 
   return i18n
+}
+
+export function getLocaleDirection(locale) {
+  const language = languages.find((language) => {
+    return language.locale === locale
+  })
+
+  return language?.rtl === true ? "rtl" : "ltr"
 }
