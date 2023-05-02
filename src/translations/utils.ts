@@ -46,8 +46,8 @@ export function getRTL(locale): {
   })
 
   return {
-    direction: language?.rtl === true ? "rtl" : "ltr",
-    left: language?.rtl === true ? "right" : "left",
-    right: language?.rtl === true ? "left" : "right",
+    direction: language?.rtl === true ? "rtl" : "ltr", // use as html `dir` element
+    left: language?.rtl === true ? "right" : "left", // used as textAlign
+    right: language?.rtl === true ? "left" : "right", // used as textAlign
   }
 }
