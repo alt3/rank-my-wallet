@@ -59,7 +59,7 @@ const TipBox: BlitzPage = () => {
               viewBox="0 0 20 10"
               display="inline-block"
               color="red"
-              marginRight="0.25rem"
+              marginEnd="0.25rem"
             />
             <Trans>Please donate to keep this website ad-free</Trans>{" "}
             <Box
@@ -67,7 +67,7 @@ const TipBox: BlitzPage = () => {
               viewBox="0 0 20 10"
               display="inline-block"
               color="red"
-              marginRight="0.25rem"
+              marginEnd="0.25rem"
             />
           </Text>
         </Box>

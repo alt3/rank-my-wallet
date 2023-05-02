@@ -23,8 +23,8 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
     container: {
       maxW: "container.md",
       paddingBottom: { base: "1.5rem", md: "4.5rem" },
-      paddingLeft: 0,
-      paddingRight: 0,
+      paddingStart: 0,
+      paddingEnd: 0,
     },
     heading: {
       marginTop: { base: "2.5rem", md: "4rem" },
@@ -52,7 +52,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
               {blockchain === "Ergo" && <Trans>You are Ergo holder</Trans>}
             </Heading>
             <Heading as="h3" {...styles.heading} {...styles.counter}>
-              <Text as="span" marginRight="0.6rem">
+              <Text as="span" marginEnd="0.6rem">
                 #
               </Text>
               <Countup

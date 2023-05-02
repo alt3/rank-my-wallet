@@ -11,7 +11,7 @@ import { useLingui } from "@lingui/react"
 import { getUnsupportedAddressMessage } from "src/lib/getUnsupportedAddressMessage"
 
 export function UnsupportedAddressDetails({ parsed }) {
-  useLingui()
+  const { i18n } = useLingui()
 
   if (process && process.env.NODE_ENV !== "production") {
     console.log({ parsed })

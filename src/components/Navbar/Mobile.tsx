@@ -37,11 +37,11 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
       width="100%"
     >
       <Flex w="100%" h="100%" px="6" align="center" justify="space-between">
-        <Link href="/" passHref marginLeft={"-1"}>
+        <Link href="/" passHref marginStart={"-1"}>
           <LogoMobile marginTop="0.25rem" h="8" pointerEvents="none" fill={logoColorPrimary} />
         </Link>
 
-        <Box marginLeft={"auto"}>
+        <Box marginStart={"auto"}>
           <LocaleSwitcher />
 
           <IconButton
@@ -61,7 +61,7 @@ export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarPro
             ref={btnRef}
             onClick={onOpen}
             height={"auto"}
-            marginRight={-3}
+            marginEnd={-3}
           >
             <BsList size="26px" />
           </Button>

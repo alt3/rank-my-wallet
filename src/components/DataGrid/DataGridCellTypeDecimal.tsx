@@ -48,8 +48,6 @@ interface Props {
 export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)")
 
-  const paddingLeft = isMobile ? 0 : "inherit"
-
   let cellText: string | number | null = null
 
   if (bit === null) {
@@ -65,8 +63,10 @@ export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
       bitLookup.find(({ index }) => isEqual(index, bits.length - 1 - (i ?? 0)))?.binary ?? null
   }
 
+  const paddingStart = isMobile ? 0 : "inherit"
+
   return (
-    <Td key={nextId("td")} paddingLeft={paddingLeft}>
+    <Td key={nextId("td")} paddingStart={paddingStart}>
       {cellText}
     </Td>
   )

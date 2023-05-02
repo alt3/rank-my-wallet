@@ -6,9 +6,11 @@ import { useColorModeValue } from "@chakra-ui/color-mode"
 import { Box } from "@chakra-ui/layout"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
+import { getRTL } from "src/translations/utils"
 
 export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
-  useLingui()
+  const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
@@ -16,7 +18,7 @@ export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
     <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
       <h2>
         <AccordionButton p={0}>
-          <Box flex="1" textAlign="left">
+          <Box flex="1" textAlign={rtl.left}>
             <SectionHeader>
               <Trans>Address Details</Trans>
             </SectionHeader>

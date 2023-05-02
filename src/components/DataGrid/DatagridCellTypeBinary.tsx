@@ -21,10 +21,10 @@ export const DataGridCellTypeBinary = ({ binary, bit }: Props) => {
     styles.td.fontWeight = "bold"
   }
 
-  const paddingLeft = isMobile ? 0 : "inherit"
+  const paddingStart = isMobile ? 0 : "inherit"
 
   return (
-    <Td {...styles.td} paddingLeft={paddingLeft}>
+    <Td {...styles.td} paddingStart={paddingStart}>
       {binary}{" "}
     </Td>
   )

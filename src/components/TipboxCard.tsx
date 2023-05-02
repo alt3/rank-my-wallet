@@ -84,7 +84,6 @@ export function TipboxCard({ title, address, url, ...rest }) {
               as={FaRegCopy}
               w={4}
               h={4}
-              // marginLeft="1"
               _hover={{ color: useColorModeValue("teal.500", "teal.300") }}
               id="test"
               onClick={handleClick}

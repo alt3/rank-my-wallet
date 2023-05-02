@@ -25,7 +25,7 @@ export const Link: React.FC<CustomLinkProps> = ({
   <NextLink {...{ href, as, locale, legacyBehavior, passHref, prefetch, replace, scroll, shallow }}>
     <ChakraLink {...props}>
       {children}
-      {withExternalIcon && <ExternalLinkIcon marginLeft="0.25rem" />}
+      {withExternalIcon && <ExternalLinkIcon marginStart="0.25rem" />}
     </ChakraLink>
   </NextLink>
 )

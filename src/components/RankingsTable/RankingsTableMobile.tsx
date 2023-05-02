@@ -9,6 +9,7 @@ import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib/bigToString"
 import { nanoToTicker } from "src/lib/nanoToTicker"
+import { getRTL } from "src/translations/utils"
 
 interface RankingsTableProps {
   rankings: Array<{
@@ -22,6 +23,7 @@ interface RankingsTableProps {
 
 export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTableProps) {
   const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
 
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
 
@@ -30,12 +32,10 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
       marginBottom: "3rem",
     },
     left: {
-      textAlign: "left" as const,
-      paddingLeft: 0,
+      paddingStart: 0,
     },
     right: {
-      textAlign: "right" as const,
-      paddingRight: 0,
+      paddingEnd: 0,
     },
     asterisk: {
       verticalAlign: "super",
@@ -48,10 +48,10 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
     <Table variant="simple" {...styles.table}>
       <Thead>
         <Tr>
-          <Th {...styles.left} maxWidth="10px" whiteSpace="nowrap">
+          <Th {...styles.left} textAlign={rtl.left} maxWidth="10px" whiteSpace="nowrap">
             <Trans>Rank</Trans>
           </Th>
-          <Th {...styles.right} textAlign="right">
+          <Th {...styles.right} textAlign={rtl.right}>
             <Trans>Balance</Trans>
           </Th>
         </Tr>
@@ -64,6 +64,7 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
             <Tr key={nextId("tr")}>
               <Td
                 {...styles.left}
+                textAlign={rtl.left}
                 maxWidth="80px"
                 whiteSpace="nowrap"
                 fontFamily="Inter, monospace"
@@ -83,7 +84,7 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
                 </Link>
               </Td>
 
-              <Td {...styles.right} whiteSpace="nowrap">
+              <Td {...styles.right} textAlign={rtl.right} whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
                   passHref

@@ -6,6 +6,7 @@ import { Trans } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib/bigToString"
+import { getRTL } from "src/translations/utils"
 
 interface SpeciesTableProps {
   blockchain: "Cardano" | "Ergo"
@@ -17,9 +18,10 @@ interface SpeciesTableProps {
 }
 
 export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTableProps) {
-  const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
-
   const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
+
+  const maximumSignificantDigits = blockchain === "Cardano" ? 6 : 8
 
   const styles = {
     caption: {
@@ -36,13 +38,10 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
       fontSize: "sm",
     },
     left: {
-      textAlign: "left" as const,
-      paddingLeft: 0,
+      paddingStart: 0,
     },
     right: {
-      // fontSize: "sm",
-      textAlign: "right" as const,
-      paddingRight: 0,
+      paddingEnd: 0,
     },
   }
 
@@ -51,37 +50,40 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
       <Table variant="simple" {...styles.table}>
         <Thead>
           <Tr>
-            <Th {...styles.th} {...styles.left} maxWidth="10px">
+            <Th {...styles.th} {...styles.left} textAlign={rtl.left} maxWidth="10px">
               #
             </Th>
-            <Th {...styles.th} {...styles.left}>
+            <Th {...styles.th} {...styles.left} textAlign={rtl.left}>
               <Trans context="Singular">Species</Trans>
             </Th>
-            <Th {...styles.th} {...styles.right} textAlign="right">
+            <Th {...styles.th} {...styles.right} textAlign={rtl.right}>
               <Trans>Starts At</Trans>
             </Th>
           </Tr>
         </Thead>
 
         <Tbody>
-          {/* One row per specie */}
+          {/* One row per species */}
           {species.map((element, i) => {
             return (
               <Tr key={nextId("tr")}>
                 <Td
                   {...styles.left}
+                  textAlign={rtl.left}
                   color="gray.500"
                   fontWeight="bolder"
                   maxWidth="10px"
                   whiteSpace="nowrap"
-                  paddingRight={{ base: "2rem", sm: 0 }}
+                  paddingEnd={{ base: "2rem", sm: 0 }}
                 >
                   {i + 1}
                 </Td>
-                <Td {...styles.left}>{i18n._(element.name)}</Td>
-                <Td {...styles.right}>
+                <Td {...styles.left} textAlign={rtl.left}>
+                  {i18n._(element.name)}
+                </Td>
+                <Td {...styles.right} textAlign={rtl.right}>
                   <Box as="span" whiteSpace="nowrap">
-                    <Box as="span" {...styles.currency} paddingRight={"0.25rem"}>
+                    <Box as="span" {...styles.currency} paddingEnd={"0.25rem"}>
                       {tickerSymbol}
                     </Box>{" "}
                     {element.startsAt.toString().match("^(?!([0-9]+$)).*$")

@@ -19,7 +19,7 @@ const FaqPage: BlitzPage = () => {
 
   const styles = {
     listItems: {
-      marginLeft: "0.25rem",
+      marginStart: "0.25rem",
     },
   }
 

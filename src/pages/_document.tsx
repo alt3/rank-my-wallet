@@ -1,14 +1,17 @@
-import Document, { Html, Main, NextScript, Head } from "next/document"
+import Document, { DocumentInitialProps, Head, Html, Main, NextScript } from "next/document"
 
-class MyDocument extends Document {
-  // Only uncomment if you need to customize this behaviour
+interface DocumentProps extends DocumentInitialProps {
+  localeDirection: "ltr" | "rtl"
+}
+
+class MyDocument extends Document<DocumentProps> {
   // static async getInitialProps(ctx: DocumentContext) {
   //   const initialProps = await Document.getInitialProps(ctx)
   //   return {...initialProps}
   // }
   render() {
     return (
-      <Html>
+      <Html dir={this.props.localeDirection}>
         <Head>
           <link rel="shortcut icon" href="/favicons/favicon.ico" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
