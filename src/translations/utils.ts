@@ -2,6 +2,8 @@ import { i18n, Messages } from "@lingui/core"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 import languages from "src/translations/languages"
+import { ResponsiveValue } from "@chakra-ui/react"
+import * as CSS from "csstype"
 
 export async function loadCatalog(locale: string) {
   const { messages } = await import(`@lingui/loader!./locales/${locale}.po`)
@@ -34,7 +36,11 @@ export function useLinguiInit(messages: Messages) {
   return i18n
 }
 
-export function getRTL(locale) {
+export function getRTL(locale): {
+  direction: string
+  left: ResponsiveValue<CSS.Property.TextAlign>
+  right: ResponsiveValue<CSS.Property.TextAlign>
+} {
   const language = languages.find((language) => {
     return language.locale === locale
   })
