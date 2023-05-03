@@ -15,12 +15,15 @@ import { loadCatalog } from "src/translations/utils"
 const Page404: BlitzPage = () => {
   useLingui()
 
+  console.log("hello 404")
+
   const router = useRouter()
 
   const keywords = "crypto, blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
 
   // 404 page for server-side and direct links
   if (router.query.address === undefined) {
+    console.log("404: no router.query.address")
     return (
       <>
         <MetaTags title={t`Page Not Found`} keywords={keywords} />
@@ -30,6 +33,8 @@ const Page404: BlitzPage = () => {
       </>
     )
   }
+
+  console.log("404: with router.query.address")
 
   // unsupported address page ONLY if user submitted unsupported address via the form
   const parsedAddress = parseAddress(router.query.address.toString())
@@ -45,6 +50,8 @@ const Page404: BlitzPage = () => {
 export async function getStaticProps(
   ctx: GetStaticPropsContext
 ): Promise<GetStaticPropsResult<any>> {
+  console.log("wtf is dittttt")
+
   return {
     props: {
       i18n: await loadCatalog(ctx.locale as string),

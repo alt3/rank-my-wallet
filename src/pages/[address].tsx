@@ -35,16 +35,13 @@ export async function getServerSideProps(
   const validatedAddress = { parsed: validateAddress(parsedAddress) }
 
   if (validatedAddress.parsed.isSupported === false) {
-    ctx.res.statusCode = 404
-    ctx.res.end()
-
+    console.log(`[address] not supported, return not found`)
     return {
-      props: {
-        error: "Page not found",
-      },
-      // notFound: true,
+      notFound: true,
     }
   }
+
+  console.log(`[address] supported, return props, render ranking page`)
 
   return {
     props: {
