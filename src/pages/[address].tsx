@@ -39,7 +39,10 @@ export async function getServerSideProps(
     ctx.res.end()
 
     return {
-      notFound: true,
+      props: {
+        error: "Page not found",
+      },
+      // notFound: true,
     }
   }
 
