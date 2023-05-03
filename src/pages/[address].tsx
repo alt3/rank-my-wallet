@@ -35,6 +35,8 @@ export async function getServerSideProps(
   const validatedAddress = { parsed: validateAddress(parsedAddress) }
 
   if (validatedAddress.parsed.isSupported === false) {
+    ctx.res.statusCode = 404
+
     return {
       notFound: true,
     }
