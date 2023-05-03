@@ -27,13 +27,6 @@ const ShowRankingPage: BlitzPage = ({ validated }: any) => {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: "blocking",
-  }
-}
-
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext
 ): Promise<GetServerSidePropsResult<any>> {
