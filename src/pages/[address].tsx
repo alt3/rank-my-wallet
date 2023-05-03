@@ -1,7 +1,7 @@
 import { SupportedAddressDetails } from "@/components/AddressDetails/SupportedAddressDetails"
 import { SuspenseLoader } from "@/components/SuspenseLoader"
 import { BlitzPage } from "@blitzjs/next"
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next"
+import { GetStaticPaths, GetServerSidePropsContext, GetServerSidePropsResult } from "next"
 import Head from "next/head"
 import { Suspense } from "react"
 import Layout from "src/core/layouts/Layout"
@@ -25,6 +25,13 @@ const ShowRankingPage: BlitzPage = ({ validated }: any) => {
       </div>
     </>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: "blocking",
+  }
 }
 
 export async function getServerSideProps(
