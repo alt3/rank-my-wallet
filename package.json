@@ -24,8 +24,8 @@
     ]
   },
   "dependencies": {
-    "@blitzjs/next": "2.0.0-beta.23",
-    "@blitzjs/rpc": "2.0.0-beta.23",
+    "@blitzjs/next": "2.0.0-beta.27",
+    "@blitzjs/rpc": "2.0.0-beta.27",
     "@chakra-ui/react": "2.6.0",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
@@ -39,7 +39,7 @@
     "bech32": "2.0.0",
     "big.js": "6.2.1",
     "blakejs": "1.2.1",
-    "blitz": "2.0.0-beta.23",
+    "blitz": "2.0.0-beta.27",
     "bs58": "5.0.0",
     "clipboard": "2.0.11",
     "ethereum-regex": "1.1.13",
@@ -61,6 +61,7 @@
     "toformat": "2.0.0"
   },
   "devDependencies": {
+    "@blitzjs/auth": "2.0.0-beta.27",
     "@lingui/cli": "^4.1.2",
     "@lingui/loader": "^4.1.2",
     "@lingui/macro": "^4.1.2",
