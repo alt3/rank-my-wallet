@@ -1,5 +1,7 @@
 import { useEffect } from "react"
 import NProgress from "nprogress"
+import { useLingui } from "@lingui/react"
+import { getRTL } from "src/translations/utils"
 // styles loaded via global theme (styles.ts)
 
 const delay = 500
@@ -12,11 +14,17 @@ const clearProgressBarTimeout = () => {
   }
 }
 
-const startProgressBar = () => {
+const startProgressBar = (rtlDirection) => {
   clearProgressBarTimeout()
 
   progressBarTimeout = setTimeout(() => {
     NProgress.start()
+
+    // set right-to-left class
+    const element = document.getElementById("nprogress")
+    if (element) {
+      element.className = rtlDirection === "rtl" ? "rtl" : "ltr"
+    }
   }, delay)
 }
 
@@ -26,9 +34,14 @@ const stopProgressBar = () => {
 }
 
 export const SuspenseLoader = () => {
+  const { i18n } = useLingui()
+  const rtl = getRTL(i18n.locale)
+
   useEffect(() => {
-    NProgress.configure({ showSpinner: false })
-    startProgressBar()
+    NProgress.configure({
+      showSpinner: false,
+    })
+    startProgressBar(rtl.direction)
 
     return () => {
       stopProgressBar()

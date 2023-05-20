@@ -37,7 +37,7 @@ export function useLinguiInit(messages: Messages) {
 }
 
 export function getRTL(locale): {
-  direction: string
+  direction: "ltr" | "rtl"
   left: ResponsiveValue<CSS.Property.TextAlign>
   right: ResponsiveValue<CSS.Property.TextAlign>
 } {
