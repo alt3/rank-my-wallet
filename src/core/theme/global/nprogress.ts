@@ -8,15 +8,20 @@ export const nprogress: SystemStyleFunction = (props) => ({
   /* Make clicks pass-through */
   "#nprogress": {
     pointerEvents: "none",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 9999999,
+  },
+
+  ".rtl": {
+    transform: "scaleX(-1) !important",
+    right: 0,
   },
 
   "#nprogress .bar": {
     background: mode("teal.500", "teal.300")(props),
-
-    position: "fixed",
-    zIndex: 1031,
-    top: 0,
-    left: 0,
     width: "100%",
     height: barHeight,
   },
