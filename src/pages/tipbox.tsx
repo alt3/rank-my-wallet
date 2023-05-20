@@ -5,6 +5,7 @@ import { TipboxCard } from "@/components/TipboxCard"
 import { BlitzPage } from "@blitzjs/next"
 import { useColorModeValue } from "@chakra-ui/color-mode"
 import { Box, SimpleGrid, Text } from "@chakra-ui/layout"
+import { createStandaloneToast } from "@chakra-ui/toast"
 import { Trans, t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
@@ -15,6 +16,9 @@ import { loadCatalog } from "src/translations/utils"
 
 const TipBox: BlitzPage = () => {
   useLingui()
+
+  // https://github.com/chakra-ui/chakra-ui/issues/5839#issuecomment-1255023682
+  const { ToastContainer } = createStandaloneToast()
 
   const styles = {
     grid: {
@@ -35,6 +39,8 @@ const TipBox: BlitzPage = () => {
         description="Donate some coins to keep this website ad-free"
         keywords="crypto, blockchain, cardano, ergo, wallets, rankings, tip-box, support"
       />
+
+      <ToastContainer />
 
       <ContentContainer>
         <PageHero title={<Trans>Tip Box</Trans>} />
