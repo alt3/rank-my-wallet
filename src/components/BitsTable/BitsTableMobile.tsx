@@ -34,21 +34,20 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
     th: {
       paddingStart: 0,
       marginStart: 0,
-    },
-    tdSumLabel: {
-      colSpan: 3,
-      color: useColorModeValue("gray.600", "gray.400"),
-      fontSize: "xs",
-      fontFamily: "heading",
-      textTransform: "uppercase" as const,
-      letterSpacing: "wider",
-      paddingStart: 0,
-      paddingEnd: "5rem",
+      width: "33%",
     },
     tdSum: {
       colSpan: 1,
       fontWeight: "extrabold",
       color: useColorModeValue("teal.500", "teal.300"),
+      paddingStart: 0,
+    },
+    tdSumLabel: {
+      color: useColorModeValue("gray.600", "gray.400"),
+      fontSize: "xs",
+      fontFamily: "heading",
+      textTransform: "uppercase" as const,
+      letterSpacing: "wider",
       paddingStart: 0,
     },
   }
@@ -101,7 +100,8 @@ export function BitsTableMobile({ caption, bits, sumLabel }: BitsTableProps) {
           </Tr>
 
           <Tr>
-            <Td borderBottom={0} {...styles.tdSumLabel} textAlign={rtl.right} paddingTop={0}>
+            <Td borderBottom={0} colSpan={2}></Td>
+            <Td borderBottom={0} {...styles.tdSumLabel} textAlign={rtl.left} paddingTop={0}>
               {sumLabel}
             </Td>
           </Tr>
