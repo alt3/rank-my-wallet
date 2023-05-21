@@ -11,6 +11,7 @@
     "translations:compile": "lingui compile",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test": "vitest run",
+    "test:preview": "vitest-preview",
     "test:watch": "vitest",
     "prepare": "husky install"
   },
@@ -90,7 +91,8 @@
     "pretty-quick": "3.1.3",
     "typescript": "5.0.4",
     "vite-tsconfig-paths": "4.2.0",
-    "vitest": "0.30.1"
+    "vitest": "0.30.1",
+    "vitest-preview": "0.0.1"
   },
   "private": true
 }

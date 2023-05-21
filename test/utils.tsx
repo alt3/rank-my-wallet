@@ -1,9 +1,11 @@
-import { vi } from "vitest"
-import { render as defaultRender } from "@testing-library/react"
-import { renderHook as defaultRenderHook } from "@testing-library/react-hooks"
-import { NextRouter } from "next/router"
 import { BlitzProvider, RouterContext } from "@blitzjs/next"
 import { QueryClient } from "@blitzjs/rpc"
+import { i18n } from "@lingui/core"
+import { I18nProvider } from "@lingui/react"
+import { act, render as defaultRender } from "@testing-library/react"
+import { renderHook as defaultRenderHook } from "@testing-library/react-hooks"
+import { NextRouter } from "next/router"
+import { vi } from "vitest"
 
 export * from "@testing-library/react"
 
@@ -15,6 +17,20 @@ export * from "@testing-library/react"
 //
 // This is the place to add any other context providers you need while testing.
 // --------------------------------------------------------------------------------
+
+// --------------------------------------------------
+// I18nTestingProvider
+// --------------------------------------------------
+// Required to prevent error `useLingui hook was
+// used without I18nProvider`
+// --------------------------------------------------
+export const I18nTestingProvider = ({ children }: any) => (
+  <I18nProvider i18n={i18n}>{children}</I18nProvider>
+)
+
+act(() => {
+  i18n.activate("en-us")
+})
 
 // --------------------------------------------------
 // render()

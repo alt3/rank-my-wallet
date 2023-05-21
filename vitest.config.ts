@@ -12,6 +12,7 @@ export default defineConfig({
   plugins: [react({ plugins: [["@lingui/swc-plugin", {}]] }), tsconfigPaths()],
   test: {
     dir: "./",
+    css: true,
     globals: true,
     setupFiles: "./test/setup.ts",
     coverage: {
