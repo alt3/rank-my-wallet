@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/color-mode"
 import { useMediaQuery } from "@chakra-ui/media-query"
 import { Td } from "@chakra-ui/table"
 import isEqual from "lodash.isequal"
@@ -48,6 +49,9 @@ interface Props {
 export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)")
 
+  const nonZeroBitColor = useColorModeValue("teal.500", "teal.300")
+  const color = bit ? nonZeroBitColor : "gray.600"
+
   let cellText: string | number | null = null
 
   if (bit === null) {
@@ -66,7 +70,7 @@ export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
   const paddingStart = isMobile ? 0 : "inherit"
 
   return (
-    <Td key={nextId("td")} paddingStart={paddingStart}>
+    <Td key={nextId("td")} paddingStart={paddingStart} color={color}>
       {cellText}
     </Td>
   )

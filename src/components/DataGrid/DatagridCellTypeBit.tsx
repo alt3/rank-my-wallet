@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/color-mode"
 import { useMediaQuery } from "@chakra-ui/media-query"
 import { Td } from "@chakra-ui/table"
 
@@ -10,7 +11,14 @@ export const DataGridCellTypeBit = ({ bit }: Props) => {
 
   const paddingStart = isMobile ? 0 : "inherit"
 
-  return <Td paddingStart={paddingStart}>{bit}</Td>
+  const nonZeroBitColor = useColorModeValue("teal.500", "teal.300")
+  const color = bit ? nonZeroBitColor : "gray.600"
+
+  return (
+    <Td paddingStart={paddingStart} color={color}>
+      {bit}
+    </Td>
+  )
 }
 
 export default DataGridCellTypeBit
