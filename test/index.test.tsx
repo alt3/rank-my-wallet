@@ -1,15 +1,18 @@
 /**
  * @vitest-environment jsdom
  */
-
-import { expect, vi, test } from "vitest"
-import { render } from "test/utils"
+import { I18nTestingProvider, mockRouter, render } from "test/utils"
+import { test } from "vitest"
 
 import Home from "../src/pages/index"
 
-// TODO re-enable after fixing https://nextjs.org/docs/messages/next-router-not-mounted
-test.skip("renders the Supported Blockchains header", () => {
-  const { getByText } = render(<Home />)
-  const linkElement = getByText(/Supported Blockchains/i)
-  expect(linkElement).toBeInTheDocument()
+test("renders expected h2 captions", () => {
+  const { getByText } = render(<Home />, {
+    router: mockRouter,
+    wrapper: I18nTestingProvider,
+  })
+
+  expect(getByText(/Supported blockchains:/i)).toBeInTheDocument()
+
+  expect(getByText(/Sponsored by:/i)).toBeInTheDocument()
 })
