@@ -1,21 +1,32 @@
 import { NavbarDesktop } from "@/components/Navbar/Desktop"
 import { NavbarMobile } from "@/components/Navbar/Mobile"
 import { useColorModeValue } from "@chakra-ui/color-mode"
-import { useBreakpointValue } from "@chakra-ui/media-query"
+import { useEffect, useState } from "react"
+import { isMobile as isMobileDevice } from "react-device-detect"
 
 export function Navbar() {
-  const isMobile = useBreakpointValue({ base: true, md: false })
+  const [isMobile, setIsMobile] = useState<boolean>()
+
   const logoColorPrimary = useColorModeValue("#1B202C", "#52E3D1")
   const logoColorSecondary = useColorModeValue("#52E3D1", "#fff")
 
-  if (isMobile) {
-    return (
-      <NavbarMobile logoColorPrimary={logoColorPrimary} logoColorSecondary={logoColorSecondary} />
-    )
-  }
+  useEffect(() => {
+    isMobileDevice === true ? setIsMobile(true) : setIsMobile(false)
+  }, [])
 
   return (
-    <NavbarDesktop logoColorPrimary={logoColorPrimary} logoColorSecondary={logoColorSecondary} />
+    <>
+      {isMobile && (
+        <NavbarMobile logoColorPrimary={logoColorPrimary} logoColorSecondary={logoColorSecondary} />
+      )}
+
+      {!isMobile && (
+        <NavbarDesktop
+          logoColorPrimary={logoColorPrimary}
+          logoColorSecondary={logoColorSecondary}
+        />
+      )}
+    </>
   )
 }
 
