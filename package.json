@@ -25,8 +25,8 @@
     ]
   },
   "dependencies": {
-    "@blitzjs/next": "2.0.0-beta.29",
-    "@blitzjs/rpc": "2.0.0-beta.29",
+    "@blitzjs/next": "2.0.0-beta.30",
+    "@blitzjs/rpc": "2.0.0-beta.30",
     "@chakra-ui/react": "2.7.1",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
@@ -63,7 +63,7 @@
     "toformat": "2.0.0"
   },
   "devDependencies": {
-    "@blitzjs/auth": "2.0.0-beta.29",
+    "@blitzjs/auth": "2.0.0-beta.30",
     "@lingui/cli": "^4.1.2",
     "@lingui/loader": "^4.1.2",
     "@lingui/macro": "^4.1.2",
