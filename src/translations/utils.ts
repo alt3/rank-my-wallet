@@ -36,7 +36,7 @@ export function useLinguiInit(messages: Messages) {
   return i18n
 }
 
-export function getRTL(locale): {
+export function getRTL(locale: string): {
   direction: "ltr" | "rtl"
   left: ResponsiveValue<CSS.Property.TextAlign>
   right: ResponsiveValue<CSS.Property.TextAlign>
@@ -45,9 +45,17 @@ export function getRTL(locale): {
     return language.locale === locale
   })
 
+  if (!language) {
+    return {
+      direction: "ltr", // use as html `dir` element
+      left: "left", // used as textAlign
+      right: "right", // used as textAlign
+    }
+  }
+
   return {
-    direction: language?.rtl === true ? "rtl" : "ltr", // use as html `dir` element
-    left: language?.rtl === true ? "right" : "left", // used as textAlign
-    right: language?.rtl === true ? "left" : "right", // used as textAlign
+    direction: language.rtl ? "rtl" : "ltr",
+    left: language.rtl ? "right" : "left",
+    right: language.rtl ? "left" : "right",
   }
 }
