@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps: { i18n, ...pageProps } }: AppProps<Custom
   const getLayout = Component.getLayout || ((page) => page)
   const initializedI18n = useLinguiInit(i18n)
   const router = useRouter()
-  const rtl = getRTL(router.locale)
+  const rtl = getRTL(router.locale || "en-us")
 
   useEffect(() => {
     document.documentElement.dir = rtl.direction
