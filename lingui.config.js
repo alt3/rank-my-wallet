@@ -12,13 +12,13 @@ module.exports = {
   pseudoLocale: "pseudo",
   catalogs: [
     {
-      path: "src/translations/locales/{locale}",
+      path: "<rootDir>/src/translations/locales/{locale}",
       include: [
-        "src/components",
-        "src/core",
-        "src/lib",
-        "src/pages",
-        "src/translations/languages.ts",
+        "<rootDir>/src/components",
+        "<rootDir>/src/core",
+        "<rootDir>/src/lib",
+        "<rootDir>/src/pages",
+        "<rootDir>/src/translations/languages.ts",
       ],
     },
   ],
