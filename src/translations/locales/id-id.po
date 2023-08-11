@@ -1,0 +1,349 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-03-24 20:44+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: id\n"
+"Project-Id-Version: rankmywallet\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-08-11 08:58\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: rankmywallet\n"
+"X-Crowdin-Project-ID: 576955\n"
+"X-Crowdin-Language: id\n"
+"X-Crowdin-File: /main/src/translations/locales/en-us.po\n"
+"X-Crowdin-File-ID: 27\n"
+
+msgid "Address"
+msgstr "Alamat"
+
+msgid "Address Analysis"
+msgstr "Analisis Alamat"
+
+msgid "Address Details"
+msgstr "Detail Alamat"
+
+msgid "Address Type"
+msgstr "Jenis Alamat"
+
+msgid "An <0>Alt3</0> product powered by <1>Ergo Watch </1>"
+msgstr "Sebuah Produk <0>Alt3</0> yang didukung oleh <1>Ergo Watch</1>"
+
+msgid "Back to homepage"
+msgstr "Kembali ke beranda"
+
+msgid "Balance"
+msgstr "Saldo"
+
+msgid "Become a Sponsor"
+msgstr "Menjadi Sponsor"
+
+msgid "Binaries"
+msgstr "Binari"
+
+msgid "Bits"
+msgstr "Bit"
+
+msgid "Blockchain"
+msgstr "Blockchain"
+
+msgid "Blockchain Species"
+msgstr "Spesies Blockchain"
+
+msgid "Blue whale"
+msgstr "Paus biru"
+
+msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
+msgstr "Alamat Byron (lawas) tidak memiliki fungsionalitas staking yang digunakan RankMyWallet untuk menentukan peringkat Anda."
+
+msgid "Cardano"
+msgstr "Cardano"
+
+msgid "Cardano Rankings are coming soon"
+msgstr "Peringkat Cardano akan segera hadir"
+
+msgid "Cardano Species"
+msgstr "Spesies Cardano"
+
+msgid "Checksum"
+msgstr "Checksum"
+
+msgid "Competition"
+msgstr "Kompetisi"
+
+msgid "Competitors"
+msgstr "Pesaing"
+
+msgid "Content"
+msgstr "Konten"
+
+msgid "Copied!"
+msgstr "Disalin!"
+
+msgid "Crab"
+msgstr "Kepiting"
+
+msgid "Current Species"
+msgstr "Spesies saat ini"
+
+msgid "Decimals"
+msgstr "Desimal"
+
+msgid "Decoded Bytes:"
+msgstr "Byte yang diterjemahkan:"
+
+msgid "Dutch"
+msgstr "Bahasa Belanda"
+
+msgid "Encoding"
+msgstr "Encoding"
+
+msgid "English"
+msgstr "Bahasa Inggris"
+
+msgid "Ergo"
+msgstr "Ergo"
+
+msgid "Ergo Species"
+msgstr "Spesies Ergo"
+
+msgid "Every Ergo wallet can have multiple addresses, also called boxes. Ergo wallets like Nautilus mostly show your 'consolidated' balance by adding up the amounts found in all boxes related to your wallet. RankMyWallet however, will only show the balance of a single box."
+msgstr "Setiap dompet Ergo dapat memiliki beberapa alamat, yang juga disebut kotak. Dompet Ergo seperti Nautilus sebagian besar menunjukkan saldo 'gabungan' Anda dengan menjumlahkan jumlah yang ditemukan di semua kotak yang terkait dengan dompet Anda. Akan tetapi, RankMyWallet hanya akan menampilkan saldo dari satu kotak."
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Fin whale"
+msgstr "Paus sirip"
+
+msgid "Fish"
+msgstr "Ikan"
+
+msgid "Frequently Asked Questions (FAQ)"
+msgstr "Pertanyaan yang Sering Diajukan (FAQ)"
+
+msgid "General"
+msgstr "Umum"
+
+msgid "German"
+msgstr "Bahasa Jerman"
+
+msgid "Ghost"
+msgstr "Hantu"
+
+msgid "Github"
+msgstr "Github"
+
+msgid "Go"
+msgstr "Mulai"
+
+msgid "Great white shark"
+msgstr "Hiu putih besar"
+
+msgid "Hindi"
+msgstr "Bahasa Hindi"
+
+msgid "Home"
+msgstr "Beranda"
+
+msgid "How can I help with translations?"
+msgstr "Bagaimana saya dapat membantu menerjemahkan?"
+
+msgid "How do I consolidate my boxes?"
+msgstr "Bagaimana cara mengkonsolidasikan kotak saya?"
+
+msgid "If you are a project or business and would like to show your logo on the landing page, contact us on <0>Twitter</0> for more details."
+msgstr "Jika Anda adalah sebuah proyek atau bisnis dan ingin menampilkan logo Anda di halaman utama, hubungi kami di <0>Twitter</0> untuk informasi lebih lanjut."
+
+msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
+msgstr "Jika Anda adalah seorang individu yang ingin mensponsori proyek ini, mohon pertimbangkan untuk menyumbang melalui <0>Tip Box</0>."
+
+msgid "Internal Server Error"
+msgstr "Kesalahan Server Internal"
+
+msgid "Jellyfish"
+msgstr "Ubur-ubur"
+
+msgid "Leading Prefix Bits:"
+msgstr "Bit Awalan Terkemuka:"
+
+msgid "Network"
+msgstr "Jaringan"
+
+msgid "Network Type"
+msgstr "Jenis Jaringan"
+
+msgid "Next Species"
+msgstr "Spesies Berikutnya"
+
+msgid "Octopus"
+msgstr "Gurita"
+
+msgid "Orca"
+msgstr "Orca"
+
+msgid "Oyster"
+msgstr "Tiram"
+
+msgid "Page Not Found"
+msgstr "Halaman Tidak Ditemukan"
+
+msgid "Pipefish"
+msgstr "Pipefish"
+
+msgid "Piranha"
+msgstr "Piranha"
+
+msgid "Plankton"
+msgstr "Plankton"
+
+msgid "Please donate to keep this website ad-free"
+msgstr "Silakan berdonasi untuk menjaga situs web ini tetap bebas dari iklan"
+
+msgid "Please provide a wallet address"
+msgstr "Harap berikan alamat dompet"
+
+msgid "Portugese"
+msgstr "Portugis"
+
+msgid "Prefix Bits:"
+msgstr "Bit Awalan:"
+
+msgid "Prefix Byte"
+msgstr "Bit Awalan"
+
+msgid "Pseudo"
+msgstr "Pseudo"
+
+msgid "Rank"
+msgstr "Peringkat"
+
+msgid "RankMyWallet on Github"
+msgstr "RankMyWallet di Github"
+
+msgid "RankMyWallet on Twitter"
+msgstr "RankMyWallet di Twitter"
+
+msgid "Required"
+msgstr "Diperlukan"
+
+msgid "Romanian"
+msgstr "Bahasa Rumania"
+
+msgid "Seahorse"
+msgstr "Kuda laut"
+
+msgid "Shark"
+msgstr "Hiu"
+
+msgid "Shell"
+msgstr "Kerang"
+
+msgid "Shrimp"
+msgstr "Udang"
+
+msgid "Sorry, but we are unable to recognize this address."
+msgstr "Maaf, kami tidak dapat mengenali alamat ini."
+
+msgid "Sorry, but we do not support {blockchain} {addressType} addresses."
+msgstr "Maaf, tetapi kami tidak mendukung alamat {blockchain} {addressType}."
+
+msgid "Sorry, but we do not support {blockchain} {network} addresses."
+msgstr "Maaf, tetapi kami tidak mendukung alamat {blockchain} {network}."
+
+msgid "Sorry, but we do not support {blockchain}."
+msgstr "Maaf, kami tidak mendukung {blockchain}."
+
+msgid "Sorry, we do not rank empty wallets"
+msgstr "Maaf, kami tidak memberi peringkat pada dompet kosong"
+
+msgctxt "Plural"
+msgid "Species"
+msgstr "Spesies"
+
+msgctxt "Singular"
+msgid "Species"
+msgstr "Spesies"
+
+msgid "Sponsored By:"
+msgstr "Disponsori oleh:"
+
+msgid "Starfish"
+msgstr "Bintang Laut"
+
+msgid "Starts At"
+msgstr "Mulai dari"
+
+msgid "Supported Blockchains:"
+msgstr "Blockchain yang didukung:"
+
+msgid "Switch to {text} mode"
+msgstr "Beralih ke mode {text}"
+
+msgid "Swordfish"
+msgstr "Ikan pedang"
+
+msgid "Tiger shark"
+msgstr "Hiu harimau"
+
+msgid "Tip Box"
+msgstr "Kotak Tip"
+
+msgid "Trailing Prefix Bits:"
+msgstr "Bit Awalan yang tertinggal:"
+
+msgid "Translators do not require coding skills and can help correcting or adding languages by following the <0>instructions on this page</0>."
+msgstr "Penerjemah tidak memerlukan keahlian pengkodean dan dapat membantu mengoreksi atau menambahkan bahasa dengan mengikuti <0>petunjuk di halaman ini</0>."
+
+msgid "Try again?"
+msgstr "Coba lagi?"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Unsupported Address"
+msgstr "Alamat yang Tidak Didukung"
+
+msgid "Version"
+msgstr "Versi"
+
+msgid "Wallet address"
+msgstr "Alamat dompet"
+
+msgid "Whale"
+msgstr "Paus"
+
+msgid "What technology does this website use?"
+msgstr "Teknologi apa yang digunakan situs web ini?"
+
+msgid "Where do I report bugs?"
+msgstr "Di mana saya melaporkan bugs?"
+
+msgid "Why are Byron addresses not supported?"
+msgstr "Mengapa alamat Byron tidak didukung?"
+
+msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
+msgstr "Mengapa saldo di situs web ini berbeda dengan saldo di dompet Ergo saya?"
+
+msgid "You are Cardano holder"
+msgstr "Anda adalah pemegang Cardano"
+
+msgid "You are Ergo holder"
+msgstr "Anda adalah pemegang Ergo"
+
+msgid "You can consolidate all of your boxes, and thereby your balance, into a single box by sending all Ergo to yourself using either a new address or one of your existing receive addresses."
+msgstr "Anda dapat mengkonsolidasikan semua kotak Anda, dan dengan demikian saldo Anda, ke dalam satu kotak dengan mengirimkan semua Ergo ke diri Anda sendiri menggunakan alamat baru atau salah satu alamat penerima yang sudah ada."
+
+msgid "Your Balance"
+msgstr "Saldo Anda"
+
+msgid "Your Project"
+msgstr "Proyek Anda"
+
+msgid "Your Rank"
+msgstr "Peringkat Anda"
+
