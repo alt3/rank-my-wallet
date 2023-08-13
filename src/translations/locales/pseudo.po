@@ -157,6 +157,9 @@ msgstr ""
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr ""
 
+msgid "Indonesian"
+msgstr ""
+
 msgid "Internal Server Error"
 msgstr ""
 
@@ -341,4 +344,3 @@ msgstr ""
 
 msgid "Your Rank"
 msgstr ""
-

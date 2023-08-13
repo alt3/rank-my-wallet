@@ -162,6 +162,9 @@ msgstr "Se você é um projeto ou empresa e gostaria de mostrar o seu logotipo n
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr "Se você é um indivíduo que deseja patrocinar este projeto, por favor considere doar através da <0>Caixa de Gorjetas</0>."
 
+msgid "Indonesian"
+msgstr "Indonésia"
+
 msgid "Internal Server Error"
 msgstr "Erro interno do servidor"
 

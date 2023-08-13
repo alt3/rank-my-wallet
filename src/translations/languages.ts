@@ -30,6 +30,12 @@ const languages: Languages[] = [
     rtl: false,
   },
   {
+    locale: "id-id",
+    msg: msg`Indonesian`,
+    territory: "ID",
+    rtl: false,
+  },
+  {
     locale: "nl-nl",
     msg: msg`Dutch`,
     territory: "NL",

@@ -162,6 +162,9 @@ msgstr "Ben je een project of bedrijf en wil je je logo op de homepagina laten z
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr "Ben je een individu en wil je dit project ondersteunen? Overweeg dan om te doneren via de <0>Fooienpot</0>."
 
+msgid "Indonesian"
+msgstr "Indonesisch"
+
 msgid "Internal Server Error"
 msgstr "Interne Serverfout"
 
