@@ -162,6 +162,9 @@ msgstr "Dacă sunteți un proiect sau o afacere și doriți să afișați logo-u
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr "Dacă dorești să sponsorizezi acest proiect, te rugăm să iei în considerare donația prin intermediul <0>Cutia de Tip </0>."
 
+msgid "Indonesian"
+msgstr "Indoneziană"
+
 msgid "Internal Server Error"
 msgstr "Eroare internă de server"
 

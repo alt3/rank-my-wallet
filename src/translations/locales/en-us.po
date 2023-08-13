@@ -157,6 +157,9 @@ msgstr "If you are a project or business and would like to show your logo on the
 msgid "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 msgstr "If you are an individual looking to sponsor this project, please consider donating via the <0>Tip Box</0>."
 
+msgid "Indonesian"
+msgstr "Indonesian"
+
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
 
@@ -341,4 +344,3 @@ msgstr "Your Project"
 
 msgid "Your Rank"
 msgstr "Your Rank"
-
