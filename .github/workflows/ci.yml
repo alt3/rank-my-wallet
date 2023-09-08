@@ -16,10 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install Node v16
+    - name: Install Node v18
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 18
     - run: npm ci
     - run: npm run lint
 
@@ -30,10 +30,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install Node v16
+    - name: Install Node v18
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 18
     - run: npm ci
     - run: npx tsc
 
@@ -44,9 +44,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install Node v16
+    - name: Install Node v18
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 18
     - run: npm ci
     - run: npm run test
