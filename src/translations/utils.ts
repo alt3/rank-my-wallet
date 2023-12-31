@@ -21,7 +21,7 @@ export function useLinguiInit(messages: Messages) {
     // there is single instance of i18n on the server
     i18n.loadAndActivate({ locale, messages })
   }
-  if (isClient && i18n.locale === undefined) {
+  if (isClient && !i18n.locale) {
     // first client render
     i18n.loadAndActivate({ locale, messages })
   }
