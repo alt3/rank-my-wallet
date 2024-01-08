@@ -6,7 +6,7 @@ import { ResponsiveValue } from "@chakra-ui/react"
 import * as CSS from "csstype"
 
 export async function loadCatalog(locale: string) {
-  const { messages } = await import(`@lingui/loader!./locales/${locale}.po`)
+  const { messages } = await import(`./locales/${locale}.po`)
 
   return messages
 }
