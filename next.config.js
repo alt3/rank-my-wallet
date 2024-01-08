@@ -27,6 +27,16 @@ const config = {
     locales: linguiConfig.locales,
     defaultLocale: linguiConfig.sourceLocale,
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.po$/,
+      use: {
+        loader: "@lingui/loader", // https://github.com/lingui/js-lingui/issues/1782
+      },
+    })
+
+    return config
+  },
 }
 
 module.exports = withBlitz(withBundleAnalyzer(config))
