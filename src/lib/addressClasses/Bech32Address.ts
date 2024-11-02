@@ -154,7 +154,7 @@ export class Bech32Address extends BaseAddress {
         }
 
         // analyze the header byte
-        const headerByteBuffer = getFirstByte(bytesBuffer)
+        const headerByteBuffer = getFirstByte(bytesBuffer as unknown as Uint8Array)
         const headerByte = parseInt(Buffer.from(headerByteBuffer).toString("hex"), 16)
         const headerBits = byteToBits(headerByte, 8)
 

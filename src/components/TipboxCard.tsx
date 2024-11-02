@@ -7,7 +7,8 @@ import { useToast } from "@chakra-ui/toast"
 import { t } from "@lingui/macro"
 import { useLingui } from "@lingui/react"
 import ClipboardAPI from "clipboard"
-import QRCode from "qrcode.react"
+// import QRCode from "qrcode.react"
+import {QRCodeSVG} from 'qrcode.react';
 import { useEffect } from "react"
 import { FaRegCopy } from "react-icons/fa"
 
@@ -67,7 +68,7 @@ export function TipboxCard({ title, address, url, ...rest }) {
             {title}
           </Text>
 
-          <QRCode value={address} fgColor={qrForegroundColor} bgColor={qrBackgroundColor} />
+          <QRCodeSVG value={address} fgColor={qrForegroundColor} bgColor={qrBackgroundColor} />
           <Box {...styles.linkBox}>
             <Link href={url} isExternal passHref>
               <Text
