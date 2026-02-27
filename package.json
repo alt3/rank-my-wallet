@@ -48,7 +48,7 @@
     "framer-motion": "11.2.13",
     "lodash.isequal": "4.5.0",
     "monero-regex": "1.0.9",
-    "next": "14.2.35",
+    "next": "16.1.6",
     "nprogress": "0.2.0",
     "qrcode.react": "4.1.0",
     "react": "18.3.1",
