@@ -1,5 +1,4 @@
 import { FrontpageCard } from "@/components/FrontpageCard"
-import { CardanoLogo } from "@/components/Images/Logos/Cardano"
 import { ErgoLogo } from "@/components/Images/Logos/Ergo"
 import { useColorModeValue } from "@chakra-ui/color-mode"
 import { Box, Center, SimpleGrid, Text } from "@chakra-ui/layout"
@@ -18,8 +17,10 @@ export function SupportedBlockChains() {
       marginBottom: "2.5rem",
     },
     grid: {
-      columns: 2,
+      columns: 1,
       spacing: { base: "15px", sm: "30px", md: "40px" },
+      maxWidth: { base: "100%", md: "320px" },
+      marginX: "auto",
     },
     card: {
       maxHeight: { base: "70px", md: "125px" },
@@ -35,9 +36,6 @@ export function SupportedBlockChains() {
       </Center>
 
       <SimpleGrid {...styles.grid}>
-        <FrontpageCard url="https://cardano.org/" {...styles.card}>
-          <CardanoLogo width="230px" fill={useColorModeValue("gray.600", "whiteAlpha.900")} />
-        </FrontpageCard>
         <FrontpageCard url="https://ergoplatform.org/" {...styles.card}>
           <ErgoLogo width="150px" fill={useColorModeValue("gray.600", "whiteAlpha.900")} />
         </FrontpageCard>
