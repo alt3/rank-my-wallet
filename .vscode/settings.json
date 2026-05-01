@@ -6,5 +6,8 @@
   },
   "jest.autoRun": "off",
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "i18n-ally.localesPaths": [
+    "src/translations/locales"
+  ]
 }

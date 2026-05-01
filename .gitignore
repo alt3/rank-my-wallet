@@ -23,6 +23,7 @@ blitz-log.log
 .swc/
 
 # misc
+.claude
 .DS_Store
 
 # local env files
