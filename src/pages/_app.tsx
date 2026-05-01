@@ -1,7 +1,6 @@
 import { AppProps, ErrorBoundary, ErrorFallbackProps } from "@blitzjs/next"
 import { ChakraProvider } from "@chakra-ui/provider"
 import { I18nProvider } from "@lingui/react"
-import { Analytics } from "@vercel/analytics/react"
 import "focus-visible" // Show blue outline accessibility focus for keyboard users, not mouse users
 import { useRouter } from "next/router"
 import { useEffect } from "react"
@@ -35,7 +34,6 @@ function MyApp({ Component, pageProps: { i18n, ...pageProps } }: AppProps<Custom
         <I18nProvider i18n={initializedI18n}>
           {getLayout(<Component {...pageProps} />)}
         </I18nProvider>
-        <Analytics />
       </ErrorBoundary>
     </ChakraProvider>
   )
