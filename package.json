@@ -84,7 +84,7 @@
     "eslint-config-next": "14.2.4",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-string-to-lingui": "0.23.17",
-    "eslint-plugin-tsdoc": "0.3.0",
+    "eslint-plugin-tsdoc": "0.5.2",
     "husky": "9.1.7",
     "jsdom": "25.0.1",
     "lint-staged": "15.2.10",
