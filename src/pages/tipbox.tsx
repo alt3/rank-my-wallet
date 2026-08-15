@@ -20,8 +20,9 @@ const TipBox: BlitzPage = () => {
 
   const styles = {
     grid: {
-      columns: { base: 1, sm: 2 },
-      gap: { base: "2rem", sm: "4rem" },
+      columns: 1,
+      maxWidth: { base: "100%", sm: "336px" },
+      marginX: "auto",
     },
     disclaimer: {
       textAlign: "center" as const,
@@ -35,7 +36,7 @@ const TipBox: BlitzPage = () => {
       <MetaTags
         title={`RankMyWallet - ${t`Tip Box`}`}
         description="Donate some coins to keep this website ad-free"
-        keywords="crypto, blockchain, cardano, ergo, wallets, rankings, tip-box, support"
+        keywords="crypto, blockchain, ergo, wallets, rankings, tip-box, support"
       />
 
       <Toaster />
@@ -45,11 +46,6 @@ const TipBox: BlitzPage = () => {
 
         <Box>
           <SimpleGrid {...styles.grid}>
-            <TipboxCard
-              title={<Trans>Cardano</Trans>}
-              address={tipboxAddresses.cardano}
-              url={`https://pool.pm/${tipboxAddresses.cardano}`}
-            />
             <TipboxCard
               title={<Trans>Ergo</Trans>}
               address={tipboxAddresses.ergo}

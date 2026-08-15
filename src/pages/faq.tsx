@@ -27,7 +27,7 @@ const FaqPage: BlitzPage = () => {
       <MetaTags
         title={`RankMyWallet - ${t`FAQ`}`}
         description="Frequently asked questions for RankMyWallet"
-        keywords="crypto, blockchain, cardano, ergo, wallets, rankings, species, faq, questions"
+        keywords="crypto, blockchain, ergo, wallets, rankings, species, faq, questions"
       />
 
       <ContentContainer>
@@ -38,11 +38,6 @@ const FaqPage: BlitzPage = () => {
             <Tabs.Trigger value="general">
               <Text>
                 <Trans>General</Trans>
-              </Text>
-            </Tabs.Trigger>
-            <Tabs.Trigger value="cardano">
-              <Text>
-                <Trans>Cardano</Trans>
               </Text>
             </Tabs.Trigger>
             <Tabs.Trigger value="ergo">
@@ -105,20 +100,6 @@ const FaqPage: BlitzPage = () => {
                 >
                   Github Issues
                 </Link>
-              </AccordionItemFaq>
-            </Accordion.Root>
-          </Tabs.Content>
-
-          {/* CARDANO PANEL */}
-          <Tabs.Content value="cardano">
-            <Accordion.Root multiple>
-              <AccordionItemFaq question={<Trans>Why are Byron addresses not supported?</Trans>}>
-                <Text>
-                  <Trans>
-                    Byron (legacy) addresses lack the staking functionality that RankMyWallet uses
-                    to determine your rank.
-                  </Trans>
-                </Text>
               </AccordionItemFaq>
             </Accordion.Root>
           </Tabs.Content>
