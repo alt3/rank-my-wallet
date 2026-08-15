@@ -28,7 +28,10 @@ export function UnsupportedAddressDetails({ parsed }) {
         <ErrorHero
           title={t`Unsupported Address`}
           subtitle={getUnsupportedAddressMessage({
-            type: parsed.unsupported.type,
+            // `unsupported` is only set for addresses validateAddress rejects.
+            // A valid address should never reach this component, but if one
+            // does, fall back rather than crash the page on a missing property.
+            type: parsed.unsupported?.type ?? "UnrecognizedAddress",
             blockchain: parsed.blockchain.name,
             network: parsed.blockchain?.network,
             addressType: parsed.type?.name,

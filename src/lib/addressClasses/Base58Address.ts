@@ -1,4 +1,4 @@
-import { t } from "@lingui/core/macro"
+import { msg } from "@lingui/core/macro"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
 import { BaseAddress } from "src/lib/addressClasses/BaseAddress"
@@ -88,11 +88,11 @@ export class Base58Address extends BaseAddress {
         bits: headerBits,
         leading: {
           bits: getLeadingBits(headerBits),
-          type: t`Address Type`,
+          type: msg`Address Type`,
         },
         trailing: {
           bits: getTrailingBits(headerBits),
-          type: t`Network Type`,
+          type: msg`Network Type`,
         },
       }
 

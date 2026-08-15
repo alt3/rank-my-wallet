@@ -24,15 +24,25 @@ export const parseAddress = function (
     }
   }
 
-  // Base58
+  // Base58. Only the decode is allowed to fail quietly -- bs58 throws for any
+  // input that is not Base58, which is the normal way this branch is skipped.
+  // The constructor is deliberately outside the try: a throw in there is a bug,
+  // and swallowing it silently misclassifies a valid address as unrecognized.
+  let base58decoded: Uint8Array | undefined
+
   try {
-    const base58decoded = bs58.decode(address)
+    base58decoded = bs58.decode(address)
+  } catch {
+    base58decoded = undefined
+  }
+
+  if (base58decoded !== undefined) {
     const parsedBase58 = new Base58Address(address, base58decoded)
 
     if (parsedBase58.blockchain.name !== undefined) {
       return parsedBase58
     }
-  } catch (e) {}
+  }
 
   // Regexes first, just for fun
   const parsedRegex = new RegexAddress(address)

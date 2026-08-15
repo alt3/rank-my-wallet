@@ -1,4 +1,4 @@
-import { t } from "@lingui/core/macro"
+import { msg } from "@lingui/core/macro"
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
 import { BaseAddress } from "src/lib/addressClasses/BaseAddress"
@@ -164,11 +164,11 @@ export class Bech32Address extends BaseAddress {
           bits: headerBits,
           leading: {
             bits: getLeadingBits(headerBits),
-            type: t`Network Type`,
+            type: msg`Network Type`,
           },
           trailing: {
             bits: getTrailingBits(headerBits),
-            type: t`Address Type`,
+            type: msg`Address Type`,
           },
         }
 
