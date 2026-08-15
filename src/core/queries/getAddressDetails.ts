@@ -11,7 +11,7 @@ export default async function getAddressDetails(parsed) {
   const nextSpecies = getNextSpeciesForBalance(
     parsed.blockchain.name,
     apiData.balance.ticker,
-    currentSpecies.name
+    currentSpecies.name,
   )
 
   // prepare result

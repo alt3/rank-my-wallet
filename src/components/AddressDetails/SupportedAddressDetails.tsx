@@ -167,7 +167,7 @@ export function SupportedAddressDetails({ parsed }) {
                     ? bigToString(
                         addressDetails.species.next.requires,
                         i18n.locale,
-                        parsed.currency.decimals
+                        parsed.currency.decimals,
                       )
                     : "-"
                 }
@@ -196,7 +196,11 @@ export function SupportedAddressDetails({ parsed }) {
         <Accordion.Root multiple>
           {/* COMPETITION PANE - IF APPLICABLE */}
           {addressDetails.rankings.length > 1 && (
-            <Accordion.Item value="competition" borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
+            <Accordion.Item
+              value="competition"
+              borderStyle="none"
+              marginBottom={{ base: "1rem", md: "0.5rem" }}
+            >
               <h2>
                 <Accordion.ItemTrigger p={0}>
                   <Box flex="1" textAlign={rtl.left}>

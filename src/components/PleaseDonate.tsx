@@ -20,19 +20,9 @@ export function PleaseDonate({ ...rest }) {
         {...rest}
       >
         <Text color={useColorModeValue("gray.600", "gray.500")}>
-          <Box
-            as={BsHeartFill}
-            display="inline-block"
-            color="red"
-            marginEnd="0.25rem"
-          />
+          <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
           <Trans>Please donate to keep this website ad-free</Trans>
-          <Box
-            as={BsHeartFill}
-            display="inline-block"
-            color="red"
-            marginStart="0.5rem"
-          />
+          <Box as={BsHeartFill} display="inline-block" color="red" marginStart="0.5rem" />
         </Text>
       </Box>
     </Link>

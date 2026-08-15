@@ -43,7 +43,7 @@ const Page404: BlitzPage = () => {
 }
 
 export async function getStaticProps(
-  ctx: GetStaticPropsContext
+  ctx: GetStaticPropsContext,
 ): Promise<GetStaticPropsResult<any>> {
   return {
     props: {

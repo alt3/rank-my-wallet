@@ -28,7 +28,7 @@ const ShowRankingPage: BlitzPage = ({ validated }: any) => {
 }
 
 export async function getServerSideProps(
-  ctx: GetServerSidePropsContext
+  ctx: GetServerSidePropsContext,
 ): Promise<GetServerSidePropsResult<any>> {
   // @ts-ignore: Object is possibly 'null'.
   const parsedAddress = parseAddress(ctx.params.address)

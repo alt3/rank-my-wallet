@@ -48,7 +48,12 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
     <Table.Root variant="line" {...styles.table}>
       <Table.Header>
         <Table.Row>
-          <Table.ColumnHeader {...styles.left} textAlign={rtl.left} maxWidth="10px" whiteSpace="nowrap">
+          <Table.ColumnHeader
+            {...styles.left}
+            textAlign={rtl.left}
+            maxWidth="10px"
+            whiteSpace="nowrap"
+          >
             <Trans>Rank</Trans>
           </Table.ColumnHeader>
           <Table.ColumnHeader {...styles.right} textAlign={rtl.right}>
@@ -94,7 +99,7 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
                     ticker={bigToString(
                       nanoToTicker(element.balance.toString(), 9),
                       i18n.locale,
-                      9
+                      9,
                     )}
                     tickerSymbol={tickerSymbol}
                     fractionsColor={fractionsColor}

@@ -30,36 +30,21 @@ export function Sponsors() {
       <SimpleGrid {...styles.grid}>
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box
-              as={BsHeartFill}
-              display="inline-block"
-              color="red"
-              marginEnd="0.25rem"
-            />
+            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
             <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>
 
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box
-              as={BsHeartFill}
-              display="inline-block"
-              color="red"
-              marginEnd="0.25rem"
-            />
+            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
             <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>
 
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box
-              as={BsHeartFill}
-              display="inline-block"
-              color="red"
-              marginEnd="0.25rem"
-            />
+            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
             <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>

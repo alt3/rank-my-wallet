@@ -24,10 +24,12 @@ function MyApp({ Component, pageProps: { i18n, ...pageProps } }: AppProps<Custom
   const router = useRouter()
   const rtl = getRTL(router.locale || "en-us")
 
+  // `[rtl]` used to sit outside the useEffect() call, making this a comma
+  // expression rather than a dependency array -- so the effect re-ran on every
+  // render instead of only when the locale direction changed.
   useEffect(() => {
     document.documentElement.dir = rtl.direction
-  }),
-    [rtl]
+  }, [rtl])
 
   return (
     <ChakraProvider value={system}>

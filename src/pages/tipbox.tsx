@@ -58,19 +58,9 @@ const TipBox: BlitzPage = () => {
           </SimpleGrid>
 
           <Text {...styles.disclaimer}>
-            <Box
-              as={BsHeartFill}
-              display="inline-block"
-              color="red"
-              marginEnd="0.25rem"
-            />
+            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
             <Trans>Please donate to keep this website ad-free</Trans>{" "}
-            <Box
-              as={BsHeartFill}
-              display="inline-block"
-              color="red"
-              marginEnd="0.25rem"
-            />
+            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
           </Text>
         </Box>
       </ContentContainer>
@@ -79,7 +69,7 @@ const TipBox: BlitzPage = () => {
 }
 
 export async function getStaticProps(
-  ctx: GetStaticPropsContext
+  ctx: GetStaticPropsContext,
 ): Promise<GetStaticPropsResult<any>> {
   return {
     props: {

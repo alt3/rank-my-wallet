@@ -11,7 +11,7 @@ import { RegexAddress } from "src/lib/addressClasses/RegexAddress"
  * @param address - The given blockchain address
  */
 export const parseAddress = function (
-  address: string
+  address: string,
 ): RegexAddress | Bech32Address | Base58Address | UnrecognizedAddress {
   // Bech32
   const bech32decoded = bech32.decodeUnsafe(address.toLowerCase(), 250) // bech32 requires all lowercase

@@ -44,7 +44,7 @@ export default async function fetchCardanoRankings(parsedAddress) {
 
         throwError(
           `${error.response.data.error} - ${error.response.data.message}`,
-          error.response.data.status_code
+          error.response.data.status_code,
         )
       } else if (error.request) {
         // The request was made but no response was received. E.g. when using non-existent domain

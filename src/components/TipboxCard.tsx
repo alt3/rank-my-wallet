@@ -6,7 +6,7 @@ import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
 import ClipboardAPI from "clipboard"
 // import QRCode from "qrcode.react"
-import {QRCodeSVG} from 'qrcode.react';
+import { QRCodeSVG } from "qrcode.react"
 import { useEffect } from "react"
 import { FaRegCopy } from "react-icons/fa"
 

@@ -49,7 +49,12 @@ export function RankingsTableDesktop({ rankings, tickerSymbol }: RankingsTablePr
     <Table.Root variant="line" {...styles.table}>
       <Table.Header>
         <Table.Row>
-          <Table.ColumnHeader {...styles.left} textAlign={rtl.left} maxWidth="10px" whiteSpace="nowrap">
+          <Table.ColumnHeader
+            {...styles.left}
+            textAlign={rtl.left}
+            maxWidth="10px"
+            whiteSpace="nowrap"
+          >
             <Trans>Rank</Trans>
           </Table.ColumnHeader>
           <Table.ColumnHeader {...styles.left}>

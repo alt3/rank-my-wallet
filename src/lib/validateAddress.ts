@@ -9,7 +9,7 @@ import { RegexAddress } from "src/lib/addressClasses/RegexAddress"
  * @param parsedAddress - The fully parsed blockchain address
  */
 export const validateAddress = function (
-  parsedAddress: RegexAddress | Bech32Address | Base58Address | UnrecognizedAddress
+  parsedAddress: RegexAddress | Bech32Address | Base58Address | UnrecognizedAddress,
 ) {
   // unrecognized addresses
   if (!parsedAddress.blockchain.name) {

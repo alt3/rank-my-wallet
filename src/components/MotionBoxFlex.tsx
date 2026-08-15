@@ -16,8 +16,8 @@ export const MotionBoxFlex = motion(
   forwardRef<HTMLDivElement, MotionBoxProps>((props, ref) => {
     const chakraProps = Object.fromEntries(
       // do not pass framer props to DOM element
-      Object.entries(props).filter(([key]) => !isValidMotionProp(key))
+      Object.entries(props).filter(([key]) => !isValidMotionProp(key)),
     )
     return <Flex ref={ref} {...chakraProps} />
-  })
+  }),
 )

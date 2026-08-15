@@ -9,7 +9,7 @@ import species from "src/core/constants/species"
  */
 export const getCurrentSpeciesForBalance = function (
   blockchain: "Cardano" | "Ergo",
-  balance: number
+  balance: number,
 ): { name: MessageDescriptor; icon: string; startsAt: number } {
   const match = species[blockchain]
     .slice()

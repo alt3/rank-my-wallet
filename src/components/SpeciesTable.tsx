@@ -49,7 +49,12 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
       <Table.Root variant="line" {...styles.table}>
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeader {...styles.th} {...styles.left} textAlign={rtl.left} maxWidth="10px">
+            <Table.ColumnHeader
+              {...styles.th}
+              {...styles.left}
+              textAlign={rtl.left}
+              maxWidth="10px"
+            >
               #
             </Table.ColumnHeader>
             <Table.ColumnHeader {...styles.th} {...styles.left} textAlign={rtl.left}>
