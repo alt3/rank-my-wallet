@@ -18,7 +18,7 @@ export function SupportedBlockChains() {
     },
     grid: {
       columns: 1,
-      spacing: { base: "15px", sm: "30px", md: "40px" },
+      gap: { base: "15px", sm: "30px", md: "40px" },
       maxWidth: { base: "100%", md: "320px" },
       marginX: "auto",
     },

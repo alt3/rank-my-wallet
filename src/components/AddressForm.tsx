@@ -52,9 +52,12 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
     <Box style={{ width: "100%" }} {...rest}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field.Root invalid={errors.address ? true : false}>
-          <HStack>
+          {/* width/flex are explicit: Chakra 2's Input defaulted to width 100%,
+              Chakra 3's sizes to its content, which collapsed this form. */}
+          <HStack width="100%">
             <Input
               id="address"
+              flex="1"
               placeholder={placeholder}
               {...styles.input}
               {...register("address", {

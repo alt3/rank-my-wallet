@@ -21,6 +21,32 @@ const config = defineConfig({
     tokens: {
       colors,
       fonts,
+      // Chakra 3 dropped the `container.*` sizes. Five components (including
+      // ContentContainer, which wraps every page) use `maxW="container.md"`,
+      // so without these the whole site loses its max width. Values are
+      // Chakra 2's.
+      sizes: {
+        container: {
+          sm: { value: "640px" },
+          md: { value: "768px" },
+          lg: { value: "1024px" },
+          xl: { value: "1280px" },
+        },
+      },
+    },
+    semanticTokens: {
+      colors: {
+        // Chakra 2's solid button flipped to the light end of the scale in
+        // dark mode (teal.200 on dark text). Chakra 3 uses one solid colour
+        // for both modes, which turned the primary buttons dark teal with
+        // white text. This restores the production look.
+        teal: {
+          solid: { value: { base: "{colors.teal.500}", _dark: "{colors.teal.200}" } },
+          contrast: { value: { base: "white", _dark: "{colors.gray.800}" } },
+          fg: { value: { base: "{colors.teal.700}", _dark: "{colors.teal.300}" } },
+          muted: { value: { base: "{colors.teal.100}", _dark: "{colors.teal.900}" } },
+        },
+      },
     },
     recipes: {
       SectionHeader,

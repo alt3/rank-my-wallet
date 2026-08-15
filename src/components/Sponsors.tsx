@@ -15,7 +15,7 @@ export function Sponsors() {
     },
     grid: {
       columns: [2, null, 3],
-      spacing: { base: "15px", sm: "30px", md: "40px" },
+      gap: { base: "15px", sm: "30px", md: "40px" },
     },
   }
 

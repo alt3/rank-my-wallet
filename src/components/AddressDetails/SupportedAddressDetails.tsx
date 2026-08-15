@@ -11,7 +11,7 @@ import { MetaTags } from "@/components/MetaTags"
 import { PleaseDonate } from "@/components/PleaseDonate"
 import { RankingsTable } from "@/components/RankingsTable"
 import { TickerString } from "@/components/TickerString"
-import { useQuery } from "@blitzjs/rpc"
+import { useSuspenseQuery } from "@blitzjs/rpc"
 import { Accordion, Box, Grid, GridItem, HTMLChakraProps, Separator } from "@chakra-ui/react"
 import { useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
@@ -33,7 +33,12 @@ export function SupportedAddressDetails({ parsed }) {
   const { i18n } = useLingui()
   const rtl = getRTL(i18n.locale)
 
-  const [addressDetails] = useQuery(getAddressDetails, parsed, {
+  // Must be useSuspenseQuery, not useQuery. Blitz 3 split these: `useQuery` no
+  // longer suspends and resolves to `TData | undefined`, while the suspending
+  // behaviour moved to `useSuspenseQuery`. With plain `useQuery` the Suspense
+  // boundary in [address].tsx never activates, so its SuspenseLoader fallback
+  // never mounts -- which is what silently killed the nprogress bar.
+  const [addressDetails] = useSuspenseQuery(getAddressDetails, parsed, {
     staleTime: Infinity,
   })
 
@@ -55,11 +60,6 @@ export function SupportedAddressDetails({ parsed }) {
       paddingBottom: { base: "1.5rem", sm: "1rem" },
     },
   }
-
-  // useQuery suspends until resolved, so this never renders. It only narrows
-  // the type, which react-query v5 widened to `TData | undefined`. Keep it
-  // below the hooks above so they always run.
-  if (!addressDetails) return null
 
   return (
     <>
