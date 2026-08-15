@@ -1,4 +1,4 @@
-import { IconButton, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
+import { IconButton, Menu, Portal } from "@chakra-ui/react"
 import { useLingui } from "@lingui/react"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -40,27 +40,34 @@ export function LocaleSwitcher() {
 
   return (
     <>
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          aria-label="Options"
-          icon={<ReactCountryFlag countryCode={i18n.locale.substring(3)} svg />}
-          variant="ghost"
-        />
-        <MenuList>
-          {languages
-            .filter(function (language) {
-              return language.locale !== i18n.locale
-            })
-            .map((language) => {
-              return (
-                <MenuItem key={nextId()} onClick={() => handleClick(language.locale as LOCALES)}>
-                  {i18n._(language.msg)} {language.territory && `(${language.territory})`}
-                </MenuItem>
-              )
-            })}
-        </MenuList>
-      </Menu>
+      <Menu.Root>
+        <Menu.Trigger asChild>
+          <IconButton aria-label="Options" variant="ghost">
+            <ReactCountryFlag countryCode={i18n.locale.substring(3)} svg />
+          </IconButton>
+        </Menu.Trigger>
+        <Portal>
+          <Menu.Positioner>
+            <Menu.Content>
+              {languages
+                .filter(function (language) {
+                  return language.locale !== i18n.locale
+                })
+                .map((language) => {
+                  return (
+                    <Menu.Item
+                      key={nextId()}
+                      value={language.locale}
+                      onClick={() => handleClick(language.locale as LOCALES)}
+                    >
+                      {i18n._(language.msg)} {language.territory && `(${language.territory})`}
+                    </Menu.Item>
+                  )
+                })}
+            </Menu.Content>
+          </Menu.Positioner>
+        </Portal>
+      </Menu.Root>
     </>
   )
 }

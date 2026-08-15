@@ -1,4 +1,5 @@
-import { useColorModeValue, Box, Center, Container, Heading, Stack } from "@chakra-ui/react"
+import { Box, Center, Container, Heading, Stack } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 
 export const PageHero = ({ title, ...rest }) => {
   const styles = {
@@ -23,7 +24,7 @@ export const PageHero = ({ title, ...rest }) => {
     <Box {...styles.box} {...rest}>
       <Container {...styles.container}>
         <Center>
-          <Stack width="100%" spacing={{ base: 6, sm: 8 }} align="center">
+          <Stack width="100%" gap={{ base: 6, sm: 8 }} align="center">
             <Heading {...styles.heading}>{title}</Heading>
           </Stack>
         </Center>

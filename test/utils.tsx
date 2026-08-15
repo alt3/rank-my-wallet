@@ -1,4 +1,6 @@
 import { BlitzProvider, RouterContext } from "@blitzjs/next"
+import { ChakraProvider } from "@chakra-ui/react"
+import system from "src/core/theme"
 import { QueryClient } from "@blitzjs/rpc"
 import { i18n } from "@lingui/core"
 import { I18nProvider } from "@lingui/react"
@@ -23,9 +25,16 @@ export * from "@testing-library/react"
 // --------------------------------------------------
 // Required to prevent error `useLingui hook was
 // used without I18nProvider`
+//
+// Also carries ChakraProvider: tests pass this as an explicit `wrapper`, which
+// replaces render()'s default wrapper rather than nesting inside it. Chakra 3
+// throws when a styled component renders with no provider above it, where v2
+// silently fell back to the default theme.
 // --------------------------------------------------
 export const I18nTestingProvider = ({ children }: any) => (
-  <I18nProvider i18n={i18n}>{children}</I18nProvider>
+  <ChakraProvider value={system}>
+    <I18nProvider i18n={i18n}>{children}</I18nProvider>
+  </ChakraProvider>
 )
 
 act(() => {
@@ -52,11 +61,13 @@ export function render(
   if (!wrapper) {
     // Add a default context wrapper if one isn't supplied from the test
     wrapper = ({ children }: { children: React.ReactNode }) => (
-      <BlitzProvider dehydratedState={dehydratedState} client={queryClient}>
-        <RouterContext.Provider value={{ ...mockRouter, ...router }}>
-          {children}
-        </RouterContext.Provider>
-      </BlitzProvider>
+      <ChakraProvider value={system}>
+        <BlitzProvider dehydratedState={dehydratedState} client={queryClient}>
+          <RouterContext.Provider value={{ ...mockRouter, ...router }}>
+            {children}
+          </RouterContext.Provider>
+        </BlitzProvider>
+      </ChakraProvider>
     )
   }
   return defaultRender(ui, { wrapper, ...options })
@@ -80,11 +91,13 @@ export function renderHook(
   if (!wrapper) {
     // Add a default context wrapper if one isn't supplied from the test
     wrapper = ({ children }: { children: React.ReactNode }) => (
-      <BlitzProvider dehydratedState={dehydratedState} client={queryClient}>
-        <RouterContext.Provider value={{ ...mockRouter, ...router }}>
-          {children}
-        </RouterContext.Provider>
-      </BlitzProvider>
+      <ChakraProvider value={system}>
+        <BlitzProvider dehydratedState={dehydratedState} client={queryClient}>
+          <RouterContext.Provider value={{ ...mockRouter, ...router }}>
+            {children}
+          </RouterContext.Provider>
+        </BlitzProvider>
+      </ChakraProvider>
     )
   }
   return defaultRenderHook(hook, { wrapper, ...options })

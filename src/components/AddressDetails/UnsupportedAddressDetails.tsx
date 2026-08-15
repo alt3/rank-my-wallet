@@ -4,7 +4,7 @@ import { AddressForm } from "@/components/AddressForm"
 import { ContentContainer } from "@/components/ContentContainer"
 import { ErrorHero } from "@/components/Heroes/ErrorHero"
 import { MetaTags } from "@/components/MetaTags"
-import { Accordion, Divider } from "@chakra-ui/react"
+import { Accordion, Separator } from "@chakra-ui/react"
 import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
 import { getUnsupportedAddressMessage } from "src/lib/getUnsupportedAddressMessage"
@@ -48,12 +48,12 @@ export function UnsupportedAddressDetails({ parsed }) {
 
         {["Cardano", "Ergo"].includes(parsed.blockchain.name) && (
           <>
-            <Divider marginBottom={{ base: "1.5rem", sm: "1.5rem" }} />
+            <Separator marginBottom={{ base: "1.5rem", sm: "1.5rem" }} />
 
-            <Accordion allowMultiple>
+            <Accordion.Root multiple>
               <AccordionItemAddressDetails parsedAddress={parsed} />
               <AccordionItemAddressAnalysis parsedAddress={parsed} />
-            </Accordion>
+            </Accordion.Root>
           </>
         )}
       </ContentContainer>

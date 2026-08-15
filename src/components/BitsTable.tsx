@@ -9,7 +9,7 @@ interface BitsTableProps {
 }
 
 export function BitsTable({ caption, bits, sumLabel }: BitsTableProps) {
-  const [isMobile] = useMediaQuery("(max-width: 768px)")
+  const [isMobile] = useMediaQuery(["(max-width: 768px)"])
 
   if (isMobile) {
     return <BitsTableMobile caption={caption} bits={bits} sumLabel={sumLabel} />

@@ -7,9 +7,11 @@ interface LogoProps extends Omit<HTMLChakraProps<"svg">, "fill"> {
   }
 }
 
-export const Logo = (props: LogoProps) => {
-  const fillPrimary = props.fill.primary ? props.fill.primary.toString() : "yellow"
-  const fillSecondary = props.fill.secondary ? props.fill.secondary.toString() : "red"
+export const Logo = ({ fill, ...props }: LogoProps) => {
+  // `fill` is this component's own two-colour object, not the SVG attribute,
+  // so it must not reach chakra.svg via the spread below.
+  const fillPrimary = fill.primary ? fill.primary.toString() : "yellow"
+  const fillSecondary = fill.secondary ? fill.secondary.toString() : "red"
 
   return (
     <chakra.svg

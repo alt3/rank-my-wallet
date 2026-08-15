@@ -1,5 +1,6 @@
 import { FrontpageCard } from "@/components/FrontpageCard"
-import { useColorModeValue, Box, Center, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Center, SimpleGrid, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { Trans } from "@lingui/react/macro"
 import { BsHeartFill } from "react-icons/bs"
 
@@ -31,7 +32,6 @@ export function Sponsors() {
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
-              viewBox="0 0 20 10"
               display="inline-block"
               color="red"
               marginEnd="0.25rem"
@@ -44,7 +44,6 @@ export function Sponsors() {
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
-              viewBox="0 0 20 10"
               display="inline-block"
               color="red"
               marginEnd="0.25rem"
@@ -57,7 +56,6 @@ export function Sponsors() {
           <Box as={"span"} textAlign={"center"}>
             <Box
               as={BsHeartFill}
-              viewBox="0 0 20 10"
               display="inline-block"
               color="red"
               marginEnd="0.25rem"

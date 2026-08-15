@@ -17,7 +17,7 @@ export function SpeciesNavbar() {
       fontWeight: "normal",
       underline: "none",
     },
-  }
+  } as const
 
   return (
     <Center>

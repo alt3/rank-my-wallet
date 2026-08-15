@@ -12,19 +12,8 @@ import { PleaseDonate } from "@/components/PleaseDonate"
 import { RankingsTable } from "@/components/RankingsTable"
 import { TickerString } from "@/components/TickerString"
 import { useQuery } from "@blitzjs/rpc"
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Divider,
-  Grid,
-  GridItem,
-  HTMLChakraProps,
-  useColorModeValue,
-} from "@chakra-ui/react"
+import { Accordion, Box, Grid, GridItem, HTMLChakraProps, Separator } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
 import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
@@ -109,7 +98,7 @@ export function SupportedAddressDetails({ parsed }) {
             />
           )}
 
-        <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
+        <Separator display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
         {/* SPECIES GRID */}
         <SectionHeader>
@@ -204,23 +193,23 @@ export function SupportedAddressDetails({ parsed }) {
 
         <PleaseDonate marginBottom={{ base: "2rem", sm: "2rem" }} />
 
-        <Accordion allowMultiple>
+        <Accordion.Root multiple>
           {/* COMPETITION PANE - IF APPLICABLE */}
           {addressDetails.rankings.length > 1 && (
-            <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
+            <Accordion.Item value="competition" borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
               <h2>
-                <AccordionButton p={0}>
+                <Accordion.ItemTrigger p={0}>
                   <Box flex="1" textAlign={rtl.left}>
                     <SectionHeader>
                       <Trans>Competition</Trans>
                     </SectionHeader>
                   </Box>
                   <Box as="span" verticalAlign="top" minHeight="3rem">
-                    <AccordionIcon color={accordionIconColor} />
+                    <Accordion.ItemIndicator color={accordionIconColor} />
                   </Box>
-                </AccordionButton>
+                </Accordion.ItemTrigger>
               </h2>
-              <AccordionPanel p={0}>
+              <Accordion.ItemContent p={0}>
                 <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
                   <DataGridEntry
                     field={t`Competitors`}
@@ -232,13 +221,13 @@ export function SupportedAddressDetails({ parsed }) {
                   />
                 </DataGrid>
                 <RankingsTable rankings={addressDetails.rankings} />
-              </AccordionPanel>
-            </AccordionItem>
+              </Accordion.ItemContent>
+            </Accordion.Item>
           )}
 
           <AccordionItemAddressDetails parsedAddress={parsed} />
           <AccordionItemAddressAnalysis parsedAddress={parsed} />
-        </Accordion>
+        </Accordion.Root>
       </ContentContainer>
     </>
   )

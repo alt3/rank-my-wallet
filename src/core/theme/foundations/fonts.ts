@@ -4,6 +4,6 @@ import "@fontsource/noto-mono" // used for the counter
 import "@fontsource/inter" // used for currency
 
 export const fonts = {
-  body: "Poppins, sans-serif",
-  heading: "Poppins", // as used by chakra headings
+  body: { value: "Poppins, sans-serif" },
+  heading: { value: "Poppins" }, // as used by chakra headings
 }

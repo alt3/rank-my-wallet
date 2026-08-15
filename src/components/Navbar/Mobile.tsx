@@ -2,7 +2,8 @@ import { LogoMobile } from "@/components/Images/Logos/LogoMobile"
 import { Link } from "@/components/Link"
 import { LocaleSwitcher } from "@/components/LocaleSwitcher"
 import { Drawer } from "@/components/Navbar/Drawer"
-import { Button, IconButton, useColorMode, useColorModeValue, useDisclosure, Box, Flex, VStack } from "@chakra-ui/react"
+import { Button, IconButton, useDisclosure, Box, Flex, VStack } from "@chakra-ui/react"
+import { useColorMode, useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
 import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
@@ -22,7 +23,7 @@ export function NavbarMobile({ logoColorPrimary }: NavbarProps) {
   const text = useColorModeValue("dark", "light")
   const SwitchIcon = useColorModeValue(BsMoonFill, BsSunFill)
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { open: isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef(null)
 
   return (
@@ -50,8 +51,9 @@ export function NavbarMobile({ logoColorPrimary }: NavbarProps) {
             aria-label={t`Switch to ${text} mode`}
             color="current"
             onClick={toggleMode}
-            icon={<SwitchIcon />}
-          />
+          >
+            <SwitchIcon />
+          </IconButton>
 
           <Button
             size="xs"
@@ -91,7 +93,7 @@ export function NavbarMobile({ logoColorPrimary }: NavbarProps) {
             >
               <Trans>Twitter</Trans>{" "}
               <span>
-                <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
+                <Box as={HiExternalLink} display="inline-block" />
               </span>
             </Link>
             <Link
@@ -102,7 +104,7 @@ export function NavbarMobile({ logoColorPrimary }: NavbarProps) {
             >
               <Trans>Github</Trans>{" "}
               <span>
-                <Box as={HiExternalLink} viewBox="0 0 20 15" display="inline-block" />
+                <Box as={HiExternalLink} display="inline-block" />
               </span>
             </Link>
           </VStack>

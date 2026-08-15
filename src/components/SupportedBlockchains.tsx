@@ -1,6 +1,7 @@
 import { FrontpageCard } from "@/components/FrontpageCard"
 import { ErgoLogo } from "@/components/Images/Logos/Ergo"
-import { useColorModeValue, Box, Center, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Center, SimpleGrid, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { Trans } from "@lingui/react/macro"
 
 export function SupportedBlockChains() {

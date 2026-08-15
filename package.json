@@ -29,8 +29,7 @@
   "dependencies": {
     "@blitzjs/next": "3.0.2",
     "@blitzjs/rpc": "3.0.2",
-    "@chakra-ui/react": "2.10.10",
-    "@chakra-ui/theme-tools": "2.2.10",
+    "@chakra-ui/react": "3.36.1",
     "@emotion/react": "11.x",
     "@emotion/styled": "11.x",
     "@fontsource/inter": "5.2.8",
@@ -51,6 +50,7 @@
     "lodash.isequal": "4.5.0",
     "monero-regex": "1.0.9",
     "next": "15.5.23",
+    "next-themes": "0.4.6",
     "nprogress": "0.2.0",
     "qrcode.react": "4.2.0",
     "react": "19.2.8",

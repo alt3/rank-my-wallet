@@ -1,10 +1,13 @@
-import { mode, SystemStyleFunction } from "@chakra-ui/theme-tools"
-
 const barHeight = "4px"
 const spinnerSize = "24px" // was 18px
 const spinnerThickness = "2px" // was 2px
 
-export const nprogress: SystemStyleFunction = (props) => ({
+/**
+ * Chakra 3 global styles are a plain object, not a function of `props`. The
+ * light/dark split that used `mode("teal.500", "teal.300")(props)` is now the
+ * `_dark` condition, which resolves in CSS instead of at render time.
+ */
+export const nprogress = {
   /* Make clicks pass-through */
   "#nprogress": {
     pointerEvents: "none",
@@ -21,7 +24,8 @@ export const nprogress: SystemStyleFunction = (props) => ({
   },
 
   "#nprogress .bar": {
-    background: mode("teal.500", "teal.300")(props),
+    background: "teal.500",
+    _dark: { background: "teal.300" },
     width: "100%",
     height: barHeight,
   },
@@ -41,8 +45,12 @@ export const nprogress: SystemStyleFunction = (props) => ({
     boxSizing: "border-box",
 
     border: `solid ${spinnerThickness} transparent`,
-    borderTopColor: mode("teal.500", "teal.300")(props),
-    borderLeftColor: mode("teal.500", "teal.300")(props),
+    borderTopColor: "teal.500",
+    borderLeftColor: "teal.500",
+    _dark: {
+      borderTopColor: "teal.300",
+      borderLeftColor: "teal.300",
+    },
     borderRadius: "50%",
 
     webkitAnimation: "nprogress-spinner 400ms linear infinite",
@@ -72,4 +80,4 @@ export const nprogress: SystemStyleFunction = (props) => ({
     },
     "100%": { transform: "rotate(360deg)" },
   },
-})
+}

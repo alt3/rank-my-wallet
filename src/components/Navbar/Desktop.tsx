@@ -1,7 +1,8 @@
 import { Logo } from "@/components/Images/Logos/Logo"
 import { Link } from "@/components/Link"
 import { LocaleSwitcher } from "@/components/LocaleSwitcher"
-import { Button, IconButton, useColorMode, useColorModeValue, Box, Flex } from "@chakra-ui/react"
+import { Button, IconButton, Box, Flex } from "@chakra-ui/react"
+import { useColorMode, useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
 import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
@@ -97,8 +98,9 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               variant="ghost"
               color="current"
               marginStart="0"
-              icon={<BsTwitter />}
-            />
+            >
+              <BsTwitter />
+            </IconButton>
           </Link>
 
           <Link href="https://github.com/alt3/rank-my-wallet/" isExternal passHref>
@@ -111,8 +113,9 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
               variant="ghost"
               color="current"
               marginStart="0"
-              icon={<BsGithub />}
-            />
+            >
+              <BsGithub />
+            </IconButton>
           </Link>
 
           <LocaleSwitcher />
@@ -126,8 +129,9 @@ export function NavbarDesktop({ logoColorPrimary, logoColorSecondary }: NavbarPr
             color="current"
             marginStart="0"
             onClick={toggleMode}
-            icon={<SwitchIcon />}
-          />
+          >
+            <SwitchIcon />
+          </IconButton>
         </Flex>
       </Flex>
     </Box>

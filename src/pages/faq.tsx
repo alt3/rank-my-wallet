@@ -4,7 +4,8 @@ import { PageHero } from "@/components/Heroes/PageHero"
 import { Link } from "@/components/Link"
 import { MetaTags } from "@/components/MetaTags"
 import { BlitzPage } from "@blitzjs/next"
-import { Accordion, useColorModeValue, ListItem, Text, UnorderedList, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
+import { Accordion, List, Tabs, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
 import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
@@ -32,51 +33,50 @@ const FaqPage: BlitzPage = () => {
       <ContentContainer>
         <PageHero title={<Trans>Frequently Asked Questions (FAQ)</Trans>} />
 
-        <Tabs variant="enclosed" colorScheme="teal">
-          <TabList>
-            <Tab>
+        <Tabs.Root variant="enclosed" colorPalette="teal" defaultValue="general">
+          <Tabs.List>
+            <Tabs.Trigger value="general">
               <Text>
                 <Trans>General</Trans>
               </Text>
-            </Tab>
-            <Tab>
+            </Tabs.Trigger>
+            <Tabs.Trigger value="cardano">
               <Text>
                 <Trans>Cardano</Trans>
               </Text>
-            </Tab>
-            <Tab>
+            </Tabs.Trigger>
+            <Tabs.Trigger value="ergo">
               <Text>
                 <Trans>Ergo</Trans>
               </Text>
-            </Tab>
-          </TabList>
-          <TabPanels>
+            </Tabs.Trigger>
+          </Tabs.List>
             {/* GENERAL PANEL */}
-            <TabPanel>
-              <Accordion allowMultiple>
+            <Tabs.Content value="general">
+              <Accordion.Root multiple>
                 <AccordionItemFaq question={<Trans>What technology does this website use?</Trans>}>
-                  <UnorderedList>
-                    <ListItem {...styles.listItems}>
+                  <List.Root>
+                    <List.Item {...styles.listItems}>
                       <Link href="https://blitzjs.com/" isExternal passHref withExternalIcon>
                         Blitzjs
                       </Link>
-                    </ListItem>
-                    <ListItem {...styles.listItems}>
+                    </List.Item>
+                    <List.Item {...styles.listItems}>
                       <Link href="https://chakra-ui.com/" isExternal passHref withExternalIcon>
                         Chakra-UI
                       </Link>
-                    </ListItem>
-                    <ListItem {...styles.listItems}>
+                    </List.Item>
+                    <List.Item {...styles.listItems}>
                       <Link href="https://lingui.dev/" isExternal passHref withExternalIcon>
                         Lingui
                       </Link>
-                    </ListItem>
-                    <ListItem {...styles.listItems}>
+                    </List.Item>
+                    <List.Item {...styles.listItems}>
                       <Link href="https://ergo.watch" isExternal passHref withExternalIcon>
                         Ergo Watch
                       </Link>
-                    </ListItem>
-                  </UnorderedList>
+                    </List.Item>
+                  </List.Root>
                 </AccordionItemFaq>
 
                 <AccordionItemFaq question={<Trans>How can I help with translations?</Trans>}>
@@ -106,12 +106,12 @@ const FaqPage: BlitzPage = () => {
                     Github Issues
                   </Link>
                 </AccordionItemFaq>
-              </Accordion>
-            </TabPanel>
+              </Accordion.Root>
+            </Tabs.Content>
 
             {/* CARDANO PANEL */}
-            <TabPanel>
-              <Accordion allowMultiple>
+            <Tabs.Content value="cardano">
+              <Accordion.Root multiple>
                 <AccordionItemFaq question={<Trans>Why are Byron addresses not supported?</Trans>}>
                   <Text>
                     <Trans>
@@ -120,12 +120,12 @@ const FaqPage: BlitzPage = () => {
                     </Trans>
                   </Text>
                 </AccordionItemFaq>
-              </Accordion>
-            </TabPanel>
+              </Accordion.Root>
+            </Tabs.Content>
 
             {/* ERGO PANEL */}
-            <TabPanel>
-              <Accordion allowMultiple>
+            <Tabs.Content value="ergo">
+              <Accordion.Root multiple>
                 <AccordionItemFaq
                   question={
                     <Trans>
@@ -153,10 +153,9 @@ const FaqPage: BlitzPage = () => {
                     </Trans>
                   </Text>
                 </AccordionItemFaq>
-              </Accordion>
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
+              </Accordion.Root>
+            </Tabs.Content>
+        </Tabs.Root>
       </ContentContainer>
     </>
   )

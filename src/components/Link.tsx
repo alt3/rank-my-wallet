@@ -6,6 +6,12 @@ interface LinkProps extends NextLinkProps, Omit<ChakraLinkProps, keyof NextLinkP
 
 interface CustomLinkProps extends LinkProps {
   withExternalIcon?: boolean
+  /**
+   * Chakra 3 dropped `isExternal` from Link. Kept here as part of this
+   * component's own API and translated below, so the call sites did not all
+   * have to spell out target/rel by hand.
+   */
+  isExternal?: boolean
 }
 
 export const Link: React.FC<CustomLinkProps> = ({
@@ -20,10 +26,14 @@ export const Link: React.FC<CustomLinkProps> = ({
   scroll,
   shallow,
   withExternalIcon,
+  isExternal,
   ...props
 }) => (
   <NextLink {...{ href, as, locale, legacyBehavior, passHref, prefetch, replace, scroll, shallow }}>
-    <ChakraLink {...props}>
+    <ChakraLink
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      {...props}
+    >
       {children}
       {withExternalIcon && <ExternalLinkIcon marginStart="0.25rem" />}
     </ChakraLink>

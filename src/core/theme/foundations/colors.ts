@@ -1,5 +1,12 @@
+/**
+ * Chakra 3 tokens are `{ value }` objects rather than bare strings, so the
+ * system can carry per-token metadata (conditions, references, descriptions).
+ */
+const scale = (values: Record<string | number, string>) =>
+  Object.fromEntries(Object.entries(values).map(([step, value]) => [step, { value }]))
+
 export const colors = {
-  brand: {
+  brand: scale({
     50: "#e0f4ff",
     100: "#b8dcfa",
     200: "#8ec4f1",
@@ -10,8 +17,8 @@ export const colors = {
     700: "#084470",
     800: "#002946",
     900: "#000f1d",
-  },
-  secondary: {
+  }),
+  secondary: scale({
     50: "#F1EBFF",
     100: "#e0d7ff",
     200: "#c0afff",
@@ -22,8 +29,8 @@ export const colors = {
     700: "#3b2099",
     800: "#271666",
     900: "#140b33",
-  },
-  accent: {
+  }),
+  accent: scale({
     50: "#D1FEFC",
     100: "#ACEFEB",
     200: "#8AE1DC",
@@ -34,13 +41,13 @@ export const colors = {
     700: "#175C64",
     800: "#0C3544",
     900: "#021226",
-  },
-  light: {
+  }),
+  light: scale({
     500: "red",
     900: "#FFFFF",
-  },
-  dark: {
+  }),
+  dark: scale({
     500: "#131B23",
     900: "#070A0E",
-  },
+  }),
 }

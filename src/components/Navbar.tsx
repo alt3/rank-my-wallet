@@ -1,6 +1,6 @@
 import { NavbarDesktop } from "@/components/Navbar/Desktop"
 import { NavbarMobile } from "@/components/Navbar/Mobile"
-import { useColorModeValue } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { useEffect, useState } from "react"
 import { isMobile as isMobileDevice } from "react-device-detect"
 

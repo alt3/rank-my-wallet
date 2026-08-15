@@ -1,5 +1,7 @@
 import { Link } from "@/components/Link"
-import { useColorModeValue, Icon, Box, Text, VStack, useToken, useToast } from "@chakra-ui/react"
+import { Box, Icon, Text, VStack, useToken } from "@chakra-ui/react"
+import { toaster } from "src/core/theme/toaster"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
 import ClipboardAPI from "clipboard"
@@ -11,27 +13,24 @@ import { FaRegCopy } from "react-icons/fa"
 export function TipboxCard({ title, address, url, ...rest }) {
   useLingui()
 
-  const qrBackgroundColor = useToken("colors", useColorModeValue("gray.700", "whiteAlpha.900"))
-  const qrForegroundColor = useToken("colors", useColorModeValue("white", "gray.900"))
+  const [qrBackgroundColor] = useToken("colors", useColorModeValue("gray.700", "whiteAlpha.900"))
+  const [qrForegroundColor] = useToken("colors", useColorModeValue("white", "gray.900"))
 
   useEffect(() => {
     new ClipboardAPI("#test")
   }, [])
 
-  const toast = useToast()
-
   const handleClick = () => {
-    toast({
+    toaster.create({
       title: t`Copied!`,
       duration: 1500,
-      position: "top-right",
-      isClosable: false,
+      closable: false,
     })
   }
 
   const styles = {
     box: {
-      align: "center",
+      alignItems: "center",
       justifyContent: "center",
       margin: { base: "1rem", sm: "inherit" },
       padding: { base: "2rem", sm: "1.5rem" },
@@ -41,7 +40,7 @@ export function TipboxCard({ title, address, url, ...rest }) {
       bg: useColorModeValue("white", "gray.900"),
     },
     card: {
-      align: "center",
+      alignItems: "center",
       justifyContent: "center",
     },
     caption: {
@@ -69,7 +68,7 @@ export function TipboxCard({ title, address, url, ...rest }) {
             <Link href={url} isExternal passHref>
               <Text
                 as="span"
-                align="center"
+                textAlign="center"
                 wordBreak="break-word"
                 color={useColorModeValue("gray.900", "gray.400")}
               >

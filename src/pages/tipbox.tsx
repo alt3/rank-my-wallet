@@ -3,7 +3,9 @@ import { PageHero } from "@/components/Heroes/PageHero"
 import { MetaTags } from "@/components/MetaTags"
 import { TipboxCard } from "@/components/TipboxCard"
 import { BlitzPage } from "@blitzjs/next"
-import { useColorModeValue, Box, SimpleGrid, Text, createStandaloneToast } from "@chakra-ui/react"
+import { Box, SimpleGrid, Text } from "@chakra-ui/react"
+import { Toaster } from "src/core/theme/toaster"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
 import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
@@ -16,16 +18,13 @@ import { loadCatalog } from "src/translations/utils"
 const TipBox: BlitzPage = () => {
   useLingui()
 
-  // https://github.com/chakra-ui/chakra-ui/issues/5839#issuecomment-1255023682
-  const { ToastContainer } = createStandaloneToast()
-
   const styles = {
     grid: {
       columns: { base: 1, sm: 2 },
-      spacing: { base: "2rem", sm: "4rem" },
+      gap: { base: "2rem", sm: "4rem" },
     },
     disclaimer: {
-      align: "center" as const,
+      textAlign: "center" as const,
       color: useColorModeValue("teal.500", "gray.500"),
       marginTop: { base: "2rem", sm: "5rem" },
     },
@@ -39,7 +38,7 @@ const TipBox: BlitzPage = () => {
         keywords="crypto, blockchain, cardano, ergo, wallets, rankings, tip-box, support"
       />
 
-      <ToastContainer />
+      <Toaster />
 
       <ContentContainer>
         <PageHero title={<Trans>Tip Box</Trans>} />
@@ -61,7 +60,6 @@ const TipBox: BlitzPage = () => {
           <Text {...styles.disclaimer}>
             <Box
               as={BsHeartFill}
-              viewBox="0 0 20 10"
               display="inline-block"
               color="red"
               marginEnd="0.25rem"
@@ -69,7 +67,6 @@ const TipBox: BlitzPage = () => {
             <Trans>Please donate to keep this website ad-free</Trans>{" "}
             <Box
               as={BsHeartFill}
-              viewBox="0 0 20 10"
               display="inline-block"
               color="red"
               marginEnd="0.25rem"

@@ -1,5 +1,6 @@
 import { AddressForm } from "@/components/AddressForm"
-import { useColorModeValue, Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/react"
+import { Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 
 import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
@@ -36,7 +37,7 @@ export function AddressHero() {
     <Box {...styles.box}>
       <Container {...styles.container}>
         <Center>
-          <Stack width="100%" spacing={8} align="center">
+          <Stack width="100%" gap={8} align="center">
             <Heading display={{ base: "inline", sm: "none" }} {...styles.heading}>
               Rank My{" "}
               <Text as="span" {...styles.headingSub}>
