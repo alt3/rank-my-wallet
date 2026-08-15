@@ -3,7 +3,7 @@ import { PageHero } from "@/components/Heroes/PageHero"
 import { MetaTags } from "@/components/MetaTags"
 import { TipboxCard } from "@/components/TipboxCard"
 import { BlitzPage } from "@blitzjs/next"
-import { Box, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Icon, SimpleGrid, Text } from "@chakra-ui/react"
 import { Toaster } from "src/core/theme/toaster"
 import { useColorModeValue } from "src/core/theme/color-mode"
 import { t } from "@lingui/core/macro"
@@ -58,9 +58,23 @@ const TipBox: BlitzPage = () => {
           </SimpleGrid>
 
           <Text {...styles.disclaimer}>
-            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
+            <Icon
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              verticalAlign="baseline"
+              color="red"
+              marginEnd="0.25rem"
+            />
             <Trans>Please donate to keep this website ad-free</Trans>{" "}
-            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
+            <Icon
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              verticalAlign="baseline"
+              color="red"
+              marginEnd="0.25rem"
+            />
           </Text>
         </Box>
       </ContentContainer>

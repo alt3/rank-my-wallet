@@ -1,5 +1,5 @@
 import { FrontpageCard } from "@/components/FrontpageCard"
-import { Box, Center, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Center, Icon, SimpleGrid, Text } from "@chakra-ui/react"
 import { useColorModeValue } from "src/core/theme/color-mode"
 import { Trans } from "@lingui/react/macro"
 import { BsHeartFill } from "react-icons/bs"
@@ -30,21 +30,42 @@ export function Sponsors() {
       <SimpleGrid {...styles.grid}>
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
+            <Icon
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              verticalAlign="baseline"
+              color="red"
+              marginEnd="0.25rem"
+            />
             <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>
 
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
+            <Icon
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              verticalAlign="baseline"
+              color="red"
+              marginEnd="0.25rem"
+            />
             <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>
 
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box as={BsHeartFill} display="inline-block" color="red" marginEnd="0.25rem" />
+            <Icon
+              as={BsHeartFill}
+              viewBox="0 0 20 10"
+              display="inline-block"
+              verticalAlign="baseline"
+              color="red"
+              marginEnd="0.25rem"
+            />
             <Trans>Your Project</Trans>
           </Box>
         </FrontpageCard>

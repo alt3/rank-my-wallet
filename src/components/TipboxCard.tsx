@@ -29,9 +29,11 @@ export function TipboxCard({ title, address, url, ...rest }) {
   }
 
   const styles = {
+    // Chakra 2 let the (non-Chakra) `align="center"` fall through to the DOM,
+    // where the HTML attribute centred everything inside, blocks included.
+    // Chakra 3 strips it, so the same is spelled out in CSS.
     box: {
-      alignItems: "center",
-      justifyContent: "center",
+      textAlign: "center",
       margin: { base: "1rem", sm: "inherit" },
       padding: { base: "2rem", sm: "1.5rem" },
       shadow: "md",
@@ -40,8 +42,10 @@ export function TipboxCard({ title, address, url, ...rest }) {
       bg: useColorModeValue("white", "gray.900"),
     },
     card: {
+      display: "flex",
+      flexDirection: "column",
       alignItems: "center",
-      justifyContent: "center",
+      textAlign: "center",
     },
     caption: {
       fontWeight: useColorModeValue(600, 500),
@@ -79,6 +83,7 @@ export function TipboxCard({ title, address, url, ...rest }) {
             <Icon
               as={FaRegCopy}
               w={4}
+              verticalAlign="baseline"
               h={4}
               _hover={{ color: useColorModeValue("teal.500", "teal.300") }}
               id="test"
