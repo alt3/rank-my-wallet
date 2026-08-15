@@ -57,17 +57,8 @@ msgstr "Specii de blockchain"
 msgid "Blue whale"
 msgstr "Balenă albastră"
 
-msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "Adresele Byron (legacy) nu au funcționalitatea de investire pe care RankWallet o folosește pentru a vă determina rangul."
-
-msgid "Cardano"
-msgstr "Cardano"
-
 msgid "Cardano Rankings are coming soon"
 msgstr "Clasamentul Cardano va veni în curând"
-
-msgid "Cardano Species"
-msgstr "Speciile Cardano"
 
 msgid "Checksum"
 msgstr "Suma"
@@ -326,9 +317,6 @@ msgstr "Ce tehnologie utilizează acest site?"
 msgid "Where do I report bugs?"
 msgstr "Unde pot raporta erorile?"
 
-msgid "Why are Byron addresses not supported?"
-msgstr "De ce nu sunt adresele Byron acceptate?"
-
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
 msgstr "De ce soldul de pe acest site este diferit de soldul din portofelul meu Ergo?"
 
@@ -349,4 +337,3 @@ msgstr "Proiectul tău"
 
 msgid "Your Rank"
 msgstr "Rangul tău"
-

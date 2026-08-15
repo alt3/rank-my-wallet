@@ -26,7 +26,7 @@ const Sponsoring: BlitzPage = () => {
       <MetaTags
         title={`RankMyWallet - ${t`Become a Sponsor`}`}
         description="Promote your project by becoming a sponsor"
-        keywords="crypto, blockchain, cardano, ergo, wallets, rankings, sponsoring, sponsor"
+        keywords="crypto, blockchain, ergo, wallets, rankings, sponsoring, sponsor"
       />
 
       <ContentContainer>

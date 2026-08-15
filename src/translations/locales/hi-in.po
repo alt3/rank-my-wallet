@@ -57,17 +57,8 @@ msgstr "ब्लॉकचेन प्रजाति"
 msgid "Blue whale"
 msgstr "ब्लू व्हेल"
 
-msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "बायरन (विरासत) एड्रेस में आपके रैंक को निर्धारित करने के लिए रैंकमाइवालेट द्वारा उपयोग की जाने वाली स्टैकिंग कार्यक्षमता की कमी है।"
-
-msgid "Cardano"
-msgstr "कार्डानो"
-
 msgid "Cardano Rankings are coming soon"
 msgstr "कार्डानो रैंकिंग जल्द ही आ रही है"
-
-msgid "Cardano Species"
-msgstr "कार्डानो प्रजाति"
 
 msgid "Checksum"
 msgstr "अंततः"
@@ -326,9 +317,6 @@ msgstr "यह वेबसाइट किस टेक्नोलॉजी �
 msgid "Where do I report bugs?"
 msgstr "मैं बग की रिपोर्ट कहां करूं?"
 
-msgid "Why are Byron addresses not supported?"
-msgstr "बायरन एड्रेस समर्थित क्यों नहीं हैं?"
-
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
 msgstr "इस वेबसाइट की शेष राशि मेरे एर्गो वॉलेट की शेष राशि से भिन्न क्यों है?"
 
@@ -349,4 +337,3 @@ msgstr "आपका प्रोजेक्ट"
 
 msgid "Your Rank"
 msgstr "आपका रैंक"
-

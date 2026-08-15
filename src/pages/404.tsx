@@ -17,7 +17,7 @@ const Page404: BlitzPage = () => {
 
   const router = useRouter()
 
-  const keywords = "crypto, blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
+  const keywords = "crypto, blockchain, ergo, wallets, rankings, species, address-analyzer"
 
   // 404 page for server-side and direct links
   if (router.query.address === undefined) {
