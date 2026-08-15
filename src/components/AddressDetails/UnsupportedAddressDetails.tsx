@@ -10,7 +10,9 @@ import { useLingui } from "@lingui/react"
 import { getUnsupportedAddressMessage } from "src/lib/getUnsupportedAddressMessage"
 
 export function UnsupportedAddressDetails({ parsed }) {
-  const { i18n } = useLingui()
+  // Called for its subscription: it re-renders this component when the active
+  // locale changes. The `i18n` instance itself is not needed here.
+  useLingui()
 
   if (process && process.env.NODE_ENV !== "production") {
     console.log({ parsed })

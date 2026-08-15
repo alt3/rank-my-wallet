@@ -4,7 +4,7 @@ import { t } from "@lingui/core/macro"
 import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 
-export function SpeciesNavbar({ ...rest }) {
+export function SpeciesNavbar() {
   useLingui()
 
   const styles = {

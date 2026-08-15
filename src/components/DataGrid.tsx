@@ -1,6 +1,6 @@
 import { Grid, createStylesContext, useMultiStyleConfig } from "@chakra-ui/react"
 
-const [StylesProvider, useStyles] = createStylesContext("Component")
+const [StylesProvider] = createStylesContext("Component")
 
 export const DataGrid = (props) => {
   const { size, variant, children, ...rest } = props

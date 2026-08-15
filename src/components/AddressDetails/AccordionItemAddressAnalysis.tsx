@@ -9,7 +9,7 @@ import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { getRTL } from "src/translations/utils"
 
-export function AccordionItemAddressAnalysis({ parsedAddress, ...rest }) {
+export function AccordionItemAddressAnalysis({ parsedAddress }) {
   const { i18n } = useLingui()
   const rtl = getRTL(i18n.locale)
 

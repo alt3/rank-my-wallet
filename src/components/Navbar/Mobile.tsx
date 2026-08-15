@@ -15,7 +15,7 @@ interface NavbarProps {
   logoColorSecondary: string
 }
 
-export function NavbarMobile({ logoColorPrimary, logoColorSecondary }: NavbarProps) {
+export function NavbarMobile({ logoColorPrimary }: NavbarProps) {
   useLingui()
 
   const { toggleColorMode: toggleMode } = useColorMode()

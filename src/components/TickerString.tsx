@@ -41,7 +41,7 @@ export function TickerString({
   }
 
   // get the fractions
-  const [matchString, decimals, decimalSeparator, fractions] = matches
+  const [, decimals, decimalSeparator, fractions] = matches
 
   return (
     <Box as="span">

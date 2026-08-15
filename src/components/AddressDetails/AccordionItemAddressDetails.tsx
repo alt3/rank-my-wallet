@@ -7,7 +7,7 @@ import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import { getRTL } from "src/translations/utils"
 
-export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
+export function AccordionItemAddressDetails({ parsedAddress }) {
   const { i18n } = useLingui()
   const rtl = getRTL(i18n.locale)
 

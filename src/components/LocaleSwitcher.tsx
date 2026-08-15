@@ -10,7 +10,7 @@ export function LocaleSwitcher() {
   const { i18n } = useLingui()
   const router = useRouter()
 
-  const [locale, setLocale] = useState<LOCALES>(router.locale!.split("-")[0] as LOCALES)
+  const [, setLocale] = useState<LOCALES>(router.locale!.split("-")[0] as LOCALES)
 
   languages.sort((a, b) => {
     const aMessage = i18n._(a.msg)

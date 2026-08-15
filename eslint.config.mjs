@@ -2,8 +2,10 @@ import { dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 
 import { FlatCompat } from "@eslint/eslintrc"
+import js from "@eslint/js"
 import prettier from "eslint-config-prettier"
 import stringToLingui from "eslint-plugin-string-to-lingui"
+import globals from "globals"
 import tseslint from "typescript-eslint"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -26,6 +28,32 @@ const config = [
       // was ignorePatterns in @blitzjs/next/eslint
       "**/*.d.ts",
     ],
+  },
+
+  js.configs.recommended,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+  {
+    // Vitest runs with `globals: true`, so describe/it/expect/afterEach are
+    // ambient rather than imported. Specs live both in test/ and beside the
+    // code they cover.
+    files: ["test/**/*.{ts,tsx}", "**/*.test.{ts,tsx}"],
+    languageOptions: {
+      globals: globals.vitest,
+    },
+  },
+  {
+    // The new JSX transform means React is in scope without an import.
+    files: ["**/*.tsx"],
+    languageOptions: {
+      globals: { React: "readonly" },
+    },
   },
 
   // @blitzjs/next/eslint, inlined. The preset is three lines of config behind a
@@ -52,6 +80,18 @@ const config = [
     },
     rules: {
       "@typescript-eslint/no-floating-promises": "error",
+      // The base rule cannot see type-only usage and misreports types as dead.
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          // Prefix with _ to mark something as intentionally unused.
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+        },
+      ],
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": "off",
       "no-redeclare": "off",
