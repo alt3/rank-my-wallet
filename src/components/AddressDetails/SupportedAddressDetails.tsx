@@ -18,11 +18,15 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-} from "@chakra-ui/accordion"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Divider, Grid, GridItem } from "@chakra-ui/layout"
-import { HTMLChakraProps } from "@chakra-ui/system"
-import { Trans, t } from "@lingui/macro"
+  Box,
+  Divider,
+  Grid,
+  GridItem,
+  HTMLChakraProps,
+  useColorModeValue,
+} from "@chakra-ui/react"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import dynamic from "next/dynamic"
 import getAddressDetails from "src/core/queries/getAddressDetails"
@@ -50,6 +54,7 @@ export function SupportedAddressDetails({ parsed }) {
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
+  const speciesLinkColor = useColorModeValue("pink.600", "pink.400")
 
   const styles = {
     gridField: {
@@ -61,6 +66,11 @@ export function SupportedAddressDetails({ parsed }) {
       paddingBottom: { base: "1.5rem", sm: "1rem" },
     },
   }
+
+  // useQuery suspends until resolved, so this never renders. It only narrows
+  // the type, which react-query v5 widened to `TData | undefined`. Keep it
+  // below the hooks above so they always run.
+  if (!addressDetails) return null
 
   return (
     <>
@@ -125,7 +135,7 @@ export function SupportedAddressDetails({ parsed }) {
               <Link
                 href={`/species/${parsed.blockchain.name.toLowerCase()}`}
                 title={`${parsed.blockchain.name} Species`}
-                color={useColorModeValue("pink.600", "pink.400")}
+                color={speciesLinkColor}
                 passHref
                 withExternalIcon
               >

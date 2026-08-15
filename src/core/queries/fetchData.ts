@@ -15,7 +15,6 @@ export default async function fetchData(parsedAddress) {
   let ticker
 
   if (parsedAddress.blockchain.name === "Cardano") {
-    // eslint-disable-next-line @typescript-eslint/no-extra-semi
     ;[addressCount, rankings] = await Promise.all([
       fetchCardanoAddressCount(),
       fetchCardanoRankings({ ...parsedAddress }),
@@ -28,7 +27,6 @@ export default async function fetchData(parsedAddress) {
   }
 
   if (parsedAddress.blockchain.name === "Ergo") {
-    // eslint-disable-next-line @typescript-eslint/no-extra-semi
     ;[addressCount, rankings] = await Promise.all([
       fetchErgoAddressCount(),
       fetchErgoRankings({ ...parsedAddress }),

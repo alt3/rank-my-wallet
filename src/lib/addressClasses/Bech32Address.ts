@@ -1,4 +1,4 @@
-import { t } from "@lingui/macro"
+import { t } from "@lingui/core/macro"
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
 import { BaseAddress } from "src/lib/addressClasses/BaseAddress"

@@ -1,4 +1,4 @@
-import { chakra, useStyleConfig } from "@chakra-ui/system"
+import { chakra, useStyleConfig } from "@chakra-ui/react"
 
 export const SectionHeader = (props) => {
   const { size, variant, children, ...rest } = props

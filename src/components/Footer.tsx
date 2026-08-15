@@ -1,7 +1,6 @@
 import { Link } from "@/components/Link"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Container, Flex, Text } from "@chakra-ui/layout"
-import { Trans } from "@lingui/macro"
+import { useColorModeValue, Container, Flex, Text } from "@chakra-ui/react"
+import { Trans } from "@lingui/react/macro"
 
 export function Footer() {
   const styles = {

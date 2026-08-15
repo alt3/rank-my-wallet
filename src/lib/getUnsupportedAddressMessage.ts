@@ -1,4 +1,4 @@
-import { t } from "@lingui/macro"
+import { t } from "@lingui/core/macro"
 
 interface Props {
   type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
@@ -7,11 +7,14 @@ interface Props {
   addressType?: string
 }
 
+// `network` and `addressType` default to "" so the placeholders stay bare
+// identifiers: Lingui derives placeholder names from the expression, so any
+// inline fallback would renumber them and invalidate the existing catalogs.
 export const getUnsupportedAddressMessage = ({
   type,
   blockchain,
-  network,
-  addressType,
+  network = "",
+  addressType = "",
 }: Props): string => {
   if (type === "UnsupportedBlockchain") {
     return t`Sorry, but we do not support ${blockchain}.`

@@ -1,4 +1,4 @@
-import { extendTheme, ThemeOverride } from "@chakra-ui/theme-utils"
+import { extendTheme, ThemeOverride } from "@chakra-ui/react"
 import * as components from "./components"
 import { colors } from "./foundations/colors"
 import { fonts } from "./foundations/fonts"

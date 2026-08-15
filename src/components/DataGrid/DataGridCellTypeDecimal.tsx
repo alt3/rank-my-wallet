@@ -1,6 +1,4 @@
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { useMediaQuery } from "@chakra-ui/media-query"
-import { Td } from "@chakra-ui/table"
+import { useColorModeValue, useMediaQuery, Td } from "@chakra-ui/react"
 import isEqual from "lodash.isequal"
 import nextId from "react-id-generator"
 

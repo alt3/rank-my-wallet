@@ -1,6 +1,5 @@
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/layout"
-import { Trans } from "@lingui/macro"
+import { useColorModeValue, Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/react"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import Countup from "react-countup"
 import { getNumberSeparators } from "src/lib/getNumberSeparators"

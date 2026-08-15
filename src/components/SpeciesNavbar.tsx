@@ -1,7 +1,7 @@
 import { Link } from "@/components/Link"
-import { Button } from "@chakra-ui/button"
-import { Center } from "@chakra-ui/layout"
-import { Trans, t } from "@lingui/macro"
+import { Button, Center } from "@chakra-ui/react"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 
 export function SpeciesNavbar({ ...rest }) {

@@ -1,4 +1,4 @@
-import { t } from "@lingui/macro"
+import { t } from "@lingui/core/macro"
 import blake from "blakejs"
 import isEqual from "lodash.isequal"
 import { BaseAddress } from "src/lib/addressClasses/BaseAddress"

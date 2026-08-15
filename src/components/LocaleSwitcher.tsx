@@ -1,5 +1,4 @@
-import { IconButton } from "@chakra-ui/button"
-import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu"
+import { IconButton, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
 import { useLingui } from "@lingui/react"
 import { useRouter } from "next/router"
 import { useState } from "react"

@@ -26,7 +26,6 @@ export const getNextSpeciesForBalance = function (
     return undefined
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const nextSpecies = species[blockchain][currentIndex + 1]!
 
   const result = {

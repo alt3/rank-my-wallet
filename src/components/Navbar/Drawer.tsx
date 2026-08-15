@@ -1,4 +1,3 @@
-import { Flex, Text } from "@chakra-ui/layout"
 import {
   Drawer as ChakraDrawer,
   DrawerBody,
@@ -7,7 +6,9 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-} from "@chakra-ui/modal"
+  Flex,
+  Text,
+} from "@chakra-ui/react"
 
 export function Drawer({
   p = 15,

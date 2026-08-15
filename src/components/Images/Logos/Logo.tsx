@@ -1,4 +1,4 @@
-import { chakra, HTMLChakraProps } from "@chakra-ui/system"
+import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 
 interface LogoProps extends Omit<HTMLChakraProps<"svg">, "fill"> {
   fill: {

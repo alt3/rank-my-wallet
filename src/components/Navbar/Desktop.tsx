@@ -1,10 +1,9 @@
 import { Logo } from "@/components/Images/Logos/Logo"
 import { Link } from "@/components/Link"
 import { LocaleSwitcher } from "@/components/LocaleSwitcher"
-import { Button, IconButton } from "@chakra-ui/button"
-import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Flex } from "@chakra-ui/layout"
-import { Trans, t } from "@lingui/macro"
+import { Button, IconButton, useColorMode, useColorModeValue, Box, Flex } from "@chakra-ui/react"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import { BsGithub, BsMoonFill, BsSunFill, BsTwitter } from "react-icons/bs"
 
