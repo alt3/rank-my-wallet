@@ -8,7 +8,7 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: rankmywallet\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-16 08:34\n"
+"PO-Revision-Date: 2026-08-15 17:57\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -57,17 +57,8 @@ msgstr "Blockchain-Arten"
 msgid "Blue whale"
 msgstr "Blauwal"
 
-msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "Byron (Legacy) Adressen verfügen nicht über die Stakingfunktion, die RankMyWallet verwendet, um deinen Rang zu bestimmen."
-
-msgid "Cardano"
-msgstr "Cardano"
-
 msgid "Cardano Rankings are coming soon"
 msgstr "Cardano Rankings kommen bald"
-
-msgid "Cardano Species"
-msgstr "Cardano Spezies"
 
 msgid "Checksum"
 msgstr "Checksumme"
@@ -325,9 +316,6 @@ msgstr "Welche Technologie nutzt diese Website?"
 
 msgid "Where do I report bugs?"
 msgstr "Wo kann ich Fehler melden?"
-
-msgid "Why are Byron addresses not supported?"
-msgstr "Warum werden Byron-Adressen nicht unterstützt?"
 
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
 msgstr "Warum unterscheidet sich das Guthaben auf dieser Website vom Guthaben in meinem Ergo Wallet?"
