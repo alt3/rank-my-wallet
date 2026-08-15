@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/layout"
+import { Box } from "@chakra-ui/react"
 
 interface TickerStringProps {
   ticker: string
@@ -41,8 +41,7 @@ export function TickerString({
   }
 
   // get the fractions
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [matchString, decimals, decimalSeparator, fractions] = matches
+  const [, decimals, decimalSeparator, fractions] = matches
 
   return (
     <Box as="span">

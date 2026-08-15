@@ -52,16 +52,7 @@ msgstr ""
 msgid "Blue whale"
 msgstr ""
 
-msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr ""
-
-msgid "Cardano"
-msgstr ""
-
 msgid "Cardano Rankings are coming soon"
-msgstr ""
-
-msgid "Cardano Species"
 msgstr ""
 
 msgid "Checksum"
@@ -319,9 +310,6 @@ msgid "What technology does this website use?"
 msgstr ""
 
 msgid "Where do I report bugs?"
-msgstr ""
-
-msgid "Why are Byron addresses not supported?"
 msgstr ""
 
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"

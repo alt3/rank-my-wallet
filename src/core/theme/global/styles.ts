@@ -1,13 +1,18 @@
-import { Styles } from "@chakra-ui/theme-tools"
 import { nprogress } from "./nprogress"
 
-export const globalStyles: Styles = {
-  global: (props) => ({
-    html: {},
-    body: {
-      backgroundColor: props.colorMode === "light" ? "light.900" : "gray.800",
-      color: props.colorMode === "light" ? "gray.700" : "whiteAlpha.900",
+/**
+ * Chakra 3 replaces the `styles.global(props)` function with a static
+ * `globalCss` object, so the colour-mode branches become `_dark` conditions.
+ */
+export const globalStyles = {
+  html: {},
+  body: {
+    backgroundColor: "light.900",
+    color: "gray.700",
+    _dark: {
+      backgroundColor: "gray.800",
+      color: "whiteAlpha.900",
     },
-    ...nprogress(props),
-  }),
+  },
+  ...nprogress,
 }

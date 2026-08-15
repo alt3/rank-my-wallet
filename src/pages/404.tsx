@@ -3,7 +3,7 @@ import { BackHomeButton } from "@/components/BackHomeButton"
 import { ErrorHero } from "@/components/Heroes/ErrorHero"
 import { MetaTags } from "@/components/MetaTags"
 import { BlitzPage } from "@blitzjs/next"
-import { t } from "@lingui/macro"
+import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { useRouter } from "next/router"
@@ -17,7 +17,7 @@ const Page404: BlitzPage = () => {
 
   const router = useRouter()
 
-  const keywords = "crypto, blockchain, cardano, ergo, wallets, rankings, species, address-analyzer"
+  const keywords = "crypto, blockchain, ergo, wallets, rankings, species, address-analyzer"
 
   // 404 page for server-side and direct links
   if (router.query.address === undefined) {
@@ -43,7 +43,7 @@ const Page404: BlitzPage = () => {
 }
 
 export async function getStaticProps(
-  ctx: GetStaticPropsContext
+  ctx: GetStaticPropsContext,
 ): Promise<GetStaticPropsResult<any>> {
   return {
     props: {

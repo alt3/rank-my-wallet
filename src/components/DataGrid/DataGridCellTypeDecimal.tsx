@@ -1,6 +1,5 @@
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { useMediaQuery } from "@chakra-ui/media-query"
-import { Td } from "@chakra-ui/table"
+import { Table, useMediaQuery } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import isEqual from "lodash.isequal"
 import nextId from "react-id-generator"
 
@@ -47,7 +46,7 @@ interface Props {
 }
 
 export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
-  const [isMobile] = useMediaQuery("(max-width: 768px)")
+  const [isMobile] = useMediaQuery(["(max-width: 768px)"])
 
   const nonZeroBitColor = useColorModeValue("teal.500", "teal.300")
   const color = bit ? nonZeroBitColor : "gray.600"
@@ -70,9 +69,9 @@ export const DataGridCellTypeDecimal = ({ bits, bit, i }: Props) => {
   const paddingStart = isMobile ? 0 : "inherit"
 
   return (
-    <Td key={nextId("td")} paddingStart={paddingStart} color={color}>
+    <Table.Cell key={nextId("td")} paddingStart={paddingStart} color={color}>
       {cellText}
-    </Td>
+    </Table.Cell>
   )
 }
 

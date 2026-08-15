@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2022",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": ".",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -12,16 +11,22 @@
     "noUncheckedIndexedAccess": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
     "tsBuildInfoFile": ".tsbuildinfo",
+    // `baseUrl` is deprecated in TypeScript 6 and stops working in 7. The
+    // root-relative `src/...` and `test/...` specifiers it used to resolve are
+    // spelled out here instead; without a `baseUrl` these are resolved
+    // relative to this file.
     "paths": {
-      "@/components/*": ["src/components/*"]
+      "@/components/*": ["./src/components/*"],
+      "src/*": ["./src/*"],
+      "test/*": ["./test/*"]
     }
   },
   "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types", "vitest.config.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types", "vitest.config.mts"]
 }

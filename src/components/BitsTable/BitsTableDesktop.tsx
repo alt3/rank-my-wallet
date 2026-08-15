@@ -1,10 +1,9 @@
 import { DataGridCellTypeDecimal } from "@/components/DataGrid/DataGridCellTypeDecimal"
 import { DataGridCellTypeBinary } from "@/components/DataGrid/DatagridCellTypeBinary"
 import { DataGridCellTypeBit } from "@/components/DataGrid/DatagridCellTypeBit"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Text } from "@chakra-ui/layout"
-import { Table, Tbody, Td, Tr } from "@chakra-ui/table"
-import { Trans } from "@lingui/macro"
+import { Table, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bitsToByte } from "src/lib/bits/bitsToByte"
@@ -70,13 +69,13 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
       <Text as="h3" {...styles.caption} marginBottom=".5rem">
         {caption}
       </Text>
-      <Table variant="simple" {...styles.table}>
-        <Tbody>
-          <Tr>
+      <Table.Root variant="line" {...styles.table}>
+        <Table.Body>
+          <Table.Row>
             {/* binary row */}
-            <Td {...styles.td} {...styles.tdField} textAlign={rtl.left}>
+            <Table.Cell {...styles.td} {...styles.tdField} textAlign={rtl.left}>
               <Trans>Binaries</Trans>
-            </Td>
+            </Table.Cell>
 
             {reversedBits.map((bit) => {
               binaryCounter = binaryCounter / 2
@@ -85,31 +84,31 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
               )
             })}
 
-            <Td {...styles.td} borderBottom="0">
+            <Table.Cell {...styles.td} borderBottom="0">
               &nbsp;
-            </Td>
-          </Tr>
+            </Table.Cell>
+          </Table.Row>
 
           {/* bits row */}
-          <Tr>
-            <Td {...styles.td} {...styles.tdField} textAlign={rtl.left}>
+          <Table.Row>
+            <Table.Cell {...styles.td} {...styles.tdField} textAlign={rtl.left}>
               <Trans>Bits</Trans>
-            </Td>
+            </Table.Cell>
 
             {reversedBits.map((bit) => {
               return <DataGridCellTypeBit bit={bit} key={nextId("td-bit")} />
             })}
 
-            <Td {...styles.td} borderBottom="0">
+            <Table.Cell {...styles.td} borderBottom="0">
               &nbsp;
-            </Td>
-          </Tr>
+            </Table.Cell>
+          </Table.Row>
 
           {/* decimal row */}
-          <Tr>
-            <Td {...styles.td} {...styles.tdField} textAlign={rtl.left}>
+          <Table.Row>
+            <Table.Cell {...styles.td} {...styles.tdField} textAlign={rtl.left}>
               <Trans>Decimals</Trans>
-            </Td>
+            </Table.Cell>
 
             {reversedBits.map((bit, i) => {
               return (
@@ -122,19 +121,19 @@ export function BitsTableDesktop({ caption, bits, sumLabel }: BitsTableProps) {
               )
             })}
 
-            <Td {...styles.td} {...styles.tdSum} border="1px solid" borderBottom="0">
+            <Table.Cell {...styles.td} {...styles.tdSum} border="1px solid" borderBottom="0">
               {bitsToByte(bits)}
-            </Td>
-          </Tr>
+            </Table.Cell>
+          </Table.Row>
 
           {/* Summary row */}
-          <Tr border={"none"}>
-            <Td {...styles.tdSumLabel} textAlign={rtl.right}>
+          <Table.Row border={"none"}>
+            <Table.Cell {...styles.tdSumLabel} textAlign={rtl.right}>
               {sumLabel}
-            </Td>
-          </Tr>
-        </Tbody>
-      </Table>
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
     </>
   )
 }

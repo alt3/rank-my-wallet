@@ -27,6 +27,14 @@ const config = {
     locales: linguiConfig.locales,
     defaultLocale: linguiConfig.sourceLocale,
   },
+  async redirects() {
+    return [
+      // Ergo is the only supported blockchain, so its species table now lives
+      // at /species. Next prefixes these with every locale automatically.
+      { source: "/species/ergo", destination: "/species", permanent: true },
+      { source: "/species/cardano", destination: "/species", permanent: true },
+    ]
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.po$/,

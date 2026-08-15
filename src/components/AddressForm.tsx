@@ -1,16 +1,13 @@
-import { Button } from "@chakra-ui/button"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { FormControl, FormErrorMessage } from "@chakra-ui/form-control"
-import { Input } from "@chakra-ui/input"
-import { Box, HStack } from "@chakra-ui/layout"
-import { ChakraProps } from "@chakra-ui/system"
-import { t } from "@lingui/macro"
+import { Box, Button, Field, HStack, Input } from "@chakra-ui/react"
+import type { BoxProps } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
 import { useRouter } from "next/router"
 import React from "react"
 import { useForm } from "react-hook-form"
 
-interface IAddressFormProps extends ChakraProps {
+interface IAddressFormProps extends BoxProps {
   placeholder?: string
 }
 
@@ -41,7 +38,7 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
 
   const styles = {
     input: {
-      size: "lg",
+      size: "lg" as const,
       marginEnd: "0.25rem",
       bg: useColorModeValue("white", "gray.700"),
       borderColor: useColorModeValue("gray.200", "gray.700"),
@@ -54,25 +51,28 @@ export function AddressForm({ placeholder, ...rest }: IAddressFormProps) {
   return (
     <Box style={{ width: "100%" }} {...rest}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl isInvalid={errors.address ? true : false}>
-          <HStack>
+        <Field.Root invalid={errors.address ? true : false}>
+          {/* width/flex are explicit: Chakra 2's Input defaulted to width 100%,
+              Chakra 3's sizes to its content, which collapsed this form. */}
+          <HStack width="100%">
             <Input
               id="address"
+              flex="1"
               placeholder={placeholder}
               {...styles.input}
               {...register("address", {
                 required: requiredErrorMessage,
               })}
             ></Input>
-            <Button size="lg" isLoading={isSubmitting} type="submit" colorScheme="teal">
+            <Button size="lg" loading={isSubmitting} type="submit" colorPalette="teal">
               {t`Go`}
             </Button>
           </HStack>
-          <FormErrorMessage>
+          <Field.ErrorText>
             {/* https://github.com/react-hook-form/react-hook-form/issues/8653#issuecomment-1179465376 */}
             {errors.address && <>{String(errors.address.ref && errors.address.message)}</>}
-          </FormErrorMessage>
-        </FormControl>
+          </Field.ErrorText>
+        </Field.Root>
       </form>
     </Box>
   )

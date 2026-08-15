@@ -1,33 +1,42 @@
+import { ContentContainer } from "@/components/ContentContainer"
 import { PageHero } from "@/components/Heroes/PageHero"
 import { MetaTags } from "@/components/MetaTags"
-import { SpeciesNavbar } from "@/components/SpeciesNavbar"
+import { SpeciesTable } from "@/components/SpeciesTable"
 import { BlitzPage } from "@blitzjs/next"
-import { t, Trans } from "@lingui/macro"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
+import species from "src/core/constants/species"
 import Layout from "src/core/layouts/Layout"
 import { loadCatalog } from "src/translations/utils"
 
-const CardanoSpeciesPage: BlitzPage = () => {
+const SpeciesPage: BlitzPage = () => {
   useLingui()
 
   return (
     <>
       <MetaTags
-        title={`RankMyWallet - ${t`Blockchain Species`}`}
-        description="Blockchain species for Cardano and Ergo"
-        keywords="crypto, blockchain, cardano, ergo, species, whale, orca, shark, shrimp, ghost"
+        title={`RankMyWallet - ${t`Ergo Species`}`}
+        description="Species for the Ergo blockchain"
+        keywords="crypto, blockchain, ergo, species, whale, orca, shark, shrimp, ghost"
       />
 
-      <PageHero title={<Trans>Blockchain Species</Trans>} />
+      <ContentContainer>
+        <PageHero title={<Trans>Ergo Species</Trans>} />
 
-      <SpeciesNavbar />
+        <SpeciesTable
+          blockchain="Ergo"
+          tickerSymbol="Σ"
+          species={species["Ergo"].slice(1)}
+        ></SpeciesTable>
+      </ContentContainer>
     </>
   )
 }
 
 export async function getStaticProps(
-  ctx: GetStaticPropsContext
+  ctx: GetStaticPropsContext,
 ): Promise<GetStaticPropsResult<any>> {
   return {
     props: {
@@ -36,7 +45,7 @@ export async function getStaticProps(
   }
 }
 
-CardanoSpeciesPage.suppressFirstRenderFlicker = true
-CardanoSpeciesPage.getLayout = (page) => <Layout>{page}</Layout>
+SpeciesPage.suppressFirstRenderFlicker = true
+SpeciesPage.getLayout = (page) => <Layout>{page}</Layout>
 
-export default CardanoSpeciesPage
+export default SpeciesPage

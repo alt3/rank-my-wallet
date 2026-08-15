@@ -57,17 +57,8 @@ msgstr "Blockchain-Arten"
 msgid "Blue whale"
 msgstr "Blauwal"
 
-msgid "Byron (legacy) addresses lack the staking functionality that RankMyWallet uses to determine your rank."
-msgstr "Byron (Legacy) Adressen verfügen nicht über die Stakingfunktion, die RankMyWallet verwendet, um deinen Rang zu bestimmen."
-
-msgid "Cardano"
-msgstr "Cardano"
-
 msgid "Cardano Rankings are coming soon"
 msgstr "Cardano Rankings kommen bald"
-
-msgid "Cardano Species"
-msgstr "Cardano Spezies"
 
 msgid "Checksum"
 msgstr "Checksumme"
@@ -326,9 +317,6 @@ msgstr "Welche Technologie nutzt diese Website?"
 msgid "Where do I report bugs?"
 msgstr "Wo kann ich Fehler melden?"
 
-msgid "Why are Byron addresses not supported?"
-msgstr "Warum werden Byron-Adressen nicht unterstützt?"
-
 msgid "Why is the balance on this website different from the balance in my Ergo wallet?"
 msgstr "Warum unterscheidet sich das Guthaben auf dieser Website vom Guthaben in meinem Ergo Wallet?"
 
@@ -349,4 +337,3 @@ msgstr "Dein Projekt"
 
 msgid "Your Rank"
 msgstr "Dein Rang"
-

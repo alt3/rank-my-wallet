@@ -14,12 +14,13 @@ jobs:
     name: Linting
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
-    - name: Install Node v20
-      uses: actions/setup-node@v3
+    - name: Install Node v24
+      uses: actions/setup-node@v7
       with:
-        node-version: 20
+        node-version: 24
+        cache: npm
     - run: npm ci
     - run: npm run lint
 
@@ -28,12 +29,13 @@ jobs:
     name: Typescript
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
-    - name: Install Node v20
-      uses: actions/setup-node@v3
+    - name: Install Node v24
+      uses: actions/setup-node@v7
       with:
-        node-version: 20
+        node-version: 24
+        cache: npm
     - run: npm ci
     - run: npx tsc
 
@@ -42,11 +44,28 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
-    - name: Install Node v20
-      uses: actions/setup-node@v3
+    - name: Install Node v24
+      uses: actions/setup-node@v7
       with:
-        node-version: 20
+        node-version: 24
+        cache: npm
     - run: npm ci
     - run: npm run test
+
+  # Ensure the production build succeeds. Framework upgrades break here long
+  # before they break lint or tests, so this job is the one that matters most.
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Install Node v24
+      uses: actions/setup-node@v7
+      with:
+        node-version: 24
+        cache: npm
+    - run: npm ci
+    - run: npm run build

@@ -4,14 +4,15 @@ import { AddressForm } from "@/components/AddressForm"
 import { ContentContainer } from "@/components/ContentContainer"
 import { ErrorHero } from "@/components/Heroes/ErrorHero"
 import { MetaTags } from "@/components/MetaTags"
-import { Accordion } from "@chakra-ui/accordion"
-import { Divider } from "@chakra-ui/layout"
-import { t } from "@lingui/macro"
+import { Accordion, Separator } from "@chakra-ui/react"
+import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
 import { getUnsupportedAddressMessage } from "src/lib/getUnsupportedAddressMessage"
 
 export function UnsupportedAddressDetails({ parsed }) {
-  const { i18n } = useLingui()
+  // Called for its subscription: it re-renders this component when the active
+  // locale changes. The `i18n` instance itself is not needed here.
+  useLingui()
 
   if (process && process.env.NODE_ENV !== "production") {
     console.log({ parsed })
@@ -29,7 +30,10 @@ export function UnsupportedAddressDetails({ parsed }) {
         <ErrorHero
           title={t`Unsupported Address`}
           subtitle={getUnsupportedAddressMessage({
-            type: parsed.unsupported.type,
+            // `unsupported` is only set for addresses validateAddress rejects.
+            // A valid address should never reach this component, but if one
+            // does, fall back rather than crash the page on a missing property.
+            type: parsed.unsupported?.type ?? "UnrecognizedAddress",
             blockchain: parsed.blockchain.name,
             network: parsed.blockchain?.network,
             addressType: parsed.type?.name,
@@ -44,12 +48,12 @@ export function UnsupportedAddressDetails({ parsed }) {
 
         {["Cardano", "Ergo"].includes(parsed.blockchain.name) && (
           <>
-            <Divider marginBottom={{ base: "1.5rem", sm: "1.5rem" }} />
+            <Separator marginBottom={{ base: "1.5rem", sm: "1.5rem" }} />
 
-            <Accordion allowMultiple>
+            <Accordion.Root multiple>
               <AccordionItemAddressDetails parsedAddress={parsed} />
               <AccordionItemAddressAnalysis parsedAddress={parsed} />
-            </Accordion>
+            </Accordion.Root>
           </>
         )}
       </ContentContainer>

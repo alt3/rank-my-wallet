@@ -1,7 +1,7 @@
 import { FrontpageCard } from "@/components/FrontpageCard"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Center, SimpleGrid, Text } from "@chakra-ui/layout"
-import { Trans } from "@lingui/macro"
+import { Box, Center, Icon, SimpleGrid, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { Trans } from "@lingui/react/macro"
 import { BsHeartFill } from "react-icons/bs"
 
 export function Sponsors() {
@@ -15,7 +15,7 @@ export function Sponsors() {
     },
     grid: {
       columns: [2, null, 3],
-      spacing: { base: "15px", sm: "30px", md: "40px" },
+      gap: { base: "15px", sm: "30px", md: "40px" },
     },
   }
 
@@ -30,10 +30,11 @@ export function Sponsors() {
       <SimpleGrid {...styles.grid}>
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box
+            <Icon
               as={BsHeartFill}
               viewBox="0 0 20 10"
               display="inline-block"
+              verticalAlign="baseline"
               color="red"
               marginEnd="0.25rem"
             />
@@ -43,10 +44,11 @@ export function Sponsors() {
 
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box
+            <Icon
               as={BsHeartFill}
               viewBox="0 0 20 10"
               display="inline-block"
+              verticalAlign="baseline"
               color="red"
               marginEnd="0.25rem"
             />
@@ -56,10 +58,11 @@ export function Sponsors() {
 
         <FrontpageCard url="/sponsoring" isExternal={false}>
           <Box as={"span"} textAlign={"center"}>
-            <Box
+            <Icon
               as={BsHeartFill}
               viewBox="0 0 20 10"
               display="inline-block"
+              verticalAlign="baseline"
               color="red"
               marginEnd="0.25rem"
             />

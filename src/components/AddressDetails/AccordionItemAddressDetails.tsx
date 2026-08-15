@@ -1,34 +1,38 @@
 import { SectionHeader } from "@/components/AddressDetails/SectionHeader"
 import { DataGrid } from "@/components/DataGrid"
 import { DataGridEntry } from "@/components/DataGridEntry"
-import { AccordionButton, AccordionIcon, AccordionItem, AccordionPanel } from "@chakra-ui/accordion"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box } from "@chakra-ui/layout"
-import { Trans, t } from "@lingui/macro"
+import { Accordion, Box } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import { getRTL } from "src/translations/utils"
 
-export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
+export function AccordionItemAddressDetails({ parsedAddress }) {
   const { i18n } = useLingui()
   const rtl = getRTL(i18n.locale)
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
 
   return (
-    <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
+    <Accordion.Item
+      value="address-details"
+      borderStyle="none"
+      marginBottom={{ base: "1rem", md: "0.5rem" }}
+    >
       <h2>
-        <AccordionButton p={0}>
+        <Accordion.ItemTrigger p={0}>
           <Box flex="1" textAlign={rtl.left}>
             <SectionHeader>
               <Trans>Address Details</Trans>
             </SectionHeader>
           </Box>
           <Box as="span" verticalAlign="top" minHeight="3rem">
-            <AccordionIcon color={accordionIconColor} />
+            <Accordion.ItemIndicator color={accordionIconColor} />
           </Box>
-        </AccordionButton>
+        </Accordion.ItemTrigger>
       </h2>
-      <AccordionPanel p={0}>
+      <Accordion.ItemContent p={0}>
         <DataGrid marginBottom={{ base: "1.5rem", sm: "1.5rem" }}>
           <DataGridEntry
             field={t`Address`}
@@ -56,8 +60,8 @@ export function AccordionItemAddressDetails({ parsedAddress, ...rest }) {
             <DataGridEntry field={t`Address Type`} value={parsedAddress.type.name} />
           )}
         </DataGrid>
-      </AccordionPanel>
-    </AccordionItem>
+      </Accordion.ItemContent>
+    </Accordion.Item>
   )
 }
 export default AccordionItemAddressDetails

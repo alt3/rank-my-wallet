@@ -1,5 +1,5 @@
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/layout"
+import { Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 
 interface ErrorHeroProps {
   title: string
@@ -34,7 +34,7 @@ export const ErrorHero = ({ title, subtitle }: ErrorHeroProps) => {
     <Box {...styles.box}>
       <Container {...styles.container}>
         <Center>
-          <Stack width="100%" spacing={{ base: 6, sm: 8 }} align="center">
+          <Stack width="100%" gap={{ base: 6, sm: 8 }} align="center">
             <Heading {...styles.title}>{title}</Heading>
             {subtitle && <Text {...styles.subtitle}>{subtitle}</Text>}
           </Stack>

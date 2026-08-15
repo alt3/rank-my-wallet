@@ -1,8 +1,8 @@
 import { FrontpageCard } from "@/components/FrontpageCard"
 import { ErgoLogo } from "@/components/Images/Logos/Ergo"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Center, SimpleGrid, Text } from "@chakra-ui/layout"
-import { Trans } from "@lingui/macro"
+import { Box, Center, SimpleGrid, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { Trans } from "@lingui/react/macro"
 
 export function SupportedBlockChains() {
   const styles = {
@@ -18,7 +18,7 @@ export function SupportedBlockChains() {
     },
     grid: {
       columns: 1,
-      spacing: { base: "15px", sm: "30px", md: "40px" },
+      gap: { base: "15px", sm: "30px", md: "40px" },
       maxWidth: { base: "100%", md: "320px" },
       marginX: "auto",
     },

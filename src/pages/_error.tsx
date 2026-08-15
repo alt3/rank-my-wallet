@@ -1,8 +1,8 @@
 import { BackHomeButton } from "@/components/BackHomeButton"
 import { PageHero } from "@/components/Heroes/PageHero"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Text } from "@chakra-ui/layout"
-import { t } from "@lingui/macro"
+import { Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
 import ExceptionLayout from "src/core/layouts/ExceptionLayout"
 
 /**
@@ -24,7 +24,7 @@ export function Error({ statusCode, title }) {
     <ExceptionLayout title={t`Internal Server Error`}>
       <PageHero title={t`Internal Server Error`} marginTop={{ base: "6rem", md: "7.5rem" }} />
 
-      <Text {...styles.errorMessage} align="center">
+      <Text {...styles.errorMessage} textAlign="center">
         {statusCode} : {title}
       </Text>
 

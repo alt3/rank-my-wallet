@@ -1,3 +1,5 @@
+import { MessageDescriptor } from "@lingui/core"
+
 /**
  * Interfaces so we can set properties independently
  */
@@ -18,13 +20,18 @@ interface Payload {
     byte: number
     hex: string
     bits: Array<number>
+    // `type` is a lazy MessageDescriptor (Lingui `msg`), not a translated
+    // string. These objects are built during address parsing, which runs in
+    // `getServerSideProps` before any catalog is activated -- and Lingui 5
+    // *throws* from an eager `t` when no locale is active. Consumers translate
+    // it at render time with `i18n._()`.
     leading?: {
       bits: Array<number>
-      type: string
+      type: MessageDescriptor
     }
     trailing?: {
       bits: Array<number>
-      type: string
+      type: MessageDescriptor
     }
   }
   content?: {

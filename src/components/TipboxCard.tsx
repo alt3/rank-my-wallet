@@ -1,42 +1,39 @@
 import { Link } from "@/components/Link"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Icon } from "@chakra-ui/icon"
-import { Box, Text, VStack } from "@chakra-ui/layout"
-import { useToken } from "@chakra-ui/system"
-import { useToast } from "@chakra-ui/toast"
-import { t } from "@lingui/macro"
+import { Box, Icon, Text, VStack, useToken } from "@chakra-ui/react"
+import { toaster } from "src/core/theme/toaster"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react"
 import ClipboardAPI from "clipboard"
 // import QRCode from "qrcode.react"
-import {QRCodeSVG} from 'qrcode.react';
+import { QRCodeSVG } from "qrcode.react"
 import { useEffect } from "react"
 import { FaRegCopy } from "react-icons/fa"
 
 export function TipboxCard({ title, address, url, ...rest }) {
   useLingui()
 
-  const qrBackgroundColor = useToken("colors", useColorModeValue("gray.700", "whiteAlpha.900"))
-  const qrForegroundColor = useToken("colors", useColorModeValue("white", "gray.900"))
+  const [qrBackgroundColor] = useToken("colors", useColorModeValue("gray.700", "whiteAlpha.900"))
+  const [qrForegroundColor] = useToken("colors", useColorModeValue("white", "gray.900"))
 
   useEffect(() => {
     new ClipboardAPI("#test")
   }, [])
 
-  const toast = useToast()
-
   const handleClick = () => {
-    toast({
+    toaster.create({
       title: t`Copied!`,
       duration: 1500,
-      position: "top-right",
-      isClosable: false,
+      closable: false,
     })
   }
 
   const styles = {
+    // Chakra 2 let the (non-Chakra) `align="center"` fall through to the DOM,
+    // where the HTML attribute centred everything inside, blocks included.
+    // Chakra 3 strips it, so the same is spelled out in CSS.
     box: {
-      align: "center",
-      justifyContent: "center",
+      textAlign: "center",
       margin: { base: "1rem", sm: "inherit" },
       padding: { base: "2rem", sm: "1.5rem" },
       shadow: "md",
@@ -45,8 +42,10 @@ export function TipboxCard({ title, address, url, ...rest }) {
       bg: useColorModeValue("white", "gray.900"),
     },
     card: {
-      align: "center",
-      justifyContent: "center",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      textAlign: "center",
     },
     caption: {
       fontWeight: useColorModeValue(600, 500),
@@ -73,7 +72,7 @@ export function TipboxCard({ title, address, url, ...rest }) {
             <Link href={url} isExternal passHref>
               <Text
                 as="span"
-                align="center"
+                textAlign="center"
                 wordBreak="break-word"
                 color={useColorModeValue("gray.900", "gray.400")}
               >
@@ -84,6 +83,7 @@ export function TipboxCard({ title, address, url, ...rest }) {
             <Icon
               as={FaRegCopy}
               w={4}
+              verticalAlign="baseline"
               h={4}
               _hover={{ color: useColorModeValue("teal.500", "teal.300") }}
               id="test"

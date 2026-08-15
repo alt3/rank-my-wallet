@@ -1,11 +1,14 @@
-import { chakra, useStyleConfig } from "@chakra-ui/system"
+import { chakra, useRecipe } from "@chakra-ui/react"
 
 export const SectionHeader = (props) => {
   const { size, variant, children, ...rest } = props
-  const styles = useStyleConfig("SectionHeader", { size, variant })
+  // Chakra 3 replaces useStyleConfig with useRecipe: the recipe is resolved by
+  // key from the system, then called with its variant props.
+  const recipe = useRecipe({ key: "SectionHeader" })
+  const styles = recipe({ size, variant })
 
   return (
-    <chakra.header __css={styles} {...rest}>
+    <chakra.header css={styles} {...rest}>
       {children}
     </chakra.header>
   )

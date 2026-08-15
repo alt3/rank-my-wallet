@@ -12,10 +12,10 @@ import species from "src/core/constants/species"
 export const getNextSpeciesForBalance = function (
   blockchain: "Cardano" | "Ergo",
   balance: Big,
-  currentSpeciesName: MessageDescriptor
+  currentSpeciesName: MessageDescriptor,
 ): { name: MessageDescriptor; icon: string; startsAt: number; requires: Big } | undefined {
   const currentIndex = species[blockchain].findIndex(
-    (element) => currentSpeciesName === element.name // Linqui MessageDescriptor
+    (element) => currentSpeciesName === element.name, // Linqui MessageDescriptor
   )
 
   if (currentIndex === undefined) {
@@ -26,7 +26,6 @@ export const getNextSpeciesForBalance = function (
     return undefined
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const nextSpecies = species[blockchain][currentIndex + 1]!
 
   const result = {

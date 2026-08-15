@@ -1,6 +1,6 @@
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/layout"
-import { Trans } from "@lingui/macro"
+import { Box, Center, Container, Heading, Stack, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import Countup from "react-countup"
 import { getNumberSeparators } from "src/lib/getNumberSeparators"
@@ -46,7 +46,7 @@ export function Counter({ totalAccounts, rank, blockchain }: CounterProps) {
     <Box {...styles.box}>
       <Container {...styles.container}>
         <Center>
-          <Stack spacing={2} width="100%" align="center">
+          <Stack gap={2} width="100%" align="center">
             <Heading {...styles.heading}>
               {blockchain === "Cardano" && <Trans>You are Cardano holder</Trans>}
               {blockchain === "Ergo" && <Trans>You are Ergo holder</Trans>}

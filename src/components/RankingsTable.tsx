@@ -1,6 +1,6 @@
 import RankingsTableDesktop from "@/components/RankingsTable/RankingsTableDesktop"
 import RankingsTableMobile from "@/components/RankingsTable/RankingsTableMobile"
-import { useMediaQuery } from "@chakra-ui/media-query"
+import { useMediaQuery } from "@chakra-ui/react"
 
 interface RankingsTableProps {
   rankings: Array<{
@@ -12,7 +12,7 @@ interface RankingsTableProps {
 }
 
 export function RankingsTable({ rankings }: RankingsTableProps) {
-  const [isMobile] = useMediaQuery("(max-width: 768px)")
+  const [isMobile] = useMediaQuery(["(max-width: 768px)"])
 
   if (isMobile) {
     return <RankingsTableMobile rankings={rankings} tickerSymbol={"Σ"} />

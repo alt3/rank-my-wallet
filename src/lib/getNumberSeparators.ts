@@ -15,7 +15,7 @@
  */
 
 export const getNumberSeparators = (
-  locale: string
+  locale: string,
 ): {
   group: string
   decimal: string

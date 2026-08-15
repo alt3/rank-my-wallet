@@ -1,6 +1,6 @@
 import BitsTableDesktop from "@/components/BitsTable/BitsTableDesktop"
 import BitsTableMobile from "@/components/BitsTable/BitsTableMobile"
-import { useMediaQuery } from "@chakra-ui/media-query"
+import { useMediaQuery } from "@chakra-ui/react"
 
 interface BitsTableProps {
   caption: string
@@ -9,7 +9,7 @@ interface BitsTableProps {
 }
 
 export function BitsTable({ caption, bits, sumLabel }: BitsTableProps) {
-  const [isMobile] = useMediaQuery("(max-width: 768px)")
+  const [isMobile] = useMediaQuery(["(max-width: 768px)"])
 
   if (isMobile) {
     return <BitsTableMobile caption={caption} bits={bits} sumLabel={sumLabel} />

@@ -1,12 +1,11 @@
 import { Link } from "@/components/Link"
-import { Button } from "@chakra-ui/button"
-import { Center } from "@chakra-ui/layout"
+import { Button, Center } from "@chakra-ui/react"
 
-export function BackHomeButton({ title, buttonSize = "lg", ...rest }) {
+export function BackHomeButton({ title, buttonSize = "lg" as const, ...rest }) {
   return (
     <Center {...rest}>
       <Link href="/" title={title} textDecoration="none !important" passHref>
-        <Button colorScheme="teal" size={buttonSize}>
+        <Button colorPalette="teal" size={buttonSize}>
           {title}
         </Button>
       </Link>

@@ -22,6 +22,6 @@ for (const [index, blockchainAddresses] of Object.entries(addresses)) {
           expect(parsedAddress.type.name).toEqual(fixture.type)
         }
       })
-    }
+    },
   )
 }

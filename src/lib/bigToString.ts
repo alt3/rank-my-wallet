@@ -13,7 +13,7 @@ import toFormat from "toformat"
 export const bigToString = (
   big: Big,
   locale: string,
-  fractions?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+  fractions?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9,
 ): string => {
   toFormat(Big) // attach toFormat
   Big.RM = Big.roundDown // never ever round the fractions

@@ -3,10 +3,11 @@ import { PageHero } from "@/components/Heroes/PageHero"
 import { MetaTags } from "@/components/MetaTags"
 import { TipboxCard } from "@/components/TipboxCard"
 import { BlitzPage } from "@blitzjs/next"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, SimpleGrid, Text } from "@chakra-ui/layout"
-import { createStandaloneToast } from "@chakra-ui/toast"
-import { Trans, t } from "@lingui/macro"
+import { Box, Icon, SimpleGrid, Text } from "@chakra-ui/react"
+import { Toaster } from "src/core/theme/toaster"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import { BsHeartFill } from "react-icons/bs"
@@ -17,16 +18,14 @@ import { loadCatalog } from "src/translations/utils"
 const TipBox: BlitzPage = () => {
   useLingui()
 
-  // https://github.com/chakra-ui/chakra-ui/issues/5839#issuecomment-1255023682
-  const { ToastContainer } = createStandaloneToast()
-
   const styles = {
     grid: {
-      columns: { base: 1, sm: 2 },
-      spacing: { base: "2rem", sm: "4rem" },
+      columns: 1,
+      maxWidth: { base: "100%", sm: "336px" },
+      marginX: "auto",
     },
     disclaimer: {
-      align: "center" as const,
+      textAlign: "center" as const,
       color: useColorModeValue("teal.500", "gray.500"),
       marginTop: { base: "2rem", sm: "5rem" },
     },
@@ -37,21 +36,16 @@ const TipBox: BlitzPage = () => {
       <MetaTags
         title={`RankMyWallet - ${t`Tip Box`}`}
         description="Donate some coins to keep this website ad-free"
-        keywords="crypto, blockchain, cardano, ergo, wallets, rankings, tip-box, support"
+        keywords="crypto, blockchain, ergo, wallets, rankings, tip-box, support"
       />
 
-      <ToastContainer />
+      <Toaster />
 
       <ContentContainer>
         <PageHero title={<Trans>Tip Box</Trans>} />
 
         <Box>
           <SimpleGrid {...styles.grid}>
-            <TipboxCard
-              title={<Trans>Cardano</Trans>}
-              address={tipboxAddresses.cardano}
-              url={`https://pool.pm/${tipboxAddresses.cardano}`}
-            />
             <TipboxCard
               title={<Trans>Ergo</Trans>}
               address={tipboxAddresses.ergo}
@@ -60,18 +54,20 @@ const TipBox: BlitzPage = () => {
           </SimpleGrid>
 
           <Text {...styles.disclaimer}>
-            <Box
+            <Icon
               as={BsHeartFill}
               viewBox="0 0 20 10"
               display="inline-block"
+              verticalAlign="baseline"
               color="red"
               marginEnd="0.25rem"
             />
             <Trans>Please donate to keep this website ad-free</Trans>{" "}
-            <Box
+            <Icon
               as={BsHeartFill}
               viewBox="0 0 20 10"
               display="inline-block"
+              verticalAlign="baseline"
               color="red"
               marginEnd="0.25rem"
             />
@@ -83,7 +79,7 @@ const TipBox: BlitzPage = () => {
 }
 
 export async function getStaticProps(
-  ctx: GetStaticPropsContext
+  ctx: GetStaticPropsContext,
 ): Promise<GetStaticPropsResult<any>> {
   return {
     props: {

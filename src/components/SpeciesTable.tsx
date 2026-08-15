@@ -1,8 +1,7 @@
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Center } from "@chakra-ui/layout"
-import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/table"
+import { Box, Center, Table } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
 import { MessageDescriptor } from "@lingui/core"
-import { Trans } from "@lingui/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib/bigToString"
@@ -47,27 +46,32 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
 
   return (
     <Center>
-      <Table variant="simple" {...styles.table}>
-        <Thead>
-          <Tr>
-            <Th {...styles.th} {...styles.left} textAlign={rtl.left} maxWidth="10px">
+      <Table.Root variant="line" {...styles.table}>
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeader
+              {...styles.th}
+              {...styles.left}
+              textAlign={rtl.left}
+              maxWidth="10px"
+            >
               #
-            </Th>
-            <Th {...styles.th} {...styles.left} textAlign={rtl.left}>
+            </Table.ColumnHeader>
+            <Table.ColumnHeader {...styles.th} {...styles.left} textAlign={rtl.left}>
               <Trans context="Singular">Species</Trans>
-            </Th>
-            <Th {...styles.th} {...styles.right} textAlign={rtl.right}>
+            </Table.ColumnHeader>
+            <Table.ColumnHeader {...styles.th} {...styles.right} textAlign={rtl.right}>
               <Trans>Starts At</Trans>
-            </Th>
-          </Tr>
-        </Thead>
+            </Table.ColumnHeader>
+          </Table.Row>
+        </Table.Header>
 
-        <Tbody>
+        <Table.Body>
           {/* One row per species */}
           {species.map((element, i) => {
             return (
-              <Tr key={nextId("tr")}>
-                <Td
+              <Table.Row key={nextId("tr")}>
+                <Table.Cell
                   {...styles.left}
                   textAlign={rtl.left}
                   color="gray.500"
@@ -77,11 +81,11 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                   paddingEnd={{ base: "2rem", sm: 0 }}
                 >
                   {i + 1}
-                </Td>
-                <Td {...styles.left} textAlign={rtl.left}>
+                </Table.Cell>
+                <Table.Cell {...styles.left} textAlign={rtl.left}>
                   {i18n._(element.name)}
-                </Td>
-                <Td {...styles.right} textAlign={rtl.right}>
+                </Table.Cell>
+                <Table.Cell {...styles.right} textAlign={rtl.right}>
                   <Box as="span" whiteSpace="nowrap">
                     <Box as="span" {...styles.currency} paddingEnd={"0.25rem"}>
                       {tickerSymbol}
@@ -90,12 +94,12 @@ export function SpeciesTable({ blockchain, tickerSymbol, species }: SpeciesTable
                       ? bigToString(element.startsAt, i18n.locale, maximumSignificantDigits)
                       : bigToString(element.startsAt, i18n.locale, 0)}{" "}
                   </Box>
-                </Td>
-              </Tr>
+                </Table.Cell>
+              </Table.Row>
             )
           })}
-        </Tbody>
-      </Table>
+        </Table.Body>
+      </Table.Root>
     </Center>
   )
 }

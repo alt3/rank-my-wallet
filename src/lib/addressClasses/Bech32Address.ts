@@ -1,4 +1,4 @@
-import { t } from "@lingui/macro"
+import { msg } from "@lingui/core/macro"
 import { bech32, Decoded } from "bech32"
 import isEqual from "lodash.isequal"
 import { BaseAddress } from "src/lib/addressClasses/BaseAddress"
@@ -119,7 +119,9 @@ export class Bech32Address extends BaseAddress {
       this.blockchain.name = "Cardano"
       this.blockchain.explorerUrl = `https://pool.pm/`
       this.version = "Shelley"
-      this.decoded.bytes = Array.from(bytesBuffer)
+      // Guarded: bytesBuffer is undefined for malformed words, and the block
+      // below already assumes that is possible.
+      this.decoded.bytes = bytesBuffer ? Array.from(bytesBuffer) : []
       this.currency = {
         decimals: 6,
         ticker: "ADA",
@@ -164,11 +166,11 @@ export class Bech32Address extends BaseAddress {
           bits: headerBits,
           leading: {
             bits: getLeadingBits(headerBits),
-            type: t`Network Type`,
+            type: msg`Network Type`,
           },
           trailing: {
             bits: getTrailingBits(headerBits),
-            type: t`Address Type`,
+            type: msg`Address Type`,
           },
         }
 
@@ -197,16 +199,19 @@ export class Bech32Address extends BaseAddress {
 /**
  * Converts the Bech32 words array to an array of bytes.
  *
- * @param bytes - Bech32 words
+ * Returns undefined when the words are not convertible: `bech32.fromWords`
+ * throws for malformed input, which is expected here because this runs against
+ * arbitrary user input. The return type says so rather than claiming a Buffer
+ * and handing back undefined.
+ *
+ * @param words - Bech32 words
  */
-function wordsToBytesBuffer(words: number[]): Buffer {
-  let result
-
+function wordsToBytesBuffer(words: number[]): Buffer | undefined {
   try {
-    result = Buffer.from(bech32.fromWords(words))
-  } catch (e) {}
-
-  return result
+    return Buffer.from(bech32.fromWords(words))
+  } catch {
+    return undefined
+  }
 }
 
 /**

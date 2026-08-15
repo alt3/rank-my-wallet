@@ -14,7 +14,7 @@ const alternateRefs = locales.map((locale) => ({
 
 const exclude = locales.map((locale) => `/${locale}/404`).concat("/404")
 
-const pathsWithMultipleLocales = locales.flatMap((v, i) => locales.map((w) => `/${v}/${w}/`))
+const pathsWithMultipleLocales = locales.flatMap((v) => locales.map((w) => `/${v}/${w}/`))
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {

@@ -3,17 +3,13 @@ import { Base58Address } from "src/lib/addressClasses/Base58Address"
 import { Bech32Address } from "src/lib/addressClasses/Bech32Address"
 import { RegexAddress } from "src/lib/addressClasses/RegexAddress"
 
-type UnsupportedAddressTypes = {
-  type: "UnrecognizedAddress" | "UnsupportedBlockchain" | "UnsupportedNetwork" | "UnsupportedType"
-}
-
 /**
  * Insert type property for unsupported addresses.
  *
  * @param parsedAddress - The fully parsed blockchain address
  */
 export const validateAddress = function (
-  parsedAddress: RegexAddress | Bech32Address | Base58Address | UnrecognizedAddress
+  parsedAddress: RegexAddress | Bech32Address | Base58Address | UnrecognizedAddress,
 ) {
   // unrecognized addresses
   if (!parsedAddress.blockchain.name) {

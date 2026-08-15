@@ -3,9 +3,10 @@ import { PageHero } from "@/components/Heroes/PageHero"
 import { Link } from "@/components/Link"
 import { MetaTags } from "@/components/MetaTags"
 import { BlitzPage } from "@blitzjs/next"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Text } from "@chakra-ui/layout"
-import { Trans, t } from "@lingui/macro"
+import { Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import Layout from "src/core/layouts/Layout"
@@ -25,7 +26,7 @@ const Sponsoring: BlitzPage = () => {
       <MetaTags
         title={`RankMyWallet - ${t`Become a Sponsor`}`}
         description="Promote your project by becoming a sponsor"
-        keywords="crypto, blockchain, cardano, ergo, wallets, rankings, sponsoring, sponsor"
+        keywords="crypto, blockchain, ergo, wallets, rankings, sponsoring, sponsor"
       />
 
       <ContentContainer>
@@ -64,7 +65,7 @@ const Sponsoring: BlitzPage = () => {
 }
 
 export async function getStaticProps(
-  ctx: GetStaticPropsContext
+  ctx: GetStaticPropsContext,
 ): Promise<GetStaticPropsResult<any>> {
   return {
     props: {

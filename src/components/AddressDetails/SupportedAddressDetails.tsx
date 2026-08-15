@@ -11,18 +11,11 @@ import { MetaTags } from "@/components/MetaTags"
 import { PleaseDonate } from "@/components/PleaseDonate"
 import { RankingsTable } from "@/components/RankingsTable"
 import { TickerString } from "@/components/TickerString"
-import { useQuery } from "@blitzjs/rpc"
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-} from "@chakra-ui/accordion"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Divider, Grid, GridItem } from "@chakra-ui/layout"
-import { HTMLChakraProps } from "@chakra-ui/system"
-import { Trans, t } from "@lingui/macro"
+import { useSuspenseQuery } from "@blitzjs/rpc"
+import { Accordion, Box, Grid, GridItem, HTMLChakraProps, Separator } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import dynamic from "next/dynamic"
 import getAddressDetails from "src/core/queries/getAddressDetails"
@@ -40,7 +33,12 @@ export function SupportedAddressDetails({ parsed }) {
   const { i18n } = useLingui()
   const rtl = getRTL(i18n.locale)
 
-  const [addressDetails] = useQuery(getAddressDetails, parsed, {
+  // Must be useSuspenseQuery, not useQuery. Blitz 3 split these: `useQuery` no
+  // longer suspends and resolves to `TData | undefined`, while the suspending
+  // behaviour moved to `useSuspenseQuery`. With plain `useQuery` the Suspense
+  // boundary in [address].tsx never activates, so its SuspenseLoader fallback
+  // never mounts -- which is what silently killed the nprogress bar.
+  const [addressDetails] = useSuspenseQuery(getAddressDetails, parsed, {
     staleTime: Infinity,
   })
 
@@ -50,6 +48,7 @@ export function SupportedAddressDetails({ parsed }) {
 
   const accordionIconColor = useColorModeValue("teal.500", "teal.300")
   const fractionsColor = useColorModeValue("gray.300", "gray.500")
+  const speciesLinkColor = useColorModeValue("pink.600", "pink.400")
 
   const styles = {
     gridField: {
@@ -99,7 +98,7 @@ export function SupportedAddressDetails({ parsed }) {
             />
           )}
 
-        <Divider display={{ base: "block", sm: "none" }} marginBottom="2rem" />
+        <Separator display={{ base: "block", sm: "none" }} marginBottom="2rem" />
 
         {/* SPECIES GRID */}
         <SectionHeader>
@@ -125,7 +124,7 @@ export function SupportedAddressDetails({ parsed }) {
               <Link
                 href={`/species/${parsed.blockchain.name.toLowerCase()}`}
                 title={`${parsed.blockchain.name} Species`}
-                color={useColorModeValue("pink.600", "pink.400")}
+                color={speciesLinkColor}
                 passHref
                 withExternalIcon
               >
@@ -168,7 +167,7 @@ export function SupportedAddressDetails({ parsed }) {
                     ? bigToString(
                         addressDetails.species.next.requires,
                         i18n.locale,
-                        parsed.currency.decimals
+                        parsed.currency.decimals,
                       )
                     : "-"
                 }
@@ -194,23 +193,27 @@ export function SupportedAddressDetails({ parsed }) {
 
         <PleaseDonate marginBottom={{ base: "2rem", sm: "2rem" }} />
 
-        <Accordion allowMultiple>
+        <Accordion.Root multiple>
           {/* COMPETITION PANE - IF APPLICABLE */}
           {addressDetails.rankings.length > 1 && (
-            <AccordionItem borderStyle="none" marginBottom={{ base: "1rem", md: "0.5rem" }}>
+            <Accordion.Item
+              value="competition"
+              borderStyle="none"
+              marginBottom={{ base: "1rem", md: "0.5rem" }}
+            >
               <h2>
-                <AccordionButton p={0}>
+                <Accordion.ItemTrigger p={0}>
                   <Box flex="1" textAlign={rtl.left}>
                     <SectionHeader>
                       <Trans>Competition</Trans>
                     </SectionHeader>
                   </Box>
                   <Box as="span" verticalAlign="top" minHeight="3rem">
-                    <AccordionIcon color={accordionIconColor} />
+                    <Accordion.ItemIndicator color={accordionIconColor} />
                   </Box>
-                </AccordionButton>
+                </Accordion.ItemTrigger>
               </h2>
-              <AccordionPanel p={0}>
+              <Accordion.ItemContent p={0}>
                 <DataGrid marginBottom={{ base: "0.5rem", sm: "0.5rem" }}>
                   <DataGridEntry
                     field={t`Competitors`}
@@ -222,13 +225,13 @@ export function SupportedAddressDetails({ parsed }) {
                   />
                 </DataGrid>
                 <RankingsTable rankings={addressDetails.rankings} />
-              </AccordionPanel>
-            </AccordionItem>
+              </Accordion.ItemContent>
+            </Accordion.Item>
           )}
 
           <AccordionItemAddressDetails parsedAddress={parsed} />
           <AccordionItemAddressAnalysis parsedAddress={parsed} />
-        </Accordion>
+        </Accordion.Root>
       </ContentContainer>
     </>
   )

@@ -1,7 +1,7 @@
 import { Link } from "@/components/Link"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box, Text } from "@chakra-ui/layout"
-import { Trans } from "@lingui/macro"
+import { Box, Icon, Text } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { Trans } from "@lingui/react/macro"
 import { BsHeartFill } from "react-icons/bs"
 
 export function PleaseDonate({ ...rest }) {
@@ -20,18 +20,20 @@ export function PleaseDonate({ ...rest }) {
         {...rest}
       >
         <Text color={useColorModeValue("gray.600", "gray.500")}>
-          <Box
+          <Icon
             as={BsHeartFill}
             viewBox="0 0 20 10"
             display="inline-block"
+            verticalAlign="baseline"
             color="red"
             marginEnd="0.25rem"
           />
           <Trans>Please donate to keep this website ad-free</Trans>
-          <Box
+          <Icon
             as={BsHeartFill}
             viewBox="0 0 20 10"
             display="inline-block"
+            verticalAlign="baseline"
             color="red"
             marginStart="0.5rem"
           />

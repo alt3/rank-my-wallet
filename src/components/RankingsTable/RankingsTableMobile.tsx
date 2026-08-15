@@ -1,10 +1,10 @@
 import { ExternalLinkIcon } from "@/components/ExternalLinkIcon"
 import { Link } from "@/components/Link"
 import { TickerString } from "@/components/TickerString"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import { Box } from "@chakra-ui/layout"
-import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/table"
-import { Trans, t } from "@lingui/macro"
+import { Box, Table } from "@chakra-ui/react"
+import { useColorModeValue } from "src/core/theme/color-mode"
+import { t } from "@lingui/core/macro"
+import { Trans } from "@lingui/react/macro"
 import { useLingui } from "@lingui/react"
 import nextId from "react-id-generator"
 import { bigToString } from "src/lib/bigToString"
@@ -45,24 +45,29 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
   }
 
   return (
-    <Table variant="simple" {...styles.table}>
-      <Thead>
-        <Tr>
-          <Th {...styles.left} textAlign={rtl.left} maxWidth="10px" whiteSpace="nowrap">
+    <Table.Root variant="line" {...styles.table}>
+      <Table.Header>
+        <Table.Row>
+          <Table.ColumnHeader
+            {...styles.left}
+            textAlign={rtl.left}
+            maxWidth="10px"
+            whiteSpace="nowrap"
+          >
             <Trans>Rank</Trans>
-          </Th>
-          <Th {...styles.right} textAlign={rtl.right}>
+          </Table.ColumnHeader>
+          <Table.ColumnHeader {...styles.right} textAlign={rtl.right}>
             <Trans>Balance</Trans>
-          </Th>
-        </Tr>
-      </Thead>
+          </Table.ColumnHeader>
+        </Table.Row>
+      </Table.Header>
 
-      <Tbody>
+      <Table.Body>
         {/* One row per competitor */}
         {rankings.map((element) => {
           return (
-            <Tr key={nextId("tr")}>
-              <Td
+            <Table.Row key={nextId("tr")}>
+              <Table.Cell
                 {...styles.left}
                 textAlign={rtl.left}
                 maxWidth="80px"
@@ -82,9 +87,9 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
                   )}{" "}
                   <ExternalLinkIcon />
                 </Link>
-              </Td>
+              </Table.Cell>
 
-              <Td {...styles.right} textAlign={rtl.right} whiteSpace="nowrap">
+              <Table.Cell {...styles.right} textAlign={rtl.right} whiteSpace="nowrap">
                 <Link
                   href={`https://explorer.ergoplatform.com/en/addresses/${element.address}`}
                   passHref
@@ -94,18 +99,18 @@ export function RankingsTableMobile({ rankings, tickerSymbol }: RankingsTablePro
                     ticker={bigToString(
                       nanoToTicker(element.balance.toString(), 9),
                       i18n.locale,
-                      9
+                      9,
                     )}
                     tickerSymbol={tickerSymbol}
                     fractionsColor={fractionsColor}
                   ></TickerString>
                 </Link>
-              </Td>
-            </Tr>
+              </Table.Cell>
+            </Table.Row>
           )
         })}
-      </Tbody>
-    </Table>
+      </Table.Body>
+    </Table.Root>
   )
 }
 

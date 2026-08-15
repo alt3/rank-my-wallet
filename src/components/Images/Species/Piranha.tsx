@@ -1,4 +1,4 @@
-import { chakra, HTMLChakraProps } from "@chakra-ui/system"
+import { chakra, HTMLChakraProps } from "@chakra-ui/react"
 
 export const PiranhaIcon = (props: HTMLChakraProps<"svg">) => {
   const fill = props.fill ? props.fill.toString() : "#565D64"
