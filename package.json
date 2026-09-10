@@ -49,7 +49,7 @@
     "framer-motion": "12.43.0",
     "lodash.isequal": "4.5.0",
     "monero-regex": "1.0.9",
-    "next": "15.5.23",
+    "next": "15.5.25",
     "next-themes": "0.4.6",
     "nprogress": "0.2.0",
     "qrcode.react": "4.2.0",
