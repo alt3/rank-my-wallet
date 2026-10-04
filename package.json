@@ -37,7 +37,7 @@
     "@fontsource/poppins": "5.2.7",
     "@lingui/core": "5.9.5",
     "@lingui/react": "5.9.5",
-    "axios": "1.19.0",
+    "axios": "1.20.0",
     "bech32": "2.0.0",
     "big.js": "6.2.2",
     "blakejs": "1.2.1",
